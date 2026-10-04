@@ -15,11 +15,18 @@ const sitemap = await (await fetch(`${site.url}/sitemap.xml`)).text()
 const urlList = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1])
 if (!urlList.length) { console.error('indexnow: sitemap had no URLs'); process.exit(1) }
 
-const res = await fetch('https://api.indexnow.org/indexnow', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json; charset=utf-8' },
-  body: JSON.stringify({ host: site.cname, key: seoConfig.indexNowKey, keyLocation: `${site.url}/${seoConfig.indexNowKey}.txt`, urlList }),
-})
-console.log(`indexnow: submitted ${urlList.length} URLs for ${site.cname} -> HTTP ${res.status}`)
-// 200/202 = accepted. 403/422 usually mean the key file isn't reachable yet (DNS or deploy still propagating).
-process.exit(res.status === 200 || res.status === 202 ? 0 : 1)
+// Right after a deploy the CDN may not serve the new key file yet, which IndexNow reports as 403/422: retry with a pause.
+let status = 0
+for (let attempt = 1; attempt <= 5; attempt++) {
+  const res = await fetch('https://api.indexnow.org/indexnow', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    body: JSON.stringify({ host: site.cname, key: seoConfig.indexNowKey, keyLocation: `${site.url}/${seoConfig.indexNowKey}.txt`, urlList }),
+  })
+  status = res.status
+  console.log(`indexnow: attempt ${attempt}: submitted ${urlList.length} URLs for ${site.cname} -> HTTP ${status}`)
+  if (status === 200 || status === 202) break
+  if (attempt < 5) await new Promise((r) => setTimeout(r, 30_000))
+}
+// 200/202 = accepted.
+process.exit(status === 200 || status === 202 ? 0 : 1)
