@@ -1,0 +1,17 @@
+{
+  "title": "The Volunteer Examiner program",
+  "blurb": "Explain what VECs and VEs do, how an exam session is run, and what happens to the paperwork afterward.",
+  "why": {
+    "E1E01": { "why": "VEs and VECs may be reimbursed for expenses of **preparing, processing, administering and coordinating** an exam, not for teaching or training materials.", "concept": "structure" },
+    "E1E02": { "why": "The **VECs** maintain the question pools for all US exams.", "concept": "structure" },
+    "E1E03": { "why": "A VEC is an **organization** with an agreement with the FCC to coordinate, prepare and administer exams. It is not a person.", "trap": "A VE is the individual volunteer.", "concept": "structure" },
+    "E1E04": { "why": "A **VEC confirms** that the applicant meets FCC requirements to be a VE. The FCC does not accredit directly.", "trap": "A license class alone does not make you a VE.", "concept": "structure" },
+    "E1E05": { "why": "If the examinee does not pass, the VE team **returns the application** to the examinee.", "concept": "paperwork" },
+    "E1E06": { "why": "**Each administering VE** is responsible for conduct and supervision, not just one person.", "concept": "session" },
+    "E1E07": { "why": "A VE must **immediately terminate** the exam of a candidate who does not follow instructions. No warning.", "concept": "session" },
+    "E1E08": { "why": "A VE may not examine **relatives as listed in the FCC rules**. The rule names relatives, not friends or employees.", "concept": "session" },
+    "E1E09": { "why": "A VE who fraudulently administers or certifies an exam can lose the **station license grant** and have the **operator license suspended**.", "concept": "session" },
+    "E1E10": { "why": "After a successful exam, the VEs **submit the application document to the VEC** following the VEC's instructions.", "trap": "VEs send the paperwork to the VEC, not directly to the FCC.", "concept": "paperwork" },
+    "E1E11": { "why": "After a pass, **three VEs certify** the examinee is qualified and that the VE requirements were met.", "trap": "The VE team does not issue the license itself.", "concept": "paperwork" }
+  }
+}

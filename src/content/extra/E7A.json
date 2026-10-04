@@ -1,0 +1,17 @@
+{
+  "title": "Digital logic and flip-flops",
+  "blurb": "Read truth tables for logic gates, and explain how flip-flops and counters divide a frequency.",
+  "why": {
+    "E7A01": { "why": "**Bistable** means two stable states. A flip-flop holds either one until triggered. Gates have no memory.", "trap": "AND and OR gates only follow their current inputs; they hold nothing.", "concept": "flipflop" },
+    "E7A02": { "why": "A decade counter counts to 10 and wraps: **1 output pulse per 10 input pulses**. Display decoding is a separate job.", "trap": "Decoding a number for a seven-segment display is a decoder, not a counter.", "concept": "decade" },
+    "E7A03": { "why": "A flip-flop toggling on each clock pulse gives one output cycle per two input cycles: **÷2**.", "trap": "XOR, OR and multiplexers combine inputs; none of them toggles and halves.", "concept": "flipflop" },
+    "E7A04": { "why": "Each flip-flop halves: 2ᴺ = 16 gives N = **4** (16 → 8 → 4 → 2 → 1).", "trap": "Don't divide 16 by 2 and stop; count the halvings, not the factor.", "concept": "flipflop" },
+    "E7A05": { "why": "An **astable** multivibrator has no stable state, so it switches back and forth on its own with no clock.", "trap": "Flip-flops and T flip-flops need a clock to change; monostables need a trigger.", "concept": "multivibrators" },
+    "E7A06": { "why": "A **monostable** has one stable state. A trigger moves it to the other state **for a set time**, then it returns.", "trap": "A continuous square wave is an astable; storing a bit is a flip-flop.", "concept": "multivibrators" },
+    "E7A07": { "why": "NAND is AND flipped: output is **0 only when all inputs are 1**, otherwise 1.", "trap": "Output 1 only if all are 1 is AND; output 0 only if all are 0 is OR.", "concept": "gates" },
+    "E7A08": { "why": "An **OR** gate outputs 1 if **any** input is 1 (0 only when every input is 0).", "trap": "Outputting 0 when all inputs are 1 describes NAND, not OR.", "concept": "gates" },
+    "E7A09": { "why": "XOR gives 1 when inputs differ. XNOR flips it: **0 if exactly one input is 1**, 1 if they match.", "trap": "Outputting 1 when exactly one input is 1 is XOR, the non-inverted gate.", "concept": "gates" },
+    "E7A10": { "why": "A truth table lists **inputs and the resulting outputs for a digital device**.", "trap": "Op-amps are analog; truth tables belong to digital logic.", "concept": "gates" },
+    "E7A11": { "why": "In positive logic **high voltage is 1 and low voltage is 0**.", "trap": "It's about which voltage means 1, not noise immunity or a 'true' state.", "concept": "positive-logic" }
+  }
+}

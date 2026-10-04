@@ -1,0 +1,76 @@
+import { EmWave } from '@/visuals/shared/EmWave'
+import { Eme } from '@/visuals/extra/E3A_Eme'
+import { Index } from '@/visuals/extra/E3A_Index'
+import { Circular } from '@/visuals/extra/E3A_Circular'
+import { Meteor } from '@/visuals/extra/E3A_Meteor'
+import { Aurora } from '@/visuals/extra/E3A_Aurora'
+import { WaterDuct } from '@/visuals/extra/E3A_WaterDuct'
+import { DailyMuf } from '@/visuals/extra/E3A_DailyMuf'
+
+<Concept id="eme" title="EME: both stations just need to see the Moon" qs="E3A01 E3A02 E3A03">
+
+**Earth-Moon-Earth** bounces your signal off the Moon. Any two stations with the Moon above both horizons can work each other, up to about **12,000 miles** apart. The Moon's rocking (**libration**) gives **fluttery, irregular fading**.
+
+<Eme />
+
+The Moon is nearest at **perigee**: the shortest trip, so the **least path loss**.
+
+<Key>Perigee, least loss. Both stations must see the Moon.</Key>
+
+</Concept>
+
+<Concept id="em-wave" title="E, H and travel are mutually perpendicular; the medium sets the speed" qs="E3A04 E3A05 E3A10 E3A14">
+
+<EmWave />
+
+The electric and magnetic fields are at **right angles** to each other, and the wave travels at a right angle to both. How fast it goes in a medium is set by the **index of refraction**.
+
+<Index />
+
+In a **circularly polarized** wave the electric and magnetic fields **rotate** as the wave travels.
+
+<Circular />
+
+<Key>Fields at right angles. Speed = c ÷ index of refraction. Circular: rotating fields.</Key>
+
+</Concept>
+
+<Concept id="meteor" title="Meteor scatter: brief trails in the E region, 28 to 148 MHz" qs="E3A08 E3A09">
+
+A meteor burning up leaves a thin ionized column in the **E region**. It briefly reflects signals, so contacts arrive in short bursts. The best range is **28 – 148 MHz**.
+
+<Meteor />
+
+<Key>Meteor trails: E region. Best 28 – 148 MHz.</Key>
+
+</Concept>
+
+<Concept id="aurora" title="Aurora: severe storms, and CW works best" qs="E3A12 E3A13">
+
+<Aurora />
+
+**Severe geomagnetic storms** push the aurora toward the equator, where it can scatter signals. The reflection garbles voice, so **CW** is the best mode.
+
+<Key>Aurora needs a severe geomagnetic storm. Use CW.</Key>
+
+</Concept>
+
+<Concept id="duct" title="Microwave ducts form over large bodies of water" qs="E3A07 E3A11">
+
+<WaterDuct />
+
+A layer of air over water traps microwaves. Typical range is **100 to 300 miles**.
+
+<Key>Over water, 100 – 300 miles.</Key>
+
+</Concept>
+
+<Concept id="muf-night" title="When darkness lowers the MUF, move to a lower band" qs="E3A06">
+
+<DailyMuf />
+
+The maximum usable frequency (**MUF**) falls after dark. When it drops below your frequency, the signal is no longer refracted back. Switch to a **lower frequency band**.
+
+<Key>MUF falls at night: go lower.</Key>
+
+</Concept>

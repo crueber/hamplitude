@@ -1,0 +1,51 @@
+import { G1A_HfBands } from '@/visuals/general/G1A_HfBands'
+import { G1A_Slices } from '@/visuals/general/G1A_Slices'
+import { G1A_VoiceTop } from '@/visuals/general/G1A_VoiceTop'
+import { G1A_ModeLimits } from '@/visuals/general/G1A_ModeLimits'
+import { T1B_Secondary } from '@/visuals/technician/T1B_Secondary'
+
+<Concept id="bands" title="General is almost all of HF, minus Extra slices on four bands" qs="G1A01 G1A08">
+
+<G1A_HfBands />
+
+Only **80, 40, 20 and 15 m** have segments reserved for Amateur Extra. On every other HF band General class has the whole band.
+
+<Key>Four bands with Extra-only slices: 80, 40, 20, 15.</Key>
+
+</Concept>
+
+<Concept id="slices" title="Check the exact frequency, then the band" qs="G1A05 G1A09">
+
+<G1A_Slices />
+
+Find the band first. 14.250 MHz is 20 m, 18.155 is 17 m, 21.300 is 15 m, 24.900 is 12 m. Then check for an Extra-only slice: **7.125 to 7.175 MHz** is Extra only, while 21.275 to 21.300 and 28.000 to 28.025 are fine for General.
+
+</Concept>
+
+<Concept id="voice-top" title="Shared voice segments: General gets the top" qs="G1A11">
+
+<G1A_VoiceTop />
+
+Where Extra holds the lower part of a voice segment, General gets the **upper** part. This holds on every band.
+
+<Key>Upper portion, always.</Key>
+
+</Concept>
+
+<Concept id="modes" title="Mode limits: 30 m has no phone or images" qs="G1A02 G1A03 G1A07 G1A10">
+
+<G1A_ModeLimits />
+
+**30 m**: no phone and no image transmission. **10 m**: CW on the entire band, and repeaters go in the part **above 29.5 MHz**.
+
+</Concept>
+
+<Concept id="secondary" title="Secondary: yield to the primary user" qs="G1A06">
+
+<T1B_Secondary />
+
+Where amateurs are **secondary**, you must **not cause harmful interference** to primary users and you must **accept interference** from them.
+
+<Key>Secondary: don't interfere, and accept it.</Key>
+
+</Concept>

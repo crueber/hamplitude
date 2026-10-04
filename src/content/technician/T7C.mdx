@@ -1,0 +1,58 @@
+import { DummyLoad } from '@/visuals/technician/T7C_DummyLoad'
+import { SwrWaves } from '@/visuals/shared/SwrWaves'
+import { LineLoss } from '@/visuals/technician/T7C_LineLoss'
+import { CoaxLayers } from '@/visuals/technician/T7C_CoaxLayers'
+
+<Concept id="dummy-load" title="A dummy load lets you transmit without transmitting" qs="T7C01 T7C03">
+
+<DummyLoad />
+
+A **dummy load** is a **50 Ω non-inductive resistor on a heat sink**. It soaks up your power as heat, so test signals **don't go out over the air**.
+
+<Key>Dummy load = test without radiating.</Key>
+
+</Concept>
+
+<Concept id="swr" title="SWR tells you how well the antenna matches the line" qs="T7C04 T7C06 T7C08 T7C02">
+
+When the antenna doesn't match the feed line, part of the power **reflects** back down the line. **SWR** (standing wave ratio) measures how much.
+
+<SwrWaves />
+
+| Reading | Meaning |
+|---|---|
+| **1:1** | perfect match, nothing reflected |
+| 4:1 | **mismatch** |
+
+| Instrument | Tells you |
+|---|---|
+| **Directional wattmeter** | forward and reflected power, so the SWR |
+| **Antenna analyzer** | whether the antenna is **resonant** at your operating frequency |
+
+<Key>1:1 is perfect. The higher the ratio, the worse the mismatch.</Key>
+
+</Concept>
+
+<Concept id="loss" title="Lost power becomes heat" qs="T7C05 T7C07 T7C11">
+
+Power lost in a feed line is **converted into heat**. It isn't radiated and it doesn't distort the signal.
+
+<LineLoss />
+
+**Foam dielectric** coax has **less loss per foot** than solid.
+
+Solid-state transmitters **cut their output as SWR rises** to **protect the output transistors**.
+
+<Key>Loss = heat. High SWR makes the radio back off to protect itself.</Key>
+
+</Concept>
+
+<Concept id="coax-failure" title="Water is what kills coax" qs="T7C09 T7C10">
+
+<CoaxLayers />
+
+**Moisture contamination** causes coax to fail. That's why the outer jacket must resist **UV light**: sun damage cracks the jacket and **lets water in**.
+
+<Callout kind="note" title="Not causes">Solder flux, fast power changes and running at 100% duty cycle don't kill coax.</Callout>
+
+</Concept>

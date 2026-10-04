@@ -1,0 +1,57 @@
+import { Layers } from '@/visuals/general/G3C_Layers'
+import { DayNight } from '@/visuals/general/G3C_DayNight'
+import { CriticalAngle } from '@/visuals/general/G3C_CriticalAngle'
+import { Scatter } from '@/visuals/general/G3C_Scatter'
+import { Nvis } from '@/visuals/general/G3C_Nvis'
+
+<Concept id="layers" title="From the ground up: D, E, F1, F2. Higher means farther" qs="G3C01 G3C03">
+
+<Layers />
+
+The **D** region is closest to Earth. **F2** is the highest, so a hop off it lands the farthest. Height, not density, is the reason.
+
+<Key>D lowest, F2 highest, F2 skips farthest.</Key>
+
+</Concept>
+
+<Concept id="d-region" title="By day the D region swallows the low bands" qs="G3C05 G3C11">
+
+<DayNight />
+
+The **D region** is a daytime layer that **absorbs signals below 10 MHz**, which includes the 160, 80, 60 and 40 m bands. Long-distance contacts there are harder by day. At night D fades and the F region returns them.
+
+<Key>Daytime, D absorbs. Not the E or F region.</Key>
+
+</Concept>
+
+<Concept id="critical" title="Too high a frequency or too steep an angle goes straight through" qs="G3C02 G3C04">
+
+Each layer can refract only so hard. The **critical frequency** at a given incidence angle is the **highest frequency refracted back to Earth**. The **critical angle** is the **highest takeoff angle** that still returns the wave at a given frequency.
+
+<CriticalAngle />
+
+<Key>Highest frequency, highest angle that still return. Beyond either: gone.</Key>
+
+</Concept>
+
+<Concept id="scatter" title="Scatter fills the skip zone weakly, with flutter" qs="G3C06 G3C07 G3C08 G3C09">
+
+Skywave skips over a **skip zone**. **Scatter** is the way you can still hear a signal there: a small part of the energy is scattered back down.
+
+<Scatter />
+
+Only a **small part** of the energy goes that way, so scatter signals are **weak**. Energy arrives over **several different paths**, so the audio is **distorted** with a **fluttering** sound.
+
+<Key>Weak and fluttery: scatter into the skip zone.</Key>
+
+</Concept>
+
+<Concept id="nvis" title="NVIS: aim steeply up and cover the area around you" qs="G3C10">
+
+**Near vertical incidence skywave** is **short-distance MF or HF propagation at high elevation angles**. The signal goes almost straight up and comes back nearby, so there is **no skip zone**.
+
+<Nvis />
+
+<Key>NVIS = high angle, short distance, no gap.</Key>
+
+</Concept>

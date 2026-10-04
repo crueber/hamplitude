@@ -1,0 +1,62 @@
+import { Fourier } from '@/visuals/extra/E8A_Fourier'
+import { Rms } from '@/visuals/extra/E8A_Rms'
+import { Pep } from '@/visuals/extra/E8A_Pep'
+import { Adc } from '@/visuals/extra/E8A_Adc'
+import { Dither } from '@/visuals/extra/E8A_Dither'
+
+<Concept id="fourier" title="Fourier analysis splits any signal into sine waves" qs="E8A01 E8A03">
+
+**Fourier analysis** shows that a signal is a sum of sine waves. A **square wave** is a sine wave plus its **odd harmonics** (3f, 5f, 7f...), each weaker than the last. Add more and the corners sharpen.
+
+<Fourier />
+
+The **time domain** is amplitude at different times (an oscilloscope). The **frequency domain** is amplitude at each frequency (a spectrum analyzer).
+
+<Key>Square wave = sine + odd harmonics. Time domain = amplitude versus time.</Key>
+
+</Concept>
+
+<Concept id="rms" title="True RMS reads the heating value of any waveform" qs="E8A05">
+
+**RMS** is the steady DC voltage that heats a resistor as much as the wave does. For a sine it is 0.707 × peak, but other shapes differ. A **true-RMS meter** calculates it properly for **sinusoidal and non-sinusoidal** signals.
+
+<Rms />
+
+<Key>Use a true-RMS meter when the waveform is not a clean sine.</Key>
+
+</Concept>
+
+<Concept id="pep" title="Speech makes SSB peaks about 2.5 times its average" qs="E8A06 E8A07">
+
+**PEP** (peak envelope power) is the power at the highest peaks. **Average power** is what you get over time. An unprocessed SSB voice signal has a **PEP-to-average ratio of about 2.5 to 1**, set by **speech characteristics**: brief loud peaks, long quiet gaps.
+
+<Pep />
+
+<Key>The PEP-to-average ratio comes from the voice, not the amplifier or the carrier suppression.</Key>
+
+</Concept>
+
+<Concept id="resolution" title="N bits gives 2^N levels. A low-pass filter smooths the output" qs="E8A09 E8A10">
+
+An **analog-to-digital converter** (ADC) rounds each sample to one of 2^N levels, so **8 bits = 2^8 = 256 levels**. Gain ahead of it does not change that count. A **digital-to-analog converter** (DAC) outputs stair-steps; a **low-pass filter** removes the **sampling artifacts**.
+
+<Adc />
+
+<Key>8 bits = 256 levels. DAC output filter = remove sampling artifacts.</Key>
+
+</Concept>
+
+<Concept id="converters" title="Flash is fast, successive approximation is a type, low distortion is quality" qs="E8A02 E8A04 E8A08 E8A11">
+
+| Converter | How it works | Why you care |
+|---|---|---|
+| **Successive approximation** | Settles on the value one bit at a time | A type of ADC |
+| **Flash (direct)** | Compares every level at once | **Very high speed** lets a software defined radio digitize high frequencies |
+
+Quality is judged by **total harmonic distortion** (THD). **Dither** is a little noise added to the input to reduce quantization noise: it lets a signal smaller than one step still show up.
+
+<Dither />
+
+<Key>THD measures converter quality. Dither = deliberate small noise.</Key>
+
+</Concept>

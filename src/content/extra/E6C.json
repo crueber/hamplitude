@@ -1,0 +1,17 @@
+{
+  "title": "Digital ICs and logic gates",
+  "blurb": "Explain comparators, gate symbols, logic families, tri-state outputs, pull resistors and how FPGAs are designed.",
+  "why": {
+    "E6C01": { "why": "Hysteresis uses separate rising and falling thresholds, so **noise can't make the output chatter**.", "trap": "It adds stability, not sensitivity.", "concept": "comparator" },
+    "E6C02": { "why": "A comparator's whole job: when the input crosses the threshold, the **output changes state**.", "trap": "The output is a logic level, not a copy of the reference.", "concept": "comparator" },
+    "E6C03": { "why": "Tri-state means outputs of **0, 1 and high impedance** (effectively disconnected).", "trap": "Nothing to do with ternary math or impedance matching.", "concept": "tristate" },
+    "E6C04": { "why": "BiCMOS combines **CMOS's high input impedance with bipolar's low output impedance**.", "trap": "It is not simpler or cheaper, and still needs static precautions.", "concept": "cmos" },
+    "E6C05": { "why": "CMOS draws almost no current except when switching: the **lowest power**.", "trap": "ECL is fast, but it draws a lot of power.", "concept": "cmos" },
+    "E6C06": { "why": "A threshold near **half the supply** leaves a wide margin either side, so noise rarely flips the input.", "trap": "A threshold above the supply could never switch.", "concept": "cmos" },
+    "E6C07": { "why": "A pull-up or pull-down ties a line to the supply or ground, **setting a defined voltage** when nothing drives it.", "trap": "Key-click and oscillator drift need different parts.", "concept": "tristate" },
+    "E6C08": { "why": "A flat-backed AND shape with an inversion bubble on the output is a **NAND**.", "trap": "The same shape without the bubble is AND.", "concept": "gates" },
+    "E6C09": { "why": "FPGAs are configured by describing the logic in a **hardware description language** such as VHDL or Verilog.", "trap": "Karnaugh maps help simplify logic by hand; they don't configure the chip.", "concept": "fpga" },
+    "E6C10": { "why": "A curved-back OR shape with an inversion bubble on the output is a **NOR**.", "trap": "Without the bubble it is OR; flat-backed with a bubble is NAND.", "concept": "gates" },
+    "E6C11": { "why": "A plain triangle with a bubble is the **NOT** (inverter): one input, output opposite.", "trap": "Two-input shapes are AND, OR, NAND or NOR.", "concept": "gates" }
+  }
+}

@@ -1,0 +1,48 @@
+import { CoaxCross } from '@/visuals/technician/T9B_CoaxCross'
+import { CableLoss } from '@/visuals/technician/T9B_CableLoss'
+import { SwrMatch } from '@/visuals/technician/T9B_SwrMatch'
+import { Connectors } from '@/visuals/technician/T9B_Connectors'
+
+<Concept id="coax" title="Coax is the easy feed line, usually 50 Ω" qs="T9B02 T9B03">
+
+A **feed line** carries RF between radio and antenna. **Coax** has a center wire inside a shield, so you can run it near metal and walls with few special precautions. Amateur coax is almost always **50 ohms**.
+
+<CoaxCross />
+
+<Key>Coax: easy to install. 50 Ω.</Key>
+
+</Concept>
+
+<Concept id="loss" title="Loss grows with frequency; bigger cable loses less" qs="T9B05 T9B08 T9B10 T9B11">
+
+Every cable wastes some power as heat, and **more of it as frequency rises**. Thick RG-213 loses less than thin RG-58 at the same frequency. **Air-insulated hardline** loses the least.
+
+<CableLoss />
+
+Other sources of loss: **water in connectors**, **high SWR** and **extra connectors** in the line. All of the above.
+
+<Key>Higher frequency, more loss. Thicker or air-insulated, less loss.</Key>
+
+</Concept>
+
+<Concept id="swr" title="SWR measures how well the load matches the line" qs="T9B12 T9B04 T9B09">
+
+**Standing wave ratio (SWR)** rates how well the antenna matches the line: **1:1** is perfect. A mismatch bounces power back down the line.
+
+<SwrMatch />
+
+An **antenna tuner** (coupler) matches the antenna system's impedance to the transceiver's output impedance. A **loose connection** makes SWR jump around erratically.
+
+<Key>SWR = match quality. Tuner = impedance match. Erratic SWR = loose connector.</Key>
+
+</Concept>
+
+<Concept id="connectors" title="Pick the connector for the frequency, then tape it" qs="T9B01 T9B06 T9B07">
+
+<Connectors />
+
+**PL-259** is the common HF and VHF connector. **Type N** is the choice above **400 MHz**. A **BNC** has a bayonet twist lock.
+
+<Callout kind="warn" title="Weather">Every outdoor connector needs tape: PL-259, BNC and Type N. A PL-259 is not watertight.</Callout>
+
+</Concept>

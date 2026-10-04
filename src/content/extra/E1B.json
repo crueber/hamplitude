@@ -1,0 +1,17 @@
+{
+  "title": "Station restrictions and special operations",
+  "blurb": "Define spurious emissions and know who your station must protect, what PRB-1 requires, and how RACES works.",
+  "why": {
+    "E1B01": { "why": "Spurious emissions are energy **outside the necessary bandwidth** that you can reduce or remove without harming the message.", "trap": "A specific dB figure or an ID problem is not the definition.", "concept": "spurious" },
+    "E1B02": { "why": "Digital voice and slow-scan TV on HF stay within about **3 kHz**, roughly one voice channel. The larger choices are too wide.", "concept": "spurious" },
+    "E1B03": { "why": "Protect an FCC monitoring facility from harmful interference within **1 mile**.", "concept": "protect" },
+    "E1B04": { "why": "If a radiolocation system suffers interference from your 70 cm repeater, the control operator must **cease operation or mitigate** the interference.", "trap": "The rule names no NOTAM filing or antenna-height cut, so \"all of these\" is wrong.", "concept": "protect" },
+    "E1B05": { "why": "The National Radio Quiet Zone surrounds the **National Radio Astronomy Observatory**.", "concept": "protect" },
+    "E1B06": { "why": "Near a public use airport you **may have to notify the FAA** and register the structure with the FCC under **Part 17**.", "concept": "antennas" },
+    "E1B07": { "why": "PRB-1 applies to **state and local zoning** regulations.", "trap": "PRB-1 covers government zoning, not private covenants or FAA height limits.", "concept": "antennas" },
+    "E1B08": { "why": "With good receivers, the FCC can require the station to **avoid certain hours** on the frequencies that cause the interference. It is not a full shutdown.", "trap": "Cease-all-operation and below or above 30 MHz bans are too broad.", "concept": "protect" },
+    "E1B09": { "why": "Any licensed amateur station **certified by the responsible civil defense organization** for the area it serves may operate under RACES.", "concept": "races" },
+    "E1B10": { "why": "RACES stations may use **all amateur frequencies authorized to the control operator**. No special segments or government channels.", "concept": "races" },
+    "E1B11": { "why": "PRB-1 requires **reasonable accommodation** of amateur radio, not a ban and not an absolute right.", "trap": "\"No limitations\" overstates PRB-1.", "concept": "antennas" }
+  }
+}

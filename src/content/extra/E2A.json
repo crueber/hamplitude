@@ -1,0 +1,19 @@
+{
+  "title": "Amateur satellites and orbits",
+  "blurb": "Explain ascending passes, orbit types, inverting transponders, mode letters, circular polarization and store-and-forward.",
+  "why": {
+    "E2A01": { "why": "Ascending means the satellite is heading **south to north** along its ground track; descending is north to south.", "trap": "East and west are not part of the definition.", "concept": "orbit" },
+    "E2A02": { "why": "Inverting means the band is mirrored: positions and sidebands flip, and uplink and downlink Doppler push opposite ways. **All are true.**", "concept": "transponder" },
+    "E2A03": { "why": "The uplink is **mixed with a local oscillator and the difference product is sent down**, which mirrors the band. It is not demodulated.", "trap": "A linear transponder never detects and remodulates.", "concept": "transponder" },
+    "E2A04": { "why": "A satellite's mode is its **uplink and downlink bands**, such as U/V.", "trap": "Orbit type and orientation are different things.", "concept": "modes" },
+    "E2A05": { "why": "The letters name the **uplink and downlink frequency ranges**, one letter for each band.", "concept": "modes" },
+    "E2A06": { "why": "Keplerian elements are the **parameters that define a satellite's orbit**, the input to tracking software.", "concept": "orbit" },
+    "E2A07": { "why": "A linear transponder passes the whole band untouched, so **FM, CW, SSB, SSTV, PSK and packet** all work.", "concept": "transponder" },
+    "E2A08": { "why": "Transponder power is shared. A strong uplink **takes downlink power from all other users**.", "trap": "It's about sharing, not telemetry or out-of-band emissions.", "concept": "transponder" },
+    "E2A09": { "why": "L band is **23 cm** and S band is **13 cm**: microwave satellite bands.", "trap": "2 m and 70 cm are V and U.", "concept": "modes" },
+    "E2A10": { "why": "A **geostationary** satellite orbits once per Earth turn, so it stays over one spot in the sky.", "trap": "LEO and HEO satellites move across the sky.", "concept": "orbit" },
+    "E2A11": { "why": "Spin modulation and Faraday rotation twist polarization. A **circularly polarized antenna** is unaffected by the twist.", "trap": "A linear antenna fades whenever the polarization turns.", "concept": "circular" },
+    "E2A12": { "why": "Store-and-forward **holds digital messages on board for later download**.", "concept": "store-forward" },
+    "E2A13": { "why": "Digital satellites relay messages by **store-and-forward**: hold now, deliver on a later pass.", "trap": "Digipeating relays instantly; it doesn't hold messages.", "concept": "store-forward" }
+  }
+}

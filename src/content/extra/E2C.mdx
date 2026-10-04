@@ -1,0 +1,55 @@
+import { E2C_DxSplit } from '@/visuals/extra/E2C_DxSplit'
+import { E2C_ContestBands } from '@/visuals/extra/E2C_ContestBands'
+import { E2C_LogFormats } from '@/visuals/extra/E2C_LogFormats'
+import { E2C_Latency } from '@/visuals/extra/E2C_Latency'
+import { E2C_Mesh } from '@/visuals/extra/E2C_Mesh'
+
+<Concept id="dx-split" title="DX stations split: listen up there, call there" qs="E2C10 E2C11">
+
+Working a DX station in a pileup, the DX often transmits on one frequency and listens on another. That **separates callers from the DX station**, **reduces interference**, and avoids calling on a frequency that may be **prohibited to some responding stations**. When you call, send your **full call sign once or twice**.
+
+<E2C_DxSplit />
+
+<Key>Split = separate transmit and listen frequencies. Call once or twice, full call.</Key>
+
+</Concept>
+
+<Concept id="contest-where" title="Contests skip 30 m. VHF contest activity clusters weak-signal." qs="E2C03 E2C06">
+
+Contesting is generally **excluded from 30 meters** (and the other WARC bands). On VHF/UHF the **weak-signal SSB and CW segment**, near the calling frequency, is where the activity is.
+
+<E2C_ContestBands />
+
+<Key>No contests on 30 m. VHF contest SSB/CW: weak-signal segment near the calling frequency.</Key>
+
+</Concept>
+
+<Concept id="logs" title="ADIF swaps logs. Cabrillo files them. LoTW and QSL managers confirm." qs="E2C02 E2C07 E2C08 E2C05">
+
+Each file or service has one job. **ADIF** exchanges log data between programs. **Cabrillo** is the format for **submitting an electronic contest log**. **LoTW** confirms contacts of all kinds: special event, US to non-US, and Worked All States credit. A **DX QSL manager** handles sending and receiving the DX station's confirmations.
+
+<E2C_LogFormats />
+
+<Key>ADIF = swap logs. Cabrillo = contest submission. QSL manager = handles a DX station's cards.</Key>
+
+</Concept>
+
+<Concept id="remote" title="Remote operation: same call sign, plus the delay called latency" qs="E2C01 E2C12">
+
+Controlling a station remotely does not change how you identify: with the remote transmitter **in the US, no additional indicator** is required. The delay between your action and the change in the transmitted signal is **latency**.
+
+<E2C_Latency />
+
+<Key>US remote station: no extra indicator. Delay = latency.</Key>
+
+</Concept>
+
+<Concept id="mesh" title="Mesh networks are Wi-Fi hardware on shared frequencies" qs="E2C04 E2C09">
+
+An amateur **mesh network** uses a **wireless router running custom firmware**. Its frequencies are **shared with unlicensed wireless data services**. Every router relays for its neighbours, so traffic routes around a failure.
+
+<E2C_Mesh />
+
+<Key>Mesh = custom-firmware wireless routers on frequencies shared with unlicensed services.</Key>
+
+</Concept>

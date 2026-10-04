@@ -1,0 +1,33 @@
+import { Averaging } from '@/visuals/general/G0A_Averaging'
+import { Evaluation } from '@/visuals/general/G0A_Evaluation'
+import { ExposureZone } from '@/visuals/general/G0A_ExposureZone'
+
+<Concept id="averaging" title="RF heats tissue; exposure is power density averaged over time" qs="G0A01 G0A02 G0A04 G0A07">
+
+RF energy **heats body tissue**. Exposure depends on **power density, frequency and duty cycle**: all three. **Time averaging** is the total exposure averaged over a set period, so a **lower duty cycle** permits more power while on.
+
+<Averaging />
+
+<Key>Heating, not poisoning. Half the time on air, double the power allowed.</Key>
+
+</Concept>
+
+<Concept id="evaluation" title="Over 1 mW average? Check the exemption, or evaluate" qs="G0A03 G0A06 G0A09 G0A12">
+
+Rules apply to **all stations above 1 mW time-averaged**. If you **fail the exemption criteria**, evaluate per **OET Bulletin 65**. Any of these works: **calculation, computer modeling, or measurement** with calibrated equipment. To measure, use a **calibrated field strength meter with a calibrated antenna**.
+
+<Evaluation />
+
+<Key>Exempt, or evaluate by calculation, model or calibrated measurement.</Key>
+
+</Concept>
+
+<Concept id="exposure-zone" title="Over the limit? Keep people out of the beam" qs="G0A05 G0A08 G0A10 G0A11">
+
+Do a **routine evaluation**, then **prevent access to any high-exposure area**. If a neighbor could be in a directional antenna's **main lobe**, make sure it **cannot point at them when they are present**. For an **indoor antenna**, make sure MPE limits are not exceeded in occupied areas.
+
+<ExposureZone />
+
+<Key>Evaluate, then control access. No filings or permission slips.</Key>
+
+</Concept>

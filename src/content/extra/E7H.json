@@ -1,0 +1,19 @@
+{
+  "title": "Oscillators, PLLs and synthesizers",
+  "blurb": "Explain how oscillators, phase-locked loops and DDS synthesizers generate frequencies, and how to keep an oscillator stable.",
+  "why": {
+    "E7H01": { "why": "The three common oscillator circuits are **Colpitts, Hartley and Pierce**.", "trap": "Taft, Fenner and Beane are made up. Negative feedback doesn't oscillate.", "concept": "osc-types" },
+    "E7H02": { "why": "A **microphonic** is oscillator frequency change caused by **mechanical vibration**.", "trap": "It isn't an audio chip or RF pickup on the microphone cable.", "concept": "stability" },
+    "E7H03": { "why": "A PLL is a servo loop of a **phase detector, low-pass filter, VCO and stable reference oscillator**.", "trap": "A ratio detector and reactance modulator make an FM circuit, not a PLL.", "concept": "pll" },
+    "E7H04": { "why": "A Colpitts oscillator gets its positive feedback from a **capacitive divider**.", "trap": "A tapped coil is the Hartley's feedback.", "concept": "osc-types" },
+    "E7H05": { "why": "A Pierce oscillator's positive feedback passes **through a quartz crystal**.", "trap": "Tapped coil is Hartley. Link coupling and neutralizing capacitors aren't how a Pierce works.", "concept": "osc-types" },
+    "E7H06": { "why": "A PLL can do **frequency synthesis** (divider in the loop) and **FM demodulation** (the steering voltage is the audio).", "trap": "It doesn't amplify power or do photovoltaic conversion.", "concept": "pll" },
+    "E7H07": { "why": "Vibration is the cause, so **mechanically isolate** the oscillator circuitry from its enclosure.", "trap": "NP0 capacitors cure thermal drift, not vibration.", "concept": "stability" },
+    "E7H08": { "why": "**NP0** capacitors barely change value with temperature, so they reduce thermal drift.", "trap": "Toroids and wirewound or non-inductive resistors don't fix drift.", "concept": "stability" },
+    "E7H09": { "why": "Phase accumulator, lookup table, DAC and low-pass anti-alias filter make a **direct digital synthesizer**.", "trap": "A PLL synthesizer has a VCO and phase detector instead.", "concept": "dds" },
+    "E7H10": { "why": "The DDS lookup table holds **amplitude values that represent the desired waveform**, such as one sine cycle.", "trap": "It stores no frequencies or phase relationships.", "concept": "dds" },
+    "E7H11": { "why": "A DDS's main impurities are **spurious signals at discrete frequencies**.", "trap": "Broadband noise is not its main problem.", "concept": "dds" },
+    "E7H12": { "why": "A crystal runs on its marked frequency only when given its **specified parallel capacitance**.", "trap": "Inductance, bias voltage and bias current don't set that frequency.", "concept": "stability" },
+    "E7H13": { "why": "GPS references, rubidium oscillators and temperature-controlled dielectric resonators are all used for accurate microwave oscillators.", "concept": "stability" }
+  }
+}

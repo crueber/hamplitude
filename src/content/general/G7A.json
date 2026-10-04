@@ -1,0 +1,19 @@
+{
+  "title": "Power supplies and schematic symbols",
+  "blurb": "Explain what each stage of a power supply does, compare rectifier types, and read the symbols in figure G7-1.",
+  "why": {
+    "G7A01": { "why": "Filter capacitors can hold a dangerous charge. The **bleeder resistor** discharges them when power is removed.", "trap": "A fuse protects against overcurrent. A bleeder is not a fuse or a ground-loop cure.", "concept": "bleeder" },
+    "G7A02": { "why": "The filter smooths rectified pulses using **capacitors and inductors**.", "trap": "Diodes rectify and transformers change voltage. Neither filters.", "concept": "filter" },
+    "G7A03": { "why": "Two diodes and a **center-tapped** transformer make a **full-wave** rectifier. One diode each takes a half cycle.", "trap": "A bridge uses four diodes and no center tap.", "concept": "rectifiers" },
+    "G7A04": { "why": "A half-wave rectifier passes one half of the cycle, so it needs **only one diode**.", "trap": "Half-wave ripple is at the AC frequency, which is half the full-wave rate. It gives less current, not more.", "concept": "rectifiers" },
+    "G7A05": { "why": "A half-wave rectifier uses one half of the AC cycle: **180°**.", "trap": "360° is the whole cycle, which a full-wave rectifier uses.", "concept": "rectifiers" },
+    "G7A06": { "why": "A full-wave rectifier uses both halves: the whole **360°** cycle.", "trap": "180° is half-wave.", "concept": "rectifiers" },
+    "G7A07": { "why": "Full-wave output is DC pulses, **two per AC cycle**, so at twice the AC frequency.", "trap": "Smooth DC only appears after the filter.", "concept": "rectifiers" },
+    "G7A08": { "why": "Switchmode supplies work at high frequency, so transformers and filter parts can be **smaller**.", "trap": "Switchmodes are usually more complex than linear supplies, not simpler.", "concept": "switchmode" },
+    "G7A09": { "why": "A circle with a channel bar and an arrowed gate lead is a **FET**: symbol 1.", "trap": "Symbol 2 has a base lead and emitter arrow: a bipolar transistor.", "concept": "g71-symbols" },
+    "G7A10": { "why": "A diode whose bar has **bent ends** is a **Zener** diode: symbol 5.", "trap": "Symbol 4 is a varactor with a curved plate.", "concept": "g71-symbols" },
+    "G7A11": { "why": "A bipolar transistor with an emitter arrow pointing **out** is **NPN**: symbol 2.", "trap": "Symbol 1 is a FET.", "concept": "g71-symbols" },
+    "G7A12": { "why": "Two coils with **bars between** them are a transformer with a solid core: symbol 6.", "trap": "Symbol 7 is a single coil.", "concept": "g71-symbols" },
+    "G7A13": { "why": "A single coil with a **tap wire** off it is a tapped inductor: symbol 7.", "trap": "Symbol 6 has two coils: a transformer.", "concept": "g71-symbols" }
+  }
+}

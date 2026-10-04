@@ -1,0 +1,32 @@
+import { G1C_PowerLimits } from '@/visuals/general/G1C_PowerLimits'
+import { G1C_PepPoint } from '@/visuals/general/G1C_PepPoint'
+import { G1C_Bandwidth60 } from '@/visuals/general/G1C_Bandwidth60'
+import { G1C_Paperwork } from '@/visuals/general/G1C_Paperwork'
+
+<Concept id="power" title="1500 W PEP, except 200 W on 30 m" qs="G1C01 G1C02 G1C05 G1C06 G1C11">
+
+<G1C_PowerLimits />
+
+**30 m** (10.140 MHz) is the exception at **200 W PEP**. On 160, 12 and 10 m the limit is **1500 W PEP**.
+
+<G1C_PepPoint />
+
+<Key>Limit is PEP output from the transmitter.</Key>
+
+</Concept>
+
+<Concept id="sixty" title="60 m: 2.8 kHz wide, and record your antenna gain" qs="G1C03 G1C04">
+
+<G1C_Bandwidth60 />
+
+On 60 m, a USB signal may be no more than **2.8 kHz** wide. No contact log or equipment record is required, but a non-dipole antenna's **gain must be recorded**.
+
+</Concept>
+
+<Concept id="protocol" title="New digital protocol: publish how it works" qs="G1C07">
+
+<G1C_Paperwork />
+
+The technical characteristics must be **publicly documented** so others can decode it. No FCC certificate or special license is needed.
+
+</Concept>

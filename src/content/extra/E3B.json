@@ -1,0 +1,19 @@
+{
+  "title": "Special HF paths and ionospheric waves",
+  "blurb": "Explain transequatorial, long-path, chordal-hop, sporadic-E and ground-wave propagation, and what ordinary and extraordinary waves are.",
+  "why": {
+    "E3B01": { "why": "TEP crosses the **geomagnetic equator** on a path perpendicular to it, usually 2,000 – 3,000 miles.", "trap": "Paths along the equator or at antipodes are not TEP.", "concept": "tep" },
+    "E3B02": { "why": "TEP reaches about **5,000 miles** at most.", "concept": "tep" },
+    "E3B03": { "why": "TEP appears in the **afternoon or early evening**.", "concept": "tep" },
+    "E3B04": { "why": "The ionosphere creates ordinary and extraordinary waves: **independently propagating, elliptically polarized**.", "trap": "They aren't long-path/short-path or rare/common skip.", "concept": "ord-extra" },
+    "E3B05": { "why": "The D layer absorbs low bands by day, so a path **entirely in darkness** carries 160 m best.", "concept": "long-path" },
+    "E3B06": { "why": "Long-path openings are most frequent on **40 m and 20 m**.", "concept": "long-path" },
+    "E3B07": { "why": "A lower takeoff angle makes each hop **cover more distance**.", "trap": "The critical frequency belongs to the layer, and a lower angle raises the path's MUF rather than lowering it.", "concept": "hops" },
+    "E3B08": { "why": "Ground-wave range **decreases** as frequency rises.", "concept": "ground-wave" },
+    "E3B09": { "why": "Sporadic E peaks **around the solstices, especially the summer solstice**.", "concept": "sporadic-e" },
+    "E3B10": { "why": "Chordal hop skips ground reflections, so it has **less loss than multi-hop**, which bounces off the Earth.", "concept": "hops" },
+    "E3B11": { "why": "Sporadic E occurs **between sunrise and sunset**.", "concept": "sporadic-e" },
+    "E3B12": { "why": "Chordal hop is **successive ionospheric refractions** with no ground reflection between them.", "trap": "It's not off-bearing propagation or equator crossing.", "concept": "hops" },
+    "E3B13": { "why": "Ground waves need **vertical polarization**: horizontal fields are shorted out by the ground.", "concept": "ground-wave" }
+  }
+}

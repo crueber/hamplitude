@@ -1,0 +1,17 @@
+{
+  "title": "CW procedures, prosigns and Q signals",
+  "blurb": "Use full break-in, read the common Q signals and prosigns, and answer a CQ at the right speed and frequency.",
+  "why": {
+    "G2C01": { "why": "**Full break-in (QSK)** lets you receive **between code characters and elements**, so you can hear interruptions.", "trap": "BK is a prosign. Full break-in is about the receiver gaps, not the key type.", "concept": "qsk" },
+    "G2C02": { "why": "**QRS?** asks you to **send slower**. S for slow.", "trap": "QRQ is the opposite, send faster.", "concept": "q-signals" },
+    "G2C03": { "why": "**KN** means you are **listening only for the named station(s)**. Others should not call.", "trap": "SK, not KN, ends a contact.", "concept": "prosigns" },
+    "G2C04": { "why": "**QRL?** asks **\"are you busy?\" or \"is this frequency in use?\"**. Ask it before you call.", "concept": "q-signals" },
+    "G2C05": { "why": "Answer at **your comfortable copy speed, but no faster than the CQ**. The caller chose a speed they can copy.", "trap": "No fixed 5 or 10 wpm calling speed applies.", "concept": "tuning" },
+    "G2C06": { "why": "**Zero beat** means matching your transmit frequency to the received signal's frequency.", "trap": "It's about frequency, not speed or split operation.", "concept": "tuning" },
+    "G2C07": { "why": "A **C** after the RST report means a **chirpy** (unstable) signal.", "trap": "Key clicks have their own suffix, K.", "concept": "prosigns" },
+    "G2C08": { "why": "**AR** marks the **end of a formal message**.", "trap": "SK ends a contact, BK means break, KN limits who may reply.", "concept": "prosigns" },
+    "G2C09": { "why": "**QSL** means **I have received and understood**. A QSL card confirms a contact.", "concept": "q-signals" },
+    "G2C10": { "why": "**QRN** means **I am troubled by static**. N for noise.", "trap": "QRM is interference from other stations.", "concept": "q-signals" },
+    "G2C11": { "why": "**QRV** means **I am ready to receive**.", "concept": "q-signals" }
+  }
+}

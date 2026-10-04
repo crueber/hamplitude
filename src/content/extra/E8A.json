@@ -1,0 +1,17 @@
+{
+  "title": "Fourier, RMS, PEP and converters",
+  "blurb": "How a square wave is built from sine waves, what RMS and PEP measure, and how analog-to-digital conversion works.",
+  "why": {
+    "E8A01": { "why": "**Fourier analysis** decomposes a signal into sine waves. A square wave comes out as a sine plus odd harmonics.", "trap": "The other analyses are general maths, not the sine-wave breakdown of a waveform.", "concept": "fourier" },
+    "E8A02": { "why": "**Successive approximation** is a real ADC method: it homes in on the input value one bit at a time.", "concept": "converters" },
+    "E8A03": { "why": "Time domain plots **amplitude against time**, like an oscilloscope. Frequency at each moment is not its job.", "trap": "Showing power or amplitude per frequency is the frequency domain.", "concept": "fourier" },
+    "E8A04": { "why": "**Dither** is a small deliberate noise added to the input that reduces quantization noise.", "trap": "Dither is not a fault or a decimation method; it is added on purpose.", "concept": "converters" },
+    "E8A05": { "why": "A true-RMS meter calculates the heating-equivalent value of **both sine and non-sine waveforms**. Averaging meters assume a sine.", "concept": "rms" },
+    "E8A06": { "why": "Speech is peaky, so unprocessed SSB has PEP about **2.5 times** its average power.", "trap": "1 to 1 is a steady single tone, not speech.", "concept": "pep" },
+    "E8A07": { "why": "The ratio comes from **speech characteristics**: brief peaks and quiet gaps. Frequency, carrier suppression and gain do not set it.", "concept": "pep" },
+    "E8A08": { "why": "A flash converter compares all levels at once, so its **very high speed** can digitize high frequencies.", "trap": "Flash converters are fast but not low-power.", "concept": "converters" },
+    "E8A09": { "why": "N bits give 2^N levels: 2^8 = **256**. Input gain changes the voltage range, not the number of codes.", "concept": "resolution" },
+    "E8A10": { "why": "The DAC output is stepped. A low-pass filter **removes the sampling artifacts** and leaves the smooth signal.", "concept": "resolution" },
+    "E8A11": { "why": "ADC quality is judged by **total harmonic distortion**: how much unwanted harmonic content it adds.", "trap": "PEP, reciprocal mixing and power factor belong to transmitters, receivers and AC loads.", "concept": "converters" }
+  }
+}

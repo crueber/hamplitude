@@ -1,0 +1,62 @@
+import { E2A_GroundTrack } from '@/visuals/extra/E2A_GroundTrack'
+import { E2A_Orbit } from '@/visuals/extra/E2A_Orbit'
+import { E2A_Transponder } from '@/visuals/extra/E2A_Transponder'
+import { E2A_ModeBands } from '@/visuals/extra/E2A_ModeBands'
+import { E2A_Polarization } from '@/visuals/extra/E2A_Polarization'
+import { E2A_StoreForward } from '@/visuals/extra/E2A_StoreForward'
+
+<Concept id="orbit" title="The orbit sets the lap time and the pass direction" qs="E2A01 E2A06 E2A10">
+
+**Keplerian elements** are the parameters that define an orbit (size, shape, tilt, timing). Feed them to tracking software and it predicts every pass.
+
+<E2A_GroundTrack />
+
+A pass heading from south to north is **ascending**. Bigger orbit, longer lap. At one special height a lap takes exactly one Earth turn, so a **geostationary** satellite (over the equator) hangs over one spot. A LEO satellite sweeps past in minutes.
+
+<E2A_Orbit />
+
+<Key>Ascending = south to north. Geostationary = fixed in the sky. LEO, HEO and the rest all move.</Key>
+
+</Concept>
+
+<Concept id="transponder" title="A linear transponder is a flipping mirror for a whole band" qs="E2A02 E2A03 E2A07 E2A08">
+
+A **linear transponder** amplifies a whole passband without demodulating it, so **any mode** (SSB, CW, SSTV, PSK, packet, FM) passes through. An **inverting** one mixes the uplink with a local oscillator and sends the **difference**: the band is mirrored, so USB becomes LSB. Doppler on the uplink and downlink then push opposite ways, which reduces the net shift.
+
+<E2A_Transponder />
+
+The downlink power is shared. A strong uplink grabs more of it and **reduces downlink power for everyone else**, so keep your ERP low.
+
+<Key>Inverting: band flips, sidebands swap, difference product is sent. Keep power low.</Key>
+
+</Concept>
+
+<Concept id="modes" title="A mode name is two band letters: up, then down" qs="E2A04 E2A05 E2A09">
+
+The **mode** of a satellite is its **uplink and downlink frequency bands**. Each letter is a range. **L band** is 23 cm and **S band** is 13 cm.
+
+<E2A_ModeBands />
+
+<Key>Mode = uplink band / downlink band. L = 23 cm, S = 13 cm.</Key>
+
+</Concept>
+
+<Concept id="circular" title="Circular polarization shrugs off twisting waves" qs="E2A11">
+
+A spinning satellite (**spin modulation**) and the ionosphere (**Faraday rotation**) twist the wave's polarization. A linear antenna fades as the twist passes through 90°. A **circularly polarized** antenna does not care.
+
+<E2A_Polarization />
+
+<Key>Twisting signal? Use circular polarization.</Key>
+
+</Concept>
+
+<Concept id="store-forward" title="Store-and-forward is a mailbox in orbit" qs="E2A12 E2A13">
+
+Digital satellites **hold messages on board for later download**. You upload on one pass; the satellite carries it and delivers on a later pass. The technique is called **store-and-forward**.
+
+<E2A_StoreForward />
+
+<Key>Store-and-forward = hold a message, deliver it later.</Key>
+
+</Concept>

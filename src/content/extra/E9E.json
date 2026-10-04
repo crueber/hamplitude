@@ -1,0 +1,17 @@
+{
+  "title": "Matching systems and phasing lines",
+  "blurb": "Tell gamma, hairpin and stub matches apart, size a quarter-wave section, and see what Wilkinson dividers and phasing lines do.",
+  "why": {
+    "E9E01": { "why": "A beta or hairpin match feeds a **split element insulated from the boom**. A gamma match works with the element bolted to the boom.", "concept": "systems" },
+    "E9E02": { "why": "Gamma: shield to the **center of the element**, center conductor tapped a fraction of a wavelength to one side.", "concept": "systems" },
+    "E9E03": { "why": "A **stub match** is a short length of line in parallel with the feed line at or near the feed point.", "concept": "systems" },
+    "E9E04": { "why": "The gamma rod adds inductance, so the series capacitor **cancels the unwanted inductive reactance**.", "concept": "systems" },
+    "E9E05": { "why": "A hairpin is an inductor. It cancels a **capacitive** feed point: an element shorter than ½ wavelength.", "concept": "systems" },
+    "E9E06": { "why": "Zq = √(100 × 50) = 70.7 Ω. **75 Ω** is closest: Zin = 75² ÷ 100 = 56 Ω, SWR about 1.1.", "trap": "50 Ω gives 25 Ω at the line (SWR 2).", "concept": "qsection" },
+    "E9E07": { "why": "The **reflection coefficient** Γ = (Z load − Z₀) ÷ (Z load + Z₀) describes how a load meets the line.", "trap": "Characteristic impedance, VF and dielectric describe the line alone.", "concept": "qsection" },
+    "E9E08": { "why": "A Wilkinson divider splits power **equally between two 50 Ω loads** while the input stays 50 Ω.", "concept": "wilkinson" },
+    "E9E09": { "why": "A **gamma match** shunt-feeds a grounded tower at its base: the tower stays grounded.", "concept": "systems" },
+    "E9E10": { "why": "A beta or hairpin match is an **inductance across the feed point**. Gamma uses a series capacitor instead.", "concept": "systems" },
+    "E9E11": { "why": "Phasing lines set each element's phase, so the signals add or cancel by direction: they **control the pattern**.", "concept": "phasing" }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Mixers, deviation and intermodulation",
+  "blurb": "Explain what a mixer outputs, work out FM bandwidth and deviation, and know why odd-order intermodulation products land closest.",
+  "why": {
+    "G8B01": { "why": "Tuning the **local oscillator** changes which input frequency lands on the fixed IF.", "trap": "The BFO is for SSB/CW detection and the image is a problem, not a control.", "concept": "mixer" },
+    "G8B02": { "why": "A signal one IF on the far side of the LO also mixes to the IF: the **image**, twice the IF from the wanted signal.", "concept": "mixer" },
+    "G8B03": { "why": "Mixing two RF signals is **heterodyning**.", "trap": "Synthesizing generates frequencies, it doesn't mix two inputs.", "concept": "mixer" },
+    "G8B04": { "why": "A **multiplier** generates a harmonic of a lower oscillator frequency to reach the operating frequency.", "trap": "A mixer shifts frequency by adding or subtracting, it doesn't multiply.", "concept": "multiplier" },
+    "G8B05": { "why": "**Odd-order** products (2F1−F2, 2F2−F1) fall right beside the original signals. Even-order products land far away.", "concept": "intermod" },
+    "G8B06": { "why": "Bandwidth = 2 × (deviation + modulating frequency) = 2 × (5 + 3) = **16 kHz**.", "trap": "8 kHz is only one side of the carrier.", "concept": "fm-bandwidth" },
+    "G8B07": { "why": "The oscillator frequency is multiplied 12 times (146.52 ÷ 12.21), so its deviation is 5 kHz ÷ 12 = **416.7 Hz**.", "concept": "multiplier" },
+    "G8B08": { "why": "High-duty modes transmit nearly continuously, so their **average power** can exceed the transmitter's average rating.", "concept": "duty-cycle" },
+    "G8B09": { "why": "A receiver bandwidth matched to the mode passes the whole signal and little noise: **best signal-to-noise ratio**.", "trap": "It is a performance choice, not an FCC rule.", "concept": "bandwidth-rules" },
+    "G8B10": { "why": "Faster symbols are shorter pulses, which spread wider in frequency: **higher symbol rates need more bandwidth**.", "concept": "bandwidth-rules" },
+    "G8B11": { "why": "A mixer outputs the **sum and difference** of the LO and RF input frequencies.", "trap": "It doesn't output the product, ratio or average.", "concept": "mixer" },
+    "G8B12": { "why": "**Intermodulation** is signals combining in a non-linear circuit to give unwanted outputs.", "trap": "Heterodyning is the same mixing done deliberately.", "concept": "intermod" },
+    "G8B13": { "why": "Order = sum of multipliers. 2F1−F2 is 2+1 = 3, odd. 3F1−F2 is 4 and 5F1−3F2 is 8, both even.", "concept": "intermod" }
+  }
+}

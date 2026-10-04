@@ -1,0 +1,72 @@
+import { E5C_ImpedancePlane } from '@/visuals/extra/E5C_ImpedancePlane'
+import { E5C_PolarCompass } from '@/visuals/extra/E5C_PolarCompass'
+import { E5C_FindPoint } from '@/visuals/extra/E5C_FindPoint'
+import { E5C_PhasorWheel } from '@/visuals/extra/E5C_PhasorWheel'
+import { E5C_LogAxis } from '@/visuals/extra/E5C_LogAxis'
+
+<Concept id="rect" title="Rectangular: resistance across, reactance up" qs="E5C01 E5C06 E5C07 E5C09">
+
+An impedance is a point on a plane. **R** goes on the horizontal axis, **X** on the vertical. Inductive reactance is **+j** (up), capacitive is **−j** (down).
+
+<E5C_ImpedancePlane />
+
+| Notation | Means |
+|---|---|
+| 100 + j0 | pure resistance, on the horizontal axis |
+| 0 + j100 | pure inductive reactance |
+| 0 − j100 | pure capacitive reactance of 100 Ω |
+| 50 − j25 | 50 Ω resistance in series with 25 Ω capacitive reactance |
+
+<Key>Graph X axis = resistance. Graph Y axis = reactance. First number is R, the j part is X.</Key>
+
+<Callout kind="warn" title="Trap">The graph's X axis is **resistance**, not reactance. The letter X in a graph and the X in reactance are different things.</Callout>
+
+</Concept>
+
+<Concept id="polar" title="Polar: how long, and at what angle" qs="E5C02 E5C03 E5C08">
+
+The same point can be given as **magnitude and phase angle** instead of R and X. Polar form is the natural way to show phase angle.
+
+<E5C_PolarCompass />
+
+<Formula label="Rectangular to polar">|Z| = √(R² + X²), θ = arctan(X ÷ R)</Formula>
+
+<Key>Pure inductive reactance: +90°. Pure capacitive: −90°. Pure resistance: 0°.</Key>
+
+</Concept>
+
+<Concept id="plot" title="To plot a circuit, find its reactance first" qs="E5C10 E5C11 E5C12">
+
+Series R and a part at frequency f: compute X, write R ± jX, find the point. The official figure is shown with the question; here are its eight points.
+
+<E5C_FindPoint />
+
+| Circuit | Reactance | Z | Point |
+|---|---|---|---|
+| 400 Ω + 38 pF at 14 MHz | XC = 1 ÷ (2π × 14×10⁶ × 38×10⁻¹²) = 299 Ω | 400 − j299 | **4** (400, −300) |
+| 300 Ω + 18 µH at 3.505 MHz | XL = 2π × 3.505×10⁶ × 18×10⁻⁶ = 396 Ω | 300 + j396 | **3** (300, +400) |
+| 300 Ω + 19 pF at 21.2 MHz | XC = 1 ÷ (2π × 21.2×10⁶ × 19×10⁻¹²) = 395 Ω | 300 − j395 | **1** (300, −400) |
+
+<Key>Capacitor: below the axis. Inductor: above. R sets how far right.</Key>
+
+</Concept>
+
+<Concept id="phasor" title="A phasor diagram shows who leads" qs="E5C05">
+
+A **phasor** is an arrow with a length (size) and an angle (timing). Draw voltage and current phasors together and the angle between them is the phase relationship. Arrows turn counter-clockwise: the one ahead leads.
+
+<E5C_PhasorWheel />
+
+<Key>Phasor diagram = phase relationships at one frequency.</Key>
+
+</Concept>
+
+<Concept id="log" title="Frequency-response graphs use a log vertical scale" qs="E5C04">
+
+A filter passes some signals and blocks others by factors of thousands. A **logarithmic** Y axis gives each factor of ten equal height, so both the passband and the deep rejection stay readable.
+
+<E5C_LogAxis />
+
+<Key>Frequency-response graphs: logarithmic Y axis (usually dB).</Key>
+
+</Concept>

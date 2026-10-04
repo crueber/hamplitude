@@ -1,0 +1,60 @@
+import { G9A_Z0Geometry } from '@/visuals/general/G9A_Z0Geometry'
+import { G9A_SwrLoad } from '@/visuals/general/G9A_SwrLoad'
+import { CableLoss } from '@/visuals/technician/T9B_CableLoss'
+import { G9A_LossDb } from '@/visuals/general/G9A_LossDb'
+import { G9A_LineSwr } from '@/visuals/general/G9A_LineSwr'
+
+<Concept id="z0" title="Characteristic impedance comes from the line's shape" qs="G9A01 G9A03">
+
+A line's **characteristic impedance (Z₀)** is set by its **geometry**: the **spacing** between conductors and their **radius**. Wider spacing raises it, fatter conductors lower it. Length and frequency don't change it.
+
+<G9A_Z0Geometry />
+
+| Line | Nominal Z₀ |
+|---|---|
+| Coax | 50 Ω (or 75 Ω) |
+| **Window line** (ladder line with windows in its web) | **450 Ω** |
+
+<Key>Spacing and radius set Z₀. Window line is 450 Ω.</Key>
+
+</Concept>
+
+<Concept id="swr-calc" title="SWR is the bigger impedance divided by the smaller" qs="G9A04 G9A07 G9A09 G9A10">
+
+Power reflects wherever the **load impedance differs from the line's Z₀**. For a resistive load, **SWR = larger ÷ smaller**, so it is never below 1:1. Only a **perfect match** gives no standing waves.
+
+<G9A_SwrLoad />
+
+| Load on 50 Ω line | Working | SWR |
+|---|---|---|
+| 200 Ω | 200 ÷ 50 | **4:1** |
+| 10 Ω | 50 ÷ 10 | **5:1** |
+| 50 Ω | equal | 1:1 |
+
+<Key>Larger ÷ smaller. Match the load to Z₀ for no standing waves.</Key>
+
+</Concept>
+
+<Concept id="loss" title="Feed line loss rises with frequency, in dB per 100 feet" qs="G9A05 G9A06">
+
+Cable loss is quoted in **decibels per 100 feet**. Coax loses **more as frequency rises**, so a long run that is fine on 80 m can be costly on 70 cm.
+
+<CableLoss />
+
+<G9A_LossDb />
+
+<Key>dB per 100 ft. Higher frequency, more attenuation.</Key>
+
+</Concept>
+
+<Concept id="line-swr" title="High SWR adds loss, but loss and tuners hide it" qs="G9A02 G9A08 G9A11">
+
+Reflected power travels the line again, so in a lossy line **a high SWR increases loss**. Loss also **absorbs the reflection** on its way back, so the SWR at the **radio end reads lower** than at the antenna.
+
+A **matching network at the transmitter** can make the radio see 1:1, but the mismatch is still at the antenna, so the line still carries the **same SWR**.
+
+<G9A_LineSwr />
+
+<Key>Tuners and loss change what the radio sees, not the antenna mismatch.</Key>
+
+</Concept>

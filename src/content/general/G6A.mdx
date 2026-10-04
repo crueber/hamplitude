@@ -1,0 +1,72 @@
+import { BatteryResistance } from '@/visuals/general/G6A_BatteryResistance'
+import { DiodeKnee } from '@/visuals/general/G6A_DiodeKnee'
+import { RealParts } from '@/visuals/general/G6A_RealParts'
+import { TransistorSwitch } from '@/visuals/general/G6A_TransistorSwitch'
+import { Mosfet } from '@/visuals/general/G6A_Mosfet'
+import { TubeAnatomy } from '@/visuals/general/G6A_TubeAnatomy'
+
+<Concept id="battery" title="Low internal resistance means more current and less sag" qs="G6A01 G6A02">
+
+A battery is an ideal source in series with a small **internal resistance**. Load current drops voltage across it, so the terminal voltage sags and heat is wasted. A **low** internal resistance sags less, so the battery can deliver a **high discharge current**.
+
+<BatteryResistance />
+
+<Key>Low internal resistance = high discharge current. For maximum life, never run a 12 V lead-acid battery below **10.5 V**.</Key>
+
+</Concept>
+
+<Concept id="diode-threshold" title="A diode conducts only above its threshold voltage" qs="G6A03 G6A05">
+
+Forward voltage below the **threshold** passes almost no current. Just above it, current climbs steeply. The threshold depends on the material.
+
+<DiodeKnee />
+
+| Diode | Forward threshold |
+|---|---|
+| Germanium | **0.3 V** |
+| Silicon | **0.7 V** |
+
+<Mnemonic>Silicon is the common one: 0.7. Germanium is lower, about half: 0.3.</Mnemonic>
+
+</Concept>
+
+<Concept id="real-parts" title="Real parts have hidden extras, and capacitor types differ" qs="G6A04 G6A06 G6A08 G6A11">
+
+A wire-wound resistor is a coil, so it has **inductance**: unpredictable at RF. Every coil also has a little **turn-to-turn capacitance**. Above its **self-resonant frequency** an inductor stops acting like an inductor and becomes **capacitive**.
+
+<RealParts />
+
+Capacitor types are chosen for what they do best:
+
+| Type | Known for |
+|---|---|
+| **Electrolytic** | **high capacitance for a given volume** (not tight tolerance or low leakage) |
+| **Low-voltage ceramic** | **low cost** (not tight tolerance or high stability) |
+
+<Key>Wire-wound resistor: inductance, so avoid at RF. Inductor above self-resonance: capacitive.</Key>
+
+</Concept>
+
+<Concept id="transistor-regions" title="A transistor switch uses cutoff and saturation, a MOSFET gate is insulated" qs="G6A07 G6A09">
+
+A bipolar transistor has three operating regions. Fully off is **cutoff**, fully on is **saturation**, and in between is the **active** region where it amplifies. A **switch** uses only the two ends. Drag the base current to see.
+
+<TransistorSwitch />
+
+A **MOSFET** controls its channel with an electric field. Its gate is separated from the channel by a **thin insulating layer**.
+
+<Mosfet />
+
+<Key>Switch = saturation and cutoff. MOSFET gate = insulated by a thin layer.</Key>
+
+</Concept>
+
+<Concept id="vacuum-tube" title="Vacuum tube: grids steer the electron flow" qs="G6A10 G6A12">
+
+A heated **cathode** boils off electrons toward the positive **plate**. The **control grid** between them regulates how many get through. The **screen grid** sits between control grid and plate and **reduces grid-to-plate capacitance**.
+
+<TubeAnatomy />
+
+<Mnemonic>Control grid = the control. Screen grid = the screen (shield) between input and output.</Mnemonic>
+
+</Concept>

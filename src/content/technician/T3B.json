@@ -1,0 +1,18 @@
+{
+  "title": "Radio waves: fields, speed and wavelength",
+  "blurb": "A radio wave is a pair of fields moving at light speed, and its wavelength is just 300 ÷ frequency.",
+  "why": {
+    "T3B01": { "why": "A radio wave is an electric field and a magnetic field locked together at **right angles**.", "concept": "fields" },
+    "T3B02": { "why": "Polarization is the direction of the **electric** field. Electric field vertical means vertical polarization.", "trap": "The magnetic field is also there, but it is not what defines polarization.", "concept": "fields" },
+    "T3B03": { "why": "Every radio wave is built from an **electric field** and a **magnetic field**.", "trap": "Voltage and current live in wires and circuits; fields are what travel through space.", "concept": "fields" },
+    "T3B04": { "why": "Radio waves travel at the **speed of light**, the same as any electromagnetic wave.", "concept": "speed" },
+    "T3B05": { "why": "Speed is fixed, so faster wiggling means each wave is shorter: **higher frequency, shorter wavelength**.", "concept": "wavelength" },
+    "T3B06": { "why": "Wavelength (m) = **300 ÷ frequency (MHz)**. Example: 150 MHz gives 2 m.", "trap": "Don't multiply, and don't use hertz: the 300 only works with MHz.", "concept": "wavelength" },
+    "T3B07": { "why": "Bands are named by their approximate **wavelength in meters**: 146 MHz is about 2 m, so it's the 2-meter band.", "concept": "wavelength" },
+    "T3B08": { "why": "VHF is **30 – 300 MHz**.", "trap": "30–300 *kHz* is a different band entirely: check the unit.", "concept": "ranges" },
+    "T3B09": { "why": "UHF is **300 – 3000 MHz**, one step up from VHF.", "concept": "ranges" },
+    "T3B10": { "why": "HF is **3 – 30 MHz**, the lowest of the three.", "concept": "ranges" },
+    "T3B11": { "why": "Light speed is about **300,000,000 meters per second**.", "trap": "The mph choices are the wrong unit and too slow; 150,000,000 m/s is half the real speed.", "concept": "speed" },
+    "T3B12": { "why": "In free space **all** radio frequencies travel at the same speed. Frequency changes wavelength, never speed.", "concept": "speed" }
+  }
+}

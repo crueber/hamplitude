@@ -1,0 +1,69 @@
+import { SdrChain } from '@/visuals/extra/E7F_SdrChain'
+import { Alias } from '@/visuals/extra/E7F_Alias'
+import { Decimate } from '@/visuals/extra/E7F_Decimate'
+import { Bits } from '@/visuals/extra/E7F_Bits'
+import { FirTaps } from '@/visuals/extra/E7F_FirTaps'
+import { SsbQuadrature, Fft } from '@/visuals/extra/E7F_Dsp'
+
+<Concept id="sdr-chain" title="An SDR digitizes early, then does the rest in software" qs="E7F01 E7F10">
+
+An ADC turns the signal into numbers and a **DSP** processes them. In **direct sampling** the incoming RF is digitized **without being mixed with a local oscillator**. The ADC's **sample rate** sets the maximum receive bandwidth.
+
+<SdrChain />
+
+<Key>Direct sampling = ADC straight on the RF, no mixer. Sample rate sets bandwidth.</Key>
+
+</Concept>
+
+<Concept id="nyquist" title="Sample at least twice the highest frequency" qs="E7F05 E7F08 E7F09 E7F10">
+
+Sample too slowly and a high frequency looks like a **lower** one: an **alias**. So the rate must be at least **twice the highest frequency**, and the usable bandwidth is up to half the sample rate.
+
+<Alias />
+
+**Decimation** lowers the sample rate by **removing samples**. An **anti-aliasing filter** goes first, to remove the high frequencies that would otherwise be reproduced as lower ones.
+
+<Decimate />
+
+<Key>Sample at 2× the top frequency or more. Decimate = drop samples, after a low-pass filter.</Key>
+
+</Concept>
+
+<Concept id="bits" title="More bits, finer steps, weaker detectable signals" qs="E7F06 E7F11">
+
+An n-bit converter has **2ⁿ levels**. The smallest step is the **reference voltage ÷ 2ⁿ**, so reference voltage and bit width set the minimum detectable signal.
+
+<Bits />
+
+For 1 V at 1 mV you need **1000 levels**: 2⁹ = 512 is too few, 2¹⁰ = 1024 is enough, so **10 bits**.
+
+<Key>Levels needed = range ÷ resolution. Take the next power of two.</Key>
+
+</Concept>
+
+<Concept id="fir" title="A FIR filter is a delay line with taps. More taps, sharper filter." qs="E7F12 E7F13 E7F14">
+
+A **tap** is one more **incremental delay** in the filter. Each tap's copy is weighted and summed. A **FIR** (finite impulse response) filter can delay **all frequencies by the same amount** (with symmetric taps). More taps give a **sharper** response, at the cost of more computing.
+
+<FirTaps />
+
+<Key>Taps = incremental delays. More taps = sharper response.</Key>
+
+</Concept>
+
+<Concept id="dsp-jobs" title="Each DSP tool has one job" qs="E7F02 E7F03 E7F04 E7F07">
+
+| Tool | Job |
+|---|---|
+| **Adaptive filter** | removes unwanted noise from received SSB audio |
+| **Hilbert-transform filter** | makes the 90° copy used to **generate SSB** |
+| **Quadrature** combining | one sideband adds, the other cancels |
+| **FFT** | time domain to frequency domain |
+
+<SsbQuadrature />
+
+<Fft />
+
+<Key>Adaptive = noise. Hilbert = make SSB. FFT = time to frequency.</Key>
+
+</Concept>

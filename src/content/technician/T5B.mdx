@@ -1,0 +1,57 @@
+import { MetricLadder } from '@/visuals/shared/MetricLadder'
+import { DecibelExplorer } from '@/visuals/shared/DecibelExplorer'
+
+<Concept id="prefixes" title="Metric prefixes are names for steps of 1000" qs="T5B03 T5B04">
+
+A prefix in front of a unit says how many of that unit you have.
+
+| Prefix | Symbol | Means |
+|---|---|---|
+| **giga** | G | 1,000,000,000 (a thousand million) |
+| **mega** | M | 1,000,000 (a million) |
+| **kilo** | k | 1,000 (a thousand) |
+| *(none)* | | 1 |
+| **milli** | m | one thousandth (0.001) |
+| **micro** | µ | one millionth (0.000001) |
+| **nano** | n | one billionth |
+| **pico** | p | one trillionth |
+
+<Key>Kilo = ×1,000. Micro = ÷1,000,000. Each step in the table is ×1000.</Key>
+
+</Concept>
+
+<Concept id="convert" title="Convert by moving the decimal 3 places per step" qs="T5B01 T5B02 T5B05 T5B06 T5B07 T5B08 T5B12 T5B13">
+
+A smaller unit means you need **more** of them, so the number gets bigger. A bigger unit means a smaller number.
+
+<MetricLadder />
+
+| Convert | Move | Result |
+|---|---|---|
+| 1.5 A → mA | smaller unit, ×1000 | **1500 mA** |
+| 1,500,000 Hz → kHz | bigger unit, ÷1000 | **1500 kHz** |
+| 3.525 MHz → kHz | smaller unit, ×1000 | **3525 kHz** |
+| 28,400 kHz → MHz | bigger unit, ÷1000 | **28.4 MHz** |
+| 1,000,000 pF → µF | 2 rungs bigger, ÷1,000,000 | **1 µF** |
+
+<Mnemonic>Smaller unit, bigger number. Check the direction before you move the point.</Mnemonic>
+
+</Concept>
+
+<Concept id="decibels" title="Decibels compare power: +3 dB doubles, +10 dB is ×10" qs="T5B09 T5B10 T5B11">
+
+A decibel (dB) compares two powers. Only the **ratio** matters. Every doubling is about **+3 dB**, every halving **−3 dB**, and ×10 is **+10 dB**.
+
+<DecibelExplorer />
+
+| Change | Ratio | Decibels |
+|---|---|---|
+| 5 W → 10 W | ×2 | **+3 dB** |
+| 12 W → 3 W | ÷2, ÷2 = ÷4 | −3 −3 = **−6 dB** |
+| 20 W → 200 W | ×10 | **+10 dB** |
+
+<Key>Ratios multiply, decibels add. Gain is positive, loss is negative.</Key>
+
+<Callout kind="warn" title="Trap">5 W → 10 W adds 5 watts, but it is +3 dB, not +5. Always ask "how many times bigger?"</Callout>
+
+</Concept>

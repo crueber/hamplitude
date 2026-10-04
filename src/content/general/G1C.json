@@ -1,0 +1,14 @@
+{
+  "title": "Power limits and 60 m rules",
+  "blurb": "The 1500 W and 200 W power limits and how they are measured, 60 m bandwidth and records, and new digital protocols.",
+  "why": {
+    "G1C01": { "why": "10.140 MHz is on **30 m**, where the limit is **200 W PEP** output.", "trap": "1500 W applies to most other bands, not 30 m.", "concept": "power" },
+    "G1C02": { "why": "12 m has the standard **1500 W PEP** limit.", "trap": "200 W is the 30 m exception.", "concept": "power" },
+    "G1C03": { "why": "On 60 m a USB signal may be at most **2.8 kHz** wide.", "trap": "A 3 kHz signal would exceed the limit.", "concept": "sixty" },
+    "G1C04": { "why": "On 60 m you must **record antenna gain** if it is not a dipole. No log of contacts or equipment is required.", "concept": "sixty" },
+    "G1C05": { "why": "The 28 MHz band (10 m) allows **1500 W PEP** output.", "concept": "power" },
+    "G1C06": { "why": "The 1.8 MHz band (160 m) allows **1500 W PEP** output.", "concept": "power" },
+    "G1C07": { "why": "A new digital protocol requires **publicly documenting** its technical characteristics. Certification and experimental licenses are not needed.", "concept": "protocol" },
+    "G1C11": { "why": "Maximum power is specified as **PEP output from the transmitter**, not RMS or antenna input.", "trap": "Power at the antenna is after feed line loss.", "concept": "power" }
+  }
+}

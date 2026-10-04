@@ -1,0 +1,17 @@
+{
+  "title": "ICs, connectors and ferrites",
+  "blurb": "Tell analog, digital and microwave ICs apart, pick the right RF connector, and explain how ferrite chokes and toroids work.",
+  "why": {
+    "G6B01": { "why": "A ferrite's response at different frequencies is set by its **composition, or mix**, of materials.", "trap": "Size and shape change the amount of inductance, not which frequencies the material suits.", "concept": "toroid" },
+    "G6B02": { "why": "**MMIC** = **M**onolithic **M**icrowave **I**ntegrated **C**ircuit: a microwave stage built on one chip.", "concept": "ic-types" },
+    "G6B03": { "why": "CMOS logic draws **much less power** than TTL.", "trap": "Neither is for RF amplification or regulators. Low power is CMOS's edge.", "concept": "ic-types" },
+    "G6B04": { "why": "A 50 Ω BNC keeps SWR low up to about **4 GHz**.", "trap": "50 MHz and 500 MHz are far too low for a BNC. 40 GHz is too high.", "concept": "connectors" },
+    "G6B05": { "why": "A ferrite toroid gives large inductance, a core mix tuned to a frequency range, and a field **contained in the core**. All are advantages.", "concept": "toroid" },
+    "G6B06": { "why": "An op-amp works on continuously varying signals: it is an **analog** device.", "trap": "Digital ICs switch between two levels. A MMIC is a microwave amplifier chip.", "concept": "ic-types" },
+    "G6B07": { "why": "A **Type N** is a threaded, **moisture-resistant** connector useful to 10 GHz.", "trap": "Small bayonet is a BNC. The PL-259 is a different connector, not a plated N.", "concept": "connectors" },
+    "G6B08": { "why": "An LED emits light when it is **forward biased**: current flows anode to cathode.", "trap": "Reverse bias and the Zener region are not how an LED lights.", "concept": "led-bias" },
+    "G6B10": { "why": "The ferrite **creates an impedance** in the path of the common-mode current on the shield.", "trap": "It does not cancel the current, convert it to differential mode, or expel fields.", "concept": "ferrite-choke" },
+    "G6B11": { "why": "An **SMA** is a small threaded connector that works to several GHz.", "trap": "It is not an adaptor, not serial data, and not a high-voltage connector.", "concept": "connectors" },
+    "G6B12": { "why": "The **RCA phono** plug is the usual choice for low-frequency or DC connections.", "trap": "PL-259, BNC and N are RF connectors.", "concept": "connectors" }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "title": "Phased arrays, wire antennas and ground",
+  "blurb": "Predict array patterns from spacing and phase, recognize common wire antennas, and see how ground height, slope and seawater change takeoff angle.",
+  "why": {
+    "E9C01": { "why": "Half-wave spacing delays the signal 180° along the axis, and the 180° feed cancels that delay. The signals add **along the axis** and cancel broadside.", "trap": "Broadside is where equal path lengths make in-phase feeds add, not out-of-phase ones.", "concept": "phased" },
+    "E9C02": { "why": "A quarter-wave spacing (90° of path) plus a 90° phase shift adds in one direction and cancels in the opposite one: a **cardioid**.", "concept": "phased" },
+    "E9C03": { "why": "In phase, the paths are equal broadside so signals add there. Along the axis, half-wave spacing cancels them: **broadside figure-eight**.", "concept": "phased" },
+    "E9C04": { "why": "Each extra half wavelength of wire adds lobes, and the major lobes tilt closer to the **wire's axis**.", "trap": "Longer does not mean broadside: lobes swing toward the wire.", "concept": "long" },
+    "E9C05": { "why": "Feeding off center puts the feed point where the impedance stays **similar on several bands**, so one feed line and balun work on all.", "concept": "wires" },
+    "E9C06": { "why": "The resistor absorbs the wave arriving at the far end, so there is no reflection: the pattern goes **bidirectional to unidirectional**.", "trap": "It does not change polarization or reflect power back.", "concept": "long" },
+    "E9C07": { "why": "The two wires share the current, so impedance is 4 × the 72 Ω dipole, about **300 Ω**.", "trap": "72 Ω is an ordinary half-wave dipole, 50 Ω is the coax.", "concept": "folded" },
+    "E9C08": { "why": "A folded dipole is a half-wave dipole **with an extra parallel wire** joining its ends.", "concept": "folded" },
+    "E9C09": { "why": "The G5RV is a wire antenna **center-fed through a set length of open-wire line**, then a balun and coax.", "concept": "wires" },
+    "E9C10": { "why": "A Zepp is a half-wave dipole fed **at one end** instead of the center.", "concept": "wires" },
+    "E9C11": { "why": "Seawater is a much better reflector than soil, so **radiation at low angles increases** for a vertical.", "trap": "Poor soil, not seawater, weakens the low-angle signal.", "concept": "ground" },
+    "E9C12": { "why": "The extended double Zepp is a **center-fed dipole 1.25 wavelengths long**.", "concept": "wires" },
+    "E9C13": { "why": "Lobe angle = arcsin(¼ ÷ height in λ). A higher antenna gives a smaller angle, so the lowest lobe takeoff angle **decreases**.", "concept": "ground" },
+    "E9C14": { "why": "Downhill, the ground falls away, so the antenna acts higher on that side and the main lobe takeoff angle **decreases** downhill.", "concept": "ground" }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Fading, polarization and absorption",
+  "blurb": "Explain why signals fade, why antennas must match polarization, and what absorbs or reflects them.",
+  "why": {
+    "T3A01": { "why": "Direct and reflected waves arrive out of step. A few feet of movement flips them between **cancelling** and **reinforcing**.", "concept": "multipath" },
+    "T3A02": { "why": "Leaves and branches **absorb** short UHF and microwave waves, so weak signals get weaker.", "trap": "Foliage never amplifies a signal.", "concept": "absorption" },
+    "T3A03": { "why": "Weak-signal CW and SSB work on VHF/UHF uses **horizontal** polarization by convention.", "trap": "Vertical is for FM and repeaters; circular is used for satellites.", "concept": "polarization" },
+    "T3A04": { "why": "Crossed antennas no longer line up with the electric field, so **received signal strength drops**.", "concept": "polarization" },
+    "T3A05": { "why": "With the direct path blocked, find a **reflecting path** (a building or hill) and aim the antenna at it.", "trap": "Changing polarization does not clear an obstruction.", "concept": "multipath" },
+    "T3A06": { "why": "Picket fencing is the **rapid flutter** of a mobile signal as the car passes through multipath peaks and nulls.", "concept": "multipath" },
+    "T3A07": { "why": "Rain and other **precipitation** absorb microwaves, shortening range.", "trap": "Wind, cold and pressure changes don't absorb microwaves.", "concept": "absorption" },
+    "T3A08": { "why": "Signals via the ionosphere take several paths and **combine randomly**, so strength fades irregularly.", "concept": "multipath" },
+    "T3A09": { "why": "Ionospheric signals arrive **elliptically** polarized, so **either** vertical or horizontal antennas work.", "trap": "Matching polarization matters on line-of-sight paths, not via the ionosphere.", "concept": "polarization" },
+    "T3A10": { "why": "Delayed copies of the signal smear the data, so **error rates increase**.", "concept": "multipath" },
+    "T3A11": { "why": "The **ionosphere** reflects (refracts) HF waves back to Earth.", "trap": "The troposphere is the weather layer; the \"electrosphere\" isn't a thing.", "concept": "ionosphere" },
+    "T3A12": { "why": "At 10 m and 6 m the waves are long, so fog and rain have **little effect**.", "trap": "Absorption by water is a UHF and microwave problem.", "concept": "absorption" }
+  }
+}

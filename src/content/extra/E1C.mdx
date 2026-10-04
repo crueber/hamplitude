@@ -1,0 +1,45 @@
+import { E1C_LinkLoss } from '@/visuals/extra/E1C_LinkLoss'
+import { E1C_UtcFlow } from '@/visuals/extra/E1C_UtcFlow'
+import { E1C_Spur } from '@/visuals/extra/E1C_Spur'
+import { E1C_Abroad } from '@/visuals/extra/E1C_Abroad'
+
+<Concept id="control" title="Unattended stations: limited traffic, 3 minutes to shut down" qs="E1C05 E1C08">
+
+<E1C_LinkLoss />
+
+* **Remote control:** if the control link malfunctions, the station must stop transmitting within **3 minutes**.
+* **Automatic control:** third-party traffic only with **RTTY or data**, never voice or CW.
+
+<Key>Link lost: off in 3 minutes. Automatic third party: data only.</Key>
+
+</Concept>
+
+<Concept id="lowbands" title="630 m and 2200 m: tell the UTC, wait 30 days" qs="E1C03 E1C07 E1C12">
+
+<E1C_UtcFlow />
+
+Power-line carrier (PLC) systems share these frequencies, so you notify the **Utilities Technology Council** with your **call sign and coordinates**. No FCC endorsement, no FAA filing.
+
+</Concept>
+
+<Concept id="purity" title="Three signal limits to know" qs="E1C01 E1C09 E1C10">
+
+<E1C_Spur />
+
+| Rule | Limit |
+|---|---|
+| Data on **60 m** | **2.8 kHz** maximum bandwidth |
+| Angle modulation **below 29.0 MHz** | modulation index no higher than **1.0** at the highest modulating frequency |
+| Spurious below **30 MHz** | **-43 dB** relative to the fundamental |
+
+<Mnemonic>Below 30 MHz: spurs at least 43 dB down. A bigger negative number is weaker.</Mnemonic>
+
+</Concept>
+
+<Concept id="abroad" title="Operating abroad: CEPT, IARP, and what you may say" qs="E1C02 E1C04 E1C06 E1C11">
+
+<E1C_Abroad />
+
+**CEPT** works both ways between the US and many European countries. You carry a copy of **FCC Public Notice DA 16-1048**. **IARP** is the equivalent permit for certain countries in the **Americas**.
+
+</Concept>

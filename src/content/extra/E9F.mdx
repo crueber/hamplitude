@@ -1,0 +1,38 @@
+import { Velocity } from '@/visuals/extra/E9F_Velocity'
+import { StubReactance } from '@/visuals/extra/E9F_StubReactance'
+import { LineTypes } from '@/visuals/extra/E9F_LineTypes'
+
+<Concept id="vf" title="Waves are slower in a line, so it is electrically longer than it looks" qs="E9F01 E9F02 E9F03 E9F06">
+
+**Velocity factor** = wave speed in the line ÷ speed of light. The **insulating dielectric** sets it: air is about 1, plastic slows the wave. A slower wave has a shorter wavelength, so a physical length holds **more wavelengths**: electrical length exceeds physical length.
+
+<Velocity />
+
+<Key>Physical length = electrical length × VF. Dielectric sets VF.</Key>
+
+</Concept>
+
+<Concept id="stubs" title="A shorted or open line looks like a short, an open, or a reactance" qs="E9F04 E9F09 E9F10 E9F11 E9F12">
+
+What the generator sees depends on the **length**. Every **quarter wavelength** the picture flips (short becomes open); every **half wavelength** it repeats. In between: **under a quarter wave, a shorted line is inductive and an open line is capacitive**.
+
+<StubReactance />
+
+| Far end | ⅛ λ | ¼ λ | ½ λ |
+|---|---|---|---|
+| **Shorted** | inductive | very high Z | very low Z |
+| **Open** | capacitive | very low Z | very high Z |
+
+<Key>Shorted: ¼ λ flips it, ½ λ copies it. Open is the mirror image.</Key>
+
+</Concept>
+
+<Concept id="types" title="Open wire loses least; foam beats solid; microstrip lives on a board" qs="E9F05 E9F07 E9F08">
+
+<LineTypes />
+
+**Parallel-conductor (open-wire)** line has **lower loss** than plastic-dielectric coax. **Foam** coax versus **solid**, all else equal: **lower loss, higher velocity factor, lower safe maximum voltage**. All three.
+
+<Key>More air in the dielectric: faster, lower loss, less voltage handling.</Key>
+
+</Concept>

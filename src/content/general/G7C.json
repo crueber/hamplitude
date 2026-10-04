@@ -1,0 +1,20 @@
+{
+  "title": "Transceiver design, filters and SDR",
+  "blurb": "Explain how SSB is made and received, what filter terms mean, and how DDS and software-defined radios work.",
+  "why": {
+    "G7C01": { "why": "A balanced modulator gives both sidebands. A **filter** removes one, leaving a single sideband.", "trap": "The IF and RF amplifiers only amplify. They do not select a sideband.", "concept": "ssb-chain" },
+    "G7C02": { "why": "A balanced modulator mixes audio with a carrier, cancels the carrier, and outputs **double-sideband** RF.", "trap": "It makes no FM, and it does not extract audio.", "concept": "ssb-chain" },
+    "G7C03": { "why": "A transformer **presents the desired impedance** to the transmitter and to the feed line.", "trap": "The aim is to transfer power well, not to minimise it.", "concept": "match-xfmr" },
+    "G7C04": { "why": "A **product detector** mixes the SSB signal with a carrier in an SSB receiver and recovers the audio.", "trap": "It is not test gear, a multiplier, or an FM filter.", "concept": "ssb-chain" },
+    "G7C05": { "why": "A DDS gives a **variable output frequency**, set digitally, with the **stability of a crystal** oscillator.", "trap": "A DDS tunes over a wide range and its raw output needs filtering and amplifying.", "concept": "dds" },
+    "G7C06": { "why": "A DSP filter is software, so a **wide range of bandwidths and shapes** can be created by changing numbers.", "trap": "DSP does not reduce mixing products, and it is not a VHF-specific advantage.", "concept": "sdr-dsp" },
+    "G7C07": { "why": "**Insertion loss** is the attenuation inside the passband.", "trap": "Ultimate rejection is attenuation outside the passband.", "concept": "filter-terms" },
+    "G7C08": { "why": "Gain, noise figure and bandwidth each change how weak a signal can be and still be heard: **all of them**.", "trap": "Each choice is true. None is the only factor.", "concept": "sensitivity" },
+    "G7C09": { "why": "The I and Q signals are **90°** apart: one cosine, one sine.", "trap": "At 0° or 180° the two would not be independent.", "concept": "sdr-dsp" },
+    "G7C10": { "why": "Varying I and Q gives any amplitude and phase, so **all types of modulation** can be made by processing.", "trap": "An SDR still needs an ADC. I-Q does not remove that need.", "concept": "sdr-dsp" },
+    "G7C11": { "why": "After the ADC, the SDR does **filtering, detection and modulation** in software.", "concept": "sdr-dsp" },
+    "G7C12": { "why": "Above the **cutoff frequency**, a low-pass filter's output power is less than half the input.", "trap": "Notch is where a notch filter rejects. Rolloff describes steepness, not a frequency.", "concept": "filter-terms" },
+    "G7C13": { "why": "**Ultimate rejection** is the most a filter can reject outside its passband.", "trap": "Rolloff is steepness. Insertion loss is attenuation inside the passband.", "concept": "filter-terms" },
+    "G7C14": { "why": "Band-pass bandwidth is measured between the **upper and lower half-power** points.", "trap": "Rolloff is steepness, not a frequency. Image and harmonic are unrelated.", "concept": "filter-terms" }
+  }
+}

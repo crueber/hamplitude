@@ -1,0 +1,20 @@
+{
+  "title": "Sunspots, flares and propagation indices",
+  "blurb": "Explain how solar activity changes HF conditions, how fast flares and particles arrive, and what SFI, K and A measure.",
+  "why": {
+    "G3A01": { "why": "More sunspots mean more ionizing radiation, a denser F region and a higher MUF: **better odds on higher frequencies**.", "trap": "Zero sunspots weakens the high bands. It doesn't shut every band.", "concept": "sunspots" },
+    "G3A02": { "why": "Flare X-rays raise D-region absorption on the sunlit side, which hurts **lower frequencies more** than higher ones.", "concept": "arrival" },
+    "G3A03": { "why": "UV and X-rays travel at the speed of light, so a flare's effect reaches Earth in about **8 minutes**.", "concept": "arrival" },
+    "G3A04": { "why": "At the solar minimum the F region is too weak for the highest frequencies: **15, 12 and 10 m** become the least reliable.", "concept": "sunspots" },
+    "G3A05": { "why": "SFI is the Sun's radio emission at a wavelength of **10.7 cm**, a measure of solar radiation. It is not a sunspot count.", "trap": "That is the sunspot number or the MUF, not the flux index.", "concept": "indices" },
+    "G3A06": { "why": "A geomagnetic storm is a **temporary disturbance of Earth's geomagnetic field**, set off by particles from the Sun.", "concept": "storms" },
+    "G3A07": { "why": "20 m is low enough for the F region to return it through the whole cycle, so daylight worldwide paths work **at any point**.", "concept": "sunspots" },
+    "G3A08": { "why": "Storm disturbance concentrates near the poles, so it **degrades high-latitude HF** paths.", "concept": "storms" },
+    "G3A09": { "why": "Geomagnetic activity creates aurora, and **aurora can reflect VHF signals**.", "trap": "Polar HF paths get worse in a storm, not better.", "concept": "storms" },
+    "G3A10": { "why": "The Sun rotates about once in 26 to 28 days, so active regions face Earth **periodically**.", "concept": "sunspots" },
+    "G3A11": { "why": "A coronal mass ejection is a slow particle cloud: **15 hours to several days** to arrive. Light-speed effects take 8 minutes.", "concept": "arrival" },
+    "G3A12": { "why": "K is the **short-term** stability of Earth's geomagnetic field. It measures Earth's field, not the Sun's.", "trap": "Solar radio flux at 10.7 cm is SFI, not K.", "concept": "indices" },
+    "G3A13": { "why": "A is the **long-term** stability of Earth's geomagnetic field. Remember K for short, A for long.", "concept": "indices" },
+    "G3A14": { "why": "Charged particles from coronal holes disturb the field and the ionosphere, so **HF communication is disturbed**.", "concept": "arrival" }
+  }
+}

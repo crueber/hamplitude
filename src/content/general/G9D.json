@@ -1,0 +1,18 @@
+{
+  "title": "Specialized HF and VHF antennas",
+  "blurb": "Choose antennas for NVIS, multiband, receive-only and loop uses, and explain traps, stacking, log-periodics and end-fed feeds.",
+  "why": {
+    "G9D01": { "why": "NVIS needs energy sent nearly straight up: a **horizontal dipole 1/10 to 1/4 λ high** does that. At ½ λ it has a null overhead.", "trap": "A vertical radiates little straight up.", "concept": "nvis" },
+    "G9D02": { "why": "At the end of a half wave the voltage is highest and current lowest, so impedance is **very high**.", "trap": "The low impedance (about 73 Ω) is at the center, not the end.", "concept": "wire" },
+    "G9D03": { "why": "A halo is a loop lying flat, so it radiates equally in every direction **in the plane of the halo**.", "concept": "loops" },
+    "G9D04": { "why": "Traps isolate sections of wire at different frequencies, which **enables multiband operation**.", "trap": "Traps don't notch spurs or limit operation to one band.", "concept": "multiband" },
+    "G9D05": { "why": "Stacked Yagis add gain by **narrowing the main lobe in elevation**. The azimuth width stays the same.", "trap": "Stacking does not change polarization.", "concept": "beams" },
+    "G9D06": { "why": "A log-periodic works over a **wide bandwidth** because a different part of it is active on each frequency.", "trap": "It does not beat a Yagi in gain per element.", "concept": "beams" },
+    "G9D07": { "why": "**Element length and spacing vary logarithmically** along the boom: each is a fixed ratio from the next.", "concept": "beams" },
+    "G9D08": { "why": "A motor changes how much of the coil is in the circuit: it varies the **base loading inductance**.", "concept": "multiband" },
+    "G9D09": { "why": "A Beverage is a long, low, terminated wire for **directional receiving** on MF and low HF.", "trap": "It is a receiving antenna, not for transmitting.", "concept": "loops" },
+    "G9D10": { "why": "A small loop is strongest in its own plane and has nulls **broadside to the loop**.", "trap": "Nulls are not in the plane of the loop.", "concept": "loops" },
+    "G9D11": { "why": "Multiband antennas resonate on several frequencies, so they have **poor harmonic rejection**.", "trap": "A tuner or open-wire line isn't required.", "concept": "multiband" },
+    "G9D12": { "why": "A dipole with a single central support, ends drooping, is an **inverted V**.", "trap": "A sloper hangs from one end.", "concept": "wire" }
+  }
+}

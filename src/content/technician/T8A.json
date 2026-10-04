@@ -1,0 +1,18 @@
+{
+  "title": "FM, SSB and signal bandwidth",
+  "blurb": "How AM, FM and SSB differ, how wide each signal is, and which to choose for repeaters, weak signals and sidebands.",
+  "why": {
+    "T8A01": { "why": "SSB is amplitude modulation with the carrier and one sideband removed, so it belongs to the **AM family**.", "trap": "PSK and packet are digital methods, not amplitude modulation.", "concept": "am-fm" },
+    "T8A02": { "why": "VHF packet uses **FM or PM**: the signal varies frequency (or phase), not height.", "concept": "am-fm" },
+    "T8A03": { "why": "**SSB** is narrow and efficient, so it carries the weakest signals farthest on VHF/UHF.", "trap": "FM is for local repeater work, not weak-signal DX.", "concept": "ssb-fm" },
+    "T8A04": { "why": "Repeaters use **FM or PM**. The signal changes frequency to carry the voice.", "concept": "am-fm" },
+    "T8A05": { "why": "**CW** is just a carrier switched on and off, about 150 Hz wide: far narrower than any voice or picture signal.", "concept": "bandwidth" },
+    "T8A06": { "why": "At 10 MHz and above, including 10 m, VHF and UHF, convention is **upper sideband**.", "trap": "Lower sideband is the convention below 10 MHz (80 and 40 m).", "concept": "usb-lsb" },
+    "T8A07": { "why": "SSB drops the carrier and one sideband, so it is **narrower** than FM.", "trap": "SSB is harder to tune than FM, and no mode is immune to interference.", "concept": "ssb-fm" },
+    "T8A08": { "why": "A voice SSB signal is about **3 kHz** wide, roughly the range of the voice.", "concept": "bandwidth" },
+    "T8A09": { "why": "FM voice on repeaters takes **10 to 15 kHz**, several times wider than SSB.", "concept": "bandwidth" },
+    "T8A10": { "why": "Fast-scan TV carries a full moving picture and needs about **6 MHz**.", "trap": "A voice-sized figure is far too small: a moving picture carries thousands of times more information.", "concept": "bandwidth" },
+    "T8A11": { "why": "CW needs only about **150 Hz**, the narrowest of all common modes.", "trap": "2.4 kHz is SSB-like and 15 kHz is FM-like.", "concept": "bandwidth" },
+    "T8A12": { "why": "On FM only **one signal is received at a time**: the stronger one wins the channel. SSB lets you hear a weaker signal under a stronger one.", "trap": "FM voice quality is good, and FM is easier, not harder, to tune.", "concept": "ssb-fm" }
+  }
+}

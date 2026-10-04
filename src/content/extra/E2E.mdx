@@ -1,0 +1,71 @@
+import { E2E_FskTypes } from '@/visuals/extra/E2E_FskTypes'
+import { E2E_Cycles } from '@/visuals/extra/E2E_Cycles'
+import { E2E_Averaging } from '@/visuals/extra/E2E_Averaging'
+import { E2E_Varicode } from '@/visuals/extra/E2E_Varicode'
+import { E2E_ModeCompare } from '@/visuals/extra/E2E_ModeCompare'
+import { E2E_AleScan } from '@/visuals/extra/E2E_AleScan'
+
+<Concept id="fsk" title="HF data is FSK. Direct FSK shifts the VFO itself." qs="E2E01 E2E11">
+
+Data below 30 MHz uses **FSK**: the signal jumps between set frequencies (two for RTTY, more for modes like FT8). **Direct FSK** modulates the **transmitter's VFO**. **Audio FSK** feeds two audio tones into an SSB transmitter.
+
+<E2E_FskTypes />
+
+<Key>FSK below 30 MHz. Direct FSK = modulate the VFO.</Key>
+
+</Concept>
+
+<Concept id="wsjt-timing" title="WSJT-X modes run on a shared clock in fixed cycles" qs="E2E02 E2E06 E2E03 E2E04">
+
+Stations take turns in set **transmit/receive periods**, so what keeps them in step is **synchronized computer clocks**. **FT8 = 15 s** cycles. The number in a name hints at tones: **FT4 = four-tone continuous-phase FSK**. **FST4** is four-tone GFSK too, with **variable periods** and **seven tone spacings**.
+
+<E2E_Cycles />
+
+<Key>Clocks sync the cycle. FT8 = 15 s. FT4 = four tones, not four cycles.</Key>
+
+</Concept>
+
+<Concept id="q65" title="Q65 averages cycles; JT65 does not" qs="E2E07">
+
+**Q65** differs from JT65 by **averaging multiple receive cycles**. The signal repeats each cycle and the noise does not, so stacking cycles lifts a weak signal out of the noise.
+
+<E2E_Averaging />
+
+<Key>Q65 = JT65 plus averaging of several receive cycles.</Key>
+
+</Concept>
+
+<Concept id="mode-traits" title="Each mode has a job: chat, beacon, or file transfer" qs="E2E05 E2E08 E2E09">
+
+| Mode | Trait |
+|---|---|
+| **RTTY, PSK31, MFSK16** | Keyboard-to-keyboard chat |
+| **WSPR** | Beacon reports only. **No** keyboard-to-keyboard |
+| **PACTOR** | Can transfer **binary files** (PSK31, RTTY, AMTOR cannot) |
+| **PSK31** | **Variable-length** character coding |
+
+<E2E_Varicode />
+
+<Key>WSPR: no chat. PACTOR: binary files. PSK31: variable-length code.</Key>
+
+</Concept>
+
+<Concept id="bandwidth-speed" title="Wider means faster. FT8 is narrowest, PACTOR IV fastest." qs="E2E10 E2E13">
+
+More bandwidth carries more data per second. **FT8** is a very narrow weak-signal mode. **PACTOR IV** uses a wide channel and has the **highest throughput under clear conditions**.
+
+<E2E_ModeCompare />
+
+<Key>Narrowest: FT8. Fastest when conditions are clear: PACTOR IV.</Key>
+
+</Concept>
+
+<Concept id="ale" title="ALE radios scan channels and wake on their own call sign" qs="E2E12">
+
+**Automatic Link Establishment (ALE)** radios **constantly scan a list of frequencies**. When one hears its **designated call sign**, it activates and answers.
+
+<E2E_AleScan />
+
+<Key>ALE = scan a list, wake when your call sign arrives.</Key>
+
+</Concept>

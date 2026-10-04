@@ -1,0 +1,58 @@
+import { DiodeValve } from '@/visuals/technician/T6B_DiodeValve'
+import { TransistorParts } from '@/visuals/technician/T6B_TransistorParts'
+import { TransistorGain } from '@/visuals/technician/T6B_TransistorGain'
+
+<Concept id="diode" title="A diode is a one-way valve for current" qs="T6B02 T6B06 T6B09">
+
+A **diode** lets current flow in **one direction only**. Its two electrodes are the **anode** (current goes in) and the **cathode** (current goes out). On the real part, a **stripe** marks the cathode.
+
+<DiodeValve />
+
+<Mnemonic>The symbol's triangle is an arrow: current goes with the arrow, from anode to the bar (cathode).</Mnemonic>
+
+</Concept>
+
+<Concept id="led" title="An LED lights with forward current, and every diode drops some voltage" qs="T6B01 T6B07">
+
+An **LED** is a diode that glows. Current has to flow **forward** through it: reverse it and nothing lights.
+
+<DiodeValve led />
+
+A conducting diode always uses up a little voltage, its **forward voltage drop**. It is normal, it varies by diode type, and it is not a fault.
+
+| Type | Typical forward drop |
+|---|---|
+| Schottky diode | about 0.3 V |
+| Silicon diode | about 0.7 V |
+| LED | about 2 V or more, by colour |
+
+<Key>LED light comes from forward current. Forward drop is normal and differs between diode types.</Key>
+
+</Concept>
+
+<Concept id="transistor-parts" title="Transistors: three regions, three leads" qs="T6B04 T6B05 T6B08 T6B12">
+
+A transistor has **three leads**, and the common bipolar kind is built from **three regions** of semiconductor. One lead is the control; the other two carry the main current.
+
+<TransistorParts />
+
+| Family | Leads |
+|---|---|
+| Bipolar junction (BJT) | **emitter, base, collector** |
+| Field-effect (FET) | **source, gate, drain** |
+
+<Mnemonic>Gate, drain, source: a FET has a **gate**. A BJT has a **base**.</Mnemonic>
+
+</Concept>
+
+<Concept id="gain" title="A small signal controls a bigger one: that is gain" qs="T6B03 T6B10 T6B11">
+
+A transistor uses a **small** base (or gate) signal to control a **much larger** current. Use it fully on or off and it is an **electronic switch**. Keep it in between and it **amplifies**.
+
+<TransistorGain />
+
+**Gain** is output ÷ input. It can be measured in **voltage, current or power**, so all three are gain.
+
+<Key>Only active parts such as transistors give power gain. Transformers, resistors and reactors cannot.</Key>
+
+</Concept>

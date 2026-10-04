@@ -1,0 +1,77 @@
+import { G5C_Transformer } from '@/visuals/general/G5C_Transformer'
+import { G5C_WireSize } from '@/visuals/general/G5C_WireSize'
+import { G5C_ImpedanceRatio } from '@/visuals/general/G5C_ImpedanceRatio'
+import { G5C_Combiner } from '@/visuals/general/G5C_Combiner'
+
+<Concept id="turns" title="A transformer trades voltage for turns" qs="G5C01 G5C02 G5C06">
+
+AC in the primary makes a changing magnetic field that cuts the secondary winding. That is **mutual inductance**. Voltage follows the **turns**, and it works from either winding.
+
+<G5C_Transformer />
+
+<Formula label="Turns ratio">Vout = Vin × (turns out ÷ turns in)</Formula>
+
+<Key>More turns on the output side, more volts. Feed the secondary instead and the ratio reverses.</Key>
+
+</Concept>
+
+<Concept id="current" title="More volts out means fewer amperes in the secondary" qs="G5C05">
+
+A transformer does not make power. Volts × amperes stays about the same on both sides, so the low-voltage side carries the **high current**. In a step-up transformer that is the **primary**, so it gets the thicker wire.
+
+<G5C_WireSize />
+
+<Key>Higher voltage means lower current. The high-current winding uses thicker wire.</Key>
+
+</Concept>
+
+<Concept id="z-ratio" title="Impedance changes with the turns ratio squared" qs="G5C07">
+
+A transformer also makes a load look different to the source, and the impedance ratio is the **square** of the turns ratio.
+
+<G5C_ImpedanceRatio />
+
+<Formula label="Turns ratio for a match">turns ratio = √(Z high ÷ Z low)</Formula>
+
+600 Ω to 50 Ω: √(600 ÷ 50) = √12 = 3.46, about **3.5 to 1**.
+
+<Key>Impedance ratio = turns ratio². Take the square root to find the turns.</Key>
+
+<Callout kind="warn" title="Trap">The impedance ratio is 12 to 1, but the turns ratio is its square root.</Callout>
+
+</Concept>
+
+<Concept id="rl" title="Inductors act like resistors: series adds, parallel shrinks" qs="G5C03 G5C04 G5C10 G5C11 G5C14">
+
+In **series** the values simply **add**. In **parallel** there are more paths, so the total is **smaller than the smallest part**: add the reciprocals, then flip.
+
+<G5C_Combiner kinds={['R', 'L']} />
+
+| Combination | Calculation | Total |
+|---|---|---|
+| 10 Ω ‖ 20 Ω ‖ 50 Ω | 1 ÷ (0.1 + 0.05 + 0.02) | **5.9 Ω** |
+| 100 Ω ‖ 200 Ω | 1 ÷ (0.01 + 0.005) | **67 Ω** |
+| 3 × 10 mH in parallel | 10 ÷ 3 | **3.3 mH** |
+| 20 mH + 50 mH in series | 20 + 50 | **70 mH** |
+
+<Key>To raise inductance, add an inductor in series. Equal parts in parallel: divide by how many.</Key>
+
+</Concept>
+
+<Concept id="c" title="Capacitors are backwards: parallel adds, series shrinks" qs="G5C08 G5C09 G5C12 G5C13">
+
+Parallel plates add area, so capacitance **adds**. Series stacks the gaps, so the total is **smaller than the smallest part**. Convert to the same unit first.
+
+<G5C_Combiner kinds={['C']} />
+
+| Combination | Calculation | Total |
+|---|---|---|
+| 5 nF + 5 nF + 750 pF, parallel | 5 + 5 + 0.75 | **10.75 nF** |
+| 3 × 100 µF in series | 100 ÷ 3 | **33.3 µF** |
+| 20 µF and 50 µF in series | 1 ÷ (0.05 + 0.02) | **14.3 µF** |
+
+<Key>To raise capacitance, add a capacitor in parallel.</Key>
+
+<Mnemonic>R and L: series adds. C is the odd one out: parallel adds.</Mnemonic>
+
+</Concept>

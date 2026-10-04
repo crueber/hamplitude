@@ -1,0 +1,17 @@
+{
+  "title": "ID, repeaters and third-party rules",
+  "blurb": "When to give your call sign, who's responsible for a repeater's output, and the rules for talking on behalf of others.",
+  "why": {
+    "T1F01": { "why": "Your station and records must be open to an FCC representative **at any time on request**.", "trap": "No waiting period, written notice or warrant is required.", "concept": "inspection" },
+    "T1F02": { "why": "A tactical call isn't a call sign. You still give your own call **every 10 minutes and at the end**.", "concept": "id" },
+    "T1F03": { "why": "Identify **at least every 10 minutes during a contact, and at the end**.", "trap": "Not at the start only, not every 15 minutes, and not every transmission.", "concept": "id" },
+    "T1F04": { "why": "On phone you identify in **English**.", "trap": "Other languages aren't allowed for a phone ID, even if recognized by the ITU.", "concept": "id" },
+    "T1F05": { "why": "A phone station may send its call sign by **voice or by CW**.", "trap": "No \"RPT\" or \"R\" suffix is required.", "concept": "id" },
+    "T1F06": { "why": "Slash, stroke and slant are all accepted spoken forms of the \"/\" in a call sign indicator.", "concept": "id" },
+    "T1F07": { "why": "Talking to a foreign station on behalf of an unlicensed person needs a **third-party agreement** with that country.", "trap": "Citizenship isn't required, and there is no special ID rule for third-party contacts.", "concept": "third-party" },
+    "T1F08": { "why": "Third-party communication is a message passed **between control operators on behalf of another person**.", "trap": "It isn't \"three stations\": the \"third party\" is the person being spoken for.", "concept": "third-party" },
+    "T1F09": { "why": "A **repeater** retransmits another station's signal on a different channel.", "concept": "repeaters" },
+    "T1F10": { "why": "The **originating station's control operator** is accountable, not the repeater's owner or its control operator.", "concept": "repeaters" },
+    "T1F11": { "why": "A club station license needs a **trustee** and **at least four members**.", "trap": "The trustee doesn't need an Extra, and ARRL registration isn't required.", "concept": "clubs" }
+  }
+}

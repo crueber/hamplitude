@@ -1,0 +1,18 @@
+{
+  "title": "Transmission line lengths and stubs",
+  "blurb": "Explain velocity factor, what shorted and open lines look like at 1/8, 1/4 and 1/2 wavelength, and why open wire beats coax on loss.",
+  "why": {
+    "E9F01": { "why": "Velocity factor = speed in the line ÷ speed of light in a vacuum. A ratio below 1, about 1 for air.", "trap": "Impedance ratios describe SWR and reflection, not speed.", "concept": "vf" },
+    "E9F02": { "why": "The **insulating dielectric** sets how much the wave slows. Air is about 1; plastic is lower.", "trap": "Impedance and length don't change velocity factor.", "concept": "vf" },
+    "E9F03": { "why": "Waves travel **more slowly** in the dielectric, so wavelengths are shorter and the line holds more of them than its length suggests.", "trap": "Skin effect isn't what stretches electrical length.", "concept": "vf" },
+    "E9F04": { "why": "Shorted at ½ λ: the short repeats every half wavelength, so the generator sees a **very low impedance**.", "concept": "stubs" },
+    "E9F05": { "why": "Microstrip is a **printed conductor above a ground plane**: a constant-impedance line for microwave circuit boards.", "concept": "types" },
+    "E9F06": { "why": "Half wave = 299.8 ÷ 14.10 ÷ 2 = **10.6 m**. Air-insulated line has VF about 1, so no shortening.", "trap": "7.0 m is 10.6 × 0.66, the length for solid plastic coax.", "concept": "vf" },
+    "E9F07": { "why": "Air and wide spacing give open-wire line **lower loss** than plastic-dielectric coax.", "concept": "types" },
+    "E9F08": { "why": "Foam is mostly air: **lower loss and higher VF**, but a **lower voltage rating**. All three differences apply.", "concept": "types" },
+    "E9F09": { "why": "Shorted at ¼ λ: the short is inverted along the line, so the generator sees a **very high impedance**.", "concept": "stubs" },
+    "E9F10": { "why": "Shorted and shorter than ¼ λ: **inductive**. At ⅛ λ, X = Z₀ × tan 45° = +jZ₀.", "concept": "stubs" },
+    "E9F11": { "why": "Open and shorter than ¼ λ: **capacitive**. At ⅛ λ, X = −jZ₀.", "concept": "stubs" },
+    "E9F12": { "why": "Open at ¼ λ: the open is inverted, so the generator sees a **very low impedance**.", "concept": "stubs" }
+  }
+}

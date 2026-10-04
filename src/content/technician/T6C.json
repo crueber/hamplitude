@@ -1,0 +1,18 @@
+{
+  "title": "Reading schematic symbols",
+  "blurb": "Recognize every symbol in the exam figures and explain what a schematic does and does not show.",
+  "why": {
+    "T6C01": { "why": "A **schematic** is a circuit diagram built from standard component symbols.", "trap": "A flow chart shows steps, not electrical connections.", "concept": "schematic" },
+    "T6C02": { "why": "A zigzag line is a **resistor**: current has to squeeze through the bends.", "trap": "A transistor has three leads and a bar, not a zigzag.", "concept": "basic-symbols" },
+    "T6C03": { "why": "Three leads meeting a thick bar, with an arrow on the emitter, inside a circle: a **transistor**.", "trap": "A lamp has no arrow and no thick bar.", "concept": "semi-symbols" },
+    "T6C04": { "why": "A small bulb dome with a filament inside is a **lamp**.", "trap": "A ground symbol is a stem with hatch lines, not a dome.", "concept": "basic-symbols" },
+    "T6C05": { "why": "Alternating long and short parallel lines are the stacked plates of a **battery**.", "trap": "A resistor is a zigzag and a ground is a stem with hatch lines.", "concept": "basic-symbols" },
+    "T6C06": { "why": "Two plates separated by a gap: a **capacitor**. A curved plate usually marks a polarized (electrolytic) kind.", "trap": "A resistor is a zigzag, a transistor has three leads.", "concept": "basic-symbols" },
+    "T6C07": { "why": "A diode triangle with light arrows leaving it is a **light emitting diode**.", "trap": "An inductor is loops, a resistor a zigzag.", "concept": "semi-symbols" },
+    "T6C08": { "why": "A zigzag with an arrow on it is a **variable resistor**: the arrow means adjustable.", "trap": "Coils with an arrow would be a variable inductor; plates with an arrow, a variable capacitor.", "concept": "variable-symbols" },
+    "T6C09": { "why": "Two coils side by side with bars between them are a **transformer**.", "trap": "A variable inductor is one coil with an arrow.", "concept": "coil-symbols" },
+    "T6C10": { "why": "A coil with an arrow touching it is a **variable inductor**.", "trap": "Two plates with an arrow would be a variable capacitor.", "concept": "variable-symbols" },
+    "T6C11": { "why": "A flat-topped triangle on a stem is an **antenna**.", "trap": "A ground symbol is a stem ending in hatch lines.", "concept": "coil-symbols" },
+    "T6C12": { "why": "A schematic shows how parts **connect**. Looks and wire lengths are left out.", "trap": "Real wire length and appearance are exactly what a schematic ignores.", "concept": "schematic" }
+  }
+}

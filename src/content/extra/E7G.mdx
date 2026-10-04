@@ -1,0 +1,53 @@
+import { OpAmpTraits } from '@/visuals/extra/E7G_OpAmpTraits'
+import { Inverting } from '@/visuals/extra/E7G_Inverting'
+import { LowPass } from '@/visuals/extra/E7G_LowPass'
+import { GainBandwidth } from '@/visuals/extra/E7G_GainBandwidth'
+import { Offset } from '@/visuals/extra/E7G_Offset'
+
+<Concept id="opamp-what" title="An op-amp: huge gain, hardly loads the input, drives the output hard" qs="E7G01 E7G03 E7G12">
+
+An **operational amplifier** is a high-gain, direct-coupled **differential** amplifier. It amplifies the difference between its two inputs.
+
+<OpAmpTraits />
+
+<Key>Input impedance very high, output impedance very low.</Key>
+
+</Concept>
+
+<Concept id="inverting" title="Figure E7-3: gain is −RF ÷ R1" qs="E7G07 E7G09 E7G10 E7G11">
+
+The **+ input** is grounded, so feedback holds the **− input** at about 0 V. All the input current (Vin ÷ R1) is forced through **RF**, and the output swings the opposite way. **Gain = −RF ÷ R1**. The minus sign means the output is **inverted**.
+
+<Inverting />
+
+For an **absolute** gain, drop the sign and divide: RF ÷ R1. Ask "how many times bigger is RF than R1?"
+
+<Key>Feedback resistor on top, input resistor on the bottom, output is inverted.</Key>
+
+</Concept>
+
+<Concept id="opamp-filter" title="A capacitor across RF turns it into a low-pass filter" qs="E7G02 E7G05">
+
+A capacitor's reactance falls as frequency rises. Across RF, it **shunts the feedback resistor** at high frequencies, so the gain falls: a **low-pass filter**.
+
+<LowPass />
+
+Filter circuits with **high gain and high Q** ring and become unstable. To prevent unwanted ringing and audio instability, **restrict both gain and Q**.
+
+<Key>Capacitor across RF = low-pass. Keep both gain and Q down.</Key>
+
+</Concept>
+
+<Concept id="opamp-real" title="Ideal op-amps don't change with frequency. Real ones do." qs="E7G04 E7G06 E7G08">
+
+An **ideal** op-amp has the same gain at every frequency. A real one loses open-loop gain as frequency rises. The frequency where **open-loop gain falls to one** is its **gain-bandwidth**.
+
+<GainBandwidth />
+
+**Input offset voltage**: ideally both inputs at 0 V give 0 V out. In a real op-amp they don't. The **differential input needed to bring the output to zero** is the offset voltage.
+
+<Offset />
+
+<Key>Gain-bandwidth = frequency where open-loop gain is 1. Offset = input difference that nulls the output.</Key>
+
+</Concept>

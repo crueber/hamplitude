@@ -1,0 +1,40 @@
+import { ControlChain } from '@/visuals/technician/T1E_ControlChain'
+import { Privileges } from '@/visuals/technician/T1E_Privileges'
+import { ControlTypes } from '@/visuals/technician/T1E_ControlTypes'
+
+<Concept id="control-operator" title="Every transmission needs a designated control operator" qs="T1E01 T1E03 T1E07 T1E11">
+
+A **control operator** is an amateur **designated by the station licensee** to be responsible for transmissions and for following the FCC rules.
+
+<ControlChain />
+
+A station may **never** transmit without one. If the control operator isn't the licensee, **both** answer for proper operation.
+
+<Key>The licensee designates. Both are responsible. Never no one.</Key>
+
+</Concept>
+
+<Concept id="privileges" title="Privileges come from the control operator's license" qs="T1E04 T1E06 T1E02">
+
+<Privileges />
+
+Your frequency privileges are set by the **class of license held by the control operator**, not by the station, the owner, or a coordinator. A Technician can't control a station in an Amateur Extra segment, except in an emergency.
+
+Satellites: **any amateur allowed to transmit on the uplink frequency** may be the control operator. No special certificate.
+
+<Key>Whoever is at the mic sets the privileges.</Key>
+
+</Concept>
+
+<Concept id="control-types" title="Local, remote, automatic: where is the control point?" qs="T1E05 T1E08 T1E09 T1E10">
+
+<ControlTypes />
+
+The **control point** is the location where the control operator function is performed.
+
+* **Remote control**: operating a station from elsewhere, such as over the internet. **Any** station may be remotely controlled.
+* **Automatic control**: no operator at a control point. **Repeater operation** is the example.
+
+<Callout kind="warn" title="Not automatic control">Sending CW or an ID by computer, or operating over the internet, isn't automatic control. Automatic means no operator at a control point.</Callout>
+
+</Concept>

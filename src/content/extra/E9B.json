@@ -1,0 +1,17 @@
+{
+  "title": "Antenna patterns and modeling",
+  "blurb": "Read azimuth and elevation plots for beamwidth, front-to-back and peak angle, and explain far field and Method of Moments modeling.",
+  "why": {
+    "E9B01": { "why": "The main lobe crosses the −3 dB ring at about 25° each side of the peak. 25° + 25° = **50°** beamwidth.", "trap": "25° is only half the beamwidth: count both sides.", "concept": "read-polar" },
+    "E9B02": { "why": "Peak is 0 dB at 0°. At 180° the plot is near the −18 ring, so front-to-back = 0 − (−18) = **18 dB**.", "concept": "read-polar" },
+    "E9B03": { "why": "At 90° the side lobe sits near −14 dB. Front-to-side = 0 − (−14) = **14 dB**.", "trap": "18 dB is the back, not the side: read the ring at 90°, not 180°.", "concept": "read-polar" },
+    "E9B04": { "why": "Peak is 0 dB. At 180° the pattern is about −28 dB, so front-to-back = 0 − (−28) = **28 dB**.", "concept": "read-elev" },
+    "E9B05": { "why": "Angles run from 0° at the horizon to 180° with a ground line below: this half-circle is an **elevation** plot.", "trap": "An azimuth plot is a full circle showing compass direction.", "concept": "read-elev" },
+    "E9B06": { "why": "The longest lobe, the strongest response, points at **7.5°** above the horizon, which is a low takeoff angle.", "trap": "Higher lobes exist but are weaker.", "concept": "read-elev" },
+    "E9B07": { "why": "A lossless antenna can only redirect power. Total radiated power is **the same** as an isotropic radiator's; only its distribution differs.", "trap": "Gain is not extra power, and an isotropic radiator has no 2.15 dB advantage.", "concept": "gain-power" },
+    "E9B08": { "why": "In the far field the **shape of the pattern stops changing with distance**. Only the strength falls.", "concept": "far-field" },
+    "E9B09": { "why": "**Method of Moments** is the standard way to compute an antenna's currents and pattern in modeling programs.", "concept": "mom" },
+    "E9B10": { "why": "Method of Moments splits each wire into short **segments with a uniform current** each, and solves how they interact.", "trap": "It is not a single generator or per-segment voltages.", "concept": "mom" },
+    "E9B11": { "why": "Too few segments follow the real current poorly, so the **computed feed point impedance may be incorrect**.", "concept": "mom" }
+  }
+}

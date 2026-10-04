@@ -1,0 +1,17 @@
+{
+  "title": "Multimeters and soldering",
+  "blurb": "Choose and connect a voltmeter, ammeter or ohmmeter correctly, and tell good solder and joints from bad.",
+  "why": {
+    "T7D01": { "why": "Electric potential is voltage, and a **voltmeter** measures it.", "trap": "A potentiometer is a variable resistor, not a meter.", "concept": "meters" },
+    "T7D02": { "why": "Voltage is measured *between* two points, so a voltmeter connects **in parallel** across the component.", "trap": "In series is how current is measured.", "concept": "meters" },
+    "T7D03": { "why": "To measure current, the meter must sit in the path so all current flows through it: **in series**.", "trap": "In parallel is for voltage.", "concept": "meters" },
+    "T7D04": { "why": "An **ammeter** measures electric current.", "trap": "An ohmmeter reads resistance and a voltmeter reads voltage.", "concept": "meters" },
+    "T7D05": { "why": "The ohmmeter **applies a small current and measures the resulting voltage**, which gives resistance by Ohm's law.", "trap": "It doesn't use a variable resistor in series or parallel.", "concept": "ohmmeter" },
+    "T7D06": { "why": "On the resistance setting the meter supplies its own current, so connecting it across a live voltage can **damage it**.", "trap": "The damaging mistake is voltage on the resistance setting, not the reverse.", "concept": "ohmmeter" },
+    "T7D07": { "why": "A multimeter measures **voltage and resistance** (and current). Signal strength, impedance and reactance need other instruments.", "concept": "meters" },
+    "T7D08": { "why": "**Acid-core** solder has corrosive flux meant for plumbing. Electronics need rosin-core.", "trap": "Lead-tin and rosin-core are the normal electronics choices.", "concept": "soldering" },
+    "T7D09": { "why": "A cold joint never flowed properly, so it looks **rough or lumpy** and dull. A good joint is smooth and shiny.", "trap": "Bright and shiny is the sign of a good joint.", "concept": "soldering" },
+    "T7D10": { "why": "The meter's small current **charges the capacitor**, so the resistance reading **keeps increasing with time**.", "trap": "A steady short, open or full-scale reading means something else, like a shorted part.", "concept": "ohmmeter" },
+    "T7D11": { "why": "The ohmmeter supplies its own test current, so make sure the circuit **is not powered**.", "trap": "Operating voltage, ground and frequency don't matter. Power just adds error.", "concept": "ohmmeter" }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Digital modes, packet and APRS",
+  "blurb": "What CW, PSK, packet, APRS, FT8 and DMR are, and how checksums and ARQ keep data correct.",
+  "why": {
+    "T8D01": { "why": "Packet radio, IEEE 802.11 Wi-Fi and FT8 all send data digitally, so **all of them** are digital modes.", "concept": "modes" },
+    "T8D02": { "why": "FT8 is a digital mode built to work at **low signal-to-noise**, so it gets through when voice can't.", "trap": "It isn't voice, TV or a repeater feature.", "concept": "modes" },
+    "T8D03": { "why": "APRS carries **GPS position, text messages and weather data**.", "concept": "aprs" },
+    "T8D04": { "why": "NTSC is the **analog fast-scan color TV** standard.", "trap": "It isn't encryption or compression.", "concept": "formats" },
+    "T8D05": { "why": "APRS provides **real-time tactical digital communications with a map** of station locations.", "trap": "Voice-over-internet linking is IRLP or EchoLink, not APRS.", "concept": "aprs" },
+    "T8D06": { "why": "PSK is **Phase Shift Keying**: data is sent by shifting the carrier's phase.", "concept": "keying" },
+    "T8D07": { "why": "DMR **time-multiplexes two digital voice signals** on a single 12.5 kHz repeater channel.", "trap": "Position tracking is APRS, not DMR.", "concept": "formats" },
+    "T8D08": { "why": "Packets include a **header with call signs, a checksum for error detection, and ARQ** for retransmission. All three.", "concept": "packet" },
+    "T8D09": { "why": "CW is **Morse code** sent by switching the carrier on and off.", "trap": "It's not a 2 m FM digital mode and has nothing to do with propagation.", "concept": "keying" },
+    "T8D10": { "why": "WSJT-X supports **moonbounce (EME), meteor scatter and weak-signal beacons**. All three.", "concept": "modes" },
+    "T8D11": { "why": "ARQ means the **receiver detects an error and requests a retransmission** from the sender.", "trap": "ARQ is not encryption or compression.", "concept": "packet" },
+    "T8D12": { "why": "A mesh network is a data network built from **commercial Wi-Fi equipment with modified firmware**.", "trap": "It's not a DMR voice mode, satellite system or internet linking protocol.", "concept": "formats" }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Digital modes: RTTY, FT8 and Winlink",
+  "blurb": "Choose the right sideband and frequency for digital modes, run FT8 properly, and connect through Winlink gateways.",
+  "why": {
+    "G2E01": { "why": "RTTY by **AFSK** on an SSB transmitter is normally sent on **LSB**.", "trap": "USB is the sideband for FT8-family modes.", "concept": "afsk" },
+    "G2E02": { "why": "**VARA** is a digital protocol used with **Winlink**.", "trap": "It isn't EME, direction finding or DX spotting.", "concept": "winlink" },
+    "G2E03": { "why": "Interference causes **retries and timeouts**, long pauses and failed connections. All of these are symptoms.", "concept": "winlink" },
+    "G2E04": { "why": "FT8 stations take turns, so pick a **clear frequency** during the **alternate time slot**.", "trap": "Calling in the caller's own slot means you talk over them.", "concept": "ft8" },
+    "G2E05": { "why": "JT65, JT9, FT4 and FT8 using AFSK use **USB**.", "trap": "LSB is the RTTY sideband.", "concept": "afsk" },
+    "G2E06": { "why": "The most common HF RTTY shift is **170 Hz** between mark and space.", "concept": "afsk" },
+    "G2E07": { "why": "FT8 slots are strictly timed, so your **computer clock must be within about 1 second**.", "trap": "No special modem is needed. A sound card interface works.", "concept": "ft8" },
+    "G2E08": { "why": "Most digital activity on 20 m sits **between 14.070 and 14.100 MHz**.", "trap": "SSTV and the top of the phone band are elsewhere.", "concept": "where" },
+    "G2E09": { "why": "A PACTOR connection is between **two stations only**, so you can't join one.", "concept": "winlink" },
+    "G2E10": { "why": "Send a **connect message** on the gateway's **published frequency**.", "concept": "winlink" },
+    "G2E11": { "why": "An AREDN mesh provides **high-speed data** during an **emergency or community event**.", "concept": "mesh" },
+    "G2E12": { "why": "Winlink is a wireless email network, a form of packet radio, and works on VHF and HF. **All** are true.", "concept": "winlink" },
+    "G2E13": { "why": "A Winlink Remote Message Server is a **gateway** between radio and the internet.", "trap": "A TNC is a radio modem, not a server.", "concept": "winlink" },
+    "G2E14": { "why": "**Reversed mark/space**, **wrong baud rate** and **wrong sideband** each stop decoding. All can be the cause.", "concept": "afsk" },
+    "G2E15": { "why": "FT8 on 20 m sits at about **14.074 to 14.077 MHz**, inside the digital segment.", "trap": "14.110 to 14.113 is above the digital segment.", "concept": "where" }
+  }
+}

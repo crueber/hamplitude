@@ -1,0 +1,68 @@
+import { Piezo } from '@/visuals/extra/E6D_Piezo'
+import { CrystalEquiv } from '@/visuals/extra/E6D_CrystalEquiv'
+import { CorePermeability } from '@/visuals/extra/E6D_CorePermeability'
+import { Laminations } from '@/visuals/extra/E6D_Laminations'
+import { Saturation } from '@/visuals/extra/E6D_Saturation'
+import { ToroidField } from '@/visuals/extra/E6D_ToroidField'
+import { NoLoadTransformer } from '@/visuals/extra/E6D_NoLoadTransformer'
+
+<Concept id="piezo" title="Piezoelectric: squeeze it for voltage, apply voltage and it flexes" qs="E6D01 E6D03 E6D02">
+
+**Piezoelectric** materials such as quartz **generate a voltage when stressed** and **flex (deform) when a voltage is applied**. A crystal's electrical behavior is a **series RLC** branch (its mechanical resonance) **in parallel with a shunt capacitance** from the electrodes and strays.
+
+<Piezo />
+
+<CrystalEquiv />
+
+<Key>Piezo: stress and voltage convert both ways. Crystal = series RLC, shunted by C.</Key>
+
+</Concept>
+
+<Concept id="permeability" title="Core permeability sets inductance" qs="E6D05 E6D06 E6D08 E6D11">
+
+**Permeability** is how readily a core material carries magnetic flux, and it determines inductance. **Ferrite** has higher initial permeability than powdered iron, so it needs **fewer turns** for a given inductance. **Powdered iron** has the better **temperature stability**. Non-magnetic **brass** pushed into a coil **lowers** the inductance.
+
+<CorePermeability />
+
+| Core | Inductance | Notable |
+|---|---|---|
+| Ferrite | highest | fewest turns needed |
+| Powdered iron | high | best temperature stability |
+| Air or ceramic | baseline | no magnetic boost |
+| Brass | slightly lower | non-magnetic conductor |
+
+<Key>Permeability sets L. Ferrite: fewer turns. Powdered iron: most stable. Brass: lowers L.</Key>
+
+</Concept>
+
+<Concept id="core-limits" title="Cores waste power as eddy currents and fail at saturation" qs="E6D04 E6D12">
+
+Changing flux drives circulating **eddy currents** in a solid core, heating it. Building the core from **thin insulated layers** keeps those loops small and **cuts power loss**. Push too much current and the core **saturates**: excessive magnetic flux, no further rise, and inductance collapses.
+
+<Laminations />
+
+<Saturation />
+
+<Key>Thin layers: less eddy-current loss. Saturation: too much flux.</Key>
+
+</Concept>
+
+<Concept id="toroid" title="Toroids keep the field inside; ferrite beads damp VHF/UHF parasitics" qs="E6D10 E6D09">
+
+A **toroid** winds the coil on a ring, so the **magnetic field is confined within the core** instead of spreading into space like a straight (solenoid) coil. A **ferrite bead** slipped over a lead is lossy at high frequency and is used as a **VHF/UHF parasitic suppressor** at transistor amplifier terminals.
+
+<ToroidField />
+
+<Key>Toroid: field stays in the core. Ferrite bead: parasitic suppressor.</Key>
+
+</Concept>
+
+<Concept id="magnetizing" title="With no load, the primary still draws magnetizing current" qs="E6D07">
+
+Even with the secondary open, the primary draws a small current to create the core's magnetic flux. That is the **magnetizing current**.
+
+<NoLoadTransformer />
+
+<Key>Transformer, no load: magnetizing current.</Key>
+
+</Concept>

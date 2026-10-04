@@ -1,0 +1,63 @@
+import { Reactance } from '@/visuals/extra/E7E_Reactance'
+import { Emphasis } from '@/visuals/extra/E7E_Emphasis'
+import { BalancedMod } from '@/visuals/extra/E7E_BalancedMod'
+import { MixerProducts } from '@/visuals/extra/E7E_MixerProducts'
+import { EnvelopeDetector, ProductDetector } from '@/visuals/extra/E7E_Detectors'
+
+<Concept id="reactance" title="FM and PM: vary a capacitance in the oscillator" qs="E7E01 E7E02">
+
+A **reactance modulator** lets the audio change a **capacitance** (often a varactor diode) in the oscillator's tuned circuit. The oscillator's frequency or phase follows the audio, giving **FM or PM**. You apply it to a **local oscillator**, not the final amplifier.
+
+<Reactance />
+
+<Key>Reactance modulator: audio varies a capacitance, so the oscillator makes PM or FM.</Key>
+
+</Concept>
+
+<Concept id="emphasis" title="Boost the highs going in, cut them coming out" qs="E7E05 E7E06">
+
+A **pre-emphasis** network in the transmitter boosts the higher audio frequencies. A **de-emphasis** network in the receiver cuts them back, so the audio is flat again.
+
+<Emphasis />
+
+A phase modulator already produces that rising response, so receivers use de-emphasis for **compatibility with transmitters using phase modulation**.
+
+<Key>Pre-emphasis boosts highs (transmit). De-emphasis cuts them (receive).</Key>
+
+</Concept>
+
+<Concept id="balanced" title="Balanced modulator cancels the carrier. A filter makes SSB." qs="E7E04 E7E07">
+
+A **balanced modulator** multiplies audio by a carrier and cancels the carrier, leaving two sidebands (DSB). A **sideband filter** then removes one: **single sideband**. The audio before modulation is **baseband**: the frequency range of the message signal.
+
+<BalancedMod />
+
+<Key>Balanced modulator followed by a filter = SSB. Baseband = message range before modulation.</Key>
+
+</Concept>
+
+<Concept id="mixer" title="A mixer outputs both inputs, their sum and their difference" qs="E7E08 E7E09">
+
+Two frequencies in, four principal frequencies out: **each input, the sum, and the difference**. A filter picks the one you want. Overdrive the inputs and the mixer's non-linearity creates extra **spurious products** at other frequencies.
+
+<MixerProducts />
+
+<Key>Mixer out: f1, f2, f1 + f2, f1 − f2. Input too strong: spurious products.</Key>
+
+</Concept>
+
+<Concept id="detectors" title="Match the detector to the signal" qs="E7E03 E7E10 E7E11">
+
+| Signal | Detector |
+|---|---|
+| AM | **Diode envelope detector**: rectification and filtering of RF |
+| SSB, CW | **Product detector**: a mixer with a local oscillator |
+| FM | **Frequency discriminator** |
+
+<EnvelopeDetector />
+
+<ProductDetector />
+
+<Key>Discriminator = FM detector. Product detector = SSB detector. Envelope = diode rectify and filter.</Key>
+
+</Concept>

@@ -1,0 +1,19 @@
+{
+  "title": "Metric prefixes and decibels",
+  "blurb": "Convert between milli, kilo, mega and other prefixes by moving the decimal, and tell dB from the power ratio.",
+  "why": {
+    "T5B01": { "why": "Milli is a thousandth, so there are 1000 mA in an ampere: 1.5 × 1000 = **1500 mA**.", "trap": "Dividing makes a tiny number. A smaller unit needs a bigger number.", "concept": "convert" },
+    "T5B02": { "why": "Kilo is 1000: 1,500,000 ÷ 1000 = **1500 kHz**.", "trap": "1500 MHz would be a thousand times too large. Count the steps.", "concept": "convert" },
+    "T5B03": { "why": "Kilo means a thousand, so one kilovolt is **1000 volts**.", "trap": "One thousandth of a volt is a millivolt.", "concept": "prefixes" },
+    "T5B04": { "why": "Micro means one millionth: one microvolt is **one-millionth of a volt**.", "trap": "One thousandth of a volt is a millivolt.", "concept": "prefixes" },
+    "T5B05": { "why": "Milli is a thousandth: 500 ÷ 1000 = **0.5 W**.", "trap": "Multiplying gives 500,000 W, which is wildly too big.", "concept": "convert" },
+    "T5B06": { "why": "1000 mA make 1 A: 3000 ÷ 1000 = **3 A**.", "trap": "0.003 A divides by 1,000,000. Only one rung separates milli from base.", "concept": "convert" },
+    "T5B07": { "why": "Mega to kilo is one rung down: 3.525 × 1000 = **3525 kHz**.", "trap": "Going to the smaller unit makes the number bigger, not smaller.", "concept": "convert" },
+    "T5B08": { "why": "Pico to micro is two rungs up: 1,000,000 ÷ 1,000,000 = **1 µF**.", "trap": "0.001 µF is only 1000 pF. Pico to micro is two rungs (six places), not three.", "concept": "convert" },
+    "T5B09": { "why": "Power doubled (5 → 10 W). A doubling is **+3 dB**.", "trap": "dB is about the ratio, not the 5 watts added.", "concept": "decibels" },
+    "T5B10": { "why": "12 → 3 W is ÷4, two halvings: −3 − 3 = **−6 dB**.", "trap": "−3 dB is only one halving (12 → 6 W).", "concept": "decibels" },
+    "T5B11": { "why": "20 → 200 W is ×10, which is **+10 dB**.", "concept": "decibels" },
+    "T5B12": { "why": "Kilo to mega is ÷1000: 28,400 ÷ 1000 = **28.4 MHz**.", "trap": "28.4 kHz misses a rung: 28,400 kHz is a thousand times larger.", "concept": "convert" },
+    "T5B13": { "why": "Mega to giga is ÷1000: 2425 ÷ 1000 = **2.425 GHz**.", "trap": "MHz to GHz is one rung (÷1000). 0.002425 divides by a million.", "concept": "convert" }
+  }
+}

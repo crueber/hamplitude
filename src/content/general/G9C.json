@@ -1,0 +1,17 @@
+{
+  "title": "Yagi beams, gain and matching",
+  "blurb": "Explain Yagi element roles, what raises gain and bandwidth, the dBi and dBd scales, and how hairpin and gamma matches work.",
+  "why": {
+    "G9C01": { "why": "**Larger-diameter elements** widen the SWR bandwidth. Thin elements make the match sharper and narrower.", "trap": "Closer spacing and loading coils don't widen it.", "concept": "tuning" },
+    "G9C02": { "why": "The driven element is about **½ wavelength**, like a dipole.", "concept": "yagi" },
+    "G9C03": { "why": "The **reflector is longer** than the driven element and the **directors are shorter**.", "trap": "Don't swap them: short elements in front, long behind.", "concept": "yagi" },
+    "G9C04": { "why": "A dipole is already 2.15 dBi, so the same antenna reads **2.15 dB higher in dBi**.", "concept": "gain-units" },
+    "G9C05": { "why": "More directors on a longer boom **increase gain** and narrow the beam.", "trap": "Beamwidth gets narrower, not wider.", "concept": "tuning" },
+    "G9C07": { "why": "Front-to-back ratio is the **main-lobe power compared with the power radiated the opposite way**.", "concept": "yagi" },
+    "G9C08": { "why": "The main lobe is the **direction of maximum radiated field strength**.", "concept": "yagi" },
+    "G9C09": { "why": "Two stacked Yagis give about twice the power: 10 log 2 ≈ **3 dB**.", "concept": "gain-units" },
+    "G9C10": { "why": "**Boom length, number of elements and element spacing** can all be adjusted to trade gain, front-to-back and SWR bandwidth.", "concept": "tuning" },
+    "G9C11": { "why": "A hairpin (beta) match is a **shorted stub at the feed point** of the Yagi.", "trap": "A quarter-wave 75 Ω section is a different matching trick.", "concept": "match" },
+    "G9C12": { "why": "A gamma match **doesn't need the driven element insulated from the boom**.", "concept": "match" }
+  }
+}

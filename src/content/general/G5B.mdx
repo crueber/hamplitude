@@ -1,0 +1,71 @@
+import { DecibelExplorer } from '@/visuals/shared/DecibelExplorer'
+import { G5B_DbLoss } from '@/visuals/general/G5B_DbLoss'
+import { G5B_ParallelCurrents } from '@/visuals/general/G5B_ParallelCurrents'
+import { G5B_PowerCalc } from '@/visuals/general/G5B_PowerCalc'
+import { G5B_SineLevels } from '@/visuals/general/G5B_SineLevels'
+import { G5B_PepSteps } from '@/visuals/general/G5B_PepSteps'
+
+<Concept id="decibels" title="3 dB doubles power. 1 dB loses about a fifth." qs="G5B01 G5B10">
+
+Decibels compare power as a ratio. **+3 dB** is two times the power, **−3 dB** is half. Losses compound: a loss of **1 dB** leaves about 79 % of the power, so about **20.6 %** is gone.
+
+<DecibelExplorer />
+
+<G5B_DbLoss />
+
+<Key>3 dB = ×2 power. 1 dB loss = 20.6 % of the power lost.</Key>
+
+<Callout kind="warn" title="Trap">6 dB is two doublings, so ×4 in power. 3 dB is the single doubling.</Callout>
+
+</Concept>
+
+<Concept id="parallel-current" title="Parallel branches: same voltage, currents add" qs="G5B02">
+
+Every branch sees the full source voltage and draws its own current, **I = E ÷ R**. The source supplies the **sum**. The smaller resistor takes the bigger share, which is how a **current divider** splits current. Across series parts, voltage divides instead, with the larger resistor getting the bigger share.
+
+<G5B_ParallelCurrents />
+
+<Key>Total current = sum of the branch currents. More branches means more total current.</Key>
+
+</Concept>
+
+<Concept id="power" title="Power: pick the formula for what you know" qs="G5B03 G5B04 G5B05 G5B12">
+
+Power is **P = E × I**. Ohm's law (E = I × R) gives two more forms when one of E or I is missing.
+
+<G5B_PowerCalc />
+
+| You know | Formula | Result |
+|---|---|---|
+| 12 V, 0.2 A | P = E × I | **2.4 W** |
+| 400 V, 800 Ω | P = E² ÷ R | **200 W** |
+| 7 mA, 1,250 Ω | P = I² × R, with I = 0.007 A | **61 mW** |
+| 1,200 W, 50 Ω | E = √(P × R) | **245 V** |
+
+<Mnemonic>Convert milliamperes to amperes first, then square.</Mnemonic>
+
+</Concept>
+
+<Concept id="rms" title="RMS is the heating value: 0.707 of peak" qs="G5B07 G5B08 G5B09">
+
+An AC signal swings between its **peak** values. Its **RMS** value heats a resistor exactly like the same DC voltage. For a sine wave:
+
+<G5B_SineLevels />
+
+<Key>RMS = 0.707 × peak. Peak = 1.414 × RMS. Peak-to-peak = 2 × peak.</Key>
+
+<Callout kind="tip" title="Check direction">RMS is always the smallest of the three. If your answer is smaller than the RMS you started with, you went the wrong way.</Callout>
+
+</Concept>
+
+<Concept id="pep" title="PEP: power at the crest of the signal" qs="G5B06 G5B11 G5B13 G5B14">
+
+**Peak envelope power (PEP)** is the power at the highest point of the signal's envelope. A scope reads peak-to-peak, so convert to RMS, then use E² ÷ R.
+
+<G5B_PepSteps />
+
+An unmodulated carrier never changes amplitude, so its **PEP equals its average power**: ratio **1.00**.
+
+<Key>Peak-to-peak ÷ 2 × 0.707 = RMS. Then P = E² ÷ R. Steady carrier: PEP = average.</Key>
+
+</Concept>

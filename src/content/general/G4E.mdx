@@ -1,0 +1,53 @@
+import { Whip } from '@/visuals/general/G4E_Whip'
+import { MobilePower } from '@/visuals/general/G4E_MobilePower'
+import { PanelCells } from '@/visuals/general/G4E_PanelCells'
+import { SolarWiring } from '@/visuals/general/G4E_SolarWiring'
+
+<Concept id="short-antenna" title="A short mobile whip trades efficiency and bandwidth for size" qs="G4E01 G4E02 G4E05 G4E06">
+
+HF wavelengths are too long for a full-size whip on a car. A **capacitance hat** (and loading coil) **electrically lengthens** the short antenna. A **corona ball** on the tip reduces **RF voltage discharge** from it.
+
+<Whip />
+
+The price: the **electrically short antenna's efficiency** is the biggest limit on HF mobile, and its **operating bandwidth is very limited**, so you retune when you change frequency.
+
+<Key>Hat lengthens, ball calms the tip. Short means inefficient and narrow.</Key>
+
+</Concept>
+
+<Concept id="mobile-power" title="Wire the radio to the battery, and expect vehicle noise" qs="G4E03 G4E04 G4E07">
+
+<MobilePower />
+
+A 100 W radio draws a lot of current on transmit. Connect it **directly to the battery with heavy-gauge fused wire**. The dash **auxiliary socket's wiring may be inadequate** for that current. The alternator is not the place to connect.
+
+The vehicle itself makes receive noise: **charging system, fuel delivery, and control computers** can **all** interfere.
+
+<Key>Battery, heavy wire, fuse. Not the dash socket.</Key>
+
+</Concept>
+
+<Concept id="solar-panel" title="A panel is many half-volt cells in series-parallel" qs="G4E08 G4E09">
+
+A fully lit silicon cell gives about **0.5 V** open circuit. **Series** strings add voltage and **parallel** strings add current, so a panel's cells are wired **series-parallel**.
+
+<PanelCells />
+
+<Key>One silicon cell: about 0.5 V. Panels are series-parallel.</Key>
+
+</Concept>
+
+<Concept id="solar-charging" title="Diode blocks the backflow, controller manages the charge" qs="G4E10 G4E11">
+
+<SolarWiring />
+
+| Part | Job |
+|---|---|
+| **Series diode** | stops the battery **discharging through the panel** in low or no light |
+| **Charge controller** | regulates charging; **required with LiFePO4** batteries |
+
+A diode alone does not regulate voltage or limit current.
+
+<Key>Diode: one-way valve. Lithium iron phosphate needs a charge controller.</Key>
+
+</Concept>

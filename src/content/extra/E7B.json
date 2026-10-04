@@ -1,0 +1,18 @@
+{
+  "title": "Amplifier classes and circuits",
+  "blurb": "Explain amplifier classes, why switching amplifiers are efficient, and read the bias parts in a common-emitter circuit.",
+  "why": {
+    "E7B01": { "why": "Class AB conducts **more than 180° but less than 360°**. In push-pull, each device conducts a bit more than half the cycle.", "trap": "Exactly 180° is Class B; the full cycle is Class A; less than 180° is Class C.", "concept": "classes" },
+    "E7B02": { "why": "Class D **switches** its device fully on and off, which keeps heat low and efficiency high.", "trap": "Class D is not about linearity or distortion-free biasing; that is Class A.", "concept": "switching" },
+    "E7B03": { "why": "Switching makes square edges full of harmonics, so a **filter at the output removes harmonic content**.", "trap": "A load resistor doesn't remove harmonics; it would only waste power.", "concept": "switching" },
+    "E7B04": { "why": "Class A conducts the whole cycle, so its Q-point sits **about halfway between saturation and cutoff**, leaving room to swing both ways.", "trap": "Near cutoff is Class B or C; the Q-point is about the load line, not resistor values.", "concept": "classes" },
+    "E7B05": { "why": "Stray feedback causes parasitic oscillation. **Parasitic suppressors and/or neutralization** stop it.", "trap": "Tuning for maximum power or minimum loading does not stop feedback oscillation.", "concept": "parasitics" },
+    "E7B06": { "why": "In a grounded-grid stage the signal enters at the cathode (like a transistor emitter), a **low-impedance** input.", "trap": "Don't confuse it with the grounded-cathode stage, which has high input impedance.", "concept": "configs" },
+    "E7B07": { "why": "Class C conducts less than half a cycle and is nonlinear. An SSB signal's envelope gets distorted, spreading **distortion and excess bandwidth**.", "trap": "Class C is efficient, not clean; it creates intermodulation instead of reducing it.", "concept": "classes" },
+    "E7B08": { "why": "Heat is V × I. A switch is **saturated (low V) or cut off (low I)** most of the time, so little power is lost.", "trap": "Efficiency comes from how the device is driven, not from higher voltage or push-pull.", "concept": "switching" },
+    "E7B09": { "why": "An emitter follower (common collector) gives an output **in phase** with its input. Common emitter inverts.", "trap": "Phase inversion and low input impedance belong to other configurations.", "concept": "configs" },
+    "E7B10": { "why": "R1 from the supply and R2 to ground form a **voltage divider** that sets the transistor's base bias.", "trap": "They don't carry the output, so they are not load resistors, and they feed no signal back.", "concept": "fig-e7-1" },
+    "E7B11": { "why": "R3 sits in the emitter leg. More current raises its voltage and reduces base drive: **self bias**.", "trap": "C3 is the emitter bypass, not R3; the output load is the collector resistor.", "concept": "fig-e7-1" },
+    "E7B12": { "why": "Input goes to the base, output comes off the collector, emitter is the shared leg: **common emitter**.", "trap": "Emitter follower and common collector are the same circuit, with output taken at the emitter.", "concept": "fig-e7-1" }
+  }
+}

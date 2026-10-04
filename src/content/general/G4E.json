@@ -1,0 +1,17 @@
+{
+  "title": "Mobile, portable and solar stations",
+  "blurb": "Explain what mobile antenna parts do, how to power and quiet a mobile radio, and how solar panels charge a battery safely.",
+  "why": {
+    "G4E01": { "why": "A capacitance hat **electrically lengthens** a physically short antenna, helping it resonate on a lower frequency.", "trap": "It doesn't reduce radiation resistance or lower the radiation angle.", "concept": "short-antenna" },
+    "G4E02": { "why": "A rounded ball spreads the field at the tip, so **RF voltage discharge** from a sharp end is reduced.", "trap": "It limits RF discharge. It isn't a crash guard and doesn't narrow bandwidth.", "concept": "short-antenna" },
+    "G4E03": { "why": "100 W takes heavy current, so connect **to the battery with heavy-gauge fused wire**. A balanced transmission line carries RF, not DC power.", "concept": "mobile-power" },
+    "G4E04": { "why": "The socket is wired for small loads, so its **wiring may be inadequate** for the radio's current.", "trap": "Polarity and engine heating aren't the issue.", "concept": "mobile-power" },
+    "G4E05": { "why": "Efficiency of the **electrically short antenna** is the biggest HF mobile limit: radiating power matters more than wire gauge.", "trap": "Wire gauge is fixable. There is no such FCC mobile power limit.", "concept": "short-antenna" },
+    "G4E06": { "why": "A short antenna has very high Q, so its **bandwidth is very limited** and it needs retuning when you change frequency.", "trap": "Short antennas have high Q, not low.", "concept": "short-antenna" },
+    "G4E07": { "why": "Charging system, fuel delivery and control computers are each noise sources: **all of these**.", "concept": "mobile-power" },
+    "G4E08": { "why": "One cell gives only about half a volt, so cells are in **series for voltage and parallel for current**: series-parallel.", "concept": "solar-panel" },
+    "G4E09": { "why": "A lit silicon cell's open-circuit voltage is about **0.5 V**, which is why panels string cells in series.", "concept": "solar-panel" },
+    "G4E10": { "why": "With no light the panel is a dead load, so the diode **blocks battery discharge through the panel**.", "trap": "Regulating voltage and limiting current are charge-controller jobs, not the diode's.", "concept": "solar-charging" },
+    "G4E11": { "why": "LiFePO4 must be charged within limits, so the panel needs a **charge controller** to regulate charging.", "trap": "A series resistor can't regulate charging, and grounding or placement don't help.", "concept": "solar-charging" }
+  }
+}

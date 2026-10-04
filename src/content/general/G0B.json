@@ -1,0 +1,19 @@
+{
+  "title": "Station electrical and tower safety",
+  "blurb": "Explain where fuses, GFCIs, interlocks and lightning grounds belong, and the precautions for towers, generators and solder.",
+  "why": {
+    "G0B01": { "why": "A fuse or breaker opens a **hot** wire. Fusing the neutral or ground could leave the circuit live or defeat the safety path.", "trap": "Neutral and ground must stay unfused.", "concept": "fusing" },
+    "G0B02": { "why": "A 20 A breaker needs wire rated for 20 A: **AWG 12**. Thinner wire (a higher AWG number) overheats.", "trap": "Higher AWG numbers are thinner wire, not stronger.", "concept": "fusing" },
+    "G0B03": { "why": "AWG 14 wire is rated for **15 A**. A larger breaker would let the wire overheat without tripping.", "concept": "fusing" },
+    "G0B04": { "why": "A lightning ground goes **outside the building**, so the strike energy is dumped before it enters.", "concept": "lightning" },
+    "G0B05": { "why": "A GFCI trips when current leaks **from a hot wire directly to ground**, for example through a person.", "trap": "Hot to neutral is normal load current. A GFCI ignores it and overvoltage.", "concept": "protectors" },
+    "G0B06": { "why": "The National Electrical Code covers **electrical safety of the station**: wiring, fusing and grounding. It doesn't cover RF or modulation.", "concept": "fusing" },
+    "G0B07": { "why": "Check that the harness is **rated for the climber's weight** and **within its allowable service life**.", "concept": "tower" },
+    "G0B08": { "why": "Make sure **circuits that supply power to the tower are locked out and tagged** so nobody can re-energize them while you climb.", "trap": "Ungrounding the tower makes it more dangerous.", "concept": "tower" },
+    "G0B09": { "why": "Exhaust contains carbon monoxide, so run the generator in a **well-ventilated area**.", "trap": "Fuel stored near the generator is a fire hazard.", "concept": "hazards" },
+    "G0B10": { "why": "Lead from solder reaches your mouth through food, so **wash your hands** carefully after handling it.", "concept": "hazards" },
+    "G0B11": { "why": "Every lightning ground rod must be **bonded together with all other grounds**, so they rise and fall together.", "trap": "The rule is to bond the grounds together. Ground wires should avoid sharp bends.", "concept": "lightning" },
+    "G0B12": { "why": "An interlock cuts the AC feed when the cabinet opens, so **dangerous voltages are removed** before you can reach inside.", "trap": "Thermal and overvoltage protection are different circuits.", "concept": "protectors" },
+    "G0B13": { "why": "Place arrestors **where the feed lines enter the building**, diverting a surge to ground before it reaches the station.", "concept": "lightning" }
+  }
+}

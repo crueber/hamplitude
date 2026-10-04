@@ -1,0 +1,44 @@
+import { Photoconductor } from '@/visuals/extra/E6F_Photoconductor'
+import { SolarCell } from '@/visuals/extra/E6F_SolarCell'
+import { Optoisolator } from '@/visuals/extra/E6F_Optoisolator'
+import { Encoder } from '@/visuals/extra/E6F_Encoder'
+
+<Concept id="photoconductive" title="Light on a photoconductor lowers its resistance" qs="E6F02 E6F06">
+
+In a **photoconductive** device, light frees charge carriers in the material, so its **resistance decreases** and more current flows. They are made from a **crystalline semiconductor**.
+
+<Photoconductor />
+
+<Key>More light: lower resistance. Material: crystalline semiconductor.</Key>
+
+</Concept>
+
+<Concept id="photovoltaic" title="A photovoltaic cell turns light into electrical energy" qs="E6F01 E6F04 E6F09 E6F10 E6F11">
+
+The **photovoltaic effect** is the **conversion of light to electrical energy**. Photons carry the light, and **electrons** absorb the energy. Power-generating cells are made of **silicon**. A fully illuminated silicon cell gives about **0.5 V** open-circuit. **Efficiency** is the **fraction of the light converted** to electricity.
+
+<SolarCell />
+
+<Key>Photovoltaic: light to electricity, silicon, about 0.5 V per cell. Electrons absorb the energy.</Key>
+
+</Concept>
+
+<Concept id="optoisolator" title="An optoisolator links two circuits with light only" qs="E6F03 E6F07 E6F08">
+
+The common **optoisolator (optocoupler)** is an **LED and a phototransistor** in one package. Light crosses an insulating gap, so a control circuit switches another circuit with **no electrical connection** between them. That **isolation** is why it is used with solid-state circuits that switch **120 VAC**. A **solid-state relay** uses **semiconductors** to do the job of an electromechanical relay, often with an optoisolator on its input.
+
+<Optoisolator />
+
+<Key>Optoisolator: LED plus phototransistor, electrical isolation. Solid-state relay: semiconductors replace the mechanical relay.</Key>
+
+</Concept>
+
+<Concept id="encoder" title="An optical shaft encoder counts light pulses through a patterned wheel" qs="E6F05">
+
+A wheel with slots or marks turns between a light source and a detector. Each slot **interrupts the light**, giving a pulse train, so counting pulses **detects rotation**.
+
+<Encoder />
+
+<Key>Encoder: patterned wheel interrupting a light beam.</Key>
+
+</Concept>

@@ -1,0 +1,17 @@
+{
+  "title": "Current, voltage and AC/DC",
+  "blurb": "Name the unit for each electrical quantity, tell conductors from insulators, and explain what makes AC different from DC.",
+  "why": {
+    "T5A01": { "why": "Current is the flow of charge, measured in **amperes**.", "trap": "Volts measure the push, ohms the opposition, watts the power.", "concept": "quantities" },
+    "T5A02": { "why": "Power is measured in **watts**.", "trap": "Watt-hours are energy (power over time), not power itself.", "concept": "quantities" },
+    "T5A03": { "why": "Electrons flowing through a circuit is **current**.", "trap": "Voltage is the push that causes flow, not the flow.", "concept": "quantities" },
+    "T5A04": { "why": "Complete cycles per second is **frequency**.", "trap": "Wavelength is distance per cycle, not cycles per second.", "concept": "ac-dc" },
+    "T5A05": { "why": "Electrons move when there is a difference in **voltage** between two points: the push.", "trap": "Capacitance and inductance store energy; they don't start the flow.", "concept": "quantities" },
+    "T5A06": { "why": "Frequency is measured in **hertz**: cycles per second.", "trap": "Henry is inductance, farad is capacitance.", "concept": "ac-dc" },
+    "T5A07": { "why": "Metals have many **free electrons** that drift when voltage is applied.", "trap": "Electrons carry current, not protons. Density has nothing to do with it.", "concept": "conductors" },
+    "T5A08": { "why": "**Glass** holds its electrons tightly, so it insulates. Sea water, stainless steel and graphite all conduct.", "concept": "conductors" },
+    "T5A09": { "why": "AC alternates between **positive and negative** directions, swinging through zero each time.", "trap": "Swinging only to zero and back is pulsing, not AC.", "concept": "ac-dc" },
+    "T5A10": { "why": "The rate at which electrical energy is used is **power**.", "trap": "Current is flow and voltage is push. Neither one is a rate of energy use.", "concept": "quantities" },
+    "T5A11": { "why": "Resistance opposes any current: **DC, AC and RF** alike.", "concept": "ac-dc" }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Operating courtesy, band plans and RACES",
+  "blurb": "Share frequencies politely, space signals correctly, follow band plans, respond to distress, and know the RACES rules.",
+  "why": {
+    "G2B01": { "why": "Outside emergencies, **no station has priority** on any frequency. Nets, QSOs and contests all share.", "trap": "Being first, or running a net, gives no right to the frequency.", "concept": "no-priority" },
+    "G2B02": { "why": "A distress call outranks your contact. **Acknowledge** that station and **find out what help is needed**.", "trap": "Going silent or cutting power doesn't help anyone in distress.", "concept": "distress" },
+    "G2B03": { "why": "Nobody has priority, so **work it out** with the other stations in a **mutually acceptable** way.", "trap": "Claiming priority or flipping sideband just creates more interference.", "concept": "no-priority" },
+    "G2B04": { "why": "CW is narrow, so **150 to 500 Hz** between stations avoids interference.", "trap": "2 to 3 kHz is the SSB spacing.", "concept": "spacing" },
+    "G2B05": { "why": "SSB is about 3 kHz wide, so leave **2 to 3 kHz** between stations.", "trap": "150 to 500 Hz is only enough for narrow CW signals.", "concept": "spacing" },
+    "G2B06": { "why": "Ask first: **\"QRL?\" plus your call** on CW, or ask if the frequency is in use plus your call on phone.", "trap": "QSY means changing frequency, so it doesn't ask if the frequency is busy.", "concept": "no-priority" },
+    "G2B07": { "why": "The **voluntary band plan** is how amateurs agree where to operate. Following it is accepted practice.", "concept": "band-plan" },
+    "G2B08": { "why": "**50.100 to 50.125 MHz** is the DX window: only contacts with stations **outside the 48 contiguous states**.", "concept": "band-plan" },
+    "G2B09": { "why": "A RACES control operator must **hold an FCC-issued amateur operator license**. A non-licensed official doesn't qualify.", "concept": "races" },
+    "G2B10": { "why": "Interference and conditions change, so a net should have a **backup frequency**.", "trap": "Reading the whole roster or repeating phonetics wastes air time.", "concept": "distress" },
+    "G2B11": { "why": "Routine RACES drills and tests are limited to **1 hour per week** without special authorization.", "concept": "races" }
+  }
+}

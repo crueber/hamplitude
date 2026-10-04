@@ -1,0 +1,154 @@
+/* Design tokens. Every visual and component reads from these, so light/dark and
+   per-license accent colours come for free. */
+
+:root {
+  --font-body: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Space Grotesk Variable', 'Inter Variable', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --gap: 16px;
+  --maxw: 1080px;
+  --lesson-w: 760px;
+
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  color-scheme: light;
+
+  /* ---- light ---- */
+  --bg: #f5f3ee;
+  --bg-tint: #eceae2;
+  --surface: #ffffff;
+  --surface-2: #faf9f6;
+  --ink: #14202b;
+  --ink-2: #3b4a58;
+  --muted: #667785;
+  --line: #e2dfd5;
+  --line-strong: #cfcabd;
+
+  --primary: #0d8a7e;
+  --primary-ink: #ffffff;
+  --primary-soft: #d7f1ed;
+  --accent: #d97706;
+  --accent-soft: #fdecc8;
+
+  --good: #16a34a;
+  --good-soft: #dcf5e4;
+  --bad: #dc3d3d;
+  --bad-soft: #fde1e1;
+
+  --shadow: 0 1px 2px rgb(20 32 43 / 0.05), 0 6px 20px -8px rgb(20 32 43 / 0.12);
+  --shadow-lg: 0 2px 4px rgb(20 32 43 / 0.06), 0 24px 48px -16px rgb(20 32 43 / 0.2);
+
+  /* license accents */
+  --technician: #1f9d63;
+  --general: #2f6fe0;
+  --extra: #8b4fd8;
+
+  /* diagram palette — meaning is consistent everywhere:
+     voltage=red, current=blue, resistance=amber, power=violet, signal=teal */
+  --d-voltage: #e0484d;
+  --d-current: #2f6fe0;
+  --d-resist: #e08a0b;
+  --d-power: #8b4fd8;
+  --d-signal: #0d8a7e;
+  --d-good: #16a34a;
+  --d-bad: #dc3d3d;
+  --d-ink: #14202b;
+  --d-muted: #8795a1;
+  --d-fill: #eef1f3;
+  --d-fill-2: #dde3e8;
+  --d-bg: #ffffff;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0b1218;
+  --bg-tint: #0f1820;
+  --surface: #121c25;
+  --surface-2: #162330;
+  --ink: #e8eef3;
+  --ink-2: #b9c7d3;
+  --muted: #8397a8;
+  --line: #213240;
+  --line-strong: #2d4355;
+
+  --primary: #2dd4bf;
+  --primary-ink: #04201c;
+  --primary-soft: #0f2f2c;
+  --accent: #fbbf24;
+  --accent-soft: #332706;
+
+  --good: #4ade80;
+  --good-soft: #0f2b1b;
+  --bad: #ff7a7a;
+  --bad-soft: #361517;
+
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px -10px rgb(0 0 0 / 0.5);
+  --shadow-lg: 0 2px 4px rgb(0 0 0 / 0.4), 0 28px 56px -16px rgb(0 0 0 / 0.7);
+
+  --technician: #3ddc97;
+  --general: #6aa3ff;
+  --extra: #b98cff;
+
+  --d-voltage: #ff6b70;
+  --d-current: #6aa3ff;
+  --d-resist: #ffb23d;
+  --d-power: #b98cff;
+  --d-signal: #2dd4bf;
+  --d-good: #4ade80;
+  --d-bad: #ff7a7a;
+  --d-ink: #e8eef3;
+  --d-muted: #7f93a4;
+  --d-fill: #1b2a37;
+  --d-fill-2: #243646;
+  --d-bg: #0f1820;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --bg: #0b1218;
+    --bg-tint: #0f1820;
+    --surface: #121c25;
+    --surface-2: #162330;
+    --ink: #e8eef3;
+    --ink-2: #b9c7d3;
+    --muted: #8397a8;
+    --line: #213240;
+    --line-strong: #2d4355;
+    --primary: #2dd4bf;
+    --primary-ink: #04201c;
+    --primary-soft: #0f2f2c;
+    --accent: #fbbf24;
+    --accent-soft: #332706;
+    --good: #4ade80;
+    --good-soft: #0f2b1b;
+    --bad: #ff7a7a;
+    --bad-soft: #361517;
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px -10px rgb(0 0 0 / 0.5);
+    --shadow-lg: 0 2px 4px rgb(0 0 0 / 0.4), 0 28px 56px -16px rgb(0 0 0 / 0.7);
+    --technician: #3ddc97;
+    --general: #6aa3ff;
+    --extra: #b98cff;
+    --d-voltage: #ff6b70;
+    --d-current: #6aa3ff;
+    --d-resist: #ffb23d;
+    --d-power: #b98cff;
+    --d-signal: #2dd4bf;
+    --d-good: #4ade80;
+    --d-bad: #ff7a7a;
+    --d-ink: #e8eef3;
+    --d-muted: #7f93a4;
+    --d-fill: #1b2a37;
+    --d-fill-2: #243646;
+    --d-bg: #0f1820;
+  }
+}
+
+/* Per-license accent, set on a wrapper via data-license */
+[data-license='technician'] { --lic: var(--technician); }
+[data-license='general'] { --lic: var(--general); }
+[data-license='extra'] { --lic: var(--extra); }

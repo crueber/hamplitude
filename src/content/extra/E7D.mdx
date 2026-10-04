@@ -1,0 +1,70 @@
+import { Fig72 } from '@/visuals/extra/E7D_Fig72'
+import { SeriesShunt } from '@/visuals/extra/E7D_SeriesShunt'
+import { PassHeat } from '@/visuals/extra/E7D_PassHeat'
+import { SwitchReg } from '@/visuals/extra/E7D_SwitchReg'
+import { SeriesCaps } from '@/visuals/extra/E7D_SeriesCaps'
+import { StepStart } from '@/visuals/extra/E7D_StepStart'
+import { SolarChain } from '@/visuals/extra/E7D_SolarChain'
+import { Runtime } from '@/visuals/extra/E7D_Runtime'
+
+<Concept id="linear" title="A linear regulator varies a pass transistor to hold the output" qs="E7D01 E7D03 E7D06 E7D07 E7D08">
+
+A **Zener diode** is the stable voltage **reference**. It holds the transistor's base steady. The **pass transistor** (Q1) conducts more or less current so the output stays constant. Nothing is switched, so it is a **linear** regulator.
+
+<Fig72 />
+
+<Key>Zener = reference. Pass transistor = varied conduction keeps the output constant. C2 bypasses ripple around D1.</Key>
+
+</Concept>
+
+<Concept id="series-shunt" title="Series or shunt: where the control element sits" qs="E7D04 E7D05 E7D12 E7D13">
+
+A **series** regulator puts the control element in the path (three-terminal IC regulators are this kind). A **shunt** regulator puts it across the output, so it loads the unregulated source.
+
+<SeriesShunt />
+
+A series regulator turns the excess voltage into heat. **Dropout voltage** is the minimum input-to-output difference needed to keep regulating.
+
+<PassHeat />
+
+<Key>Heat = (input voltage − output voltage) × output current. Dropout = minimum input-to-output voltage.</Key>
+
+</Concept>
+
+<Concept id="switchmode" title="Switching supplies chop, then filter" qs="E7D02 E7D10">
+
+A **switchmode** regulator switches the input fully on and off. The **duty cycle** of those pulses, fed to a filter, sets the average output.
+
+<SwitchReg />
+
+It switches at a high frequency, so the transformer and filter parts can be **much smaller**. That makes it lighter and cheaper than an equivalent linear supply.
+
+<Key>Switchmode: vary the duty cycle of pulses into a filter. High frequency means small parts.</Key>
+
+</Concept>
+
+<Concept id="big-supply" title="High-voltage supplies: balance the capacitors, start gently" qs="E7D14 E7D15">
+
+Filter capacitors in **series** share the voltage by their leakage, which is never equal. **Equal resistors** across each one force an even split. The same resistors also **discharge** the capacitors when power is off and supply a **minimum load**: all three are correct.
+
+<SeriesCaps />
+
+A **step-start** limits turn-on current so the filter capacitors charge gradually.
+
+<StepStart />
+
+<Key>Equal resistors: equalize voltage, discharge, minimum load. Step-start: gradual capacitor charging.</Key>
+
+</Concept>
+
+<Concept id="battery-solar" title="Battery hours = amp-hours ÷ amps; panels need an inverter for AC" qs="E7D09 E7D11">
+
+<Runtime />
+
+Solar panels and batteries are DC. An **inverter** turns that DC into AC.
+
+<SolarChain />
+
+<Key>Operating time = capacity (Ah) ÷ average current (A). Inverter = DC to AC.</Key>
+
+</Concept>

@@ -1,0 +1,39 @@
+import { ElectricUnits } from '@/visuals/shared/ElectricUnits'
+import { Conductors } from '@/visuals/technician/T5A_Conductors'
+import { AcDc } from '@/visuals/technician/T5A_AcDc'
+
+<Concept id="quantities" title="Voltage pushes, current flows, power is the rate" qs="T5A01 T5A02 T5A03 T5A05 T5A10">
+
+A difference in **voltage** pushes electrons along. Their flow is **current**. **Power** is how fast electrical energy is used.
+
+<ElectricUnits keys={['voltage', 'current', 'resistance', 'power']} />
+
+<Key>Volts push. Amperes flow. Watts measure how fast energy is used.</Key>
+
+<Callout kind="warn" title="Trap">Watt-hours and ampere-hours measure an *amount* used over time. Power and current are *rates*.</Callout>
+
+</Concept>
+
+<Concept id="conductors" title="Free electrons make a conductor" qs="T5A07 T5A08">
+
+In metals, outer electrons are loose and drift when voltage pushes them. In an insulator, every electron stays bound to its atom.
+
+<Conductors />
+
+<Key>Metals have many free electrons. Glass, plastic and air do not.</Key>
+
+<Callout kind="warn" title="Trap">Sea water and graphite look harmless, but both conduct. Glass is the insulator.</Callout>
+
+</Concept>
+
+<Concept id="ac-dc" title="AC reverses direction. Frequency counts the cycles." qs="T5A04 T5A06 T5A09 T5A11">
+
+**DC** flows one way. **AC** alternates between positive and negative directions. Complete cycles per second is **frequency**, in **hertz (Hz)**.
+
+<AcDc />
+
+<Key>AC swings both ways, not just to zero. Hertz = cycles per second.</Key>
+
+Resistance opposes current of every kind: DC, AC and RF.
+
+</Concept>

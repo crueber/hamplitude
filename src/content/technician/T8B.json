@@ -1,0 +1,18 @@
+{
+  "title": "Amateur satellites",
+  "blurb": "Why a satellite's frequency shifts as it passes, how tracking works, and how to use uplinks, downlinks and beacons.",
+  "why": {
+    "T8B01": { "why": "Beacon telemetry reports the satellite's **health and status**: things like battery and temperature.", "trap": "Beacons don't report your signal strength or give precise time.", "concept": "beacon" },
+    "T8B02": { "why": "A transponder is shared. Too much power makes your signal dominate and **blocks access for other users**.", "concept": "links" },
+    "T8B03": { "why": "Tracking programs give the **map, pass times with azimuth and elevation, and Doppler-corrected frequency**. All three.", "concept": "tracking" },
+    "T8B04": { "why": "Amateur satellites carry **SSB, FM and CW/data**. No single mode is the only one.", "concept": "links" },
+    "T8B05": { "why": "A beacon is a **satellite transmission carrying status information**.", "trap": "It isn't an antenna, light, or reflector.", "concept": "beacon" },
+    "T8B06": { "why": "A tracking program needs the **Keplerian elements** that describe the orbit. Power and Doppler history aren't inputs.", "trap": "Doppler is an output the program calculates, not something you feed in.", "concept": "tracking" },
+    "T8B07": { "why": "Doppler shift is an **observed frequency change from relative motion** between satellite and station.", "trap": "It isn't an orbit change or a band-swapping mode.", "concept": "doppler" },
+    "T8B08": { "why": "U/V is uplink then downlink: **U = UHF (70 cm) up, V = VHF (2 m) down**.", "trap": "U/V does not mean ultraviolet.", "concept": "links" },
+    "T8B09": { "why": "Spin fading comes from the **rotation of the satellite and its antennas**, which sweeps the pattern past you.", "trap": "Doppler shifts frequency; it doesn't fade strength.", "concept": "doppler" },
+    "T8B10": { "why": "**LEO = Low Earth Orbit**, close to Earth with a period of about 100 minutes.", "concept": "tracking" },
+    "T8B11": { "why": "Amateur satellite telemetry is not encrypted, so **anyone** can receive it.", "concept": "beacon" },
+    "T8B12": { "why": "Match the beacon: when your downlink is **about as strong as the beacon**, your uplink power is about right.", "trap": "Beacon telemetry doesn't report your signal level. Compare against the beacon instead.", "concept": "links" }
+  }
+}

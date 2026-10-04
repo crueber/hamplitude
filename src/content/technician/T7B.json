@@ -1,0 +1,17 @@
+{
+  "title": "Interference and distortion",
+  "blurb": "Explain what causes overload, interference, distorted audio and low power, and the first fix to try for each.",
+  "why": {
+    "T7B01": { "why": "Louder or closer to the mic means a wider frequency swing. Talking **farther away** brings deviation back down.", "trap": "Talking louder makes it worse. Power level and cooling have nothing to do with deviation.", "concept": "distortion" },
+    "T7B02": { "why": "A broadcast receiver's front end **can't reject strong signals outside its band**, so your signal gets in anyway.", "trap": "The ham transmitter's audio settings don't affect what a neighbor's receiver does with your carrier.", "concept": "overload" },
+    "T7B03": { "why": "Fundamental overload, harmonics and spurious emissions are **all** ways to cause RFI.", "concept": "overload" },
+    "T7B04": { "why": "**High SWR** reflects power back, so a solid-state transceiver folds its output power back to protect itself.", "trap": "Low SWR is the good case. Noise figure and linearity affect receiving and distortion, not output power.", "concept": "swr-power" },
+    "T7B05": { "why": "The receiver is the one being overloaded, so put the filter on **its antenna input** and block your signal before it gets in.", "trap": "Filtering your own transmitter won't remove your fundamental. Changing mode doesn't remove it either.", "concept": "overload" },
+    "T7B06": { "why": "Start with your own station: make sure it **works properly** and doesn't interfere with your own TV or radio on that channel.", "trap": "Don't shut down and phone the FCC, or add parts like a \"harmonic doubler\".", "concept": "first-steps" },
+    "T7B07": { "why": "A **band-reject filter** blocks the strong commercial FM signal while leaving your 2 m band alone.", "trap": "A preamp amplifies the interference too. Shielded cable doesn't stop a signal entering at the antenna.", "concept": "overload" },
+    "T7B08": { "why": "Work with the neighbor to find the device, explain the FCC rules politely, and make sure your station meets good amateur practice: **all of these**.", "concept": "first-steps" },
+    "T7B09": { "why": "Poorly installed coax connectors leak, so first check that **all TV feed line connectors are installed properly**.", "trap": "Filters and preamps come later. Fix the simple, cheap thing first.", "concept": "first-steps" },
+    "T7B10": { "why": "Off frequency, too loud or too close to the mic, or a poor location can each garble your audio on a repeater: **all of these**.", "concept": "distortion" },
+    "T7B11": { "why": "A clip-on **ferrite choke** on the mic cable stops your own RF feeding back into the transmitter and distorting your voice.", "trap": "Extra feed line, power cycling or squelch settings don't stop RF on the mic cable.", "concept": "distortion" }
+  }
+}

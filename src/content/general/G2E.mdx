@@ -1,0 +1,62 @@
+import { G2E_AfskChain } from '@/visuals/general/G2E_AfskChain'
+import { G2E_MarkSpace } from '@/visuals/general/G2E_MarkSpace'
+import { G2E_Ft8Slots } from '@/visuals/general/G2E_Ft8Slots'
+import { G2E_BandStrip } from '@/visuals/general/G2E_BandStrip'
+import { G2E_Winlink } from '@/visuals/general/G2E_Winlink'
+import { G2E_Mesh } from '@/visuals/general/G2E_Mesh'
+
+<Concept id="afsk" title="AFSK is audio into an SSB radio, so sideband matters" qs="G2E01 G2E05 G2E06 G2E14">
+
+**AFSK** means software makes audio tones and an **SSB** radio sends them. Choose the sideband the mode expects: **RTTY: LSB**. **JT65, JT9, FT4, FT8: USB**.
+
+<G2E_AfskChain />
+
+**RTTY** swaps between two tones, **mark** and **space**, usually **170 Hz** apart.
+
+<G2E_MarkSpace />
+
+Tuned in but no decode? **Reversed mark/space**, **wrong baud rate** or **wrong sideband** can each cause it.
+
+<Key>RTTY: LSB, 170 Hz. FT8 family: USB. No decode: check all three.</Key>
+
+</Concept>
+
+<Concept id="ft8" title="FT8: take turns, and keep your clock right" qs="G2E07 G2E04">
+
+<G2E_Ft8Slots />
+
+FT8 runs in fixed **time slots**. The **computer clock must be within about 1 second**. No special hardware modem is needed. To answer a CQ, pick a **clear frequency** in the **alternate time slot** to the caller.
+
+<Key>Right clock, alternate slot, clear frequency.</Key>
+
+</Concept>
+
+<Concept id="where" title="Digital modes live low: 14.070 to 14.100" qs="G2E08 G2E15">
+
+<G2E_BandStrip />
+
+On 20 m, most digital operation is **between 14.070 and 14.100 MHz**, and FT8 sits at about **14.074 to 14.077 MHz**. The exam's wrong places: SSTV near 14.230, the top of phone near 14.325.
+
+<Mnemonic>Digital opens at 14.070. FT8 sits just inside, at 14.074.</Mnemonic>
+
+</Concept>
+
+<Concept id="winlink" title="Winlink: email over radio, through a gateway" qs="G2E02 G2E12 G2E13 G2E10 G2E09 G2E03">
+
+<G2E_Winlink />
+
+**Winlink** sends and receives **email** over radio. It is also a **form of packet radio** and works on **VHF and HF**. **VARA** is a digital protocol used with Winlink, like **PACTOR**. A **gateway** is a Winlink **Remote Message Server**. Connect by sending a **connect message** on its **published frequency**. A PACTOR contact is **between two stations only**: you can't join in.
+
+<Key>Gateway = Remote Message Server. Connect on its published frequency.</Key>
+
+</Concept>
+
+<Concept id="mesh" title="AREDN mesh: high-speed data when it counts" qs="G2E11">
+
+<G2E_Mesh />
+
+An **Amateur Radio Emergency Data Network** mesh provides **high-speed data services** during an **emergency or community event**.
+
+<Key>AREDN = fast data for emergencies and events.</Key>
+
+</Concept>

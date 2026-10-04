@@ -1,0 +1,18 @@
+{
+  "title": "RF effects in components",
+  "blurb": "Explain skin effect, parasitic reactance, electrical length, and the difference between real and reactive power.",
+  "why": {
+    "E5D01": { "why": "At RF the current flows near the surface, so less conductor carries it and **resistance increases with frequency**.", "trap": "Electron mobility and temperature coefficients are unrelated to skin effect.", "concept": "skin" },
+    "E5D02": { "why": "Leads act as small inductors: their reactance (2πfL) grows with frequency. Short leads **minimise inductive reactance** at VHF and up.", "concept": "parasitics" },
+    "E5D03": { "why": "Reactive power means voltage and current are **90° out of phase**.", "trap": "In phase is real power; 45° is a mix of both.", "concept": "power" },
+    "E5D04": { "why": "A longer connection is a bigger fraction of a short wavelength, so **phase shift** along it grows. Short connections reduce it.", "concept": "length" },
+    "E5D05": { "why": "An electrolytic capacitor's construction adds series **inductance**, so at RF it stops acting like a capacitor.", "trap": "Skin effect is a resistance issue, not what defeats electrolytics.", "concept": "parasitics" },
+    "E5D06": { "why": "Neighbouring turns act as a small capacitor across the inductor: **inter-turn capacitance** gives it a self-resonance.", "concept": "parasitics" },
+    "E5D07": { "why": "Self-resonance occurs where the part's **nominal and parasitic reactance** are equal and opposite.", "trap": "Resistance does not cause resonance. It takes the part's own reactance plus an opposite parasitic one.", "concept": "parasitics" },
+    "E5D08": { "why": "At RF, current crowds to the surface of the conductors, so **skin effect** is the main loss in film capacitors.", "trap": "Dielectric loss exists, but skin effect is the primary RF loss in film capacitors.", "concept": "skin" },
+    "E5D09": { "why": "Ideal L and C store energy in magnetic or electric fields and return it, so **no power is dissipated**.", "trap": "Heat comes from resistance, not from reactance.", "concept": "power" },
+    "E5D10": { "why": "A thicker conductor has a greater **electrical length** than a thinner one of the same physical length.", "concept": "length" },
+    "E5D11": { "why": "Only R dissipates: P = I² × R = 1² × 100 = **100 W**. The 141.4 is apparent power (VA).", "trap": "141.4 = 1 × √(100² + 100²) is volt-amperes, not watts.", "concept": "power" },
+    "E5D12": { "why": "Reactive power is **wattless, nonproductive power**: energy shuttled in and out of L and C.", "trap": "It is not consumed in the parts' wire resistance; that is real loss.", "concept": "power" }
+  }
+}

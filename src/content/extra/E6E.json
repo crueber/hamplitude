@@ -1,0 +1,18 @@
+{
+  "title": "Semiconductors and packages for RF",
+  "blurb": "Explain why GaAs and GaN suit UHF and microwaves, what MMICs are, and why surface mount beats leaded packages at RF.",
+  "why": {
+    "E6E01": { "why": "GaAs has **higher electron mobility**, so devices respond faster at UHF and above.", "trap": "Higher noise figures and lower transconductance would be drawbacks.", "concept": "mobility" },
+    "E6E02": { "why": "A **DIP** has pins that pass through holes in the board. PLCC, BGA and SOT mount on the surface.", "trap": "BGA, PLCC and SOT are all surface-mount.", "concept": "packages" },
+    "E6E03": { "why": "Gallium nitride supports the **highest frequency** of operation for MMICs among these.", "trap": "Silicon nitride and dioxide are insulators, not the fast active material.", "concept": "mobility" },
+    "E6E04": { "why": "MMICs are designed for **50 Ω** input and output, matching standard RF systems.", "trap": "75 Ω is video and cable-TV practice; 300 Ω is old twin-lead.", "concept": "mmic" },
+    "E6E05": { "why": "Noise figure is a small positive dB value; a good low-noise UHF preamp is about **0.5 dB**.", "trap": "Negative dB and dBm values are not noise figures.", "concept": "mmic" },
+    "E6E06": { "why": "MMICs give **controlled gain, low noise figure and constant input and output impedance** across their range.", "trap": "Nearly infinite gain is an ideal op-amp idea, not an MMIC trait.", "concept": "mmic" },
+    "E6E07": { "why": "MMICs connect through **microstrip**: copper traces on the board forming a controlled-impedance line.", "trap": "Waveguide and parallel wire do not suit tiny printed-board parts.", "concept": "mmic" },
+    "E6E08": { "why": "DC bias enters through a **resistor and/or RF choke on the output lead**, which keeps RF out of the supply.", "trap": "Feeding the input lead or a bare Vcc pin is not how the common MMIC works.", "concept": "mmic" },
+    "E6E09": { "why": "**Surface-mount** parts have the shortest leads, so the least parasitic L and C.", "trap": "Axial, radial and TO-220 packages all have long leads.", "concept": "parasitics" },
+    "E6E10": { "why": "Surface mount gives a smaller area, shorter traces, and **less parasitic inductance and capacitance**: all three are true.", "trap": "Each option is a real advantage; none is wrong.", "concept": "parasitics" },
+    "E6E11": { "why": "**DIP** = dual in-line package: two rows of pins on opposite sides.", "trap": "It does not mean two chips in the package.", "concept": "packages" },
+    "E6E12": { "why": "DIP leads are long, adding stray inductance that wrecks performance at UHF and higher: **excessive lead length**.", "trap": "Dielectric loss and conductive epoxy are not the issue.", "concept": "parasitics" }
+  }
+}

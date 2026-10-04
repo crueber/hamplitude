@@ -1,0 +1,59 @@
+import { E9B_ReadPolar } from '@/visuals/extra/E9B_ReadPolar'
+import { E9B_ReadElevation } from '@/visuals/extra/E9B_ReadElevation'
+import { E9B_FarField } from '@/visuals/extra/E9B_FarField'
+import { E9B_Segments } from '@/visuals/extra/E9B_Segments'
+import { BeamGain } from '@/visuals/technician/T9A_BeamGain'
+
+<Concept id="read-polar" title="Read an azimuth plot: rings are dB below the peak" qs="E9B01 E9B02 E9B03">
+
+The outer ring is **0 dB**, the main lobe's peak. Each inner ring is that many dB weaker. In **E9-1** the main lobe points to 0°.
+
+- **3 dB beamwidth**: find where the main lobe crosses the **−3 ring** on each side, then count the degrees between them.
+- **Front-to-back**: peak minus the level at 180°.
+- **Front-to-side**: peak minus the level at 90°.
+
+<E9B_ReadPolar />
+
+<Key>Subtract the ring level from 0. E9-1: beamwidth 50°, front-to-back 18 dB, front-to-side 14 dB.</Key>
+
+</Concept>
+
+<Concept id="read-elev" title="An elevation plot shows lobes above the horizon" qs="E9B04 E9B05 E9B06">
+
+**Azimuth** plots go all the way round (0 to ±180°) and show compass direction. **Elevation** plots show only the upper half, from the horizon (0°) to straight up (90°), because ground sits below. In **E9-2** the lowest lobe is the strongest, peaking at **7.5°**. Front-to-back works the same way: 0 dB ahead versus the level at 180°, here 28 dB.
+
+<E9B_ReadElevation />
+
+<Key>Angles 0° to 180° with ground below = elevation. Peak angle = tip of the longest lobe.</Key>
+
+</Concept>
+
+<Concept id="gain-power" title="Gain moves power; it does not add power" qs="E9B07">
+
+A lossless antenna and an isotropic radiator driven by the same power **radiate the same total power**. The directional antenna just squeezes it into some directions, so gain in one direction means less elsewhere.
+
+<BeamGain />
+
+<Key>Same total radiated power. Gain is where it goes.</Key>
+
+</Concept>
+
+<Concept id="far-field" title="The far field has a fixed pattern shape" qs="E9B08">
+
+Close to an antenna the pattern changes with distance. Beyond some distance the **shape no longer varies**; signal only gets weaker. Patterns, gain and beamwidth are specified in the far field.
+
+<E9B_FarField />
+
+<Key>Far field = pattern shape stops changing with distance.</Key>
+
+</Concept>
+
+<Concept id="mom" title="Antenna models chop wires into segments" qs="E9B09 E9B10 E9B11">
+
+Antenna modeling software uses the **Method of Moments**. It models each wire as a series of **segments, each with a uniform current**, then solves how they all interact. Too few segments follow the real current poorly. Use at least **10 per half wavelength**, or the **computed feed point impedance may be incorrect**.
+
+<E9B_Segments />
+
+<Key>Method of Moments = many short segments of uniform current. Fewer than 10 per half wave risks a wrong feed point impedance.</Key>
+
+</Concept>

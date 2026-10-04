@@ -1,0 +1,18 @@
+{
+  "title": "Television: fast-scan and SSTV",
+  "blurb": "Explain NTSC interlace, vestigial sideband, digital TV coding rates and how SSTV encodes brightness, color and line starts.",
+  "why": {
+    "E2B01": { "why": "Rate 3/4 means **3 of every 4 bits are data** and the other 1 in 4 (**25%**) is forward error correction.", "trap": "It is not compression and not a guard interval.", "concept": "digital-tv" },
+    "E2B02": { "why": "An NTSC frame is **525 lines**. The 30 and 60 numbers are frames and fields per second.", "trap": "1080 is an HD format, not NTSC.", "concept": "interlace" },
+    "E2B03": { "why": "Interlace scans the **odd-numbered lines in one field, then the even-numbered lines** in the next.", "trap": "Every line still runs left to right.", "concept": "interlace" },
+    "E2B04": { "why": "Analog SSTV sends **color lines sequentially**, one color scan after another.", "trap": "There is no color burst or subcarrier as in NTSC.", "concept": "sstv" },
+    "E2B05": { "why": "VSB **reduces bandwidth** while keeping good **low-frequency video fidelity**.", "trap": "It carries neither audio nor chroma.", "concept": "vsb" },
+    "E2B06": { "why": "VSB is AM sending **one complete sideband and part of the other**.", "concept": "vsb" },
+    "E2B07": { "why": "DVB-T amateur TV is modulated with **QAM and QPSK**.", "trap": "FM, FSK, AM and OOK are not DVB-T modulation.", "concept": "digital-tv" },
+    "E2B08": { "why": "70 cm overlaps **channels shared with cable TV**, so a cable-ready analog TV can tune it directly.", "concept": "vsb" },
+    "E2B09": { "why": "DRM SSTV is an audio signal, so a plain **SSB receiver** can receive and decode it.", "concept": "sstv" },
+    "E2B10": { "why": "In analog SSTV, **tone frequency** encodes brightness: a low pitch is dark, a high pitch is bright.", "trap": "Amplitude does not carry the picture.", "concept": "sstv" },
+    "E2B11": { "why": "The VIS code identifies **which SSTV mode** is being sent, so the software can set itself up.", "trap": "It isn't line sync or the call sign.", "concept": "sstv" },
+    "E2B12": { "why": "**Specific tone frequencies** (the sync tone) mark the start of each line.", "trap": "Timing alone or amplitude is not used.", "concept": "sstv" }
+  }
+}

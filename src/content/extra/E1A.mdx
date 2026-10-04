@@ -1,0 +1,54 @@
+import { E1A_Sideband } from '@/visuals/extra/E1A_Sideband'
+import { E1A_Channel } from '@/visuals/extra/E1A_Channel'
+import { E1A_LowBandPower } from '@/visuals/extra/E1A_LowBandPower'
+import { E1A_Vessel } from '@/visuals/extra/E1A_Vessel'
+import { E1A_Forwarding } from '@/visuals/extra/E1A_Forwarding'
+
+<Concept id="sideband" title="The whole signal must fit, not just the carrier" qs="E1A01 E1A02 E1A03 E1A04">
+
+<E1A_Sideband />
+
+Your dial shows the **carrier**. **USB** extends **above** it, **LSB** extends **below**. Add the bandwidth in the direction the sideband grows and check that end against the edge.
+
+* USB: highest carrier = **upper edge minus bandwidth**
+* LSB: lowest carrier = **lower edge plus bandwidth**
+
+<Key>Keep the whole signal inside: move the carrier one signal width (3 kHz for a 3 kHz signal) away from the edge, into the band.</Key>
+
+</Concept>
+
+<Concept id="sixty" title="60 m is channelized: CW goes in the middle" qs="E1A06">
+
+<E1A_Channel />
+
+Channelized 60 m operation puts a CW signal on the **channel's centre frequency**.
+
+</Concept>
+
+<Concept id="lowbands" title="2200 m and 630 m: power is measured as EIRP" qs="E1A07 E1A09">
+
+<E1A_LowBandPower />
+
+Both limits are tiny and are measured as **EIRP** (power as radiated by the antenna, gain included): **1 W** on 2200 m, **5 W** on 630 m (except in some parts of Alaska).
+
+<Mnemonic>2200 m: 1 W. 630 m: 5 W. Both EIRP, not PEP.</Mnemonic>
+
+</Concept>
+
+<Concept id="vessel" title="Ships and aircraft: license rules plus the captain's approval" qs="E1A05 E1A10 E1A11">
+
+<E1A_Vessel />
+
+For a US-registered vessel the rules follow the **amateur license**, not a marine permit. The master or pilot only decides whether the station may run at all.
+
+<Key>Any FCC amateur license. Captain approves.</Key>
+
+</Concept>
+
+<Concept id="forwarding" title="Forwarding: the originator answers" qs="E1A08">
+
+<E1A_Forwarding />
+
+Automatic message forwarding passes a message station to station. A bad message that slips through is primarily the fault of the **control operator of the originating station**.
+
+</Concept>

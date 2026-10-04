@@ -1,0 +1,17 @@
+{
+  "title": "FM index, deviation ratio and multiplexing",
+  "blurb": "How to calculate modulation index and deviation ratio, and what OFDM and frequency or time multiplexing do.",
+  "why": {
+    "E8B01": { "why": "Index = **frequency deviation ÷ modulating frequency**: how many modulating-tone widths the carrier swings.", "trap": "Amplitude and bandwidth are not in the definition.", "concept": "mod-index" },
+    "E8B02": { "why": "The index depends on the swing and the modulating signal, not the carrier. It is **independent of the RF carrier frequency**.", "concept": "mod-index" },
+    "E8B03": { "why": "Index = 3000 Hz ÷ 1000 Hz = **3**.", "trap": "0.3 is the flipped ratio, 1000 ÷ 3000.", "concept": "mod-index" },
+    "E8B04": { "why": "Index = 6 kHz ÷ 2 kHz = **3**. Deviation goes on top.", "trap": "0.3 is the inverted ratio, 2 ÷ 6.", "concept": "mod-index" },
+    "E8B05": { "why": "Deviation ratio = 5 kHz ÷ 3 kHz = **1.67**.", "trap": "0.6 is 3 ÷ 5: flipped.", "concept": "dev-ratio" },
+    "E8B06": { "why": "Deviation ratio = 7.5 kHz ÷ 3.5 kHz = **2.14**.", "trap": "0.47 is 3.5 ÷ 7.5: flipped.", "concept": "dev-ratio" },
+    "E8B07": { "why": "OFDM is a modulation technique for **digital modes**, sending data on many subcarriers.", "concept": "ofdm" },
+    "E8B08": { "why": "OFDM is **digital modulation using subcarriers** at frequencies chosen to avoid intersymbol interference.", "trap": "It is not frequency modulation, a compression method, or a slow narrow-band mode.", "concept": "ofdm" },
+    "E8B09": { "why": "Deviation ratio = **maximum carrier deviation ÷ highest audio modulating frequency**.", "trap": "The carrier centre frequency is never part of it.", "concept": "dev-ratio" },
+    "E8B10": { "why": "FDM puts different data streams in **separate frequency bands** at the same time.", "trap": "Jumping band to band is frequency hopping, not FDM.", "concept": "mux" },
+    "E8B11": { "why": "Digital TDM lets several signals **share discrete time slots** on one transmission, taking turns.", "trap": "Subcarriers divide frequency, not time.", "concept": "mux" }
+  }
+}

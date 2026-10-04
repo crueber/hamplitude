@@ -1,0 +1,46 @@
+import { MeterHookup } from '@/visuals/technician/T7D_MeterHookup'
+import { Ohmmeter } from '@/visuals/technician/T7D_Ohmmeter'
+import { SolderJoints } from '@/visuals/technician/T7D_Solder'
+
+<Concept id="meters" title="Voltmeter goes across. Ammeter goes in line." qs="T7D01 T7D02 T7D03 T7D04 T7D07">
+
+<MeterHookup />
+
+| Meter | Measures | Connect |
+|---|---|---|
+| **Voltmeter** | voltage (electric potential) | **in parallel**, across the part |
+| **Ammeter** | current | **in series**, in the path |
+| **Ohmmeter** | resistance | across the part, **power off** |
+
+A **multimeter** is all three in one box, set by its dial: it measures **voltage and resistance** (and current).
+
+<Mnemonic>Voltage is between two points, so touch both. Current flows through, so be in the way.</Mnemonic>
+
+</Concept>
+
+<Concept id="ohmmeter" title="An ohmmeter makes its own current, so power must be off" qs="T7D05 T7D06 T7D10 T7D11">
+
+<Ohmmeter />
+
+An ohmmeter **applies a small current and measures the resulting voltage**. That's why the circuit must be **unpowered** when you measure resistance in a circuit.
+
+Putting a meter set to **resistance** across a live voltage can **damage it**.
+
+Across a large, discharged capacitor, the meter's current charges it, so the reading **keeps increasing**.
+
+<Key>Ohms: power off. Never measure voltage with the dial on resistance.</Key>
+
+</Concept>
+
+<Concept id="soldering" title="Solder: rosin-core, and shiny means good" qs="T7D08 T7D09">
+
+<SolderJoints />
+
+| Solder | Electronics? |
+|---|---|
+| Rosin-core, lead-tin | **Yes** |
+| **Acid-core** | **No**: the acid flux corrodes electronics (it's for plumbing) |
+
+<Key>Rough or lumpy = cold joint. Redo it.</Key>
+
+</Concept>

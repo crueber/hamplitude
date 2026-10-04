@@ -1,0 +1,83 @@
+import { GroundRod } from '@/visuals/extra/E0A_GroundRod'
+import { Zones } from '@/visuals/extra/E0A_Zones'
+import { Sar } from '@/visuals/extra/E0A_Sar'
+import { MpeBand } from '@/visuals/extra/E0A_MpeBand'
+import { NearField } from '@/visuals/extra/E0A_NearField'
+import { Shared } from '@/visuals/extra/E0A_Shared'
+import { Eval } from '@/visuals/extra/E0A_Eval'
+import { HighGain } from '@/visuals/extra/E0A_HighGain'
+import { Climb } from '@/visuals/extra/E0A_Climb'
+
+<Concept id="ground-rod" title="A ground rod's main job is lightning" qs="E0A01">
+
+<GroundRod />
+
+An external earth connection gives a lightning strike's charge a path to **dissipate** in the earth.
+
+<Key>Ground rod: lightning charge dissipation.</Key>
+
+</Concept>
+
+<Concept id="uncontrolled" title="Your neighbors get the stricter uncontrolled limits" qs="E0A02 E0A08">
+
+<Zones />
+
+At a neighbor's home the public is exposed without knowing it, so you must meet the **uncontrolled** limits. The term is maximum permissible **exposure** (MPE), not "emission". **SAR** is the **rate at which the body absorbs RF energy**.
+
+<Sar />
+
+<Key>Neighbors: uncontrolled MPE limits. SAR: absorption rate.</Key>
+
+</Concept>
+
+<Concept id="freq-limits" title="Limits are tightest at 30 – 300 MHz, with separate E and H limits" qs="E0A03 E0A06">
+
+<MpeBand />
+
+Below 300 MHz there are separate **E (electric)** and **H (magnetic)** limits. The body responds to both, reflections and scattering change the field from place to place, and the **E and H peaks occur at different locations**.
+
+<NearField />
+
+<Key>Most restrictive: 30 – 300 MHz. All three reasons explain separate E and H limits.</Key>
+
+</Concept>
+
+<Concept id="shared-site" title="At a shared site, 5% of your limit makes it your problem" qs="E0A04">
+
+<Shared />
+
+Where the **combined** exposure exceeds the limit, every transmitter producing **5 percent or more of its own MPE limit** there must help fix it.
+
+<Key>5 percent or more of its limit: responsible.</Key>
+
+</Concept>
+
+<Concept id="evaluation" title="The exam: always evaluate, with a narrow exemption" qs="E0A09 E0A10">
+
+<Eval />
+
+The exam treats an RF exposure evaluation as required for every station: low power, CW mode, low ERP or a small antenna don't excuse it. The pool's one exemption is **hand-held transceivers sold before May 3, 2021**. (Real FCC rules let low-power stations skip the routine calculation, but they must still meet the limits.)
+
+<Key>Exam answer: always evaluate, even on 80 m. Pre-May-2021 hand-helds are exempt.</Key>
+
+</Concept>
+
+<Concept id="microwave" title="Microwave risk comes from high-gain antennas" qs="E0A05">
+
+<HighGain />
+
+Microwaves are not ionizing. The hazard is that **high-gain antennas** such as dishes concentrate the power into a narrow beam, giving **high exposure** in that beam.
+
+<Key>Microwaves: the danger is the high-gain beam.</Key>
+
+</Concept>
+
+<Concept id="tower-tieoff" title="Tie off at all times: lanyards on the tower legs, above your head" qs="E0A07 E0A11 E0A12">
+
+<Climb />
+
+**100% tie-off** means **at least one lanyard attached to the tower at all times**. Attach to the **tower legs**. A **shock-absorbing lanyard** goes **above head level**, so a fall is short.
+
+<Key>Always one lanyard on. Legs. Above your head.</Key>
+
+</Concept>

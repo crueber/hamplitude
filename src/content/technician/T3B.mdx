@@ -1,0 +1,58 @@
+import { EmWave } from '@/visuals/shared/EmWave'
+import { SameSpeed } from '@/visuals/shared/SameSpeed'
+import { WavelengthExplorer } from '@/visuals/shared/WavelengthExplorer'
+import { SpectrumBar } from '@/visuals/shared/SpectrumBar'
+
+<Concept id="fields" title="A radio wave is two fields, at right angles" qs="T3B01 T3B02 T3B03">
+
+A radio wave has two parts: an **electric field** and a **magnetic field**. They move together, **90° apart**.
+
+<EmWave caption="Red = electric field. Blue = magnetic field. Both are perpendicular to the direction of travel." />
+
+**Polarization** is just the direction of the *electric* field. Electric field up‑down → vertical polarization.
+
+<Key>Two fields, at right angles. Polarization = direction of the electric field.</Key>
+
+</Concept>
+
+<Concept id="speed" title="Every radio wave travels at the speed of light" qs="T3B04 T3B11 T3B12">
+
+In free space, **all** radio waves move at the speed of light: about **300,000,000 meters per second**.
+
+<SameSpeed />
+
+HF, VHF, microwaves, even visible light: same speed. Only the frequency and wavelength differ.
+
+<Callout kind="warn" title="Watch the units">Light is about 300,000,000 **meters** per second. The miles-per-hour choices are too slow, and sound is roughly a million times slower than radio.</Callout>
+
+</Concept>
+
+<Concept id="wavelength" title="Higher frequency, shorter wavelength" qs="T3B05 T3B06 T3B07">
+
+**Wavelength (λ)** is the distance one full wave takes up. Since the speed is fixed, more wiggles per second means each wiggle is shorter.
+
+<Formula label="Wavelength in meters">λ = 300 ÷ f (MHz)</Formula>
+
+<WavelengthExplorer />
+
+Try 146 MHz: 300 ÷ 146 ≈ **2 meters**. That's why it's the "2‑meter band". Bands are named by their wavelength.
+
+<Key>Frequency up → wavelength down. Divide 300 by the frequency in MHz.</Key>
+
+</Concept>
+
+<Concept id="ranges" title="HF, VHF and UHF: each is ×10 the last" qs="T3B08 T3B09 T3B10">
+
+<SpectrumBar highlight={['HF', 'VHF', 'UHF']} />
+
+| Name | Range | Think |
+|---|---|---|
+| **HF** | 3 – 30 MHz | **H**igh |
+| **VHF** | 30 – 300 MHz | **V**ery high |
+| **UHF** | 300 – 3000 MHz | **U**ltra high |
+
+<Mnemonic>3‑30, 30‑300, 300‑3000. Each step multiplies by 10, and the first digit stays 3.</Mnemonic>
+
+<Callout kind="warn" title="Trap">Wrong answers use the right numbers with **kHz** instead of MHz. Check the unit.</Callout>
+
+</Concept>

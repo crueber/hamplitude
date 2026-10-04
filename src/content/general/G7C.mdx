@@ -1,0 +1,84 @@
+import { SsbChain } from '@/visuals/general/G7C_SsbChain'
+import { MatchXfmr } from '@/visuals/general/G7C_MatchXfmr'
+import { Sensitivity } from '@/visuals/general/G7C_Sensitivity'
+import { FilterResponse } from '@/visuals/general/G7C_FilterResponse'
+import { DdsBlocks } from '@/visuals/general/G7C_DdsBlocks'
+import { SdrChain } from '@/visuals/general/G7C_SdrChain'
+import { IqPhasor } from '@/visuals/general/G7C_IqPhasor'
+
+<Concept id="ssb-chain" title="SSB: balanced modulator, filter, and a product detector to undo it" qs="G7C01 G7C02 G7C04">
+
+A **balanced modulator** mixes audio with a carrier and cancels the carrier. Its output is **double-sideband** RF. A **filter** then selects one sideband. In an SSB receiver a **product detector** mixes the signal with a carrier to get the audio back.
+
+<SsbChain />
+
+<Key>Balanced modulator: double-sideband RF. Filter: picks the sideband. Product detector: SSB receiver, extracts the audio.</Key>
+
+</Concept>
+
+<Concept id="match-xfmr" title="A matching transformer shows each side the impedance it wants" qs="G7C03">
+
+A transmitter output stage works best into one impedance, the feed line wants another. A **transformer** presents the **desired impedance to the transmitter and the feed line**. Impedance changes with the **square** of the turns ratio.
+
+<MatchXfmr />
+
+<Key>Impedance-matching transformer: the right impedance for both the transmitter and the feed line.</Key>
+
+</Concept>
+
+<Concept id="sensitivity" title="Sensitivity: gain, noise figure and bandwidth all matter" qs="G7C08">
+
+A receiver hears a signal only if it rises above its own noise. That noise floor depends on the **bandwidth** (wider lets in more noise) and the **noise figure** (how much noise the input stage adds). **Input gain** boosts the signal ahead of later, noisier stages. All three affect sensitivity.
+
+<Sensitivity />
+
+<Key>Input amplifier gain, input amplifier noise figure and demodulator bandwidth all affect sensitivity.</Key>
+
+</Concept>
+
+<Concept id="filter-terms" title="Filter vocabulary: read it off the response curve" qs="G7C07 G7C12 G7C13 G7C14">
+
+Pick a filter type and read each term off the curve. **Half-power** is the −3 dB point.
+
+<FilterResponse />
+
+| Term | Meaning |
+|---|---|
+| **Insertion loss** | attenuation **inside the passband** |
+| **Cutoff frequency** | where a low-pass output power falls to half the input |
+| **Bandwidth** (band-pass) | between the **upper and lower half-power** points |
+| **Ultimate rejection** | the **maximum** attenuation outside the passband |
+
+<Mnemonic>Insertion = inside. Ultimate = the most it can reject.</Mnemonic>
+
+</Concept>
+
+<Concept id="dds" title="A DDS tunes digitally but is as stable as its crystal" qs="G7C05">
+
+A **direct digital synthesizer** counts with a fixed **crystal clock**. A **tuning word** sets how fast the count advances, and a table and DAC turn it into a sine wave. Change the word and the output frequency changes.
+
+<DdsBlocks />
+
+<Key>DDS = variable output frequency with the stability of a crystal oscillator.</Key>
+
+</Concept>
+
+<Concept id="sdr-dsp" title="SDR: two signals 90° apart, then software does the rest" qs="G7C06 G7C09 G7C10 G7C11">
+
+An SDR mixes the signal with an oscillator at **0°** and at **90°**. These two are the **I** and **Q** signals. An **ADC** digitizes them and software does the **filtering, detection and modulation**.
+
+<SdrChain />
+
+I and Q together set amplitude and phase, so with the right processing **all types of modulation** can be created.
+
+<IqPhasor />
+
+A **DSP filter** is just numbers, so one radio offers a **wide range of bandwidths and shapes** without changing any parts.
+
+| | Analog filter | DSP filter |
+|---|---|---|
+| Bandwidth and shape | fixed by its parts | set by software |
+
+<Key>I and Q: 90° apart. Any modulation. Filtering, detection and modulation all in software.</Key>
+
+</Concept>

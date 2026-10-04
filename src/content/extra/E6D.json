@@ -1,0 +1,18 @@
+{
+  "title": "Inductors, cores and crystals",
+  "blurb": "Explain piezoelectricity and the crystal's equivalent circuit, how core permeability, laminations and saturation affect inductors and transformers.",
+  "why": {
+    "E6D01": { "why": "Piezoelectric materials **generate a voltage when stressed** and **flex when a voltage is applied**.", "trap": "It is a mechanical-electrical effect, not about light or EM waves.", "concept": "piezo" },
+    "E6D02": { "why": "A crystal behaves as a **series RLC** (its mechanical resonance) with a **shunt capacitance** for the electrodes and strays.", "trap": "Pure parallel RLC models miss the series resonance.", "concept": "piezo" },
+    "E6D03": { "why": "Applying a voltage **mechanically deforms** the material; this is the piezoelectric effect.", "trap": "Magnetic-field deformation is magnetostriction; light effects are photoelectric.", "concept": "piezo" },
+    "E6D04": { "why": "Thin insulated layers keep **eddy currents** small, so less power is lost as heat in the core.", "trap": "Layering is for loss, not cost or assembly.", "concept": "core-limits" },
+    "E6D05": { "why": "Ferrite's higher permeability means **fewer turns** for a given inductance.", "trap": "Temperature stability is the powdered iron advantage.", "concept": "permeability" },
+    "E6D06": { "why": "Inductance rises with the core's **permeability**: how well it carries magnetic flux.", "trap": "Permittivity belongs to capacitors' dielectrics.", "concept": "permeability" },
+    "E6D07": { "why": "With the secondary open, the primary draws only the **magnetizing current** that creates the core flux.", "trap": "It is not a load current, since none flows with no load.", "concept": "magnetizing" },
+    "E6D08": { "why": "**Powdered iron** keeps its magnetic characteristics steadier with temperature than ferrite.", "trap": "Ferrite has higher permeability, but drifts more with temperature.", "concept": "permeability" },
+    "E6D09": { "why": "**Ferrite beads** are lossy at VHF/UHF, so they damp parasitic oscillations at transistor leads.", "trap": "Beads, not steel-core toroids or filters, are the usual parasitic suppressor.", "concept": "toroid" },
+    "E6D10": { "why": "On a toroid, **most of the magnetic field stays inside the core**, so it couples little to nearby parts.", "trap": "Confinement reduces unwanted coupling; it does not add hysteresis or lower Q.", "concept": "toroid" },
+    "E6D11": { "why": "Non-magnetic **brass** in a coil **lowers** inductance. Ferrite raises it; ceramic does little.", "trap": "Ferrite is the classic inductance-raising core.", "concept": "permeability" },
+    "E6D12": { "why": "Saturation happens at **excessive magnetic flux**: the core can't carry more.", "trap": "Frequency and permeability choices do not cause saturation by themselves.", "concept": "core-limits" }
+  }
+}

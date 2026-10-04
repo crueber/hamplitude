@@ -1,0 +1,19 @@
+{
+  "title": "Test equipment and measurements",
+  "blurb": "Choose the right meter or scope for each station measurement and explain how a two-tone test and antenna analyzer work.",
+  "why": {
+    "G4B01": { "why": "An oscilloscope draws a trace using a **vertical** amplifier for amplitude and a **horizontal** one for the time sweep.", "trap": "Meters and signal generators have no deflection channels.", "concept": "scope" },
+    "G4B02": { "why": "A DVM gives one number. A scope shows how voltage **changes over time**, so it can display **complex waveforms**.", "trap": "A DVM is the more precise of the two.", "concept": "scope" },
+    "G4B03": { "why": "Keying is a **shape** (rise, hold, fall), and only an oscilloscope shows shape.", "trap": "A sidetone monitor only lets you hear it; a field strength meter gives a level.", "concept": "scope" },
+    "G4B04": { "why": "The scope watches the transmitter's **own RF output**, attenuated to a safe level, to see the envelope.", "trap": "Oscillator and mixer signals are internal, not what is transmitted.", "concept": "scope" },
+    "G4B05": { "why": "A high-impedance meter draws almost no current, so it **barely loads the circuit** and the reading stays true.", "trap": "Impedance is about loading, not range or resolution.", "concept": "meters" },
+    "G4B06": { "why": "A digital meter reads to more digits, so it gives **higher precision**.", "trap": "Analog needles respond faster to changes.", "concept": "meters" },
+    "G4B07": { "why": "Two tones that aren't harmonics of each other beat to a repeating envelope that exposes distortion: **two non-harmonically related audio signals**.", "concept": "scope" },
+    "G4B08": { "why": "A distorted envelope in a two-tone test means the amplifier isn't amplifying proportionally: it tests **linearity**.", "trap": "Carrier and sideband suppression are separate checks.", "concept": "scope" },
+    "G4B09": { "why": "A moving needle makes it easy to see a peak or dip while you adjust, so use analog when **adjusting for maximum or minimum**.", "trap": "Digital meters win on precision.", "concept": "meters" },
+    "G4B10": { "why": "Forward and reflected power give the reflection coefficient, and from it the **SWR**.", "trap": "Pattern and propagation need antenna tests, not an inline wattmeter.", "concept": "swr-instruments" },
+    "G4B11": { "why": "The analyzer makes its own test signal, so it needs **only the antenna and feed line**.", "concept": "swr-instruments" },
+    "G4B12": { "why": "Strong outside signals enter the analyzer's receiver and **corrupt the SWR reading**.", "concept": "swr-instruments" },
+    "G4B13": { "why": "An analyzer measures impedance, SWR and related line properties, including the **impedance of coax**. It doesn't measure gain, pattern or transmitter power.", "trap": "Gain and front-to-back need field measurements.", "concept": "swr-instruments" }
+  }
+}

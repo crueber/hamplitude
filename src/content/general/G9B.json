@@ -1,0 +1,18 @@
+{
+  "title": "Dipoles, verticals and wire antennas",
+  "blurb": "Size a dipole or monopole from frequency, and explain how pattern and feed impedance change with height, feed position and radials.",
+  "why": {
+    "G9B01": { "why": "With no feed line to contain RF, **station equipment may carry significant RF current**.", "trap": "A random wire has no required length, polarization or band preference.", "concept": "random-wire" },
+    "G9B02": { "why": "**Sloping the radials downward** raises the low feed impedance of a flat ground plane toward 50 Ω.", "trap": "Sloping them up or coiling them doesn't help.", "concept": "vertical" },
+    "G9B03": { "why": "A quarter-wave vertical radiates equally in every compass direction: **omnidirectional in azimuth**.", "trap": "Not isotropic: it still favors the horizon over straight up.", "concept": "vertical" },
+    "G9B04": { "why": "In the plane of the wire a dipole is a **figure-eight at right angles to the wire**. Nulls are off the ends.", "trap": "The lobes are broadside, not off the ends.", "concept": "pattern" },
+    "G9B05": { "why": "Under **½ λ** high, much of the energy goes steeply up, where the figure-eight fills in: the azimuth pattern is **almost omnidirectional**.", "concept": "pattern" },
+    "G9B06": { "why": "Radials go **on the ground or buried a few inches**, where they collect the return currents.", "trap": "Raised, vertical or centered radials are the wrong place for a ground-mounted vertical.", "concept": "vertical" },
+    "G9B07": { "why": "Nearing ground, the reflection partly cancels the antenna: feed impedance **steadily decreases**.", "concept": "impedance" },
+    "G9B08": { "why": "Current falls and voltage rises toward the ends, so impedance **steadily increases** as the feed point moves out.", "concept": "impedance" },
+    "G9B09": { "why": "A horizontal antenna doesn't push return currents through lossy soil, so it has **lower ground losses**.", "concept": "vertical" },
+    "G9B10": { "why": "468 ÷ 14.25 = 32.8, about **33 ft**.", "concept": "length" },
+    "G9B11": { "why": "468 ÷ 3.55 = 131.8, about **132 ft**.", "concept": "length" },
+    "G9B12": { "why": "A quarter-wave monopole is 234 ÷ 28.5 = 8.2, about **8 ft**.", "trap": "468 ÷ 28.5 = 16 ft is the half-wave dipole.", "concept": "length" }
+  }
+}

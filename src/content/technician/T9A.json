@@ -1,0 +1,17 @@
+{
+  "title": "Antennas: gain, length and patterns",
+  "blurb": "How polarization, length, loading and gain decide where an antenna sends your signal.",
+  "why": {
+    "T9A01": { "why": "A beam antenna **concentrates** its signal in one direction, so it is strong that way and weak elsewhere.", "trap": "\"Beam\" is about the signal, not the metal it is made of.", "concept": "gain" },
+    "T9A02": { "why": "Loading adds **inductance** (coils) so a physically short element behaves like a longer one.", "trap": "A resistor wastes power as heat and does not lengthen anything.", "concept": "short" },
+    "T9A03": { "why": "Polarization is the direction of the **electric field**, which follows the antenna's orientation.", "trap": "The magnetic field is always present too, but it does not define polarization.", "concept": "polarization" },
+    "T9A04": { "why": "A short, flexible antenna is a compromise on size, so it radiates **less efficiently** than a full-size quarter-wave.", "concept": "short" },
+    "T9A05": { "why": "Shorter antenna, shorter wave it matches: the resonant frequency **rises**. Lengthening, coils and end loading all lower it.", "concept": "length" },
+    "T9A06": { "why": "A **Yagi** is a beam, so it concentrates signal and has more gain than the all-around antennas listed.", "trap": "An isotropic antenna is the zero-gain reference.", "concept": "gain" },
+    "T9A07": { "why": "The vehicle's metal body **shields** RF, so a handheld inside it sends and receives a weaker signal.", "concept": "short" },
+    "T9A08": { "why": "On 2 m the wavelength is about 2 m, so a quarter-wave is a short whip of roughly **19 inches**.", "trap": "A half-wave would be about twice as long.", "concept": "length" },
+    "T9A09": { "why": "A 5/8-wave whip sends more signal toward the horizon, giving **more gain** than a quarter-wave.", "trap": "The extra gain comes from a lower, not higher, takeoff angle.", "concept": "gain" },
+    "T9A10": { "why": "A dipole is a donut around the wire: strongest **broadside**, weakest off the ends.", "concept": "dipole-pattern" },
+    "T9A11": { "why": "Gain is signal strength **in one direction compared with a reference antenna**. It does not add power.", "trap": "The transmitter's output is unchanged: the signal is only redirected.", "concept": "gain" }
+  }
+}

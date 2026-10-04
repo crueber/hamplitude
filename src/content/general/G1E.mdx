@@ -1,0 +1,48 @@
+import { G1E_ThirdParty } from '@/visuals/general/G1E_ThirdParty'
+import { G1E_Repeater10m } from '@/visuals/general/G1E_Repeater10m'
+import { G1E_Care } from '@/visuals/general/G1E_Care'
+import { G1E_Regions } from '@/visuals/general/G1E_Regions'
+import { G1E_AutoDigital } from '@/visuals/general/G1E_AutoDigital'
+import { G1E_BeaconFreqs } from '@/visuals/general/G1E_BeaconFreqs'
+
+<Concept id="third-party" title="Third-party traffic: license status and content decide" qs="G1E01 G1E05 G1E12">
+
+<G1E_ThirdParty />
+
+A revoked license disqualifies a third party. Citizenship and language don't. Remote control changes nothing: **if the rules allow third-party messages, they may go by remote control**.
+
+</Concept>
+
+<Concept id="repeater" title="A 10 m repeater needs a General control operator" qs="G1E02">
+
+<G1E_Repeater10m />
+
+The repeater is transmitting on 10 m, so **its control operator** needs HF privileges: at least **General**. The Technician's own license only covers the 2 m input.
+
+</Concept>
+
+<Concept id="care" title="Three situations that demand extra care" qs="G1E04 G1E07 G1E08">
+
+<G1E_Care />
+
+<Key>Near a monitoring station, on a secondary band, or with spread spectrum: avoid interference.</Key>
+
+</Concept>
+
+<Concept id="regions" title="The Americas are ITU Region 2" qs="G1E06">
+
+<G1E_Regions />
+
+The ITU splits the world into three regions with their own allocations. **North and South America are Region 2.**
+
+</Concept>
+
+<Concept id="auto" title="Automatic digital stations and beacon frequencies" qs="G1E03 G1E11 G1E10">
+
+<G1E_AutoDigital />
+
+Automatic digital stations may talk to each other on **6 m and shorter wavelengths** and in **limited HF segments**. Elsewhere a human-controlled station must start the contact.
+
+<G1E_BeaconFreqs />
+
+</Concept>

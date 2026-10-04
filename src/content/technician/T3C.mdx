@@ -1,0 +1,70 @@
+import { Horizon } from '@/visuals/technician/T3C_Horizon'
+import { Diffraction } from '@/visuals/technician/T3C_Diffraction'
+import { IonosphereBounce } from '@/visuals/shared/IonosphereBounce'
+import { FSkip } from '@/visuals/technician/T3C_FSkip'
+import { Duct } from '@/visuals/technician/T3C_Duct'
+import { Modes } from '@/visuals/technician/T3C_Modes'
+
+<Concept id="los" title="VHF and UHF go in a line, a little past the horizon" qs="T3C11 T3C05">
+
+VHF and UHF travel in nearly straight lines. The atmosphere **refracts** (bends) them slightly downward, so the **radio horizon** is farther than the visual one.
+
+<Horizon />
+
+A sharp edge, like a ridge top, can also bend some signal around an obstruction: **knife-edge diffraction**.
+
+<Diffraction />
+
+<Key>Radio horizon is farther than the visual horizon, thanks to atmospheric refraction.</Key>
+
+</Concept>
+
+<Concept id="hf-vs-vhf" title="HF bounces off the ionosphere; UHF usually doesn't" qs="T3C01 T3C02">
+
+<IonosphereBounce />
+
+HF waves are bent back to Earth, so **long-distance ionospheric propagation is far more common on HF**. VHF and UHF usually pass through, so simplex UHF signals are rarely heard beyond the radio horizon.
+
+<Key>No ionospheric bounce means no signals beyond the horizon, at UHF.</Key>
+
+</Concept>
+
+<Concept id="f-skip" title="10 m and 6 m skip when sunspots are high" qs="T3C09 T3C10">
+
+More sunspots and more sunlight make the **F region** denser, so it can bend higher frequencies back to Earth.
+
+<FSkip />
+
+| Band | F-region skip at the sunspot peak |
+|---|---|
+| **10 m, 6 m** | Yes |
+| 1.25 m, 70 cm, 23 cm | No |
+
+<Key>Best for 10 m: dawn to shortly after sunset, during high sunspot activity.</Key>
+
+</Concept>
+
+<Concept id="ducting" title="Ducting: a temperature inversion traps the signal" qs="T3C06 T3C08">
+
+Normally air cools with height. In a **temperature inversion**, warm air sits over cooler air. VHF/UHF is trapped in the cooler layer and follows the ground, regularly reaching about **300 miles**.
+
+<Duct />
+
+<Key>Tropospheric ducting is caused by temperature inversions.</Key>
+
+</Concept>
+
+<Concept id="vhf-modes" title="Sporadic E, meteor scatter and aurora" qs="T3C03 T3C04 T3C07">
+
+<Modes />
+
+| Mode | Remember |
+|---|---|
+| **Sporadic E** | Occasional strong signals on **10, 6 and 2 m** |
+| **Meteor scatter** | Best on **6 m** |
+| **Auroral backscatter** | **Raspy**, distorted sound |
+
+
+<Key>Strong, occasional signals past the horizon on 10, 6 and 2 m: sporadic E.</Key>
+
+</Concept>

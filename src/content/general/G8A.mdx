@@ -1,0 +1,67 @@
+import { ModulationWaves } from '@/visuals/shared/ModulationWaves'
+import { G8A_Envelope } from '@/visuals/general/G8A_Envelope'
+import { G8A_SsbSpectrum } from '@/visuals/general/G8A_SsbSpectrum'
+import { G8A_DigitalMod } from '@/visuals/general/G8A_DigitalMod'
+import { G8A_LinkBudget } from '@/visuals/general/G8A_LinkBudget'
+
+<Concept id="mod-types" title="Name the modulation by what the voice changes" qs="G8A02 G8A03 G8A04 G8A05">
+
+The carrier has three things you can vary. Whichever one your signal changes names the mode.
+
+<ModulationWaves />
+
+| Carrier property changed | Modulation |
+|---|---|
+| Height (instantaneous **power** level) | **Amplitude** modulation (AM) |
+| Instantaneous **frequency** | **Frequency** modulation (FM) |
+| **Phase angle** | **Phase** modulation (PM) |
+
+A **reactance modulator** on an RF amplifier stage shifts the signal's phase: that makes **phase modulation**.
+
+<Key>Power level = AM. Frequency = FM. Phase angle = PM.</Key>
+
+</Concept>
+
+<Concept id="envelope" title="Overmodulation flat-tops the envelope and widens the signal" qs="G8A11 G8A10 G8A08">
+
+The **modulation envelope** is the outline you get by connecting the peaks of the modulated signal. In clean AM it copies the voice. Too much speech level or drive pushes the peaks into the transmitter's limit: they flatten (**flat-topping**). The distortion adds extra sidebands, so the signal is **excessively wide**.
+
+<G8A_Envelope />
+
+<Key>Too much drive: flat tops, distortion, excessive bandwidth.</Key>
+
+</Concept>
+
+<Concept id="ssb-narrow" title="SSB is the narrowest voice mode" qs="G8A07">
+
+AM sends a carrier plus two sidebands. **SSB** suppresses the carrier and one sideband, so it takes half the space of AM. FM, PM and **vestigial sideband** (a TV method) are all wider.
+
+<G8A_SsbSpectrum />
+
+<Key>SSB drops the carrier and one sideband: narrowest of the phone modes.</Key>
+
+</Concept>
+
+<Concept id="digital-mod" title="Digital modes shift frequency or phase to carry bits" qs="G8A01 G8A09 G8A12 G8A06">
+
+**Direct binary FSK**: a digital signal changes an oscillator's frequency **directly**, with no audio tone in between. **FT8** is **8-tone FSK**. **QPSK** uses phase shifts of 0, 90, 180 and 270 degrees to send **pairs of bits**.
+
+<G8A_DigitalMod />
+
+**QPSK31** is sideband sensitive, its encoding provides **error correction**, and its bandwidth is about the same as BPSK31.
+
+<Key>FSK = frequency steps. PSK = phase steps. QPSK = 4 phases, 2 bits each.</Key>
+
+</Concept>
+
+<Concept id="link-budget" title="Link budget is what arrives. Link margin is what's left over." qs="G8A13 G8A14">
+
+Add power and antenna gains, subtract losses: that is the **link budget**, the signal level **at the receiver**. The **link margin** is how far that level sits above the **minimum the receiver needs**.
+
+<G8A_LinkBudget />
+
+<Formula label="Budget and margin">budget = TX power + antenna gains − system losses; margin = received level − minimum required level</Formula>
+
+<Key>Margin positive = link works, with room for fades.</Key>
+
+</Concept>

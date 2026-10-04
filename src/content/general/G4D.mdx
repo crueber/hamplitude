@@ -1,0 +1,47 @@
+import { Processor } from '@/visuals/general/G4D_Processor'
+import { SMeter } from '@/visuals/general/G4D_SMeter'
+import { BandEdge } from '@/visuals/general/G4D_BandEdge'
+
+<Concept id="processor" title="A speech processor raises average power, not peaks" qs="G4D01 G4D02 G4D03">
+
+A speech processor compresses the voice so quiet syllables get closer to the loud ones. The transmitter's peak is the limit, so the **average power rises** and the voice sounds **louder** ("talk power"). It does not raise peak power.
+
+<Processor />
+
+Set too high, you get flat tops: **distorted speech**, **excess intermodulation products**, and **more background noise** brought up with the voice.
+
+<Key>Processing: higher average, same peak. Too much: all the bad things.</Key>
+
+</Concept>
+
+<Concept id="s-meter" title="One S unit is 6 dB, about 4 times the power" qs="G4D04 G4D05 G4D06 G4D07">
+
+An **S meter** shows **received signal strength**. Each S unit is **6 dB**. Above S9 it counts **dB over S9**.
+
+<SMeter />
+
+| Change | dB | Power ratio |
+|---|---|---|
+| S8 to S9 | +6 | 10<sup>0.6</sup> ≈ **4×** |
+| S9 to S9 + 20 | +20 | 10<sup>2</sup> = **100×** |
+
+<Key>6 dB per S unit, 4× power. 20 dB over S9 is 100×.</Key>
+
+</Concept>
+
+<Concept id="band-edge" title="SSB hangs off the carrier: LSB down, USB up" qs="G4D08 G4D09 G4D10 G4D11">
+
+The displayed frequency is the **carrier**. A 3 kHz signal occupies the 3 kHz **below** it on **LSB**, or **above** it on **USB**.
+
+<BandEdge />
+
+| Mode | Dial | Occupies |
+|---|---|---|
+| LSB | 7.178 MHz | **7.175 to 7.178 MHz** |
+| USB | 14.347 MHz | **14.347 to 14.350 MHz** |
+
+So at a **lower** edge, LSB needs the carrier **at least 3 kHz above** the edge. At an **upper** edge, USB needs it **at least 3 kHz below**.
+
+<Key>Signal extends away from the dial on the sideband's side. Keep all of it inside the segment.</Key>
+
+</Concept>

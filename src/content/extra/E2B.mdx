@@ -1,0 +1,48 @@
+import { E2B_Interlace } from '@/visuals/extra/E2B_Interlace'
+import { E2B_Vsb } from '@/visuals/extra/E2B_Vsb'
+import { E2B_DigitalTv } from '@/visuals/extra/E2B_DigitalTv'
+import { E2B_SstvLine } from '@/visuals/extra/E2B_SstvLine'
+
+<Concept id="interlace" title="NTSC draws 525 lines as two interlaced fields" qs="E2B02 E2B03">
+
+A fast-scan (NTSC) frame has **525 lines**. To cut flicker it is sent as two **fields**: the first scans the **odd-numbered lines**, the second fills in the **even-numbered lines**. About 60 fields make 30 frames each second.
+
+<E2B_Interlace />
+
+<Key>525 lines per frame. Interlace = odd lines, then even lines.</Key>
+
+</Concept>
+
+<Concept id="vsb" title="Vestigial sideband trims AM without losing the low video frequencies" qs="E2B05 E2B06 E2B08">
+
+**Vestigial sideband** is AM in which **one complete sideband and a portion of the other** are sent. That cuts bandwidth, while the low video frequencies near the carrier stay intact on both sides.
+
+<E2B_Vsb />
+
+Analog fast-scan on **70 cm** works with ordinary TVs because the band overlaps **channels shared with cable TV**: a cable-ready set tunes it directly.
+
+<Key>VSB = one full sideband plus a stub of the other.</Key>
+
+</Concept>
+
+<Concept id="digital-tv" title="Coding rate is the data share. QPSK and QAM carry the bits." qs="E2B01 E2B07">
+
+Digital ATV adds **forward error correction (FEC)** bits so the receiver can repair errors. A coding rate of **3/4** means 3 of every 4 bits are data and **25%** is FEC. **DVB-T** amateur TV is modulated with **QPSK or QAM**.
+
+<E2B_DigitalTv />
+
+<Key>3/4 = three data bits per one error-correction bit (25% FEC).</Key>
+
+</Concept>
+
+<Concept id="sstv" title="SSTV paints a picture with audio tones: pitch is brightness" qs="E2B04 E2B09 E2B10 E2B11 E2B12">
+
+Analog **slow-scan TV** is sent as audio tones, so an SSB radio can carry it. **Tone frequency** = brightness. **Specific tones** tell the software a new line starts. **Color lines** go one after another. The **VIS code** at the start identifies the SSTV mode.
+
+<E2B_SstvLine />
+
+Digital SSTV in the **DRM** protocol is also an audio signal, so an **SSB receiver** can receive and decode it.
+
+<Key>Pitch = brightness. Sync tone = new line. VIS = which mode.</Key>
+
+</Concept>

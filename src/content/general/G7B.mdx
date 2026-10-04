@@ -1,0 +1,79 @@
+import { AmpClasses } from '@/visuals/general/G7B_AmpClasses'
+import { Efficiency } from '@/visuals/general/G7B_Efficiency'
+import { OscLoop } from '@/visuals/general/G7B_OscLoop'
+import { LcTank } from '@/visuals/general/G7B_LcTank'
+import { Neutralize } from '@/visuals/general/G7B_Neutralize'
+import { GateExplorer } from '@/visuals/general/G7B_GateExplorer'
+import { CounterShift } from '@/visuals/general/G7B_CounterShift'
+
+<Concept id="amp-classes" title="The class is how long the device conducts" qs="G7B02 G7B04 G7B10 G7B11">
+
+**Bias** sets where the signal sits against **cutoff**. Class A conducts all **360°** of the cycle. B conducts half (180°). AB is between. C conducts for **less than half**.
+
+<AmpClasses />
+
+Less conduction means less idle waste, so **efficiency rises: A, AB, B, C**. But the output also stops copying the input. A **linear amplifier** keeps the output waveform shaped like the input. Class C is not linear, so it suits only constant-amplitude signals such as **FM**, not AM or SSB.
+
+<Key>Class A: 100% conduction, most linear. Class C: most efficient, FM only.</Key>
+
+</Concept>
+
+<Concept id="efficiency" title="Efficiency = RF out ÷ DC in" qs="G7B08">
+
+Efficiency compares the **useful output** (RF) with what you **paid for** (DC input). The difference is lost as **heat**.
+
+<Efficiency />
+
+<Key>Efficiency = RF output power ÷ DC input power.</Key>
+
+</Concept>
+
+<Concept id="oscillator" title="An oscillator is an amplifier and a filter in a feedback loop" qs="G7B07">
+
+Feed part of an amplifier's output back to its input through a **filter**. If the loop adds back as much as it loses, the signal sustains itself. The filter decides **which frequency** survives.
+
+<OscLoop />
+
+<Key>Sine wave oscillator = filter + amplifier in a feedback loop.</Key>
+
+</Concept>
+
+<Concept id="lc-tank" title="In an LC oscillator, the tank sets the frequency" qs="G7B09">
+
+The **tank circuit** is an inductor and capacitor. It is the filter in the loop, so its values set the frequency. Larger L or C means lower frequency.
+
+<LcTank />
+
+<Key>LC oscillator frequency = set by the inductance and capacitance of the tank.</Key>
+
+</Concept>
+
+<Concept id="neutralizing" title="Neutralizing cancels feedback that makes an amplifier oscillate" qs="G7B01">
+
+Inside real amplifying parts, a little output leaks back to the input through internal capacitance. In phase, it turns the amplifier into an unwanted oscillator. **Neutralizing** feeds back an equal, **out-of-phase** signal to cancel it.
+
+<Neutralize />
+
+<Key>Neutralizing eliminates self-oscillation.</Key>
+
+</Concept>
+
+<Concept id="gates" title="Logic gates turn high and low inputs into a high or low output" qs="G7B03">
+
+A two-input **AND** gate is high **only when both** inputs are high. **NAND** is its opposite. **OR** and **NOR** act on either input. Try each one.
+
+<GateExplorer />
+
+<Mnemonic>AND = both. OR = either. The N in NAND and NOR flips the output.</Mnemonic>
+
+</Concept>
+
+<Concept id="counters" title="Counters count clock pulses; shift registers pass data along" qs="G7B05 G7B06">
+
+A counter with **n bits** has **2ⁿ** states: 3 bits give 2³ = **8** (000 to 111), then it wraps. A **shift register** is a clocked array of circuits that moves data **one step along the array** each clock pulse.
+
+<CounterShift />
+
+<Key>3-bit counter = 8 states. Shift register = clocked array that passes data in steps.</Key>
+
+</Concept>

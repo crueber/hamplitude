@@ -1,0 +1,17 @@
+{
+  "title": "SWR, feed lines and dummy loads",
+  "blurb": "Explain what SWR and a dummy load are for, how to measure them, and what makes feed lines lose power or fail.",
+  "why": {
+    "T7C01": { "why": "A dummy load absorbs your power as heat, so **tests don't transmit over the air**.", "trap": "It doesn't improve antennas or receivers. It just stands in for the antenna.", "concept": "dummy-load" },
+    "T7C02": { "why": "An **antenna analyzer** sweeps frequencies and shows where the antenna is resonant.", "trap": "A frequency counter reads a signal's frequency; it can't tell you if an antenna is resonant.", "concept": "swr" },
+    "T7C03": { "why": "A typical dummy load is a **50 Ω non-inductive resistor** on a heat sink: it matches the line and gets rid of the heat.", "trap": "Inductive reactance or relays make it a poor stand-in for a plain 50 Ω antenna.", "concept": "dummy-load" },
+    "T7C04": { "why": "**1:1** means no mismatch and no reflected power.", "trap": "SWR is a ratio with 1:1 as the minimum, so it never reads zero.", "concept": "swr" },
+    "T7C05": { "why": "Reflected power from high SWR can damage the output transistors, so the transmitter **reduces power to protect them**.", "trap": "Reducing power doesn't lower the SWR. The mismatch is still there.", "concept": "loss" },
+    "T7C06": { "why": "Anything much above 1:1 means an **impedance mismatch**. 4:1 is a poor match.", "trap": "SWR is a ratio, not dB of loss or gain.", "concept": "swr" },
+    "T7C07": { "why": "Power lost in a feed line is **converted into heat**.", "trap": "Loss doesn't raise SWR or make harmonics.", "concept": "loss" },
+    "T7C08": { "why": "A **directional wattmeter** reads forward and reflected power, and SWR follows from those two.", "trap": "Voltmeters and ohmmeters measure DC quantities, not reflected power.", "concept": "swr" },
+    "T7C09": { "why": "**Moisture** getting into the cable is a main cause of coax failure.", "trap": "Fluctuating power or full duty cycle doesn't wear out good coax.", "concept": "coax-failure" },
+    "T7C10": { "why": "UV damages the jacket, and a cracked jacket **lets water into the cable**.", "trap": "UV doesn't mix with RF or change the conductors' resistance. The harm is the water.", "concept": "coax-failure" },
+    "T7C11": { "why": "Foam is mostly air, so foam-dielectric coax has **less loss per foot** than solid.", "trap": "Moisture resistance, voltage breakdown and the 50 Ω match aren't foam's advantage.", "concept": "loss" }
+  }
+}

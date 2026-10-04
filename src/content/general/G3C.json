@@ -1,0 +1,17 @@
+{
+  "title": "Ionospheric layers, scatter and NVIS",
+  "blurb": "Explain which layer does what, why the D region blocks low bands by day, and how scatter and NVIS fill the skip zone.",
+  "why": {
+    "G3C01": { "why": "The layers stack D, E, F1, F2 going up. **D is the lowest**, closest to the surface.", "concept": "layers" },
+    "G3C02": { "why": "The critical frequency at a given angle is the **highest frequency still refracted back** to Earth. Higher goes through.", "trap": "That is not a signal-to-noise figure, and it is not the lowest frequency.", "concept": "critical" },
+    "G3C03": { "why": "F2 is the **highest** layer, so a hop from it covers the most ground.", "trap": "Height sets the hop length, not density.", "concept": "layers" },
+    "G3C04": { "why": "The critical angle is the **highest takeoff angle** that still returns the wave. Steeper than that and the wave escapes.", "trap": "It is not a bearing or azimuth.", "concept": "critical" },
+    "G3C05": { "why": "By day the **D region absorbs** signals on 160, 80, 60 and 40 m, so distant contacts are harder.", "trap": "The F region returns these bands. It is not what blocks them.", "concept": "d-region" },
+    "G3C06": { "why": "Scatter signals arrive weak and mixed, with a **fluttering sound**.", "trap": "Scatter doesn't give clear, high-intelligibility audio and isn't only a night effect.", "concept": "scatter" },
+    "G3C07": { "why": "Energy reaches the skip zone **through several different paths**, so the audio sounds distorted.", "concept": "scatter" },
+    "G3C08": { "why": "Only a **small part of the signal energy** is scattered into the skip zone, so it is weak.", "concept": "scatter" },
+    "G3C09": { "why": "**Scatter** puts weak signals into the transmitter's skip zone, where normal skywave never lands.", "concept": "scatter" },
+    "G3C10": { "why": "NVIS is **short-distance MF or HF propagation at high elevation angles**: up steeply, back close by.", "concept": "nvis" },
+    "G3C11": { "why": "In daylight the **D region** absorbs signals below 10 MHz the most.", "concept": "d-region" }
+  }
+}

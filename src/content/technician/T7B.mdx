@@ -1,0 +1,62 @@
+import { Overload } from '@/visuals/technician/T7B_Overload'
+import { Deviation } from '@/visuals/technician/T7B_Deviation'
+import { RfFeedback } from '@/visuals/technician/T7B_RfFeedback'
+import { SwrWaves } from '@/visuals/shared/SwrWaves'
+
+<Concept id="overload" title="A strong signal can swamp a receiver that can't reject it" qs="T7B02 T7B03 T7B05 T7B07">
+
+<Overload />
+
+A broadcast radio or TV that picks up your signal has a front end that **can't reject strong signals outside its band**. Your own 2 m radio can suffer the same from a nearby commercial FM station.
+
+Fix it at the **victim receiver's antenna input**: a **band-reject filter** blocks the unwanted signal. Changing your mode doesn't help.
+
+| Cause | What it is |
+|---|---|
+| Fundamental overload | your signal is simply too strong for their receiver |
+| Harmonics | extra signals at multiples of your frequency |
+| Spurious emissions | other unwanted signals from a transmitter |
+
+All three can cause RFI (radio frequency interference).
+
+<Key>Block the strong signal at the front door of the receiver that is overloaded.</Key>
+
+</Concept>
+
+<Concept id="first-steps" title="Troubleshoot the simple things first" qs="T7B06 T7B08 T7B09">
+
+| Situation | Do first |
+|---|---|
+| Neighbor says you interfere with their TV or radio | Check **your own station works properly** and doesn't interfere with your own TV or radio on the same channel |
+| Cable TV interference | Check that **all coax connectors are installed properly**. Leaky connectors let your signal in |
+| A device in a neighbor's home interferes with you | **All of these**: work with the neighbor to find the device, politely explain FCC rules, and make sure your own station meets good amateur practice |
+
+<Callout kind="warn" title="Never">Don't shut down and call the FCC first, and don't improvise parts like a "harmonic doubler". Start with your own station.</Callout>
+
+</Concept>
+
+<Concept id="distortion" title="Distorted audio: too loud, or RF getting into the radio" qs="T7B01 T7B10 T7B11">
+
+On FM, a louder voice (or one closer to the mic) swings the frequency further. Too far is **over-deviation**: it spills past the channel and sounds distorted.
+
+<Deviation />
+
+Fix: **talk farther from the microphone**. Being slightly off frequency or in a bad location can also garble your audio.
+
+The other cause is **RF feedback**: your own signal gets onto the mic cable and back into the transmitter.
+
+<RfFeedback />
+
+<Key>Too much voice? Back off the mic. RF in the cable? Clip on a ferrite choke.</Key>
+
+</Concept>
+
+<Concept id="swr-power" title="High SWR can cut your power output" qs="T7B04">
+
+A poor antenna match reflects power back toward a solid-state transmitter. To protect itself, it **turns its output power down**.
+
+<SwrWaves />
+
+<Key>Low output power from a solid-state radio: suspect high SWR.</Key>
+
+</Concept>

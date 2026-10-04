@@ -1,0 +1,46 @@
+import { G2A_SsbSpectrum } from '@/visuals/general/G2A_SsbSpectrum'
+import { G2A_SidebandStrip } from '@/visuals/general/G2A_SidebandStrip'
+import { G2A_Calling } from '@/visuals/general/G2A_Calling'
+import { G2A_AlcGain } from '@/visuals/general/G2A_AlcGain'
+
+<Concept id="ssb" title="SSB sends one sideband and nothing else" qs="G2A05 G2A06 G2A07">
+
+**Single sideband** is the usual HF voice mode. The transmitter suppresses the **carrier and one sideband**, so no power is spent on them.
+
+<G2A_SsbSpectrum />
+
+Result: **less bandwidth** and **greater power efficiency** than other analog voice modes.
+
+<Key>SSB: one sideband only, carrier and the other side suppressed.</Key>
+
+</Concept>
+
+<Concept id="sidebands" title="Low bands use LSB; 14 MHz and up use USB" qs="G2A01 G2A02 G2A03 G2A04 G2A09">
+
+<G2A_SidebandStrip />
+
+**160, 75 and 40 m**: lower sideband. **20 m and up** (including 17 and 12 m) **and VHF/UHF SSB**: upper sideband. Nothing forces LSB on the low bands. It is simply **accepted amateur practice**.
+
+<Mnemonic>Low bands, Lower sideband. Higher bands, Upper.</Mnemonic>
+
+</Concept>
+
+<Concept id="calling" title="Break in short. Answer DX from outside." qs="G2A08 G2A11">
+
+<G2A_Calling />
+
+To join a phone contact, say your **call sign once** and wait to be acknowledged. A lower-48 station calling **CQ DX** wants contacts **outside the lower 48**.
+
+<Key>Call sign once. CQ DX is for stations outside the caller's area.</Key>
+
+</Concept>
+
+<Concept id="setup" title="Mic gain sets the ALC. VOX frees your hands." qs="G2A12 G2A10">
+
+<G2A_AlcGain />
+
+On SSB, adjust **transmit audio (mic) gain** for the proper **ALC** reading. **VOX** keys the transmitter by your voice (**hands-free**), unlike **PTT**, where you press to talk. It changes neither bandwidth nor power.
+
+<Key>ALC too high? Turn down mic gain.</Key>
+
+</Concept>

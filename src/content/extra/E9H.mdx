@@ -1,0 +1,44 @@
+import { Beverage } from '@/visuals/extra/E9H_Beverage'
+import { NoiseDirectivity } from '@/visuals/extra/E9H_NoiseDirectivity'
+import { LoopPattern } from '@/visuals/extra/E9H_LoopPattern'
+import { LoopTurns } from '@/visuals/extra/E9H_LoopTurns'
+
+<Concept id="beverage" title="A Beverage is a long wire with a resistor that eats the reverse signal" qs="E9H01 E9H06 E9H07">
+
+A **Beverage** antenna is a long wire close to the ground that receives a **traveling wave**, so it should be **at least one wavelength long**. A **termination resistor** at the far end **absorbs signals from the reverse direction**; set it for the **least SWR variation** across the band.
+
+<Beverage />
+
+<Key>At least 1 λ long. Termination resistor absorbs the reverse signal.</Key>
+
+</Concept>
+
+<Concept id="lowband" title="On 160 and 80 m, directivity beats efficiency" qs="E9H02 E9H03">
+
+Atmospheric noise on the low bands is so strong that it sets the limit, not the receiver. A **lossy antenna** weakens signal and noise together, so signal-to-noise barely changes. **Directivity** helps because it favors one direction. **Receiving directivity factor (RDF)** is peak gain compared with the **average over the hemisphere** around and above the antenna.
+
+<NoiseDirectivity />
+
+<Key>Noise-limited: directivity matters more than loss. RDF = peak ÷ average.</Key>
+
+</Concept>
+
+<Concept id="loop-df" title="A small loop has two nulls; a sense antenna leaves one" qs="E9H04 E9H05 E9H08 E9H09 E9H11">
+
+Direction finders aim at a **null**, which is sharper than a peak. A **small loop** has a **bidirectional** pattern: two nulls, so the bearing is ambiguous by 180°. A **sense antenna** reshapes it into a **cardioid with a single null**. A **terminated single-turn loop** (pennant) is naturally a **cardioid**. An **electrostatic shield** removes unbalanced capacitive coupling, which **deepens the nulls**.
+
+<LoopPattern />
+
+<Key>Loop alone: two nulls. Cardioid: one null.</Key>
+
+</Concept>
+
+<Concept id="loop-turns" title="More turns or more area, more voltage" qs="E9H10">
+
+A **multiple-turn loop** puts its turns in series, so its output voltage rises with the **number of turns** and the **area enclosed**.
+
+<LoopTurns />
+
+<Key>Output voltage grows with turns and area.</Key>
+
+</Concept>

@@ -1,0 +1,17 @@
+{
+  "title": "Feed line impedance, loss and SWR",
+  "blurb": "Work out SWR from load and line impedance, and explain how line loss and tuners change what you measure.",
+  "why": {
+    "G9A01": { "why": "Z₀ comes from conductor **spacing and radius**. Length and frequency don't change it.", "trap": "Length changes loss, not impedance.", "concept": "z0" },
+    "G9A02": { "why": "Reflected power makes extra trips along the line, so a **high SWR increases loss** in a lossy line.", "trap": "Loss and SWR are linked, not independent.", "concept": "line-swr" },
+    "G9A03": { "why": "Window line (ladder line with windows cut in its web) is nominally **450 Ω**. Common coax is 50 or 75 Ω.", "concept": "z0" },
+    "G9A04": { "why": "Power reflects where **line impedance and feed point impedance differ**. A match reflects nothing.", "trap": "Resonance and unbalanced lines don't by themselves cause reflection.", "concept": "swr-calc" },
+    "G9A05": { "why": "Coax **attenuation increases** as frequency goes up.", "concept": "loss" },
+    "G9A06": { "why": "Feed line loss is rated in **decibels per 100 feet**, then scaled to your real length.", "trap": "Ohms measure impedance, not loss.", "concept": "loss" },
+    "G9A07": { "why": "No standing waves only if the antenna impedance **equals the line's Z₀**. Line length can't fix that.", "trap": "Quarter-wave line lengths transform impedance, they don't stop reflection.", "concept": "swr-calc" },
+    "G9A08": { "why": "The tuner only fixes what the radio sees. The antenna mismatch is unchanged, so the line still carries **5:1**.", "concept": "line-swr" },
+    "G9A09": { "why": "SWR = larger ÷ smaller = 200 ÷ 50 = **4:1**.", "trap": "SWR is never written below 1, so 1:4 can't be right.", "concept": "swr-calc" },
+    "G9A10": { "why": "SWR = larger ÷ smaller = 50 ÷ 10 = **5:1**.", "trap": "A low load gives the same kind of SWR as a high one: always larger over smaller.", "concept": "swr-calc" },
+    "G9A11": { "why": "Line loss absorbs the reflected wave on its way back, so the SWR at the line input reads **lower** than at the antenna.", "concept": "line-swr" }
+  }
+}

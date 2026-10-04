@@ -1,0 +1,63 @@
+import { Keying } from '@/visuals/technician/T8D_Keying'
+import { PacketArq } from '@/visuals/technician/T8D_PacketArq'
+import { AprsMap } from '@/visuals/technician/T8D_AprsMap'
+import { DmrSlots } from '@/visuals/technician/T8D_DmrSlots'
+
+<Concept id="keying" title="CW switches the carrier. PSK flips its phase." qs="T8D09 T8D06">
+
+**CW** is Morse code: the transmitter is keyed on and off. **PSK** is **Phase Shift Keying**: the carrier stays on and its phase jumps to send data.
+
+<Keying />
+
+<Key>CW = Morse code. PSK = Phase Shift Keying.</Key>
+
+</Concept>
+
+<Concept id="modes" title="Digital modes: pick one for the job" qs="T8D01 T8D02 T8D10">
+
+| Mode | What it is | Good for |
+|---|---|---|
+| **FT8** | Digital mode that works at **low signal-to-noise** | Weak-signal contacts |
+| **WSJT-X** | Software suite for FT8 and other weak-signal modes | **EME** (moonbounce), **meteor scatter**, propagation beacons |
+| **Packet** | Data in addressed packets | Messages, data |
+| **IEEE 802.11** | Wi-Fi | Wireless networks |
+
+All of these are digital modes.
+
+<Key>FT8 and WSJT-X: digital modes for very weak signals.</Key>
+
+</Concept>
+
+<Concept id="packet" title="Packets carry an address and a checksum. ARQ re-asks." qs="T8D08 T8D11">
+
+A packet has a **header** (call signs), the **data**, and a **checksum** that lets the receiver **detect errors**. With **ARQ**, the receiver spots an error and **requests a retransmission**.
+
+<PacketArq />
+
+<Key>Checksum detects. ARQ asks for a resend.</Key>
+
+</Concept>
+
+<Concept id="aprs" title="APRS puts packet data on a map" qs="T8D03 T8D05">
+
+**APRS** (Automatic Packet Reporting System) sends short packets with **GPS position, weather data and text messages**. Software plots them on a map for real-time tactical communications.
+
+<AprsMap />
+
+<Key>APRS = position, weather and messages, shown on a map.</Key>
+
+</Concept>
+
+<Concept id="formats" title="DMR splits a channel in two. Mesh is Wi-Fi. NTSC is TV." qs="T8D07 T8D12 T8D04">
+
+<DmrSlots />
+
+| Term | What it is |
+|---|---|
+| **DMR** | Time-multiplexes **two digital voice signals** on one 12.5 kHz channel |
+| **Mesh network** | Data network using **commercial Wi-Fi gear with modified firmware** |
+| **NTSC** | **Analog fast-scan color TV** signal |
+
+<Key>DMR: two talks, one channel. Mesh: Wi-Fi hardware. NTSC: analog TV.</Key>
+
+</Concept>

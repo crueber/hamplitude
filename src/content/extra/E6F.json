@@ -1,0 +1,17 @@
+{
+  "title": "Optoelectronic devices",
+  "blurb": "Explain photoconductors, photovoltaic cells, optoisolators, solid-state relays and optical shaft encoders.",
+  "why": {
+    "E6F01": { "why": "Photons carry the light's energy and **electrons absorb it**, freeing them to make current.", "trap": "Photons deliver the energy; they are not what absorbs it.", "concept": "photovoltaic" },
+    "E6F02": { "why": "Light frees carriers in photoconductive material, so its **resistance decreases**.", "trap": "Reflectivity is not what changes; resistance is.", "concept": "photoconductive" },
+    "E6F03": { "why": "The usual optoisolator is an **LED shining on a phototransistor**, in one package.", "trap": "Lasers and photomultipliers are not used in optocouplers.", "concept": "optoisolator" },
+    "E6F04": { "why": "The photovoltaic effect is **light converted to electrical energy**, as in a solar cell.", "trap": "Light emission when voltage is applied is the LED effect, the reverse.", "concept": "photovoltaic" },
+    "E6F05": { "why": "An optical shaft encoder detects rotation when a **patterned wheel interrupts a light beam**.", "trap": "It senses rotation, not light strength, and generates no RTTY.", "concept": "encoder" },
+    "E6F06": { "why": "Photoconductive devices are most commonly made from a **crystalline semiconductor**.", "trap": "Argon and polyphenol acetate are not photoconductive materials.", "concept": "photoconductive" },
+    "E6F07": { "why": "A solid-state relay **uses semiconductors to perform the functions of an electromechanical relay**.", "trap": "Transistors driving a coil still leave a mechanical relay.", "concept": "optoisolator" },
+    "E6F08": { "why": "Optoisolators provide **electrical isolation** between the control circuit and the circuit being switched.", "trap": "Isolation means no electrical link, not a low-impedance link.", "concept": "optoisolator" },
+    "E6F09": { "why": "Efficiency is the **fraction of the light converted** to electrical output.", "trap": "Voltage divided by current is a resistance-like ratio, not efficiency.", "concept": "photovoltaic" },
+    "E6F10": { "why": "Power-generating solar cells are made of **silicon**.", "trap": "Silicon, not selenium or cadmium sulfide, is the common power-cell material.", "concept": "photovoltaic" },
+    "E6F11": { "why": "A fully lit silicon cell produces about **0.5 V** open-circuit.", "trap": "0.7 V is a conducting diode's drop, a different thing.", "concept": "photovoltaic" }
+  }
+}

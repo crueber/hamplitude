@@ -1,0 +1,20 @@
+{
+  "title": "Software defined radio and DSP",
+  "blurb": "Explain how an SDR samples and processes signals: Nyquist, aliasing, bit depth, FIR filters, SSB generation and the FFT.",
+  "why": {
+    "E7F01": { "why": "**Direct sampling** digitizes the incoming RF with an ADC **without mixing** it with a local oscillator first.", "trap": "I and Q generation and switching mixers are other receiver styles.", "concept": "sdr-chain" },
+    "E7F02": { "why": "An **adaptive filter** learns the noise and removes it from received SSB audio.", "trap": "A crystal-lattice filter is analog. A Hilbert filter is used to generate SSB.", "concept": "dsp-jobs" },
+    "E7F03": { "why": "A **Hilbert-transform filter** makes the 90° shifted copy of the audio needed to generate SSB.", "trap": "Adaptive filters remove noise; notch filters remove one tone.", "concept": "dsp-jobs" },
+    "E7F04": { "why": "Combine the audio and its 90° copy, mixed with quadrature carriers: **signals combined in quadrature phase**. One sideband adds, the other cancels.", "concept": "dsp-jobs" },
+    "E7F05": { "why": "Sample at **at least twice** the highest frequency (Nyquist): 2 kHz audio needs 4 kS/s or more.", "trap": "Half the rate or equal rate would alias the signal.", "concept": "nyquist" },
+    "E7F06": { "why": "1 V ÷ 1 mV = 1000 levels. 2⁹ = 512 is too few, 2¹⁰ = 1024 is enough: **10 bits**.", "trap": "8 bits gives only 256 levels.", "concept": "bits" },
+    "E7F07": { "why": "The **FFT** converts a signal from the **time domain to the frequency domain**: a waveform becomes a spectrum.", "trap": "ADCs and DACs convert analog and digital, not time and frequency.", "concept": "dsp-jobs" },
+    "E7F08": { "why": "**Decimation** lowers the effective sample rate by **removing samples**, such as keeping every 4th.", "trap": "It isn't decimal or BCD conversion, and it doesn't attenuate the signal.", "concept": "nyquist" },
+    "E7F09": { "why": "After decimation the Nyquist limit is lower. The filter **removes high frequencies that would otherwise fold down as lower-frequency aliases**.", "concept": "nyquist" },
+    "E7F10": { "why": "A direct-sampling SDR can only see up to half the **sample rate**, so that sets the maximum bandwidth.", "trap": "Bit width sets signal level resolution, not bandwidth.", "concept": "nyquist" },
+    "E7F11": { "why": "The smallest step is **reference voltage ÷ 2ⁿ**. Reference voltage and **sample width in bits** set the minimum detectable signal.", "trap": "Jitter and phase noise affect quality, not the smallest step.", "concept": "bits" },
+    "E7F12": { "why": "A FIR filter with symmetric taps can **delay every frequency component by the same amount**, so it does not smear the waveform.", "trap": "FIR is not easier for a given rolloff: sharp ones need many taps.", "concept": "fir" },
+    "E7F13": { "why": "Taps **provide incremental delays**: each tap is one more delayed copy of the signal for the algorithm.", "trap": "Taps have nothing to do with debugging access or baseband generation.", "concept": "fir" },
+    "E7F14": { "why": "**More taps** give the filter more points to shape its response, so the slope is sharper.", "trap": "A higher data rate or double-precision math doesn't sharpen the shape.", "concept": "fir" }
+  }
+}

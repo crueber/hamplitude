@@ -1,0 +1,17 @@
+{
+  "title": "Volunteer Monitors and HF operating",
+  "blurb": "Explain the Volunteer Monitor Program, aim long-path beams, call CQ on HF, and know logs, contest ID and QRP.",
+  "why": {
+    "G2D01": { "why": "Volunteer Monitors are amateurs **formally enlisted to monitor the airwaves for rules violations**.", "trap": "Exams, coordination and civil defense are other volunteer jobs.", "concept": "vm" },
+    "G2D02": { "why": "The program aims to **encourage self-regulation and compliance** with the rules.", "concept": "vm" },
+    "G2D03": { "why": "Monitors **compare beam headings** on the repeater input from different homes. The headings cross at the source.", "concept": "vm" },
+    "G2D04": { "why": "An azimuthal map centred on you shows **true bearings and distances** from that one location.", "trap": "It doesn't show accurate land masses, and it isn't a satellite map.", "concept": "azimuthal" },
+    "G2D05": { "why": "A general call is **\"CQ\" a few times, \"this is\", your call a few times, then pause** and listen. Repeat as needed.", "trap": "QTC relates to traffic, and a bare carrier tells nobody who you are.", "concept": "cq" },
+    "G2D06": { "why": "The long path is the other way round the Earth, so aim **180° from the short-path heading**.", "concept": "azimuthal" },
+    "G2D07": { "why": "The **NATO phonetic alphabet** runs Alpha, Bravo, Charlie, Delta. The others are different alphabets.", "concept": "cq" },
+    "G2D08": { "why": "A log **helps you reply if the FCC asks about your station**. It isn't required for renewal or DX contacts.", "concept": "logs" },
+    "G2D09": { "why": "In a contest you must still **identify per the normal FCC rules**. Logs and QSL cards are not FCC requirements.", "concept": "logs" },
+    "G2D10": { "why": "**QRP** means **low-power** transmitting.", "concept": "logs" },
+    "G2D11": { "why": "Reports let each station **adjust to conditions**, such as power, speed or mode.", "concept": "cq" }
+  }
+}

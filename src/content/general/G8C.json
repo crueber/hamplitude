@@ -1,0 +1,21 @@
+{
+  "title": "Digital modes, ARQ and FEC",
+  "blurb": "Choose the right digital mode, read a waterfall, and explain codes, ARQ and forward error correction.",
+  "why": {
+    "G8C02": { "why": "**WSPR** is a low-power beacon mode used to see where HF propagation is open.", "trap": "PSK31 and MFSK16 carry messages. SSB-SC is a voice mode.", "concept": "modes" },
+    "G8C03": { "why": "The packet **header** holds the routing and handling information, such as where it comes from and goes to.", "concept": "errors" },
+    "G8C04": { "why": "Baudot is a **5-bit code** with extra start and stop bits around each character.", "trap": "A 7-bit code with parity is ASCII-style, not Baudot.", "concept": "codes" },
+    "G8C05": { "why": "A **NAK** says the packet had an error, so the sender must **retransmit** it.", "trap": "A received-OK reply is an ACK, the opposite.", "concept": "errors" },
+    "G8C06": { "why": "If too many attempts fail, the ARQ link gives up: **the connection is dropped**.", "concept": "errors" },
+    "G8C07": { "why": "**FT8** is the narrow-band mode built to decode signals far below the noise.", "concept": "modes" },
+    "G8C08": { "why": "Varicode gives common lower-case characters short codes, so **capitals use longer sequences** and slow the text.", "trap": "Plain (BPSK) PSK31 has no error correction, and capitals are not sent at higher power.", "concept": "codes" },
+    "G8C09": { "why": "Each node links to several others, so if one fails a packet can still arrive **via an alternate node**.", "trap": "More nodes add routes, not signal strength.", "concept": "mesh" },
+    "G8C10": { "why": "FEC adds **redundant information** to the data, so the receiver can fix errors without a resend.", "trap": "A parity bit only detects an error, and Varicode is a character set.", "concept": "errors" },
+    "G8C11": { "why": "The two FSK frequencies are called **mark and space**.", "trap": "Dot and dash describe Morse code, on and off describe keying.", "concept": "codes" },
+    "G8C12": { "why": "PSK31 sends characters in **Varicode**, a variable-length code.", "concept": "codes" },
+    "G8C13": { "why": "Vertical lines either side of a data signal on a waterfall indicate **overmodulation**.", "trap": "Overmodulation is too much drive, not too little.", "concept": "waterfall" },
+    "G8C14": { "why": "On a waterfall, frequency runs **across**, time runs **down**, and signal strength is the **brightness**.", "concept": "waterfall" },
+    "G8C15": { "why": "FT8 reports are **signal-to-noise in dB**, measured as if in a 2.5 kHz bandwidth. +3 means 3 dB above the noise.", "trap": "It is not an S-unit and not dB over S9.", "concept": "modes" },
+    "G8C16": { "why": "**DMR, D-STAR and System Fusion** carry digitized voice. FT8, WSPR and Winlink modes carry data.", "concept": "modes" }
+  }
+}

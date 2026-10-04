@@ -1,0 +1,18 @@
+{
+  "title": "RFI, grounding and bonding",
+  "blurb": "Explain how RF gets into audio equipment, what each sound means, and why ground wires and bonding matter.",
+  "why": {
+    "G4C01": { "why": "A **bypass capacitor** passes RF to ground but blocks the audio, so it removes RF from audio circuits.", "trap": "A shunt inductor does the reverse: it passes audio to ground and resists RF.", "concept": "rfi-fixes" },
+    "G4C02": { "why": "Sparks from an **arc** at a poor connection are made of all frequencies, so the noise is broad.", "trap": "Baluns and rectification affect specific paths, not wide spectra.", "concept": "rfi-sound" },
+    "G4C03": { "why": "SSB is a changing voice envelope with no steady carrier, so the victim detects **distorted speech**.", "trap": "Humming or clicking is what a keyed CW carrier sounds like.", "concept": "rfi-sound" },
+    "G4C04": { "why": "CW keys the carrier on and off, so the victim hears **on-and-off humming or clicking** with each element.", "trap": "A pure tone or speech is not what an unwanted keyed carrier sounds like.", "concept": "rfi-sound" },
+    "G4C05": { "why": "A ground wire with **high impedance at your frequency** lets RF voltage build on connected metal, which can burn you.", "trap": "Flat versus round or insulated wire isn't the issue. Impedance at your frequency is.", "concept": "rf-ground" },
+    "G4C06": { "why": "A resonant ground presents high impedance at the equipment, so **high RF voltage** appears on enclosures.", "trap": "That is an RF effect, not corrosion or a ground loop.", "concept": "rf-ground" },
+    "G4C07": { "why": "A lightning strike's heat can melt solder, so soldered joints are likely to be **destroyed by the heat**.", "concept": "bonding" },
+    "G4C08": { "why": "Common-mode RF on a cable is stopped by a **ferrite choke** on the cable, which presents high impedance to RF.", "trap": "Shorting or grounding the center conductor shorts the audio itself.", "concept": "rfi-fixes" },
+    "G4C09": { "why": "Loops form between separately grounded equipment. **Bonding enclosures together** keeps them at one potential.", "trap": "Series connections and neutral-to-ground ties don't remove loops.", "concept": "bonding" },
+    "G4C10": { "why": "A ground loop injects current into audio paths, which shows up as **hum on your transmitted signal**.", "trap": "SWR, current draw and harmonics are not ground-loop symptoms.", "concept": "bonding" },
+    "G4C11": { "why": "RF hot spots are voltage differences between enclosures. **Bonding all enclosures together** removes them.", "trap": "Filters and surge suppressors don't equalize enclosure voltages.", "concept": "bonding" },
+    "G4C12": { "why": "A grounded enclosure keeps a fault from putting **hazardous voltage on the chassis**, where you could touch it.", "trap": "Grounding is about shock safety, not fuses or overload.", "concept": "bonding" }
+  }
+}

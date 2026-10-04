@@ -1,0 +1,69 @@
+import { Networks } from '@/visuals/extra/E7C_Networks'
+import { Match } from '@/visuals/extra/E7C_Match'
+import { FilterShapes } from '@/visuals/extra/E7C_FilterShapes'
+import { ShapeFactor } from '@/visuals/extra/E7C_ShapeFactor'
+import { Duplexer } from '@/visuals/extra/E7C_Duplexer'
+
+<Concept id="networks" title="Series inductors and shunt capacitors pass low frequencies" qs="E7C01 E7C02 E7C03 E7C07">
+
+An inductor **blocks high** frequencies in the signal path; a capacitor to ground **shorts high** frequencies away. A capacitor in the path blocks low frequencies; an inductor to ground shorts them away.
+
+<Networks />
+
+- **Pi** (low-pass): capacitor to ground at input and output, inductor between.
+- **Pi-L**: a Pi network plus an extra **series inductor at the output**. The extra element gives **greater harmonic suppression**.
+- **T with series capacitors and a shunt inductor**: high-pass.
+
+<Key>Series L + shunt C = low-pass. Series C + shunt L = high-pass. Pi-L = Pi plus output inductor, for more harmonic suppression.</Key>
+
+</Concept>
+
+<Concept id="matching" title="A matching network cancels reactance and sets the resistance" qs="E7C04">
+
+A load is often complex: resistance plus reactance. A network adds the **opposite reactance** to cancel the reactive part, and also **transforms the resistive part** to the value the source wants.
+
+<Match />
+
+<Key>Match = cancel the reactance, change the resistance to the desired value.</Key>
+
+</Concept>
+
+<Concept id="shapes" title="Filter names tell you the shape of the response" qs="E7C05 E7C06">
+
+Same cutoff, different trade-offs. Flat passband gives a gentle skirt. Allow **ripple** in the passband and the skirt steepens. Add **notches** in the stop band and it steepens further.
+
+<FilterShapes />
+
+| Filter | Passband | Cutoff |
+|---|---|---|
+| **Butterworth** | maximally flat, no ripple | gradual |
+| **Chebyshev** | **ripple** | sharp |
+| **Elliptical** | ripple | **extremely sharp**, with **notches** in the stop band |
+
+<Key>Ripple + sharp cutoff = Chebyshev. Sharpest with stop-band notches = elliptical.</Key>
+
+</Concept>
+
+<Concept id="shape-factor" title="Shape factor measures how steep the skirts are" qs="E7C11">
+
+**Shape factor** compares the filter's width far down (60 dB) with its width near the top (6 dB). A smaller number means steeper skirts, so a signal on the next channel is rejected better.
+
+<ShapeFactor />
+
+<Key>Shape factor = adjacent-channel rejection ability. Lower is better.</Key>
+
+</Concept>
+
+<Concept id="filter-uses" title="Match the filter to the job" qs="E7C08 E7C09 E7C10">
+
+<Duplexer />
+
+| Filter | Used for |
+|---|---|
+| **Helical** | band-pass or notch in VHF and UHF transceivers |
+| **Crystal lattice** | low-level signals; built from quartz crystals |
+| **Cavity** | repeater duplexer on 2 m; very sharp and handles power |
+
+<Key>VHF/UHF transceiver: helical. Quartz, low level: crystal lattice. Repeater duplexer: cavity.</Key>
+
+</Concept>

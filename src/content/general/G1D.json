@@ -1,0 +1,18 @@
+{
+  "title": "VEs, CSCEs and expired licenses",
+  "blurb": "Who can be a Volunteer Examiner, how a CSCE and the AG suffix work, expired-license credit, and remote operation.",
+  "why": {
+    "G1D01": { "why": "Anyone who can show they once held a **General, Advanced or Extra** license that was not revoked gets partial element credit.", "trap": "No 5 to 15 year window, and foreign licenses do not count.", "concept": "expired" },
+    "G1D02": { "why": "A General-class VE may administer **Technician** exams only.", "trap": "General and Extra exams need higher-class VEs.", "concept": "ve" },
+    "G1D03": { "why": "With an unexpired CSCE you may use **any General or Technician segment**, including 30 m and 60 m.", "trap": "You need not wait for the database or a fee receipt.", "concept": "csce" },
+    "G1D04": { "why": "A Technician exam needs **at least three** VEs, each General class or higher.", "trap": "Two VEs is too few, and Technician VEs cannot examine.", "concept": "ve" },
+    "G1D05": { "why": "Operating a US station remotely from abroad needs the **US operator/primary license**. No special permit is required.", "concept": "remote" },
+    "G1D06": { "why": "Until the upgrade shows in the database, add **AG** whenever you use General privileges.", "trap": "AG is for General segments, not Technician ones.", "concept": "csce" },
+    "G1D07": { "why": "A **Volunteer Examiner Coordinator** accredits VEs.", "trap": "The FCC licenses operators, but VECs accredit examiners.", "concept": "ve" },
+    "G1D08": { "why": "A non-US citizen may be a VE if they hold an **FCC General or higher** license.", "concept": "ve" },
+    "G1D09": { "why": "A CSCE is valid for exam element credit for **365 days**.", "concept": "csce" },
+    "G1D10": { "why": "A VE must be **at least 18**.", "concept": "ve" },
+    "G1D11": { "why": "After the grace period, show proof of the expired grant and **pass the current Element 2** (Technician) exam.", "trap": "FCC reinstatement is not available.", "concept": "expired" },
+    "G1D12": { "why": "When controlling a foreign station remotely, **only that country's rules** apply.", "trap": "Where you sit does not set the rules, where the station is does.", "concept": "remote" }
+  }
+}

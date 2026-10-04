@@ -1,0 +1,21 @@
+{
+  "title": "Power supplies and regulators",
+  "blurb": "Explain how linear and switching regulators hold voltage steady, read Figure E7-2, and calculate battery time and regulator heat.",
+  "why": {
+    "E7D01": { "why": "A linear regulator **varies the conduction of a control element** (pass transistor) to hold the output voltage constant.", "trap": "Duty-cycle control is a switching regulator; linear ones always keep the pass transistor.", "concept": "linear" },
+    "E7D02": { "why": "A switchmode regulator turns the input on and off and **varies the duty cycle of the pulses going into a filter**.", "trap": "Varying a pass element's conductivity is linear regulation.", "concept": "switchmode" },
+    "E7D03": { "why": "A **Zener diode** holds a nearly fixed voltage when reverse biased, so it makes a stable reference.", "trap": "An SCR is a latching switch; converters change signal form, not hold a reference.", "concept": "linear" },
+    "E7D04": { "why": "A three-terminal regulator passes the load current **in series** with the output: a **series regulator**.", "trap": "Shunt and current-source choices don't describe the in-line pass element.", "concept": "series-shunt" },
+    "E7D05": { "why": "A **shunt regulator** sits across the output and so loads the unregulated source, with a series resistor dropping the excess.", "trap": "A series regulator sits in the path; it does not load the source in the same way.", "concept": "series-shunt" },
+    "E7D06": { "why": "Q1 is the pass transistor: it **controls the current** so the output voltage stays constant.", "trap": "It does not chop the input; there is no switching in this circuit.", "concept": "linear" },
+    "E7D07": { "why": "C2 across the Zener **bypasses rectifier ripple around D1**, keeping the reference steady.", "trap": "It isn't an output filter, and it doesn't provide the bias; D1 and R1 do.", "concept": "linear" },
+    "E7D08": { "why": "A pass transistor is varied to hold the output: a **linear voltage regulator**.", "trap": "Common emitter and common base are amplifier stages; here the output tracks the Zener.", "concept": "linear" },
+    "E7D09": { "why": "Time = capacity ÷ current. Example: 60 Ah ÷ 5 A = **12 hours**.", "trap": "Dividing current by capacity inverts the answer: more capacity must give more time.", "concept": "battery-solar" },
+    "E7D10": { "why": "High switching frequency allows **much smaller transformers and filter parts** for the same output power.", "trap": "Switching supplies still need output filters; they are just smaller.", "concept": "switchmode" },
+    "E7D11": { "why": "Panels give DC. An **inverter converts DC to AC**.", "trap": "Ripple reduction, voltage control and blocking reverse discharge are other parts' jobs.", "concept": "battery-solar" },
+    "E7D12": { "why": "Dropout is the **minimum input-to-output voltage** a linear regulator needs to keep regulating.", "trap": "It's not a maximum drop or a power rating; it's a minimum headroom.", "concept": "series-shunt" },
+    "E7D13": { "why": "The pass element burns the voltage it drops: **(Vin − Vout) × Iout**. Example: (25 − 12) × 2 = 26 W.", "trap": "Vout × Iout is the load's power; Vin × Iin is the total taken from the supply.", "concept": "series-shunt" },
+    "E7D14": { "why": "Equal resistors across series capacitors **equalize voltage, discharge them, and provide a minimum load**: all three.", "concept": "big-supply" },
+    "E7D15": { "why": "A step-start limits inrush so the **filter capacitors charge gradually**. Empty capacitors look like a short at turn-on.", "trap": "It doesn't change voltage or compensate for line variations.", "concept": "big-supply" }
+  }
+}

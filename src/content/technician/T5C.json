@@ -1,0 +1,18 @@
+{
+  "title": "Capacitance, inductance and power",
+  "blurb": "Say what capacitors and inductors store, write kHz and MHz correctly, define impedance, and calculate DC power.",
+  "why": {
+    "T5C01": { "why": "A capacitor holds energy in the **electric field** between its plates. That ability is capacitance.", "trap": "Inductance is the magnetic-field one.", "concept": "storage" },
+    "T5C02": { "why": "Capacitance is measured in **farads**.", "trap": "Henry is inductance, ohm is opposition, volt is voltage.", "concept": "storage" },
+    "T5C03": { "why": "A coil holds energy in a **magnetic field**. That ability is inductance.", "trap": "Capacitance uses an electric field, not a magnetic one.", "concept": "storage" },
+    "T5C04": { "why": "Inductance is measured in **henries**.", "trap": "Farad is capacitance. Coulomb is a unit of charge.", "concept": "storage" },
+    "T5C05": { "why": "Impedance is opposition to AC, so like resistance it is measured in **ohms**.", "trap": "Volts, amperes and coulombs measure voltage, current and charge.", "concept": "impedance" },
+    "T5C06": { "why": "Kilo is lowercase **k**, then Hz with a capital H: **kHz**.", "trap": "Capital K and lowercase h or z are all wrong.", "concept": "hertz" },
+    "T5C07": { "why": "Mega is a capital **M**, then Hz: **MHz**.", "trap": "Lowercase m means milli, so mHz is thousandths of a hertz.", "concept": "hertz" },
+    "T5C08": { "why": "Power is voltage times current: **P = I × E**.", "trap": "A squared current goes with resistance (I² × R), not volts.", "concept": "power" },
+    "T5C09": { "why": "P = E × I = 13.8 × 10 = **138 W**.", "trap": "23.8 adds the numbers and 0.7 divides them. Power multiplies.", "concept": "power" },
+    "T5C10": { "why": "P = E × I = 12 × 2.5 = **30 W**.", "trap": "14.5 adds the numbers. Power multiplies volts by amperes.", "concept": "power" },
+    "T5C11": { "why": "I = P ÷ E = 120 ÷ 12 = **10 A**.", "trap": "0.1 divides the wrong way round, and 132 adds the numbers.", "concept": "power" },
+    "T5C12": { "why": "Impedance is the **opposition to AC current flow**: resistance and reactance combined, in ohms.", "trap": "It's the opposition itself, not an inverse of anything.", "concept": "impedance" }
+  }
+}

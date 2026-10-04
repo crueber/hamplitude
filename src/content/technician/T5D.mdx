@@ -1,0 +1,53 @@
+import { OhmsLaw } from '@/visuals/shared/OhmsLaw'
+import { SeriesParallel } from '@/visuals/shared/SeriesParallel'
+
+<Concept id="ohm" title="Ohm's law: three letters, one relationship" qs="T5D01 T5D02 T5D03">
+
+Voltage (**E**) pushes. Resistance (**R**) resists. The result is current (**I**) flowing.
+
+<Formula label="Ohm's law">E = I × R</Formula>
+
+<OhmsLaw />
+
+Rearranged, it gives the other two:
+
+| Find | Formula | In words |
+|---|---|---|
+| **Voltage** E | E = I × R | current times resistance |
+| **Current** I | I = E ÷ R | voltage over resistance |
+| **Resistance** R | R = E ÷ I | voltage over current |
+
+<Key>Voltage is on top. To find anything else, divide E by the other one.</Key>
+
+<Callout kind="warn" title="Trap">Choices with a squared term (E², I²) are for **power**, not Ohm's law.</Callout>
+
+</Concept>
+
+<Concept id="solve" title="Solving one: pick the formula, plug in, check" qs="T5D04 T5D05 T5D06 T5D07 T5D08 T5D09 T5D10 T5D11 T5D12">
+
+Every calculation question is the same three steps.
+
+1. Write down what you know, and what you want.
+2. Pick the formula for the unknown.
+3. Plug in and sanity-check.
+
+| Question | Formula | Answer |
+|---|---|---|
+| 90 V, 3 A → **R**? | R = E ÷ I = 90 ÷ 3 | **30 Ω** |
+| 120 V, 80 Ω → **I**? | I = E ÷ R = 120 ÷ 80 | **1.5 A** |
+| 0.5 A through 2 Ω → **E**? | E = I × R = 0.5 × 2 | **1 V** |
+
+<Mnemonic>Sanity check: more resistance means *less* current. If your current came out huge (9,600 A), you multiplied when you should have divided.</Mnemonic>
+
+</Concept>
+
+<Concept id="series-parallel" title="Series shares current. Parallel shares voltage." qs="T5D13 T5D14">
+
+<SeriesParallel />
+
+- **Series**: one path. Every part carries the **same current**.
+- **Parallel**: branches. Every part sees the **same voltage**.
+
+<Mnemonic>Parallel = Potential (voltage) is the same. Series = Stream (current) is the same.</Mnemonic>
+
+</Concept>

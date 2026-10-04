@@ -1,0 +1,17 @@
+{
+  "title": "Direction finding, contests and linking",
+  "blurb": "How to hunt a transmitter, run a contest exchange, read a grid locator, and link repeaters over the internet.",
+  "why": {
+    "T8C01": { "why": "**Radio direction finding** locates where a signal comes from, including noise sources and jamming.", "trap": "Radar-style techniques and echolocation aren't how ham signals are found.", "concept": "rdf" },
+    "T8C02": { "why": "A hidden transmitter hunt needs a **directional antenna** to find the direction of the signal. SWR and power meters can't.", "concept": "rdf" },
+    "T8C03": { "why": "**Contesting** is making as many contacts as possible in a set period.", "trap": "Hidden transmitter hunts and nets are different activities.", "concept": "contest" },
+    "T8C04": { "why": "In a contest send **only your call sign and the required exchange**. Anything extra slows everyone.", "trap": "Partial calls and duplicate contacts waste time.", "concept": "contest" },
+    "T8C05": { "why": "A grid locator is a **letter-number code for a geographic location**, such as FN31.", "trap": "It isn't an instrument, and it isn't a direction or elevation.", "concept": "grid" },
+    "T8C06": { "why": "IRLP nodes are controlled over the air with **DTMF** keypad tones.", "trap": "CTCSS tones just open a repeater's squelch.", "concept": "internet" },
+    "T8C07": { "why": "VoIP delivers **voice over the internet using digital techniques**.", "concept": "internet" },
+    "T8C08": { "why": "IRLP **connects amateur systems such as repeaters via the internet**.", "concept": "internet" },
+    "T8C09": { "why": "With **EchoLink** you can transmit through a repeater from a computer or phone, with no radio to start.", "trap": "IRLP, D-STAR and DMR all start from a radio.", "concept": "internet" },
+    "T8C10": { "why": "Before using EchoLink, **register your call sign and provide proof of license**.", "trap": "No training, purchase or General license is needed.", "concept": "internet" },
+    "T8C11": { "why": "A station that connects amateur stations to the internet is a **gateway**.", "trap": "A repeater retransmits over radio only; a digipeater relays packets.", "concept": "internet" }
+  }
+}

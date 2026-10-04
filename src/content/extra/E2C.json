@@ -1,0 +1,18 @@
+{
+  "title": "Contesting, DX, logs and remote operation",
+  "blurb": "Explain split DX operating, where contests happen, what ADIF, Cabrillo and LoTW do, remote-operation identification, latency and mesh networks.",
+  "why": {
+    "E2C01": { "why": "With the remote transmitter in the US you ID normally: **no additional indicator** is required.", "trap": "State, district and section suffixes are not required here.", "concept": "remote" },
+    "E2C02": { "why": "**ADIF** is the standard file format for exchanging amateur log data between programs.", "trap": "Cabrillo is for contest submissions, not general log exchange.", "concept": "logs" },
+    "E2C03": { "why": "Contests are generally **excluded from 30 m** (a WARC band). 6 m, 70 cm and 33 cm all host contests.", "concept": "contest-where" },
+    "E2C04": { "why": "Mesh networks use **frequencies shared with unlicensed wireless data services**, because they run on Wi-Fi style hardware.", "concept": "mesh" },
+    "E2C05": { "why": "A QSL manager **receives and sends confirmations** on behalf of a DX station.", "trap": "It doesn't run nets or allocate frequencies.", "concept": "logs" },
+    "E2C06": { "why": "VHF/UHF SSB and CW activity gathers in the **weak-signal segment, near the calling frequency**.", "concept": "contest-where" },
+    "E2C07": { "why": "**Cabrillo** is the standard format for submitting electronic contest logs.", "trap": "It isn't the exchange sent on the air or a digital mode.", "concept": "logs" },
+    "E2C08": { "why": "LoTW confirms special event, US to non-US and Worked All States contacts: **all of these**.", "concept": "logs" },
+    "E2C09": { "why": "Mesh nodes are **wireless routers running custom firmware**.", "trap": "TNC radios and EchoLink are different systems.", "concept": "mesh" },
+    "E2C10": { "why": "Split operation separates callers from the DX, reduces interference, and avoids frequencies some callers can't use: **all of these**.", "concept": "dx-split" },
+    "E2C11": { "why": "In a pileup keep it short: your **full call sign, once or twice**.", "trap": "Partial calls and long phrases waste time and add to the pileup.", "concept": "dx-split" },
+    "E2C12": { "why": "The delay from a control operator's action to the signal change is **latency**.", "trap": "Hang time is the delay before the radio returns to receive.", "concept": "remote" }
+  }
+}

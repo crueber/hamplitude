@@ -1,0 +1,17 @@
+{
+  "title": "VHF/UHF digital, APRS, EME and meteor scatter",
+  "blurb": "Choose the right weak-signal mode for meteors or the Moon, and read APRS frames and digipeater paths.",
+  "why": {
+    "E2D01": { "why": "**MSK144** is the WSJT-X mode designed for meteor scatter's short bursts.", "trap": "WSPR is a propagation beacon, APRS is tracking.", "concept": "path-modes" },
+    "E2D02": { "why": "A VHF contest exchange in FT8 or FT4 uses your **grid square** where a normal QSO sends the signal report.", "concept": "weak-modes" },
+    "E2D03": { "why": "**Q65** is designed for EME. MSK144 is for meteors and WSPR is a beacon mode.", "concept": "path-modes" },
+    "E2D04": { "why": "Balloon trackers send position with **APRS**, which shows moving stations on a map in real time.", "concept": "aprs-frame" },
+    "E2D05": { "why": "JT65 **decodes signals with a very low signal-to-noise ratio**, even below the noise.", "trap": "65 is not its bandwidth or baud rate.", "concept": "weak-modes" },
+    "E2D06": { "why": "EME uses **time-synchronous transmissions that alternate** between stations, since echoes are slow and weak.", "trap": "Store-and-forward is a satellite mailbox technique.", "concept": "eme-timing" },
+    "E2D07": { "why": "APRS is carried by **AX.25** packets.", "trap": "PACTOR and AMTOR are HF modes.", "concept": "aprs-frame" },
+    "E2D08": { "why": "An APRS beacon is an **Unnumbered Information** frame: connectionless, with no acknowledgment.", "trap": "Connect and Acknowledgement frames belong to connected sessions.", "concept": "aprs-frame" },
+    "E2D09": { "why": "JT65 sends **multitone AFSK**: many audio tones, one per symbol.", "concept": "weak-modes" },
+    "E2D10": { "why": "WIDE3-1 means **three digipeater hops requested, one remaining**.", "concept": "aprs-path" },
+    "E2D11": { "why": "APRS data is relayed by **packet digipeaters** that re-transmit what they hear.", "trap": "APRS does not ride DMR or C4FM repeaters.", "concept": "aprs-path" }
+  }
+}

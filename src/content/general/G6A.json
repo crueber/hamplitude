@@ -1,0 +1,18 @@
+{
+  "title": "Batteries, diodes, transistors and tubes",
+  "blurb": "Explain what limits real components: battery resistance, diode thresholds, parasitic L and C, transistor regions and tube grids.",
+  "why": {
+    "G6A01": { "why": "Draining a 12 V lead-acid battery below about **10.5 V** shortens its life.", "trap": "Nominal 12 V is the starting point, not the floor. Lower values over-discharge it.", "concept": "battery" },
+    "G6A02": { "why": "Less internal resistance means less voltage lost inside, so the battery can supply a **high discharge current**.", "trap": "Internal resistance doesn't set the battery's voltage.", "concept": "battery" },
+    "G6A03": { "why": "A germanium diode starts conducting at about **0.3 V**.", "trap": "0.7 V is silicon.", "concept": "diode-threshold" },
+    "G6A04": { "why": "An electrolytic packs **high capacitance into a small volume**. The price is looser tolerance and more leakage.", "trap": "Tight tolerance and low leakage belong to other capacitor types.", "concept": "real-parts" },
+    "G6A05": { "why": "A silicon junction diode starts conducting at about **0.7 V**.", "trap": "0.3 V is germanium.", "concept": "diode-threshold" },
+    "G6A06": { "why": "A wire-wound resistor is a coil, so its **inductance** makes RF behaviour unpredictable.", "trap": "Wire-wound parts handle heat well. The problem is inductance, not heat or tolerance.", "concept": "real-parts" },
+    "G6A07": { "why": "A switch is fully off (**cutoff**) or fully on (**saturation**). The active region in between is for amplifying.", "trap": "The active region is the amplifier region. Enhancement and depletion describe FETs.", "concept": "transistor-regions" },
+    "G6A08": { "why": "Low-voltage ceramic capacitors are popular because they are **cheap**. They are not the tight-tolerance, high-stability choice.", "concept": "real-parts" },
+    "G6A09": { "why": "A MOSFET gate is separated from the channel by a **thin insulating layer**, so the gate draws almost no current.", "trap": "A back-biased junction gate is a JFET. Source and drain are connected through the channel.", "concept": "transistor-regions" },
+    "G6A10": { "why": "The **control grid** sits between cathode and plate and regulates the electron flow.", "trap": "The screen grid shields; it does not control the flow.", "concept": "vacuum-tube" },
+    "G6A11": { "why": "Past its self-resonant frequency, stray capacitance dominates, so the inductor becomes **capacitive**.", "trap": "Reactance rises only up to resonance, then the part behaves as a capacitor.", "concept": "real-parts" },
+    "G6A12": { "why": "The **screen grid** shields the control grid from the plate, **reducing grid-to-plate capacitance**.", "trap": "The control grid regulates electron flow. The screen grid shields.", "concept": "vacuum-tube" }
+  }
+}

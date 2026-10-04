@@ -1,0 +1,50 @@
+import { ScopeHookup } from '@/visuals/general/G4B_ScopeHookup'
+import { Scope } from '@/visuals/general/G4B_Scope'
+import { Loading } from '@/visuals/general/G4B_Loading'
+import { Analyzer } from '@/visuals/general/G4B_Analyzer'
+
+<Concept id="scope" title="An oscilloscope draws the waveform itself" qs="G4B01 G4B02 G4B03 G4B04 G4B07 G4B08">
+
+An oscilloscope has **vertical and horizontal channel amplifiers**: signal strength up, time across. Unlike a voltmeter it shows **complex waveforms**, so it's the tool for a CW **keying waveform** or the **RF envelope** of a transmitter, fed from an **attenuated sample of the RF output**.
+
+<ScopeHookup />
+
+A **two-tone test** sends **two non-harmonically-related audio tones** into an SSB transmitter. The envelope should be a clean beat pattern. Flat tops mean poor **linearity**.
+
+<Scope />
+
+<Key>Scope shows the shape. Two-tone test checks linearity.</Key>
+
+</Concept>
+
+<Concept id="meters" title="Voltmeters must not load the circuit" qs="G4B05 G4B06 G4B09">
+
+Connected across a circuit, a voltmeter's input resistance forms a divider with the circuit's own resistance. **High input impedance** keeps loading small, so the reading stays true.
+
+<Loading />
+
+| | Digital multimeter | Analog multimeter |
+|---|---|---|
+| Strength | **Higher precision** | Moving needle shows trends |
+| Best for | exact readings | **adjusting for a maximum or minimum** (peaking, nulling) |
+
+<Key>High input impedance, less loading. Needle for peaking, digits for precision.</Key>
+
+</Concept>
+
+<Concept id="swr-instruments" title="Two ways to measure SWR, two hookups" qs="G4B10 G4B11 G4B12 G4B13">
+
+A **directional wattmeter** sits in the line with a running transmitter and reads forward and reflected power, so you get **SWR**. An **antenna analyzer** makes its own signal, so connect only the **antenna and feed line**.
+
+<Analyzer />
+
+| Analyzer measures | Not an analyzer job |
+|---|---|
+| SWR, impedance (including **coax impedance**) | transmitter power output |
+| | antenna gain or front-to-back |
+
+Strong signals from nearby transmitters get into the analyzer and **interfere with SWR readings**.
+
+<Key>Wattmeter: SWR with a transmitter. Analyzer: antenna and line only, no transmitter.</Key>
+
+</Concept>

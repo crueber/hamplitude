@@ -1,0 +1,58 @@
+import { Passband } from '@/visuals/general/G4A_Passband'
+import { Blanker } from '@/visuals/general/G4A_Blanker'
+import { AmpTune } from '@/visuals/general/G4A_AmpTune'
+import { TxChain } from '@/visuals/general/G4A_TxChain'
+
+<Concept id="rx-tools" title="Each receiver control targets one kind of interference" qs="G4A01 G4A02 G4A03 G4A07 G4A13">
+
+| Problem | Control | How it works |
+|---|---|---|
+| Steady **carrier** in the passband | **Notch filter** | cuts a narrow slot at that frequency |
+| Neighbour beside a **CW** signal | **Opposite (reverse) sideband** | flips the passband so the neighbour falls outside |
+| Short **impulse noise** | **Noise blanker** | drops gain during each pulse |
+| Hiss and general noise | **Noise reduction** | digital processing; too much **distorts** the signal |
+| Strong signals overloading the receiver | **Attenuator** | reduces the input before it overloads |
+
+<Passband />
+
+<Blanker />
+
+<Key>Match the tool to the interference: carrier, notch. Pulses, blanker. Overload, attenuator.</Key>
+
+</Concept>
+
+<Concept id="amp-tune" title="TUNE finds the dip, LOAD sets the power" qs="G4A04 G4A08">
+
+In a vacuum-tube amplifier, **TUNE** resonates the output circuit: plate current drops to a **pronounced dip** exactly where output peaks. **LOAD** (coupling) then sets output power: raise it to the **power you want without exceeding maximum plate current**.
+
+<AmpTune />
+
+<Key>TUNE for the dip. LOAD for desired output, within the plate-current limit.</Key>
+
+</Concept>
+
+<Concept id="tx-chain" title="Control lines protect the amplifier chain" qs="G4A05 G4A06 G4A09 G4A11">
+
+<TxChain />
+
+- **ALC** feeds back a voltage that limits drive, so the amplifier is not overdriven.
+- **Keying delay**: the amplifier's relay needs a moment to switch the antenna over. RF waits so the relay is not hot-switched.
+- **Antenna tuner**: lets the transmitter deliver **more power to the feed line** by presenting it a load it accepts.
+- **AFSK data**: keep ALC inactive. ALC action **distorts** the signal.
+
+<Key>ALC limits drive (off for data), delay protects the relay, tuner improves power transfer.</Key>
+
+</Concept>
+
+<Concept id="op-features" title="Keyer and dual VFO make operating easier" qs="G4A10 G4A12">
+
+| Feature | Does |
+|---|---|
+| **Electronic keyer** | generates **dots and dashes** automatically for CW |
+| **Dual VFO** | **transmit on one frequency, listen on another** (split operation) |
+
+Transmit and receive are still never at the same instant: the dual VFO only sets two frequencies.
+
+<Key>Keyer makes the dots and dashes. Dual VFO is split: listen here, transmit there.</Key>
+
+</Concept>

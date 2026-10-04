@@ -1,0 +1,20 @@
+{
+  "title": "Receiver noise, selectivity and overload",
+  "blurb": "Calculate noise floor from bandwidth, and explain image rejection, roofing filters, attenuators, overload and phase noise.",
+  "why": {
+    "E4C01": { "why": "Clock **phase noise** combines with strong nearby signals and generates **interference** on the signal you want.", "trap": "Phase noise isn't about calibration or the intercept point.", "concept": "phase-noise" },
+    "E4C02": { "why": "A **front-end filter or preselector** acts before the mixer, removing strong out-of-band signals.", "trap": "An IF filter acts after the mixer, too late for front-end overload. A notch removes only one frequency.", "concept": "image" },
+    "E4C03": { "why": "In FM the stronger signal on the same frequency suppresses the weaker: **capture effect**.", "trap": "Desensitization and cross-modulation are other strong-signal effects, not same-frequency FM suppression.", "concept": "strong-signals" },
+    "E4C04": { "why": "Noise figure = receiver-generated noise, in dB, **above the theoretical minimum**.", "trap": "It's not compared with atmospheric noise.", "concept": "noise-floor" },
+    "E4C05": { "why": "−174 dBm is the thermal noise in **1 Hz** at the input of a **perfect receiver** at room temperature.", "trap": "It's the theoretical minimum, so there's 0 dB of noise figure on top.", "concept": "noise-floor" },
+    "E4C06": { "why": "10 log(1000 ÷ 50) = 10 log 20 = **13 dB** more noise.", "trap": "Take 10 log of the bandwidth ratio (20), not of 10 or 2.", "concept": "noise-floor" },
+    "E4C07": { "why": "MDS stands for **minimum discernible signal**, the weakest signal the receiver can detect.", "concept": "noise-floor" },
+    "E4C08": { "why": "The A/D converter overloads when the input exceeds its **reference voltage**, its largest input range.", "concept": "strong-signals" },
+    "E4C09": { "why": "The image is 2 × IF away. A **high IF** puts it far enough for the front end to remove.", "trap": "A high IF doesn't reduce drift or improve noise figure.", "concept": "image" },
+    "E4C10": { "why": "Set bandwidth to match the **modulation bandwidth**: best signal-to-noise, least interference.", "trap": "Bandwidth doesn't change the RF amplifier's noise figure.", "concept": "selectivity" },
+    "E4C11": { "why": "**Atmospheric noise** is generally above internal noise even after attenuation, so S/N barely changes.", "trap": "An attenuator cuts signal and noise alike; it has no filter.", "concept": "strong-signals" },
+    "E4C12": { "why": "A narrow roofing filter **attenuates strong signals near the receive frequency**, improving **blocking dynamic range**.", "trap": "It doesn't lower front-end noise.", "concept": "selectivity" },
+    "E4C13": { "why": "**Reciprocal mixing**: oscillator phase noise mixes with a strong adjacent signal and interferes with the wanted one.", "trap": "Two out-of-band signals mixing is intermodulation.", "concept": "phase-noise" },
+    "E4C14": { "why": "**IF shift** slides the passband to reduce interference from stations on **adjacent frequencies**.", "trap": "That's RIT or split operation, not IF shift.", "concept": "selectivity" }
+  }
+}

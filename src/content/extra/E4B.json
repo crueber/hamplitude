@@ -1,0 +1,17 @@
+{
+  "title": "Measurement accuracy, S parameters, VNAs",
+  "blurb": "Explain what limits meter and counter accuracy, read S parameters, calibrate a VNA, find Q, and test SSB for intermodulation.",
+  "why": {
+    "E4B01": { "why": "A counter counts cycles over a gate set by its oscillator, so **time base accuracy** limits it.", "trap": "Attenuators and dividers don't set how long it counts.", "concept": "meter-limits" },
+    "E4B02": { "why": "**Full-scale volts × ohms per volt** = input impedance. A 10 V range at 20 kΩ/V is 200 kΩ.", "trap": "Ohms per volt describes loading, not power drawn or shunt size.", "concept": "meter-limits" },
+    "E4B03": { "why": "**S21** is signal in at port 1, measured at port 2: **forward gain**.", "trap": "S12 is the reverse direction.", "concept": "s-params" },
+    "E4B04": { "why": "**S11**: in and measured at port 1, so input reflection (**return loss**, equivalent to VSWR).", "trap": "S22 is the same idea at the output port.", "concept": "s-params" },
+    "E4B05": { "why": "VNA calibration uses three known loads: **short, open and 50 Ω**.", "trap": "A resonant circuit isn't a fixed reference, and 75 Ω and 90 Ω aren't the standard calibration loads.", "concept": "vna" },
+    "E4B06": { "why": "Absorbed = forward − reflected = 100 − 25 = **75 W**.", "trap": "Adding them (125 W) treats reflected power as if the load absorbed it.", "concept": "directional" },
+    "E4B07": { "why": "The subscripts name the **ports** where the measurement is made.", "trap": "They are port numbers, not time or data quality.", "concept": "s-params" },
+    "E4B08": { "why": "**Q = centre frequency ÷ bandwidth**, so the bandwidth of the frequency response gives Q.", "trap": "Resonant frequency alone doesn't give Q; you also need the bandwidth.", "concept": "q-bandwidth" },
+    "E4B09": { "why": "A two-port VNA measures how a device responds across frequency: **filter frequency response**.", "trap": "Phase noise, rise time and forward power need other instruments.", "concept": "vna" },
+    "E4B10": { "why": "IMD needs **two AF tones, not harmonically related**, in. A **spectrum analyzer** on the RF out shows the products.", "trap": "The tones go in at audio, not RF, and a logic analyzer can't show RF spectrum.", "concept": "two-tone" },
+    "E4B11": { "why": "A VNA measures input impedance, output impedance and reflection coefficient: **all of them**.", "concept": "vna" }
+  }
+}

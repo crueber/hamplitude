@@ -1,0 +1,17 @@
+{
+  "title": "Radio operating controls",
+  "blurb": "Set squelch, filters, RIT, mic gain and digital-radio settings so you can hear and be heard clearly.",
+  "why": {
+    "T4B01": { "why": "Past the transmitter's limit the audio peaks are flattened, giving **distorted transmitted audio**.", "trap": "Gain affects audio quality, not frequency stability or SWR.", "concept": "mic-gain" },
+    "T4B02": { "why": "You enter a frequency with the **keypad or the VFO knob**.", "trap": "CTCSS and DTMF are tones, not frequency entry.", "concept": "tuning" },
+    "T4B03": { "why": "Squelch mutes signals below its threshold. For weak signals, lower it so **audio is on all the time**.", "trap": "Turning up audio volume does not beat the squelch gate.", "concept": "squelch" },
+    "T4B04": { "why": "FM demodulation expects a centered signal. Off frequency, the audio comes out **distorted**.", "trap": "Pitch shifting is an SSB effect, not FM.", "concept": "tuning" },
+    "T4B05": { "why": "Scanning **tunes through a range of frequencies to check for activity**.", "concept": "tuning" },
+    "T4B06": { "why": "On SSB, being off frequency shifts the voice pitch. **RIT or the Clarifier** moves receive tuning to fix it.", "trap": "AGC, bandwidth and tone squelch do not change pitch.", "concept": "tuning" },
+    "T4B07": { "why": "A code plug is **configuration data** loaded into your radio to reach repeaters and talkgroups.", "trap": "It's data, not a cable, an upgrade or a CODEC.", "concept": "digital" },
+    "T4B08": { "why": "Choose a bandwidth that **matches the mode** to reduce noise and interference.", "concept": "filters" },
+    "T4B09": { "why": "On DMR you select a group by entering its **ID code**.", "trap": "CTCSS tones are analog FM, not DMR.", "concept": "digital" },
+    "T4B10": { "why": "An SSB voice signal is about 2.4 kHz wide, so **2400 Hz** passes it all with the least extra noise.", "trap": "500 Hz cuts the voice; 5000 Hz admits extra noise.", "concept": "filters" },
+    "T4B11": { "why": "A D-STAR radio must be programmed with **your call sign** before it transmits.", "concept": "digital" }
+  }
+}

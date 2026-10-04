@@ -1,0 +1,20 @@
+{
+  "title": "Transformers, series and parallel",
+  "blurb": "Find voltage and impedance through a transformer, and total R, L and C in series and parallel.",
+  "why": {
+    "G5C01": { "why": "The primary's changing magnetic field cuts the secondary and induces a voltage: **mutual inductance**.", "trap": "Capacitive coupling would need an electric field between the windings, not shared magnetic flux.", "concept": "turns" },
+    "G5C02": { "why": "A transformer works both ways. A 4:1 step-down has 4 primary turns per secondary turn, so fed backwards the ratio reverses and the voltage is **multiplied by 4**.", "trap": "Extra resistance is not needed. Only the turns ratio sets the voltage.", "concept": "turns" },
+    "G5C03": { "why": "1 ÷ (1/10 + 1/20 + 1/50) = 1 ÷ 0.17 = **5.9 Ω**, below the smallest resistor.", "trap": "0.17 is the reciprocal sum; flip it. 80 Ω is the series total.", "concept": "rl" },
+    "G5C04": { "why": "1 ÷ (1/100 + 1/200) = 1 ÷ 0.015 = **67 Ω**, below 100 Ω.", "trap": "300 is the series total. A parallel total must be below the smallest part.", "concept": "rl" },
+    "G5C05": { "why": "Power is about equal on both sides, so the lower-voltage primary carries the **higher current** and needs thicker wire.", "trap": "Coupling and parasitic oscillation have nothing to do with wire gauge.", "concept": "current" },
+    "G5C06": { "why": "Vout = 120 × 1,500 ÷ 500 = 120 × 3 = **360 V**.", "trap": "40 V divides by 3 instead of multiplying: it is a step-up.", "concept": "turns" },
+    "G5C07": { "why": "Impedance ratio = 600 ÷ 50 = 12. Turns ratio = √12 = 3.46, about **3.5 to 1**.", "trap": "12 to 1 is the impedance ratio, not the turns ratio.", "concept": "z-ratio" },
+    "G5C08": { "why": "Parallel capacitors add: 5 + 5 + 0.75 nF = **10.75 nF** (750 pF = 0.75 nF).", "trap": "Convert pF to nF first before adding.", "concept": "c" },
+    "G5C09": { "why": "Series: 100 ÷ 3 = **33.3 µF**, less than one capacitor.", "trap": "300 µF is the parallel total. Series capacitance shrinks.", "concept": "c" },
+    "G5C10": { "why": "Parallel inductors shrink like resistors: 10 mH ÷ 3 = **3.3 mH**.", "trap": "30 mH is the series total.", "concept": "rl" },
+    "G5C11": { "why": "Series inductors add: 20 + 50 = **70 mH**.", "trap": "14.3 mH is the parallel total.", "concept": "rl" },
+    "G5C12": { "why": "Series: 1 ÷ (1/20 + 1/50) = 1 ÷ 0.07 = **14.3 µF**. The total is below 20 µF.", "trap": "70 µF is what you get by adding, which is parallel for capacitors.", "concept": "c" },
+    "G5C13": { "why": "Capacitors **in parallel** add, so another capacitor in parallel raises capacitance.", "trap": "Series capacitors lower the total. Inductors do not add capacitance.", "concept": "c" },
+    "G5C14": { "why": "Inductors **in series** add, so another inductor in series raises inductance.", "trap": "Parallel inductors lower the total, and capacitors do not add inductance.", "concept": "rl" }
+  }
+}

@@ -1,0 +1,63 @@
+import { E5B_TimeConstant } from '@/visuals/extra/E5B_TimeConstant'
+import { E5B_PhaseAngle } from '@/visuals/extra/E5B_PhaseAngle'
+import { E5B_Reciprocal } from '@/visuals/extra/E5B_Reciprocal'
+
+<Concept id="tau" title="One time constant gets you 63.2% of the way" qs="E5B01 E5B04">
+
+A capacitor charges through a resistor by closing a fixed **fraction of the remaining gap** every time constant. One **τ** is 63.2% charged, or 36.8% left when discharging.
+
+<Formula label="Time constants">RC: τ = R × C (seconds). RL: τ = L ÷ R.</Formula>
+
+<E5B_TimeConstant />
+
+| Time | Charging | Discharging (left) |
+|---|---|---|
+| 1τ | 63.2% | 36.8% |
+| 2τ | 86.5% | 13.5% |
+| 3τ | 95.0% | 5.0% |
+| 5τ | 99.3% | 0.7% |
+
+Combine parts first. Parallel capacitors **add**: 2 × 220 µF = 440 µF. Parallel equal resistors **divide**: 1 MΩ ÷ 2 = 0.5 MΩ. τ = 0.5 MΩ × 440 µF = **220 s**.
+
+<Key>τ = R × C. After one τ: 63.2% charged, or 36.8% left.</Key>
+
+</Concept>
+
+<Concept id="phase" title="In an inductor voltage leads. In a capacitor current leads." qs="E5B07 E5B08 E5B09 E5B10 E5B11">
+
+<Mnemonic>**ELI the ICE man**: voltage (E) leads current (I) in an inductor (L). Current (I) leads voltage (E) in a capacitor (C).</Mnemonic>
+
+Each is **90°** out of phase. In a series RLC circuit, subtract the reactances, then compare to R. The **bigger reactance wins**.
+
+<Formula label="Phase angle">θ = arctan((XL − XC) ÷ R)</Formula>
+
+<E5B_PhaseAngle />
+
+| R, XL, XC | XL − XC | θ | Voltage |
+|---|---|---|---|
+| 1000, 250, 500 | −250 | arctan(−0.25) = −14.0° | **lags** |
+| 100, 100, 300 | −200 | arctan(−2) = −63.4° | **lags** |
+| 100, 75, 25 | +50 | arctan(0.5) = +26.6° | **leads** |
+
+<Key>Net inductive (positive): voltage leads. Net capacitive (negative): voltage lags.</Key>
+
+</Concept>
+
+<Concept id="admittance" title="Admittance is impedance turned upside down" qs="E5B02 E5B03 E5B05 E5B06 E5B12">
+
+**Admittance** (Y) is the inverse of impedance, in siemens. Its parts mirror impedance: conductance **G** (real, from R) and **susceptance B** (imaginary, from reactance).
+
+<Formula label="Admittance">Y = 1 ÷ Z = G + jB</Formula>
+
+<E5B_Reciprocal />
+
+| Impedance | → Admittance |
+|---|---|
+| Polar Z = 50 Ω ∠30° | Y = 1 ÷ 50 = 0.02 S **∠−30°** |
+| Pure reactance X | susceptance replaced by its **reciprocal**, 1 ÷ X in size (sign flips) |
+
+<Key>Admittance: reciprocal of the magnitude, sign of the angle changed. Susceptance is its imaginary part, letter B.</Key>
+
+<Callout kind="warn" title="Trap">Y is admittance. G is conductance. X is reactance. Susceptance is **B**.</Callout>
+
+</Concept>

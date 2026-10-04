@@ -1,0 +1,17 @@
+{
+  "title": "Modulators, mixers and detectors",
+  "blurb": "Explain how FM, SSB and mixing signals are produced and detected, and why pre-emphasis and de-emphasis are used.",
+  "why": {
+    "E7E01": { "why": "Frequency is changed at the oscillator, so use **reactance modulation of a local oscillator**.", "trap": "Balanced modulation cancels a carrier (DSB and SSB). It doesn't vary frequency.", "concept": "reactance" },
+    "E7E02": { "why": "Varying a **capacitance** (reactance) in the oscillator makes its frequency or phase follow the audio: **PM or FM**.", "trap": "Varying a resistance or inductance isn't how a reactance modulator works, and AM isn't its product.", "concept": "reactance" },
+    "E7E03": { "why": "A **frequency discriminator** turns frequency variations back into audio: it **detects FM**.", "trap": "FM generators are modulators, not discriminators.", "concept": "detectors" },
+    "E7E04": { "why": "A balanced modulator cancels the carrier, then a **filter** removes one sideband: SSB.", "trap": "A product detector demodulates; it doesn't make a transmit signal.", "concept": "balanced" },
+    "E7E05": { "why": "A **pre-emphasis** network boosts the high audio frequencies before modulation.", "trap": "De-emphasis is the receiver's matching cut.", "concept": "emphasis" },
+    "E7E06": { "why": "A phase modulator already tilts the audio toward the highs. De-emphasis flattens it, giving **compatibility with phase-modulated transmitters**.", "concept": "emphasis" },
+    "E7E07": { "why": "**Baseband** is the frequency range occupied by the message signal **before modulation**.", "trap": "It is not the lowest band the radio covers.", "concept": "balanced" },
+    "E7E08": { "why": "A mixer outputs **both inputs plus their sum and difference**, such as 14, 9, 23 and 5 MHz.", "trap": "Harmonics and square roots aren't the mixer's main outputs.", "concept": "mixer" },
+    "E7E09": { "why": "Excess input drive overloads the mixer's non-linear action, creating **spurious mixer products**.", "concept": "mixer" },
+    "E7E10": { "why": "The diode **rectifies** the RF (one half-cycle only), then a capacitor **filters** off the RF, leaving the audio envelope.", "trap": "Zener breakdown and reactance sensing aren't how an envelope detector works.", "concept": "detectors" },
+    "E7E11": { "why": "SSB has no carrier, so a **product detector** (a mixer with a local oscillator) restores the audio.", "trap": "Discriminators and phase detectors are FM and PLL circuits.", "concept": "detectors" }
+  }
+}

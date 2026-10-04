@@ -1,0 +1,20 @@
+{
+  "title": "Decibels, power and RMS",
+  "blurb": "Use dB ratios, add parallel currents, calculate power, and convert between RMS, peak and peak-to-peak to find PEP.",
+  "why": {
+    "G5B01": { "why": "Doubling power is **about 3 dB** (halving is −3 dB).", "trap": "6 dB is two doublings, ×4 in power. 9 dB is ×8.", "concept": "decibels" },
+    "G5B02": { "why": "Each branch has the same voltage and draws its own current, so total current is the **sum of the branch currents**.", "trap": "Adding branches lowers total resistance, so total current rises.", "concept": "parallel-current" },
+    "G5B03": { "why": "P = E² ÷ R = 400² ÷ 800 = 160,000 ÷ 800 = **200 W**. Or I = 400 ÷ 800 = 0.5 A, then 400 × 0.5.", "trap": "0.5 is the current in amperes, not watts.", "concept": "power" },
+    "G5B04": { "why": "P = E × I = 12 × 0.2 = **2.4 W**.", "trap": "24 W misplaces the decimal. 60 comes from dividing 12 by 0.2.", "concept": "power" },
+    "G5B05": { "why": "I = 0.007 A, so P = I² × R = 0.007² × 1,250 = 0.000049 × 1,250 = 0.06125 W, about **61 mW**.", "trap": "Convert milliamperes to amperes before squaring, or the answer is off by 1,000.", "concept": "power" },
+    "G5B06": { "why": "Peak = 200 ÷ 2 = 100 V. RMS = 100 × 0.707 = 70.7 V. P = 70.7² ÷ 50 ≈ 5,000 ÷ 50 = **100 W**.", "trap": "Peak-to-peak is not RMS. Halve it to peak, then take 0.707, before squaring.", "concept": "pep" },
+    "G5B07": { "why": "The **RMS** value of AC heats a resistor exactly as the same DC voltage would.", "trap": "Peak and peak-to-peak are larger than the heating-equivalent value.", "concept": "rms" },
+    "G5B08": { "why": "Peak = 120 × 1.414 = 169.7 V. Peak-to-peak = 2 × 169.7 = **339.4 V**.", "trap": "169.7 V is only the peak, not peak-to-peak.", "concept": "rms" },
+    "G5B09": { "why": "RMS = 0.707 × peak = 0.707 × 17 = **12 V**.", "trap": "24 V multiplies by 1.414, the wrong direction. 34 V is peak-to-peak.", "concept": "rms" },
+    "G5B10": { "why": "1 dB is a power ratio of 10^(−0.1) = 0.794, so 79.4 % remains and **20.6 %** is lost.", "trap": "Loss is not 10 %. A 3 dB loss would leave 50 %.", "concept": "decibels" },
+    "G5B11": { "why": "A steady carrier has a constant envelope, so PEP equals average power: ratio **1.00**.", "trap": "0.707 and 1.414 are voltage factors, not power ratios.", "concept": "pep" },
+    "G5B12": { "why": "From P = E² ÷ R, E = √(P × R) = √(1,200 × 50) = √60,000 = **245 V**.", "trap": "346 V is the peak (245 × 1.414), not RMS.", "concept": "power" },
+    "G5B13": { "why": "An unmodulated carrier has constant amplitude, so PEP = average power = **1,060 W**.", "trap": "PEP only exceeds average power when the amplitude varies.", "concept": "pep" },
+    "G5B14": { "why": "Peak = 500 ÷ 2 = 250 V. RMS = 250 × 0.707 = 176.8 V. P = 176.8² ÷ 50 ≈ 31,250 ÷ 50 = **625 W**.", "trap": "Using 500 V directly gives 5,000 W, eight times too big.", "concept": "pep" }
+  }
+}

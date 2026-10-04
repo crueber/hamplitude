@@ -1,0 +1,61 @@
+import { PowerSupply } from '@/visuals/technician/T6D_PowerSupply'
+import { Relay } from '@/visuals/technician/T6D_Relay'
+import { Resonance } from '@/visuals/technician/T6D_Resonance'
+import { Shield } from '@/visuals/technician/T6D_Shield'
+
+<Concept id="power-supply" title="A power supply: transformer, rectifier, filter, regulator" qs="T6D01 T6D05 T6D06">
+
+Each stage does one job on the way from wall power to clean DC.
+
+<PowerSupply />
+
+- **Transformer** changes 120 V AC to a lower AC voltage.
+- **Rectifier** (diodes) turns AC into varying DC.
+- **Regulator** holds the output voltage steady.
+
+<Key>Rectifier: AC to DC. Regulator: controls the voltage. Transformer: changes the AC voltage.</Key>
+
+</Concept>
+
+<Concept id="relay" title="A relay is a switch worked by electricity" qs="T6D02">
+
+A small current through a **coil** makes an electromagnet. It pulls a switch closed in a **separate circuit**, so a weak signal can control a big load.
+
+<Relay />
+
+<Key>Relay = electrically-controlled switch.</Key>
+
+</Concept>
+
+<Concept id="resonance" title="Inductor + capacitor = a resonant circuit" qs="T6D08 T6D11">
+
+Connect an **inductor** and a **capacitor**, in series or in parallel, and energy swings between them at one natural frequency. Radios use this to **tune** to a station.
+
+<Resonance />
+
+<Key>Resonant (tuned) circuit = an inductor and a capacitor.</Key>
+
+</Concept>
+
+<Concept id="shielding" title="Shielded wire keeps unwanted signals out and in" qs="T6D03">
+
+A metal **shield** wrapped around a wire stops unwanted signals from **coupling** into it, or from its own signal leaking out to nearby circuits. It does not lower resistance or carry more current.
+
+<Shield />
+
+<Key>Shield = prevent coupling of unwanted signals to or from the wire.</Key>
+
+</Concept>
+
+<Concept id="jobs" title="Know each part's one-line job" qs="T6D04 T6D07 T6D09 T6D10">
+
+| Part | Job |
+|---|---|
+| **Meter** | shows an electrical quantity as a **number** |
+| **LED** | the common **visual indicator** (FETs and Zener diodes are not) |
+| **Integrated circuit (IC)** | many transistors and parts in **one package** |
+| **Transistor** | **controls the flow of current** (component 2 in figure T-1) |
+
+<Mnemonic>IC = Integrated Circuit: a whole circuit integrated into one chip.</Mnemonic>
+
+</Concept>

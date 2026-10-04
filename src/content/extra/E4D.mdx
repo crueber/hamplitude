@@ -1,0 +1,61 @@
+import { Window } from '@/visuals/extra/E4D_Window'
+import { ImdProducts } from '@/visuals/extra/E4D_ImdProducts'
+import { Intercept } from '@/visuals/extra/E4D_Intercept'
+import { LinkBudget } from '@/visuals/extra/E4D_LinkBudget'
+
+<Concept id="dynamic-range" title="Dynamic range is the window between the noise floor and trouble" qs="E4D01 E4D02 E4D06 E4D07 E4D09">
+
+<Window />
+
+**Blocking dynamic range** = dB from the **noise floor** up to the level that causes **1 dB of gain compression**. Poor dynamic range means **cross modulation and desensitization** (reduced sensitivity) from strong adjacent signals.
+
+| Fix | Why |
+|---|---|
+| **Attenuation before the first RF stage** | lowers the strong signal, so less desensitization |
+| **Preselector** | rejects signals **outside the band** being received |
+
+<Key>Strong neighbor in, sensitivity out. Cut it before the first stage.</Key>
+
+</Concept>
+
+<Concept id="imd" title="Nonlinear stages mix signals into new ones, close to the originals" qs="E4D03 E4D04 E4D05 E4D08 E4D11">
+
+<ImdProducts />
+
+**Intermodulation** is caused by **nonlinear circuits or devices**. Two signals f₁ and f₂ create third-order products at **2f₁ − f₂** and **2f₂ − f₁**. **Odd-order** products land **near the originals**, so two in-band signals make products that are also in the band.
+
+<Formula label="146.52 MHz neighbor, receiver on 146.70">2 × 146.52 − 146.34 = **146.70** and 2 × 146.61 − 146.52 = **146.70**</Formula>
+
+Two nearby repeaters: their outputs **mix in the final amplifier** of a transmitter. A **properly terminated circulator** at the transmitter output blocks the other signal from getting in.
+
+<Key>Odd-order products (2f₁ − f₂) fall in your band.</Key>
+
+</Concept>
+
+<Concept id="ip3" title="Third-order products rise 3 dB per dB, so the intercept sets the limit" qs="E4D10">
+
+<Intercept />
+
+Raise two tones by 1 dB and the third-order products rise **3 dB**. Extended, the two lines meet at the **third-order intercept**: a pair of **40 dBm** signals would theoretically produce a third-order product at **the same amplitude as either input**. A higher intercept point is a better receiver.
+
+<Key>Intercept = where the product would equal the tones.</Key>
+
+</Concept>
+
+<Concept id="link-budget" title="A link budget is dB arithmetic: add gains, subtract losses" qs="E4D12 E4D13 E4D14">
+
+<LinkBudget />
+
+**Margin** = received level − (MDS + required S/N). The MDS is a power: **0 dBm = 1 mW**, and each −10 dB divides by 10.
+
+| Level | Power |
+|---|---|
+| 0 dBm | 1 mW |
+| −30 dBm | 1 µW |
+| −60 dBm | 1 nW |
+| −90 dBm | 1 pW |
+| **−100 dBm** | **0.1 pW** |
+
+<Key>dBm: gains add, losses subtract. Margin = what you get − what you need.</Key>
+
+</Concept>

@@ -1,0 +1,18 @@
+{
+  "title": "Reactance, impedance and resonance",
+  "blurb": "Explain how coils and capacitors oppose AC, what impedance is, and why XL equals XC at resonance.",
+  "why": {
+    "G5A01": { "why": "At resonance XL = XC and they cancel, so a series LC circuit has very **low** impedance.", "trap": "A parallel LC circuit is the reverse; the series one is low. Neither uses a mean of L and C.", "concept": "resonance" },
+    "G5A02": { "why": "Reactance is opposition to **alternating** current from capacitance or inductance. Resistance opposes any current.", "trap": "Opposition from resistance is just resistance. Nothing here reinforces current.", "concept": "reactance" },
+    "G5A03": { "why": "An inductor opposes AC with **reactance** (XL).", "trap": "Reluctance is magnetic. Conductance and admittance are inverses.", "concept": "reactance" },
+    "G5A04": { "why": "A capacitor opposes AC with **reactance** (XC).", "trap": "Reluctance is magnetic. Conductance and admittance are inverses.", "concept": "reactance" },
+    "G5A05": { "why": "An inductor's reactance **rises** with frequency: XL = 2π × f × L.", "trap": "Amplitude does not change reactance. Falling reactance with frequency is the capacitor.", "concept": "reactance" },
+    "G5A06": { "why": "A capacitor's reactance **falls** as frequency rises: XC = 1 ÷ (2π × f × C).", "trap": "Rising reactance with frequency is the inductor. Amplitude is irrelevant.", "concept": "reactance" },
+    "G5A07": { "why": "Admittance is the **inverse of impedance**: Y = 1 ÷ Z.", "trap": "Conductance is the inverse of resistance, susceptance of reactance.", "concept": "impedance" },
+    "G5A08": { "why": "Impedance is **voltage ÷ current**, Z = E ÷ I, the AC form of Ohm's law.", "trap": "Current over voltage is the inverse (admittance). Volts times amperes is power.", "concept": "impedance" },
+    "G5A09": { "why": "Reactance is opposition, so it is measured in **ohms**, like resistance and impedance.", "trap": "Farad is capacitance, ampere is current, siemens is conductance.", "concept": "reactance" },
+    "G5A10": { "why": "A transformer, a Pi-network and a length of transmission line can **all** transform impedances.", "concept": "matching" },
+    "G5A11": { "why": "Reactance is **X** (XL, XC). Z is impedance, R is resistance.", "trap": "Z is impedance. B and Y are susceptance and admittance.", "concept": "reactance" },
+    "G5A12": { "why": "At resonance **XL and XC are equal and cancel**, leaving only the resistance.", "trap": "Resistance never cancels. Resonant circuits keep their energy; they do not radiate it all.", "concept": "resonance" }
+  }
+}

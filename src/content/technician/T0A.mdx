@@ -1,0 +1,51 @@
+import { PowerSupplyHazards } from '@/visuals/technician/T0A_PowerSupplyHazards'
+import { AcWiring } from '@/visuals/technician/T0A_AcWiring'
+import { FuseFire } from '@/visuals/technician/T0A_FuseFire'
+import { BatteryHazards } from '@/visuals/technician/T0A_BatteryHazards'
+import { LightningEntry } from '@/visuals/technician/T0A_LightningEntry'
+
+<Concept id="shock" title="Current through you hurts; stored charge still bites" qs="T0A02 T0A06 T0A11 T0A12">
+
+Current through the body **heats tissue**, **disrupts cells** and **clenches muscles**. Every one of those is a hazard.
+
+<PowerSupplyHazards />
+
+Do **all** of these: use three-wire cords, bond equipment to a common safety ground, and **discharge capacitors** before working inside. A power supply's filter capacitors keep their charge after switch-off. When measuring high voltage, use a meter and leads **rated for that voltage**.
+
+<Key>Off is not safe: capacitors hold charge. Ground everything. Rate your meter.</Key>
+
+</Concept>
+
+<Concept id="fuse" title="Fuses go in the hot wire, sized to the wiring" qs="T0A03 T0A04 T0A05 T0A08">
+
+In US 120 V cable **black is hot**, white is neutral, green is the equipment ground. A fuse or breaker goes **in series with the hot wire only**, and removes power when current is too high.
+
+<AcWiring />
+
+Use the **rated** fuse. A 20 A fuse won't blow at currents that already overheat 5 A wiring, so the wire overheats: **fire**.
+
+<FuseFire />
+
+<Key>Fuse = in series, hot wire, correct rating. Oversized fuse = fire.</Key>
+
+</Concept>
+
+<Concept id="battery" title="Batteries: never short them, never rush them" qs="T0A01 T0A10">
+
+A 12 V battery without protection circuitry can deliver huge current. **Shorting** the terminals gives burns, fire or an explosion. **Rapid charge or discharge** overheats it and makes it **out-gas**.
+
+<BatteryHazards />
+
+<Callout kind="warn" title="Trap">The danger is the short circuit, not shock from touching both terminals.</Callout>
+
+</Concept>
+
+<Concept id="lightning" title="Arrester at the entry, and bond every ground" qs="T0A07 T0A09">
+
+<LightningEntry />
+
+Put the **lightning arrester** on a **grounded panel where feed lines enter** the building. Then **bond all external ground rods together** with heavy wire or strap.
+
+<Key>Arrester at the entry panel. All grounds bonded.</Key>
+
+</Concept>

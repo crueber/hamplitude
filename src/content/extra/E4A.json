@@ -1,0 +1,17 @@
+{
+  "title": "Oscilloscopes, analyzers and counters",
+  "blurb": "Explain what scopes, spectrum analyzers, antenna analyzers and prescalers show, and how aliasing and probes affect readings.",
+  "why": {
+    "E4A01": { "why": "The scope only has its **samples**: the converter's **sampling rate** sets the highest frequency it can show accurately.", "trap": "Q of the circuit and reference frequency don't limit the display.", "concept": "scope-sampling" },
+    "E4A02": { "why": "A spectrum analyzer plots **amplitude** (vertical) against **frequency** (horizontal).", "trap": "Amplitude against time is an oscilloscope. SWR is an antenna analyzer's job.", "concept": "spectrum" },
+    "E4A03": { "why": "Spurs and IMD are extra **frequencies**, and only a **spectrum analyzer** displays signal by frequency.", "trap": "A logic analyzer shows digital timing; a network analyzer measures a device's response.", "concept": "spectrum" },
+    "E4A04": { "why": "Display a **square wave** and trim the probe until its **flat portions are as flat as possible**.", "trap": "Compensation is a square-wave test, not a sine-wave amplitude or voltage-standard adjustment.", "concept": "scope-probe" },
+    "E4A05": { "why": "A prescaler **divides** the input down **within the counter's range**; the display restores the real value.", "trap": "It divides, it doesn't multiply or amplify.", "concept": "prescaler" },
+    "E4A06": { "why": "Too few samples per cycle make the scope draw a **false, jittery, lower-frequency** wave: **aliasing**.", "trap": "Aliasing is a sampling error, not a DC-offset or calibration fault.", "concept": "scope-sampling" },
+    "E4A07": { "why": "An antenna analyzer **computes SWR and impedance automatically**, where a bridge needs interpretation.", "trap": "It measures; it doesn't tune the antenna for you.", "concept": "antenna-analyzer" },
+    "E4A08": { "why": "Directional wattmeter, VNA and antenna analyzer all measure SWR: **all of them**.", "concept": "antenna-analyzer" },
+    "E4A09": { "why": "A long ground lead adds inductance, so **keep the probe's ground connection short**.", "trap": "Probes are normally high impedance and are used on both DC and AC circuits.", "concept": "scope-probe" },
+    "E4A10": { "why": "**Line** trigger syncs the sweep to the AC line, so ripple at the line (or twice line) rate holds still.", "concept": "scope-probe" },
+    "E4A11": { "why": "An antenna analyzer reads **velocity factor, cable length and a tuned circuit's resonant frequency**: all of them.", "concept": "antenna-analyzer" }
+  }
+}

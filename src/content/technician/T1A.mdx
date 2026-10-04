@@ -1,0 +1,64 @@
+import { T1A_LicenseGrant } from '@/visuals/technician/T1A_LicenseGrant'
+import { T1A_SpaceStation } from '@/visuals/technician/T1A_SpaceStation'
+import { T1A_Coordinator, T1A_Races } from '@/visuals/technician/T1A_Coordinator'
+import { T1B_TenMeter } from '@/visuals/technician/T1B_TenMeter'
+
+<Concept id="purpose" title="The FCC makes the rules; the goal is radio skill" qs="T1A01 T1A02">
+
+The **FCC** writes and enforces Part 97, the amateur rules. The service exists to **advance technical and communication skills** in the radio art.
+
+| Who | Role |
+|---|---|
+| **FCC** | Regulates and enforces |
+| **ARRL** | National hobby group, not a regulator |
+| **ITU** | International spectrum coordination |
+
+<Key>Rules come from the FCC. Purpose: advance radio skills.</Key>
+
+</Concept>
+
+<Concept id="grant" title="The FCC database is your proof of license" qs="T1A04 T1A05">
+
+<T1A_LicenseGrant />
+
+The FCC **emails** you a link to download the grant. The proof you're licensed is your entry in the FCC **ULS** (Universal Licensing System) database.
+
+<Key>Email from the FCC, proof in the database.</Key>
+
+</Concept>
+
+<Concept id="special" title="Space stations and beacons have exact definitions" qs="T1A06 T1A07">
+
+<T1A_SpaceStation />
+
+A **beacon** is an automatically controlled station whose signal lets others judge propagation (is the band open?). On HF, Technicians find them on 10 m.
+
+<T1B_TenMeter focus="beacon" />
+
+<Key>Space station: over 50 km up. HF beacons: 28.200 to 28.300 MHz.</Key>
+
+</Concept>
+
+<Concept id="coordinator" title="Coordinators and RACES: who authorizes what" qs="T1A08 T1A09 T1A10">
+
+<T1A_Coordinator />
+
+A **frequency coordinator** is a volunteer chosen by local amateurs. Coordinators recommend repeater and auxiliary channels so stations don't collide.
+
+<T1A_Races />
+
+**RACES** (Radio Amateur Civil Emergency Service) is run through civil defense, so its control operators need that organization's enrollment.
+
+</Concept>
+
+<Concept id="conduct" title="Encouraged and prohibited on the air" qs="T1A03 T1A11">
+
+| Behavior | Status |
+|---|---|
+| Phonetic alphabet for ID (phone) | **Encouraged**, never required |
+| Willful or malicious interference | **Prohibited** |
+| International VHF contacts, digital third-party traffic | Not banned as such |
+
+<Mnemonic>Phonetics: encouraged, not required. Jamming on purpose: never.</Mnemonic>
+
+</Concept>

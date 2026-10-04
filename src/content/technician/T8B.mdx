@@ -1,0 +1,55 @@
+import { DopplerPass } from '@/visuals/shared/DopplerPass'
+import { Tracking } from '@/visuals/technician/T8B_Tracking'
+import { UVMode } from '@/visuals/technician/T8B_UVMode'
+import { UplinkLevel } from '@/visuals/technician/T8B_UplinkLevel'
+import { Beacon } from '@/visuals/technician/T8B_Beacon'
+
+<Concept id="doppler" title="Approaching raises the frequency. Receding lowers it." qs="T8B07 T8B09">
+
+**Doppler shift** is a change in the frequency you receive, caused by **relative motion** between the satellite and you. Like a siren: higher pitch coming, lower going.
+
+<DopplerPass />
+
+The shift is larger on higher frequencies. It is zero only at closest approach.
+
+<Callout kind="note" title="Spin fading">A satellite that rotates swings its antennas around, so your signal rises and falls. That is **spin fading**, caused by rotation. It is not Doppler.</Callout>
+
+<Key>Doppler = motion changes frequency. Spin fading = rotation changes strength.</Key>
+
+</Concept>
+
+<Concept id="tracking" title="Orbit numbers in, a pass plan out" qs="T8B10 T8B03 T8B06">
+
+**LEO** is Low Earth Orbit: close to Earth, about **100 minutes** per lap. That is why a pass lasts only minutes.
+
+<Tracking />
+
+The input is the **Keplerian elements**: numbers that describe the orbit. A tracking program gives all three outputs: a live map, pass times with azimuth and elevation, and the Doppler-shifted frequency.
+
+<Key>Keplerian elements describe the orbit. Not the satellite's power, not Doppler history.</Key>
+
+</Concept>
+
+<Concept id="links" title="Uplink up on one band, downlink back on another" qs="T8B04 T8B08 T8B02 T8B12">
+
+The **uplink** is you to the satellite. The **downlink** is satellite to you. **U/V** reads uplink first: U (70 cm) up, V (2 m) down.
+
+<UVMode />
+
+Satellites use **SSB, FM, and CW/data**, so all of these are correct. On a linear transponder, shout too loud and you **block other users**. Aim your downlink to match the beacon.
+
+<UplinkLevel />
+
+<Key>Use only enough power to match the beacon. More just crowds out everyone else.</Key>
+
+</Concept>
+
+<Concept id="beacon" title="A beacon broadcasts satellite health to anyone" qs="T8B01 T8B05 T8B11">
+
+A **beacon** is a transmission from the satellite carrying **telemetry**: the satellite's health and status (battery, temperature and so on). Anyone can receive it. Amateur satellite telemetry is not encrypted.
+
+<Beacon />
+
+<Key>Beacon = status broadcast. Telemetry = health and status. Anyone may listen.</Key>
+
+</Concept>

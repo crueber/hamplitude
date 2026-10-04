@@ -1,0 +1,17 @@
+{
+  "title": "Spread spectrum, keying defects and digital codes",
+  "blurb": "How spread spectrum resists interference, why key clicks and overmodulation happen, and how Baudot, ASCII and parity differ.",
+  "why": {
+    "E8D01": { "why": "The receiver correlates with the spreading pattern, so signals **not using that algorithm are suppressed**.", "trap": "Resistance comes from the spreading pattern, not from high power or feedback.", "concept": "spread" },
+    "E8D02": { "why": "**Direct sequence** uses a high-speed bit stream to shift the carrier's phase.", "trap": "Hopping changes frequency, not phase.", "concept": "spread" },
+    "E8D03": { "why": "**Frequency hopping** varies the transmitted frequency rapidly in a pseudorandom sequence.", "trap": "Shifting the phase with a fast bit stream describes direct sequence.", "concept": "spread" },
+    "E8D04": { "why": "Extremely short rise and fall times make abrupt keying edges, which **generate key clicks**.", "trap": "Clicks are broadband sideband splatter from the keying edges, not harmonics.", "concept": "key-clicks" },
+    "E8D05": { "why": "Softening the keying edges is the usual cure: **increase rise and fall times**.", "trap": "Shortening the edges makes clicks worse.", "concept": "key-clicks" },
+    "E8D06": { "why": "A parity bit makes the count of ones even or odd, so **some errors can be detected**. It adds a bit and corrects nothing.", "trap": "Parity adds overhead, so it slows the rate slightly rather than speeding it.", "concept": "codes" },
+    "E8D07": { "why": "Too much audio drive overmodulates AFSK: **excessive transmit audio levels**.", "trap": "Retries and modem bit errors are results of bad signals, not causes of overmodulation.", "concept": "overmod" },
+    "E8D08": { "why": "Overdriven audio creates unwanted products, measured as **intermodulation distortion (IMD)**.", "concept": "overmod" },
+    "E8D09": { "why": "Acceptable IMD for an idling PSK signal is **−30 dB** (relative to the signal) or lower.", "trap": "Positive dB values would mean the distortion is stronger than the signal.", "concept": "overmod" },
+    "E8D10": { "why": "Baudot: **5 data bits**, plus **two shift codes** (letters and figures). ASCII: 7 or 8 bits and no shift codes.", "concept": "codes" },
+    "E8D11": { "why": "ASCII has both cases, so you can **send uppercase and lowercase text**. Baudot has only one case.", "trap": "ASCII has no built-in error correction, and it uses more bits than Baudot.", "concept": "codes" }
+  }
+}

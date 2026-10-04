@@ -1,0 +1,17 @@
+{
+  "title": "Receiving antennas and direction finding",
+  "blurb": "Explain why Beverage antennas are terminated, why low-band receiving favors directivity over loss, and how loops and sense antennas find bearings.",
+  "why": {
+    "E9H01": { "why": "A Beverage works on a traveling wave along the wire, so it should be **at least one wavelength long**. It runs low over ground.", "concept": "beverage" },
+    "E9H02": { "why": "Low-band atmospheric noise is so high that **directivity matters more than loss**: loss cuts signal and noise together.", "concept": "lowband" },
+    "E9H03": { "why": "RDF is **peak gain compared with the average gain** over the hemisphere around and above the antenna.", "trap": "Front-to-back ratio and gain over a dipole are different measures.", "concept": "lowband" },
+    "E9H04": { "why": "The shield blocks **unbalanced capacitive coupling** to the surroundings, so the nulls get deeper.", "concept": "loop-df" },
+    "E9H05": { "why": "A small loop's pattern has **two opposite nulls** (bidirectional), so a bearing is ambiguous by 180°.", "trap": "Its null is sharp: that's why loops are used for direction finding.", "concept": "loop-df" },
+    "E9H06": { "why": "The right resistance gives the **least SWR variation** over the band: the reverse wave is absorbed instead of reflected.", "concept": "beverage" },
+    "E9H07": { "why": "The resistor **absorbs signals arriving from the reverse direction** instead of letting them reflect back.", "concept": "beverage" },
+    "E9H08": { "why": "A sense antenna adds an omnidirectional signal that **turns the loop's two nulls into one**.", "concept": "loop-df" },
+    "E9H09": { "why": "A terminated single-turn loop such as a pennant is unidirectional: a **cardioid** pattern.", "concept": "loop-df" },
+    "E9H10": { "why": "Output voltage grows with **turns × area enclosed**. More of either means more voltage.", "concept": "loop-turns" },
+    "E9H11": { "why": "A cardioid has a **single null**, so the bearing isn't ambiguous by 180°.", "trap": "Direction finders use nulls because they are sharper than peaks.", "concept": "loop-df" }
+  }
+}

@@ -1,0 +1,62 @@
+import { IcFamilies } from '@/visuals/general/G6B_IcFamilies'
+import { DiodeValve } from '@/visuals/technician/T6B_DiodeValve'
+import { ConnectorGallery } from '@/visuals/general/G6B_ConnectorGallery'
+import { CommonMode } from '@/visuals/general/G6B_CommonMode'
+import { Toroid } from '@/visuals/general/G6B_Toroid'
+
+<Concept id="ic-types" title="ICs come in analog, digital and microwave flavours" qs="G6B02 G6B03 G6B06">
+
+An **integrated circuit** packs many parts onto one chip. An **op-amp** works on smoothly varying signals, so it is **analog**. Logic chips work on ones and zeros and are **digital**. A **MMIC** (Monolithic Microwave Integrated Circuit) is a whole microwave stage on a single chip.
+
+<IcFamilies />
+
+Of the digital families, **CMOS** draws much less power than **TTL**. That is its advantage.
+
+<Key>Op-amp = analog. MMIC = Monolithic Microwave IC. CMOS beats TTL on low power.</Key>
+
+</Concept>
+
+<Concept id="led-bias" title="An LED glows when forward biased" qs="G6B08">
+
+An LED is a diode that emits light. Connect it **forward biased** (anode toward +) and current flows and it lights. Reverse it and it stays dark.
+
+<DiodeValve led />
+
+<Key>LED emitting light = forward biased.</Key>
+
+</Concept>
+
+<Concept id="connectors" title="Pick the connector by frequency and job" qs="G6B04 G6B07 G6B11 G6B12">
+
+Each connector has a typical range and use. The higher the frequency, the smaller and more precise the connector must be.
+
+<ConnectorGallery />
+
+- **Type N**: moisture-resistant, useful to **10 GHz**. It is not a plated PL-259.
+- **BNC**: low SWR to about **4 GHz** at 50 Ω.
+- **SMA**: small threaded connector for signals up to **several GHz**.
+- **RCA phono**: low frequency or **DC** connections.
+
+<Mnemonic>N for Nasty weather, SMA for Small, RCA for audio and DC.</Mnemonic>
+
+</Concept>
+
+<Concept id="ferrite-choke" title="A ferrite adds impedance to common-mode current" qs="G6B10">
+
+**Common-mode current** flows along the **outside** of a coax shield, all in the same direction. The wanted signal inside the cable is equal and opposite, so the ferrite does not affect it. The ferrite just creates an **impedance in the path** of the common-mode current.
+
+<CommonMode />
+
+<Key>Ferrite choke = impedance in the common-mode path. It blocks, it does not cancel or convert.</Key>
+
+</Concept>
+
+<Concept id="toroid" title="Ferrite cores: the mix sets the frequency range" qs="G6B01 G6B05">
+
+A ferrite's behaviour at different frequencies depends on its **composition, or mix**, not on its size or shape. Wound as a **toroid** it gives a large inductance, a mix chosen for your frequency range, and a field that stays mostly in the core. All three are advantages.
+
+<Toroid />
+
+<Key>Mix decides the frequency. Toroid: large inductance, tailored mix, contained field.</Key>
+
+</Concept>

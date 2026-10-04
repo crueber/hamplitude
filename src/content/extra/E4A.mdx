@@ -1,0 +1,62 @@
+import { Aliasing } from '@/visuals/extra/E4A_Aliasing'
+import { ProbeComp } from '@/visuals/extra/E4A_ProbeComp'
+import { ScopeVsSpectrum } from '@/visuals/extra/E4A_ScopeVsSpectrum'
+import { Prescaler } from '@/visuals/extra/E4A_Prescaler'
+
+<Concept id="scope-sampling" title="A digital scope only sees its samples" qs="E4A01 E4A06">
+
+A digital oscilloscope's converter grabs snapshots, then connects the dots. The **sampling rate of the analog-to-digital converter** limits the highest frequency it can show accurately. Sample too slowly and you get **aliasing**: a **false, jittery, lower-frequency** waveform.
+
+<Aliasing />
+
+<Key>Fewer than two samples per cycle: the scope invents a slower wave.</Key>
+
+</Concept>
+
+<Concept id="scope-probe" title="Probe habits: compensate, short ground, line trigger" qs="E4A04 E4A09 E4A10">
+
+<ProbeComp />
+
+* **Compensate** on a square wave: trim until the horizontal portions are **as flat as possible**.
+* **Keep the probe's ground lead short**. A long one adds inductance and distorts fast signals.
+* **Line trigger** locks the sweep to the AC power line, so the **ripple** on a linear supply holds still.
+
+<Key>Flat square wave, short ground, line trigger for ripple.</Key>
+
+</Concept>
+
+<Concept id="spectrum" title="Scope: amplitude over time. Spectrum analyzer: amplitude over frequency" qs="E4A02 E4A03">
+
+<ScopeVsSpectrum />
+
+A **spectrum analyzer** plots **signal amplitude (vertical) against frequency (horizontal)**. Every signal is a spike at its own frequency, so it is the tool for **spurious signals and intermodulation distortion** from an SSB transmitter.
+
+<Key>See other frequencies? Use a spectrum analyzer.</Key>
+
+</Concept>
+
+<Concept id="antenna-analyzer" title="An antenna analyzer reads SWR and impedance directly" qs="E4A07 E4A08 E4A11">
+
+An SWR bridge gives a reading you must interpret. An **antenna analyzer computes SWR and impedance automatically**. It does not tune the antenna for you.
+
+| Instrument | Measures SWR? |
+|---|---|
+| Directional wattmeter | yes |
+| Vector network analyzer | yes |
+| Antenna analyzer | yes |
+
+An antenna analyzer can also measure **velocity factor**, **cable length** and the **resonant frequency of a tuned circuit**.
+
+<Key>Measures SWR, all three ways, and more.</Key>
+
+</Concept>
+
+<Concept id="prescaler" title="A prescaler divides a signal down so the counter can count it" qs="E4A05">
+
+<Prescaler />
+
+A prescaler **reduces the signal frequency to within the counter's operating range**. It does not amplify or multiply.
+
+<Key>Prescaler = divider in front of the counter.</Key>
+
+</Concept>

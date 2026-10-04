@@ -1,0 +1,58 @@
+import { NoiseGallery } from '@/visuals/extra/E4E_NoiseGallery'
+import { Blanker } from '@/visuals/extra/E4E_Blanker'
+import { CommonMode } from '@/visuals/extra/E4E_CommonMode'
+import { SinglePoint } from '@/visuals/extra/E4E_SinglePoint'
+
+<Concept id="noise-sources" title="Each noise source has a signature" qs="E4E06 E4E10 E4E11 E4E12">
+
+<NoiseGallery />
+
+| Symptom | Cause |
+|---|---|
+| Intermittent loud **roaring or buzzing** on the AC line | **all** of these: arcing thermostat contacts, a defective doorbell or its transformer, a malfunctioning illuminated sign |
+| **Carriers at regular intervals** across a wide range | **switch-mode power supplies** |
+| **Unstable modulated or unmodulated signals at specific frequencies** | **computer network equipment** |
+| Local AM broadcast signals turning up as **spurious signals** on MF/HF | **corroded metal connections** mixing and reradiating them |
+
+<Key>Match the sound or the spectrum to the culprit.</Key>
+
+</Concept>
+
+<Concept id="dsp" title="Blankers cut pulses. Notches and noise reduction work on steady signals." qs="E4E01 E4E02 E4E03 E4E09">
+
+<Blanker />
+
+| Tool | Removes | Catch |
+|---|---|---|
+| **Noise blanker** | **impulse** noise | **strong signals** may be distorted and appear to cause spurious emissions |
+| **Digital noise reduction** | **broadband white noise, ignition noise and power line noise**: all of them | |
+| **Automatic notch filter** | interfering carriers | on CW it can **remove the CW signal too** |
+
+<Key>Blanker: impulses. DSP noise reduction: white, ignition and line noise. ANF: also eats CW.</Key>
+
+</Concept>
+
+<Concept id="common-mode" title="Common-mode current makes cables radiate. Choke it." qs="E4E04 E4E05 E4E07 E4E08">
+
+<CommonMode />
+
+**Common-mode current** flows **equally on all conductors** of an unshielded multiconductor cable. On shielded cable, common-mode currents on the **shield and conductors** are what make it radiate or receive interference.
+
+| Source | Cure |
+|---|---|
+| Automobile charging system (alternator) | **ferrite chokes** on the charging system leads |
+| Line-driven AC motor | **brute-force AC-line filter in series** with the motor's power leads |
+
+<Key>Same direction on everything = antenna. Ferrite chokes block it.</Key>
+
+</Concept>
+
+<Concept id="ground-panel" title="One ground panel, with the surge protector on it" qs="E4E13 E4E14">
+
+<SinglePoint />
+
+A **single point ground panel** ensures **all lightning protectors activate at the same time**: they share one ground, so no one cable is left at a different potential. Install the station **AC surge protector on that panel**.
+
+<Key>One panel, one ground, every protector on it.</Key>
+
+</Concept>

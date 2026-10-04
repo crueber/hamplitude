@@ -1,0 +1,17 @@
+{
+  "title": "Filters and matching networks",
+  "blurb": "Tell low-pass from high-pass networks, name filter types by their response, and pick the right filter for a job.",
+  "why": {
+    "E7C01": { "why": "A low-pass Pi has a **shunt capacitor at input and output with a series inductor between**: the inductor blocks highs, the capacitors shunt them.", "trap": "Two series inductors with a shunt capacitor is a T network, not Pi.", "concept": "networks" },
+    "E7C02": { "why": "Series capacitors block low frequencies and a shunt inductor shorts them to ground: **high-pass**.", "trap": "Series L with shunt C would be low-pass; this is the opposite arrangement.", "concept": "networks" },
+    "E7C03": { "why": "The extra output inductor adds another filtering element, giving **greater harmonic suppression**.", "trap": "It adds a part, not removes one, and harmonic suppression is the benefit.", "concept": "networks" },
+    "E7C04": { "why": "A matching network **cancels the reactive part** and **transforms the resistive part** to the desired value.", "trap": "Reactance is cancelled, never dissipated; it takes no negative resistance.", "concept": "matching" },
+    "E7C05": { "why": "**Chebyshev** trades passband ripple for a sharper cutoff than Butterworth.", "trap": "Butterworth has a flat passband, so no ripple.", "concept": "shapes" },
+    "E7C06": { "why": "**Elliptical** gives the sharpest cutoff and has one or more **notches in the stop band**.", "trap": "An extremely flat passband describes Butterworth, not elliptical.", "concept": "shapes" },
+    "E7C07": { "why": "A **Pi-L** network is a Pi network with an extra **series inductor at the output**.", "trap": "It has more than three parts: two capacitors and two inductors.", "concept": "networks" },
+    "E7C08": { "why": "**Helical** filters are the usual band-pass or notch filters in VHF and UHF transceivers.", "trap": "Sallen-Key and FIR filters are audio or digital filters, not VHF/UHF RF filters.", "concept": "filter-uses" },
+    "E7C09": { "why": "A crystal lattice filter uses **quartz crystals** for a sharp, narrow filter on low-level signals.", "trap": "It is a signal filter, not a power-supply filter and not tuned at 1 kHz steps.", "concept": "filter-uses" },
+    "E7C10": { "why": "A 2-meter repeater duplexer uses **cavity filters**: sharp and able to handle transmitter power.", "trap": "Crystal filters suit low-level signals, not a duplexer.", "concept": "filter-uses" },
+    "E7C11": { "why": "**Shape factor** is the ratio of the 60 dB width to the 6 dB width: a lower value rejects adjacent channels better.", "trap": "Ripple and phase response describe other filter qualities; noise factor is about receiver noise.", "concept": "shape-factor" }
+  }
+}

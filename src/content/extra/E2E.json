@@ -1,0 +1,19 @@
+{
+  "title": "HF digital modes",
+  "blurb": "Explain FSK, WSJT-X clock timing, FT8/FT4/FST4/Q65, mode traits, bandwidth versus speed and ALE.",
+  "why": {
+    "E2E01": { "why": "Data emissions below 30 MHz use **FSK**: shifting the carrier between set frequencies.", "concept": "fsk" },
+    "E2E02": { "why": "WSJT-X stations agree on period boundaries by **synchronizing their computer clocks**. No sync pulse is sent.", "trap": "There's no sync field or sync pulse in the signal.", "concept": "wsjt-timing" },
+    "E2E03": { "why": "FT4's \"4\" is its **four-tone continuous-phase FSK**. Its cycles are 7.5 s, so eight per minute.", "trap": "Four cycles per minute describes FT8, not FT4.", "concept": "wsjt-timing" },
+    "E2E04": { "why": "FST4 has four-tone GFSK, **variable T/R periods** and seven tone spacings: **all of these**.", "concept": "wsjt-timing" },
+    "E2E05": { "why": "WSPR is a one-way **beacon-style** mode, so it has no keyboard-to-keyboard chat. RTTY, PSK31 and MFSK16 do.", "concept": "mode-traits" },
+    "E2E06": { "why": "An FT8 transmit/receive cycle is a fixed **15 seconds**, regardless of message length.", "trap": "8 is its tone count, not seconds.", "concept": "wsjt-timing" },
+    "E2E07": { "why": "Q65 **averages multiple receive cycles**, which JT65 doesn't do.", "trap": "Quadrature modulation and keyboard chat are not the difference.", "concept": "q65" },
+    "E2E08": { "why": "**PACTOR** is the one that can transfer binary files.", "trap": "PSK31, RTTY and AMTOR carry text characters only.", "concept": "mode-traits" },
+    "E2E09": { "why": "PSK31 uses **variable-length** codes: common letters get short bit patterns. RTTY's Baudot is fixed at five bits.", "concept": "mode-traits" },
+    "E2E10": { "why": "**FT8** occupies about 50 Hz, narrower than the other three.", "trap": "Don't confuse narrow bandwidth with speed: FT8 is slow.", "concept": "bandwidth-speed" },
+    "E2E11": { "why": "**Direct FSK** modulates the transmitter's VFO. Audio FSK instead feeds tones into an SSB transmitter.", "trap": "Direct FSK isn't narrower or faster than audio FSK.", "concept": "fsk" },
+    "E2E12": { "why": "ALE radios **constantly scan a list of frequencies** and activate when their call sign is received.", "concept": "ale" },
+    "E2E13": { "why": "**PACTOR IV** uses a wide channel and delivers the highest throughput in clear conditions.", "trap": "FT8 trades speed for weak-signal sensitivity.", "concept": "bandwidth-speed" }
+  }
+}

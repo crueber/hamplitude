@@ -1,0 +1,57 @@
+import { Emergency } from '@/visuals/technician/T2C_Emergency'
+import { Orgs } from '@/visuals/technician/T2C_Orgs'
+import { Net } from '@/visuals/technician/T2C_Net'
+import { Radiogram } from '@/visuals/technician/T2C_Radiogram'
+import { Phonetics } from '@/visuals/technician/T2C_Phonetics'
+
+<Concept id="rules-always" title="FCC rules always apply, even in an emergency" qs="T2C01 T2C09">
+
+<Emergency />
+
+ARES, RACES or a FEMA plan don't suspend Part 97. The **one exception**: you may operate outside your license's frequency privileges when it involves the **immediate safety of human life or protection of property**.
+
+<Key>Rules always apply. Life or property in immediate danger is the only exception.</Key>
+
+</Concept>
+
+<Concept id="ares-races" title="ARES volunteers. RACES serves civil defense." qs="T2C04 T2C06 T2C12">
+
+<Orgs />
+
+Only **RACES** requires certification by a civil defense agency. It's not a CB or contest group. ARES, MARS and SKYWARN don't need that certification.
+
+<Key>RACES: civil defense, certified.</Key>
+
+</Concept>
+
+<Concept id="nets" title="Net control runs the net; you talk when told" qs="T2C02 T2C07 T2C05">
+
+<Net />
+
+The **net control station (NCS)** calls the net to order and directs communications between stations checking in. You transmit **only when directed**, unless you have an emergency.
+
+**Traffic** means the **formal messages** a net exchanges, not the number of check-ins.
+
+<Callout kind="note" title="Not the NCS's job">Choosing the net's schedule and frequency, or checking licenses, isn't a typical NCS duty.</Callout>
+
+</Concept>
+
+<Concept id="messages" title="Formal messages: the preamble tracks, the check counts" qs="T2C10 T2C11 T2C08">
+
+<Radiogram />
+
+The **preamble** holds what's needed to **track** the message. The **check** is the **number of words** (or word equivalents) in the text.
+
+**Winlink** relays messages by email addresses based on call signs.
+
+<Key>Preamble = tracking info. Check = word count.</Key>
+
+</Concept>
+
+<Concept id="phonetics" title="Unusual words: spell them phonetically" qs="T2C03">
+
+<Phonetics />
+
+Use the **standard phonetic alphabet**. It beats repeating the word back or sending it twice.
+
+</Concept>

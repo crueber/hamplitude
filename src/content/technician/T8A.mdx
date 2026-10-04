@@ -1,0 +1,48 @@
+import { ModulationWaves } from '@/visuals/shared/ModulationWaves'
+import { BandwidthRuler } from '@/visuals/technician/T8A_BandwidthRuler'
+import { Sidebands } from '@/visuals/technician/T8A_Sidebands'
+
+<Concept id="am-fm" title="AM changes the height. FM changes the frequency." qs="T8A01 T8A02 T8A04">
+
+**Modulation** means putting your voice onto a steady carrier wave. **AM** varies the carrier's *height*. **FM** varies its *frequency*. **PM** (phase) is FM's close cousin.
+
+<ModulationWaves />
+
+**SSB** is a form of AM: the carrier and one sideband are removed. **FM or PM** is what VHF/UHF repeaters and VHF packet use.
+
+<Key>SSB belongs to the AM family. Repeaters and VHF packet use FM (or PM).</Key>
+
+</Concept>
+
+<Concept id="bandwidth" title="Narrowest to widest: CW, SSB, FM, TV" qs="T8A05 T8A08 T8A09 T8A10 T8A11">
+
+**Bandwidth** is the slice of spectrum a signal occupies. Less information, less bandwidth.
+
+<BandwidthRuler />
+
+<Mnemonic>150 Hz, 3 kHz, 10–15 kHz, 6 MHz: a switch, a voice, a wide voice, a whole picture.</Mnemonic>
+
+</Concept>
+
+<Concept id="ssb-fm" title="SSB: narrow, good for weak signals. FM: simple, one at a time." qs="T8A03 T8A07 T8A12">
+
+| | SSB | FM |
+|---|---|---|
+| Bandwidth | **Narrower** (3 kHz) | Wider (10–15 kHz) |
+| Weak signals | **Best.** Less noise gets in | Needs a stronger signal |
+| Two on one channel | Often both audible | **Only one** is received |
+| Typical use | Long-distance VHF/UHF | Repeaters, local |
+
+<Key>Narrow wins for distance. FM's catch: only one signal at a time.</Key>
+
+</Concept>
+
+<Concept id="usb-lsb" title="Above 10 MHz, use the upper sideband" qs="T8A06">
+
+An SSB signal is the **upper** or **lower** half of the usual signal around the carrier. By convention hams use **LSB below 10 MHz** and **USB above**, which includes 10 m, VHF and UHF.
+
+<Sidebands />
+
+<Mnemonic>Low bands, lower sideband. High bands, upper sideband.</Mnemonic>
+
+</Concept>

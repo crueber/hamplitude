@@ -1,0 +1,59 @@
+import { Multipath } from '@/visuals/technician/T3A_Multipath'
+import { Polarization } from '@/visuals/technician/T3A_Polarization'
+import { Absorb } from '@/visuals/technician/T3A_Absorb'
+import { IonosphereBounce } from '@/visuals/shared/IonosphereBounce'
+
+<Concept id="multipath" title="Several paths add up, or cancel" qs="T3A01 T3A05 T3A06 T3A08 T3A10">
+
+A signal often arrives by a **direct path** *and* by reflections off buildings, hills or the ionosphere. The paths differ in length, so the waves arrive out of step: they **add** or **cancel**.
+
+<Multipath />
+
+- Move the antenna a few feet and the sum swings strong to weak.
+- **Picket fencing**: rapid flutter on a moving (mobile) signal.
+- **Fading** on ionospheric signals: random combining of paths.
+- **Data**: delayed copies corrupt bits, so error rates rise.
+- Blocked line of sight? Aim at a **reflecting path** instead.
+
+<Key>Multipath: reinforce or cancel, depending on a few feet of position.</Key>
+
+</Concept>
+
+<Concept id="polarization" title="Match polarization on line-of-sight paths" qs="T3A03 T3A04 T3A09">
+
+Polarization is the direction of the electric field. On a straight path, a transmitting and receiving antenna must be **parallel**. **Cross-polarized** (one vertical, one horizontal) **reduces signal strength**.
+
+<Polarization />
+
+| Path | Polarization |
+|---|---|
+| Long-distance **CW and SSB** on VHF/UHF | **Horizontal** (FM and repeaters use vertical) |
+| Via the **ionosphere** | Wave becomes elliptical, so **either** works |
+
+<Key>Same orientation at both ends. Weak-signal VHF/UHF: horizontal.</Key>
+
+</Concept>
+
+<Concept id="absorption" title="Short waves are soaked up by water and leaves" qs="T3A02 T3A07 T3A12">
+
+<Absorb />
+
+| Conditions | Effect |
+|---|---|
+| **Vegetation**, UHF and microwave | Absorbs signals; weak ones suffer |
+| **Precipitation**, microwave | Decreases range |
+| **Fog or rain**, 10 m and 6 m | **Little effect** |
+
+<Key>The higher the frequency, the more water and foliage matter.</Key>
+
+</Concept>
+
+<Concept id="ionosphere" title="The ionosphere reflects HF" qs="T3A11">
+
+The **ionosphere** is a layer of charged air high above the Earth. It bends HF waves back down, so they come down far away. The troposphere (weather layer) and stratosphere do not do this.
+
+<IonosphereBounce />
+
+<Key>HF reflects off the ionosphere.</Key>
+
+</Concept>

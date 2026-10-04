@@ -1,0 +1,18 @@
+{
+  "title": "Diodes, transistors and gain",
+  "blurb": "Explain how diodes pass current one way, how transistors switch and amplify, and what gain means.",
+  "why": {
+    "T6B01": { "why": "Every conducting diode drops some voltage, and the amount depends on the type: typically about 0.3 V for Schottky, 0.7 V for silicon.", "trap": "A forward drop is normal. It does not mean the diode is broken.", "concept": "led" },
+    "T6B02": { "why": "A **diode** is a one-way valve: current flows anode to cathode but not back.", "trap": "A resistor and a fuse pass current both ways.", "concept": "diode" },
+    "T6B03": { "why": "A **transistor** can turn a large current fully on or off with a small control signal, so it works as a switch.", "trap": "A potentiometer is adjusted by hand, not by a signal.", "concept": "gain" },
+    "T6B04": { "why": "A bipolar **transistor** is a three-region sandwich (NPN or PNP). Tubes like triodes are not semiconductors.", "trap": "Triode and pentode are vacuum tubes.", "concept": "transistor-parts" },
+    "T6B05": { "why": "Gate, drain and source are the leads of a **field-effect** transistor.", "trap": "A bipolar junction transistor has base, collector and emitter.", "concept": "transistor-parts" },
+    "T6B06": { "why": "A printed **stripe** at one end of the diode body marks the cathode.", "trap": "Look for a stripe, not for the word or a letter.", "concept": "diode" },
+    "T6B07": { "why": "An LED glows when **forward current** passes through it. Reverse current blocks.", "trap": "Coupled RF does not light an LED. Forward current does.", "concept": "led" },
+    "T6B08": { "why": "FET stands for **Field Effect Transistor**: a voltage on the gate creates a field that controls current.", "concept": "transistor-parts" },
+    "T6B09": { "why": "A diode's two electrodes are the **anode** and the **cathode**.", "trap": "Source, drain, gate and base are transistor leads. A diode has just two electrodes.", "concept": "diode" },
+    "T6B10": { "why": "A **transistor** is an active part: a small input controls a larger output, so it gives power gain.", "trap": "Passive parts (transformer, resistor, reactor) can't make more power than they receive.", "concept": "gain" },
+    "T6B11": { "why": "Gain is output compared with input, and that can be voltage, current or power. **All three** are correct.", "concept": "gain" },
+    "T6B12": { "why": "A bipolar transistor's electrodes are the **emitter, base and collector**.", "trap": "Gate, drain and source are FET names.", "concept": "transistor-parts" }
+  }
+}

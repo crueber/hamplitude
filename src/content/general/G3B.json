@@ -1,0 +1,18 @@
+{
+  "title": "MUF, LUF and propagation paths",
+  "blurb": "Explain the usable frequency window between LUF and MUF, how far one hop reaches, and short versus long path.",
+  "why": {
+    "G3B01": { "why": "Short and long path signals both arrive, and the long one is later, so you hear a **slightly delayed echo**.", "trap": "Nothing makes it fade on a fixed 10-second cycle or add 3 dB.", "concept": "paths" },
+    "G3B02": { "why": "The MUF depends on sunlight (time, season), solar radiation, disturbances and the **specific path**: all of them.", "concept": "muf-factors" },
+    "G3B03": { "why": "Absorption falls as frequency rises, so the least loss is **just below the MUF**, the highest frequency still refracted.", "trap": "Just above the LUF is where absorption is still greatest.", "concept": "window" },
+    "G3B04": { "why": "A network of **automated receiving stations** shows where your signal is actually being heard right now.", "trap": "The A-index describes Earth's field, not your path.", "concept": "checking" },
+    "G3B05": { "why": "Between the LUF and MUF the ionosphere **refracts the wave back to Earth**.", "concept": "window" },
+    "G3B06": { "why": "Below the LUF, absorption wins: the signal is **attenuated before reaching** the destination.", "trap": "Passing through the ionosphere is what happens above the MUF.", "concept": "window" },
+    "G3B07": { "why": "LUF is the **Lowest Usable Frequency** for communication between two specific points.", "concept": "window" },
+    "G3B08": { "why": "MUF is the **Maximum Usable Frequency** between two points. Above it, waves pass through.", "concept": "window" },
+    "G3B09": { "why": "The F2 region is the highest, so one hop reaches about **2,500 miles**.", "concept": "hop" },
+    "G3B10": { "why": "The E region is lower, so a single hop reaches about **1,200 miles**.", "concept": "hop" },
+    "G3B11": { "why": "With no frequency above the LUF yet below the MUF, the **window is closed** and ordinary skywave can't work.", "concept": "window" },
+    "G3B12": { "why": "Lower HF bands in summer suffer **high atmospheric noise**: thunderstorm static.", "trap": "Lower bands still propagate. Static is the problem, not absorption by photons.", "concept": "checking" }
+  }
+}

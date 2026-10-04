@@ -1,0 +1,18 @@
+{
+  "title": "Time constants and phase angle",
+  "blurb": "Work out RC time constants, the phase angle of series RLC circuits, and convert impedance to admittance.",
+  "why": {
+    "E5B01": { "why": "In one **time constant** (τ = R × C) a capacitor reaches 63.2% of the applied voltage, or falls to 36.8% when discharging.", "concept": "tau" },
+    "E5B02": { "why": "Susceptance is the imaginary part of admittance and uses the letter **B**.", "trap": "Y is admittance, G is conductance, X is reactance.", "concept": "admittance" },
+    "E5B03": { "why": "Admittance is 1 ÷ Z: take the **reciprocal of the magnitude** and **change the sign of the angle**. 50∠30° gives 0.02∠−30°.", "concept": "admittance" },
+    "E5B04": { "why": "Parallel: C = 2 × 220 = 440 µF, R = 1 MΩ ÷ 2 = 0.5 MΩ. τ = RC = 0.5×10⁶ × 440×10⁻⁶ = **220 s**.", "trap": "Don't treat the capacitors as series (they would halve) or use one part alone.", "concept": "tau" },
+    "E5B05": { "why": "Admittance is the reciprocal of impedance, so for pure reactance susceptance is **1 ÷ X** in size (the sign flips, since 1 ÷ jX = −j ÷ X).", "concept": "admittance" },
+    "E5B06": { "why": "Admittance Y = G + jB. Susceptance **B** is its imaginary part, as reactance is for impedance.", "concept": "admittance" },
+    "E5B07": { "why": "XL − XC = 250 − 500 = −250. θ = arctan(−250 ÷ 1000) = **−14.0°**: net capacitive, so voltage lags current.", "trap": "Voltage leads only when XL is larger. Here XC (500) beats XL (250), so voltage lags.", "concept": "phase" },
+    "E5B08": { "why": "XL − XC = 100 − 300 = −200. θ = arctan(−200 ÷ 100) = **−63°**: net capacitive, voltage lags.", "trap": "27° is arctan(100 ÷ 200), inverted.", "concept": "phase" },
+    "E5B09": { "why": "In a capacitor **current leads voltage by 90°** (ELI the ICE man: I before E in C).", "trap": "Voltage leading current by 90° is the inductor.", "concept": "phase" },
+    "E5B10": { "why": "In an inductor **voltage leads current by 90°** (ELI: E before I in L).", "trap": "Current leading voltage is the capacitor.", "concept": "phase" },
+    "E5B11": { "why": "XL − XC = 75 − 25 = +50. θ = arctan(50 ÷ 100) = **+27°**: net inductive, voltage leads current.", "trap": "63° is arctan(100 ÷ 50), inverted.", "concept": "phase" },
+    "E5B12": { "why": "Admittance (Y) is the **inverse of impedance**, Y = 1 ÷ Z, measured in siemens.", "trap": "The inverse of reactance alone is susceptance, not admittance.", "concept": "admittance" }
+  }
+}

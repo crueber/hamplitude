@@ -1,0 +1,18 @@
+{
+  "title": "RF exposure rules and evaluation",
+  "blurb": "Explain how RF affects the body, who must evaluate exposure, and how to bring a station into compliance.",
+  "why": {
+    "G0A01": { "why": "RF is non-ionizing: its effect on tissue is **heating**.", "trap": "RF doesn't cause radiation poisoning or change blood counts.", "concept": "averaging" },
+    "G0A02": { "why": "Exposure depends on **duty cycle, frequency and power density**: every one of them is used.", "concept": "averaging" },
+    "G0A03": { "why": "Calculation (OET Bulletin 65), computer modeling and calibrated measurement are **all accepted** ways to show compliance.", "concept": "evaluation" },
+    "G0A04": { "why": "Time averaging is the **total RF exposure averaged over a set period**, not the peak at one instant.", "concept": "averaging" },
+    "G0A05": { "why": "If limits are exceeded, **take action to prevent human exposure**. No filing or neighbor permission is required.", "trap": "There is no EIS-97 form, and neighbors can't waive limits.", "concept": "exposure-zone" },
+    "G0A06": { "why": "Failing the exemption criteria means you must **evaluate exposure per OET Bulletin 65**.", "concept": "evaluation" },
+    "G0A07": { "why": "Average exposure = power × duty cycle. **Lower duty cycle permits more power**. Nobody is exempt for either.", "trap": "Higher duty cycle raises the average, so it permits less power.", "concept": "averaging" },
+    "G0A08": { "why": "You must **routinely evaluate exposure and keep people away from high-exposure areas**. Posting or notifying neighbors isn't required.", "concept": "exposure-zone" },
+    "G0A09": { "why": "Only a **calibrated field strength meter with a calibrated antenna** measures field strength accurately.", "trap": "SWR meters and receivers aren't calibrated for field strength.", "concept": "evaluation" },
+    "G0A10": { "why": "The fix is control: **make sure the antenna cannot point at them** when they are there.", "trap": "Changing gain or front-to-back ratio doesn't remove the main lobe.", "concept": "exposure-zone" },
+    "G0A11": { "why": "An indoor antenna puts the field near people, so **make sure MPE limits aren't exceeded in occupied areas**.", "concept": "exposure-zone" },
+    "G0A12": { "why": "The rules cover **every station transmitting more than 1 mW time-averaged**. Amateur stations are not exempt.", "concept": "evaluation" }
+  }
+}

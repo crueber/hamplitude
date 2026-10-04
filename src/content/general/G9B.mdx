@@ -1,0 +1,70 @@
+import { DipoleDonutPattern } from '@/visuals/shared/DipoleDonutPattern'
+import { G9B_DipoleHeight } from '@/visuals/general/G9B_DipoleHeight'
+import { G9B_FeedPoint } from '@/visuals/general/G9B_FeedPoint'
+import { G9B_DipoleLength } from '@/visuals/general/G9B_DipoleLength'
+import { G9B_GroundPlane } from '@/visuals/general/G9B_GroundPlane'
+import { G9B_RandomWire } from '@/visuals/general/G9B_RandomWire'
+
+<Concept id="pattern" title="A dipole is a figure-eight, and low height fills it in" qs="G9B04 G9B05">
+
+In the plane containing the wire, a dipole is a **figure-eight at right angles to the wire**: nulls off the ends. A **low** horizontal dipole sends much of its energy **high**, and at high angles the figure-eight fills in.
+
+<DipoleDonutPattern />
+
+<G9B_DipoleHeight />
+
+Under **½ λ** high, the azimuth pattern at high angles is **almost omnidirectional**.
+
+<Key>Figure-eight broadside. Under ½ λ up, nearly round at high angles.</Key>
+
+</Concept>
+
+<Concept id="impedance" title="Feed point impedance depends on height and position" qs="G9B07 G9B08">
+
+Impedance is **voltage ÷ current**. A half-wave has maximum current at the center and maximum voltage at the ends, so moving the feed point **toward the ends steadily raises** impedance.
+
+<G9B_FeedPoint />
+
+Bring a horizontal dipole down toward **1/10 λ** and its ground reflection partly cancels it: the feed impedance **steadily decreases**.
+
+<Key>Toward the ends: impedance up. Closer to ground: impedance down.</Key>
+
+</Concept>
+
+<Concept id="length" title="Dipole: 468 ÷ f. Quarter-wave monopole: 234 ÷ f" qs="G9B10 G9B11 G9B12">
+
+A free-space half wave is about 492 ÷ f(MHz) feet. Real wire is trimmed shorter, so the working rule is **468 ÷ f** feet. A quarter-wave monopole is half of that: **234 ÷ f**.
+
+<G9B_DipoleLength />
+
+| Antenna | Working | Length |
+|---|---|---|
+| ½ λ dipole, 14.250 MHz | 468 ÷ 14.25 | **33 ft** |
+| ½ λ dipole, 3.550 MHz | 468 ÷ 3.55 | **132 ft** |
+| ¼ λ monopole, 28.5 MHz | 234 ÷ 28.5 | **8 ft** |
+
+<Key>Higher frequency, shorter wire. Monopole is half a dipole.</Key>
+
+</Concept>
+
+<Concept id="vertical" title="A vertical needs radials and a good ground" qs="G9B02 G9B03 G9B06 G9B09">
+
+A **quarter-wave vertical** uses **radials** as its other half. Lay them **on or just under the ground** (a few inches). On an **elevated** ground plane, **sloping the radials downward** raises the feed impedance toward 50 Ω. The pattern is **omnidirectional** around it.
+
+<G9B_GroundPlane />
+
+A **horizontal** antenna has **lower ground losses** than a vertical, because it doesn't depend on currents flowing through the soil.
+
+<Key>Radials on the ground. Slope elevated radials down for about 50 Ω.</Key>
+
+</Concept>
+
+<Concept id="random-wire" title="A random wire brings RF into the shack" qs="G9B01">
+
+A **random-wire** HF antenna fed straight from the transmitter has no feed line to keep RF out of the station, so the **equipment may carry significant RF current**. Any length can work, vertical or horizontal.
+
+<G9B_RandomWire />
+
+<Key>No feed line means RF on the gear.</Key>
+
+</Concept>

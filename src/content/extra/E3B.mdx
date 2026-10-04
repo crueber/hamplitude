@@ -1,0 +1,76 @@
+import { Tep } from '@/visuals/extra/E3B_Tep'
+import { LongPath } from '@/visuals/extra/E3B_LongPath'
+import { DarkPath } from '@/visuals/extra/E3B_DarkPath'
+import { OrdExtra } from '@/visuals/extra/E3B_OrdExtra'
+import { Hop } from '@/visuals/extra/E3B_Hop'
+import { Chordal } from '@/visuals/extra/E3B_Chordal'
+import { SporadicE } from '@/visuals/extra/E3B_SporadicE'
+import { GroundWave } from '@/visuals/extra/E3B_GroundWave'
+
+<Concept id="tep" title="TEP: across the geomagnetic equator, afternoon and evening" qs="E3B01 E3B02 E3B03">
+
+**Transequatorial propagation** links stations on opposite sides of the **geomagnetic equator**, on a path **perpendicular** to it. Typical spans are 2,000 – 3,000 miles, up to about **5,000 miles**. It peaks in the **afternoon or early evening**.
+
+<Tep />
+
+<Key>North-south across the geomagnetic equator, afternoon or early evening.</Key>
+
+</Concept>
+
+<Concept id="long-path" title="Long path is the other way round; low bands need darkness" qs="E3B05 E3B06">
+
+<LongPath />
+
+The beam heading and the opposite heading both reach the target. Long path is most frequent on **40 m and 20 m**.
+
+By day the D layer absorbs low bands, so **160 m** wants a path **entirely in darkness**.
+
+<DarkPath />
+
+<Key>Long path: 40 and 20 m. 160 m: an all-dark path.</Key>
+
+</Concept>
+
+<Concept id="ord-extra" title="One signal becomes two waves in the ionosphere" qs="E3B04">
+
+<OrdExtra />
+
+The ionosphere creates **ordinary** and **extraordinary** waves: independently propagating, **elliptically polarized** waves.
+
+<Key>Ordinary and extraordinary: two elliptically polarized waves made in the ionosphere.</Key>
+
+</Concept>
+
+<Concept id="hops" title="Low angles hop farther; chordal hops skip the ground" qs="E3B07 E3B10 E3B12">
+
+Lower the takeoff angle and each hop **covers more distance**, so fewer hops are needed.
+
+<Hop />
+
+**Chordal hop**: **successive ionospheric refractions** with no ground reflection in between. Skipping the ground means **less loss** than multi-hop.
+
+<Chordal />
+
+<Key>Lower angle, longer hop. Chordal: ionosphere to ionosphere, no ground bounce.</Key>
+
+</Concept>
+
+<Concept id="sporadic-e" title="Sporadic E: summer solstice, daytime" qs="E3B09 E3B11">
+
+<SporadicE />
+
+It peaks **around the solstices, especially the summer solstice**, and happens **between sunrise and sunset**.
+
+<Key>Sporadic E: summer, daytime.</Key>
+
+</Concept>
+
+<Concept id="ground-wave" title="Ground waves are vertical and die faster at higher frequency" qs="E3B08 E3B13">
+
+<GroundWave />
+
+A ground wave follows the Earth, and it needs **vertical polarization**. Raise the frequency and the **maximum range decreases**.
+
+<Key>Ground wave: vertical polarization; higher frequency, shorter range.</Key>
+
+</Concept>

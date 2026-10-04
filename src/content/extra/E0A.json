@@ -1,0 +1,18 @@
+{
+  "title": "RF exposure, grounding and tower safety",
+  "blurb": "Explain what limits protect the public, who is responsible, why microwave beams matter, and how to tie off and ground safely.",
+  "why": {
+    "E0A01": { "why": "A ground rod gives lightning's charge a path into the earth: **lightning charge dissipation**.", "trap": "Static on power lines, RF between equipment and the breaker panel are not its primary job.", "concept": "ground-rod" },
+    "E0A02": { "why": "Neighbors are the general public, so you meet the **uncontrolled** limits. The term is maximum permissible **exposure**.", "trap": "Controlled limits apply to aware, trained people. \"Emission\" is the wrong word.", "concept": "uncontrolled" },
+    "E0A03": { "why": "The body absorbs RF most readily at **30 – 300 MHz**, so the limits are tightest there.", "concept": "freq-limits" },
+    "E0A04": { "why": "Each transmitter making **5 percent or more of its MPE limit** where the total is exceeded must help mitigate.", "trap": "Duty-cycle thresholds aren't the rule.", "concept": "shared-site" },
+    "E0A05": { "why": "The hazard is **high-gain antennas** focusing power into a narrow beam, so exposure inside it can be high.", "trap": "Microwaves are non-ionizing, and wave velocity doesn't change.", "concept": "microwave" },
+    "E0A06": { "why": "The body reacts to both fields, reflections vary the field, and E and H peaks sit in different places. **All of these** apply.", "concept": "freq-limits" },
+    "E0A07": { "why": "100% tie-off means **at least one lanyard attached to the tower at all times**.", "concept": "tower-tieoff" },
+    "E0A08": { "why": "SAR is **the rate at which RF energy is absorbed by the body**, in watts per kilogram.", "concept": "uncontrolled" },
+    "E0A09": { "why": "The pool's exemption is **hand-held transceivers sold before May 3, 2021**.", "trap": "Low watts or a small dish do not exempt you.", "concept": "evaluation" },
+    "E0A10": { "why": "The exam's answer: an evaluation **must always be performed**. Mode, ERP and power are not reasons to skip it.", "concept": "evaluation" },
+    "E0A11": { "why": "Lanyards clip to the **tower legs**, the strong structural members.", "trap": "Rungs, masts and guy brackets aren't built to catch a fall.", "concept": "tower-tieoff" },
+    "E0A12": { "why": "Attach the shock-absorbing lanyard **above head level**, so any fall is short.", "trap": "Waist-level or low attachment lets you fall farther.", "concept": "tower-tieoff" }
+  }
+}

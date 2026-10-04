@@ -1,0 +1,18 @@
+{
+  "title": "Remote control, signal limits and foreign operation",
+  "blurb": "Know the control-link, spurious and modulation limits, the 630 m and 2200 m notification, and the CEPT and IARP arrangements.",
+  "why": {
+    "E1C01": { "why": "Data on 60 m is limited to **2.8 kHz** bandwidth, which fits inside a channel.", "concept": "purity" },
+    "E1C02": { "why": "To foreign amateurs, keep to matters **incidental to amateur radio and personal remarks**. English is not required.", "trap": "Third-party limits and English-only are not what the rule says.", "concept": "abroad" },
+    "E1C03": { "why": "After **30 days** you may operate, unless told you are within **1 km** of PLC systems on those frequencies. No approval is required.", "concept": "lowbands" },
+    "E1C04": { "why": "An IARP is a permit that lets US amateurs operate in **certain countries of the Americas**.", "concept": "abroad" },
+    "E1C05": { "why": "An automatically controlled station may carry third-party traffic **only in RTTY or data emissions**.", "trap": "Voice and CW are not allowed for automatic third-party traffic.", "concept": "control" },
+    "E1C06": { "why": "CEPT operation requires a copy of **FCC Public Notice DA 16-1048**. No \"/CEPT\" suffix or local-language ID.", "concept": "abroad" },
+    "E1C07": { "why": "Inform the **Utilities Technology Council** of your **call sign and station coordinates**. No FCC endorsement.", "concept": "lowbands" },
+    "E1C08": { "why": "If the control link fails, a remotely controlled station may transmit for at most **3 minutes**.", "concept": "control" },
+    "E1C09": { "why": "Below 29.0 MHz, angle modulation may not exceed a modulation index of **1.0** at the highest modulating frequency.", "concept": "purity" },
+    "E1C10": { "why": "Spurious emissions below 30 MHz must be **-43 dB** relative to the fundamental. Bigger negative means weaker.", "trap": "-53 dB and beyond are stricter than the actual limit.", "concept": "purity" },
+    "E1C11": { "why": "**CEPT** is the arrangement that lets US amateurs operate in many European countries and vice versa.", "trap": "IARP covers the Americas; \"ITU reciprocal license\" is not the answer.", "concept": "abroad" },
+    "E1C12": { "why": "Phone emissions are permitted on the **entire** 630 m band.", "concept": "lowbands" }
+  }
+}

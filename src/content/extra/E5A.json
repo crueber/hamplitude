@@ -1,0 +1,19 @@
+{
+  "title": "Resonance and Q",
+  "blurb": "Find a circuit's resonant frequency, say what series and parallel circuits do there, and use Q to get bandwidth.",
+  "why": {
+    "E5A01": { "why": "At resonance XL and XC are equal and cancel, so only R limits current. Each reactance's voltage is **Q** times the source voltage, which can be far larger.", "trap": "Low Q gives little voltage gain. Capacitance or resistance alone do not multiply voltage.", "concept": "q" },
+    "E5A02": { "why": "f₀ = 1 ÷ (2π√(LC)) = 1 ÷ (2π × 4.472×10⁻⁸) = **3.56 MHz**. R plays no part.", "trap": "22.36 is 1 ÷ √(LC), which is in rad/s. Divide by 2π for hertz.", "concept": "f0" },
+    "E5A03": { "why": "At series resonance XL cancels XC, leaving only resistance: Z ≈ **R**, the minimum.", "trap": "XL and XC are each large but cancel, so they do not set Z.", "concept": "series-parallel" },
+    "E5A04": { "why": "At parallel resonance the L and C branches cancel, leaving the resistor: Z ≈ **R**, the maximum.", "trap": "Parallel is the opposite of series: impedance peaks here, it doesn't dip.", "concept": "series-parallel" },
+    "E5A05": { "why": "BW = f₀ ÷ Q, so raising Q **narrows** the bandwidth of the matching circuit.", "concept": "q" },
+    "E5A06": { "why": "In a parallel LC circuit at resonance, energy swings between L and C. The **circulating current is maximum** while the line current is minimum.", "trap": "The line current is the minimum; the loop current inside is the maximum.", "concept": "series-parallel" },
+    "E5A07": { "why": "Parallel resonance is highest impedance, so the source supplies the **minimum** current.", "trap": "Maximum current is the series case.", "concept": "series-parallel" },
+    "E5A08": { "why": "At resonance net reactance is zero, so the circuit looks purely resistive: voltage and current are **in phase**.", "concept": "series-parallel" },
+    "E5A09": { "why": "Parallel Q = R ÷ X. A larger parallel R means less loss, so higher Q.", "trap": "X ÷ R is the series formula; parallel is inverted.", "concept": "q" },
+    "E5A10": { "why": "f₀ = 1 ÷ (2π√(LC)) = 1 ÷ (2π × 2.236×10⁻⁸) = **7.12 MHz**.", "trap": "Watch the prefix: 7.12 kHz and 23.5 MHz are the wrong scale or unit.", "concept": "f0" },
+    "E5A11": { "why": "BW = f₀ ÷ Q = 7.1 MHz ÷ 150 = **47.3 kHz**.", "trap": "23.67 kHz is half of it. BW is the full width between the half-power points.", "concept": "q" },
+    "E5A12": { "why": "BW = f₀ ÷ Q = 3.7 MHz ÷ 118 = **31.4 kHz**.", "concept": "q" },
+    "E5A13": { "why": "Voltage across L or C is Q times the source voltage, so raising Q makes **internal voltages** increase.", "concept": "q" }
+  }
+}

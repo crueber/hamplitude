@@ -1,0 +1,66 @@
+import { ConductionAngle } from '@/visuals/extra/E7B_ConductionAngle'
+import { SwitchAmp } from '@/visuals/extra/E7B_SwitchAmp'
+import { SwitchFilter } from '@/visuals/extra/E7B_SwitchFilter'
+import { Fig71 } from '@/visuals/extra/E7B_Fig71'
+import { Configs } from '@/visuals/extra/E7B_Configs'
+
+<Concept id="classes" title="Class = how much of the cycle the device conducts" qs="E7B01 E7B04 E7B07">
+
+Bias decides where the input signal sits on the device's curve. Ride high and it conducts all the time (linear, wasteful). Ride low and it conducts only in bursts (efficient, distorted).
+
+<ConductionAngle />
+
+| Class | Conducts for | Trade-off |
+|---|---|---|
+| **A** | all 360° (Q-point halfway between cutoff and saturation) | most linear, least efficient |
+| **AB** | more than 180°, less than 360° | in between |
+| **B** | 180° | efficient, needs push-pull |
+| **C** | less than 180° | most efficient, very nonlinear |
+
+**Push-pull Class AB**: two devices share the cycle, each conducting more than 180° so the handoff is smooth. Class C chops the waveform, so it is fine for FM or CW but **distorts SSB**: distortion products and extra bandwidth.
+
+<Key>Smaller conduction angle: more efficiency, less linearity. SSB needs linear.</Key>
+
+</Concept>
+
+<Concept id="switching" title="Switching amplifiers waste almost no heat" qs="E7B02 E7B03 E7B08">
+
+A **Class D** (switching) amplifier drives the device hard on and hard off. Heat is voltage times current, and a switch never has both at once.
+
+<SwitchAmp />
+
+The price is a square-edged output rich in harmonics, so it needs a **filter** to remove them.
+
+<SwitchFilter />
+
+<Key>Switching = saturation or cutoff = high efficiency. Always follow it with a harmonic filter.</Key>
+
+</Concept>
+
+<Concept id="fig-e7-1" title="Reading Figure E7-1: what each part does" qs="E7B10 E7B11 E7B12">
+
+Find the transistor, then the two resistors on its base: they are a **voltage divider** setting the DC operating point. The resistor in the emitter leg stabilises it (**self bias**). Capacitors only pass the signal in and out.
+
+<Fig71 />
+
+<Key>R1 and R2 = voltage-divider bias. R3 = self bias. Input at base, output at collector = common emitter.</Key>
+
+</Concept>
+
+<Concept id="configs" title="Common emitter, follower, grounded grid" qs="E7B06 E7B09 E7B12">
+
+Find the leg the signal does **not** use. That is the "common" one. Tubes follow the same pattern: grounded grid is the common-base layout.
+
+<Configs />
+
+<Key>Emitter follower: output follows input in phase. Grounded grid: low input impedance.</Key>
+
+</Concept>
+
+<Concept id="parasitics" title="Power amplifiers can oscillate on their own" qs="E7B05">
+
+Stray inductance and capacitance can feed some output back to the input and start an unwanted (**parasitic**) oscillation. The cure is not tuning harder: add **parasitic suppressors**, and/or **neutralize** the stage by feeding back a cancelling signal.
+
+<Key>Unwanted oscillation: parasitic suppressors and/or neutralization.</Key>
+
+</Concept>

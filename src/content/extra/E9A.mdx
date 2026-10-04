@@ -1,0 +1,69 @@
+import { E9A_DbiDbd } from '@/visuals/extra/E9A_DbiDbd'
+import { E9A_ErpCalc } from '@/visuals/extra/E9A_ErpCalc'
+import { E9A_Efficiency } from '@/visuals/extra/E9A_Efficiency'
+import { E9A_GroundGain } from '@/visuals/extra/E9A_GroundGain'
+import { E9A_Fresnel } from '@/visuals/extra/E9A_Fresnel'
+
+<Concept id="dbi-dbd" title="dBi and dBd differ by 2.15 dB" qs="E9A01 E9A12">
+
+An **isotropic radiator** is a hypothetical, lossless antenna with equal radiation intensity in all directions. It is the zero point of **dBi**. **dBd** uses a half-wave dipole as zero instead, and a dipole is already **+2.15 dBi**.
+
+<E9A_DbiDbd />
+
+<Formula label="Convert">dBi = dBd + 2.15 &nbsp;&nbsp; dBd = dBi − 2.15</Formula>
+
+<Key>The dBd number is always the smaller one: 6 dBi = 3.85 dBd.</Key>
+
+</Concept>
+
+<Concept id="erp" title="ERP and EIRP: add the dB, then convert once" qs="E9A02 E9A03 E9A06 E9A07">
+
+**Effective radiated power** is the power actually radiated in the beam direction, counting **all gains and losses** between transmitter and antenna. Gain referenced to a dipole (**dBd**) gives **ERP**. Gain referenced to isotropic (**dBi**) gives **EIRP**.
+
+Total the dB first (gain +, loss −), then multiply power by 10^(dB ÷ 10).
+
+<E9A_ErpCalc />
+
+| Example | Net dB | Result |
+|---|---|---|
+| 150 W; −2, −2.2, +7 dBd | +2.8 | ×1.905 = **286 W ERP** |
+| 200 W; −4, −3.2, −0.8, +10 dBd | +2.0 | ×1.585 = **317 W ERP** |
+| 200 W; −2, −2.8, −1.2, +7 dBi | +1.0 | ×1.259 = **252 W EIRP** |
+
+<Key>Net dB → ×ratio. dBd → ERP. dBi → EIRP.</Key>
+
+</Concept>
+
+<Concept id="efficiency" title="Efficiency is the share of resistance that radiates" qs="E9A09 E9A10 E9A11">
+
+Current in an antenna meets two resistances in series: **radiation resistance** (power that leaves as radio waves) and **loss resistance** (wire, coil, ground: heat). Power splits in proportion.
+
+<E9A_Efficiency />
+
+<Formula label="Efficiency">radiation resistance ÷ (radiation + loss) = radiation resistance ÷ total resistance</Formula>
+
+For a ground-mounted vertical the biggest loss is the ground. A **radial system** lowers that loss, and **soil conductivity** sets how much there is. Shortening the element lowers radiation resistance, so it hurts efficiency.
+
+<Key>Raise radiation resistance, cut loss resistance: radials help, shortening hurts.</Key>
+
+</Concept>
+
+<Concept id="ground" title="The ground is part of the antenna" qs="E9A04 E9A05">
+
+Ground reflections add to the direct signal. That increase in signal strength is **ground gain**. The same nearby ground also changes the **feed point impedance**: it depends on **antenna height**, not on the feed line length, tuner or power.
+
+<E9A_GroundGain />
+
+<Key>Ground gain = reflections adding. Height changes feed point impedance.</Key>
+
+</Concept>
+
+<Concept id="fresnel" title="Higher frequency, thinner Fresnel zone" qs="E9A08">
+
+The **first Fresnel zone** is the football-shaped volume around the line of sight that should stay clear for a good link. Its radius grows with wavelength, so the **highest** frequency has the **smallest** zone.
+
+<E9A_Fresnel />
+
+<Key>Shortest wavelength, smallest zone: 5.8 GHz of the choices.</Key>
+
+</Concept>

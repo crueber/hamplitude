@@ -1,0 +1,17 @@
+{
+  "title": "Amplifiers, oscillators and digital logic",
+  "blurb": "Explain amplifier classes and efficiency, how oscillators and neutralizing work, and what basic logic circuits do.",
+  "why": {
+    "G7B01": { "why": "Internal capacitance leaks output back to the input and can make a stage oscillate. Neutralizing cancels that feedback and **eliminates self-oscillation**.", "trap": "Modulation limiting and keying are unrelated to feedback inside a stage.", "concept": "neutralizing" },
+    "G7B02": { "why": "The less of the cycle the device conducts, the less power it wastes. Class C conducts least, so it has the **highest efficiency**.", "trap": "Class A is the most linear, not the most efficient.", "concept": "amp-classes" },
+    "G7B03": { "why": "An AND gate is high **only when both inputs are high**. Every other input combination gives a low.", "trap": "The other choices describe NAND and NOR behaviour.", "concept": "gates" },
+    "G7B04": { "why": "Class A conducts through the entire cycle: **100%**, or 360°.", "trap": "Half the cycle is Class B; less than half is Class C.", "concept": "amp-classes" },
+    "G7B05": { "why": "Each bit doubles the states: 2 × 2 × 2 = 2³ = **8** (000 to 111).", "trap": "16 states needs 4 bits. States grow as a power of 2, not as the bit count.", "concept": "counters" },
+    "G7B06": { "why": "A shift register is a **clocked array of circuits**. Each clock pulse moves the data one step along the array.", "trap": "Mixers combine two signals. A shift register does not.", "concept": "counters" },
+    "G7B07": { "why": "A sine wave oscillator is an **amplifier plus a filter in a feedback loop**. The filter picks the frequency.", "trap": "Dividers, multipliers and mixers change frequency but do not make a signal sustain itself.", "concept": "oscillator" },
+    "G7B08": { "why": "Efficiency = useful output ÷ power paid for = **RF output ÷ DC input**.", "trap": "Inverted fractions give more than 100%, which is impossible.", "concept": "efficiency" },
+    "G7B09": { "why": "The LC tank is the filter in the loop. Its **inductance and capacitance** set the frequency.", "trap": "Counter and divider stages belong to digital circuits, not LC tanks.", "concept": "lc-tank" },
+    "G7B10": { "why": "A linear amplifier's **output preserves the input waveform**, only larger.", "trap": "Linear describes waveform fidelity, not power level or Class C efficiency.", "concept": "amp-classes" },
+    "G7B11": { "why": "FM has constant amplitude, so Class C distortion of amplitude does not matter. AM and SSB carry information in amplitude and need a linear stage.", "trap": "SSB and AM both need the output to follow the input amplitude.", "concept": "amp-classes" }
+  }
+}

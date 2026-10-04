@@ -1,0 +1,45 @@
+import { E1F_SpreadSpectrum } from '@/visuals/extra/E1F_SpreadSpectrum'
+import { E1F_LineA } from '@/visuals/extra/E1F_LineA'
+import { E1F_Prohibited } from '@/visuals/extra/E1F_Prohibited'
+import { E1F_Amplifier } from '@/visuals/extra/E1F_Amplifier'
+import { E1F_Misc } from '@/visuals/extra/E1F_Misc'
+
+<Concept id="where" title="Some modes and places are restricted: 222 MHz and Line A" qs="E1F01 E1F04 E1F05">
+
+<E1F_SpreadSpectrum />
+
+**Spread spectrum** is allowed only **above 222 MHz**. Not on 6 m or 2 m.
+
+<E1F_LineA />
+
+**Line A** runs roughly parallel to and **south of** the US-Canada border. North of it, in the contiguous 48 states, stations may not transmit **420 to 430 MHz**.
+
+<Mnemonic>Line A: near Canada, off 420 to 430.</Mnemonic>
+
+</Concept>
+
+<Concept id="prohibited" title="No pay, no business interest, no secret messages" qs="E1F07 E1F08 E1F09">
+
+<E1F_Prohibited />
+
+Amateur radio is not for money. A message to a business is legal only if **neither you nor your employer has any pecuniary interest**. Meaning-obscuring codes are banned even on a mesh network, though email and third-party traffic are not.
+
+<Key>Any financial interest: no. Hidden meaning: no.</Key>
+
+</Concept>
+
+<Concept id="amps" title="External amplifiers need FCC certification" qs="E1F03 E1F11">
+
+<E1F_Amplifier />
+
+One certification standard is **clean output at full power**. A dealer has one pool-listed way around it: a **used** amplifier moving from one amateur to another.
+
+</Concept>
+
+<Concept id="odds" title="Canadians, auxiliary stations and STA" qs="E1F02 E1F10 E1F06">
+
+<E1F_Misc />
+
+An **auxiliary station** transmits point-to-point within a system of cooperating stations, for example a link carrying repeater audio.
+
+</Concept>

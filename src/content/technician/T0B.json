@@ -1,0 +1,17 @@
+{
+  "title": "Tower and antenna safety",
+  "blurb": "How to climb, raise and ground a tower safely, and how far to keep from power lines.",
+  "why": {
+    "T0B01": { "why": "Keep lightning ground connections **short and direct**. A long or looping path adds impedance and slows the surge reaching ground.", "trap": "Drip loops and right-angle bends work against a fast surge.", "concept": "tower-ground" },
+    "T0B02": { "why": "Climbing requires training, a harness, and tie-off at all times: **all of them**.", "concept": "climbing" },
+    "T0B03": { "why": "Always have a helper or observer. **Never** climb alone, whatever the height or the work.", "concept": "climbing" },
+    "T0B04": { "why": "Look for and **stay clear of overhead electrical wires**. Contact can be fatal.", "trap": "Grounding yourself or insulating the tower doesn't stop lightning or line contact.", "concept": "power-lines" },
+    "T0B05": { "why": "Vibration slowly turns a turnbuckle. A safety wire **prevents loosening** from vibration.", "trap": "It isn't a lightning ground and it doesn't measure tension.", "concept": "turnbuckle" },
+    "T0B06": { "why": "Allow enough distance that if the antenna falls, **no part comes within 10 feet** of the power wires.", "trap": "Wavelength and line height don't set the clearance: the fall zone does.", "concept": "power-lines" },
+    "T0B07": { "why": "Don't climb a crank-up tower unless it is **retracted** or **mechanical locking devices** are installed. It could collapse.", "trap": "Crank-up towers should be grounded and may be painted.", "concept": "climbing" },
+    "T0B08": { "why": "Use **separate 8-foot rods for each leg**, bonded to the tower and to each other.", "trap": "One short rod, a choke or a water pipe isn't adequate.", "concept": "tower-ground" },
+    "T0B09": { "why": "A utility pole carries high-voltage lines, so your antenna **could contact them**.", "concept": "power-lines" },
+    "T0B10": { "why": "Sharp bends add inductance that blocks a lightning surge. Keep the wire **short and smoothly bent**.", "concept": "tower-ground" },
+    "T0B11": { "why": "**Local electrical codes** set grounding requirements for towers and antennas.", "trap": "Part 97, the FAA and UL don't write the grounding rules.", "concept": "tower-ground" }
+  }
+}

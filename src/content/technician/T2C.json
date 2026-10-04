@@ -1,0 +1,18 @@
+{
+  "title": "Emergencies, nets and message handling",
+  "blurb": "Know which rules apply in emergencies, how ARES and RACES differ, how nets run, and how formal messages are structured.",
+  "why": {
+    "T2C01": { "why": "**FCC rules always apply**, whether you're in ARES, RACES or following a FEMA plan.", "concept": "rules-always" },
+    "T2C02": { "why": "The NCS **calls the net to order and directs stations** checking in. It doesn't set the schedule or check licenses.", "concept": "nets" },
+    "T2C03": { "why": "Spell unusual words with the **standard phonetic alphabet**.", "trap": "Q-codes and Morse aren't the standard way to clarify voice words.", "concept": "phonetics" },
+    "T2C04": { "why": "**RACES** is an FCC Part 97 amateur service for **civil defense communications** in national emergencies.", "trap": "It isn't tied to CB, and a sprint is a contest.", "concept": "ares-races" },
+    "T2C05": { "why": "In a net, **traffic** means **formal messages** exchanged by net stations.", "trap": "It's not the count of check-ins.", "concept": "nets" },
+    "T2C06": { "why": "**ARES** is licensed amateurs who volunteer and register their qualifications and equipment for public-service communications.", "trap": "It isn't a military group or a licensing course.", "concept": "ares-races" },
+    "T2C07": { "why": "Unless you have an emergency, **transmit only when directed by net control**.", "trap": "No home address, per-transmission time logging or FCC-database details are needed.", "concept": "nets" },
+    "T2C08": { "why": "**Winlink** relays messages using email addresses based on call signs.", "trap": "FT8, PSK31 and AMTOR are digital modes, not email systems.", "concept": "messages" },
+    "T2C09": { "why": "Only when **immediate safety of human life or protection of property** is involved.", "trap": "Not even a FEMA or RACES plan alone grants extra privileges.", "concept": "rules-always" },
+    "T2C10": { "why": "A message's **preamble** carries the information needed to **track** it.", "trap": "Recipient contact details belong to the address.", "concept": "messages" },
+    "T2C11": { "why": "In a radiogram header, **check** is the **word count of the text**, so receivers can verify it.", "trap": "It isn't a tick box or relay list.", "concept": "messages" },
+    "T2C12": { "why": "**RACES** requires certification by a civil defense agency.", "trap": "ARES, MARS and SKYWARN don't.", "concept": "ares-races" }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Resistors, capacitors, switches, batteries",
+  "blurb": "Say what resistors, capacitors and inductors do, read switch types like SPDT, and know which batteries recharge.",
+  "why": {
+    "T6A01": { "why": "A **resistor** is the part that opposes current. Its job is to resist.", "trap": "An inductor opposes *changes* in current, not current itself.", "concept": "resistor" },
+    "T6A02": { "why": "A **potentiometer** is an adjustable resistor, so turning it changes volume.", "trap": "A fixed resistor can't be adjusted.", "concept": "resistor" },
+    "T6A03": { "why": "Moving the wiper changes the **resistance**.", "trap": "Capacitance and inductance are set by capacitors and coils.", "concept": "resistor" },
+    "T6A04": { "why": "A **capacitor** holds energy in the electric field between its plates.", "trap": "An inductor uses a magnetic field instead.", "concept": "storage" },
+    "T6A05": { "why": "Conductive plates separated by an insulator describe a **capacitor**.", "trap": "A potentiometer is a resistive track with a wiper, not plates.", "concept": "storage" },
+    "T6A06": { "why": "An **inductor** holds energy in a magnetic field around its coil.", "trap": "Capacitors store energy in an electric field.", "concept": "storage" },
+    "T6A07": { "why": "A coil of wire is an **inductor**.", "trap": "Capacitors are plates, not coils.", "concept": "storage" },
+    "T6A08": { "why": "SPDT = one pole, two throws: **one circuit is switched to either of two others**.", "trap": "Switching two circuits at once takes two poles (DPDT).", "concept": "switches" },
+    "T6A09": { "why": "Component 3 has one blade and one contact: single-pole, single-throw, a simple on/off.", "trap": "Double throw would show a second contact to swing to.", "concept": "switches" },
+    "T6A10": { "why": "NiMH, lithium-ion and lead-acid are all rechargeable, so **all of them** qualify.", "concept": "batteries" },
+    "T6A11": { "why": "**Carbon-zinc** cells are single-use. The others listed can be recharged.", "trap": "Nickel-cadmium, lead-acid and lithium-ion are all rechargeable.", "concept": "batteries" }
+  }
+}

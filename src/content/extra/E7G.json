@@ -1,0 +1,18 @@
+{
+  "title": "Operational amplifiers",
+  "blurb": "Read the inverting op-amp in figure E7-3, calculate its gain and output, and explain what real op-amps do differently from ideal ones.",
+  "why": {
+    "E7G01": { "why": "The output stage is built to drive a load: output impedance is **very low**.", "trap": "Very high is the input side, where the op-amp must not load the source.", "concept": "opamp-what" },
+    "E7G02": { "why": "A capacitor's reactance falls with frequency, so across RF it cuts the feedback resistance and the gain at high frequencies: **low-pass**.", "trap": "High-pass needs the capacitor in series with the input.", "concept": "opamp-filter" },
+    "E7G03": { "why": "The inputs draw almost no current, so input impedance is **very high**.", "trap": "Low input impedance would load the source down.", "concept": "opamp-what" },
+    "E7G04": { "why": "Offset voltage is the **differential input needed to bring the open-loop output to zero**: the amplifier's built-in imbalance.", "trap": "It is an input-side imbalance, not an output-minus-input difference.", "concept": "opamp-real" },
+    "E7G05": { "why": "High gain and high Q make a filter ring and become unstable, so **restrict both gain and Q**.", "trap": "Raising either one pushes the filter toward ringing.", "concept": "opamp-filter" },
+    "E7G06": { "why": "Open-loop gain falls with frequency. **Gain-bandwidth** is the frequency where it has fallen to one.", "trap": "It isn't a filter's maximum or cutoff frequency.", "concept": "opamp-real" },
+    "E7G07": { "why": "Gain = RF ÷ R1 = 470 ÷ 10 = **47** (inverted, so −47).", "trap": "R1 ÷ RF = 0.21 is upside down. 4700 multiplies instead of dividing.", "concept": "inverting" },
+    "E7G08": { "why": "An **ideal** op-amp has the same gain at all frequencies. Real ones lose gain as frequency rises.", "trap": "Falling gain describes real op-amps, not the ideal one.", "concept": "opamp-real" },
+    "E7G09": { "why": "Gain = −RF ÷ R1 = −10,000 ÷ 1,000 = −10. Vout = 0.23 × −10 = **−2.3 V**.", "trap": "Skipping the minus sign gives +2.3 V. The inverting input flips polarity.", "concept": "inverting" },
+    "E7G10": { "why": "Absolute gain = RF ÷ R1 = 68,000 ÷ 1,800 = 37.8, about **38**.", "trap": "76 doubles it. 0.03 is R1 ÷ RF.", "concept": "inverting" },
+    "E7G11": { "why": "Absolute gain = RF ÷ R1 = 47,000 ÷ 3,300 = 14.2, about **14**.", "trap": "0.07 is R1 ÷ RF, upside down.", "concept": "inverting" },
+    "E7G12": { "why": "An op-amp is a high-gain, direct-coupled **differential** amplifier with very high input impedance and very low output impedance.", "concept": "opamp-what" }
+  }
+}

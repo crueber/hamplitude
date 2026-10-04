@@ -1,0 +1,17 @@
+{
+  "title": "Antennas, beacons and permitted signals",
+  "blurb": "Antenna height and PRB-1 limits, beacon rules, what you may transmit or relay, and who sets good practice.",
+  "why": {
+    "G1B01": { "why": "Structures up to **200 ft** (not near a public use airport) need no FAA notice or FCC registration.", "trap": "50 and 100 ft are far too low; 250 ft is over the line.", "concept": "antennas" },
+    "G1B02": { "why": "Only **one beacon per band per location** is required by rule. No beacon coordinator, and no posting requirement.", "trap": "The coordination and publication options are made up.", "concept": "beacons" },
+    "G1B03": { "why": "A beacon exists to **observe propagation and reception**. It is not a repeater ID or a bulletin station.", "concept": "beacons" },
+    "G1B04": { "why": "**Occasional** relay of US government weather and propagation forecasts is allowed. Automatic relay by any station, encryption and unidentified tests are not.", "trap": "Automatic retransmission is limited to certain station types, not any station.", "concept": "oneway" },
+    "G1B05": { "why": "One-way **Morse code learning** transmissions are allowed. Unidentified tests and regular sale offers are not.", "trap": "All three choices together is not correct.", "concept": "oneway" },
+    "G1B06": { "why": "Local rules must **reasonably accommodate** amateur communications and be the **minimum practical** (PRB-1).", "trap": "FCC priority is not absolute, and local rules are not unlimited.", "concept": "antennas" },
+    "G1B07": { "why": "Abbreviations and procedural signals are allowed if they **do not obscure meaning**. Q signals are not the only ones.", "concept": "practice" },
+    "G1B08": { "why": "You may contact any country **except** those that told the ITU they object. No treaty or UN membership is needed.", "trap": "A third-party agreement is for third-party traffic, not for all contacts.", "concept": "practice" },
+    "G1B09": { "why": "Automatic HF beacons go on **28.20 to 28.30 MHz** in the 10 m band.", "concept": "beacons" },
+    "G1B10": { "why": "Beacon output is limited to **100 W PEP**.", "concept": "beacons" },
+    "G1B11": { "why": "Where Part 97 is silent, the **FCC** decides what counts as good engineering and good amateur practice.", "trap": "Not the control operator, the IEEE or the ITU.", "concept": "practice" }
+  }
+}

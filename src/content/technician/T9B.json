@@ -1,0 +1,18 @@
+{
+  "title": "Feed lines, SWR and connectors",
+  "blurb": "Why coax loses more at higher frequencies, what SWR and a tuner really do, and which connector fits where.",
+  "why": {
+    "T9B01": { "why": "Outdoor connectors need weather protection. **Tape all of them**: PL-259, BNC and Type N.", "concept": "connectors" },
+    "T9B02": { "why": "Amateur coax is almost always **50 ohms**.", "trap": "600 ohms is open-wire line, not coax.", "concept": "coax" },
+    "T9B03": { "why": "Coax is popular because it is **easy to use**: it needs few special installation precautions.", "trap": "It isn't the lowest-loss or highest-power line, just the most convenient.", "concept": "coax" },
+    "T9B04": { "why": "A tuner **matches the antenna system's impedance** to the radio's output impedance.", "trap": "It doesn't tune receivers or choose antennas.", "concept": "swr" },
+    "T9B05": { "why": "Coax **loss rises with frequency**. Impedance stays the same.", "concept": "loss" },
+    "T9B06": { "why": "Above 400 MHz use a **Type N**. PL-259s are for HF and VHF.", "trap": "RS-213 (really RG-213) is a cable, not a connector. DB-25 is a computer connector.", "concept": "connectors" },
+    "T9B07": { "why": "PL-259s are the common **HF and VHF** connector. They are threaded, not bayonet, and not watertight.", "concept": "connectors" },
+    "T9B08": { "why": "Water in connectors, high SWR and extra connectors **all** add loss to coax.", "concept": "loss" },
+    "T9B09": { "why": "A **loose connection** keeps changing the impedance the line sees, so SWR bounces around.", "trap": "Weather and strong signals don't make a stable antenna system flicker like this.", "concept": "swr" },
+    "T9B10": { "why": "RG-213 is thicker than RG-58, so it has **less loss at a given frequency**.", "trap": "Bigger cable also handles more power, not less.", "concept": "loss" },
+    "T9B11": { "why": "**Air-insulated hardline** has the lowest loss of these feed lines.", "concept": "loss" },
+    "T9B12": { "why": "SWR is a measure of **how well a load is matched** to a transmission line. 1:1 is perfect.", "concept": "swr" }
+  }
+}

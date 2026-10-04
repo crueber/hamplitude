@@ -1,0 +1,21 @@
+{
+  "title": "Digital modes, bandwidth and constellations",
+  "blurb": "How QAM and constellation diagrams work, how symbol rate relates to data rate, and how bandwidth and error correction behave.",
+  "why": {
+    "E8C01": { "why": "QAM modulates the **amplitude of two same-frequency carriers 90° apart**, giving many phase and amplitude states.", "trap": "It is not a compression or analog TV technique.", "concept": "constellation" },
+    "E8C02": { "why": "A symbol is one state of the waveform. Symbol rate is **how fast the waveform changes** to convey information.", "trap": "Characters per second is a data rate, not a symbol rate.", "concept": "symbol-rate" },
+    "E8C03": { "why": "A phase change at a zero crossing avoids a sudden jump in the wave, which **minimizes bandwidth**.", "concept": "shaping" },
+    "E8C04": { "why": "**Sinusoidal data pulses** change smoothly, so PSK31 stays narrow. Linear pulses have sharper corners.", "concept": "shaping" },
+    "E8C05": { "why": "A CW signal's bandwidth is roughly 4 × its speed in WPM: 13 × 4 = **52 Hz**.", "concept": "bandwidth" },
+    "E8C06": { "why": "An FT8 signal is **50 Hz** wide, narrower than an SSB voice signal.", "trap": "2.4 kHz is a typical voice bandwidth, not FT8.", "concept": "bandwidth" },
+    "E8C07": { "why": "FSK bandwidth ≈ baud + 1.2 × shift: 9.6 kHz + 1.2 × 4.8 kHz = **15.36 kHz**.", "trap": "5.76 kHz is only the 1.2 × shift part.", "concept": "bandwidth" },
+    "E8C08": { "why": "ARQ detects an error and **requests a retransmission**. It does not correct bits itself.", "trap": "Codes that correct errors automatically are forward error correction.", "concept": "arq" },
+    "E8C09": { "why": "**Gray code** changes exactly one bit between consecutive values: 00, 01, 11, 10.", "trap": "BCD, EBCDIC and ASCII are character codes without that property.", "concept": "constellation" },
+    "E8C10": { "why": "Rate = symbol rate × bits per symbol, so a **more efficient code** sends more bits in the same bandwidth.", "trap": "Forward error correction adds redundant bits, which lowers net data rate.", "concept": "symbol-rate" },
+    "E8C11": { "why": "Baud counts waveform changes per second, which is the **symbol rate**. They are the same number.", "trap": "Bit rate is what differs: it is baud times bits per symbol.", "concept": "symbol-rate" },
+    "E8C12": { "why": "A CW signal widens with faster **keying speed** and with sharper **rise and fall times** (shape factor).", "trap": "Modulation index and IF bandwidth do not set a transmitted CW signal's width.", "concept": "shaping" },
+    "E8C13": { "why": "Each dot in the diagram is an allowed symbol: the **possible phase and amplitude states** for each symbol.", "trap": "It does not show frequency response or error-correction bits.", "concept": "constellation" },
+    "E8C14": { "why": "Mesh nodes use **Internet Protocol (IP) addresses**, like any network.", "concept": "mesh" },
+    "E8C15": { "why": "Nodes find neighbours and build the mesh with **discovery and link establishment protocols**.", "concept": "mesh" }
+  }
+}

@@ -1,0 +1,78 @@
+import { Reverse } from '@/visuals/technician/T2B_Reverse'
+import { Ctcss } from '@/visuals/technician/T2B_Ctcss'
+import { Dtmf } from '@/visuals/technician/T2B_Dtmf'
+import { Dmr } from '@/visuals/technician/T2B_Dmr'
+import { Linked } from '@/visuals/technician/T2B_Linked'
+
+<Concept id="reverse" title="Hear the repeater but can't get in? Check three settings" qs="T2B01 T2B04">
+
+**Reverse** swaps your radio's receive and transmit frequencies, so you **listen on the repeater's input**.
+
+<Reverse />
+
+Hearing a repeater only proves your receive side works. Access can still fail from an **improper offset**, the **wrong CTCSS tone**, or the **wrong DCS code**. Any of them will do it.
+
+<Key>Reverse = listen on the input. No access? Offset, CTCSS, DCS.</Key>
+
+</Concept>
+
+<Concept id="tones" title="Tones open the door: CTCSS and DTMF" qs="T2B13 T2B02 T2B06">
+
+<Ctcss />
+
+**Squelch** mutes the receiver when no signal is present. **CTCSS** is a **sub-audible tone** sent with your voice to open the squelch.
+
+<Dtmf />
+
+**DTMF** (touch-tone) sends **two simultaneous tones** per key, used for signaling a repeater.
+
+<Mnemonic>CTCSS: one quiet tone under the voice. DTMF: two tones at once (Dual-Tone).</Mnemonic>
+
+</Concept>
+
+<Concept id="dmr" title="DMR: color code gets you in, talkgroup picks the chat" qs="T2B12 T2B14 T2B07">
+
+<Dmr />
+
+The **color code** is an access code programmed into your radio to use a specific repeater. A **talkgroup** organizes traffic so you hear only the groups you want. To join one, **program its ID into your radio**.
+
+<Key>Color code = access. Talkgroup = which conversation.</Key>
+
+</Concept>
+
+<Concept id="systems" title="Linked repeaters share one signal; simplex spares them" qs="T2B03 T2B09">
+
+<Linked />
+
+In a **linked repeater network**, a signal received by one repeater is transmitted by **all** of them. Simplex channels are set aside so stations **within range** can talk without tying up a repeater.
+
+<Key>Close enough? Go simplex.</Key>
+
+</Concept>
+
+<Concept id="problems" title="Fix problems with the simple cause first" qs="T2B05 T2B08 T2B04">
+
+| Problem | Cause or action |
+|---|---|
+| Audio **drops out on voice peaks** | **Talking too loudly** (too much FM deviation). Speak softer. |
+| **Two stations** on one frequency interfere | **Negotiate** continued use. No one has automatic rights. |
+| Hear repeater, **can't access** it | Offset, CTCSS tone, or DCS code |
+
+<Callout kind="warn" title="Frequency etiquette">Being first doesn't give you the frequency, and tones don't let two stations share it. Talk it out.</Callout>
+
+</Concept>
+
+<Concept id="q-signals" title="Q signals: three-letter shorthand" qs="T2B10 T2B11">
+
+| Q signal | Meaning |
+|---|---|
+| **QRM** | Interference from other stations |
+| **QRN** | Static, natural noise |
+| **QSY** | Changing frequency |
+| **QSB** | Fading signal |
+| **QTH** | My location |
+| **QSL** | Message received |
+
+<Mnemonic>QRM = Man-made interference (other stations). QRN = Natural noise. QSY = "Shift to a new frequency".</Mnemonic>
+
+</Concept>

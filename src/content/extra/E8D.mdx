@@ -1,0 +1,54 @@
+import { SpreadSpectrum } from '@/visuals/extra/E8D_SpreadSpectrum'
+import { KeyClicks } from '@/visuals/extra/E8D_KeyClicks'
+import { Imd } from '@/visuals/extra/E8D_Imd'
+import { BaudotAscii } from '@/visuals/extra/E8D_BaudotAscii'
+import { Parity } from '@/visuals/extra/E8D_Parity'
+
+<Concept id="spread" title="Spread spectrum spreads a signal wide using a pseudorandom pattern" qs="E8D01 E8D02 E8D03">
+
+| Type | What changes | How |
+|---|---|---|
+| **Direct sequence** | The carrier's **phase** | A **high-speed binary bit stream** shifts the phase |
+| **Frequency hopping** | The carrier's **frequency** | Varied rapidly in a **pseudorandom sequence** |
+
+<SpreadSpectrum />
+
+The receiver uses the same pattern. Signals that do not use the **spread spectrum algorithm are suppressed** in the receiver, which is why it resists interference.
+
+<Key>Direct sequence = phase shifted by a fast bit stream. Hopping = frequency jumps by a pseudorandom sequence.</Key>
+
+</Concept>
+
+<Concept id="key-clicks" title="Sharp keying edges cause key clicks. Slow the edges." qs="E8D04 E8D05">
+
+A CW signal keyed on and off with **extremely short rise or fall times** makes **key clicks**: energy splashing to frequencies far from the carrier. The most common cure is to **increase the keying waveform's rise and fall times**.
+
+<KeyClicks />
+
+<Key>Short edges = key clicks. Lengthen rise and fall times.</Key>
+
+</Concept>
+
+<Concept id="overmod" title="Too much audio overmodulates AFSK. IMD measures the damage." qs="E8D07 E8D08 E8D09">
+
+Feeding a transmitter **excessive audio** overmodulates an **AFSK** signal and distorts it. **Intermodulation distortion (IMD)** measures that distortion. An idling PSK signal should have IMD of **−30 dB** or better (lower).
+
+<Imd />
+
+<Key>Overmodulation comes from too much audio. Measure it with IMD: −30 dB or lower for idling PSK.</Key>
+
+</Concept>
+
+<Concept id="codes" title="Baudot has 5 bits and shifts. ASCII has 7 or 8 bits, both cases, and parity." qs="E8D06 E8D10 E8D11">
+
+**Baudot**: **5 data bits** per character and **two** letters/figures **shift codes**. **ASCII**: **7 or 8 bits**, no shift codes, and it carries **uppercase and lowercase** text.
+
+<BaudotAscii />
+
+A **parity bit** added to an ASCII character lets the receiver **detect some types of errors**. It does not correct them.
+
+<Parity />
+
+<Key>Baudot: 5 bits plus 2 shifts. ASCII: 7 or 8 bits, both cases. Parity detects, never corrects.</Key>
+
+</Concept>

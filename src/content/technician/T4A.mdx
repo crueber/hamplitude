@@ -1,0 +1,71 @@
+import { Station } from '@/visuals/technician/T4A_Station'
+import { PowerFeed } from '@/visuals/technician/T4A_PowerFeed'
+import { DigitalLink } from '@/visuals/technician/T4A_DigitalLink'
+import { Strap } from '@/visuals/technician/T4A_Strap'
+import { Hotspot } from '@/visuals/technician/T4A_Hotspot'
+
+<Concept id="meters" title="Meters go in the feed line" qs="T4A02 T4A05">
+
+An **RF power meter** reads the power going out to the antenna, so it goes **in the feed line between the transmitter and the antenna**. An accessory SWR meter goes in the same spot.
+
+<Station />
+
+Pick a meter built for the **frequency and power level** you'll measure.
+
+<Key>Meter: in the coax, between radio and antenna.</Key>
+
+</Concept>
+
+<Concept id="power" title="13.8 V, lots of amps, short heavy wire" qs="T4A01 T4A03 T4A09 T4A11">
+
+A mobile radio runs on **13.8 V** DC. A 50 W FM radio draws about **12 A** on transmit. Resistance in thin or long wire wastes voltage as heat: current times resistance.
+
+<PowerFeed />
+
+- **Short, heavy-gauge wire** keeps voltage drop low when you transmit.
+- Connect the **negative** lead at the **battery / chassis ground**.
+
+How long a battery lasts:
+
+<Formula label="Runtime in hours">battery amp-hours ÷ average current (A)</Formula>
+
+Example: 100 Ah ÷ 10 A = 10 hours.
+
+<Key>13.8 V at 12 A. Fat wire, short run, negative to battery ground.</Key>
+
+</Concept>
+
+<Concept id="digital" title="Digital modes need three signals" qs="T4A04 T4A06 T4A07">
+
+<DigitalLink />
+
+For FT8 and similar modes the radio's audio goes straight to the **sound card** of a computer running the software. No terminal or converter box needed.
+
+<Callout kind="warn" title="Careful with names">Receive audio comes out of the radio's **speaker connector**, into the computer's **line in**. Push-to-talk is **keying**, not audio.</Callout>
+
+<Key>Receive audio, transmit audio, transmitter keying.</Key>
+
+</Concept>
+
+<Concept id="bonding" title="Bond at RF with wide flat strap" qs="T4A08">
+
+<Strap />
+
+RF current flows on the surface of a conductor, so the more surface, the lower the loss. A **flat copper strap** is preferred for RF bonding.
+
+<Key>Bonding at RF: flat copper strap.</Key>
+
+</Concept>
+
+<Concept id="gadgets" title="Keyers and hotspots" qs="T4A10 T4A12">
+
+<Hotspot />
+
+| Device | What it does |
+|---|---|
+| **Electronic keyer** | Helps you **send Morse code** by hand |
+| **Digital hotspot** | Connects your radio to a **digital voice or data network** |
+
+<Key>Keyer = Morse sending aid. Hotspot = gateway to a digital network.</Key>
+
+</Concept>

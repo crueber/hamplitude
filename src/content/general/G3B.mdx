@@ -1,0 +1,60 @@
+import { Window } from '@/visuals/general/G3B_Window'
+import { HopLength } from '@/visuals/general/G3B_HopLength'
+import { Paths } from '@/visuals/general/G3B_Paths'
+
+<Concept id="window" title="Between the LUF and the MUF, the ionosphere returns your signal" qs="G3B03 G3B05 G3B06 G3B07 G3B08 G3B11">
+
+**MUF** = Maximum Usable Frequency, **LUF** = Lowest Usable Frequency, each **between two specific points**. Above the MUF the wave passes through. Below the LUF it is **absorbed** before it arrives. Absorption keeps falling as frequency rises, so the quietest choice is **just below the MUF**.
+
+<Window />
+
+<Key>LUF above MUF means no ordinary skywave path. Aim just under the MUF.</Key>
+
+</Concept>
+
+<Concept id="muf-factors" title="Everything about the Sun, the clock and the path moves the MUF" qs="G3B02">
+
+| Factor | Why it changes the MUF |
+|---|---|
+| **Time of day, season** | Sunlight sets how ionized the layers are |
+| **Solar radiation** | More UV and X-rays, denser layers |
+| **Ionospheric disturbances** | Storms and flares reshape the layers |
+| **Path distance, location** | The MUF is for a specific path |
+
+<Key>All of them matter. The MUF belongs to one path at one moment.</Key>
+
+</Concept>
+
+<Concept id="hop" title="The higher the layer, the longer the hop" qs="G3B09 G3B10">
+
+<HopLength />
+
+A single **F2** hop covers up to about **2,500 miles**. A single **E**-region hop reaches about **1,200 miles**. Longer paths use several hops.
+
+<Key>F2: 2,500 miles. E: 1,200 miles.</Key>
+
+</Concept>
+
+<Concept id="paths" title="Short path and long path arrive together: you hear an echo" qs="G3B01">
+
+The signal can go either way around the globe. When **both arrive**, the long path lands a little later, so you hear a **slightly delayed echo**.
+
+<Paths />
+
+<Key>Short plus long path equals a delayed echo.</Key>
+
+</Concept>
+
+<Concept id="checking" title="Let receivers tell you; summer lows are noisy, not dead" qs="G3B04 G3B12">
+
+| Method | Does it show your path now? |
+|---|---|
+| **Automated receiving stations on the internet** showing where you are heard | **Yes**, it is a direct measurement |
+| A-index | No: it describes Earth's magnetic field |
+| Dots and listening for echoes | No |
+
+On the lower HF bands in summer, expect **high atmospheric noise (static)**.
+
+<Key>Check who actually hears you. Summer lows mean static.</Key>
+
+</Concept>

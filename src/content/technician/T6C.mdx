@@ -1,0 +1,52 @@
+import { SchematicVsPicture } from '@/visuals/technician/T6C_SchematicVsPicture'
+import { SymbolGallery } from '@/visuals/shared/SchematicSymbolGallery'
+
+<Concept id="schematic" title="A schematic shows connections, nothing else" qs="T6C01 T6C12">
+
+A **schematic** is a circuit diagram drawn with standard symbols. It shows **what connects to what**. It does not show wire length, size or what the parts look like.
+
+<SchematicVsPicture />
+
+<Key>Schematic = standard symbols + connections. Nothing about looks or lengths.</Key>
+
+</Concept>
+
+<Concept id="basic-symbols" title="Basic parts: each symbol is a tiny picture of the part" qs="T6C02 T6C04 T6C05 T6C06">
+
+Match the symbol to its picture. The long-and-short lines of a battery are stacked plates, a resistor zigzags because it resists, a capacitor is two plates with a gap.
+
+<SymbolGallery group="basic" />
+
+<Callout kind="tip" title="Exam figure T-2">The capacitor there has one flat and one curved plate, which usually means a polarized (electrolytic) type. It is still a **capacitor**.</Callout>
+
+</Concept>
+
+<Concept id="semi-symbols" title="Semiconductors: an arrow shows the way current flows" qs="T6C03 T6C07">
+
+Diodes and LEDs have a triangle pointing the way conventional current flows. An **LED** adds light arrows leaving. A **transistor** is three leads meeting a thick bar, usually inside a circle, and has an arrow on the emitter.
+
+<SymbolGallery group="semi" />
+
+<Mnemonic>Triangle with a bar = diode. Add little arrows shining out = LED. Three leads in a circle = transistor.</Mnemonic>
+
+</Concept>
+
+<Concept id="variable-symbols" title="An arrow on a part means it is adjustable" qs="T6C08 T6C10">
+
+An arrow through or touching a part makes it **variable**: a resistor, capacitor or inductor you can adjust.
+
+<SymbolGallery group="variable" />
+
+<Key>Arrow = adjustable. Zigzag + arrow = variable resistor. Coil + arrow = variable inductor. Plates + arrow = variable capacitor.</Key>
+
+</Concept>
+
+<Concept id="coil-symbols" title="Coils, transformers and antennas" qs="T6C09 T6C11">
+
+Loops mean a coil. **Two coils side by side** with bars between them is a **transformer**. A flat-topped triangle on a stem, with a line down its middle, is an **antenna**.
+
+<SymbolGallery group="coils" />
+
+<Key>One coil = inductor. Two coupled coils = transformer. Triangle on a stem = antenna.</Key>
+
+</Concept>

@@ -1,0 +1,18 @@
+{
+  "title": "Space stations, telemetry and telecommand",
+  "blurb": "Tell telemetry from telecommand, know who may run space-link stations, and which bands carry space stations.",
+  "why": {
+    "E1D01": { "why": "Telemetry is a **one-way transmission of measurements** taken at a distance from the instrument.", "trap": "One-way **commands** are telecommand, not telemetry.", "concept": "roles" },
+    "E1D02": { "why": "Only **telecommand signals from a space telecommand station** may be encrypted. Terrestrial links, relays and mesh nodes may not.", "concept": "special" },
+    "E1D03": { "why": "A space telecommand station **sends commands** that initiate, modify or terminate a space station's functions.", "trap": "Receiving telemetry or sitting above 50 km describes other stations.", "concept": "roles" },
+    "E1D04": { "why": "A balloon telemetry station's ID must include its **call sign**. Power and grid are not required.", "concept": "posted" },
+    "E1D05": { "why": "A telecommand station on or within 50 km of the surface must post **all three**: a license copy, the licensee label and the control operator label.", "concept": "posted" },
+    "E1D06": { "why": "A model craft telecommand transmitter is limited to **1 watt**.", "concept": "posted" },
+    "E1D07": { "why": "On HF, space stations have allocations on **40, 20, 15 and 10 m**. Not 30 or 17 m.", "concept": "bands" },
+    "E1D08": { "why": "Of the VHF bands only **2 m** has space station frequencies. Not 6 m or 1.25 m.", "concept": "bands" },
+    "E1D09": { "why": "On UHF, space stations may use **70 cm and 13 cm**. Not 33 cm.", "concept": "bands" },
+    "E1D10": { "why": "The **space station licensee** designates which stations may be telecommand stations. AMSAT and the ITU do not.", "concept": "roles" },
+    "E1D11": { "why": "**Any** amateur station may be an Earth station, within its control operator's license privileges. No course or class needed.", "concept": "roles" },
+    "E1D12": { "why": "One-way communications are allowed for a **space station, beacon station or telecommand station**. Repeaters and forwarding stations are two-way.", "concept": "special" }
+  }
+}

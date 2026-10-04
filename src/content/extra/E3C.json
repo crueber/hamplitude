@@ -1,0 +1,18 @@
+{
+  "title": "Space weather and propagation prediction",
+  "blurb": "Explain the radio horizon, how flares and CMEs disturb HF, and what Bz, K and A indices, VOACAP and reporting networks tell you.",
+  "why": {
+    "E3C01": { "why": "Flares send X-rays that arrive at light speed, causing **short-term radio blackouts**.", "trap": "CMEs arrive later and drive storms, not the immediate blackout.", "concept": "flare-cme" },
+    "E3C02": { "why": "A rising A or K index means **increasing disturbance** of the geomagnetic field.", "concept": "storm-indices" },
+    "E3C03": { "why": "Disturbance pushes the aurora toward lower latitudes, so paths **through the auroral oval** absorb heavily.", "concept": "storm-indices" },
+    "E3C04": { "why": "Bz is the **north-south strength** of the interplanetary magnetic field.", "concept": "storm-indices" },
+    "E3C05": { "why": "**Southward** Bz opposes Earth's field and links up, letting charged particles disturb conditions.", "trap": "Northward Bz points the same way as Earth's field and keeps things quieter.", "concept": "storm-indices" },
+    "E3C06": { "why": "Refraction extends VHF/UHF reach, so the radio horizon is **about 15 percent farther** than the geographic one.", "concept": "radio-horizon" },
+    "E3C07": { "why": "Classes run A, B, C, M, X, each 10 times stronger. **X** is greatest.", "trap": "Z isn't a flare class.", "concept": "flare-cme" },
+    "E3C08": { "why": "Geomagnetic storms are rated G1 to G5. **G5** is extreme.", "trap": "A, B, M and X letters rate flares, not geomagnetic storms.", "concept": "storm-indices" },
+    "E3C09": { "why": "Reporting networks collect **digital-mode and CW signals** that stations actually heard.", "concept": "tools" },
+    "E3C10": { "why": "304 Å is **UV emission** from the Sun, and it tracks the solar flux index.", "concept": "tools" },
+    "E3C11": { "why": "VOACAP predicts **HF** propagation.", "trap": "Despite the letters AC, it has nothing to do with AC power.", "concept": "tools" },
+    "E3C12": { "why": "A sudden, wide HF noise rise signals a **CME impact or a flare** has occurred.", "concept": "flare-cme" }
+  }
+}

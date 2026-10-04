@@ -1,0 +1,65 @@
+import { Wires240 } from '@/visuals/general/G0B_Wires240'
+import { Gauge } from '@/visuals/general/G0B_Gauge'
+import { Gfci } from '@/visuals/general/G0B_Gfci'
+import { Interlock } from '@/visuals/general/G0B_Interlock'
+import { Lightning } from '@/visuals/general/G0B_Lightning'
+import { Climb } from '@/visuals/general/G0B_Climb'
+import { Hazards } from '@/visuals/general/G0B_Hazards'
+
+<Concept id="fusing" title="Fuse only the hot wires, and size the breaker to the wire" qs="G0B01 G0B02 G0B03 G0B06">
+
+In a four-conductor 240 V circuit (two hots, neutral, ground), fuses or breakers go **only in the hot wires**.
+
+<Wires240 />
+
+The breaker must protect the **thinnest wire**. **AWG 14** goes with a **15 A** breaker, **AWG 12** with **20 A**. A lower AWG number is thicker wire. The **National Electrical Code** covers the electrical safety of the station.
+
+<Gauge />
+
+<Key>Hots only. 20 A needs AWG 12, 15 A needs AWG 14.</Key>
+
+</Concept>
+
+<Concept id="protectors" title="GFCIs and interlocks cut the power when something goes wrong" qs="G0B05 G0B12">
+
+A **GFCI** trips when current flows from a **hot wire directly to ground**, for example through you. Current from hot to neutral through a load is normal.
+
+<Gfci />
+
+A **power supply interlock** removes **dangerous voltages when the cabinet is opened**. It does not sense heat or overvoltage.
+
+<Interlock />
+
+<Key>GFCI: leak to ground. Interlock: cabinet opened.</Key>
+
+</Concept>
+
+<Concept id="lightning" title="Ground outside, arrest at the entry, bond everything" qs="G0B04 G0B11 G0B13">
+
+<Lightning />
+
+Put the lightning protection ground system **outside the building**. Mount **arrestors where the feed lines enter**. **Bond every ground rod together** with all other grounds, so no point rises above the rest during a strike.
+
+<Key>Outside, at the entry, all bonded.</Key>
+
+</Concept>
+
+<Concept id="tower" title="Before a climb: lock out the power, check the harness" qs="G0B07 G0B08">
+
+<Climb />
+
+Confirm the harness is **rated for the climber's weight** and **within its allowable service life**. If the tower supports electrically powered devices, **lock out and tag** every circuit that feeds it first. Do not unground the tower.
+
+<Key>Lockout and tag, then a rated, in-date harness.</Key>
+
+</Concept>
+
+<Concept id="hazards" title="Fumes and lead: ventilate the generator, wash after soldering" qs="G0B09 G0B10">
+
+<Hazards />
+
+Run an emergency generator in a **well-ventilated area**. Do not store fuel next to it. The danger from **lead-tin solder** is **lead contaminating food** if you do not wash your hands.
+
+<Key>Generator: fresh air. Solder: clean hands.</Key>
+
+</Concept>

@@ -1,0 +1,16 @@
+{
+  "title": "HF privileges and band slices",
+  "blurb": "Which HF bands and slices a General may use, which modes are barred, and what secondary status means.",
+  "why": {
+    "G1A01": { "why": "Extra-only slices exist on **80, 40, 20 and 15 m**. The other HF and MF bands are open to General across the band.", "trap": "160, 60, 30, 17, 12 and 10 m have no Extra-only slice.", "concept": "bands" },
+    "G1A02": { "why": "Phone is prohibited on **30 m**, which is limited to non-voice modes.", "trap": "160, 17 and 12 m allow phone.", "concept": "modes" },
+    "G1A03": { "why": "Image transmission is prohibited on **30 m**, as is phone.", "concept": "modes" },
+    "G1A05": { "why": "**7.125 to 7.175 MHz** is in 40 m's Extra-only slice. The 15 m and 10 m ranges listed are open to General.", "trap": "21.275 to 21.300 and 28.000 to 28.025 are General frequencies.", "concept": "slices" },
+    "G1A06": { "why": "Secondary: **do not cause harmful interference** to primary users, and **accept** their interference.", "trap": "No call sign recording, emergency-only or time-of-day rule applies.", "concept": "secondary" },
+    "G1A07": { "why": "General class may use CW on the **entire 10 m band**, 28.000 to 29.700 MHz.", "concept": "modes" },
+    "G1A08": { "why": "Extra-exclusive segments exist on **80, 40, 20 and 15 m**.", "concept": "bands" },
+    "G1A09": { "why": "21.300 MHz (21300 kHz) is on **15 m** and outside the Extra slice. 14250 is 20 m, 18155 is 17 m, 24900 is 12 m.", "trap": "The other three are not on 15 m at all.", "concept": "slices" },
+    "G1A10": { "why": "10 m repeaters belong in the part **above 29.5 MHz**.", "concept": "modes" },
+    "G1A11": { "why": "Extra holds the bottom of a shared voice segment, so General gets the **upper** frequency portion.", "trap": "It is the upper portion on every band, not a mix.", "concept": "voice-top" }
+  }
+}

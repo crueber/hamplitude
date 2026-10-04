@@ -1,0 +1,17 @@
+{
+  "title": "Speech processors, S meters, band edges",
+  "blurb": "Explain what a speech processor changes, how S-meter steps relate to power, and where your SSB signal sits near a band edge.",
+  "why": {
+    "G4D01": { "why": "Compression raises the average voice level, so the signal sounds **louder** without raising the peak limit.", "trap": "It doesn't add bass, limit bandwidth or prevent distortion.", "concept": "processor" },
+    "G4D02": { "why": "The peak is capped by the transmitter, but compressing raises the quieter parts, so **average power rises**.", "trap": "Processing doesn't lift the peak. Too much makes intermodulation worse.", "concept": "processor" },
+    "G4D03": { "why": "Over-processing flattens peaks, giving **distorted speech**, intermodulation products and raised background noise: **all of these**.", "concept": "processor" },
+    "G4D04": { "why": "An S meter reads the **strength of the received signal** at the receiver.", "trap": "Transmitter power and impedance need other meters.", "concept": "s-meter" },
+    "G4D05": { "why": "Power ratio = 10^(20 ÷ 10) = 10² = **100 times** the S9 signal.", "trap": "20 dB is not 20 times: dB is logarithmic.", "concept": "s-meter" },
+    "G4D06": { "why": "One S unit is **6 dB**, so each S unit is about a 4× change in power.", "concept": "s-meter" },
+    "G4D07": { "why": "S8 to S9 is one S unit, 6 dB. Power ratio = 10^(6 ÷ 10) ≈ **4 times**.", "trap": "6 dB is not double. +3 dB doubles power, +6 dB quadruples.", "concept": "s-meter" },
+    "G4D08": { "why": "LSB extends **below** the carrier: 7.178 − 0.003 = **7.175 to 7.178 MHz**.", "trap": "That range above the carrier is USB.", "concept": "band-edge" },
+    "G4D09": { "why": "USB extends **above** the carrier: 14.347 + 0.003 = **14.347 to 14.350 MHz**.", "trap": "Below the carrier is LSB.", "concept": "band-edge" },
+    "G4D10": { "why": "LSB extends 3 kHz down, so the carrier must sit **at least 3 kHz above** the lower edge.", "trap": "Below the edge puts the carrier outside the segment.", "concept": "band-edge" },
+    "G4D11": { "why": "USB extends 3 kHz up, so the carrier must sit **at least 3 kHz below** the upper edge.", "trap": "Above the edge puts the carrier outside the segment.", "concept": "band-edge" }
+  }
+}

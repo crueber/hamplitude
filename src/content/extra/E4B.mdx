@@ -1,0 +1,75 @@
+import { OhmsPerVolt } from '@/visuals/extra/E4B_OhmsPerVolt'
+import { SParams } from '@/visuals/extra/E4B_SParams'
+import { VnaCal } from '@/visuals/extra/E4B_VnaCal'
+import { Directional } from '@/visuals/extra/E4B_Directional'
+import { QBandwidth } from '@/visuals/extra/E4B_QBandwidth'
+import { TwoTone } from '@/visuals/extra/E4B_TwoTone'
+
+<Concept id="meter-limits" title="A reading is only as good as the instrument's reference and loading" qs="E4B01 E4B02">
+
+A frequency counter counts cycles over a timed gate, so its accuracy comes from its **time base** (the internal oscillator that sets the gate).
+
+A voltmeter's **ohms-per-volt** rating gives its input impedance: **full-scale reading × ohms per volt**. A low value loads the circuit under test and the reading sags.
+
+<OhmsPerVolt />
+
+<Key>Counter: time base. Voltmeter: full scale × Ω/V = input impedance.</Key>
+
+</Concept>
+
+<Concept id="s-params" title="S parameters: two digits name two ports" qs="E4B03 E4B04 E4B07">
+
+<SParams />
+
+The subscripts name the **port or ports where measurements are made**. **S21** (in at port 1, measured at port 2) is **forward gain**. **S11** (in and measured at port 1) is **input return loss**, the reflection coefficient (equivalent to VSWR).
+
+<Key>S21 = forward gain. S11 = input reflection.</Key>
+
+</Concept>
+
+<Concept id="vna" title="A vector network analyzer: calibrate with three loads, then measure a device's response" qs="E4B05 E4B09 E4B11">
+
+<VnaCal />
+
+Calibrate with a **short, an open and a 50 Ω load**.
+
+| A VNA measures | A VNA does not measure |
+|---|---|
+| Filter frequency response | Phase noise |
+| Input impedance | Pulse rise time |
+| Output impedance | Forward power |
+| Reflection coefficient | |
+
+<Key>Short, open, 50 Ω. Then response, impedance and reflection.</Key>
+
+</Concept>
+
+<Concept id="directional" title="The load absorbs forward minus reflected power" qs="E4B06">
+
+<Directional />
+
+<Formula label="Absorbed power">100 W forward − 25 W reflected = **75 W** absorbed</Formula>
+
+<Key>What is reflected is not absorbed.</Key>
+
+</Concept>
+
+<Concept id="q-bandwidth" title="Q comes from the bandwidth of the frequency response" qs="E4B08">
+
+<QBandwidth />
+
+Sweep a tuned circuit and read the width of its response between the half-power points. Narrow means **high Q**.
+
+<Key>Q = centre frequency ÷ bandwidth.</Key>
+
+</Concept>
+
+<Concept id="two-tone" title="Test SSB distortion with two audio tones and a spectrum analyzer" qs="E4B10">
+
+<TwoTone />
+
+Feed **two AF tones that are not harmonically related** into the transmitter. Intermodulation shows up as **extra signals on the RF output**, seen with a **spectrum analyzer**. A single tone cannot show intermodulation.
+
+<Key>Two AF tones in, spectrum analyzer on the RF out.</Key>
+
+</Concept>

@@ -1,0 +1,20 @@
+{
+  "title": "EME, scatter and wave basics",
+  "blurb": "Explain EME, meteor and auroral scatter, microwave ducts, and how electromagnetic waves are built.",
+  "why": {
+    "E3A01": { "why": "Both stations only need the Moon in view, which puts them up to about **12,000 miles** apart.", "trap": "Perigee changes loss, not how far apart you can be.", "concept": "eme" },
+    "E3A02": { "why": "Libration, the Moon's rocking, keeps changing the echo path, giving a **fluttery, irregular fade**.", "concept": "eme" },
+    "E3A03": { "why": "Path loss grows with distance, so the **Moon at perigee**, its closest point, gives the least.", "trap": "Moon phase and MUF don't set the path loss.", "concept": "eme" },
+    "E3A04": { "why": "E, H and the direction of travel are all mutually perpendicular: the wave travels at a **right angle to both fields**.", "concept": "em-wave" },
+    "E3A05": { "why": "The electric and magnetic fields sit at **right angles** to each other.", "trap": "Out of phase is about timing. They are in phase, and perpendicular in space.", "concept": "em-wave" },
+    "E3A06": { "why": "A lower MUF means higher bands fail. Move down: a **lower-frequency band** stays below the MUF.", "concept": "muf-night" },
+    "E3A07": { "why": "Microwave ducts form in layered air over **large bodies of water**.", "concept": "duct" },
+    "E3A08": { "why": "Meteors burn up at E-region heights, leaving a linear ionized trail in the **E region**.", "concept": "meteor" },
+    "E3A09": { "why": "Meteor trails reflect VHF well: **28 MHz to 148 MHz**.", "trap": "Echoes weaken and shorten as frequency rises, so UHF is poor. HF below 28 MHz isn't used.", "concept": "meteor" },
+    "E3A10": { "why": "Speed in a medium is c ÷ **index of refraction**. Higher index, slower wave.", "concept": "em-wave" },
+    "E3A11": { "why": "Tropospheric ducts typically carry microwaves **100 to 300 miles**.", "concept": "duct" },
+    "E3A12": { "why": "A **severe geomagnetic storm** expands the aurora to lower latitudes where it scatters signals.", "trap": "Quiet conditions and meteor showers don't light up the aurora.", "concept": "aurora" },
+    "E3A13": { "why": "Aurora distorts and smears signals. Narrow, simple **CW** gets through best.", "concept": "aurora" },
+    "E3A14": { "why": "In circular polarization the electric and magnetic fields **rotate** as the wave travels.", "trap": "Loop antennas and orbiting waves are not what makes polarization circular.", "concept": "em-wave" }
+  }
+}

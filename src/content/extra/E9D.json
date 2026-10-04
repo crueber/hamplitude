@@ -1,0 +1,18 @@
+{
+  "title": "Yagis, dishes and short antennas",
+  "blurb": "Explain dish gain, how Yagi elements shape a beam, and why loading a short antenna lowers bandwidth and efficiency.",
+  "why": {
+    "E9D01": { "why": "Doubling frequency halves wavelength, so the dish doubles in wavelengths. Gain goes as that squared: ×4 = 10 log 4 = **6 dB**.", "trap": "3 dB is a doubling of power; here the gain quadruples.", "concept": "dish" },
+    "E9D02": { "why": "Two Yagis on **one axis, perpendicular**, driven elements at the same boom point and fed **90° out of phase** give a rotating field: circular polarization.", "trap": "Stacking parallel Yagis only makes a more directional linear antenna.", "concept": "circular" },
+    "E9D03": { "why": "Current is highest low on the whip. A coil **near the center** keeps more current up the radiator than a base coil, so more of the antenna radiates.", "trap": "Lower looks easier, but a base coil leaves less current up the radiator than a coil near the center.", "concept": "place" },
+    "E9D04": { "why": "Coil resistance wastes power. A high reactance-to-resistance ratio (high Q) means little loss, so **efficiency** is maximized.", "trap": "That is coil Q. High antenna Q is a different thing and narrows bandwidth.", "concept": "short" },
+    "E9D05": { "why": "A Yagi's driven element is the resonant part fed by the line: about **½ wavelength**.", "concept": "yagi" },
+    "E9D06": { "why": "A loading coil raises Q. Higher Q gives a sharper resonance, so the SWR bandwidth is **decreased**.", "trap": "Coil position does not rescue bandwidth: any loading raises Q.", "concept": "q" },
+    "E9D07": { "why": "A hat or wire at the top keeps current high along the radiator, which **improves radiation efficiency**.", "trap": "Losses and Q do not improve; the benefit is radiation efficiency.", "concept": "place" },
+    "E9D08": { "why": "Q measures how sharp the resonance is. Higher Q means a narrower band of good match: **SWR bandwidth decreases**.", "concept": "q" },
+    "E9D09": { "why": "A short antenna has capacitive reactance. The coil adds equal inductive reactance, **cancelling** it so the antenna resonates.", "trap": "The coil does not lower Q or losses; it raises Q and adds some loss.", "concept": "short" },
+    "E9D10": { "why": "Below resonance the antenna is electrically shorter, and a shorter antenna has lower radiation resistance: it **decreases**.", "concept": "short" },
+    "E9D11": { "why": "A reflector works with the driven element to put the energy forward, giving **higher gain** than a director in a two-element Yagi.", "concept": "yagi" },
+    "E9D12": { "why": "Parasitic elements are excited by induction. Their length sets the **phase** of their current so radiation adds forward and cancels behind.", "trap": "Mechanical balance has nothing to do with it.", "concept": "yagi" }
+  }
+}

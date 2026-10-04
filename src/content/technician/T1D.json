@@ -1,0 +1,18 @@
+{
+  "title": "Prohibited transmissions and payment",
+  "blurb": "What you may not transmit, the narrow exceptions, and why testing needs an ID but model-craft control doesn't.",
+  "why": {
+    "T1D01": { "why": "Communication is barred with countries whose administrations have **told the ITU** they object.", "trap": "The ARRL and IARU can't ban a country.", "concept": "nos" },
+    "T1D02": { "why": "One-way **broadcasting** is prohibited. Announcements, code practice and telemetry/telecommand are allowed.", "concept": "broadcast" },
+    "T1D03": { "why": "Obscuring a message is allowed only for **control commands to space stations or model craft**.", "trap": "Contests and \"approved digital codes\" are not exceptions.", "concept": "nos" },
+    "T1D04": { "why": "Music is allowed only when **incidental to retransmitting manned-spacecraft communications**.", "trap": "Low power, short duration or frequency don't make music legal.", "concept": "nos" },
+    "T1D05": { "why": "You may announce ham gear for sale **if not done on a regular basis**.", "trap": "Profit and ownership aren't the test; regularity is.", "concept": "money" },
+    "T1D06": { "why": "**Any** indecent or obscene language is prohibited. No word list is needed.", "concept": "nos" },
+    "T1D07": { "why": "An auxiliary station is a **one-way link**, such as a remote repeater receiver feeding the main transmitter.", "trap": "It isn't a backup radio or a second contest station.", "concept": "broadcast" },
+    "T1D08": { "why": "The control operator may be paid when the communication is **part of classroom instruction** at an educational institution.", "trap": "Selling for an employer or gathering news for a station is paid work.", "concept": "money" },
+    "T1D09": { "why": "Broadcast or news support is allowed only for the **immediate safety of life or protection of property**.", "concept": "broadcast" },
+    "T1D10": { "why": "Broadcasting is transmission **intended for reception by the general public**.", "trap": "Not every transmission is broadcasting; what counts is who it is intended for.", "concept": "broadcast" },
+    "T1D11": { "why": "Signals that **control model craft** are exempt from identification.", "trap": "Adjustments, carriers and low power must still identify.", "concept": "id" },
+    "T1D12": { "why": "Test transmissions must still **identify the station**.", "trap": "No time-of-day window or FCC notice is required.", "concept": "id" }
+  }
+}

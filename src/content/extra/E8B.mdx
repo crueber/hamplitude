@@ -1,0 +1,55 @@
+import { ModIndex } from '@/visuals/extra/E8B_ModIndex'
+import { Ofdm } from '@/visuals/extra/E8B_Ofdm'
+import { Multiplex } from '@/visuals/extra/E8B_Multiplex'
+
+<Concept id="mod-index" title="Modulation index = deviation ÷ modulating frequency" qs="E8B01 E8B02 E8B03 E8B04">
+
+**Frequency deviation** is how far an FM signal swings either side of the carrier. The **modulation index** compares that swing with the **modulating frequency** (the tone doing the swinging).
+
+<ModIndex />
+
+| Deviation | Modulating frequency | Index |
+|---|---|---|
+| ±3000 Hz | 1000 Hz | 3000 ÷ 1000 = **3** |
+| ±6 kHz | 2 kHz | 6 ÷ 2 = **3** |
+
+The carrier frequency is not in the formula. For **phase modulation** the index is **independent of the RF carrier frequency**.
+
+<Key>Index = deviation ÷ modulating frequency. Swing on top, tone below.</Key>
+
+</Concept>
+
+<Concept id="dev-ratio" title="Deviation ratio = maximum deviation ÷ highest modulating frequency" qs="E8B05 E8B06 E8B09">
+
+**Deviation ratio** is the same division at the system's limits: the **maximum carrier deviation** over the **highest audio modulating frequency**.
+
+<ModIndex ratio />
+
+| Max swing | Highest audio | Ratio |
+|---|---|---|
+| ±5 kHz | 3 kHz | 5 ÷ 3 = **1.67** |
+| ±7.5 kHz | 3.5 kHz | 7.5 ÷ 3.5 = **2.14** |
+
+<Mnemonic>Deviation on top, frequency on the bottom. If you get 0.6 instead of 1.67, you flipped it.</Mnemonic>
+
+</Concept>
+
+<Concept id="ofdm" title="OFDM splits data over many orthogonal subcarriers" qs="E8B07 E8B08">
+
+**Orthogonal frequency-division multiplexing** is a **digital modulation** technique used in amateur **digital modes**. It sends one data stream as many slow **subcarriers**, with frequencies chosen so each peak lands where the others are zero. That avoids **intersymbol interference**.
+
+<Ofdm />
+
+<Key>OFDM = many closely spaced digital subcarriers that do not interfere.</Key>
+
+</Concept>
+
+<Concept id="mux" title="FDM splits the band. TDM splits the time." qs="E8B10 E8B11">
+
+**Multiplexing** puts several data streams on one transmission. **FDM** divides the signal into separate **frequency bands**, each carrying a different stream. **Digital TDM** has the signals share **discrete time slots** of one data transmission.
+
+<Multiplex />
+
+<Key>FDM: different frequencies at once. TDM: same channel, taking turns.</Key>
+
+</Concept>

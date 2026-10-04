@@ -1,0 +1,20 @@
+{
+  "title": "Dynamic range, intermodulation, link budget",
+  "blurb": "Explain dynamic range and intermodulation, find third-order products, read intercept points, and work a dB link budget.",
+  "why": {
+    "E4D01": { "why": "Blocking dynamic range = the dB span from the **noise floor** up to the level causing **1 dB of gain compression**.", "trap": "The IMD-products definition is a different measure; intercept point isn't the end of the window.", "concept": "dynamic-range" },
+    "E4D02": { "why": "A receiver that can't handle strong signals shows **cross modulation and desensitization** from strong adjacent signals.", "trap": "Oscillator drift and LO injection are not dynamic-range problems.", "concept": "dynamic-range" },
+    "E4D03": { "why": "Two nearby transmitters' outputs **mix in the final amplifier**, a nonlinear stage, creating products.", "trap": "Feedback and harmonic relationships aren't what mixes them.", "concept": "imd" },
+    "E4D04": { "why": "A **terminated circulator** at the transmitter output is a one-way valve: the nearby signal can't reach the final amplifier.", "trap": "A band-pass filter or Class C or D amplifier doesn't stop the other signal mixing in.", "concept": "imd" },
+    "E4D05": { "why": "Third-order products: 2 × 146.52 − 146.34 = **146.70** and 2 × 146.61 − 146.52 = **146.70**. Both pairs work.", "trap": "Check each pair: 2f₁ − f₂ or 2f₂ − f₁ must equal the receive frequency.", "concept": "imd" },
+    "E4D06": { "why": "A strong nearby signal reducing sensitivity is **desensitization**.", "trap": "Cross modulation moves the strong signal's modulation onto yours; reciprocal mixing comes from oscillator noise.", "concept": "dynamic-range" },
+    "E4D07": { "why": "**Attenuation before the first RF stage** lowers the strong signal so it can't overload the receiver.", "trap": "More front-end gain makes overload worse.", "concept": "dynamic-range" },
+    "E4D08": { "why": "Intermodulation needs a **nonlinear** circuit or device, so signals can mix with each other.", "trap": "Feedback and neutralization affect stability, not mixing.", "concept": "imd" },
+    "E4D09": { "why": "A preselector is a tunable filter ahead of the first stage that **rejects signals outside the band** being received.", "trap": "It filters; it doesn't store frequencies or attenuate broadband.", "concept": "dynamic-range" },
+    "E4D10": { "why": "At the **intercept point**, a pair of 40 dBm tones would give a third-order product **equal in amplitude to either tone**.", "trap": "It's a theoretical extension of the lines, not a noise-floor or audibility limit.", "concept": "ip3" },
+    "E4D11": { "why": "Odd-order products of two in-band signals fall **close to them**, so also in band. Even-order ones fall far away.", "concept": "imd" },
+    "E4D12": { "why": "Received = 40 + 10 − 3 − 136 = −89 dBm. Needed = −103 + 6 = −97 dBm. Margin = −89 − (−97) = **+8 dB**.", "trap": "Subtracting MDS alone ignores the required S/N.", "concept": "link-budget" },
+    "E4D13": { "why": "Add gains, subtract loss: 40 + 6 + 3 − 100 = **−51 dBm**.", "trap": "Both antennas' gains count: don't leave out the receive antenna.", "concept": "link-budget" },
+    "E4D14": { "why": "−100 dBm is 10⁻¹⁰ mW = 10⁻¹³ W = **0.1 pW**.", "trap": "Each −10 dB divides power by 10; −100 dB is ten steps below 1 mW.", "concept": "link-budget" }
+  }
+}

@@ -1,0 +1,66 @@
+import { E9D_Dish } from '@/visuals/extra/E9D_Dish'
+import { E9D_YagiElements } from '@/visuals/extra/E9D_YagiElements'
+import { E9D_Circular } from '@/visuals/extra/E9D_Circular'
+import { E9D_ShortWhip } from '@/visuals/extra/E9D_ShortWhip'
+import { E9D_LoadPlace } from '@/visuals/extra/E9D_LoadPlace'
+import { E9D_QBandwidth } from '@/visuals/extra/E9D_QBandwidth'
+
+<Concept id="dish" title="Double the frequency, and a dish gains 6 dB" qs="E9D01">
+
+A parabolic dish focuses signal in proportion to its size **measured in wavelengths**. Ideal gain = (π × diameter ÷ wavelength)². Doubling the frequency halves the wavelength, so the dish is twice as big in wavelengths: power gain ×4, which is **+6 dB**.
+
+<E9D_Dish />
+
+<Key>×2 frequency (or ×2 diameter) = ×4 power = +6 dB.</Key>
+
+</Concept>
+
+<Concept id="yagi" title="Yagi parasitic elements work through their length" qs="E9D05 E9D11 E9D12">
+
+Only the **driven element** (about **½ wavelength**) connects to the feed line. The other elements are **parasitic**: excited by its field and re-radiating. Making one longer or shorter than resonance controls the **phase** of its current, so the radiation adds in front and cancels behind. A two-element Yagi normally uses a **reflector**, which gives **higher gain** than a director.
+
+<E9D_YagiElements />
+
+<Key>Driven ½ λ. Parasitic length = phase control. Two elements: reflector for gain.</Key>
+
+</Concept>
+
+<Concept id="circular" title="Crossed Yagis fed 90° apart make circular polarization" qs="E9D02">
+
+Mount two Yagis on the **same axis, perpendicular** to each other, with driven elements at the **same point on the boom**. Feed them **90° out of phase**: the horizontal and vertical fields then trade places and the combined field rotates.
+
+<E9D_Circular />
+
+<Key>Crossed on one boom, 90° apart in phase: circular.</Key>
+
+</Concept>
+
+<Concept id="short" title="A coil resonates a short antenna but costs efficiency" qs="E9D04 E9D09 E9D10">
+
+An antenna shorter than resonance, or used **below its resonant frequency**, has **capacitive reactance** and a lower **radiation resistance**. A **loading coil** adds inductive reactance that **cancels** the capacitance. The coil's own resistance wastes power, so use a coil with a **high reactance-to-resistance ratio** (high Q) to **maximize efficiency**.
+
+<E9D_ShortWhip />
+
+<Key>Coil cancels capacitive reactance. Shorter: Rrad falls. Coil X ÷ R high: efficiency up.</Key>
+
+</Concept>
+
+<Concept id="place" title="Put the loading where the current is: center coil, top hat" qs="E9D03 E9D07">
+
+Radiation comes from current, which is highest at the base of a vertical and zero at the tip. A coil **near the center** is more efficient than a low coil. **Top loading** (a capacitance hat) keeps current high along the whole radiator and so **improves radiation efficiency**.
+
+<E9D_LoadPlace />
+
+<Key>Center coil beats base coil. Top loading improves radiation efficiency.</Key>
+
+</Concept>
+
+<Concept id="q" title="Loading raises Q, which narrows the SWR bandwidth" qs="E9D06 E9D08">
+
+**Q** says how sharp a resonance is. Higher Q means a narrower range of frequencies with a good match: **SWR bandwidth decreases**. A loading coil raises an antenna's Q, so a loaded short antenna has less SWR bandwidth.
+
+<E9D_QBandwidth />
+
+<Key>Higher Q = narrower SWR bandwidth. Loading coils decrease it.</Key>
+
+</Concept>

@@ -1,0 +1,55 @@
+import { G8C_ModeSketches } from '@/visuals/general/G8C_ModeSketches'
+import { G8C_Waterfall } from '@/visuals/general/G8C_Waterfall'
+import { G8C_Codes } from '@/visuals/general/G8C_Codes'
+import { G8C_ErrorFix } from '@/visuals/general/G8C_ErrorFix'
+import { G8C_Mesh } from '@/visuals/general/G8C_Mesh'
+
+<Concept id="modes" title="Match the digital mode to the job" qs="G8C02 G8C07 G8C15 G8C16">
+
+<G8C_ModeSketches />
+
+**WSPR** is the low-power beacon for judging HF propagation. **FT8** is the narrow-band mode that copes with **very low signal-to-noise**: its report of +3 means **+3 dB SNR in a 2.5 kHz bandwidth**. **Digital voice** modes are **DMR, D-STAR and System Fusion**.
+
+<Key>WSPR = beacon. FT8 = weakest signals. DMR, D-STAR, Fusion = voice.</Key>
+
+</Concept>
+
+<Concept id="waterfall" title="A waterfall shows frequency across, time down, strength as brightness" qs="G8C14 G8C13">
+
+Each new line of signal is added as time passes. A clean signal is a neat stripe. **Vertical lines on either side** of a data or RTTY signal mean it is **overmodulated**.
+
+<G8C_Waterfall />
+
+<Key>Frequency horizontal, time vertical, brightness = strength. Side lines = overmodulation.</Key>
+
+</Concept>
+
+<Concept id="codes" title="Baudot is 5 bits. Varicode is variable. FSK uses mark and space." qs="G8C04 G8C12 G8C08 G8C11">
+
+**Baudot** (RTTY) is a **5-bit code with start and stop bits**. **PSK31** sends characters in **Varicode**: shorter codes for common characters, so **upper case is longer and slows transmission**. The two tones of an FSK signal are **mark and space**.
+
+<G8C_Codes />
+
+<Key>Baudot = 5 bits. PSK31 = Varicode. FSK tones = mark and space.</Key>
+
+</Concept>
+
+<Concept id="errors" title="ARQ asks again. FEC repairs it alone." qs="G8C03 G8C05 G8C06 G8C10">
+
+A packet **header** carries the **routing and handling information**. In an **ARQ** mode a **NAK** means the packet had an error: **retransmit it**. If too many attempts fail, **the connection is dropped**. **FEC** instead sends **redundant information** with the data, so the receiver corrects errors without asking.
+
+<G8C_ErrorFix />
+
+<Key>NAK = send it again. Too many tries = disconnect. FEC = redundancy.</Key>
+
+</Concept>
+
+<Concept id="mesh" title="Mesh networks route around a failed node" qs="G8C09">
+
+Every node links to several others. If one node fails, a packet may still reach its target **by an alternate node**. More nodes give more routes, not stronger signals.
+
+<G8C_Mesh />
+
+<Key>Mesh = many routes, so one failure doesn't end the link.</Key>
+
+</Concept>

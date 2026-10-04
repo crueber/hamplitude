@@ -1,0 +1,66 @@
+import { E9C_PhasedPair } from '@/visuals/extra/E9C_PhasedPair'
+import { E9C_FoldedDipole } from '@/visuals/extra/E9C_FoldedDipole'
+import { E9C_WireGallery } from '@/visuals/extra/E9C_WireGallery'
+import { E9C_LongWire } from '@/visuals/extra/E9C_LongWire'
+import { E9C_GroundLobes } from '@/visuals/extra/E9C_GroundLobes'
+import { E9C_SeaSoil } from '@/visuals/extra/E9C_SeaSoil'
+
+<Concept id="phased" title="Spacing and phase decide where two elements add" qs="E9C01 E9C02 E9C03">
+
+Each signal travels a different distance to a distant station. Where the two arrive **in step** they add; where they arrive **opposite** they cancel. Sideways (broadside) the paths are equal, so only the feed phase matters. Along the axis, half-wave spacing adds a 180° delay.
+
+| Spacing | Feed | Pattern |
+|---|---|---|
+| ½ λ | in phase | figure-eight **broadside** to the axis |
+| ½ λ | 180° out | figure-eight **along** the axis |
+| ¼ λ | 90° out | **cardioid**: one direction, null behind |
+
+<E9C_PhasedPair />
+
+<Key>In phase: broadside. Half-wave spacing plus 180°: along the axis. ¼ λ plus 90°: cardioid.</Key>
+
+</Concept>
+
+<Concept id="folded" title="A folded dipole has about four times the impedance" qs="E9C07 E9C08">
+
+A **folded dipole** is a half-wave dipole with an additional parallel wire connecting its two ends. The two wires share the current, so for the same power the feed current is half and the feed point impedance is about **4 × 72 ≈ 300 Ω**.
+
+<E9C_FoldedDipole />
+
+<Key>Folded dipole: extra parallel wire joins the ends, about 300 Ω.</Key>
+
+</Concept>
+
+<Concept id="wires" title="Named wire antennas: where they feed, how long they are" qs="E9C05 E9C09 E9C10 E9C12">
+
+Feeding an **off-center-fed dipole** between center and one end gives a **similar feed point impedance on several bands**. A **G5RV** is center-fed through a set length of open-wire line to a balun and coax. A **Zepp** is an **end-fed half-wave** dipole. The **extended double Zepp** is a **center-fed 1.25 λ** dipole.
+
+<E9C_WireGallery />
+
+<Key>OCFD: multi-band impedance. G5RV: ladder line. Zepp: end-fed ½ λ. Extended double Zepp: center-fed 1.25 λ.</Key>
+
+</Concept>
+
+<Concept id="long" title="Longer wire: more lobes, closer to the wire; a resistor makes it one-way" qs="E9C04 E9C06">
+
+A long wire radiates in several lobes. As it gets longer, **more lobes form** and the major lobes swing **toward the wire's axis**. An unterminated wire radiates both ways. A **terminating resistor** at the far end absorbs the wave, so the pattern becomes **unidirectional**, as in a rhombic.
+
+<E9C_LongWire />
+
+<Key>Longer: more lobes, aligned with the wire. Terminate it: bidirectional to unidirectional.</Key>
+
+</Concept>
+
+<Concept id="ground" title="Ground reflections shape the elevation lobes" qs="E9C11 E9C13 E9C14">
+
+Ground reflects the signal and the reflection adds to the direct wave at some angles and cancels it at others, making **elevation lobes**. Raise a horizontal antenna and the **lowest lobe's takeoff angle decreases**, with more lobes above it. Over a slope the ground drops away **downhill**, so the lowest lobe angle decreases in that direction.
+
+<E9C_GroundLobes />
+
+For a vertical antenna the ground matters too. **Seawater** reflects far better than soil, so **radiation at low angles increases**.
+
+<E9C_SeaSoil />
+
+<Key>Higher antenna or downhill ground: lower takeoff angle. Seawater: more low-angle signal.</Key>
+
+</Concept>

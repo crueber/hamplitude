@@ -1,0 +1,62 @@
+import { PnJunction } from '@/visuals/extra/E6A_PnJunction'
+import { BjtBeta } from '@/visuals/extra/E6A_BjtBeta'
+import { FetGate } from '@/visuals/extra/E6A_FetGate'
+import { GateProtect } from '@/visuals/extra/E6A_GateProtect'
+import { FetSymbols } from '@/visuals/extra/E6A_FetSymbols'
+
+<Concept id="doping" title="N-type has spare electrons, P-type has holes, and reverse bias pulls them apart" qs="E6A02 E6A03 E6A04">
+
+Doping adds impurity atoms to silicon. **Donor** atoms add free electrons: **N-type**. **Acceptor** atoms leave electron vacancies called holes: **P-type**. Join them and carriers near the junction cancel, leaving an empty **depletion region**.
+
+<PnJunction />
+
+<Key>Reverse bias separates holes and electrons, widening the depletion region, so no current. Forward bias squeezes it shut.</Key>
+
+</Concept>
+
+<Concept id="gaas" title="GaAs is for microwaves, silicon for everything else" qs="E6A01">
+
+**Silicon** is the everyday material. **Gallium arsenide (GaAs)** carries electrons faster, so it works at microwave frequencies.
+
+| Material | Typical use |
+|---|---|
+| Silicon | Rectifiers, audio, HF and most general circuits |
+| Gallium arsenide | Microwave circuits |
+
+<Key>Microwave circuit: think gallium arsenide.</Key>
+
+</Concept>
+
+<Concept id="bjt" title="Beta: a small base current controls a large collector current" qs="E6A06 E6A07 E6A08">
+
+A silicon NPN transistor turns on when the base-to-emitter junction is forward biased: about **0.6 to 0.7 volts**, a **voltage**, not a resistance. **Beta** is collector current change per base current change. **Alpha** is the common-base gain; the **alpha cutoff frequency** is where it falls to 0.7 of its 1 kHz value.
+
+<BjtBeta />
+
+<Key>Beta = ΔIc ÷ ΔIb. Silicon base-emitter on: 0.6 to 0.7 V.</Key>
+
+</Concept>
+
+<Concept id="fet" title="A FET gate takes voltage, not current" qs="E6A05 E6A09 E6A12">
+
+The **gate** of a FET is insulated (MOSFET) or reverse-biased (JFET), so it draws almost no current: very **high input impedance**, unlike a BJT base. A **depletion-mode** FET already conducts at zero gate volts. An **enhancement-mode** FET does not.
+
+<FetGate />
+
+The MOSFET gate oxide is extremely thin, so static can punch through it. **Zener diodes** from gate to source clamp the voltage and **protect the gate from static damage**.
+
+<GateProtect />
+
+<Key>FET: high input impedance. Depletion: current at zero gate volts. Zener at the gate: static protection.</Key>
+
+</Concept>
+
+<Concept id="fet-symbols" title="FET symbols: the arrow shows N or P, extra gate lines show dual-gate" qs="E6A10 E6A11">
+
+The arrow tip **pointing at the channel bar is N-channel** ("points iN"). Pointing away is P-channel. A **JFET** has its gate lead touching the channel bar through the arrow. A **MOSFET** has an insulated gate plate set apart from the bar. A **dual-gate** MOSFET has two gate leads, G1 and G2.
+
+<FetSymbols />
+
+<Mnemonic>Arrow Points iN: N-channel. Two gate leads: dual gate.</Mnemonic>
+
+</Concept>

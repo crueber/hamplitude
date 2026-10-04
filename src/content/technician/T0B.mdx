@@ -1,0 +1,48 @@
+import { ClimbRules } from '@/visuals/technician/T0B_ClimbRules'
+import { PowerLineClear } from '@/visuals/technician/T0B_PowerLineClear'
+import { TowerGround } from '@/visuals/technician/T0B_TowerGround'
+import { Turnbuckle } from '@/visuals/technician/T0B_Turnbuckle'
+
+<Concept id="climbing" title="Climb trained, tied off, and never alone" qs="T0B02 T0B03 T0B07">
+
+<ClimbRules />
+
+**All** apply when climbing: training, an approved harness with tie-off at all times, and a helper or observer. There's no height or job type that makes it safe alone: the answer to "when can I climb alone?" is **never**.
+
+A **crank-up tower** must not be climbed unless it is **retracted** or **mechanical safety locks** are installed.
+
+<Key>Training, harness, helper. Alone? Never.</Key>
+
+</Concept>
+
+<Concept id="power-lines" title="If it falls, it must stay 10 feet from power wires" qs="T0B04 T0B06 T0B09">
+
+Before raising anything, look for **overhead wires** and stay clear. Plan for the worst: if the antenna or tower falls toward the line, **no part may come within 10 feet** of the wires.
+
+<PowerLineClear />
+
+For the same reason, **never attach an antenna to a utility pole**: it could contact high-voltage lines.
+
+<Key>Fall zone plus 10 feet. Utility poles are off limits.</Key>
+
+</Concept>
+
+<Concept id="tower-ground" title="Ground each leg, bonded, short and direct" qs="T0B01 T0B08 T0B10 T0B11">
+
+<TowerGround />
+
+Drive a **separate 8-foot rod for each tower leg**, bonded to the tower and to each other. Keep ground wires **short and direct**, and avoid sharp bends. **Local electrical codes** set the grounding requirements, not FCC Part 97.
+
+<Callout kind="warn" title="Trap">A drip loop, right-angle bends, a single short rod or a water pipe can look reasonable. None is the proper method.</Callout>
+
+</Concept>
+
+<Concept id="turnbuckle" title="A safety wire keeps a turnbuckle from backing off" qs="T0B05">
+
+<Turnbuckle />
+
+Wind vibration slowly turns turnbuckles. A **safety wire** through it **prevents loosening from vibration**.
+
+<Key>Safety wire = vibration lock, not a lightning path.</Key>
+
+</Concept>

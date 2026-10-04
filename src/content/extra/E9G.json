@@ -1,0 +1,17 @@
+{
+  "title": "The Smith chart",
+  "blurb": "Read a Smith chart: resistance circles, reactance arcs, the matched center, SWR circles and wavelength scales, and use it to place a stub.",
+  "why": {
+    "E9G01": { "why": "The chart tracks how impedance changes **along a transmission line**. It says nothing about radiation, patterns or propagation.", "concept": "line" },
+    "E9G02": { "why": "A point is fixed by where a **resistance circle** meets a **reactance arc**.", "trap": "Voltage and current aren't plotted. The chart is a map of impedance.", "concept": "chart" },
+    "E9G03": { "why": "Smith charts give **impedance and SWR** along a line. Headings, bearings and propagation use other tools.", "concept": "use" },
+    "E9G04": { "why": "The two families are **constant-resistance circles** and **constant-reactance arcs**.", "trap": "Inductive and capacitive are just the sign of the reactance, not families.", "concept": "chart" },
+    "E9G05": { "why": "Its classic job: the **position and length of a matching stub**. Slide to the g = 1 circle, then cancel what is left.", "concept": "use" },
+    "E9G06": { "why": "Every reactance arc ends on the **outer circle** (r = 0), which is the **reactance axis**.", "concept": "chart" },
+    "E9G07": { "why": "Everything else curves. The straight horizontal line (x = 0) is the **resistance axis**.", "concept": "chart" },
+    "E9G08": { "why": "Impedances are divided by Z₀, so you **reassign the center's value** to the line's impedance: 1 + j0.", "concept": "normalize" },
+    "E9G09": { "why": "Moving along a line keeps SWR constant, so the point circles the center: a **constant-SWR circle**.", "concept": "line" },
+    "E9G10": { "why": "The arcs are points of **constant reactance**. The circles are constant resistance.", "concept": "chart" },
+    "E9G11": { "why": "The rim scales count **fractions of a wavelength along the line**. Half a wavelength is one lap.", "trap": "Frequency isn't on the scale, and it is the line's wavelength, not the antenna's.", "concept": "line" }
+  }
+}

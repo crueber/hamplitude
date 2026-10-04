@@ -1,0 +1,18 @@
+{
+  "title": "Phone operating: SSB and sidebands",
+  "blurb": "Explain why SSB is the HF voice mode, pick LSB or USB by band, break into contacts, and set mic gain.",
+  "why": {
+    "G2A01": { "why": "At **14 MHz and up** the habit is **upper sideband**.", "trap": "Lower sideband is the habit on the low bands.", "concept": "sidebands" },
+    "G2A02": { "why": "On **160, 75 and 40 m** the habit is **lower sideband**.", "trap": "Upper sideband is the habit from 14 MHz up.", "concept": "sidebands" },
+    "G2A03": { "why": "VHF and UHF SSB follows the high-band habit: **upper sideband**.", "concept": "sidebands" },
+    "G2A04": { "why": "17 m and 12 m are above 14 MHz, so they use the **upper sideband**.", "concept": "sidebands" },
+    "G2A05": { "why": "**Single sideband** is the most common HF voice mode: narrow and power-efficient.", "trap": "FM is mainly a VHF/UHF mode, and DSB is wider.", "concept": "ssb" },
+    "G2A06": { "why": "Dropping the carrier and one sideband gives **less bandwidth** and **greater power efficiency**.", "concept": "ssb" },
+    "G2A07": { "why": "SSB transmits **one sideband**. The **other sideband and the carrier are suppressed**.", "trap": "Keeping the carrier describes a different mode.", "concept": "ssb" },
+    "G2A08": { "why": "Say your **call sign once**. Long calls and slang just add to the noise.", "trap": "\"QRZ\" asks who is calling. \"CQ\" starts a new call.", "concept": "calling" },
+    "G2A09": { "why": "No rule or efficiency difference decides it. LSB on these bands is **commonly accepted amateur practice**.", "trap": "Both sidebands are legal on these bands.", "concept": "sidebands" },
+    "G2A10": { "why": "**VOX** keys the transmitter from your voice, so it allows **hands-free** operation.", "trap": "VOX changes neither audio quality, bandwidth nor power.", "concept": "setup" },
+    "G2A11": { "why": "**CQ DX** asks for **distant** stations: for a lower-48 caller, any station **outside the lower 48**.", "concept": "calling" },
+    "G2A12": { "why": "ALC reads your drive level, set with **transmit audio (mic) gain**.", "trap": "Antenna tuning and attenuators don't set drive level.", "concept": "setup" }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Propagation beyond the horizon",
+  "blurb": "Explain how signals get past the horizon: refraction, the ionosphere, ducting, sporadic E, meteors and aurora.",
+  "why": {
+    "T3C01": { "why": "UHF is usually **not propagated by the ionosphere**, so with only line of sight it rarely goes beyond the radio horizon.", "trap": "Nothing forbids range, and UHF isn't absorbed by the D region.", "concept": "hf-vs-vhf" },
+    "T3C02": { "why": "The ionosphere reflects HF, so **long-distance ionospheric paths are far more common on HF**.", "trap": "HF antennas are larger, not smaller.", "concept": "hf-vs-vhf" },
+    "T3C03": { "why": "Aurora scatters and smears the signal, giving a **distorted, raspy** sound.", "concept": "vhf-modes" },
+    "T3C04": { "why": "Occasional strong 10, 6 and 2 m signals from beyond the horizon point to **sporadic E**.", "concept": "vhf-modes" },
+    "T3C05": { "why": "A sharp obstacle edge bends some signal around it: **knife-edge diffraction**.", "trap": "Faraday rotation twists polarization; it doesn't get you past obstructions.", "concept": "los" },
+    "T3C06": { "why": "Regular VHF/UHF contacts to about 300 miles come from **tropospheric ducting**.", "trap": "D and F2 region refraction are ionospheric, and not what gives regular UHF range.", "concept": "ducting" },
+    "T3C07": { "why": "Meteor scatter is best on **6 meters**.", "concept": "vhf-modes" },
+    "T3C08": { "why": "A layer of warm air over cool air, a **temperature inversion**, traps signals in a duct.", "trap": "Storms and sunspots are not the cause.", "concept": "ducting" },
+    "T3C09": { "why": "The F region is densest by day and near the sunspot peak: **dawn to shortly after sunset, high sunspot activity**.", "concept": "f-skip" },
+    "T3C10": { "why": "At the sunspot peak the F region bends **6 and 10 meters**. Higher VHF and UHF bands pass through.", "concept": "f-skip" },
+    "T3C11": { "why": "The atmosphere **refracts** radio waves slightly downward, so the radio horizon is beyond the visual one.", "trap": "Radio waves never exceed the speed of light.", "concept": "los" }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Station setup and grounding",
+  "blurb": "Wire a station correctly: meters, power, computer audio links, RF bonding, keyers and hotspots.",
+  "why": {
+    "T4A01": { "why": "Mobile radios run on **13.8 V**, and a 50 W FM radio draws about **12 A** on transmit, so the supply must deliver that.", "trap": "24 V is wrong for a mobile radio, and 4 A is too little current.", "concept": "power" },
+    "T4A02": { "why": "A meter only reads correctly within the **frequency and power range** it was built for.", "concept": "meters" },
+    "T4A03": { "why": "At 12 A, wire resistance drops real voltage (V = I × R). **Short, heavy wire** keeps the drop small when transmitting.", "concept": "power" },
+    "T4A04": { "why": "FT8 uses the computer's **sound card**: radio audio out and in connect to the **computer running the FT8 software**.", "trap": "No terminal node controller or website is involved.", "concept": "digital" },
+    "T4A05": { "why": "An RF power meter measures what goes to the antenna, so it sits **in the feed line between transmitter and antenna**.", "trap": "On the DC supply it would only see DC, not RF output.", "concept": "meters" },
+    "T4A06": { "why": "The interface carries **receive audio, transmit audio, and transmitter keying** (push-to-talk).", "concept": "digital" },
+    "T4A07": { "why": "Receive audio leaves the radio's **speaker connector** and enters the computer's **line in**.", "trap": "Push-to-talk is keying, not an audio connection.", "concept": "digital" },
+    "T4A08": { "why": "RF travels on a conductor's surface, so a wide **flat copper strap** gives the lowest-loss bond.", "concept": "bonding" },
+    "T4A09": { "why": "Time = capacity ÷ load: **ampere-hours ÷ average current**. A 100 Ah battery at 10 A lasts 10 hours.", "trap": "Don't use peak consumption or squared current.", "concept": "power" },
+    "T4A10": { "why": "A hotspot connects your radio to a **digital voice or data network** over the internet.", "concept": "gadgets" },
+    "T4A11": { "why": "Run the negative lead to the **battery / chassis ground**, the vehicle's proper return point.", "trap": "Random metal or a mounting bracket gives a poor, unpredictable return.", "concept": "power" },
+    "T4A12": { "why": "An electronic keyer **assists in sending Morse code** by hand.", "concept": "gadgets" }
+  }
+}

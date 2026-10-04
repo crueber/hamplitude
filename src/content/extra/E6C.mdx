@@ -1,0 +1,55 @@
+import { Hysteresis } from '@/visuals/extra/E6C_Hysteresis'
+import { GateExplorer } from '@/visuals/extra/E6C_GateExplorer'
+import { CmosThreshold } from '@/visuals/extra/E6C_CmosThreshold'
+import { TriState } from '@/visuals/extra/E6C_TriState'
+import { FpgaFlow } from '@/visuals/extra/E6C_FpgaFlow'
+
+<Concept id="comparator" title="A comparator flips when the input crosses a threshold; hysteresis stops chatter" qs="E6C01 E6C02">
+
+A **comparator** compares its input to a **threshold**. When the input crosses it, the output **changes state**. With noise near the threshold, a single threshold makes the output flip back and forth. **Hysteresis** gives two thresholds (one for rising, one for falling) so noise cannot cause unstable output.
+
+<Hysteresis />
+
+<Key>Cross the threshold: output changes. Hysteresis: noise-proof switching.</Key>
+
+</Concept>
+
+<Concept id="gates" title="Gate symbols: flat back is AND, curved back is OR, a bubble inverts" qs="E6C08 E6C10 E6C11">
+
+An **AND** gate has a flat back and round front, an **OR** has a curved back with a pointed front. A small **bubble** on the output means **inversion**: AND + bubble = **NAND**, OR + bubble = **NOR**. A **triangle with a bubble** is **NOT**. Click the inputs and watch the output.
+
+<GateExplorer />
+
+<Mnemonic>No bubble: AND/OR. Bubble: invert it, NAND/NOR. Triangle plus bubble: NOT.</Mnemonic>
+
+</Concept>
+
+<Concept id="cmos" title="CMOS: lowest power, switches at half the supply" qs="E6C04 E6C05 E6C06">
+
+**CMOS** draws almost no current except while switching, so it has the **lowest power** of the common families. Its input threshold is about **half the supply voltage**, so a clean signal sits far from it and noise on the input or supply rarely flips it. **BiCMOS** combines the high input impedance of CMOS with the low output impedance of bipolar transistors.
+
+<CmosThreshold />
+
+<Key>CMOS: lowest power, threshold near half the supply. BiCMOS: CMOS in, bipolar out.</Key>
+
+</Concept>
+
+<Concept id="tristate" title="Tri-state outputs can let go; pull resistors set a level when they do" qs="E6C03 E6C07">
+
+A **tri-state** output has three states: 0, 1, and **high impedance**, where it is effectively disconnected. A line nobody drives **floats**, so a **pull-up** or **pull-down** resistor to the supply or ground **establishes a voltage** when an input or output is an open circuit.
+
+<TriState />
+
+<Key>Tri-state: 0, 1, high-Z. Pull-up or pull-down: sets the level when nothing drives it.</Key>
+
+</Concept>
+
+<Concept id="fpga" title="An FPGA is configured by describing hardware in an HDL" qs="E6C09">
+
+A **field-programmable gate array** is a chip of logic blocks and wiring you reconfigure after manufacture. You design it by writing a **hardware description language (HDL)**, which software compiles into the configuration.
+
+<FpgaFlow />
+
+<Key>FPGA design = HDL.</Key>
+
+</Concept>

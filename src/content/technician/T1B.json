@@ -1,0 +1,18 @@
+{
+  "title": "Bands, modes and power limits",
+  "blurb": "Where Technicians may use voice, CW and digital modes, how to find a band from a frequency, and the power limits.",
+  "why": {
+    "T1B01": { "why": "Technician voice on 10 m is **28.300 to 28.500 MHz**. Lower is CW and digital only.", "trap": "28.500 and up is beyond Technician privileges.", "concept": "ten" },
+    "T1B02": { "why": "**Any** Technician or higher may contact the ISS on VHF. No NASA approval is needed.", "concept": "bands" },
+    "T1B03": { "why": "6 m runs **50 to 54 MHz**, so 52.525 fits.", "trap": "49.00 is just below 6 m. 28.50 is 10 m and 222.15 is 1.25 m.", "concept": "bands" },
+    "T1B04": { "why": "146.52 MHz is in **144 to 148 MHz**, the 2 m band. Check: 300 ÷ 146.52 is about 2 m.", "concept": "bands" },
+    "T1B05": { "why": "FT8 and other digital modes are allowed in Technician segments of **10, 6 and 2 m**.", "concept": "modes" },
+    "T1B06": { "why": "On HF a Technician has phone privileges on **10 m only**.", "concept": "ten" },
+    "T1B07": { "why": "The bottom 100 kHz of 6 m (**50.0 to 50.1**) and 2 m (**144.0 to 144.1**) is CW only.", "trap": "219, 420 and 902 MHz have no such CW-only segment.", "concept": "modes" },
+    "T1B08": { "why": "Where amateurs are secondary, **non-amateur stations may be present** and you must avoid interfering with them.", "concept": "edges" },
+    "T1B09": { "why": "Display error, sidebands and drift can each push you out of the band, so stay **a little inside**.", "trap": "All three reasons apply; no single one is the full answer.", "concept": "edges" },
+    "T1B10": { "why": "SSB is allowed in **at least some segment** of every band above 50 MHz.", "concept": "modes" },
+    "T1B11": { "why": "Technician HF segments allow **200 W PEP**.", "concept": "power" },
+    "T1B12": { "why": "Above 30 MHz the limit is **1500 W PEP**, apart from specific restrictions.", "concept": "power" }
+  }
+}

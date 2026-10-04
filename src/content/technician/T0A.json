@@ -1,0 +1,18 @@
+{
+  "title": "Power, fuse, battery and lightning safety",
+  "blurb": "Spot the shock, fire and battery hazards in a station, and know where fuses, arresters and grounds belong.",
+  "why": {
+    "T0A01": { "why": "Shorting a battery's terminals sends enormous current through the short: **burns, fire or explosion**.", "trap": "12 V across your hands is too low to shock you, and RF can't make electrolyte emit gas.", "concept": "battery" },
+    "T0A02": { "why": "Body current heats tissue, disrupts cells and causes involuntary muscle contractions: **all three**.", "concept": "shock" },
+    "T0A03": { "why": "In US 120 V cable, **black is hot**. White is neutral and green or bare is the equipment ground.", "concept": "fuse" },
+    "T0A04": { "why": "A fuse **opens the circuit on overload**, removing power before wiring overheats.", "trap": "A fuse doesn't filter ripple, and it doesn't limit current to prevent shocks.", "concept": "fuse" },
+    "T0A05": { "why": "A 20 A fuse lets 20 A flow in wiring meant for 5 A. The wire overheats and can start a **fire**.", "trap": "A bigger fuse blows less often, which is exactly the problem.", "concept": "fuse" },
+    "T0A06": { "why": "Three-wire cords, a common safety ground and discharged capacitors **each** reduce shock risk.", "concept": "shock" },
+    "T0A07": { "why": "Mount the arrester on a **grounded panel where feed lines enter** the building, so surges are diverted before they come inside.", "concept": "lightning" },
+    "T0A08": { "why": "A fuse or breaker goes **in series with the hot conductor only**. Opening the hot wire de-energizes the circuit.", "trap": "Parallel would short out the supply. Fusing neutral can leave the hot wire live.", "concept": "fuse" },
+    "T0A09": { "why": "Bond all external grounds together with **heavy wire or strap** so they rise and fall together during a strike.", "concept": "lightning" },
+    "T0A10": { "why": "Charging or discharging an unprotected battery too fast makes it **overheat and out-gas**.", "concept": "battery" },
+    "T0A11": { "why": "Filter capacitors **keep their charge** after power is removed. Discharge them before touching anything inside.", "concept": "shock" },
+    "T0A12": { "why": "A voltmeter and its leads must be **rated for the voltages** measured, or they can fail and shock you.", "trap": "A meter should have high, not low, impedance, and nothing is grounded through it.", "concept": "shock" }
+  }
+}

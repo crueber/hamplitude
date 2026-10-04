@@ -1,0 +1,60 @@
+import { TransceiverBlocks } from '@/visuals/shared/TransceiverBlocks'
+import { ModulationWaves } from '@/visuals/shared/ModulationWaves'
+import { Mixer, Transverter } from '@/visuals/technician/T7A_Mixer'
+import { SensSel } from '@/visuals/technician/T7A_SensSel'
+
+<Concept id="transceiver" title="A transceiver is a receiver and transmitter in one box" qs="T7A02 T7A07 T7A09 T7A10">
+
+<TransceiverBlocks />
+
+**Transceiver** = transmitter + receiver. **PTT** (push-to-talk) switches between them: grounding the PTT input means **transmit**.
+
+Want more power? Add an **RF power amplifier** to the transceiver's output. Its mode switch (SSB or CW-FM) sets the amplifier for **proper operation in that mode**. It doesn't change your signal.
+
+<Key>PTT grounded = transmit. More power = RF power amplifier.</Key>
+
+</Concept>
+
+<Concept id="mixers" title="Oscillators make frequencies, mixers move them" qs="T7A03 T7A05 T7A06 T7A11">
+
+An **oscillator** generates a signal at one specific frequency. A **mixer** combines two frequencies to shift a signal to another one.
+
+<Mixer />
+
+The **VFO** (variable frequency oscillator) is the tuning knob: it sets the **receive and transmit frequency**.
+
+A **transverter** puts a mixer around your radio so it works on **another band**.
+
+<Transverter />
+
+| Part | Job |
+|---|---|
+| Oscillator | generates a frequency |
+| Mixer | converts a signal from one frequency to another |
+| VFO | sets the receive and transmit frequency |
+| Transverter | converts a radio's input and output to another band |
+
+</Concept>
+
+<Concept id="modulation" title="Modulation puts your voice on a carrier" qs="T7A08">
+
+Voice is too low in frequency to travel as a radio wave. **Modulation** combines speech with an **RF carrier**: AM varies its height, FM varies its frequency.
+
+<ModulationWaves />
+
+<Key>Speech + carrier = modulation.</Key>
+
+</Concept>
+
+<Concept id="sens-sel" title="Sensitivity hears the faint. Selectivity separates the close." qs="T7A01 T7A04">
+
+<SensSel />
+
+| Term | Question it answers |
+|---|---|
+| **Sensitivity** | Can it **detect** a weak signal? |
+| **Selectivity** | Can it **discriminate** between signals on nearby frequencies? |
+
+<Mnemonic>Sensitivity = senses a faint signal. Selectivity = selects one signal from the crowd.</Mnemonic>
+
+</Concept>

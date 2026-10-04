@@ -1,0 +1,20 @@
+{
+  "title": "Repeater operation, tones and Q signals",
+  "blurb": "Use reverse, CTCSS, DTMF and DMR settings, solve common access problems, and read the common Q signals.",
+  "why": {
+    "T2B01": { "why": "**Reverse** swaps receive and transmit so you can **listen on the repeater's input**.", "trap": "It doesn't change power or listen to the output, which is normal.", "concept": "reverse" },
+    "T2B02": { "why": "**CTCSS** is a sub-audible tone sent with voice to open a receiver's squelch.", "trap": "DTMF is audible touch-tone, and tone burst is a short audible tone.", "concept": "tones" },
+    "T2B03": { "why": "In a **linked network**, what one repeater receives is transmitted by all repeaters in the network.", "concept": "systems" },
+    "T2B04": { "why": "A wrong **offset**, **CTCSS tone** or **DCS code** can each block access even if you hear the output. All are possible.", "concept": "reverse" },
+    "T2B05": { "why": "Audio that drops out on peaks means **talking too loudly**: you over-deviate your FM signal.", "trap": "Too little deviation makes you quiet, not choppy.", "concept": "problems" },
+    "T2B06": { "why": "**DTMF** sends **two simultaneous audio tones** per key.", "trap": "CTCSS is a single sub-audible tone.", "concept": "tones" },
+    "T2B07": { "why": "Join a talkgroup by **programming its ID into your radio**.", "trap": "Joining is a radio setting, not a registration with a coordinator or control operator.", "concept": "dmr" },
+    "T2B08": { "why": "Interfering stations should **negotiate** continued use. Arriving first confers no right.", "concept": "problems" },
+    "T2B09": { "why": "Simplex channels let stations **within range talk directly without tying up a repeater**.", "concept": "systems" },
+    "T2B10": { "why": "**QRM** means interference from other stations.", "trap": "QRN is natural noise like static, and QSB is fading.", "concept": "q-signals" },
+    "T2B11": { "why": "**QSY** means changing frequency.", "trap": "QSL means message received, and QRZ asks who is calling.", "concept": "q-signals" },
+    "T2B12": { "why": "The DMR **color code** is an access code programmed into your radio for a specific repeater.", "trap": "It doesn't set the offset, identify the codec or report health.", "concept": "dmr" },
+    "T2B13": { "why": "**Squelch** mutes the receiver audio when no signal is present.", "trap": "It isn't noise blanking for impulse noise.", "concept": "tones" },
+    "T2B14": { "why": "A **talkgroup** is a DMR identifier that organizes traffic, so you hear only the groups you want.", "concept": "dmr" }
+  }
+}

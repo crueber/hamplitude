@@ -1,0 +1,48 @@
+import { MatchSystems } from '@/visuals/extra/E9E_MatchSystems'
+import { QSection } from '@/visuals/extra/E9E_QSection'
+import { Wilkinson } from '@/visuals/extra/E9E_Wilkinson'
+import { Phasing } from '@/visuals/extra/E9E_Phasing'
+
+<Concept id="systems" title="Each matching system has a signature part" qs="E9E01 E9E02 E9E03 E9E04 E9E05 E9E09 E9E10">
+
+<MatchSystems />
+
+| System | Signature |
+|---|---|
+| **Gamma** | shield to element center, center conductor tapped to one side, **series capacitor cancels inductive reactance**. Also shunt-feeds a **grounded tower** at its base |
+| **Beta / hairpin** | element **insulated from the boom**, an **inductance across the feed point**. Needs a **capacitive** feed point (element shorter than ½ λ) |
+| **Stub** | short piece of line **in parallel** with the feed line at the feed point |
+
+<Key>Series C = gamma. Hairpin inductance needs a capacitive element.</Key>
+
+</Concept>
+
+<Concept id="qsection" title="A quarter-wave section transforms impedance, reflection coefficient rates the result" qs="E9E06 E9E07">
+
+A **quarter-wave line** turns a load into **Zq² ÷ Z load**. To match 100 Ω to 50 Ω, you need Zq = √(100 × 50) = **70.7 Ω**: pick the closest available, **75 Ω**. What is left over is described by the **reflection coefficient** Γ = (Z load − Z₀) ÷ (Z load + Z₀), which sets the SWR.
+
+<QSection />
+
+<Key>Zq = √(Z1 × Z2). Γ describes how a load meets a line.</Key>
+
+</Concept>
+
+<Concept id="wilkinson" title="A Wilkinson divider splits power and stays matched" qs="E9E08">
+
+<Wilkinson />
+
+A **Wilkinson divider** splits power **equally between two 50 Ω loads** while the input stays **50 Ω**. Each output sits behind a quarter-wave 70.7 Ω section that transforms its 50 Ω load up to 100 Ω, and two 100 Ω in parallel make 50 Ω. A resistor between the outputs keeps them isolated from each other.
+
+<Key>Wilkinson: equal split, 50 Ω in, 50 Ω out.</Key>
+
+</Concept>
+
+<Concept id="phasing" title="Phasing lines steer the pattern" qs="E9E11">
+
+Drive two or more elements through **phasing lines** (extra line length = delay) and the signals add in some directions and cancel in others. That **controls the radiation pattern**: it doesn't change band coverage, harmonics or take-off angle by itself.
+
+<Phasing />
+
+<Key>Phasing lines set element phase. Phase sets the pattern.</Key>
+
+</Concept>

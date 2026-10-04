@@ -1,0 +1,51 @@
+import { Ionizing } from '@/visuals/technician/T0C_Ionizing'
+import { MpeCurve } from '@/visuals/technician/T0C_MpeCurve'
+import { ExposureFactors } from '@/visuals/technician/T0C_ExposureFactors'
+import { DutyCycle } from '@/visuals/technician/T0C_DutyCycle'
+import { Responsibility } from '@/visuals/technician/T0C_Responsibility'
+
+<Concept id="non-ionizing" title="Radio waves are non-ionizing: they heat, not damage DNA" qs="T0C01 T0C07 T0C12">
+
+<Ionizing />
+
+RF has too little energy to cause chemical changes in cells. Its hazard is **heating**. Touching an antenna while transmitting gives an **RF burn to the skin**.
+
+<Callout kind="warn" title="Trap">"Non-ionizing" does not mean "perfectly safe". RF can still heat tissue, which is why limits exist.</Callout>
+
+</Concept>
+
+<Concept id="exposure" title="Exposure depends on frequency, power, distance and pattern" qs="T0C02 T0C04 T0C05 T0C08">
+
+<ExposureFactors />
+
+**All four** matter: frequency, power, distance, and the antenna's radiation pattern. To cut exposure, **relocate the antenna** farther from people.
+
+<MpeCurve />
+
+The limit varies with frequency because the **body absorbs more RF at some frequencies** than others. Of 3.5, 50, 440 and 1296 MHz, **50 MHz** has the lowest limit.
+
+<Key>More power or closer in the beam, more exposure. Limits are tightest around VHF.</Key>
+
+</Concept>
+
+<Concept id="duty-cycle" title="Duty cycle: the time you transmit sets the average" qs="T0C03 T0C10 T0C11">
+
+**Duty cycle** is the **percentage of time a transmitter is transmitting**. Limits use the **average** exposure, so transmitting less lets you run more.
+
+<DutyCycle />
+
+Drop from 100% to 50% and the allowed power density **doubles**.
+
+<Key>Duty cycle = % of time on air. Half the time, double the allowance.</Key>
+
+</Concept>
+
+<Concept id="responsibility" title="The licensee ensures compliance and re-checks after changes" qs="T0C06 T0C09 T0C13">
+
+<Responsibility />
+
+You may check by **calculation** (OET Bulletin 65), **computer modeling** or **measurement** with calibrated equipment. Re-evaluate whenever anything in the transmitter or antenna system changes. SWR and approved-equipment labels aren't the test.
+
+<Key>Responsibility: you, the licensee. Re-evaluate after every change.</Key>
+
+</Concept>

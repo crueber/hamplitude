@@ -1,0 +1,17 @@
+{
+  "title": "Control operators and control points",
+  "blurb": "Who must control a station, whose license sets the privileges, and the difference between local, remote and automatic control.",
+  "why": {
+    "T1E01": { "why": "Every transmission needs a control operator. Even a repeater has one designated, so the answer is **never**.", "trap": "Automatic control doesn't mean no control operator.", "concept": "control-operator" },
+    "T1E02": { "why": "For satellite work, **any amateur allowed on the uplink frequency** can be the control operator. No special rating or membership.", "concept": "privileges" },
+    "T1E03": { "why": "The **station licensee** designates the control operator, not the FCC or a coordinator.", "concept": "control-operator" },
+    "T1E04": { "why": "Privileges follow whoever is at the mic: the **class of license held by the control operator**.", "trap": "The owner's license or anyone else on the premises doesn't count.", "concept": "privileges" },
+    "T1E05": { "why": "The control point is **where the control operator function is performed**, not the antenna, transmitter or mailing address.", "concept": "control-types" },
+    "T1E06": { "why": "A Technician's privileges stop at Technician segments. An Extra's designation, a contest team or a club trustee can't extend them, except in an emergency.", "concept": "privileges" },
+    "T1E07": { "why": "The **control operator and the licensee** share responsibility for proper operation.", "trap": "Responsibility isn't only one or the other, and bystanders aren't included.", "concept": "control-operator" },
+    "T1E08": { "why": "A repeater runs unattended, which is **automatic control**.", "trap": "Internet operation is remote control. Computer-sent CW or IDs aren't automatic control.", "concept": "control-types" },
+    "T1E09": { "why": "**Any** station may be remotely controlled, not just repeaters or digital stations.", "concept": "control-types" },
+    "T1E10": { "why": "Operating a station from elsewhere, such as **over the internet**, is remote control.", "trap": "SDRs, model control and EME are different things.", "concept": "control-types" },
+    "T1E11": { "why": "A control operator is an amateur **designated by the licensee** to be responsible for transmissions and rule compliance.", "trap": "That's not just whoever is talking, nor the licensee by default.", "concept": "control-operator" }
+  }
+}

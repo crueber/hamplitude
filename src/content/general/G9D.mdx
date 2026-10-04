@@ -1,0 +1,77 @@
+import { G9D_Nvis } from '@/visuals/general/G9D_Nvis'
+import { G9B_FeedPoint } from '@/visuals/general/G9B_FeedPoint'
+import { G9D_InvertedV } from '@/visuals/general/G9D_InvertedV'
+import { G9D_Trap } from '@/visuals/general/G9D_Trap'
+import { G9D_Screwdriver } from '@/visuals/general/G9D_Screwdriver'
+import { G9C_Stack } from '@/visuals/general/G9C_Stack'
+import { G9D_LogPeriodic } from '@/visuals/general/G9D_LogPeriodic'
+import { G9D_LoopPattern } from '@/visuals/general/G9D_LoopPattern'
+import { G9D_Beverage } from '@/visuals/general/G9D_Beverage'
+
+<Concept id="nvis" title="NVIS wants a low horizontal dipole" qs="G9D01">
+
+**NVIS** (near vertical incidence skywave) sends signal almost **straight up** so it drops back **close by**, for short-skip links such as 40 m in daytime. A **horizontal dipole 1/10 to 1/4 λ** above ground radiates strongly overhead. At ½ λ high it has a null straight up, and a vertical radiates little overhead.
+
+<G9D_Nvis />
+
+<Key>Low horizontal dipole, 1/10 to 1/4 λ up, for NVIS.</Key>
+
+</Concept>
+
+<Concept id="wire" title="End-fed half wave: very high impedance. One support: inverted V" qs="G9D02 G9D12">
+
+Feed a half-wave wire at its **end** and you are at the **voltage maximum**: the feed point impedance is **very high**. Slide the feed point all the way out to see it.
+
+<G9B_FeedPoint start={1} />
+
+A dipole hung from **one central support**, ends sloping down, is an **inverted V**.
+
+<G9D_InvertedV />
+
+<Key>End-fed half wave: very high Z. One center support: inverted V.</Key>
+
+</Concept>
+
+<Concept id="multiband" title="Traps and loading coils make one antenna fit many bands" qs="G9D04 G9D08 G9D11">
+
+**Antenna traps** are parallel LC circuits that **enable multiband operation**: they block the higher band's signal from the outer wire, and act as loading coils on the lower band.
+
+<G9D_Trap />
+
+A **screwdriver** mobile antenna has a motor that changes the **base loading inductance** to retune.
+
+<G9D_Screwdriver />
+
+The catch: **multiband antennas have poor harmonic rejection**.
+
+<Key>Traps: multiband. Screwdriver: motor-tuned base coil. Cost: harmonics.</Key>
+
+</Concept>
+
+<Concept id="beams" title="Stacking narrows the beam up and down; log-periodics cover a wide band" qs="G9D05 G9D06 G9D07">
+
+**Stacking** horizontally polarized Yagis **narrows the main lobe in elevation**, not in azimuth.
+
+<G9C_Stack />
+
+A **log-periodic** has elements whose **length and spacing vary logarithmically** along the boom. Its advantage is **wide bandwidth**, not extra gain per element.
+
+<G9D_LogPeriodic />
+
+<Key>Stack: narrower in elevation. Log-periodic: wide bandwidth.</Key>
+
+</Concept>
+
+<Concept id="loops" title="Loops have nulls broadside; Beverages are for receiving" qs="G9D03 G9D09 G9D10">
+
+An **electrically small loop** (under 1/10 λ around) has **nulls broadside** to the loop and its strongest signal in the plane of the loop. A **halo** is a loop lying flat: it is **omnidirectional in its own plane**.
+
+<G9D_LoopPattern />
+
+A **Beverage** is a long low wire for **directional receiving** on MF and low HF.
+
+<G9D_Beverage />
+
+<Key>Small loop: null broadside. Halo: omni in its plane. Beverage: directional receiving.</Key>
+
+</Concept>

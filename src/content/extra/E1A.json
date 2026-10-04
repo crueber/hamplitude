@@ -1,0 +1,17 @@
+{
+  "title": "Band edges, ships and low-band power",
+  "blurb": "Check that a sideband signal stays inside the band, and know the rules for 60 m, 630 m, 2200 m, vessels and forwarding.",
+  "why": {
+    "E1A01": { "why": "USB spreads **above** the carrier: 14.348 + 0.003 = 14.351 MHz, so the top 1 kHz is past the 14.350 edge.", "trap": "The carrier itself is inside the band; it is the sideband that spills over.", "concept": "sideband" },
+    "E1A02": { "why": "LSB spreads **below** the carrier, so the carrier must be at least one signal width (**3 kHz**) above the lower edge.", "trap": "At the exact edge, the whole sideband lands outside the band.", "concept": "sideband" },
+    "E1A03": { "why": "USB data grows upward and the segment ends at 14.150 MHz: 14.150 minus 0.0028 = **14.1472 MHz**. Any higher and the top spills over.", "concept": "sideband" },
+    "E1A04": { "why": "LSB at 3.601 MHz extends down to about 3.598, **below the phone segment edge**. The dial reading looks legal but the sideband is not.", "trap": "The displayed (carrier) frequency being inside the band is not enough.", "concept": "sideband" },
+    "E1A05": { "why": "Any person with an **FCC amateur license** (or alien reciprocal authorization) may control the station. No marine license or special permit.", "concept": "vessel" },
+    "E1A06": { "why": "On channelized 60 m a CW signal goes at the **centre frequency** of the channel.", "concept": "sixty" },
+    "E1A07": { "why": "The 2200 m limit is **1 W EIRP**: power as radiated by the antenna, gain included, not PEP at the transmitter.", "trap": "5 W EIRP is the 630 m limit.", "concept": "lowbands" },
+    "E1A08": { "why": "The **control operator of the originating station** is primarily accountable. Relaying stations are not primarily accountable.", "concept": "forwarding" },
+    "E1A09": { "why": "The 630 m limit is **5 W EIRP** (except some parts of Alaska).", "trap": "1 W EIRP is the 2200 m limit.", "concept": "lowbands" },
+    "E1A10": { "why": "The **master of the ship or pilot in command** must approve before you operate.", "concept": "vessel" },
+    "E1A11": { "why": "Any **FCC-issued amateur license** is enough, even on international waters. No endorsement or extra permit.", "concept": "vessel" }
+  }
+}

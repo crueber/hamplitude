@@ -1,0 +1,58 @@
+import { G5A_ReactanceCurves } from '@/visuals/general/G5A_ReactanceCurves'
+import { G5A_ImpedanceTerms } from '@/visuals/general/G5A_ImpedanceTerms'
+import { G5A_Resonance } from '@/visuals/general/G5A_Resonance'
+import { G5A_Matching } from '@/visuals/general/G5A_Matching'
+
+<Concept id="reactance" title="Reactance: how coils and capacitors oppose AC" qs="G5A02 G5A03 G5A04 G5A05 G5A06 G5A09 G5A11">
+
+**Reactance** (**X**) is opposition to **alternating** current caused by an inductor or a capacitor. It is measured in **ohms**. It depends on **frequency**, not on how big the signal is.
+
+<G5A_ReactanceCurves />
+
+- **Inductor**: higher frequency, **more** reactance (XL).
+- **Capacitor**: higher frequency, **less** reactance (XC).
+
+<Key>Coil: reactance rises with frequency. Capacitor: reactance falls. Both in ohms, symbol X.</Key>
+
+<Mnemonic>An inductor resists *change*, and faster AC changes more. A capacitor passes fast AC more easily.</Mnemonic>
+
+</Concept>
+
+<Concept id="impedance" title="Impedance is voltage over current" qs="G5A07 G5A08">
+
+**Impedance** (**Z**) is the total opposition to AC: resistance and reactance together. It is the AC version of Ohm's law, voltage divided by current.
+
+<G5A_ImpedanceTerms />
+
+| Term | Meaning |
+|---|---|
+| **Impedance** Z | E ÷ I, in ohms |
+| **Admittance** Y | the inverse of impedance |
+| Conductance, susceptance | inverses of resistance, reactance |
+| Reluctance | opposition in a *magnetic* path |
+
+<Key>Impedance = voltage ÷ current. Its inverse is admittance.</Key>
+
+</Concept>
+
+<Concept id="resonance" title="At resonance, XL and XC cancel" qs="G5A01 G5A12">
+
+XL rises with frequency and XC falls, so at one frequency they are **equal**. In a **series** LC circuit they cancel, leaving impedance **very low**: current flows easily.
+
+<G5A_Resonance />
+
+<Key>Resonance: XL = XC, they cancel. Series LC impedance is very low.</Key>
+
+<Callout kind="warn" title="Trap">It is the *reactances* that cancel, not resistance, and not voltage and current.</Callout>
+
+</Concept>
+
+<Concept id="matching" title="Matching changes one impedance into another" qs="G5A10">
+
+A transformer, a Pi-network and a length of transmission line can all make a load look like a different impedance to the source.
+
+<G5A_Matching />
+
+<Key>Transformer, Pi-network, transmission line: all can match impedances.</Key>
+
+</Concept>

@@ -1,0 +1,47 @@
+import { SmithExplorer } from '@/visuals/extra/E9G_SmithExplorer'
+import { SmithLine } from '@/visuals/extra/E9G_SmithLine'
+import { SmithStub } from '@/visuals/extra/E9G_SmithStub'
+
+<Concept id="chart" title="A Smith chart maps every impedance to one point" qs="E9G02 E9G04 E9G06 E9G07 E9G10">
+
+Two families of curves cross to fix a point: **resistance circles** (constant r) and **reactance arcs** (constant x). Left edge is a short, right edge is an open, center is a perfect match.
+
+<SmithExplorer />
+
+The **horizontal line** is the **resistance axis** (x = 0), the only straight line. The **outer circle** is the **reactance axis** (r = 0): every arc ends on it.
+
+<Key>Circles = constant resistance. Arcs = constant reactance.</Key>
+
+</Concept>
+
+<Concept id="normalize" title="The chart is normalised: the center is whatever your line is" qs="E9G08">
+
+Divide every impedance by the line's **Z₀**. The center is then **1 + j0** for any line. A 50 Ω chart and a 75 Ω chart are the same picture: **reassign the center's value** and the labels follow.
+
+<SmithExplorer normalize />
+
+<Key>Center = 1 + j0 = Z₀. Match is always the middle.</Key>
+
+</Concept>
+
+<Concept id="line" title="Moving along the line spins you around a constant-SWR circle" qs="E9G09 E9G11 E9G01">
+
+SWR doesn't change along a lossless line, so the point stays on a **constant-SWR circle** (added to the chart when you design a match). Moving toward the generator turns it **clockwise**. The rim scales count **fractions of a wavelength** on that line, **½ λ per lap**.
+
+<SmithLine />
+
+<Callout kind="tip" title="Try the short">Short at 0.125 λ: +j1, inductive. At 0.25 λ: open. At 0.5 λ: short again. Same as the stub rules in E9F.</Callout>
+
+<Key>Longer line = clockwise walk on the same SWR circle. Scales are in line wavelengths.</Key>
+
+</Concept>
+
+<Concept id="use" title="Use it to place and size a matching stub" qs="E9G03 E9G05">
+
+The chart gives **impedance and SWR** along a line. Its classic job: find **where** to attach a stub and **how long** to make it. Read as admittance, slide along the SWR circle to the g = 1 circle, then add a stub whose susceptance cancels the rest.
+
+<SmithStub />
+
+<Key>Position gets you to the g = 1 circle. Stub length cancels what is left.</Key>
+
+</Concept>

@@ -1,0 +1,18 @@
+{
+  "title": "Semiconductors, BJTs and FETs",
+  "blurb": "Explain doping and the PN junction, bipolar beta, and how FETs differ, and read the six FET symbols.",
+  "why": {
+    "E6A01": { "why": "GaAs electrons move fast, so it suits **microwave** circuits.", "trap": "Rectifiers and low-frequency work are silicon's territory.", "concept": "gaas" },
+    "E6A02": { "why": "**Donor** impurities add free electrons, making N-type (negative carriers).", "trap": "P-type has an excess of holes, not electrons.", "concept": "doping" },
+    "E6A03": { "why": "Reverse voltage pulls holes and electrons away from the junction, **widening the depletion region** until it blocks current.", "trap": "Both materials conduct on their own; the empty junction zone is what blocks.", "concept": "doping" },
+    "E6A04": { "why": "An impurity that creates holes accepts electrons: an **acceptor**. Donors give electrons.", "trap": "N-type impurities are donors.", "concept": "doping" },
+    "E6A05": { "why": "A FET gate is insulated or reverse-biased, so it draws almost no current: **high input impedance**.", "trap": "A BJT base draws current, so its input impedance is lower.", "concept": "fet" },
+    "E6A06": { "why": "Beta is the **change in collector current per change in base current**: the transistor's current gain.", "trap": "Frequency where gain falls to 0.707 is a cutoff frequency, not beta.", "concept": "bjt" },
+    "E6A07": { "why": "A forward-biased silicon junction drops about **0.6 to 0.7 volts**. It is a voltage, not an ohmic resistance.", "trap": "6 to 7 V is ten times too high. A junction is judged by its voltage drop, not by ohms.", "concept": "bjt" },
+    "E6A08": { "why": "Grounded-base gain is **alpha**, so the frequency where it falls to 0.7 is the **alpha cutoff** frequency.", "trap": "Beta cutoff refers to common-emitter gain.", "concept": "bjt" },
+    "E6A09": { "why": "Depletion mode: the channel is already open, so **current flows with zero gate voltage**.", "trap": "No current at zero gate volts describes enhancement mode.", "concept": "fet" },
+    "E6A10": { "why": "Two gate leads (G1, G2) mean dual-gate; an arrow pointing at the channel bar means N-channel.", "trap": "Dual-gate symbols with the arrow pointing away are P-channel.", "concept": "fet-symbols" },
+    "E6A11": { "why": "A JFET has a plain channel bar with the gate arrow on it. Arrow pointing **away** from the bar means P-channel.", "trap": "Arrow pointing at the bar is N-channel; a gate plate set apart is a MOSFET.", "concept": "fet-symbols" },
+    "E6A12": { "why": "The gate oxide is extremely thin. A Zener clamps voltage spikes to **protect the gate from static damage**.", "trap": "It is not a reference or heat limiter; it only clamps damaging spikes.", "concept": "fet" }
+  }
+}

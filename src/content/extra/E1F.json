@@ -1,0 +1,17 @@
+{
+  "title": "Prohibited communications and other rules",
+  "blurb": "Know where spread spectrum is allowed, what Line A restricts, what you may not send for money, and how amplifier certification works.",
+  "why": {
+    "E1F01": { "why": "Spread spectrum is permitted only on amateur frequencies **above 222 MHz**.", "trap": "The limit is 222 MHz exactly, not 50, 144 or 420.", "concept": "where" },
+    "E1F02": { "why": "A Canadian licensee operates by the **terms of the Canadian license**, never above US Amateur Extra privileges.", "concept": "odds" },
+    "E1F03": { "why": "A dealer may sell an uncertified amplifier that was **bought used from an amateur** and sold to another amateur for use at their station.", "trap": "Kit assembly, foreign certification and low gain are not exceptions.", "concept": "amps" },
+    "E1F04": { "why": "Line A lies roughly **parallel to and south of** the US-Canada border.", "concept": "where" },
+    "E1F05": { "why": "North of Line A in the contiguous 48 states, **420 to 430 MHz** is off limits.", "concept": "where" },
+    "E1F06": { "why": "The FCC may issue an STA for **experimental amateur communications**.", "trap": "An STA does not bridge upgrade posting delays or short VE teams.", "concept": "odds" },
+    "E1F07": { "why": "Messages to a business are legal only when **neither you nor your employer** has a pecuniary interest. No dollar threshold applies.", "concept": "prohibited" },
+    "E1F08": { "why": "Communications **for hire or material compensation** are prohibited, except as the rules provide.", "trap": "Other languages and religious content are not what is prohibited.", "concept": "prohibited" },
+    "E1F09": { "why": "Messages **encoded to obscure their meaning** are prohibited on any amateur network. Email and third-party traffic are not.", "concept": "prohibited" },
+    "E1F10": { "why": "An auxiliary station's control operator must be **Technician, General, Advanced or Amateur Extra**.", "concept": "odds" },
+    "E1F11": { "why": "A certified amplifier must satisfy the FCC **spurious emission standards** at the lesser of **1500 W** or its full output.", "trap": "Gain figures and UL listing are not the standard.", "concept": "amps" }
+  }
+}

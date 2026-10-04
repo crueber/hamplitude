@@ -1,0 +1,57 @@
+import { PsuSchematic } from '@/visuals/general/G7A_PsuSchematic'
+import { RectifierTypes } from '@/visuals/general/G7A_RectifierTypes'
+import { BleederDecay } from '@/visuals/general/G7A_BleederDecay'
+import { SwitchmodeSize } from '@/visuals/general/G7A_SwitchmodeSize'
+import { G71Symbols } from '@/visuals/general/G7A_Symbols'
+
+<Concept id="rectifiers" title="Rectifiers: half-wave uses half the cycle, full-wave uses all of it" qs="G7A03 G7A04 G7A05 G7A06 G7A07">
+
+A rectifier turns AC into pulses of DC. A **half-wave** rectifier blocks one half of the AC cycle, so it converts **180°** and needs **one diode**. A **full-wave** rectifier flips the other half too, so it converts **360°** and gives **twice as many pulses**, at twice the AC frequency. It needs **two diodes on a center-tapped transformer**, or four in a **bridge**.
+
+<RectifierTypes />
+
+<Key>Half-wave: 1 diode, 180°. Full-wave: 360°, pulses at twice the AC frequency. Two diodes + center tap = full-wave.</Key>
+
+</Concept>
+
+<Concept id="filter" title="The filter is capacitors and inductors" qs="G7A02">
+
+Rectifier output is lumpy DC. The **filter** smooths it: **capacitors** hold the voltage up between pulses, **inductors** resist changes in current. Diodes and transformers belong earlier in the chain.
+
+<PsuSchematic focus="filter" />
+
+<Key>Power supply filter = capacitors and inductors.</Key>
+
+</Concept>
+
+<Concept id="bleeder" title="A bleeder resistor drains the filter capacitors" qs="G7A01">
+
+Filter capacitors can stay charged for a long time after you unplug a supply. A **bleeder resistor** across the output discharges them when power is removed, so they are less of a shock hazard.
+
+<BleederDecay />
+
+<Key>Bleeder resistor: discharges the filter capacitors when power is removed.</Key>
+
+</Concept>
+
+<Concept id="switchmode" title="Switchmode supplies run fast so the parts can be small" qs="G7A08">
+
+A **switchmode** supply chops the power at high frequency. A transformer or filter part for a higher frequency can be much smaller, so the supply is smaller and lighter than a linear one with a mains-frequency transformer.
+
+<SwitchmodeSize />
+
+<Key>Switchmode: high-frequency operation allows smaller components.</Key>
+
+</Concept>
+
+<Concept id="g71-symbols" title="Symbols in figure G7-1" qs="G7A09 G7A10 G7A11 G7A12 G7A13">
+
+Match each symbol by its giveaway detail. A **FET** has a circle with a channel bar and a **gate**, a bipolar **NPN** has an emitter arrow pointing **out**, a **Zener** has a bar with bent ends, a **solid core transformer** has bars between two coils, and a **tapped inductor** is a single coil with a tap wire.
+
+<G71Symbols />
+
+<Callout kind="tip" title="Lookalikes in the figure">The varactor (symbol 4) is a diode with a curved plate, and the potentiometer (symbol 11) is a resistor with an arrow to its middle. Neither is the answer to these questions.</Callout>
+
+<Mnemonic>NPN = Not Pointing iN: the emitter arrow points away from the base.</Mnemonic>
+
+</Concept>

@@ -1,0 +1,17 @@
+{
+  "title": "Offsets, calling and band plans",
+  "blurb": "Know the common repeater offsets, the simplex calling frequency, and how to call and answer other stations.",
+  "why": {
+    "T2A01": { "why": "On 2 meters, a repeater's input sits **600 kHz** above or below its output.", "trap": "5 MHz is the 70 cm offset.", "concept": "offset" },
+    "T2A02": { "why": "**146.520 MHz** is the 2 m national FM simplex calling frequency.", "trap": "446.000 MHz is the 70 cm equivalent, not 2 m.", "concept": "simplex" },
+    "T2A03": { "why": "On 70 cm, a repeater's input sits **5 MHz** above or below its output.", "trap": "600 kHz is the 2 m offset.", "concept": "offset" },
+    "T2A04": { "why": "On a repeater, say **their call sign, then yours**. No \"break\" or CQ needed.", "trap": "CQ means calling anyone, not a specific station.", "concept": "calling" },
+    "T2A05": { "why": "Answering CQ: **their call sign first, then yours**.", "concept": "calling" },
+    "T2A06": { "why": "Off-repeater, call **CQ** a few times, add \"this is\" and your call, then pause to listen. Repeat as needed.", "trap": "QTC is for messages, and carriers alone give no call sign.", "concept": "calling" },
+    "T2A07": { "why": "Repeater offset is the **difference between its transmit and receive frequencies**.", "trap": "It isn't a delay, squelch tail or fee.", "concept": "offset" },
+    "T2A08": { "why": "**CQ** means calling any station.", "trap": "It's not \"Contest QSO\", and it doesn't tell only one station to transmit.", "concept": "calling" },
+    "T2A09": { "why": "To show you're open for a repeater contact, say your **call sign plus \"listening\"**.", "trap": "CQ is the off-repeater call. QSY means changing frequency.", "concept": "calling" },
+    "T2A10": { "why": "A band plan is a **voluntary guideline** for modes or activities within a band, beyond FCC privileges.", "trap": "It isn't a rule, a schedule or a net list.", "concept": "simplex" },
+    "T2A11": { "why": "Transmitting and receiving on **one frequency** is simplex.", "trap": "Full duplex and repeaters use two frequencies.", "concept": "simplex" }
+  }
+}

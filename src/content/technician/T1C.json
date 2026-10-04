@@ -1,0 +1,18 @@
+{
+  "title": "Licenses, call signs and renewal",
+  "blurb": "Which classes exist, how call sign groups work, when you may transmit, and how long a license lasts.",
+  "why": {
+    "T1C01": { "why": "The FCC issues **Technician, General and Amateur Extra**.", "trap": "Novice, Technician Plus and Advanced are no longer issued.", "concept": "classes" },
+    "T1C02": { "why": "Vanity call signs are open to **any licensed amateur**.", "trap": "No class or years-licensed minimum applies.", "concept": "classes" },
+    "T1C03": { "why": "International communications must be **incidental to amateur radio** or **personal remarks**. Business is out.", "concept": "international" },
+    "T1C04": { "why": "If the FCC can't reach you, it can **revoke the station license or suspend the operator license**.", "concept": "address" },
+    "T1C05": { "why": "Group D is **two letters, a digit, three letters**: KF1XXX.", "trap": "W1XX and KA1X have fewer suffix letters.", "concept": "call-format" },
+    "T1C06": { "why": "Your license covers operating on a **US-documented vessel** with the **master's permission**.", "trap": "No special FCC authorization is needed, and it isn't emergency-only.", "concept": "international" },
+    "T1C07": { "why": "You may request renewal up to **90 days** before expiration.", "concept": "term" },
+    "T1C08": { "why": "A license lasts **ten years**.", "concept": "term" },
+    "T1C09": { "why": "After expiring, you get a **two-year grace period** to renew.", "concept": "term" },
+    "T1C10": { "why": "You may transmit once the grant **appears in the FCC license database**.", "trap": "A CSCE, an ARRL listing or the mailed license isn't what authorizes you.", "concept": "term" },
+    "T1C11": { "why": "During the grace period you can renew but must **wait until it is renewed** to transmit.", "trap": "Applying for renewal isn't enough; wait for the grant.", "concept": "term" }
+  }
+}
+

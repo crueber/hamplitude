@@ -1,0 +1,19 @@
+{
+  "title": "RF exposure and safety",
+  "blurb": "Why radio waves heat rather than ionize, what sets your exposure, and who has to make sure your station complies.",
+  "why": {
+    "T0C01": { "why": "Radio waves are **non-ionizing** radiation: they don't have enough energy to strip electrons from atoms.", "trap": "Gamma, alpha and ionizing radiation are the radioactive kind.", "concept": "non-ionizing" },
+    "T0C02": { "why": "The body absorbs RF best around VHF, so the exposure limit is **lowest near 50 MHz**.", "trap": "Higher frequency doesn't mean lower limit: the curve dips, then rises toward microwaves.", "concept": "exposure" },
+    "T0C03": { "why": "Limits apply to **average** exposure. Transmitting half the time halves the average, so the allowed level **doubles**.", "trap": "Lower duty cycle loosens, never tightens, the allowance.", "concept": "duty-cycle" },
+    "T0C04": { "why": "Frequency, power, distance and antenna pattern **all** affect exposure.", "concept": "exposure" },
+    "T0C05": { "why": "The body **absorbs more RF energy at some frequencies** than at others, so the limits differ by frequency.", "trap": "Lower frequencies don't carry more energy, and RF does penetrate the body.", "concept": "exposure" },
+    "T0C06": { "why": "**Calculation** (OET Bulletin 65), **computer modeling** and **measurement** with calibrated equipment are all acceptable.", "concept": "responsibility" },
+    "T0C07": { "why": "Touching an antenna while transmitting can give an **RF burn** to the skin.", "trap": "RF isn't ionizing, and burns are the hazard, not electrocution.", "concept": "non-ionizing" },
+    "T0C08": { "why": "Moving the **antennas** away from people reduces exposure. Moving only the transmitter doesn't change the field at the antenna.", "trap": "More duty cycle means more average exposure.", "concept": "exposure" },
+    "T0C09": { "why": "Re-evaluate your station **whenever any transmitter or antenna part changes**, since the exposure may change.", "trap": "Telling the FCC, low SWR or approved gear doesn't show your station still complies.", "concept": "responsibility" },
+    "T0C10": { "why": "Exposure limits are based on **average** exposure, and duty cycle sets how much of the time you transmit.", "trap": "It doesn't change peak levels, feed line loss or amplifier heating.", "concept": "duty-cycle" },
+    "T0C11": { "why": "Duty cycle is the **percentage of time** the transmitter is transmitting during the averaging time.", "trap": "Don't flip it: not transmitting is the opposite.", "concept": "duty-cycle" },
+    "T0C12": { "why": "RF doesn't have enough energy to cause **chemical changes or DNA damage**, unlike ionizing radiation. It's still not \"perfectly safe\".", "concept": "non-ionizing" },
+    "T0C13": { "why": "The **station licensee** must make sure no one is exposed above the FCC limits.", "trap": "The FCC sets the limits; responsibility rests with the licensee.", "concept": "responsibility" }
+  }
+}

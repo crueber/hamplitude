@@ -1,0 +1,49 @@
+import { G9C_YagiRoles } from '@/visuals/general/G9C_YagiRoles'
+import { G9C_Bandwidth } from '@/visuals/general/G9C_Bandwidth'
+import { G9C_DbiDbd } from '@/visuals/general/G9C_DbiDbd'
+import { G9C_Stack } from '@/visuals/general/G9C_Stack'
+import { G9C_Matches } from '@/visuals/general/G9C_Matches'
+
+<Concept id="yagi" title="A Yagi: long reflector, half-wave driven, short directors" qs="G9C02 G9C03 G9C07 G9C08">
+
+The **driven element** is about **½ wavelength**. A **reflector** slightly **longer** sits behind it, and **directors** slightly **shorter** sit in front. The **main lobe** is the direction of maximum radiated field. **Front-to-back ratio** compares the main lobe to the signal radiated the opposite way.
+
+<G9C_YagiRoles />
+
+<Key>Reflector longer, directors shorter. Main lobe forward.</Key>
+
+</Concept>
+
+<Concept id="tuning" title="More directors, more gain; element size sets bandwidth" qs="G9C05 G9C10 G9C01">
+
+Adding **directors** and lengthening the **boom** raises **gain** and narrows the beam. Gain, front-to-back ratio and SWR bandwidth all depend on **boom length, number of elements and element spacing**, so designers trade between them. **Larger-diameter elements** widen the SWR bandwidth.
+
+<G9C_Bandwidth />
+
+<Key>Longer boom, more directors: more gain. Fatter elements: more bandwidth.</Key>
+
+</Concept>
+
+<Concept id="gain-units" title="dBi is 2.15 dB bigger than dBd; stacking adds 3 dB" qs="G9C04 G9C09">
+
+**dBi** measures gain against an isotropic radiator, **dBd** against a half-wave dipole. A dipole is already **2.15 dBi**, so the same antenna reads **2.15 higher in dBi**.
+
+<G9C_DbiDbd />
+
+Stack two identical Yagis **½ λ apart** and you get about **twice the power**: 10 log 2 ≈ **3 dB**.
+
+<G9C_Stack />
+
+<Key>dBi = dBd + 2.15. Double the antennas, plus 3 dB.</Key>
+
+</Concept>
+
+<Concept id="match" title="Hairpin and gamma matches fit a Yagi to the feed line" qs="G9C11 G9C12">
+
+A Yagi's feed point is lower than a feed line's impedance, so it needs a match. A **hairpin (beta) match** is a **shorted stub** across the split driven element. A **gamma match** uses a **rod and a series capacitor**, and the driven element can be **bonded to the boom**.
+
+<G9C_Matches />
+
+<Key>Hairpin: shorted stub. Gamma: no insulation from the boom.</Key>
+
+</Concept>

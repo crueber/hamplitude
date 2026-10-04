@@ -1,0 +1,55 @@
+import { E2D_WeakPaths } from '@/visuals/extra/E2D_WeakPaths'
+import { E2D_Jt65 } from '@/visuals/extra/E2D_Jt65'
+import { E2D_EmeSequence } from '@/visuals/extra/E2D_EmeSequence'
+import { E2D_AprsFrame } from '@/visuals/extra/E2D_AprsFrame'
+import { E2D_AprsPath } from '@/visuals/extra/E2D_AprsPath'
+
+<Concept id="path-modes" title="Pick the mode for the path: MSK144 meteors, Q65 Moon" qs="E2D01 E2D03">
+
+**Meteor scatter** bounces signals off a short-lived ionized trail. **MSK144** is designed for it. **EME** (Earth-Moon-Earth, moonbounce) bounces them off the Moon. **Q65** is designed for it.
+
+<E2D_WeakPaths />
+
+<Key>Meteor scatter = MSK144. EME = Q65.</Key>
+
+</Concept>
+
+<Concept id="weak-modes" title="JT65 digs a many-tone signal out of the noise" qs="E2D05 E2D09 E2D02">
+
+**JT65** is a weak-signal mode: it **decodes signals at very low signal-to-noise ratio**. It uses **multitone AFSK**, one of many audio tones per symbol. Its sibling modes FT8 and FT4 swap the signal report for your **grid square** in a VHF contest exchange.
+
+<E2D_Jt65 />
+
+<Key>JT65: very low SNR, multitone AFSK. VHF contest FT8/FT4: grid square replaces SNR.</Key>
+
+</Concept>
+
+<Concept id="eme-timing" title="EME contacts run on the clock, taking turns" qs="E2D06">
+
+The echo from the Moon returns about 2.5 seconds later and is faint. So stations do not chase echoes. They agree on **time-synchronous transmissions that alternate** between the two stations.
+
+<E2D_EmeSequence />
+
+<Key>EME = clock-locked, alternating transmit and receive periods.</Key>
+
+</Concept>
+
+<Concept id="aprs-frame" title="APRS beacons are AX.25 UI frames" qs="E2D04 E2D07 E2D08">
+
+**APRS** (real-time tracking, such as balloons) uses the **AX.25** packet protocol. A beacon is an **Unnumbered Information (UI)** frame: just sent, with no connection and no acknowledgment.
+
+<E2D_AprsFrame />
+
+<Key>APRS = AX.25, beacon = UI frame. Tracks balloons.</Key>
+
+</Concept>
+
+<Concept id="aprs-path" title="Digipeaters repeat APRS packets. WIDE3-1 = 1 hop left." qs="E2D10 E2D11">
+
+APRS stations relay data with **packet digipeaters**. In **WIDE3-1**, the first number is the **hops requested** (three). The second counts the hops **remaining** (one), going down by one at each digipeater.
+
+<E2D_AprsPath />
+
+<Key>WIDEn-N: n hops requested, N hops remaining.</Key>
+
+</Concept>

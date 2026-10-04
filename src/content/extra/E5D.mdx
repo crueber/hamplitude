@@ -1,0 +1,59 @@
+import { E5D_SkinEffect } from '@/visuals/extra/E5D_SkinEffect'
+import { E5D_Parasitics } from '@/visuals/extra/E5D_Parasitics'
+import { E5D_ElectricalLength } from '@/visuals/extra/E5D_ElectricalLength'
+import { E5D_PowerTriangle } from '@/visuals/extra/E5D_PowerTriangle'
+
+<Concept id="skin" title="Skin effect: at RF, current hugs the surface" qs="E5D01 E5D08">
+
+As frequency rises, RF current is pushed into a thin layer at the conductor's surface. Less metal carries it, so **resistance rises with frequency**. It is also the main RF loss in film capacitors.
+
+<E5D_SkinEffect />
+
+<Key>Higher frequency: current nearer the surface, resistance higher.</Key>
+
+<Callout kind="warn" title="Trap">Skin effect is about frequency, not temperature or electron mobility.</Callout>
+
+</Concept>
+
+<Concept id="parasitics" title="Every real part hides a bit of the opposite part" qs="E5D02 E5D05 E5D06 E5D07">
+
+Leads and windings add small **parasitic** reactances: wire has inductance, and neighbouring turns act as a capacitor. The part's own (nominal) reactance and its parasitic reactance combine into a **self-resonance**. Beyond it the part behaves like its opposite.
+
+<E5D_Parasitics />
+
+| Part | Parasitic | Consequence |
+|---|---|---|
+| Inductor | **inter-turn capacitance** | creates its self-resonance |
+| Electrolytic capacitor | **inductance** | unsuitable at RF |
+| Any part at VHF and up | lead inductance | keep leads short to **minimise inductive reactance** |
+
+<Key>Self-resonance = nominal reactance meeting parasitic reactance. Short leads keep parasitics small.</Key>
+
+</Concept>
+
+<Concept id="length" title="At microwave frequencies even short wires are long" qs="E5D04 E5D10">
+
+**Electrical length** is length measured in wavelengths. A signal shifts 360° across each wavelength, so the phase shift along a connection grows with its length and the frequency.
+
+<E5D_ElectricalLength />
+
+- Short connections at microwave frequencies **reduce phase shift** along the connection.
+- A conductor's **diameter** also matters: a thicker conductor has a **greater** electrical length.
+
+<Key>Phase shift = 360° × length ÷ wavelength. Higher frequency, shorter wavelength, bigger shift.</Key>
+
+</Concept>
+
+<Concept id="power" title="Reactive power is stored and returned, never used up" qs="E5D03 E5D09 E5D11 E5D12">
+
+An ideal inductor or capacitor stores energy in a field, then hands it back. Voltage and current are **90° out of phase**, so over a cycle the power averages **zero**. This wattless, nonproductive **reactive power** is not dissipated as heat. Only resistance consumes **real power**.
+
+<E5D_PowerTriangle />
+
+<Formula label="Real power">P = I² × R</Formula>
+
+100 Ω resistor in series with 100 Ω XL at 1 A: P = 1² × 100 = **100 W**. Total is 141.4 VA, but only the resistor's 100 W is real.
+
+<Key>Real power uses R only. Reactive power is wattless and nonproductive.</Key>
+
+</Concept>

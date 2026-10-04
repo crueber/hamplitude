@@ -1,0 +1,17 @@
+{
+  "title": "Component functions and resonance",
+  "blurb": "Say what rectifiers, relays, regulators, transformers, meters and ICs do, and what makes a circuit resonant.",
+  "why": {
+    "T6D01": { "why": "A **rectifier** (diodes) passes current in one direction only, turning AC into varying DC.", "trap": "A transformer changes AC voltage but leaves it AC.", "concept": "power-supply" },
+    "T6D02": { "why": "A **relay** uses a coil's magnetic pull to work a switch: an electrically-controlled switch.", "trap": "Amplifiers and pass transistors are not switches moved by a coil.", "concept": "relay" },
+    "T6D03": { "why": "A shield **prevents unwanted signals coupling** into or out of the wire.", "trap": "Shielding adds no current capacity and does not lower resistance.", "concept": "shielding" },
+    "T6D04": { "why": "A **meter** displays a quantity such as volts or amps as a number.", "trap": "A potentiometer adjusts; it does not display.", "concept": "jobs" },
+    "T6D05": { "why": "A **regulator** holds the power supply's output voltage steady.", "trap": "A filter smooths ripple but does not set the voltage.", "concept": "power-supply" },
+    "T6D06": { "why": "A **transformer** steps 120 V AC down to a lower AC voltage.", "trap": "A diode only rectifies; it doesn't change the AC voltage.", "concept": "power-supply" },
+    "T6D07": { "why": "An **LED** is the common indicator light. A FET and a Zener diode have other jobs, so only the LED qualifies.", "concept": "jobs" },
+    "T6D08": { "why": "An inductor plus a **capacitor** forms a resonant circuit.", "trap": "A resistor or Zener diode does not give the energy swing of resonance.", "concept": "resonance" },
+    "T6D09": { "why": "An **integrated circuit** puts many semiconductors and other parts in one package.", "trap": "A transformer is windings; a transducer converts energy types.", "concept": "jobs" },
+    "T6D10": { "why": "Component 2 is a transistor. A small base current **controls the flow of a larger current**.", "trap": "Lamps give off light and batteries supply energy; the transistor controls current.", "concept": "jobs" },
+    "T6D11": { "why": "An **inductor and capacitor**, in series or parallel, make a tuned circuit.", "trap": "A regulator or resistor network does not resonate.", "concept": "resonance" }
+  }
+}

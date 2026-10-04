@@ -1,0 +1,67 @@
+import { Squelch } from '@/visuals/technician/T4B_Squelch'
+import { Filter } from '@/visuals/technician/T4B_Filter'
+import { Rit } from '@/visuals/technician/T4B_Rit'
+import { MicGain } from '@/visuals/technician/T4B_MicGain'
+import { Dmr } from '@/visuals/technician/T4B_Dmr'
+
+<Concept id="squelch" title="Squelch mutes what is weaker than its threshold" qs="T4B03">
+
+**Squelch** silences the speaker when no signal is present. Set higher, it also mutes weak signals. To hear a weak FM signal, lower the threshold until the **audio is on all the time**.
+
+<Squelch />
+
+<Key>Weak signal? Open the squelch so audio is always on.</Key>
+
+</Concept>
+
+<Concept id="filters" title="Match filter bandwidth to the mode" qs="T4B08 T4B10">
+
+A narrower filter blocks noise and nearby interference, but too narrow cuts the signal itself. Choose the bandwidth that **matches the mode**. An SSB voice signal fits best in **2400 Hz**.
+
+<Filter />
+
+<Key>Filter width matches the mode: SSB voice, 2400 Hz.</Key>
+
+</Concept>
+
+<Concept id="tuning" title="Tuning: keypad, VFO, scan and RIT" qs="T4B02 T4B05 T4B04 T4B06">
+
+| Control | What it does |
+|---|---|
+| **Keypad** or **VFO knob** | Enters the operating frequency |
+| **Scan** | Tunes through a range of frequencies to check for activity |
+| **RIT / Clarifier** | Shifts receive frequency only, to fix voice pitch on SSB |
+
+CTCSS and DTMF are tones, not ways to enter a frequency.
+
+<Rit />
+
+Off-frequency **FM** sounds **distorted**. Off-frequency **SSB** sounds **too high or too low**, and RIT corrects it.
+
+<Key>SSB pitch wrong? RIT or Clarifier. Off-frequency FM? Distorted.</Key>
+
+</Concept>
+
+<Concept id="mic-gain" title="Too much microphone gain distorts" qs="T4B01">
+
+<MicGain />
+
+Keep the peaks inside the limit. Excess gain gives **distorted transmitted audio**.
+
+<Key>Excessive mic gain means distorted audio.</Key>
+
+</Concept>
+
+<Concept id="digital" title="Digital radios are programmed before use" qs="T4B07 T4B09 T4B11">
+
+<Dmr />
+
+| Question | Answer |
+|---|---|
+| **Code plug** | Configuration data loaded into your radio for repeaters and talkgroups |
+| Picking a DMR **group** | Enter the group's **ID code** |
+| Required in a **D-STAR** radio | **Your call sign** |
+
+<Key>Code plug = config. Talkgroup = ID code. D-STAR = your call sign.</Key>
+
+</Concept>

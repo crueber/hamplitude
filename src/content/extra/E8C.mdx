@@ -1,0 +1,70 @@
+import { Constellation } from '@/visuals/extra/E8C_Constellation'
+import { SymbolRate } from '@/visuals/extra/E8C_SymbolRate'
+import { PskShaping } from '@/visuals/extra/E8C_PskShaping'
+import { BandwidthRulerE } from '@/visuals/extra/E8C_BandwidthRuler'
+import { ArqFec } from '@/visuals/extra/E8C_ArqFec'
+import { Mesh } from '@/visuals/extra/E8C_Mesh'
+
+<Concept id="constellation" title="A constellation shows every allowed phase and amplitude" qs="E8C01 E8C13 E8C09">
+
+**QAM** (quadrature amplitude modulation) varies the **amplitude of two carriers of the same frequency, 90° out of phase**. A **constellation diagram** plots the **possible phase and amplitude states** for each symbol: one dot per symbol. More dots means more bits per symbol, but they sit closer, so noise causes errors sooner.
+
+<Constellation />
+
+**Gray code** counts so only **one bit changes** between neighbours: 00, 01, 11, 10. Label the dots this way and a symbol misread as its neighbour costs one bit error, not two.
+
+<Key>Constellation = the allowed phase and amplitude states. Gray code = one bit per step.</Key>
+
+</Concept>
+
+<Concept id="symbol-rate" title="Bit rate = symbol rate × bits per symbol" qs="E8C02 E8C11 E8C10">
+
+The **symbol rate** is how fast the **waveform changes to convey information**. It equals the **baud** rate. Bits per second is higher when each symbol carries more bits.
+
+<SymbolRate />
+
+A **more efficient digital code** packs more bits into each symbol, so the data rate rises without a faster waveform or more bandwidth.
+
+<Key>Symbol rate = baud. Better code = more bits per symbol, same bandwidth.</Key>
+
+</Concept>
+
+<Concept id="shaping" title="Smooth changes make narrow signals" qs="E8C03 E8C04 E8C12">
+
+Sudden changes splatter across the spectrum. A PSK signal should change phase at the **zero crossing** to **minimize bandwidth**. **PSK31** uses **sinusoidal data pulses** for the same reason. CW works the same way: its bandwidth depends on **keying speed and shape** (rise and fall time).
+
+<PskShaping />
+
+<Key>Gentle edges keep a signal narrow. Sharp edges widen it.</Key>
+
+</Concept>
+
+<Concept id="bandwidth" title="Digital modes can be as narrow as CW, or far wider" qs="E8C05 E8C06 E8C07">
+
+**CW** is about **4 × WPM** wide (a rule of thumb): 13 WPM is **52 Hz**. **FT8** is **50 Hz**. For FSK, **bandwidth ≈ baud + 1.2 × shift**, so a **4.8 kHz-shift, 9600-baud FM** signal is **15.36 kHz**: 9.6 + 1.2 × 4.8.
+
+<BandwidthRulerE />
+
+<Key>13 WPM CW: 52 Hz. FT8: 50 Hz. 9600-baud, 4.8 kHz-shift FM: 15.36 kHz.</Key>
+
+</Concept>
+
+<Concept id="arq" title="ARQ asks for a resend when it detects an error" qs="E8C08">
+
+**ARQ** (automatic repeat request) is a detect-and-ask method: **if errors are detected, a retransmission is requested**. **Forward error correction** (FEC) is different: it sends extra bits up front so the receiver can fix errors itself.
+
+<ArqFec />
+
+<Key>ARQ: detect, then retransmit. FEC: redundancy repairs it.</Key>
+
+</Concept>
+
+<Concept id="mesh" title="Mesh nodes have IP addresses and discover each other" qs="E8C14 E8C15">
+
+In a **mesh network**, every node has an **Internet Protocol (IP) address**. Nodes form the mesh using **discovery and link establishment protocols**, then pass traffic along multi-hop paths.
+
+<Mesh />
+
+<Key>Mesh: IP addresses, discovery, link establishment.</Key>
+
+</Concept>

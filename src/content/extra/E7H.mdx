@@ -1,0 +1,64 @@
+import { OscLoop } from '@/visuals/extra/E7H_OscLoop'
+import { OscTypes } from '@/visuals/extra/E7H_OscTypes'
+import { Pll } from '@/visuals/extra/E7H_Pll'
+import { Dds } from '@/visuals/extra/E7H_Dds'
+import { Drift } from '@/visuals/extra/E7H_Drift'
+
+<Concept id="osc-types" title="An oscillator is an amplifier with positive feedback" qs="E7H01 E7H04 E7H05">
+
+Feed part of an amplifier's output back to its input **in phase** (**positive feedback**) with a loop gain of 1 or more, and it sustains its own signal. The three common types differ only in **how the feedback is supplied**.
+
+<OscLoop />
+
+<OscTypes />
+
+| Oscillator | Positive feedback through |
+|---|---|
+| **Colpitts** | a **capacitive divider** |
+| **Hartley** | a **tapped coil** |
+| **Pierce** | a **quartz crystal** |
+
+<Key>Colpitts, Hartley, Pierce. Colpitts = capacitors, Hartley = tapped coil, Pierce = crystal.</Key>
+
+</Concept>
+
+<Concept id="pll" title="A PLL locks an oscillator to a reference" qs="E7H03 E7H06">
+
+A **phase-locked loop** is a servo: a **phase detector** compares a stable **reference** with the **VCO**, a **low-pass filter** smooths the error, and that voltage steers the VCO until they match.
+
+<Pll />
+
+That makes it a **frequency synthesizer** (a divider in the loop multiplies the reference) and an **FM demodulator**.
+
+<Key>PLL = phase detector + low-pass filter + VCO + stable reference. Does frequency synthesis and FM demodulation.</Key>
+
+</Concept>
+
+<Concept id="dds" title="A DDS builds a sine from numbers" qs="E7H09 E7H10 E7H11">
+
+A **direct digital synthesizer** counts around a circle with a **phase accumulator**. A **lookup table** holds **amplitude values of the waveform**. A **DAC** and a **low-pass anti-alias filter** turn them into a smooth signal.
+
+<Dds />
+
+Its main impurities are **spurious signals at discrete frequencies**, not broadband noise.
+
+<Key>Accumulator, lookup table of amplitudes, DAC, low-pass filter. Impurity: discrete spurs.</Key>
+
+</Concept>
+
+<Concept id="stability" title="Keep the frequency where you put it" qs="E7H02 E7H07 E7H08 E7H12 E7H13">
+
+<Drift />
+
+**Microphonic** = oscillator frequency change from **mechanical vibration**. At microwave frequencies, a high-accuracy reference can be a **GPS signal**, a **rubidium-stabilized** oscillator, or a **temperature-controlled high-Q dielectric resonator**. All of these are correct.
+
+| Problem | Fix |
+|---|---|
+| Microphonics | mechanically isolate the oscillator from its enclosure |
+| Thermal drift | **NP0** capacitors |
+| Crystal on the wrong frequency | its **specified parallel capacitance** |
+| Highest accuracy | GPS, rubidium or temperature-controlled dielectric resonator |
+
+<Key>Vibration: isolate. Heat: NP0. Crystal frequency: specified parallel capacitance.</Key>
+
+</Concept>

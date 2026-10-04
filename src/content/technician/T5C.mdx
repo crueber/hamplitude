@@ -1,0 +1,56 @@
+import { Storage } from '@/visuals/technician/T5C_Storage'
+import { HzSymbols } from '@/visuals/technician/T5C_HzSymbols'
+import { Impedance } from '@/visuals/technician/T5C_Impedance'
+import { PowerCalc } from '@/visuals/technician/T5C_PowerCalc'
+
+<Concept id="storage" title="Capacitors store electric fields, inductors store magnetic fields" qs="T5C01 T5C02 T5C03 T5C04">
+
+Both parts store energy, but in different kinds of field.
+
+<Storage />
+
+<Key>Capacitance: electric field, farad (F). Inductance: magnetic field, henry (H).</Key>
+
+</Concept>
+
+<Concept id="hertz" title="kHz and MHz: mind the capital letters" qs="T5C06 T5C07">
+
+Radio signals are alternating currents, counted in thousands (**kilohertz**) or millions (**megahertz**) of cycles per second.
+
+<HzSymbols />
+
+<Key>Lowercase k, capital M, always capital H and lowercase z.</Key>
+
+<Callout kind="warn" title="Trap">A lowercase **m** means milli, so mHz is a thousandth of a hertz, not mega.</Callout>
+
+</Concept>
+
+<Concept id="impedance" title="Impedance: total opposition to AC, in ohms" qs="T5C05 T5C12">
+
+Resistance opposes any current. Capacitors and inductors add **reactance**, which opposes only AC. **Impedance** is the combined opposition to AC, and like both of them it is measured in **ohms**.
+
+<Impedance />
+
+<Key>Impedance = opposition to AC current flow. Unit: ohm.</Key>
+
+</Concept>
+
+<Concept id="power" title="Power is volts times amperes" qs="T5C08 T5C09 T5C10 T5C11">
+
+In a DC circuit, **watts = volts × amperes**. Picture a rectangle: width is voltage, height is current, area is power.
+
+<Formula label="DC power">P = E × I</Formula>
+
+<PowerCalc />
+
+| Find | Formula | Example |
+|---|---|---|
+| **Power** P | P = E × I | 13.8 V × 10 A = **138 W** |
+| **Power** P | P = E × I | 12 V × 2.5 A = **30 W** |
+| **Current** I | I = P ÷ E | 120 W ÷ 12 V = **10 A** |
+
+<Key>Multiply volts by amperes for watts. To find current, divide watts by volts.</Key>
+
+<Callout kind="warn" title="Trap">A squared current (I²) goes with resistance (I² × R), never with volts.</Callout>
+
+</Concept>

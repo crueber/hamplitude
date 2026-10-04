@@ -1,0 +1,44 @@
+import { Mobility } from '@/visuals/extra/E6E_Mobility'
+import { MmicBias } from '@/visuals/extra/E6E_MmicBias'
+import { Packages } from '@/visuals/extra/E6E_Packages'
+import { LeadParasitic } from '@/visuals/extra/E6E_LeadParasitic'
+
+<Concept id="mobility" title="GaAs electrons are faster than silicon's; GaN reaches the highest MMIC frequencies" qs="E6E01 E6E03">
+
+**Electron mobility** is how quickly electrons move through the crystal. **Gallium arsenide (GaAs)** has **higher electron mobility** than silicon, so it is useful at **UHF and above**. In MMICs, **gallium nitride (GaN)** supports the highest frequency of the choices. Silicon dioxide and silicon nitride are insulating layers, not the active material.
+
+<Mobility />
+
+<Key>Higher electron mobility: GaAs at UHF and up. Highest MMIC frequency: gallium nitride.</Key>
+
+</Concept>
+
+<Concept id="mmic" title="MMICs are 50-ohm amplifier blocks, powered through the output lead" qs="E6E04 E6E05 E6E06 E6E07 E6E08">
+
+A **monolithic microwave integrated circuit (MMIC)** is a ready-made amplifier with **controlled gain, low noise figure and constant 50 Ω input and output impedance**. It connects with **microstrip** lines. The common type is powered through a **resistor and/or RF choke on the output lead**. **Noise figure** is in dB, and a good low-noise UHF preamp is about **0.5 dB**.
+
+<MmicBias />
+
+<Key>MMIC: 50 Ω in and out, microstrip, bias through resistor/choke on the output lead. Good preamp: 0.5 dB noise figure.</Key>
+
+</Concept>
+
+<Concept id="packages" title="DIP is through-hole; PLCC, BGA and SOT sit on the surface" qs="E6E02 E6E11">
+
+**DIP** means **dual in-line package**: **two rows of pins on opposite sides**, passing through holes in the board. **PLCC, BGA and SOT** are **surface-mount** packages.
+
+<Packages />
+
+<Key>DIP = two rows of pins, through-hole. PLCC, BGA, SOT = surface mount.</Key>
+
+</Concept>
+
+<Concept id="parasitics" title="Short leads mean small parasitics, so surface mount wins at RF" qs="E6E09 E6E10 E6E12">
+
+Every lead adds stray inductance and capacitance. At UHF and up even a few millimetres matter. **Surface-mount** parts have **tiny leads, so less parasitic inductance and capacitance**, plus smaller area and shorter traces. DIP ICs are avoided at UHF and higher because of **excessive lead length**.
+
+<LeadParasitic />
+
+<Key>Surface mount: shortest leads, least parasitics. DIP: too much lead length for UHF.</Key>
+
+</Concept>

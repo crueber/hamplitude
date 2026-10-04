@@ -1,0 +1,58 @@
+import { T1B_BandMap } from '@/visuals/technician/T1B_BandMap'
+import { T1B_TenMeter } from '@/visuals/technician/T1B_TenMeter'
+import { T1B_CwOnly } from '@/visuals/technician/T1B_CwOnly'
+import { T1B_Secondary } from '@/visuals/technician/T1B_Secondary'
+import { T1B_BandEdge } from '@/visuals/technician/T1B_BandEdge'
+import { T1B_Power } from '@/visuals/technician/T1B_Power'
+
+<Concept id="bands" title="Know where 6 m and 2 m sit" qs="T1B03 T1B04 T1B02">
+
+<T1B_BandMap />
+
+Band names are roughly **300 ÷ frequency**, so 146.52 MHz is about 2 m. Learn the edges: **6 m is 50 to 54 MHz**, **2 m is 144 to 148 MHz**. 49.00 MHz is just below 6 m and in no amateur band.
+
+Any Technician or higher can contact the **ISS** on VHF. No General license, no NASA approval.
+
+<Mnemonic>6 m: 50 to 54. 2 m: 144 to 148.</Mnemonic>
+
+</Concept>
+
+<Concept id="ten" title="On HF, voice is 10 m only: 28.300 to 28.500" qs="T1B01 T1B06">
+
+<T1B_TenMeter />
+
+Technician voice privileges on HF are **only on 10 m**, from 28.300 to 28.500 MHz. Below 28.300 is CW and digital.
+
+<Key>HF voice: 10 m only, 28.300 to 28.500 MHz.</Key>
+
+</Concept>
+
+<Concept id="modes" title="Voice and digital are everywhere above 50 MHz, except the CW slice" qs="T1B05 T1B07 T1B10">
+
+<T1B_CwOnly />
+
+**Digital modes** such as FT8 are allowed on 10, 6 and 2 m. **SSB** is allowed in at least part of every band above 50 MHz. The only CW-only slices are the bottom 100 kHz of 6 m and 2 m.
+
+<Mnemonic>CW only: 50.0 to 50.1 and 144.0 to 144.1.</Mnemonic>
+
+</Concept>
+
+<Concept id="edges" title="Share the band, and stay off the edge" qs="T1B08 T1B09">
+
+<T1B_Secondary />
+
+<T1B_BandEdge />
+
+A signal is not a thin line. Sidebands, display error and drift can push it past a limit, so set your frequency **a little inside** the edge.
+
+<Key>Secondary: yield. Band edge: leave margin.</Key>
+
+</Concept>
+
+<Concept id="power" title="Power limits: 200 W on HF, 1500 W above 30 MHz" qs="T1B11 T1B12">
+
+<T1B_Power />
+
+<Mnemonic>HF is the tight limit: 200 W. VHF and up: 1500 W.</Mnemonic>
+
+</Concept>

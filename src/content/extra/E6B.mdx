@@ -1,0 +1,55 @@
+import { DiodeGallery } from '@/visuals/extra/E6B_DiodeGallery'
+import { IvCurves } from '@/visuals/extra/E6B_IvCurves'
+import { SchottkyJunction } from '@/visuals/extra/E6B_SchottkyJunction'
+import { PinSwitch } from '@/visuals/extra/E6B_PinSwitch'
+import { Varactor } from '@/visuals/extra/E6B_Varactor'
+
+<Concept id="diode-symbols" title="The bar's shape tells you which diode it is" qs="E6B10">
+
+Every diode symbol is a triangle plus a bar. Current flows with the triangle. The **bar's shape** (or what surrounds it) changes the meaning: a curve for a varactor, a Z for a Zener, an S for a **Schottky**, light arrows for an LED, a circle with a gate lead for thyristors.
+
+<DiodeGallery />
+
+<Mnemonic>Z-bend = Zener. S-bend = Schottky. Curved = varactor.</Mnemonic>
+
+</Concept>
+
+<Concept id="forward-drop" title="Each diode type has its own forward drop; the Zener uses reverse breakdown" qs="E6B01 E6B03 E6B07">
+
+A conducting diode drops a fixed voltage, its **knee**. For an **LED** the drop is set by the semiconductor's **band gap**. A **Zener** is built to break down in reverse at a set voltage, and the voltage stays nearly **constant while current varies**: a voltage reference. Too much current heats the junction, and **excess junction temperature** is what destroys a diode.
+
+<IvCurves />
+
+<Key>Zener: constant voltage with varying current. LED drop: band gap. Overcurrent kills by heat.</Key>
+
+</Concept>
+
+<Concept id="schottky" title="Metal on semiconductor: low drop and speed" qs="E6B02 E6B06 E6B08 E6B09">
+
+A **Schottky barrier diode** is a **metal-semiconductor** junction. It has a **lower forward drop** than silicon, so a power-supply rectifier wastes less power. It switches fast, so it works as a **VHF/UHF mixer or detector**. A **point-contact** diode (a fine wire on a crystal) has tiny capacitance: an **RF detector**.
+
+<SchottkyJunction />
+
+<Key>Schottky: metal-semiconductor, lower drop, fast. Point contact: RF detector.</Key>
+
+</Concept>
+
+<Concept id="pin" title="A PIN diode is an RF resistor that DC bias controls" qs="E6B05 E6B11">
+
+A **PIN** diode has a wide undoped (intrinsic) layer between P and N, so its junction capacitance is **low**. **Forward DC bias current** sets its RF resistance: lots of current passes RF, none blocks it. Vary the bias and you control RF **attenuation**. Switch it fully and it is an **RF switch**.
+
+<PinSwitch />
+
+<Key>PIN: low capacitance. Forward DC bias current controls RF attenuation.</Key>
+
+</Concept>
+
+<Concept id="varactor" title="A varactor is a capacitor you tune with reverse voltage" qs="E6B04">
+
+A **varactor** is a diode used with **reverse bias**. More reverse voltage widens the depletion region, which is like pulling capacitor plates apart: capacitance **falls**. Use it to tune oscillators and filters (for example in automatic frequency control).
+
+<Varactor />
+
+<Key>Varactor = voltage-controlled capacitor.</Key>
+
+</Concept>

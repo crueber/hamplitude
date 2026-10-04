@@ -1,0 +1,54 @@
+import { RfiPaths } from '@/visuals/general/G4C_RfiPaths'
+import { Heard } from '@/visuals/general/G4C_Heard'
+import { GroundZ } from '@/visuals/general/G4C_GroundZ'
+import { Bonding } from '@/visuals/general/G4C_Bonding'
+
+<Concept id="rfi-fixes" title="RF on audio cables: block it or shunt it" qs="G4C01 G4C08">
+
+Cables pick up your RF as **common-mode current**: the same RF on every conductor. Two fixes:
+
+- **Ferrite choke** on the cable blocks common-mode current.
+- **Bypass capacitor** passes RF to ground but leaves the audio alone.
+
+<RfiPaths />
+
+Shorting the center conductor to the shield or grounding it would also short the audio. Extra insulation does nothing.
+
+<Key>Choke the cable, or bypass the RF to ground.</Key>
+
+</Concept>
+
+<Concept id="rfi-sound" title="The sound tells you what is interfering" qs="G4C02 G4C03 G4C04">
+
+<Heard />
+
+**SSB** has no steady carrier, so the audio device detects a **distorted** version of the speech. **CW** switches the carrier on and off, so you hear on-and-off humming or clicking. A wide range of frequencies points to **arcing at a poor electrical connection**.
+
+<Key>Garbled speech: SSB. Keyed thumps: CW. Wideband noise: an arc.</Key>
+
+</Concept>
+
+<Concept id="rf-ground" title="A ground wire is not a ground at RF" qs="G4C05 G4C06">
+
+At RF a wire has **impedance**, not just resistance. If the ground wire has **high impedance at your frequency**, RF voltage appears on equipment and can cause **RF burns**. A **resonant** ground wire is the worst case: it presents high impedance at the equipment and puts **high RF voltage on enclosures**.
+
+<GroundZ />
+
+<Key>Keep RF ground wires short, and never resonant on a band you use.</Key>
+
+</Concept>
+
+<Concept id="bonding" title="Bond enclosures together, and ground them all" qs="G4C07 G4C09 G4C10 G4C11 G4C12">
+
+<Bonding />
+
+| Question | Answer |
+|---|---|
+| Ground loops (hum on **transmitted audio**) | **Bond equipment enclosures together** |
+| RF "hot spots" | **Bond all enclosures together** |
+| Why ground every metal enclosure | hazardous voltage **cannot appear on the chassis** |
+| Lightning-protection grounds | **No solder**: a strike's heat can destroy the joint |
+
+<Key>Bond everything together; ground it for safety; never solder a lightning ground.</Key>
+
+</Concept>

@@ -1,0 +1,20 @@
+{
+  "title": "Modulation, overmodulation and link budgets",
+  "blurb": "Tell AM, FM, PM, SSB and digital modulation apart, see what overmodulation does, and work out a link budget and margin.",
+  "why": {
+    "G8A01": { "why": "Direct binary FSK feeds the digital signal **straight to the oscillator**, changing its frequency, with no audio tone in between.", "trap": "Keying an FM rig with a tone is audio FSK, not direct.", "concept": "digital-mod" },
+    "G8A02": { "why": "Changing the carrier's phase angle to carry information is **phase modulation**.", "concept": "mod-types" },
+    "G8A03": { "why": "Changing the instantaneous frequency of the wave is **frequency modulation**.", "trap": "Frequency conversion is mixing, not modulation.", "concept": "mod-types" },
+    "G8A04": { "why": "A reactance modulator on an amplifier stage shifts the signal's phase: **phase modulation**.", "concept": "mod-types" },
+    "G8A05": { "why": "AM varies the carrier's height, so its instantaneous **power level** rises and falls with the voice.", "concept": "mod-types" },
+    "G8A06": { "why": "QPSK31 is sideband sensitive, has built-in error correction and is about as wide as BPSK31. **All three** are true.", "concept": "digital-mod" },
+    "G8A07": { "why": "**SSB** drops the carrier and one sideband, so it is narrower than VSB, PM or FM.", "concept": "ssb-narrow" },
+    "G8A08": { "why": "Overmodulation distorts the signal and creates extra sidebands: **excessive bandwidth**.", "trap": "More drive never makes the signal narrower or fixes drift.", "concept": "envelope" },
+    "G8A09": { "why": "FT8 sends data as one of **eight tones**: 8-tone frequency shift keying.", "concept": "digital-mod" },
+    "G8A10": { "why": "Flat-topping is the distortion from **excessive drive or speech level**: the peaks hit the limit and flatten.", "trap": "Proper ALC and carrier suppression are good things, not flat-topping.", "concept": "envelope" },
+    "G8A11": { "why": "The envelope is the outline made by **connecting the peak values** of the modulated signal.", "trap": "The carrier frequency and the bandwidth are different things.", "concept": "envelope" },
+    "G8A12": { "why": "QPSK shifts the carrier by **0, 90, 180 or 270 degrees**, so each phase stands for a pair of bits.", "concept": "digital-mod" },
+    "G8A13": { "why": "Budget = TX power + antenna gains − system losses, **as seen at the receiver**.", "trap": "Gains minus losses leaves out transmit power. Power minus sensitivity skips gains and losses.", "concept": "link-budget" },
+    "G8A14": { "why": "Margin = received level − the **minimum level the receiver needs**. It is the room left for fades.", "trap": "Transmit power minus sensitivity ignores gains and losses.", "concept": "link-budget" }
+  }
+}

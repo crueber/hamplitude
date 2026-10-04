@@ -1,0 +1,81 @@
+import { G8B_Mixer } from '@/visuals/general/G8B_Mixer'
+import { G8B_Multiplier } from '@/visuals/general/G8B_Multiplier'
+import { G8B_FmBandwidth } from '@/visuals/general/G8B_FmBandwidth'
+import { G8B_SymbolRate } from '@/visuals/general/G8B_SymbolRate'
+import { G8B_RxBandwidth } from '@/visuals/general/G8B_RxBandwidth'
+import { G8B_DutyCycle } from '@/visuals/general/G8B_DutyCycle'
+import { G8B_Intermod } from '@/visuals/general/G8B_Intermod'
+
+<Concept id="mixer" title="A mixer outputs the sum and the difference. Tune the LO to pick the signal." qs="G8B11 G8B03 G8B01 G8B02">
+
+Mixing two RF signals is **heterodyning**. Out come the **sum and difference** of the two inputs, not their average, product or ratio. A receiver keeps the difference as a fixed **IF** (intermediate frequency). To receive a different signal, **tune the local oscillator (LO)**, so a different input lands on the IF.
+
+<G8B_Mixer />
+
+A second signal on the other side of the LO is also one IF away, so it lands on the IF too. This **image response** sits **twice the IF** from the desired signal.
+
+<Key>Mixer output = sum and difference. LO tunes. Image = 2 × IF from the wanted signal.</Key>
+
+</Concept>
+
+<Concept id="multiplier" title="A multiplier scales the frequency and the deviation together" qs="G8B04 G8B07">
+
+A VHF FM transmitter often starts at a low frequency and uses a **multiplier** stage, which generates a **harmonic** of it, to reach the operating frequency. The frequency swing is multiplied too, so the oscillator swings by the final deviation divided by the multiplication factor.
+
+<G8B_Multiplier />
+
+<Formula label="Oscillator deviation">factor = 146.52 ÷ 12.21 = 12, so deviation = 5 kHz ÷ 12 = 416.7 Hz</Formula>
+
+<Key>Final deviation ÷ multiplication factor = oscillator deviation.</Key>
+
+</Concept>
+
+<Concept id="fm-bandwidth" title="FM bandwidth: double the sum of deviation and voice frequency" qs="G8B06">
+
+As a rule of thumb (Carson's rule), the signal reaches the deviation **plus** the modulating frequency on each side of the carrier. Count one side, then double it.
+
+<G8B_FmBandwidth />
+
+<Formula label="FM phone bandwidth">2 × (deviation + modulating frequency) = 2 × (5 + 3) = **16 kHz**</Formula>
+
+<Key>Double the sum. Do not stop at 5 + 3 = 8.</Key>
+
+</Concept>
+
+<Concept id="bandwidth-rules" title="Faster symbols need more bandwidth. Match the receiver to the signal." qs="G8B10 G8B09">
+
+Faster symbol rate means a **wider** signal. A receiver filter matched to the mode passes the whole signal and little else, so it gives the **best signal-to-noise ratio**. It is not an FCC rule, and it has nothing to do with impedance or power draw.
+
+<G8B_SymbolRate />
+
+<G8B_RxBandwidth />
+
+<Key>Higher symbol rate = wider. Matched filter = best signal-to-noise.</Key>
+
+</Concept>
+
+<Concept id="duty-cycle" title="Duty cycle is how much of the time you transmit" qs="G8B08">
+
+A mode that transmits nearly continuously has a **high duty cycle**, so the **average power** is close to the key-down power. That can exceed the transmitter's **average power rating** even when the peak is fine.
+
+<G8B_DutyCycle />
+
+<Key>Know the duty cycle so a high-duty mode doesn't overheat your transmitter.</Key>
+
+</Concept>
+
+<Concept id="intermod" title="Intermodulation: unwanted mixing, and odd orders land closest" qs="G8B12 G8B05 G8B13">
+
+A mixer mixes **on purpose**. **Intermodulation** is the same mixing in a **non-linear circuit** that produces unwanted spurious outputs. The **order** is the sum of the multipliers: 2F1−F2 is 2 + 1 = 3, an **odd** order.
+
+<G8B_Intermod />
+
+| Product | Order | Odd or even |
+|---|---|---|
+| 2F1−F2 | 3 | **odd** |
+| 3F1−F2 | 4 | even |
+| 5F1−3F2 | 8 | even |
+
+<Key>Odd-order products (3rd, 5th) are the ones closest to your signals.</Key>
+
+</Concept>

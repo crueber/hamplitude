@@ -1,0 +1,63 @@
+import { Gates } from '@/visuals/extra/E7A_Gates'
+import { PositiveLogic } from '@/visuals/extra/E7A_PositiveLogic'
+import { Divider } from '@/visuals/extra/E7A_Divider'
+import { Decade } from '@/visuals/extra/E7A_Decade'
+import { Multivibrators } from '@/visuals/extra/E7A_Multivibrators'
+
+<Concept id="gates" title="A truth table says what a gate does" qs="E7A07 E7A08 E7A09 E7A10">
+
+A **truth table** lists every input combination of a digital device and the output it gives. Learn the plain gates, then flip them for the "N" versions.
+
+<Gates />
+
+| Gate | Output is 1 when |
+|---|---|
+| **OR** | any input is 1 |
+| **NAND** | NOT all inputs are 1 (0 only if all are 1) |
+| **XNOR** | the two inputs are the same (0 if exactly one is 1) |
+
+<Key>NAND and XNOR are AND and XOR with the output flipped.</Key>
+
+</Concept>
+
+<Concept id="positive-logic" title="Positive logic: high voltage is 1" qs="E7A11">
+
+Logic is just a naming rule for two voltages. In **positive logic**, the high voltage is **1** and the low voltage is **0**. Negative logic swaps the names.
+
+<PositiveLogic />
+
+<Key>Positive logic: high = 1, low = 0.</Key>
+
+</Concept>
+
+<Concept id="flipflop" title="A flip-flop holds a state and halves a frequency" qs="E7A01 E7A03 E7A04">
+
+A **flip-flop** has **two stable states** (bistable) and holds one until a clock edge flips it. Wired to toggle on every clock pulse, it gives one output cycle for every two input cycles: **÷2**.
+
+<Divider />
+
+Chain them: each stage halves again, so N flip-flops divide by 2ᴺ. Divide by 16 = 2⁴ needs **4**.
+
+<Key>N flip-flops = ÷2ᴺ. Bistable = flip-flop.</Key>
+
+</Concept>
+
+<Concept id="decade" title="A decade counter divides by 10" qs="E7A02">
+
+A **decade counter** counts input pulses 0 to 9, then wraps to 0 and puts out **one pulse per 10 inputs**. It counts. It does not drive a display; a **decoder** turns a binary number into the seven-segment pattern.
+
+<Decade />
+
+<Key>Counter: 10 pulses in, 1 out. Decoder: binary in, display pattern out.</Key>
+
+</Concept>
+
+<Concept id="multivibrators" title="Bistable, monostable, astable: how many stable states?" qs="E7A05 E7A06 E7A01">
+
+Count the stable states. **Astable** has none, so it free-runs as an oscillator with no clock. **Monostable** has one: a trigger sends it to the other state **for a set time**, then it returns.
+
+<Multivibrators />
+
+<Key>Astable = free-running square wave. Monostable = one timed pulse per trigger.</Key>
+
+</Concept>

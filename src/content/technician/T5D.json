@@ -1,0 +1,20 @@
+{
+  "title": "Ohm's law and circuits",
+  "blurb": "Find any of voltage, current or resistance from the other two, and know what series and parallel circuits share.",
+  "why": {
+    "T5D01": { "why": "Current is voltage divided by resistance: **I = E ÷ R**. More resistance, less current.", "trap": "Squared terms (E², I²) belong to power formulas, not Ohm's law.", "concept": "ohm" },
+    "T5D02": { "why": "Voltage is current times resistance: **E = I × R**.", "trap": "Dividing gives current or resistance, never voltage.", "concept": "ohm" },
+    "T5D03": { "why": "Resistance is voltage divided by current: **R = E ÷ I**.", "trap": "Adding or subtracting E and I makes no sense: they have different units.", "concept": "ohm" },
+    "T5D04": { "why": "R = E ÷ I = 90 ÷ 3 = **30 Ω**.", "trap": "270 is 90 × 3. Multiplying is the common slip.", "concept": "solve" },
+    "T5D05": { "why": "R = E ÷ I = 12 ÷ 1.5 = **8 Ω**.", "trap": "18 is 12 × 1.5. Divide instead.", "concept": "solve" },
+    "T5D06": { "why": "R = E ÷ I = 12 ÷ 4 = **3 Ω**.", "trap": "48 is 12 × 4. Divide instead.", "concept": "solve" },
+    "T5D07": { "why": "I = E ÷ R = 120 ÷ 80 = **1.5 A**.", "trap": "9,600 A is 120 × 80. Divide instead.", "concept": "solve" },
+    "T5D08": { "why": "I = E ÷ R = 200 ÷ 100 = **2 A**.", "trap": "20,000 A is 200 × 100. Divide instead.", "concept": "solve" },
+    "T5D09": { "why": "I = E ÷ R = 240 ÷ 24 = **10 A**.", "trap": "5,760 is 240 × 24. Divide instead.", "concept": "solve" },
+    "T5D10": { "why": "E = I × R = 0.5 × 2 = **1 V**.", "trap": "Don't add: 0.5 + 2 = 2.5 mixes amperes and ohms.", "concept": "solve" },
+    "T5D11": { "why": "E = I × R = 1 × 10 = **10 V**.", "concept": "solve" },
+    "T5D12": { "why": "E = I × R = 2 × 10 = **20 V**.", "concept": "solve" },
+    "T5D13": { "why": "In a **series** circuit there is only one path, so the same current flows through every part.", "trap": "In parallel the *voltage* is shared, and the current splits.", "concept": "series-parallel" },
+    "T5D14": { "why": "In a **parallel** circuit every branch connects across the same two points, so each has the same voltage.", "trap": "In series the *current* is shared, and the voltage divides.", "concept": "series-parallel" }
+  }
+}

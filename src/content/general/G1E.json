@@ -1,0 +1,17 @@
+{
+  "title": "Third party, repeaters and ITU regions",
+  "blurb": "Third-party limits, 10 m repeaters, interference duties, ITU regions, and automatic digital stations.",
+  "why": {
+    "G1E01": { "why": "A third party whose license was **revoked and not reinstated** is disqualified. Citizenship and language do not matter.", "concept": "third-party" },
+    "G1E02": { "why": "The 10 m repeater transmits on HF, so its control operator needs **General or higher**.", "trap": "The Technician's input on 2 m is not the issue; the 10 m output is.", "concept": "repeater" },
+    "G1E03": { "why": "Outside the auto-control segments, the station that **starts the contact** must be under local or remote control.", "concept": "auto" },
+    "G1E04": { "why": "A nearby FCC Monitoring Station, a secondary band and spread spectrum **each** call for steps to avoid interference.", "trap": "Each condition on its own is correct, so all three apply.", "concept": "care" },
+    "G1E05": { "why": "Messages must concern **amateur radio, personal remarks, or emergencies/disaster relief**.", "trap": "Emergency-only and licensed-only limits are too narrow.", "concept": "third-party" },
+    "G1E06": { "why": "North and South America are in **ITU Region 2**.", "concept": "regions" },
+    "G1E07": { "why": "There is **no part** of the 2.4 GHz band for communicating with non-licensed Wi-Fi stations.", "concept": "care" },
+    "G1E08": { "why": "Spread spectrum is limited to **10 W PEP** output.", "concept": "care" },
+    "G1E10": { "why": "A **propagation beacon** network operates on those frequencies, so avoid them.", "trap": "These are beacons, not emergency or FCC bulletin frequencies.", "concept": "auto" },
+    "G1E11": { "why": "Auto-to-auto digital contact is allowed **anywhere on 6 m or shorter** and in limited HF segments.", "concept": "auto" },
+    "G1E12": { "why": "Third-party messages may go via remote control **whenever FCC rules allow them** at all.", "concept": "third-party" }
+  }
+}

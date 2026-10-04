@@ -1,0 +1,20 @@
+{
+  "title": "Noise, interference and grounding",
+  "blurb": "Identify noise sources by their signature, choose blankers, notch filters and chokes, and place surge protectors on a single point ground.",
+  "why": {
+    "E4E01": { "why": "An ANF removes steady tones, and a **CW signal is a steady tone** too, so it removes the **CW signal as well**.", "trap": "Ringing and overload aren't the ANF's CW problem.", "concept": "dsp" },
+    "E4E02": { "why": "DSP noise reduction can reduce **white noise, ignition noise and power line noise**: all of them.", "concept": "dsp" },
+    "E4E03": { "why": "A blanker mutes the receiver during short pulses, so it removes **impulse noise**.", "trap": "Hum, buzz and steady white noise aren't pulses.", "concept": "dsp" },
+    "E4E04": { "why": "Alternator noise travels on the charging leads. **Ferrite chokes on those leads** suppress it.", "trap": "Capacitors in series would block the charging current, not the noise.", "concept": "common-mode" },
+    "E4E05": { "why": "A **brute-force AC-line filter in series** with the motor's power leads keeps its noise off the line.", "trap": "A high-pass filter would also block the 60 Hz power.", "concept": "common-mode" },
+    "E4E06": { "why": "Network gear radiates **unstable modulated or unmodulated signals at specific frequencies**.", "trap": "Hum, clicks and pulsing whines are other sources' signatures.", "concept": "noise-sources" },
+    "E4E07": { "why": "**Common-mode currents** on the shield and conductors turn a shielded cable into an antenna.", "trap": "Low-inductance grounds and braided shield are good practice, not the cause.", "concept": "common-mode" },
+    "E4E08": { "why": "Current that flows **equally on all conductors** is **common-mode** current. Differential current flows in opposite directions.", "concept": "common-mode" },
+    "E4E09": { "why": "Strong signals can trigger a blanker, which **distorts them and can seem to cause spurious emissions**.", "trap": "Blankers don't narrow audio or break FM demodulation.", "concept": "dsp" },
+    "E4E10": { "why": "Arcing thermostats, defective doorbell transformers and faulty signs all cause intermittent roaring or buzzing: **all of these**.", "concept": "noise-sources" },
+    "E4E11": { "why": "**Corroded metal connections** act like diodes, mix the broadcast signals and reradiate the products.", "trap": "Receiver overload would be inside your radio, not in nearby metal.", "concept": "noise-sources" },
+    "E4E12": { "why": "A switch-mode supply's switching harmonics show up as **carriers at regular intervals** across a wide range.", "trap": "Radar, cameras and electric fences produce other patterns.", "concept": "noise-sources" },
+    "E4E13": { "why": "Mount the AC surge protector **on the single point ground panel** so it shares the same ground as every other protector.", "trap": "The AC panel or outlet gives it a different ground from the rest.", "concept": "ground-panel" },
+    "E4E14": { "why": "One panel, one ground: **all lightning protectors activate together**, so no cable sits at a different potential.", "concept": "ground-panel" }
+  }
+}

@@ -1,0 +1,52 @@
+import { E5A_ResonantFreq } from '@/visuals/extra/E5A_ResonantFreq'
+import { E5A_SeriesParallelZ } from '@/visuals/extra/E5A_SeriesParallelZ'
+import { E5A_QBandwidth } from '@/visuals/extra/E5A_QBandwidth'
+
+<Concept id="f0" title="Resonance is the frequency where XL equals XC" qs="E5A02 E5A10">
+
+XL grows with frequency and XC shrinks, so there is exactly one frequency where they are equal. Solve XL = XC for f and you get the resonant frequency. **R does not change it.**
+
+<Formula label="Resonant frequency">f₀ = 1 ÷ (2π × √(L × C))</Formula>
+
+<E5A_ResonantFreq />
+
+| L | C | √(L×C) | f₀ |
+|---|---|---|---|
+| 50 µH | 40 pF | 4.472 × 10⁻⁸ | 1 ÷ (2π × 4.472 × 10⁻⁸) = **3.56 MHz** |
+| 50 µH | 10 pF | 2.236 × 10⁻⁸ | 1 ÷ (2π × 2.236 × 10⁻⁸) = **7.12 MHz** |
+
+<Key>4× the capacitance (or inductance) halves f₀. Use henries and farads, then µ = 10⁻⁶ and p = 10⁻¹².</Key>
+
+</Concept>
+
+<Concept id="series-parallel" title="At resonance, series Z dips and parallel Z peaks" qs="E5A03 E5A04 E5A06 E5A07 E5A08">
+
+At f₀ the inductor and capacitor effects cancel, leaving only **R**. Voltage and current are **in phase**, because there is no net reactance to shift them.
+
+<E5A_SeriesParallelZ />
+
+| At resonance | Series RLC | Parallel RLC |
+|---|---|---|
+| Impedance | **minimum**, about R | **maximum**, about R |
+| Current from the source | **maximum** | **minimum** |
+| Current circulating between L and C | n/a | **maximum** |
+
+<Mnemonic>Series is the easy path: low Z, big current. Parallel is a roadblock: high Z, little line current, yet a big current swings round inside the loop.</Mnemonic>
+
+</Concept>
+
+<Concept id="q" title="Higher Q means a narrower, taller response" qs="E5A01 E5A05 E5A09 E5A11 E5A12 E5A13">
+
+**Q** measures how little a circuit wastes per cycle. Half-power bandwidth is the width between the points where power has fallen to half.
+
+<Formula label="Bandwidth">BW = f₀ ÷ Q</Formula>
+
+<E5A_QBandwidth />
+
+- **Series**: Q = X ÷ R. **Parallel**: Q = R ÷ X.
+- Higher Q: **narrower bandwidth**, including in an impedance-matching circuit.
+- Series circuit: voltage across L or C is **Q times** the source voltage, so it can exceed it. Higher Q raises these internal voltages.
+
+<Key>BW = f₀ ÷ Q: 7.1 MHz ÷ 150 = 47.3 kHz. Series Q is X over R, parallel Q is R over X.</Key>
+
+</Concept>

@@ -1,0 +1,19 @@
+{
+  "title": "Station controls and receive tools",
+  "blurb": "Choose the right receiver control for each interference problem and explain what ALC, tuner, TUNE and LOAD do.",
+  "why": {
+    "G4A01": { "why": "A notch filter cuts a **narrow slot** in the passband, removing a steady carrier while leaving the voice around it.", "trap": "Splatter from adjacent signals and impulse noise need different tools (filters, blanker).", "concept": "rx-tools" },
+    "G4A02": { "why": "Switching to the opposite sideband moves the passband to the other side of the signal, so a **nearby interferer may fall outside** it.", "trap": "It doesn't remove impulse noise or add capacity.", "concept": "rx-tools" },
+    "G4A03": { "why": "Impulse noise is brief, so the blanker **cuts receiver gain for just that instant**, then restores it.", "trap": "It doesn't widen bandwidth or clip: it mutes the gain.", "concept": "rx-tools" },
+    "G4A04": { "why": "Tuning the output circuit to resonance makes the tube deliver power to the load, so **plate current dips sharply**.", "trap": "A peak is what you see in output power, not plate current.", "concept": "amp-tune" },
+    "G4A05": { "why": "ALC senses overdrive and **turns the exciter down** so the amplifier isn't driven too hard.", "trap": "ALC doesn't shape audio response, remove harmonics or raise efficiency.", "concept": "tx-chain" },
+    "G4A06": { "why": "At the radio, a tuner makes the transmitter see a load it likes, so it can **deliver more power to the feed line**.", "trap": "A tuner at the radio doesn't change SWR on the feed line itself.", "concept": "tx-chain" },
+    "G4A07": { "why": "Noise reduction removes noise by processing the audio. Turn it up and **the wanted signal gets distorted** too.", "concept": "rx-tools" },
+    "G4A08": { "why": "LOAD sets how much power is drawn off. Raise it until you get the **desired output, staying under maximum plate current**.", "trap": "SWR on the antenna is for the tuner; LOAD works against plate current.", "concept": "amp-tune" },
+    "G4A09": { "why": "The amplifier's relay needs time to **switch the antenna over**. Delaying RF keeps power from hot-switching the contacts.", "trap": "Key clicks and overmodulation aren't what the delay is for.", "concept": "tx-chain" },
+    "G4A10": { "why": "A keyer turns paddle presses into **automatically timed dots and dashes**.", "trap": "T/R switching and antenna changeover are done by relays, not a keyer.", "concept": "op-features" },
+    "G4A11": { "why": "Digital audio tones need clean, linear amplification. ALC action **distorts** the signal, so keep it inactive.", "concept": "tx-chain" },
+    "G4A12": { "why": "Two VFOs hold two frequencies, so you can **transmit on one and listen on another**: split operation.", "trap": "A transceiver can't send on two frequencies or transmit and receive simultaneously.", "concept": "op-features" },
+    "G4A13": { "why": "An attenuator in front of the receiver reduces strong inputs so they **don't overload** it.", "trap": "It acts on the receive path only, not on transmit power.", "concept": "rx-tools" }
+  }
+}

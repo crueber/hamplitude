@@ -1,0 +1,77 @@
+import { Polarization } from '@/visuals/technician/T9A_Polarization'
+import { ResonantLength } from '@/visuals/technician/T9A_ResonantLength'
+import { QuarterWave } from '@/visuals/technician/T9A_QuarterWave'
+import { DipoleDonutPattern } from '@/visuals/shared/DipoleDonutPattern'
+import { BeamGain } from '@/visuals/technician/T9A_BeamGain'
+import { WhipElevation } from '@/visuals/technician/T9A_WhipElevation'
+import { Loading } from '@/visuals/technician/T9A_Loading'
+
+<Concept id="polarization" title="Polarization is the direction of the electric field" qs="T9A03">
+
+An antenna's **polarization** is the orientation of the **electric field** it radiates. A vertical wire gives vertical polarization. A horizontal wire gives horizontal.
+
+<Polarization />
+
+<Key>Polarization = electric field direction. Match the antennas.</Key>
+
+</Concept>
+
+<Concept id="length" title="Shorter antenna, higher resonant frequency" qs="T9A05 T9A08">
+
+An antenna is **resonant** when its length is a simple fraction of the wavelength. Higher frequency means a shorter wavelength, so a **shorter** antenna resonates at a **higher** frequency.
+
+<ResonantLength />
+
+On 2 meters (λ about 2 m) a quarter-wave is a short **19-inch** whip, so that's the classic 2 m vertical.
+
+<QuarterWave />
+
+<Key>Longer wire, lower frequency. Shorter wire, higher frequency. 19 inches on 2 m is a quarter-wave.</Key>
+
+</Concept>
+
+<Concept id="dipole-pattern" title="A dipole radiates broadside, not off its ends" qs="T9A10">
+
+<DipoleDonutPattern />
+
+Think of a donut with the wire through the hole. Signal is strongest **broadside** (straight out from the side) and weakest **off the ends**.
+
+<Key>Broadside to the wire, never the ends.</Key>
+
+</Concept>
+
+<Concept id="gain" title="Gain is signal pushed into one direction" qs="T9A01 T9A06 T9A09 T9A11">
+
+**Gain** is the increase in signal strength **in a specified direction** compared with a **reference antenna**. No power is added: it is moved from other directions.
+
+A **beam antenna** concentrates signals in **one direction**. The **Yagi** is the classic beam: a reflector, a driven element and directors.
+
+<BeamGain />
+
+A **5/8-wave** vertical also has gain over a ¼-wave: it flattens the pattern toward the horizon, not up.
+
+<WhipElevation />
+
+| Antenna | Gain |
+|---|---|
+| Isotropic | reference, none |
+| 5/8 wave, J pole | all-around, modest |
+| **Yagi** | **highest of these** |
+
+<Key>Gain = more signal one way, less elsewhere. A Yagi has the most.</Key>
+
+</Concept>
+
+<Concept id="short" title="Short antennas trade efficiency for size" qs="T9A02 T9A04 T9A07">
+
+**Loading** makes a short antenna act longer by adding an **inductor** (a coil) in the radiating element. It resonates, but is less efficient than a full-size antenna, like a handheld's rubber duck.
+
+<Loading />
+
+Inside a vehicle, the metal body **shields** a handheld's signal. An outside antenna avoids that.
+
+<Callout kind="warn" title="Trap">A resistor, a spring or a stronger element is not loading. Loading means coils that add electrical length.</Callout>
+
+<Key>Loading coil = electrically longer. Short antenna = low efficiency.</Key>
+
+</Concept>

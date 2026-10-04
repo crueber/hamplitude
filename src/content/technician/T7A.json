@@ -1,0 +1,17 @@
+{
+  "title": "Radios, mixers and modulation",
+  "blurb": "Explain what a transceiver, mixer, oscillator, VFO and transverter do, and the difference between sensitivity and selectivity.",
+  "why": {
+    "T7A01": { "why": "**Sensitivity** is how weak a signal the receiver can still detect.", "trap": "Selectivity is about separating signals, not detecting faint ones. RF gain is just a control.", "concept": "sens-sel" },
+    "T7A02": { "why": "**Trans**mitter + re**ceiver** = **transceiver**: both in one box.", "trap": "Matching to 50 ohms is a tuner's job; converting bands is a transverter's.", "concept": "transceiver" },
+    "T7A03": { "why": "A **mixer** combines two frequencies and so shifts a signal to another frequency.", "trap": "An amplifier makes a signal bigger, not different in frequency.", "concept": "mixers" },
+    "T7A04": { "why": "**Selectivity** is how well a receiver picks one signal out from several nearby ones.", "trap": "Sensitivity is about weak signals, not crowded ones.", "concept": "sens-sel" },
+    "T7A05": { "why": "An **oscillator** generates a signal at a specific frequency.", "trap": "Filters shape signals and modulators add information. Neither creates the frequency.", "concept": "mixers" },
+    "T7A06": { "why": "A **transverter** converts a radio's input and output to another band.", "trap": "Filters only block frequencies; they don't move a signal to another band.", "concept": "mixers" },
+    "T7A07": { "why": "Grounding the **PTT** (push-to-talk) input flips the transceiver from receive to transmit.", "trap": "PTT isn't a CW key input or a tuning tone.", "concept": "transceiver" },
+    "T7A08": { "why": "**Modulation** is combining speech (the information) with an RF carrier so it can travel as a radio wave.", "trap": "Oscillation makes the carrier; modulation is what puts the voice on it.", "concept": "modulation" },
+    "T7A09": { "why": "The SSB or CW-FM switch sets the amplifier for **proper operation in that mode**. It doesn't change your signal or the band.", "concept": "transceiver" },
+    "T7A10": { "why": "An **RF power amplifier** on the transceiver's output raises transmitted power.", "trap": "A potentiometer is a variable resistor; it only reduces signals.", "concept": "transceiver" },
+    "T7A11": { "why": "The **VFO** is the tuning oscillator: it sets the receive and transmit frequency.", "trap": "Generating and demodulating SSB is done by other circuits.", "concept": "mixers" }
+  }
+}

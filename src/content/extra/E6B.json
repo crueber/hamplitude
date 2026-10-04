@@ -1,0 +1,17 @@
+{
+  "title": "Diodes and their uses",
+  "blurb": "Choose the right diode (Zener, Schottky, PIN, varactor, LED) for a job and recognize each symbol.",
+  "why": {
+    "E6B01": { "why": "In reverse breakdown a Zener holds a **constant voltage** while its current changes: a reference.", "trap": "Constant current and negative resistance belong to other devices.", "concept": "forward-drop" },
+    "E6B02": { "why": "A Schottky's **lower forward drop** wastes less power as heat in a rectifier.", "trap": "The advantage is low forward drop, not breakdown voltage or carrier retention.", "concept": "schottky" },
+    "E6B03": { "why": "Forward voltage is set by the material's **band gap**: a bigger gap, a higher drop.", "trap": "Junction capacitance affects speed, not the forward drop.", "concept": "forward-drop" },
+    "E6B04": { "why": "A **varactor** is reverse-biased; its depletion width, and so its capacitance, follows the voltage.", "trap": "A Zener is a voltage reference, not a variable capacitor.", "concept": "varactor" },
+    "E6B05": { "why": "A PIN diode's wide intrinsic layer gives **low junction capacitance**, so RF is cleanly blocked when off.", "trap": "Its job is switching RF, not high breakdown or high power.", "concept": "pin" },
+    "E6B06": { "why": "Fast and low-capacitance, a Schottky suits **VHF/UHF mixers and detectors**.", "trap": "Constant-voltage reference is the Zener; negative resistance is the tunnel diode.", "concept": "schottky" },
+    "E6B07": { "why": "Current heats the junction; **excess junction temperature** destroys it.", "trap": "Excess inverse voltage is a separate failure, not current-caused.", "concept": "forward-drop" },
+    "E6B08": { "why": "A Schottky barrier is a **metal-semiconductor** junction, not a PN junction.", "trap": "A PIN junction has an intrinsic layer; that is a different diode.", "concept": "schottky" },
+    "E6B09": { "why": "A point contact has tiny capacitance, so it works well as an **RF detector**.", "trap": "Constant voltage is the Zener's job; a point contact detects signals.", "concept": "schottky" },
+    "E6B10": { "why": "An **S-shaped bar** marks the Schottky. A Z-shaped bar is a Zener; a curved bar, a varactor.", "trap": "The Z-bend symbol is the Zener, not the Schottky.", "concept": "diode-symbols" },
+    "E6B11": { "why": "**Forward DC bias current** sets the PIN's RF resistance, so it sets the attenuation.", "trap": "Reverse voltage keeps it off; it doesn't vary attenuation smoothly.", "concept": "pin" }
+  }
+}
