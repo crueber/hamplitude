@@ -1,0 +1,55 @@
+# Builds the static site and publishes dist/ to GitHub Pages.
+# One-time setup in the GitHub repo: Settings -> Pages -> Build and deployment -> Source: "GitHub Actions".
+name: Build and deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deployment at a time; a newer push supersedes one still in the queue.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.2
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      # Fails the build if any lesson is missing a question's explanation, an anchor, etc.
+      - name: Validate lesson content
+        run: bun run validate
+
+      # Type-checks, then builds into dist/. Hash routing + relative asset paths mean it works under /<repo>/ with no config.
+      - name: Build
+        run: bun run build
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
