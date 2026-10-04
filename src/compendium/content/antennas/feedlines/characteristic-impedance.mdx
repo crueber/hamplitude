@@ -1,0 +1,43 @@
+import { CharacteristicImpedance_Ladder } from '@/visuals/compendium/CharacteristicImpedance_Ladder'
+import { CharacteristicImpedance_CoaxZ0 } from '@/visuals/compendium/CharacteristicImpedance_CoaxZ0'
+import { G9A_Z0Geometry } from '@/visuals/general/G9A_Z0Geometry'
+
+## What it is
+
+Characteristic impedance (Z0) is the ratio of voltage to current of a wave travelling along a feed line. It is fixed by the line's shape and insulation. It is **not** loss, it is **not** a resistance you can measure with an ohmmeter, and it does not change with the line's length.
+
+<Facts items={[
+  ['Coax', '50 Ω (ham gear) or 75 Ω (video)'],
+  ['Balanced lines', 'about 300, 450 or 600 Ω'],
+  ['Depends on', 'conductor sizes, spacing and insulator'],
+  ['Does not depend on', 'length (and, for good line, frequency)'],
+]} />
+
+## Where it comes from
+
+<CharacteristicImpedance_Ladder />
+
+Think of the line as a chain of tiny inductors (the magnetic field around each wire) and tiny capacitors (the electric field between the conductors). A wave front must charge each capacitor through each inductor before it moves on, and that fixes the ratio of voltage to current: **Z0 = √(L ÷ C)**. No resistor is involved, so no power is lost to Z0 itself; the energy simply moves on.
+
+Because every stretch of line looks the same, a wave never sees an "end" until it reaches the load. If the load equals Z0, it takes the power and nothing returns. If not, part reflects. See <Ref to="swr-and-reflections" />.
+
+## Setting Z0 with geometry
+
+<CharacteristicImpedance_CoaxZ0 />
+
+For coax, Z0 depends on the ratio of the shield's inside diameter to the centre conductor's, and on the insulator: **Z0 ≈ (138 ÷ √εr) × log10(D ÷ d)**. Because of the logarithm you need big changes in the ratio to move Z0 much. Foam or air lowers εr and raises Z0 for the same size, so a foam cable needs a relatively fatter centre conductor to stay at 50 Ω.
+
+<G9A_Z0Geometry />
+
+For two parallel wires it is similar: **Z0 ≈ 276 × log10(2s ÷ d)** with air between them, where s is the spacing between wire centres and d is the wire diameter. Wide spacing and thin wire give the few hundred ohms of <Ref to="open-wire-line">ladder line</Ref>. The same insulator that sets Z0 also sets the <Ref to="feed-line-loss">velocity factor</Ref>.
+
+## In practice
+
+- **Match the line to the gear.** Radios, amplifiers and most coax are 50 Ω, so a 50 Ω line makes no mismatch there. Whether the antenna matches is another matter; see <Ref to="swr-and-reflections" />.
+- A short run of 75 Ω cable in a 50 Ω system gives at worst a modest 1.5:1 mismatch at each end. That is tolerable for short runs, but it is a mismatch.
+- Kinks, crushing and water change the geometry, so they change Z0 locally and cause small reflections. See <Ref to="coaxial-cable" />.
+- Splitting or cascading lines of different Z0 gives a discontinuity at each junction, which is how <Ref to="stubs-and-matching-sections">matching sections</Ref> work on purpose.
+
+<ExamLink groups="G9A E9F T9B" />
+
+<Related to="coaxial-cable open-wire-line swr-and-reflections feed-line-loss stubs-and-matching-sections smith-chart" />

@@ -1,0 +1,47 @@
+import { GroundWave_Tilt } from '@/visuals/compendium/GroundWave_Tilt'
+import { GroundWave } from '@/visuals/extra/E3B_GroundWave'
+
+## What it is
+
+A **ground wave** travels along the surface of the Earth instead of out into the sky. It follows the curve of the ground, so it can reach well beyond the horizon, and it works day and night, in any season. It is the main way low-frequency signals travel, and it is why you can hear a local AM station all day.
+
+<Facts items={[
+  ['Polarization', 'vertical'],
+  ['Best on', 'LF and MF, with some use on the lowest HF bands'],
+  ['Range', 'shrinks as frequency rises, and over poor ground'],
+  ['Reliability', 'steady: largely independent of the time of day and the solar cycle'],
+]} />
+
+## How it works
+
+<GroundWave_Tilt />
+
+A vertically polarized wave has its electric field standing up from the ground, so the wave induces currents in the ground as it passes. The ground slows the bottom of the wave front more than the top. The front tilts forward and the wave is steered to follow the surface. The same ground currents cost the wave energy, so it weakens with distance faster than simple spreading would explain.
+
+Two things set how far it goes:
+
+- **Frequency.** The higher the frequency, the more the ground absorbs and the less the wave bends around the curve. The range falls steadily as frequency rises.
+- **The ground.** Seawater conducts well and carries a ground wave farthest. Moist, fertile soil does well; dry sand, rock and city buildings are poor.
+
+<GroundWave />
+
+By the VHF range the ground wave is gone for practical purposes, and signals there rely on line of sight; see <Ref to="line-of-sight" />.
+
+## Why vertical polarization
+
+Currents flow easily in the ground under a vertical field. A horizontal field lies along the ground surface and is shorted out by it almost at once, so a horizontally polarized ground wave dies within a short distance. That is why AM broadcast stations use vertical towers, and why a vertical antenna is the one for ground-wave work. See <Ref to="polarization" />.
+
+## In practice
+
+Typical ranges are **tens of miles up to a few hundred**, depending on frequency, power and ground. These figures are only a rough guide.
+
+- **MF and AM broadcasting.** By day the ground wave is the signal you get; at night the ionosphere returns skywave signals from stations hundreds of miles away.
+- **160 m and the lowest HF bands.** On 160 m by day the <Ref to="ionosphere-layers">D layer</Ref> absorbs skywave signals, so daytime contacts are ground-wave contacts, limited to local range.
+- **Maritime and LF.** Ships and long-range LF and VLF links use ground and surface waves because seawater is such a good path.
+- **Better ground, better range.** A vertical antenna with a good radial system or a ground near seawater improves both the launching and the path. See <Ref to="radials-and-ground-planes" />.
+
+At HF above a few MHz, ground wave contacts reach only a short distance, and the signal you hear from far away is skywave; see <Ref to="skywave-and-skip" />.
+
+<ExamLink groups="E3B" />
+
+<Related to="skywave-and-skip ionosphere-layers line-of-sight polarization quarter-wave-vertical radials-and-ground-planes" />

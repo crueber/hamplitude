@@ -1,0 +1,47 @@
+import { OpenWireLine_Balanced } from '@/visuals/compendium/OpenWireLine_Balanced'
+
+## What it is
+
+Open-wire line, ladder line and window line are all **balanced** feed lines: two parallel wires held apart by insulating spacers, mostly with air between them. They carry RF with very little loss, even when the antenna is badly mismatched, which makes them the classic feed for multiband wire antennas.
+
+<Facts items={[
+  ['Twin-lead', 'about 300 Ω, a flat plastic web'],
+  ['Window line', 'about 450 Ω, web with cut-out windows'],
+  ['Open-wire line', 'about 600 Ω, bare wires and spreaders'],
+  ['Loss', 'a small fraction of coax loss at HF, typically'],
+]} />
+
+## How it works
+
+<OpenWireLine_Balanced />
+
+The two wires carry equal and opposite currents, so their fields cancel a short distance away. That is why the line radiates little, as long as the currents really are equal; see <Ref to="baluns-and-ununs" />.
+
+The impedance is set by wire diameter and spacing, and by the insulation between them (see <Ref to="characteristic-impedance" />). With air in between and wide spacing you get a few hundred ohms, much higher than coax.
+
+Loss is low for two reasons. There is almost no solid insulation to absorb RF, and the high impedance means less current for the same power, so less resistive heating in the wires. The result: even at an SWR of 5 or 10, the extra loss is often modest on HF, which is the whole point.
+
+## When to use it
+
+It shines on **multiband antennas with a tuner**. A dipole cut for 40 m presents a very different impedance on 20 m, 15 m and 10 m. Fed with ladder line, the line can sit at a high SWR on those bands and still waste little power, and an <Ref to="antenna-tuners">antenna tuner</Ref> restores 50 Ω at the radio. The tuner must have a balanced output or be paired with a 4:1 or 1:1 balun.
+
+It loses to coax when you need convenience. Compared with coax:
+
+| | Open-wire / ladder line | Coax |
+|---|---|---|
+| Loss at HF, even with high SWR | very low | higher |
+| Near metal and walls | must be kept clear | can touch things |
+| Routing | careful: stand-offs, no tight bends | easy |
+| Connectors | none; terminals or a balun | standard |
+| Impedance | 300 to 600 Ω typical | 50 or 75 Ω |
+
+## In practice
+
+- Keep it a few line-spacings away from metal, gutters and wet surfaces. Wires that pass unevenly near metal unbalance the currents and the line starts to radiate.
+- Hold it off the house and trees with stand-offs, not clips pressed against the surface.
+- Bring it into the shack through a feed-through, and keep the two wires symmetrical to the end.
+- Bad weather matters: wet or iced plastic web raises loss. Open-wire line with spreaders suffers least.
+
+<ExamLink groups="T9B G9A E9F" />
+
+<Related to="coaxial-cable characteristic-impedance feed-line-loss antenna-tuners baluns-and-ununs multiband-dipoles" />

@@ -1,0 +1,61 @@
+import { PowerAndSwrProtection_Foldback } from '@/visuals/compendium/PowerAndSwrProtection_Foldback'
+import { Station } from '@/visuals/technician/T4A_Station'
+import { G9A_LineSwr } from '@/visuals/general/G9A_LineSwr'
+
+## What it is
+
+The power control sets how much RF the radio's final amplifier delivers. **SWR protection** is the circuit that turns that power down when the antenna system is a poor match, so the transistors in the final stage are not overstressed.
+
+<Facts items={[
+  ['US rule', 'use the minimum power necessary for the contact'],
+  ['US ceiling', '1500 W PEP, and lower on some bands and for some licenses'],
+  ['Typical protection', 'output cut back as SWR rises, often starting between 1.5:1 and 3:1'],
+]} />
+
+## Setting your power
+
+Power is a control, not a goal. Turn it down for a local contact; turn it up only when the path needs it. Doubling power is only 3 dB, about half an S unit at the far end (see <Ref to="decibels" />), so extra watts help far less than a better antenna.
+
+- Speech peaks are brief, so SSB heats the final amplifier less than **continuous-carrier modes** such as FM, RTTY or digital. Lower the power for those, as the manual advises.
+- Use a low-power **tune** mode when adjusting an <Ref to="antenna-tuners">antenna tuner</Ref> or an amplifier, so the radio is not sending full power into a bad match.
+- A low supply voltage lowers the radio's output: see <Ref to="shack-power-supplies" />.
+
+## Why SWR matters to the radio
+
+A final amplifier is designed to see about 50 Ω. A mismatched antenna reflects part of the wave back, and the amplifier then sees a different load. The extra current or voltage can overheat or destroy its transistors. The fraction reflected depends only on SWR:
+
+| SWR | Power reflected | Mismatch loss |
+|---|---|---|
+| 1:1 | 0 % | 0 dB |
+| 1.5:1 | 4 % | 0.18 dB |
+| 2:1 | 11 % | 0.51 dB |
+| 3:1 | 25 % | 1.25 dB |
+| 5:1 | 44 % | 2.55 dB |
+
+Moderate SWR is not a catastrophe: at 2:1 the mismatch itself costs only about half a decibel. The danger is mainly to the radio. See <Ref to="swr-and-reflections" /> for the mechanism.
+
+<PowerAndSwrProtection_Foldback />
+
+## How the protection works
+
+A **directional coupler** inside the radio samples the forward and reflected waves and calculates SWR. A control circuit then lowers the drive to the final amplifier, a response called **foldback**, or shuts the transmitter down altogether. Radios also protect against heat and overcurrent.
+
+A meter outside the radio does the same measurement and shows it to you:
+
+<Station />
+
+The meter goes in the feed line between radio and antenna. What it reads at the radio is not always the SWR at the antenna:
+
+<G9A_LineSwr />
+
+## Pitfalls
+
+- **Never transmit with no antenna or load attached.** An open connector is the worst mismatch there is. Use a <Ref to="dummy-loads">dummy load</Ref> for testing.
+- A <Ref to="antenna-tuners">tuner</Ref> at the radio makes the radio see 1:1, but any mismatch beyond the tuner is still there on the feed line.
+- Protection is a backstop, not a tuning method. A radio that keeps folding back is telling you the antenna, a connector or the feed line needs attention.
+
+<Callout kind="warn" title="Check before you key up">Wrong band, a loose PL-259 or a switch between positions are the usual causes of a sudden high SWR. Lower the power while you find out.</Callout>
+
+<ExamLink groups="T4A T7C T9B G9A" />
+
+<Related to="swr-and-reflections swr-and-power-meters antenna-tuners dummy-loads linear-amplifiers decibels" />

@@ -1,0 +1,50 @@
+import { Bearings as T8C_Bearings } from '@/visuals/technician/T8C_Bearings'
+import { DirectionFindingAntennas_NullVsPeak } from '@/visuals/compendium/DirectionFindingAntennas_NullVsPeak'
+import { LoopPattern as E9H_LoopPattern } from '@/visuals/extra/E9H_LoopPattern'
+
+## What it is
+
+A direction-finding (DF) antenna tells you which way a signal is coming from. Take a bearing, move, take another, and the lines cross at the transmitter. Hams use it for fox hunts, for tracking down interference, and for finding a stuck transmitter or an emergency beacon.
+
+<Facts items={[
+  ['Principle', 'a directional antenna, rotated until the signal peaks or nulls'],
+  ['Bearings needed', 'two or more, from different places'],
+  ['Common antennas', 'small loops, Adcock arrays, small Yagis, quads, Doppler arrays'],
+  ['Typical problem', 'reflections and a 180° ambiguity'],
+]} />
+
+## Finding the transmitter
+
+<T8C_Bearings />
+
+One bearing gives a line; two give a point; a third confirms it. Take each from a clear spot, with the antenna held well away from you and metal objects, and aim as accurately as you can. See <Ref to="fox-hunting-and-ardf" /> for the sport and <Ref to="rdf-basics" /> for the technique.
+
+## Peak or null?
+
+<DirectionFindingAntennas_NullVsPeak />
+
+A Yagi or quad shows the strongest signal when it points at the transmitter, but that peak is broad: you can swing it many degrees before the signal level drops noticeably. A small loop does the opposite. It is blind straight through the loop, a **null**, and the signal drops sharply on either side. So a loop gives a much more precise bearing, but only the direction, not how close you are, and it has two nulls 180° apart. You can't tell front from back.
+
+<E9H_LoopPattern />
+
+A **sense antenna** fixes that. A whip or other omnidirectional element, added with the right phase and level, merges with the loop's figure-8 into a **cardioid**, which has a single null. Cardioids are popular for DF because that one null is sharp and has only one direction. A loop usually has an **electrostatic shield**, a metal tube around it with a thin gap, to keep unbalanced capacitive pickup from the surroundings from filling in the null.
+
+## Types of DF antenna
+
+| Antenna | How it finds the bearing | Notes |
+|---|---|---|
+| Small loop, with sense antenna | sharp null | simple; shield improves the null |
+| Adcock array | two vertical elements, signals subtracted: figure-8 for vertical polarization | does not respond to the horizontal parts of a wave, so it avoids the polarization errors that spoil loops |
+| Yagi or quad with an attenuator | peak, sharpened by reducing receiver gain | the usual hunt tool on VHF and UHF |
+| Doppler array | switches or spins an antenna and measures the tone-shift in the signal | no moving parts to aim; often built into vehicle systems |
+
+## In practice
+
+- Reflections off buildings and terrain bounce signals in from false directions. A bearing that shifts as you move a few steps is multipath, not the target.
+- Near the transmitter the signal can overload the receiver. Turn gain down, or use an attenuator, so the strongest direction stays obvious.
+- A signal that arrives by sky-wave comes down from the ionosphere at a steep angle, so a nearby HF transmitter can show no clear direction at all. Hunts are usually done on VHF or UHF, or on ground-wave HF.
+- Two bearings from the same place are no use. Move far enough that the lines cross at a sensible angle.
+
+<ExamLink groups="T8C E9H" />
+
+<Related to="fox-hunting-and-ardf rdf-basics yagi-uda receive-loops-and-active-antennas radiation-patterns polarization" />

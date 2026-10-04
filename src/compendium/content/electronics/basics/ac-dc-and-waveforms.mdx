@@ -1,0 +1,44 @@
+import { AcDcAndWaveforms_Shapes } from '@/visuals/compendium/AcDcAndWaveforms_Shapes'
+import { AcDcAndWaveforms_RmsHeating } from '@/visuals/compendium/AcDcAndWaveforms_RmsHeating'
+import { G5B_SineLevels } from '@/visuals/general/G5B_SineLevels'
+
+## DC, AC and the shapes between
+
+**Direct current (DC)** flows one way at a steady level, like a battery. **Alternating current (AC)** swings back and forth, regularly reversing direction. The picture of voltage plotted against time is its **waveform**. A radio signal in an antenna is simply AC at a very high frequency.
+
+<AcDcAndWaveforms_Shapes />
+
+The shape tells you what a signal does. A **sine wave** is the purest: one frequency, nothing else, and what mains power and a clean radio carrier look like. A **square wave** is a switch snapping on and off, as in digital circuits and clocks, and it contains many harmonics, whole-number multiples of its frequency. A rectified wave is AC with the negative half flipped over: it is no longer alternating, but it is not steady either, which is why power supplies <Ref to="power-supplies">filter</Ref> it.
+
+<Facts items={[
+  ['Frequency', 'f, in hertz (Hz): cycles per second'],
+  ['Period', 'T = 1 ÷ f, seconds per cycle'],
+  ['Sine RMS', '0.707 × peak'],
+  ['Sine peak', '1.414 × RMS'],
+]} />
+
+## Frequency and period
+
+Frequency counts cycles in a second; the period is the time one cycle takes, so **T = 1 ÷ f**. US mains at 60 Hz has a period of 1 ÷ 60 = 16.7 ms. A 14.2 MHz signal repeats every 1 ÷ 14 200 000 = 70.4 ns. Mains frequency and voltage vary by country: much of the world uses 230 V at 50 Hz. Frequency and its link to wavelength continue in <Ref to="frequency-and-wavelength" />.
+
+## Peak, peak-to-peak and RMS
+
+An AC voltage keeps changing, so there is more than one way to quote it:
+
+- **Peak**: the maximum, measured from zero.
+- **Peak-to-peak**: from the lowest point to the highest, twice the peak for a sine.
+- **RMS** (root mean square): the steady DC voltage that would give the same heating.
+
+<AcDcAndWaveforms_RmsHeating />
+
+Power in a resistor goes as the voltage squared, so it is never negative and swings from zero up to its peak. A sine wave spends enough time near zero that the average is exactly half the peak power. Half the power means 1 ÷ √2 of the voltage: **RMS = 0.707 × peak**. Mains "120 V" is an RMS figure; its peak is 120 × 1.414 = 170 V and peak-to-peak is 339 V.
+
+<G5B_SineLevels />
+
+These factors only hold for a sine. For other shapes they differ: a square wave's RMS equals its peak, and a triangle's is 0.577 × peak. Cheap meters assume a sine wave when they convert their reading, so they misread other shapes; a **true-RMS** meter does the maths properly. See <Ref to="multimeters" />.
+
+<Callout kind="warn" title="Quote which one you mean">Ohm's law and power calculations use RMS, so P = E² ÷ R with RMS volts gives the true average power. Using peak volts overstates it by a factor of two.</Callout>
+
+<ExamLink groups="T5A G5B E8A" />
+
+<Related to="voltage-current-resistance power-and-energy frequency-and-wavelength spectrum-and-fourier power-supplies oscilloscopes" />

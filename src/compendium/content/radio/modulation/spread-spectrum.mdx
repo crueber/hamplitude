@@ -1,0 +1,46 @@
+import { SpreadSpectrum } from '@/visuals/extra/E8D_SpreadSpectrum'
+import { SpreadSpectrum_Despread } from '@/visuals/compendium/SpreadSpectrum_Despread'
+
+## What it is
+
+Spread spectrum deliberately makes a signal much wider than the information needs. The spreading follows a fixed pseudorandom pattern that the intended receiver knows. In exchange, the signal resists interference and can share spectrum with other users.
+
+<Facts items={[
+  ['Direct sequence (DSSS)', 'a fast code flips the carrier phase'],
+  ['Frequency hopping (FHSS)', 'the carrier jumps channel to channel in a pseudorandom order'],
+  ['Processing gain', '10 × log₁₀(spread bandwidth ÷ data bandwidth)'],
+  ['Examples', 'GPS, early Wi-Fi, Bluetooth, CDMA cellular'],
+]} />
+
+## Two ways to spread
+
+<SpreadSpectrum />
+
+**Direct sequence**: each data bit is multiplied by a much faster pseudorandom bit stream, the code, whose bits are called chips. The chips flip the phase of the carrier many times per data bit, smearing the signal across a wide band.
+
+**Frequency hopping**: the carrier moves between many channels many times a second, in a pattern both ends know. At any instant it is a narrow signal, but over time it covers a wide range.
+
+## Why it resists interference
+
+<SpreadSpectrum_Despread />
+
+At the receiver, the same code is applied again. That **despreads** the wanted signal back to its original narrow shape, with all its energy gathered into a peak. Anything not following the code, such as a narrowband interferer, is spread out instead, into a low flat floor that a narrow filter ignores. The ratio of spread to data bandwidth is the **processing gain**: the original GPS civil signal spreads 50 bit/s with about 1 million chips per second, a gain of roughly 43 dB, so it can be received below the noise.
+
+A hopping signal does the same by avoiding the interferer: a clash on one channel costs one hop, and error correction repairs it.
+
+Three more properties follow:
+
+- Low power spread over a wide band is hard to notice. It is not secret, though.
+- Many users can share a band using different codes. This is CDMA.
+- Reflections delayed by more than a chip no longer line up with the code, so they are largely rejected instead of causing fading.
+
+## In practice
+
+- The receiver must know the code and line up its timing to within a fraction of a chip. This is called synchronization.
+- It needs a wide channel. In the US, Part 97 limits spread spectrum to certain bands and conditions, and amateur rules do not allow using it to hide the meaning of a message. Check the current rules before transmitting.
+- GPS, Bluetooth (hopping), CDMA cellular and early Wi-Fi use these ideas. Wi-Fi-based amateur mesh networks are in <Ref to="aredn-mesh" />.
+- Other weak-signal modes, like FT8 and WSPR, are not spread spectrum: they stay narrow and rely on error correction and long integration times instead.
+
+<ExamLink groups="E8D E1F" />
+
+<Related to="digital-modulation bandwidth-and-data-rate error-correction aredn-mesh digital-modes-overview spectrum-and-fourier" />

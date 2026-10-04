@@ -1,0 +1,47 @@
+import { CommonMode } from '@/visuals/extra/E4E_CommonMode'
+import { CommonModeAndGroundLoops_Loop } from '@/visuals/compendium/CommonModeAndGroundLoops_Loop'
+import { GroundZ } from '@/visuals/general/G4C_GroundZ'
+
+## What it is
+
+Many interference problems travel by a path nobody drew on the schematic: current that flows along the **outside** of cables and through the **ground connections** between equipment. Two forms matter. **Common-mode current** is RF flowing the same way on every conductor of a cable, so the cable behaves as an antenna. A **ground loop** is a closed ring made by two ground connections, which carries unwanted current, usually mains hum.
+
+<Facts items={[
+  ['Differential current', 'the wanted signal: equal and opposite, fields cancel'],
+  ['Common-mode current', 'same direction on everything, so the cable radiates and receives'],
+  ['Ground loop', 'two ground paths forming a ring, usually heard as 60 Hz hum'],
+  ['Both are cured by', 'blocking the unwanted path, not the wanted one'],
+]} />
+
+## Common-mode current
+
+<CommonMode />
+
+A wanted signal goes out on one conductor and returns on another, so the fields cancel and little radiates. Common-mode current has no return partner. It flows the same way on **all** conductors, or on the shield, and the cable becomes one half of an antenna with the rest of your station as the other half. It then radiates your signal into the neighbour's house, and it brings noise back from the house into your receiver.
+
+The usual causes are an unbalanced antenna or feed point, a feed line the antenna's fields reach, and RF that couples onto a mic, USB or power lead. The cure is a ferrite choke placed so the current has to pass through it, see <Ref to="common-mode-chokes" /> and <Ref to="filters-and-ferrites-for-rfi" />. On a cable carrying equal and opposite signal currents, the choke leaves them alone.
+
+## Ground loops
+
+<CommonModeAndGroundLoops_Loop />
+
+Equipment that is connected to the mains safety ground and also connected by a signal cable has **two** paths to ground: through the house wiring and through the cable shield. Those two ground points are not at exactly the same potential, because currents in the building wiring make small voltage drops. That small voltage drives current round the loop, and because the shield is part of the signal path the audio picks it up as **hum**. A big loop also picks up magnetic fields from nearby mains wiring. The loop does not have to carry RF: this is mostly 60 Hz and its harmonics, and it stays when you transmit on no band at all.
+
+Ways out, from the easiest:
+
+1. Power the connected pieces from the **same outlet strip** or the same panel, so their grounds are close.
+2. **Bond the equipment enclosures together** with short, heavy conductors, see <Ref to="grounding-and-bonding" />. That reduces the voltage between the grounds that drives the loop.
+3. **Break the loop in the signal**: an isolation transformer in an audio line, a USB isolator, or balanced connections.
+4. Keep cables short and tidy, so the loop encloses little area.
+
+<Callout kind="warn" title="Never lift the safety ground">Do not cut the third pin off a plug or use a "cheater" adapter to remove a ground loop. The safety ground protects people from shock, see <Ref to="electrical-safety" />.</Callout>
+
+## A ground wire is not a ground at RF
+
+<GroundZ />
+
+At RF a wire has impedance, not just resistance. A ground lead that is a quarter wavelength long at your frequency presents a high impedance to the equipment, so RF voltage appears on the chassis: tingles, RF burns, hot spots and feedback. Keep RF grounds short, and do not make one resonant on a band you use. Bonding every enclosure together, and keeping lightning grounds on one single-point panel, is covered in <Ref to="grounding-and-bonding" /> and <Ref to="lightning-and-grounding" />.
+
+<ExamLink groups="E4E G4C G6B" />
+
+<Related to="rfi-and-emi common-mode-chokes filters-and-ferrites-for-rfi grounding-and-bonding baluns-and-ununs lightning-and-grounding" />

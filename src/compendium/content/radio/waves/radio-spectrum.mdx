@@ -1,0 +1,46 @@
+import { RadioSpectrum_Ranges } from '@/visuals/compendium/RadioSpectrum_Ranges'
+
+## What it is
+
+The radio spectrum is the whole span of radio frequencies, from a few kilohertz to hundreds of gigahertz. It is divided into named ranges, each **ten times wider** than the one below, and each behaves differently: how far a signal goes, how big the antenna is, how much information it can carry. Amateur radio holds slices in almost every range.
+
+<Facts items={[
+  ['Named ranges', 'VLF, LF, MF, HF, VHF, UHF, SHF, EHF'],
+  ['Each range', 'a factor of ten: 3 to 30, 30 to 300, and so on'],
+  ['Rule of thumb', 'higher frequency: shorter waves, smaller antennas, more bandwidth available'],
+]} />
+
+## The map
+
+<RadioSpectrum_Ranges />
+
+The names run from very low to extremely high frequency. Wavelength goes the other way, which is why ham bands are often named in metres: 160 m is a long, low band, 70 cm a short, high one. See <Ref to="frequency-and-wavelength" />.
+
+## What each range is used for
+
+Uses below are typical examples, not complete lists, and allocations differ between countries. Amateur bands shown are US allocations.
+
+| Range | Typical uses | Amateur bands | Mainly travels by |
+|---|---|---|---|
+| **VLF** 3–30 kHz | Submarine communication, navigation, time signals | None | Ground wave, with the ionosphere and ground acting as a guide |
+| **LF** 30–300 kHz | Time-signal stations, navigation beacons, longwave broadcasting in some countries | 2200 m | Ground wave |
+| **MF** 0.3–3 MHz | AM broadcasting, beacons, maritime | 630 m, 160 m | Ground wave by day; skywave too after dark |
+| **HF** 3–30 MHz | Shortwave broadcasting, long-range aviation and marine, citizens band at 27 MHz | 80 m to 10 m | Skywave off the ionosphere: worldwide |
+| **VHF** 30–300 MHz | FM broadcasting, TV, aircraft and marine radio, public safety | 6 m, 2 m, 1.25 m | Line of sight, with occasional long-distance openings |
+| **UHF** 0.3–3 GHz | TV, cell phones, GPS, Wi-Fi, FRS and GMRS | 70 cm, 33 cm, 23 cm, 13 cm | Line of sight, easily blocked by buildings and terrain |
+| **SHF** 3–30 GHz | Satellite links, radar, microwave links, Wi-Fi | Several bands, including 5.7, 10 and 24 GHz | Strictly line of sight; rain starts to matter |
+| **EHF** 30–300 GHz | Short high-capacity links, automotive radar, radio astronomy | 47 GHz and a few more above | Very short range, line of sight, strongly absorbed by air and rain |
+
+## Reading the table
+
+**Low frequencies reach farther.** MF and below hug the ground; HF reflects off the ionosphere and can circle the planet; VHF and up mostly go straight out through it. See <Ref to="ground-wave" />, <Ref to="skywave-and-skip" /> and <Ref to="line-of-sight" />.
+
+**High frequencies carry more.** Information needs bandwidth, and a 10 kHz channel is a huge fraction of a low band but nothing on UHF. Wide signals such as video and fast data are practical only up high; see <Ref to="bandwidth-and-data-rate" />.
+
+**Antennas shrink as frequency rises.** A half-wave dipole is about 10 m long on 20 m and about 33 cm on 70 cm, so beams and dishes are practical on VHF and up but huge on the low bands.
+
+Ham bands are slices carved out of shared spectrum. Different services get different slices, and the HF amateur bands are separate bands with gaps between them, not one continuous stretch. The exact edges, and which modes and license classes may use them, are in the <Ref to="amateur-band-chart" /> and <Ref to="band-plans" />.
+
+<ExamLink groups="T3B T1B" />
+
+<Related to="frequency-and-wavelength electromagnetic-waves amateur-band-chart band-plans skywave-and-skip line-of-sight" />

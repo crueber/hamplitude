@@ -1,0 +1,45 @@
+import { Analyzer } from '@/visuals/general/G4B_Analyzer'
+import { AntennaAnalyzersAndVnas_Sweep } from '@/visuals/compendium/AntennaAnalyzersAndVnas_Sweep'
+import { VnaCal } from '@/visuals/extra/E4B_VnaCal'
+
+## What it is
+
+An **antenna analyzer** is a small, battery-powered instrument with its own low-power signal source. Connect it to an antenna or feed line and it sweeps across a band and tells you the SWR, the impedance and the resonant frequency, with no transmitter needed. A **vector network analyzer (VNA)** does the same but also measures phase, so it can show the full complex impedance, plot a Smith chart, and test filters and cables. Inexpensive hobby VNAs cover the HF and VHF bands.
+
+<Facts items={[
+  ['Test signal', 'its own, typically a few milliwatts or less'],
+  ['Reads', 'SWR, resistance R, reactance X, |Z|, return loss'],
+  ['VNA adds', 'phase, Smith chart, S21 (gain or loss through a device)'],
+  ['Needs', 'transmitter off, and a calibration reference plane'],
+]} />
+
+## The sweep
+
+<AntennaAnalyzersAndVnas_Sweep />
+
+The plot is SWR against frequency. The bottom of the dip is the resonant frequency, where the antenna's reactance is zero and only resistance remains. Pruning the wire to put the dip where you operate is what the analyzer is mostly used for: if the dip lands at 7.05 MHz and you want it at 7.15, the wire is about 1.4% too long (7.05 ÷ 7.15 = 0.986), so trim it that much. The **width** of the dip shows the usable bandwidth, often a small fraction of a band on a thin-wire antenna.
+
+Beyond SWR, the R and X readings tell you why the match is poor: reactance means you are off resonance, and a resistance far from 50 Ω means the antenna is the wrong impedance for the line. That is far more useful than a single SWR number.
+
+## Analyzer or wattmeter?
+
+<Analyzer />
+
+A directional wattmeter needs a working transmitter and gives one reading at one frequency. An analyzer needs none, can sweep the whole band quickly, and works at power levels that cause no interference. The price is that it measures with a tiny signal, so it can't show effects that appear only at high power.
+
+## VNAs and calibration
+
+<VnaCal />
+
+A VNA measures how a signal is reflected (S11, the source of SWR and impedance) and how it passes through (S21, the response of a filter or the loss of a cable). Before measuring, **calibrate** with known loads (open, short and a 50 Ω load) at the end of the test cable, so the cable and connectors drop out of the result. Recalibrate if you change the cable, the frequency range, or the connectors. See <Ref to="smith-chart" /> for how to read the impedance plot.
+
+## Pitfalls
+
+- **Strong outside signals.** A nearby broadcast or ham transmitter can swamp the analyzer's small test signal and distort the reading. Keep the transmitter off, and measure at a quiet frequency.
+- **Where you connect it.** An analyzer reads at its own port. Through a long lossy cable the SWR looks better than at the antenna, as in <Ref to="swr-and-reflections" />. Connect at the antenna when you can, or know the cable.
+- **Static and live lines.** A long wire can hold a static charge: touch the connector's centre pin to the shield briefly before connecting. Never connect an analyzer to a line that might carry transmitter power.
+- **Resonance is not the goal.** Zero reactance and a low SWR don't prove the antenna is efficient. A dummy load shows 1:1.
+
+<ExamLink groups="E4A E4B" />
+
+<Related to="swr-and-power-meters swr-and-reflections smith-chart spectrum-analyzers dummy-loads half-wave-dipole" />

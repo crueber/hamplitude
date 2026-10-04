@@ -1,0 +1,55 @@
+import { Attenuators_Pad } from '@/visuals/compendium/Attenuators_Pad'
+import { Attenuator } from '@/visuals/extra/E4C_Attenuator'
+
+## What it is
+
+An attenuator, or **pad**, cuts a signal by a fixed number of decibels using only resistors. Its trick is to do this while still looking like the system impedance (usually 50 Ω) at both ends, so adding it does not create a mismatch. The lost power is turned into heat in the resistors.
+
+<Facts items={[
+  ['3 dB', 'half the power'],
+  ['10 dB', 'one tenth of the power, voltage ÷ 3.16'],
+  ['20 dB', 'one hundredth of the power, voltage ÷ 10'],
+  ['10 dB pad, 50 Ω', 'Pi: 96 Ω, 71 Ω, 96 Ω. T: 26 Ω, 35 Ω, 26 Ω.'],
+]} />
+
+## How it works
+
+<Attenuators_Pad />
+
+A **Pi** pad has a series resistor between two shunt resistors to ground; a **T** pad has a shunt resistor between two series ones. The three values are chosen so that, with the far end terminated in the system impedance, the near end also looks like it, whichever way round the pad is used. With K = 10^(dB ÷ 20) and Z the system impedance:
+
+| | Series resistor | Shunt resistor |
+|---|---|---|
+| T pad | Z × (K − 1) ÷ (K + 1) | 2 × Z × K ÷ (K² − 1) |
+| Pi pad | Z × (K² − 1) ÷ (2 × K) | Z × (K + 1) ÷ (K − 1) |
+
+For 10 dB in 50 Ω, K = 3.162, so a T pad needs 26.0 Ω series and 35.1 Ω shunt, and a Pi pad needs 71.2 Ω series and 96.2 Ω shunt.
+
+| Loss | Pi shunt | Pi series | T series | T shunt |
+|---|---|---|---|---|
+| 3 dB | 292 Ω | 17.6 Ω | 8.55 Ω | 142 Ω |
+| 6 dB | 150 Ω | 37.4 Ω | 16.6 Ω | 66.9 Ω |
+| 10 dB | 96.2 Ω | 71.2 Ω | 26.0 Ω | 35.1 Ω |
+| 20 dB | 61.1 Ω | 247.5 Ω | 40.9 Ω | 10.1 Ω |
+
+Standard resistor values come close. A 10 dB Pi pad with 100 Ω, 68 Ω and 100 Ω gives 9.7 dB, and the input stays within about 1% of 50 Ω (SWR 1.01).
+
+## Why use one
+
+<Attenuator />
+
+- **Receiver overload.** A strong signal can overload a receiver front end and swamp it with distortion. An attenuator ahead of the receiver lowers it. On the lower HF bands, the atmospheric noise arriving at the antenna is much stronger than the receiver's own noise, so the attenuator cuts the noise and the signal together, and the wanted signal is still heard. See <Ref to="overload-and-intermod" />.
+- **Protecting test gear.** To sample a transmitter with a spectrum analyzer or counter, put a high-power attenuator in line (see <Ref to="spectrum-analyzers" />).
+- **Improving a match.** A mismatch's reflection crosses the pad twice, so it improves the return loss by twice the attenuation. A 6 dB pad ahead of a 3:1 SWR load (6 dB return loss) shows the source about 18 dB, an SWR of about 1.3.
+- **Lowering drive.** A pad between a radio and an amplifier that needs less drive than the radio can supply, rated for the power it will absorb.
+
+## In practice
+
+- **Check the power rating.** A pad must absorb the lost power: a 10 dB pad with 100 W in passes 10 W and dissipates 90 W. Pads that are too small for the power burn out, so use ones rated for the job.
+- **Frequency limits.** Ordinary leaded resistors have stray inductance and capacitance that spoil the pad at VHF and above; purpose-built coax attenuators stay accurate far higher.
+- **Variable attenuators.** Step attenuators switch fixed pads in and out; PIN diodes vary RF resistance with a DC current, as in a receiver's attenuation control.
+- **A feed line is an attenuator**, too, a long one with an unwanted loss; see <Ref to="feed-line-loss" />.
+
+<ExamLink groups="E4C" />
+
+<Related to="decibels dummy-loads receiver-performance overload-and-intermod spectrum-analyzers resistors" />

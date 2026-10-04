@@ -1,0 +1,45 @@
+import { SolarCycleAndIndices_Cycle } from '@/visuals/compendium/SolarCycleAndIndices_Cycle'
+import { Indices as G3A_Indices } from '@/visuals/general/G3A_Indices'
+
+## Why the Sun sets the weather
+
+HF skywave works because ultraviolet and X-ray light from the Sun ionizes the upper atmosphere. When the Sun is more active it ionizes more, the F layer gets denser, and the <Ref to="muf-and-luf">MUF</Ref> rises. That activity swells and shrinks over a **solar cycle**, and a few numbers let you read it at a glance.
+
+<Facts items={[
+  ['Solar cycle', 'about 11 years, minimum to minimum (varies, roughly 9 to 14)'],
+  ['Solar flux index (SFI)', 'about 65 to 70 at the lowest, past 200 in strong maxima'],
+  ['K index', '0 to 9, per three hours'],
+  ['A index', 'daily, linear scale; below about 8 is quiet'],
+]} />
+
+## The cycle
+
+<SolarCycleAndIndices_Cycle />
+
+**Sunspots** are dark, cooler patches where the Sun's magnetic field is strong. More spots mean a more active Sun, so the sunspot count has been used for centuries to track the cycle. Near the maximum the higher bands (15, 12 and 10 m) open for long stretches, and signals on them can span the globe. Near the minimum they often stay shut, 20 m remains the dependable daytime band, and the lower bands carry long paths after dark. Cycles differ in height and shape, and a rise tends to be quicker than the decline, so you cannot read one cycle off another.
+
+## The three numbers
+
+<G3A_Indices />
+
+**Solar flux index (SFI)** is a measure of the Sun's radio noise at a wavelength of 10.7 cm (about 2.8 GHz), in solar flux units. It tracks sunspot count closely, but it is a clean instrument reading, not a count, and it is reported daily. Rough guide: around 100 and up, 15 m opens regularly by day; around 150 and up, 10 m often opens.
+
+The other two numbers describe Earth's magnetic field, which the Sun's wind disturbs. The **K index** measures disturbance over a three-hour period on a scale from 0 to 9. The **A index** is the day's average, converted to a linear scale. Both are about stability: lower is calmer.
+
+| A index (daily) | Typical description |
+|---|---|
+| 0 to 7 | quiet |
+| 8 to 15 | unsettled |
+| 16 to 29 | active |
+| 30 to 49 | minor storm |
+| 50 and above | major to severe storm |
+
+A K of 5 or more marks a geomagnetic storm; see <Ref to="space-weather" />.
+
+## Reading them together
+
+Best conditions: **high SFI, low A and K**. High flux with a stormy field can still leave a disturbed, unreliable path, especially over the poles. Low flux with a calm field gives quiet but low-band conditions. Because the Sun turns about once every 27 days as seen from Earth, an active region that causes trouble can come round again.
+
+<ExamLink groups="G3A" />
+
+<Related to="muf-and-luf ionosphere-layers space-weather propagation-tools skywave-and-skip six-meters" />

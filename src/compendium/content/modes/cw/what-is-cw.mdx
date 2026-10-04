@@ -1,0 +1,39 @@
+import { Keying } from '@/visuals/technician/T8D_Keying'
+import { WhatIsCw_NoiseWindow } from '@/visuals/compendium/WhatIsCw_NoiseWindow'
+import { BandwidthRuler } from '@/visuals/technician/T8A_BandwidthRuler'
+
+## What it is
+
+CW (continuous wave) is Morse code sent by switching a steady radio carrier on and off. Key down, the carrier is on; key up, it is off. Nothing else is varied, which is why it is the simplest mode to generate and still a strong performer when signals are weak.
+
+<Keying />
+
+<Facts items={[
+  ['Bandwidth', 'about 150 Hz (varies with speed and keying shape)'],
+  ['Typical receive filter', 'a few hundred Hz'],
+  ['Typical pitch', '500 to 800 Hz'],
+  ['License test', 'no Morse test for any US license class'],
+]} />
+
+## Why narrow means strong
+
+Noise is spread evenly across the spectrum, so the more bandwidth your receiver lets through, the more noise reaches your ear. A voice signal needs about 3 kHz. A CW signal is a single tone being switched, so it fits in a filter a few hundred hertz wide, or less.
+
+<WhatIsCw_NoiseWindow />
+
+Drag the slider: shrinking the filter from 2.4 kHz to 150 Hz keeps the whole signal but removes about 12 dB of noise, a gain you would otherwise buy with a much bigger transmitter. See <Ref to="noise-and-snr" /> for why signal-to-noise ratio, not raw strength, decides what you can copy.
+
+<BandwidthRuler />
+
+## The rest of the picture
+
+- **Efficient transmitting.** All the power goes into the one signal that carries the message, and the transmitter needs no linear amplifier. Small, cheap, battery-friendly rigs work well; see <Ref to="qrp-cw" />.
+- **Crowded bands.** Stations can sit a few hundred hertz apart, so many more fit than on voice, and a narrow filter lets you pick one out. Your ear and brain are excellent at hearing a steady tone through noise.
+- **Gets through language barriers.** Prosigns, <Ref to="q-codes">Q-codes</Ref> and abbreviations are the same worldwide; see <Ref to="cw-procedures" />.
+- **Speed costs bandwidth.** Faster keying makes sharper changes, so a fast signal is a little wider. Keyed too abruptly, a transmitter splatters clicks across the band, so rigs soften the on and off edges.
+
+<Callout kind="note" title="Not for the code test">Morse is no longer required for any US license. People use it because it works: see <Ref to="morse-alphabet" /> for the code itself and <Ref to="learning-morse" /> for learning it.</Callout>
+
+<ExamLink groups="T8A T8D G2C" />
+
+<Related to="morse-alphabet learning-morse cw-procedures qrp-cw noise-and-snr radio-filters" />

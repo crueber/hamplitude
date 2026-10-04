@@ -1,0 +1,44 @@
+import { SmithExplorer } from '@/visuals/extra/E9G_SmithExplorer'
+import { SmithLine } from '@/visuals/extra/E9G_SmithLine'
+import { SmithStub } from '@/visuals/extra/E9G_SmithStub'
+
+## What it is
+
+The Smith chart is a map of every possible impedance, drawn on a circle. Each point is one impedance, written as resistance and reactance, and equally one **reflection coefficient**. It looks busy, but it only rearranges what you already know: how well a load matches a line, and what changes as you add length or a part.
+
+<Facts items={[
+  ['Centre', 'a perfect match: the load equals Z0, SWR 1'],
+  ['Distance from centre', 'size of the reflection |Γ|; the circle through a point is its SWR'],
+  ['Upper / lower half', 'inductive (+jx) / capacitive (−jx)'],
+  ['Normalised', 'impedances are divided by Z0, so 100 Ω on 50 Ω is 2 + j0'],
+]} />
+
+## Reading a point
+
+<SmithExplorer />
+
+Impedances are **normalised**: divide by the line's Z0, so the chart works for 50 Ω, 75 Ω or anything else. The horizontal axis is pure resistance, with a short circuit at the left, an open circuit at the right and the match at the centre. Circles of constant resistance all touch at the right-hand point; arcs of constant reactance curve off the axis, upward for inductive and downward for capacitive. The outer rim is reactance only, where there is no resistance to absorb power and everything reflects.
+
+Distance from the centre is the size of the reflection, so the **dashed circle** through a point is its SWR circle. A load of 25 + j25 Ω on 50 Ω is 0.5 + j0.5, which has an SWR of about 2.6:1. Every point on that same circle has that SWR.
+
+## Moving along a line
+
+<SmithLine />
+
+Add a length of line and the point slides along its SWR circle, **clockwise toward the generator** (the radio). One full lap is half a wavelength, and a quarter wavelength is half a lap: the point lands exactly opposite, which turns the impedance upside down (z becomes 1 ÷ z). That is the quarter-wave transformer in the picture. The SWR stays put (apart from loss), but the impedance changes. That is why the impedance a radio or tuner sees changes with feed-line length even though the SWR on the line does not.
+
+## Matching on the chart
+
+<SmithStub />
+
+Adding a part moves the point along a fixed path. Series inductance moves it clockwise along its constant-resistance circle; series capacitance moves it counter-clockwise. Shunt parts move it along constant-**conductance** circles instead: the admittance reading of the chart, which is the same chart turned through half a lap. Matching means steering the point to the centre: walk along the line until the conductance reads 1, then cancel the leftover susceptance with a stub or a part. See <Ref to="stubs-and-matching-sections" />.
+
+## In practice
+
+- A **vector network analyzer** (VNA) or antenna analyzer plots its sweep on a Smith chart: a small blob near the centre means a good match across the band.
+- You rarely compute by hand today. The value of the chart is **intuition**: you can see why a tuner works, why the impedance at the radio changes with feed-line length while the SWR does not, and which way to adjust.
+- It also supports ordinary matching: an L network on the chart is two steps, one along a constant-resistance circle and one along a constant-conductance circle.
+
+<ExamLink groups="E9G E9E" />
+
+<Related to="swr-and-reflections characteristic-impedance stubs-and-matching-sections antenna-tuners feed-line-loss" />

@@ -1,0 +1,48 @@
+import { Aprs_Network } from '@/visuals/compendium/Aprs_Network'
+import { AprsMap } from '@/visuals/technician/T8D_AprsMap'
+import { E2D_AprsFrame } from '@/visuals/extra/E2D_AprsFrame'
+import { E2D_AprsPath } from '@/visuals/extra/E2D_AprsPath'
+
+## What it is
+
+The Automatic Packet Reporting System, **APRS**, lets stations broadcast their position, short messages, weather and status to everyone in range, and puts all of it on a shared map. A car with a GPS and a radio can show its location on a web map in near real time. It is built on top of <Ref to="packet-radio" />.
+
+<Facts items={[
+  ['Frequency (North America)', '144.390 MHz'],
+  ['Protocol', 'AX.25 packets'],
+  ['Frame type', 'Unnumbered Information (UI): no connection, no acknowledgement'],
+  ['Carries', 'position, weather, text messages, status, telemetry'],
+]} />
+
+## How a report travels
+
+<Aprs_Network />
+
+A tracker sends a short packet on the shared channel. Nearby **digipeaters** hear it and repeat it, so it reaches stations beyond the original range. An **iGate** is a station with a radio and an internet connection that forwards what it hears to the APRS internet system, where web maps pick it up. Traffic from the internet can be sent out again over radio, which is how messages can reach a mobile station.
+
+<AprsMap />
+
+Because anyone can hear the channel, APRS works like a broadcast: you do not connect to a station, you simply announce yourself.
+
+## One packet, no handshake
+
+<E2D_AprsFrame />
+
+An APRS beacon is a **UI frame**: sent once, with no connection and no reply. That keeps it simple and lets it work on a busy shared channel. The cost is that a beacon may be missed, so trackers repeat their reports at intervals.
+
+## Paths and hops
+
+<E2D_AprsPath />
+
+The packet carries a **path** that says how far it may be repeated. The path WIDE3-3 requests three digipeater hops; each digipeater lowers the second number, so WIDE3-1 means one hop is left. A long path reaches farther but loads the shared channel with repeats, so short paths are the polite choice in a busy area.
+
+## In practice
+
+- Radios and trackers use <Ref to="fm-voice">FM</Ref> and **1200 baud** audio tones on the national APRS frequency, so a handheld with a built-in or external TNC is enough. Other countries use other frequencies.
+- Typical uses include tracking vehicles, balloons and events, weather stations, and short text messages without a phone network.
+- Be considerate: the channel is one frequency shared by everyone. Beacon only as often as you need to, and use a slower rate when stationary.
+- Your call sign is part of every packet, so each beacon identifies you.
+
+<ExamLink groups="T8D E2D" />
+
+<Related to="packet-radio digital-modes-overview balloons ares-and-races fm-voice winlink" />

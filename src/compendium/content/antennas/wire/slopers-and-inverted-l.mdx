@@ -1,0 +1,32 @@
+import { SlopersAndInvertedL_Layouts } from '@/visuals/compendium/SlopersAndInvertedL_Layouts'
+
+## What they are
+
+Two ways to make a wire antenna out of one tall support, such as a tower or tree, when you cannot hang a flat dipole. A **sloper** is a wire hung diagonally from the support. An **inverted L** is a vertical wire that bends into a horizontal section, popular on the low bands where a full-height vertical would be too tall.
+
+<Facts items={[
+  ['Sloper', 'dipole or quarter-wave wire hung at an angle'],
+  ['Inverted L', 'about ¼ wavelength of wire in all: 234 ÷ f(MHz) feet'],
+  ['Polarization', 'mixed, vertical and horizontal'],
+  ['Needs', 'inverted L: radials; sloper: attention to the tower'],
+]} />
+
+<SlopersAndInvertedL_Layouts />
+
+## Slopers
+
+A sloper is a dipole whose axis is tilted, so it radiates both polarizations and its pattern is lopsided. A **half-sloper** uses a metal tower as the other half: the coax shield connects to the tower and the center conductor to the wire. The tower, guy wires and any beams on it become part of the antenna, so results vary from one installation to another, and you should expect only a mild directional preference. A sloper is simple to hang, but the lower end must stay clear of people.
+
+## The inverted L
+
+A quarter-wave vertical on 160 m is about 126 ft tall (234 ÷ 1.85); on 80 m about 65 ft (234 ÷ 3.6). An inverted L runs as much of that as your support allows up as the radiating vertical part, then bends the remainder horizontal. It is fed at the base, like a vertical, so it needs a good <Ref to="radials-and-ground-planes">radial or ground system</Ref>, and its efficiency depends on it.
+
+The vertical section gives low-angle radiation, good for distant stations, while the horizontal section adds some higher-angle, horizontally polarized radiation. The more wire you bend over, the less low-angle radiation you keep.
+
+- Feed impedance is typically a few tens of ohms and varies with how it is bent, so expect to use a matching network or tuner at the base.
+- Tune it by trimming the wire length, as for a vertical.
+- The far end is a high-voltage point: keep it out of reach, and well away from power lines.
+
+<Callout kind="warn" title="Power lines and ladders">Never raise a wire, mast or tower near overhead power lines, and do not climb a tower unless trained to do so. See <Ref to="tower-safety" />.</Callout>
+
+<Related to="quarter-wave-vertical radials-and-ground-planes inverted-v towers-and-masts ground-and-height antenna-tuners" />

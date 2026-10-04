@@ -1,0 +1,39 @@
+import { Conductors } from '@/visuals/technician/T5A_Conductors'
+import { ConductorsAndInsulators_Resistivity } from '@/visuals/compendium/ConductorsAndInsulators_Resistivity'
+
+## What decides whether current flows
+
+Current is the movement of charged particles, so a material carries current only if it has charges free to move. In **metals**, each atom lets go of an outer electron, and these electrons wander freely among the atoms. A little voltage moves them all, so metals are **conductors**. In an **insulator** such as glass, plastic or ceramic, the electrons are held tightly to their atoms and nothing moves. **Semiconductors**, such as silicon, sit between: very few free charges when pure, but their conduction can be controlled, which makes transistors possible (see <Ref to="semiconductor-basics" />).
+
+<Conductors />
+
+<Facts items={[
+  ['Good conductors', 'silver, copper, gold, aluminum'],
+  ['Insulators', 'glass, ceramic, most plastics, dry air'],
+  ['Semiconductors', 'silicon, germanium'],
+  ['Resistance of a wire', 'R = ρ × length ÷ area'],
+]} />
+
+## How different they really are
+
+<ConductorsAndInsulators_Resistivity />
+
+The scale is logarithmic and enormous. Copper is a conductor and glass an insulator, but the gap between them is at least seventeen orders of magnitude. Conduction is not only for metals: salt water carries current through dissolved ions, which is why a wet antenna insulator, a salty coastal deposit or the human body can all conduct. Even "pure" water is a poor conductor until impurities dissolve in it.
+
+## Choosing and sizing a conductor
+
+Resistance depends on the material's **resistivity** (ρ), the wire's length, and its cross-section: **R = ρ × L ÷ A**. Longer wire resists more; thicker wire resists less, and doubling the diameter cuts resistance to a quarter.
+
+Take 10 m of 14 AWG copper wire (area about 2.08 mm², resistivity about 1.68 × 10⁻⁸ Ω·m). Its resistance is 1.68 × 10⁻⁸ × 10 ÷ 2.08 × 10⁻⁶ = **0.081 Ω**. A radio drawing 10 A over a 10 m run needs 20 m of wire for the round trip, so the drop is 10 × 0.161 = 1.6 V. That is 12% of a 13.8 V supply, lost in the wiring: this is why DC power leads are short and thick. See <Ref to="wire-and-cable" /> for sizes and ratings.
+
+- **Aluminum** has about 1.6 times the resistivity of copper, so a given run needs a thicker wire, but it is lighter.
+- **Silver plating** is used on RF parts because radio-frequency current flows near the surface (<Ref to="skin-effect" />).
+- **Heat** raises the resistance of metals, by roughly 0.4% per °C for copper, so a hot wire is slightly worse than a cool one.
+
+## Insulators in the shack
+
+Insulators hold conductors apart: the plastic on a wire, the dielectric inside <Ref to="coaxial-cable">coax</Ref>, the ceramic or glass insulator at the end of a dipole. Insulators are not perfect. Dirt and moisture make a surface conductive, and a high enough voltage forces a spark through even dry air, at roughly 3 kV per millimetre (less near sharp points). Equipment designers allow for this by spacing high-voltage parts well apart. Treat anything as live until you know otherwise (<Ref to="electrical-safety" />).
+
+<ExamLink groups="T5A" />
+
+<Related to="voltage-current-resistance ohms-law wire-and-cable skin-effect semiconductor-basics coaxial-cable" />

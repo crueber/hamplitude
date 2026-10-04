@@ -1,0 +1,54 @@
+import { SwrWaves } from '@/visuals/shared/SwrWaves'
+import { SwrAndReflections_Standing } from '@/visuals/compendium/SwrAndReflections_Standing'
+
+## What it is
+
+When a feed line's load is not equal to its <Ref to="characteristic-impedance">characteristic impedance</Ref>, part of the wave bounces back toward the transmitter. The forward and reflected waves add up to a **standing wave**, and the **standing wave ratio (SWR)** measures how lumpy it is. SWR of 1:1 means no reflection; the bigger the number, the bigger the mismatch.
+
+<Facts items={[
+  ['Reflection coefficient', 'Γ = (ZL − Z0) ÷ (ZL + Z0)'],
+  ['SWR', '(1 + |Γ|) ÷ (1 − |Γ|); for a resistive load, larger Z ÷ smaller Z'],
+  ['Return loss', '−20 log10 |Γ|, in dB'],
+  ['Reflected power', '|Γ|², a fraction of forward power'],
+]} />
+
+## How it works
+
+<SwrWaves />
+
+The reflection coefficient Γ is the size of the reflected wave relative to the forward one. A 100 Ω antenna on 50 Ω line gives Γ = (100 − 50) ÷ (100 + 50) = 1/3, an SWR of 2:1 and 11% of the power reflected. A 25 Ω load gives exactly the same numbers, because only the ratio matters. A short or an open circuit reflects everything: Γ = 1 and the SWR is infinite.
+
+<SwrAndReflections_Standing />
+
+The reflected wave travels back and meets the forward wave, so the two add in some places and subtract in others. Where they add, the voltage is high; a quarter wavelength away they subtract. **SWR is literally Vmax ÷ Vmin** along the line. The pattern repeats every half wavelength.
+
+## The numbers that matter
+
+| SWR | Γ | Return loss | Power reflected | Mismatch loss |
+|---|---|---|---|---|
+| 1.0:1 | 0 | infinite | 0% | 0 dB |
+| 1.5:1 | 0.20 | 14 dB | 4% | 0.18 dB |
+| 2:1 | 0.33 | 9.5 dB | 11% | 0.51 dB |
+| 3:1 | 0.50 | 6 dB | 25% | 1.2 dB |
+| 5:1 | 0.67 | 3.5 dB | 44% | 2.6 dB |
+| 10:1 | 0.82 | 1.7 dB | 67% | 4.8 dB |
+
+Mismatch loss is how much less power the load absorbs than the forward power: −10 log10(1 − Γ²). At 2:1 that is half a dB, far below what anyone can hear. Even 3:1 costs about a dB.
+
+## Misconceptions
+
+- **SWR is not efficiency.** A dummy load is a perfect 1:1 and radiates nothing; a poor, lossy antenna can show 1:1. SWR says how well the load matches the line, not how well it radiates.
+- **Reflected power is not simply "lost".** It goes back toward the transmitter. If the source re-reflects it, it returns to the load, and the real cost is extra loss in the line, which grows quickly with a lossy cable. Many solid-state transmitters instead reduce their output when SWR is high, to protect the output stage.
+- **A low reading at the radio can hide a high SWR at the antenna.** The reflected wave must travel the lossy line back as well as forward, so a lossy line makes the SWR look better than it is. See <Ref to="feed-line-loss" />.
+- **Tuning for 1:1 at the radio is not the same as fixing the antenna.** A tuner transforms what the radio sees; it does not remove the mismatch on the line. See <Ref to="antenna-tuners" />.
+
+## In practice
+
+- Measure SWR with a meter in the line, an antenna analyzer, or a vector network analyzer. Measure at each frequency you use, since an antenna's match changes with frequency.
+- Below about 2:1 is a good working target for most stations, but a lower figure is not worth chasing at the cost of efficiency elsewhere. Amplifiers and high power care most about SWR; short coax runs at low power tolerate quite a lot.
+- A sudden change in SWR often means a failing connector, water in the line or a broken antenna element.
+- The SWR does not change as the line gets longer or shorter (apart from loss), but the impedance seen at the radio does. For that, see <Ref to="smith-chart" />.
+
+<ExamLink groups="T7C T9B G9A E9E" />
+
+<Related to="characteristic-impedance feed-line-loss antenna-tuners smith-chart stubs-and-matching-sections coaxial-cable" />

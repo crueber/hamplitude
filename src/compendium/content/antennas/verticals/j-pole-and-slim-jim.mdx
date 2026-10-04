@@ -1,0 +1,39 @@
+import { JPoleAndSlimJim_Anatomy } from '@/visuals/compendium/JPoleAndSlimJim_Anatomy'
+
+## What it is
+
+An end-fed half-wave vertical with a built-in matching section, easy to build from copper pipe, wire or ladder line. Popular on 2 m and 70 cm for home, portable and repeater use, because it needs **no radials** and the matching is just geometry.
+
+<Facts items={[
+  ['Parts', 'half-wave radiator plus a quarter-wave shorted stub'],
+  ['Overall length', 'about 3/4 wavelength'],
+  ['Feed', 'coax tapped onto the stub, where the impedance is about 50 Ω'],
+  ['Polarization', 'vertical'],
+]} />
+
+## How it works
+
+<JPoleAndSlimJim_Anatomy />
+
+A half-wave element fed at its end has a very high impedance: high voltage, almost no current. Coax cannot drive that directly. The J-pole solves it with a **quarter-wave shorted stub**, a piece of transmission line shorted at one end. A quarter-wave line turns a short into an open, so impedance rises smoothly from near 0 Ω at the shorted bottom to very high at the open top, where the half-wave radiator takes over. Somewhere along the way it passes 50 Ω, and that is where the coax connects. See <Ref to="stubs-and-matching-sections" />.
+
+Typical 2 m starting figures are 3.2 ft for the radiator and 1.6 ft for the stub (468 ÷ 146 and 234 ÷ 146). Real pole dimensions differ with the material, so trim the tap position and length for the lowest SWR.
+
+## J-pole versus Slim Jim
+
+| | J-pole | Slim Jim |
+|---|---|---|
+| Idea | Radiator over a shorted quarter-wave stub | The same matching idea, with the stub folded in beside the radiator |
+| Built from | Pipe, wire or ladder line | Usually one piece of ladder line or twin-lead |
+| Feed | Coax tapped on the stub | Coax tapped near the base |
+
+Either performs like a half-wave vertical: modest gain, vertical polarization, omnidirectional. Their appeal is simplicity and a good match with no radials, not gain.
+
+## In practice
+
+- **Common-mode current.** The coax shield is tapped onto the stub, so RF can climb back down the outside of the cable. A few turns of coax as a choke below the tap, or a <Ref to="common-mode-chokes">common-mode choke</Ref>, keeps the feed line out of the pattern.
+- **Mount it clear.** Keep it well away from metal masts, gutters and walls, which detune it and bend the pattern.
+- **Modest bandwidth.** Trim the tap for the part of the band you use most.
+- **Portable.** A rolled-up ladder-line version hangs from a tree branch or a camera tripod, which is why it appears in <Ref to="portable-field-antennas" /> kits.
+
+<Related to="quarter-wave-vertical five-eighths-and-colinears stubs-and-matching-sections common-mode-chokes portable-field-antennas handheld-antennas" />

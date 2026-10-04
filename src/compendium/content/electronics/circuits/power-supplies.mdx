@@ -1,0 +1,60 @@
+import { PowerSupply } from '@/visuals/technician/T6D_PowerSupply'
+import { PowerSupplies_Ripple } from '@/visuals/compendium/PowerSupplies_Ripple'
+import { SwitchReg } from '@/visuals/extra/E7D_SwitchReg'
+
+## What it is
+
+A power supply turns the AC from the wall into the steady, low-voltage DC that radio equipment needs, most often 13.8 V for 12 V gear. How clean that DC is decides how much hum, noise and heat you get.
+
+<Facts items={[
+  ['Chain', 'transformer, rectifier, filter capacitor, regulator'],
+  ['Peak voltage', 'RMS × 1.414'],
+  ['Ripple frequency', '120 Hz from a full-wave rectifier on 60 Hz mains'],
+  ['Linear regulator heat', '(V in − V out) × current'],
+]} />
+
+## The chain
+
+<PowerSupply />
+
+1. **Transformer.** Steps the mains down and isolates the output from it. A 12 V RMS secondary peaks at 12 × 1.414 = 17.0 V.
+2. **Rectifier.** Diodes pass current one way only, so AC becomes pulsating DC. A half-wave rectifier uses one diode and wastes half of each cycle; a full-wave (centre-tap or bridge) uses both halves, giving 120 pulses a second. A bridge's two conducting diodes each drop about 0.7 V, so the 17.0 V peak becomes about 15.6 V.
+3. **Filter.** A large capacitor charges at each peak and supplies the load between peaks, flattening the pulses.
+4. **Regulator.** Holds the output steady at its set voltage despite changes in mains voltage or load.
+
+Many supplies add a **bleeder** resistor across the output so the big capacitors drain after switch-off, because their stored charge can hurt; see <Ref to="electrical-safety" />.
+
+## Ripple
+
+<PowerSupplies_Ripple />
+
+The capacitor sags between peaks. The rule of thumb for the size of that sag, **ripple ≈ I ÷ (f × C)**, slightly overestimates it: 1 A, 4700 µF and 120 Hz gives about 1.8 V, where the simulation above gives about 1.5 V. Ripple falls with a bigger capacitor, a smaller load or a full-wave rectifier, which doubles the frequency. Unwanted ripple is heard as a 120 Hz hum on the radio's audio or on its own transmitted signal.
+
+The regulator removes what is left, but only while its input stays above the output by a minimum **dropout** voltage; if the ripple valleys fall below that, the regulator can no longer hold the output and the hum comes through.
+
+## Linear and switching regulators
+
+A **linear** regulator is a transistor in series with the load, adjusted to drop away whatever the input has in excess. All of that excess becomes heat. A supply feeding 20 A at 13.8 V from an 18 V input wastes (18 − 13.8) × 20 = 84 W, an efficiency of 13.8 ÷ 18 = 77%. It is simple and quiet but needs a heavy 60 Hz transformer and large heatsinks.
+
+<SwitchReg />
+
+A **switching** supply instead chops the DC rapidly, typically tens to hundreds of kilohertz, and averages the result with an inductor and capacitor; the on-time fraction (duty cycle) sets the output. A transistor that is either fully on or fully off wastes little, and the transformer at that frequency is small, so the supply is light and runs cool.
+
+| | Linear | Switching |
+|---|---|---|
+| Efficiency | falls as input exceeds output | typically high, 80% to 95% |
+| Size and weight | heavy | compact |
+| Heat | considerable | modest |
+| RF noise | very low | can be a problem |
+
+The price of switching is **noise**. The fast edges and their harmonics extend up through the HF bands and beyond, and radiate from the supply and its cables. They show up as birdies or a raised noise floor on the receiver, and sometimes as interference to nearby equipment. Mitigations are shielding, filtering and ferrites on the DC and AC leads, and shorter cables; a supply that is quiet on the bench can still be noisy on your bands, so judge by listening. See <Ref to="rfi-and-emi" /> and <Ref to="power-line-noise" />.
+
+## In practice
+
+- **Size for the peak current.** A 100 W transceiver can draw about 20 A when transmitting, so choose a supply rated comfortably above that. See <Ref to="shack-power-supplies" />.
+- **Protect the radio.** A good supply has overvoltage protection (a crowbar), because a failed regulator can pass the unregulated voltage straight to the radio.
+- **Never open a supply that is plugged in.** Mains voltage is lethal, and the capacitors can stay charged after it is unplugged.
+
+<ExamLink groups="T6D G7A E7D" />
+
+<Related to="shack-power-supplies transformers diodes electrical-safety rfi-and-emi power-line-noise" />

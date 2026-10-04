@@ -1,0 +1,45 @@
+import { SystemFusion_FourLevel } from '@/visuals/compendium/SystemFusion_FourLevel'
+import { DStar_VocoderChain } from '@/visuals/compendium/DStar_VocoderChain'
+
+## What it is
+
+System Fusion is Yaesu's digital voice system. Its radio signal uses **C4FM**, a four-level form of frequency modulation, and it is designed to live alongside ordinary FM: Fusion radios and repeaters can switch between analog FM and digital automatically.
+
+<Facts items={[
+  ['Modulation', 'C4FM (four-level FSK)'],
+  ['Channel', '12.5 kHz'],
+  ['Voice coding', 'a vocoder from the AMBE family'],
+  ['Internet linking', 'WIRES-X, Yaesu\'s own system'],
+]} />
+
+## Four levels, two bits each
+
+A plain FSK signal jumps between two frequencies, so each symbol carries one bit. C4FM uses four, so each symbol carries **two bits**: twice the data at the same symbol rate, in the same narrow channel.
+
+<SystemFusion_FourLevel />
+
+The same trick, four-level FSK, appears in other modes too; see <Ref to="p25-and-nxdn" /> and <Ref to="m17" />. The audio chain is the usual digital voice one:
+
+<DStar_VocoderChain />
+
+## Two flavours of digital voice
+
+Fusion radios offer a choice of how to spend the available bits. Two of the digital settings, in Yaesu's terms:
+
+| Setting | Idea |
+|---|---|
+| **V/D** (voice and data) | Voice shares the bits with data such as GPS position. |
+| **Voice FR** (full rate) | Most of the bits carry voice, which suits good audio on a strong signal, with little room for data. |
+
+## Features worth knowing
+
+- **Automatic mode select (AMS)** lets the radio choose FM or digital to match what it hears, so you can use one memory for either.
+- **Group monitor** shows which Fusion stations are nearby and active.
+- **WIRES-X** links repeaters and hotspots into "rooms" over the internet. You pick a room from the radio, much like selecting a talkgroup. See <Ref to="internet-linking" />.
+- A **hotspot** or home node gives you low-power access; see <Ref to="hotspots-and-gateways" />.
+
+Other digital formats do not decode Fusion, and Fusion radios do not decode them. Check what a repeater runs before programming it.
+
+<ExamLink groups="G8C" />
+
+<Related to="d-star dmr p25-and-nxdn digital-modulation frequency-modulation hotspots-and-gateways" />

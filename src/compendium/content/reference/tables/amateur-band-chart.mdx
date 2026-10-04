@@ -1,0 +1,53 @@
+import { AmateurBandChart_Ruler } from '@/visuals/compendium/AmateurBandChart_Ruler'
+
+## The bands at a glance
+
+An amateur "band" is a slice of spectrum set aside for the service. Names come from approximate wavelength (the **20 m** band is near 14 MHz, where one wavelength is about 21 m), and the bands are spread from the longest wavelengths to microwaves so that you can choose the propagation you want: worldwide skip on HF, local and regional on VHF and UHF.
+
+<AmateurBandChart_Ruler />
+
+<Callout kind="warn" title="Check the current rules">This chart lists the US band limits in broad terms. Which parts of a band you may use depends on your license class and mode, and the rules change. Confirm exact limits and privileges in the FCC rules (47 CFR 97.301 to 97.305) or the ARRL's current US band chart before you transmit near an edge.</Callout>
+
+## HF and below
+
+| Band | Frequencies (MHz) | What it's known for |
+|---|---|---|
+| 2200 m | 0.1357 to 0.1378 | Very low power limit (1 W EIRP) |
+| 630 m | 0.472 to 0.479 | Very low power limit (5 W EIRP; some Alaska exceptions) |
+| 160 m | 1.8 to 2.0 | The "Top Band": night-time, noisy, rewarding |
+| 80 m | 3.5 to 4.0 | Regional contacts, nets; strongest at night |
+| 60 m | a few channels near 5.3 to 5.4 | Channelized with special rules; not a continuous band |
+| 40 m | 7.0 to 7.3 | Day regional and night DX; busy at all hours |
+| 30 m | 10.1 to 10.15 | Narrow; CW and digital only, no phone |
+| 20 m | 14.0 to 14.35 | The classic DX band by day |
+| 17 m | 18.068 to 18.168 | Less crowded; DX when conditions allow |
+| 15 m | 21.0 to 21.45 | Open worldwide when the Sun is active |
+| 12 m | 24.89 to 24.99 | Quiet, small; sun-dependent |
+| 10 m | 28.0 to 29.7 | Sun-dependent; FM repeaters in the upper part |
+
+Higher bands depend on the solar cycle. See <Ref to="solar-cycle-and-indices" />.
+
+## VHF, UHF and up
+
+| Band | Frequencies (MHz) | What it's known for |
+|---|---|---|
+| 6 m | 50 to 54 | The "magic band": sporadic E openings, DX windows |
+| 2 m | 144 to 148 | The busiest VHF band: repeaters, FM simplex, weak signal |
+| 1.25 m | 222 to 225 | Repeaters and weak signal; quieter |
+| 70 cm | 420 to 450 | Repeaters, handhelds, digital voice, satellites |
+| 33 cm | 902 to 928 | Shared with other users |
+| 23 cm | 1240 to 1300 | Repeaters, ATV, satellites, EME |
+| Microwaves | 2.3 GHz and up | Several bands up through the GHz range; see the official chart |
+
+Here and above, power and mode limits differ by segment, and some areas have coordination or protection requirements for other services.
+
+## How to read the chart
+
+- **A band is not a license.** Your class decides which parts you can use; <Ref to="license-classes" /> explains the pattern.
+- **Mode limits sit inside bands.** For example, 30 m has no phone, and the first part of 6 m and 2 m is CW only. How operators divide the rest by habit is <Ref to="band-plans" />.
+- **Other countries differ.** These are US limits. In Europe and Africa, for example, 40 m ends at 7.2 MHz and 80 m at 3.8 MHz, and not every country has 60 m, 6 m, or 630 m.
+- **Edges are hard edges.** Your signal has width, and your dial has error. Stay a little inside.
+
+<ExamLink groups="T1B G1A E1A" />
+
+<Related to="radio-spectrum license-classes band-plans frequency-and-wavelength part-97-in-plain-words skywave-and-skip" />

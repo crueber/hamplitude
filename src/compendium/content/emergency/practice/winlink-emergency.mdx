@@ -1,0 +1,34 @@
+import { WinlinkEmergency_Routes } from '@/visuals/compendium/WinlinkEmergency_Routes'
+import { G2E_Winlink } from '@/visuals/general/G2E_Winlink'
+
+## What it is
+
+**Winlink** is email over radio. In an emergency it fills an obvious gap: when phones and internet fail, agencies and families still need to send written messages, often with details that would be easy to get wrong over voice. How the system works is covered in <Ref to="winlink" />; this article is about using it when it counts.
+
+## Two routes
+
+<G2E_Winlink />
+
+The normal route goes **through a gateway**: your station connects by radio, the gateway forwards your message over the internet and the recipient gets ordinary email. That is the point of Winlink, but it also means the route depends on the gateway's own internet link.
+
+<WinlinkEmergency_Routes />
+
+When that link is lost, **peer-to-peer** sessions still work: two Winlink stations connect directly by radio and exchange messages. It is not email to the world, but it moves written traffic between a shelter and an emergency operations centre with no infrastructure at all.
+
+## Why it suits emergencies
+
+- **Written and exact.** There is no mishearing a street address or a medication list.
+- **Forms.** Winlink software provides templates for standard forms, such as the ICS-213 General Message, so what leaves your station looks familiar to the receiving agency. Check what your software and your served agency use.
+- **Works across distances and modes.** HF reaches beyond the disaster area, VHF/UHF links cover a local area.
+- **Asynchronous.** The message waits for you and for the receiver; no one has to listen on a channel.
+
+## Limits to plan around
+
+- **Messages are small.** Radio is slow; keep attachments tiny and avoid photos unless your link is fast.
+- **Messages are not private.** Winlink is an amateur service, and the rules forbid hiding meaning, so don't put sensitive details in a message unless you have been told you can.
+- **Interference** appears as retries, timeouts and failed connections. Try another gateway or frequency, or a peer-to-peer connection.
+- **Practice beforehand.** Winlink software has configuration steps; learn them before the day you need them, and check your radio, computer and power as a set. Many groups run regular Winlink exercises. See <Ref to="go-kits" />.
+
+<ExamLink groups="G2E T2C" />
+
+<Related to="winlink packet-radio vara-and-ardop radiograms go-kits ares-and-races" />

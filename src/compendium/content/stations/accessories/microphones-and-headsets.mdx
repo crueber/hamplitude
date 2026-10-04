@@ -1,0 +1,50 @@
+import { MicrophonesAndHeadsets_Response } from '@/visuals/compendium/MicrophonesAndHeadsets_Response'
+import { RfFeedback } from '@/visuals/technician/T7B_RfFeedback'
+
+## What it is
+
+A **microphone** turns your voice into a small audio signal for the radio; a **headset** adds headphones and a boom microphone on one band. On phone modes the audio gear shapes how intelligible you sound, as much as the power does.
+
+## What matters in a microphone
+
+Speech is understood mostly from about 300 to 3000 Hz, which is also roughly what a single-sideband signal passes. Sound outside that range is mostly filtered away by the transmitter, but strong bass still uses up the level headroom, leaving the voice itself quieter.
+
+<MicrophonesAndHeadsets_Response />
+
+A **communications microphone** is shaped for this: it rolls off the lowest frequencies (rumble, breath pops, desk thumps) and gives a gentle lift in the upper voice range where consonants live. A wide, flat microphone sounds natural on a recording but lets bass eat into the level headroom.
+
+| Type | How it works | Notes |
+|---|---|---|
+| **Dynamic** | a coil moving in a magnetic field | rugged, needs no power, moderate output |
+| **Electret condenser** | a charged diaphragm, with a tiny built-in amplifier | needs a small DC bias voltage, usually from the radio |
+| **Boom headset** | a close-talking mic held near the mouth | rejects room noise, keeps your hands free |
+| **Noise-cancelling** | picks up your voice but cancels distant sound | works at a close, consistent distance |
+
+Microphone jacks are **not standardised**. Pin layout, bias voltage and level differ between radios, and some connectors look alike but are wired differently. Match the microphone to the radio's manual before plugging in.
+
+## Technique
+
+- Keep a **consistent, close distance**, typically a few finger-widths, and speak slightly across the mic, not into it, to reduce pops.
+- Face away from reflective walls and fans.
+- Set <Ref to="speech-processing-and-mic-gain">mic gain</Ref> with the mic in your normal position. Moving the mic changes the level.
+- If your voice sounds boomy or thin to others, try the radio's transmit bandwidth or equalizer settings before changing hardware.
+
+## Headphones
+
+Headphones isolate you from noise, stop speaker audio leaking back into the mic, and let the house sleep. For CW they also let you hear weak signals and your own sidetone clearly.
+
+- Keep the volume low when you first tune: a noise burst or a strong signal can be uncomfortably loud.
+- Closed headphones block outside noise; open ones are lighter and more comfortable for long sessions.
+- If your radio has two receivers or an SDR with stereo output, stereo headphones can separate them.
+
+## When RF gets into the audio
+
+With the antenna close to the operating position, the transmitter's RF can couple onto the mic cable and feed back into the radio. Symptoms: distorted or raspy transmit audio, power or ALC readings that jump when you touch the cable, or buzzing in the speaker.
+
+<RfFeedback />
+
+The cure is to keep RF off the cable: put a ferrite or <Ref to="common-mode-chokes">common-mode choke</Ref> on the mic lead, use shielded cable, and fix the grounding. Moving the antenna farther from the station also helps. See <Ref to="rfi-and-emi" />.
+
+<ExamLink groups="T4A T7B" />
+
+<Related to="speech-processing-and-mic-gain single-sideband ssb-voice common-mode-chokes rfi-and-emi station-layout" />

@@ -1,0 +1,43 @@
+import { Aurora as E3A_Aurora } from '@/visuals/extra/E3A_Aurora'
+import { AuroraPropagation_Geometry } from '@/visuals/compendium/AuroraPropagation_Geometry'
+
+## What it is
+
+The northern lights are not just pretty: the same electrified air that glows also reflects VHF radio. During a strong geomagnetic storm, stations at middle latitudes can aim their antennas **north** at the aurora and bounce signals off it to other stations, often hundreds to roughly a couple of thousand kilometres away. It is called auroral backscatter, and it is a signature of space weather.
+
+<Facts items={[
+  ['Height', 'roughly 100 km (E region)'],
+  ['Bands', '6 m and 2 m mainly; also 10 m and 70 cm'],
+  ['Antenna heading', 'toward the aurora (north in the northern hemisphere), not toward the other station'],
+  ['Best mode', 'CW; voice sounds raspy'],
+]} />
+
+## How it works
+
+Charged particles from the Sun are funnelled by Earth's magnetic field toward the polar regions, where they collide with the upper atmosphere and make it glow. They also create dense irregularities in the E region, stretched out along the magnetic field lines. Radio waves scatter off them much as radar echoes off rain.
+
+<AuroraPropagation_Geometry />
+
+The scattering is strongly directional. It is strongest when your beam crosses the field-aligned stripes at right angles. Close to the poles the field lines are nearly vertical, but at mid-latitudes they slope, so a low beam pointed north happens to meet them squarely. Both stations aim north and the echo is scattered back roughly the way it came, so contacts are typically between stations that lie east and west of each other, not north and south.
+
+## When it happens
+
+The aurora normally sits near the poles. Only a strong **geomagnetic storm**, with a high K index, pushes the glowing oval far enough south to reach mid-latitude beams.
+
+<E3A_Aurora />
+
+Watch the <Ref to="solar-cycle-and-indices">K and A indices</Ref>: a rising value after a flare or coronal mass ejection is the cue (see <Ref to="space-weather" />). It is more frequent around and after solar maximum, often lasts a few hours, and is often strongest in the evening. The same storm that opens VHF often wrecks HF paths near the poles.
+
+## What it sounds like
+
+The moving, churning irregularities smear the signal's frequency, so it takes on a hollow, raspy buzz. Single sideband speech is hard to understand, since the smearing eats the sounds that carry meaning. A steady tone survives better, so CW is the usual choice: it sounds like a rough, hissy note but stays readable.
+
+## In practice
+
+- Point the beam toward the aurora, and then swing a few degrees around until signals peak.
+- Expect signals to flutter and move in frequency; tune around.
+- Use CW, or SSB with patience, and give your call and report slowly.
+
+<ExamLink groups="T3C E3A" />
+
+<Related to="space-weather solar-cycle-and-indices sporadic-e six-meters weak-signal-vhf meteor-scatter" />

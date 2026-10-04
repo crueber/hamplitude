@@ -1,0 +1,45 @@
+import { HowAntennasWork_Release } from '@/visuals/compendium/HowAntennasWork_Release'
+import { CommonMode } from '@/visuals/extra/E4E_CommonMode'
+
+## What it is
+
+An antenna is a piece of metal, shaped and fed so that radio-frequency current in it turns into an electromagnetic wave that leaves, or a passing wave turns into a tiny current that your receiver can use. It is the transition between a wire and open space.
+
+<Facts items={[
+  ['What radiates', 'changing (alternating) current in a conductor'],
+  ['Wave speed', 'about 300,000 km/s, the speed of light'],
+  ['Polarization', 'set by the direction of the current, so by the wire'],
+  ['Transmit vs receive', 'the same pattern, gain and impedance for both (reciprocity)'],
+]} />
+
+## Why current radiates
+
+<HowAntennasWork_Release />
+
+A steady current makes a steady magnetic field that hugs the wire. A current that reverses millions of times a second makes fields that change faster than they can collapse back. A changing magnetic field makes an electric field and a changing electric field makes a magnetic one, so each regenerates the other and the pair detaches and travels away as a <Ref to="electromagnetic-waves">wave</Ref>.
+
+In a transmission line this is avoided on purpose: the two conductors carry equal and opposite currents very close together, so their fields cancel. An antenna does the reverse. It places the two currents end to end, pointing the same way, so the fields add instead of cancelling.
+
+<Key>An antenna is a transmission line opened out until its fields no longer cancel.</Key>
+
+## Why size matters
+
+For the fields to add up over the whole conductor, the current has to be in step along it. A wire much shorter than a wavelength is tiny compared with the wave and its current tapers away toward the ends, so it radiates poorly for the power you put in. A wire around a half wavelength long supports a standing wave: strong current along most of its length, in phase, and a feed-point impedance a coax cable can live with. That is why the common antennas are fractions of a <Ref to="frequency-and-wavelength">wavelength</Ref> and why the same wire does not work well on every band. See <Ref to="half-wave-dipole" /> for the classic case.
+
+## Receiving
+
+A passing wave pushes electrons along the conductor in step with its electric field, producing a tiny voltage, typically microvolts, at the feed point. For ordinary passive antennas, **reciprocity** applies: the direction an antenna favours when transmitting is the direction it favours when receiving, and its gain and impedance are the same. Receiving also depends on noise, not just gain; see <Ref to="noise-and-snr" />.
+
+Because the wave's electric field drives the electrons, the antenna must be oriented to match the wave's <Ref to="polarization">polarization</Ref>, or the signal is weaker.
+
+## In practice
+
+- Any conductor carrying RF current radiates, not only the part you meant. Current on the outside of a coax shield turns the feed line into part of the antenna (below); see <Ref to="common-mode-chokes" />.
+- The antenna is a system: the wire, the feed line, the ground and nearby metal all shape what it does.
+- Radiated energy is not all in the far distance at once; close to the antenna the fields behave differently. See <Ref to="near-and-far-field" />.
+
+<CommonMode />
+
+<ExamLink groups="T9A" />
+
+<Related to="half-wave-dipole radiation-patterns impedance-and-radiation-resistance near-and-far-field polarization electromagnetic-waves" />

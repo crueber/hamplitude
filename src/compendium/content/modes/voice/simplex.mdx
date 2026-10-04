@@ -1,0 +1,44 @@
+import { Simplex } from '@/visuals/technician/T2A_Simplex'
+import { Simplex_Range } from '@/visuals/compendium/Simplex_Range'
+import { Linked } from '@/visuals/technician/T2B_Linked'
+
+## What it is
+
+Simplex means both stations transmit and receive on **the same frequency**, taking turns, with no repeater in between. It is the simplest way to use a radio: no infrastructure, no tones, no offsets. It is also how radios keep working when a repeater, or the power to it, fails.
+
+<Facts items={[
+  ['2 m FM calling', '146.520 MHz'],
+  ['70 cm FM calling', '446.000 MHz'],
+  ['6 m FM calling', '52.525 MHz'],
+  ['Range', 'line of sight; a few miles for handhelds is typical'],
+]} />
+
+<Simplex />
+
+## How far will it reach?
+
+VHF and UHF travel in straight lines, so range is set mainly by how high each antenna is. Each antenna can "see" about 1.41 × √height (in feet) miles to its radio horizon, and the two add. A handheld at head height sees about 3 miles; an antenna 50 feet up sees about 10.
+
+<Simplex_Range />
+
+That is a best case: hills, buildings and dense trees shorten it, and a good antenna on a high point often beats a high-power radio at street level. Moving a few feet, or standing at a window, can make the difference.
+
+## Using it
+
+- **Calling frequencies are for calling.** Make contact on 146.520 MHz, then move to a clear simplex channel (the <Ref to="band-plans" /> lists them) so the calling frequency stays free.
+- **Listen first**, then ask if the frequency is in use. Nobody owns a frequency.
+- **To call:** "CQ, this is W1ABC, listening on 146.52." Use phonetics for your call sign if conditions are poor.
+- **Identify** at least every 10 minutes and at the end of a contact.
+- Use a **vertical antenna**, matching the near-universal vertical polarization on FM.
+
+## Why bother?
+
+<Linked />
+
+- **It keeps repeaters free.** If you can talk direct, don't tie up a machine that others in a wider area need.
+- **It still works when infrastructure doesn't.** Emergency groups rely on simplex for that reason, and often assign simplex channels in advance.
+- **It teaches you your radio's real range**, which is worth knowing before you need it.
+
+<ExamLink groups="T2A T2B" />
+
+<Related to="repeaters fm-voice line-of-sight handheld-antennas band-plans nets" />

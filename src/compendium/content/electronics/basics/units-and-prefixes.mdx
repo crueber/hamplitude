@@ -1,0 +1,54 @@
+import { ElectricUnits } from '@/visuals/shared/ElectricUnits'
+import { MetricLadder } from '@/visuals/shared/MetricLadder'
+
+## One unit per quantity
+
+Electronics measures a small set of quantities, and each has exactly one unit. Units named after people use a capital letter for the symbol (V, A, W, Hz, F, H, Ω) and a lower-case name when spelled out: volt, ampere, watt, hertz.
+
+<ElectricUnits keys={['voltage', 'current', 'resistance', 'power', 'frequency', 'capacitance', 'inductance', 'impedance']} caption="Impedance shares the ohm with resistance. Energy is measured in joules (J)." />
+
+Real values range from a few picofarads to gigahertz, so each unit comes with **prefixes** that scale it by powers of ten. Radio spans more orders of magnitude than almost any field, so fluency here saves real mistakes.
+
+## The prefixes
+
+| Prefix | Symbol | Factor | Ham example |
+|---|---|---|---|
+| giga | G | 10⁹ | 2.4 GHz, a microwave band |
+| mega | M | 10⁶ | 14.2 MHz; 1 MΩ |
+| kilo | k | 10³ | 4.7 kΩ; 3.5 MHz = 3500 kHz |
+| (none) | | 1 | 13.8 V; 5 A |
+| milli | m | 10⁻³ | 20 mA; 150 mW |
+| micro | µ | 10⁻⁶ | 10 µF; 500 µV signal |
+| nano | n | 10⁻⁹ | 100 nF bypass capacitor |
+| pico | p | 10⁻¹² | 22 pF capacitor |
+
+Each step is a factor of 1000. Other prefixes such as centi (10⁻²) turn up in lengths, but rarely in electronics.
+
+## Converting without mistakes
+
+<MetricLadder />
+
+Moving one prefix is three decimal places. Going to a **smaller** unit makes the number **larger**; going to a larger unit makes it smaller. It helps to ask whether the answer is sensible.
+
+| From | To | Working |
+|---|---|---|
+| 0.0047 A | mA | 0.0047 × 1000 = **4.7 mA** |
+| 14 200 000 Hz | MHz | 14 200 000 ÷ 1 000 000 = **14.2 MHz** |
+| 2200 pF | nF | 2200 ÷ 1000 = **2.2 nF** |
+| 150 mW | W | 150 ÷ 1000 = **0.15 W** |
+| 4.7 kΩ | Ω | 4.7 × 1000 = **4700 Ω** |
+
+In formulas, the safest habit is to convert everything to base units (volts, amperes, ohms, hertz, farads), calculate, then convert back. A useful shortcut: **volts ÷ kilohms = milliamperes**, so 5 V across 10 kΩ gives 0.5 mA.
+
+## Mistakes to avoid
+
+- **m versus M.** 1 mW is a thousandth of a watt; 1 MW is a million watts. Case matters: **k** (kilo) is lower-case, **M** (mega) and **G** are upper-case.
+- **µ versus m.** 1 µF is a thousand times smaller than 1 mF. Where µ cannot be typed, an "u" stands in (uF), and a part marked 4k7 means 4.7 kΩ.
+- **Mixing prefixes in a formula.** Using mA with volts and ohms gives a thousand-fold error. Convert first.
+- **Dropping the unit.** "Ten" means nothing; 10 µF, 10 mF and 10 pF are very different parts.
+
+Wavelength and frequency in metric units are covered in <Ref to="frequency-and-wavelength" />, and ratios in <Ref to="decibels" />, which compare two quantities rather than measure one.
+
+<ExamLink groups="T5B T5A T5C" />
+
+<Related to="voltage-current-resistance ohms-law frequency-and-wavelength decibels resistors capacitors" />

@@ -1,0 +1,60 @@
+import { PhasorsAndComplexNumbers_Rotating } from '@/visuals/compendium/PhasorsAndComplexNumbers_Rotating'
+import { PhasorsAndComplexNumbers_JRotate } from '@/visuals/compendium/PhasorsAndComplexNumbers_JRotate'
+import { E5C_ImpedancePlane } from '@/visuals/extra/E5C_ImpedancePlane'
+
+## What it is
+
+A **phasor** is an arrow that stands for a sine wave: its length is the amplitude and its angle is the phase. **Complex numbers** are the arithmetic for such arrows. Together they turn AC circuit problems, which would otherwise need calculus, into sums and triangles.
+
+<Facts items={[
+  ['Rectangular', 'a + jb'],
+  ['Polar', 'magnitude ∠ angle'],
+  ['j', 'a quarter turn; j × j = −1'],
+  ['Add', 'in rectangular form'],
+  ['Multiply and divide', 'in polar form'],
+]} />
+
+## The picture: a spinning arrow
+
+<PhasorsAndComplexNumbers_Rotating />
+
+Spin an arrow at a steady rate and watch its height: it traces a sine wave. Every sine wave in a circuit has the **same frequency**, so they all turn at the same speed. Freeze the picture and only two things differ between waves: how long each arrow is, and the angle between them. That angle is the **phase difference**. The arrow ahead is leading.
+
+The big payoff: adding two same-frequency sine waves is the same as adding their arrows tip to tail. The answer is another sine wave of the same frequency, with new amplitude and phase. Waves in phase add fully; waves 180° apart largely cancel, and equal ones cancel completely.
+
+## Complex numbers: coordinates for the arrow
+
+<PhasorsAndComplexNumbers_JRotate />
+
+An arrow can be given as two coordinates. Call the horizontal part the **real** part and the vertical part the **imaginary** part, marked with **j**. Then 30 + j40 is 30 across and 40 up. Multiplying by j turns an arrow a quarter turn counter-clockwise, so j × j (a half turn) is −1. That is all that "j = √−1" means.
+
+The same arrow in **polar** form is its length and angle: 30 + j40 is **50 ∠ 53.1°**.
+
+- Polar from rectangular: magnitude = √(a² + b²), angle = arctan(b ÷ a)
+- Rectangular from polar: a = M cos θ, b = M sin θ
+
+| To do this | Use | Rule |
+|---|---|---|
+| Add or subtract | rectangular | add the real parts and the imaginary parts |
+| Multiply | polar | multiply the lengths, add the angles |
+| Divide | polar | divide the lengths, subtract the angles |
+
+Example, a 50 Ω resistor in parallel with an inductor of XL = 50 Ω: Z = (50 ∠0° × 50 ∠90°) ÷ (50 + j50) = 2500 ∠90° ÷ 70.7 ∠45° = **35.4 ∠45° Ω**, which is 25 + j25 Ω.
+
+## Impedance as an arrow
+
+<E5C_ImpedancePlane />
+
+Impedance is the most useful phasor-like quantity. A resistor is along the real axis; an inductor's reactance is straight up (+jXL); a capacitor's is straight down (−jXC). Series parts add as rectangular numbers, and the length of the result is the impedance Z and its angle is how far the current is shifted.
+
+Ohm's law still works, with complex numbers: I = V ÷ Z. Put 10 V ∠0° across 50 + j50 Ω (70.7 ∠45° Ω) and the current is 0.141 A ∠−45°: it lags the voltage by 45°.
+
+<Callout kind="note" title="Steady state only">Phasors describe a circuit after it has settled into a steady sine wave at one frequency. For what happens at the moment of switching on, see <Ref to="time-constants" />.</Callout>
+
+## Where you meet them
+
+Antenna analyzers and VNAs report impedance as R + jX. The <Ref to="smith-chart" /> is a map of the same complex impedances. I/Q signals in software-defined radios are phasors in disguise, with I the real part and Q the imaginary.
+
+<ExamLink groups="E5C E5B" />
+
+<Related to="reactance-and-impedance ac-dc-and-waveforms resonance-and-q smith-chart antenna-analyzers-and-vnas direct-conversion-and-sdr" />

@@ -1,0 +1,34 @@
+import { QrpCw_Budget } from '@/visuals/compendium/QrpCw_Budget'
+import { QrpRadios_Decibels } from '@/visuals/compendium/QrpRadios_Decibels'
+
+## What it is
+
+QRP means low power. For CW it is commonly taken as 5 watts or less; many people go lower still, to 1 watt or a fraction of it. The Q-code QRP means "reduce power", and the name stuck for the hobby of making contacts on a few watts. In the US the rules also require you to use no more power than needed to carry out the communication.
+
+<Facts items={[
+  ['Typical QRP CW power', '5 W or less'],
+  ['100 W to 5 W', '13 dB, about two S-units'],
+  ['Narrow CW filter gain', 'about 12 dB vs a 2.4 kHz filter (idealised)'],
+]} />
+
+## Why CW suits low power
+
+Cutting power from 100 W to 5 W reduces your signal at the far end by 13 dB. That sounds like a lot, but the other station's receiver only has to separate signal from noise, and a narrow CW filter admits far less noise than the 2.4 kHz filter an SSB signal needs.
+
+<QrpRadios_Decibels />
+
+<QrpCw_Budget />
+
+The net loss is only about 1 dB in this idealised case, small next to what propagation and antennas change. It assumes noise is the limit. A pile-up of callers, or interference inside your filter, is a different problem, and there real power still helps.
+
+## In practice
+
+- **The antenna matters more than the radio.** A good antenna and low feed-line loss help more than anything inside a small rig; see <Ref to="feed-line-loss" />.
+- **Light on the battery.** In CW the transmitter draws its full current only while the key is down, so a small battery can last for many contacts; see <Ref to="portable-power" /> and <Ref to="qrp-radios" />.
+- **Listen more, call less.** Answer CQs rather than calling, and choose times when the band is open.
+- **Be patient with pile-ups.** A weak signal in the middle of a contest or DX pile-up may not be heard. Call, wait, call again, and be ready to try another time.
+- **Check how you sound.** The <Ref to="cw-contesting-and-rbn">Reverse Beacon Network</Ref> will show which skimmers hear you and at what SNR.
+
+QRP is popular for portable operation, because the radio, battery and wire antenna fit in a backpack; see <Ref to="portable-field-antennas" />.
+
+<Related to="what-is-cw qrp-radios portable-power portable-field-antennas decibels cw-contesting-and-rbn" />

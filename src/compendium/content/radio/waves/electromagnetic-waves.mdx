@@ -1,0 +1,46 @@
+import { EmWave } from '@/visuals/shared/EmWave'
+import { ElectromagneticWaves_InverseSquare } from '@/visuals/compendium/ElectromagneticWaves_InverseSquare'
+import { Ionizing } from '@/visuals/technician/T0C_Ionizing'
+
+## What it is
+
+A radio wave is an **electric field and a magnetic field travelling together** through space. Once it leaves the antenna it needs no wire and no medium, and it carries energy and information with it at the speed of light. Everything in amateur radio, from a handheld's chirp to a signal bounced off the Moon, is this one thing.
+
+<Facts items={[
+  ['Speed in free space', 'about 300,000,000 m/s (299,792,458 exactly)'],
+  ['Fields', 'electric (E) and magnetic (H), at right angles to each other and to the direction of travel'],
+  ['Free-space impedance', 'E ÷ H = about 377 Ω'],
+  ['Power density', 'falls with the square of the distance'],
+]} />
+
+## How a wave sustains itself
+
+<EmWave />
+
+Electric charges that speed up, slow down or change direction radiate. An alternating current in an antenna does exactly that: it shoves charge back and forth, and the fields around the wire change as it does.
+
+Here is the trick that lets the wave leave home. A **changing magnetic field creates an electric field, and a changing electric field creates a magnetic field**. Each keeps regenerating the other, so the disturbance moves outward by itself and keeps going after the antenna stops.
+
+Far from the antenna the two fields are in step: both peak at the same instant, E and H at right angles. The direction of E is the wave's <Ref to="polarization">polarization</Ref>. Close to the antenna the fields are messier; see <Ref to="near-and-far-field" />.
+
+## Speed, and a family of waves
+
+Every radio wave, whatever its frequency, travels at the same speed in free space, the speed of light. Frequency decides how fast the fields oscillate and so how long one cycle is; see <Ref to="frequency-and-wavelength" />. In air the speed is almost the same. In glass, water or coax insulation it is lower, and the wavelength shortens in proportion while the frequency stays put.
+
+Light, infrared, X-rays and radio are all the same kind of wave at different frequencies:
+
+<Ionizing />
+
+Radio sits at the low-frequency end, where each unit of energy is far too small to break chemical bonds. That is why radio is called non-ionizing; its real hazard is heating, covered under <Ref to="rf-exposure" />.
+
+## Spreading out
+
+<ElectromagneticWaves_InverseSquare />
+
+A wave leaving an antenna spreads over a sphere that grows with distance, so the power through each square metre falls with the **square of the distance**. Double the distance and the power density drops to a quarter, a loss of 6 dB (see <Ref to="decibels" />). This spreading loss happens even in perfect vacuum; real paths add absorption, reflection and bending on top, which is what the <Ref to="ground-wave">propagation</Ref> articles are about.
+
+<Callout kind="tip" title="Why a weak signal can still be heard">A receiver needs only a tiny fraction of the transmitted power. That is why contacts across thousands of miles on a few watts are possible: the signal arrives very weak, but a good antenna and a quiet receiver can still pull it out of the <Ref to="noise-and-snr">noise</Ref>.</Callout>
+
+<ExamLink groups="T3B T3A" />
+
+<Related to="frequency-and-wavelength polarization radio-spectrum how-antennas-work near-and-far-field rf-exposure" />

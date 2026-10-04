@@ -1,0 +1,48 @@
+import { LoggingAndQsl_Adif } from '@/visuals/compendium/LoggingAndQsl_Adif'
+
+## Why keep a log
+
+A log is your record of who you worked, when, where and how well. The FCC does not require a routine station log for ordinary operating, but many amateurs keep one anyway: it helps you answer if the FCC ever asks about your station, it is the proof behind award credit, and it is the starting point for every confirmation described below.
+
+<Facts items={[
+  ['Time', 'UTC, so it is unambiguous worldwide'],
+  ['Format for sharing', 'ADIF (a plain-text standard)'],
+  ['Confirmations', 'paper QSL, Logbook of The World, eQSL'],
+  ['Required by FCC?', 'not for ordinary operating'],
+]} />
+
+## What to record
+
+At a minimum:
+
+- **Date and time in UTC**, when the contact started
+- **The other station's call sign**
+- **Frequency or band**, and **mode**
+- **Signal reports** sent and received (see <Ref to="signal-reports" />)
+- Often also: name, location (QTH), your power and antenna, and notes ("tropo opening", "slow CW")
+
+Use UTC rather than local time. Both operators then write the same time, which is what makes confirmation systems able to match contacts.
+
+## Confirming a contact (QSL)
+
+A **QSL** confirms that a contact happened. Operators use QSLs to prove contacts for awards, or simply to collect them.
+
+| Method | How it works |
+|---|---|
+| **Paper QSL card** | A postcard with your call, the contact details and often a photo. Sent direct by mail (usually with a self-addressed stamped envelope), or through the QSL bureau system, which is slow but cheap. For rare DX, a **QSL manager** handles cards for the station. |
+| **Logbook of The World (LoTW)** | An online system run by the ARRL. You sign and upload your log with a personal digital certificate; when the other operator uploads a matching contact, both are confirmed. It is widely accepted for awards. |
+| **eQSL** | An online service where operators exchange electronic cards, with its own awards. Acceptance for the major award programs varies, so check the program's rules. |
+
+Two logs have to **agree** for a match: same call signs, band, mode and a time within a small tolerance. A sloppy time or a mistyped call is the main reason a contact fails to confirm.
+
+## ADIF: the log's common language
+
+<LoggingAndQsl_Adif />
+
+Logging programs differ, so they share data using **ADIF**, the Amateur Data Interchange Format. It is plain text: each field is its name, the **length** of its value, then the value, and one record is one contact. This is what you export from one program and import into another, and what you upload to LoTW (which wraps it in a signed file) or eQSL. Contest logs are submitted in a different format, Cabrillo.
+
+<Callout kind="tip" title="Log while you operate">Entering the call and time as the contact happens, rather than afterwards, is how you avoid the errors that stop a confirmation. Logging software does the clock for you. See <Ref to="logging-software" />.</Callout>
+
+<ExamLink groups="G2D E2C" />
+
+<Related to="logging-software awards dxing contesting call-signs operating-etiquette signal-reports" />

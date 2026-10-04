@@ -1,0 +1,47 @@
+import { DmrSlots } from '@/visuals/technician/T8D_DmrSlots'
+import { Dmr } from '@/visuals/technician/T2B_Dmr'
+
+## What it is
+
+DMR (Digital Mobile Radio) is a digital voice standard created for business and industry and widely adopted by amateurs. It is known for two features: **two conversations time-share one channel**, and **talkgroups** that let many repeaters carry the same conversation across a region or the world.
+
+<Facts items={[
+  ['Channel', '12.5 kHz, shared by two time slots'],
+  ['Access method', 'time division (TDMA)'],
+  ['Voice coding', 'a vocoder from the AMBE family'],
+  ['Address', 'a numeric radio ID tied to your call sign'],
+]} />
+
+## Two slots on one channel
+
+A DMR repeater sends and receives in short bursts. Bursts alternate between **slot 1** and **slot 2**, so two independent calls use one 12.5 kHz channel, each at half the airtime. Handheld radios transmit only during their slot, which also eases the load on the battery.
+
+<DmrSlots />
+
+## Getting in, and choosing who you talk to
+
+Think of a DMR repeater as a building with a door and many rooms.
+
+<Dmr />
+
+| Term | What it is |
+|---|---|
+| **Color code** | Access code: your radio must match the repeater's. It stops a repeater answering signals meant for another on the same frequency. |
+| **Time slot** | Which of the two bursts you use; the repeater's pages say which talkgroups are on which slot. |
+| **Talkgroup** | A numbered conversation. Your radio only plays what it is set to hear. |
+| **Radio ID** | A number identifying your radio on the network, registered to your call sign. |
+| **Code plug** | The file loaded into the radio holding its channels, contacts and talkgroups. |
+
+Because everything must match, a DMR radio is **programmed with a computer**, not just a keypad. Mistakes are silent: the wrong color code or slot means the repeater simply ignores you.
+
+## In practice
+
+- Listen before you key up: a talkgroup may be in use even if your radio is not set to it.
+- Wide-area talkgroups carry traffic from many repeaters at once. Keep calls short and leave room for others.
+- A **private call** goes to one radio ID rather than a talkgroup.
+- Amateur DMR networks link repeaters over the internet. A **hotspot** gives you a low-power connection at home; see <Ref to="hotspots-and-gateways" />.
+- DMR radios from different makers generally interoperate on the air, though their programming software differs.
+
+<ExamLink groups="T2B T4B T8D G8C" />
+
+<Related to="d-star system-fusion hotspots-and-gateways internet-linking digital-modulation bandwidth-and-data-rate" />

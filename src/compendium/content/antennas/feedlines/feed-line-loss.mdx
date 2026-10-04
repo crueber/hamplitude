@@ -1,0 +1,55 @@
+import { FeedLineLoss_Calculator } from '@/visuals/compendium/FeedLineLoss_Calculator'
+import { Velocity } from '@/visuals/extra/E9F_Velocity'
+import { G9A_LineSwr } from '@/visuals/general/G9A_LineSwr'
+
+## What it is
+
+No feed line delivers all the power you put in. Some is turned into heat in the conductors and the insulation; that is **loss** (attenuation). Separately, a wave travels slower in a cable than in air; that ratio is the **velocity factor**. One tells you how much power arrives, the other how long to cut things.
+
+<Facts items={[
+  ['Loss unit', 'dB per 100 ft (or per 100 m) at a stated frequency'],
+  ['Trend', 'rises with frequency; falls with thicker cable'],
+  ['3 dB', 'half the power gone'],
+  ['Velocity factor', 'about 0.66 solid coax; 0.8 foam coax and twin-lead; 0.9 to 0.95+ window and open-wire line (typical)'],
+]} />
+
+## Loss
+
+<FeedLineLoss_Calculator />
+
+Loss is quoted in **dB per 100 feet**, so total loss = rate × length ÷ 100. Because dB add, you can add the loss of a cable, a connector and a switch. Convert back with power left = 10^(−dB ÷ 10): 1 dB leaves about 79%, 3 dB leaves half, 10 dB leaves one tenth.
+
+Loss grows with frequency, roughly with its square root at HF and VHF and a little faster above that, as the insulation starts to absorb too. So a run that wastes almost nothing on 80 m can lose half your power on 70 cm. Fatter cable, foam or air insulation, and solid shields all reduce loss.
+
+Receive loss counts too. A dB lost on the way in is signal that never reaches the radio, and at VHF and above, where outside noise is low, it directly worsens signal-to-noise ratio. This is why VHF and UHF stations use short runs of low-loss cable, and why a few dB of loss matters far more at 70 cm than at 40 m.
+
+<G9A_LineSwr />
+
+Loss also changes how SWR looks. If the antenna is mismatched, reflected power travels back along the line and is attenuated again, so the SWR at the radio reads **better** than at the antenna. A low reading at the radio can hide a bad antenna and a lossy cable. See <Ref to="swr-and-reflections" />.
+
+## Velocity factor
+
+<Velocity />
+
+Waves in a cable slow down because of the insulation. The fraction of free-space speed is the **velocity factor** (VF), and it shortens the wavelength inside the cable by the same fraction. Physical length of a given electrical length = free-space length × VF.
+
+| Line | Typical VF |
+|---|---|
+| Solid-plastic coax | about 0.66 |
+| Foam coax | about 0.8 |
+| Twin-lead | about 0.8 |
+| Window line | about 0.9 |
+| Open-wire line | 0.95 or higher |
+
+A quarter wavelength of 0.66 coax at 14.2 MHz is 246 × 0.66 ÷ 14.2 ≈ 11.4 feet (3.5 m), against 17.3 feet in free space. Use the VF printed in the datasheet, and measure the finished piece with an antenna analyzer, because real cable varies. Cable lengths matter for <Ref to="stubs-and-matching-sections">stubs and matching sections</Ref> and for phasing lines.
+
+## In practice
+
+- Shorter is better. Put the radio close to the antenna, or a remote tuner or amplifier at the antenna.
+- Use better cable where frequency is high. On HF, a thin cable is often adequate; on VHF and up, use the fattest practical line.
+- Water in coax, corroded connectors and kinks all add loss. A once-good cable can lose much more after years outside.
+- Open-wire line avoids most of the loss for a given length, even with a high SWR. See <Ref to="open-wire-line" />.
+
+<ExamLink groups="G9A T9B E9F" />
+
+<Related to="coaxial-cable open-wire-line swr-and-reflections characteristic-impedance stubs-and-matching-sections decibels" />

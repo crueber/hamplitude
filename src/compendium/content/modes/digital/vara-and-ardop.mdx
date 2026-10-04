@@ -1,0 +1,49 @@
+import { VaraAndArdop_Adapt } from '@/visuals/compendium/VaraAndArdop_Adapt'
+import { PacketArq } from '@/visuals/technician/T8D_PacketArq'
+
+## What it is
+
+VARA, ARDOP and PACTOR are modems for **moving real data over HF**: email, attachments and other files. They share a design: two stations hold a connection, every block is checked, damaged blocks are sent again, and the speed adapts to the conditions. They are most often the engine under <Ref to="winlink" />.
+
+<Facts items={[
+  ['Method', 'ARQ: acknowledge good blocks, resend bad ones'],
+  ['Connection', 'exactly two stations at a time'],
+  ['PACTOR', 'hardware modem, several generations; the fastest levels handle the most data'],
+  ['VARA', 'software modem, widely used with Winlink'],
+  ['ARDOP', 'software modem with an openly published design'],
+]} />
+
+## Why ARQ?
+
+A weak-signal mode like <Ref to="ft8-and-ft4">FT8</Ref> survives by being slow and using FEC, with nothing acknowledged block by block. That works for tiny messages, but a file would take forever. **ARQ** takes the opposite approach: send at a decent speed, check each block, and ask again only for blocks that were damaged.
+
+<PacketArq />
+
+When a block fails to arrive after repeated attempts, the connection is **dropped**. Because each block needs a reply, both stations alternate sending and listening, and the speed of switching the radio between transmit and receive counts.
+
+## Adapting to the path
+
+<VaraAndArdop_Adapt />
+
+HF paths change by the minute. These modems **measure the channel** from the replies they get and move between faster, more demanding transmissions and slower, more robust ones. When the path is good, throughput climbs; when it fades, the modem slows down and holds on rather than failing. That is why the fastest levels, such as PACTOR IV in clear conditions, move far more data than keyboard or weak-signal modes, which in turn win when the path is poor.
+
+## Comparing the three
+
+| | PACTOR | VARA | ARDOP |
+|---|---|---|---|
+| Runs on | dedicated hardware modem | computer software and sound card | computer software and sound card |
+| Design | proprietary | proprietary | openly published |
+| Link | two stations only | two stations only | two stations only |
+| Used for | HF email and files | HF email and files, plus a VHF/UHF FM version | HF email and files |
+
+Software licensing, supported platforms and speed tiers change over time, so check the current information from each maker before choosing.
+
+## In practice
+
+- Interference on or near your channel causes frequent retries, long pauses and failures to connect. Listen before you connect and avoid occupied channels.
+- The bandwidth of these modes is wider than keyboard modes, so choose a clear frequency.
+- A connection is exclusive: a third station cannot join an existing link.
+
+<ExamLink groups="G2E E2E" />
+
+<Related to="winlink packet-radio digital-modes-overview error-correction winlink-emergency digital-mode-software" />

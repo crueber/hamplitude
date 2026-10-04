@@ -1,0 +1,40 @@
+import { ReceiversAndScanners_Scan } from '@/visuals/compendium/ReceiversAndScanners_Scan'
+
+## What it is
+
+A receiver listens and cannot transmit. No license is needed to own one, and listening is a good way to learn the bands before or after you get your call sign. Four kinds are common: communications receivers, scanners, USB SDR dongles and portable radios.
+
+## The kinds
+
+| Kind | Typically hears | Strengths | Limits |
+|---|---|---|---|
+| Communications receiver | HF, AM, SSB and CW | Good filtering and stability for weak signals | Often big; usually HF only |
+| Scanner | VHF and UHF, mostly FM, AM and some digital | Stores and scans thousands of channels | Rarely handles SSB well |
+| SDR dongle | Many MHz at once, tuned by software | Low cost, shows a waterfall | Little filtering, so strong signals can overload it |
+| Portable radio | Broadcast, shortwave, weather or air | Pocket-sized | Limited tuning and selectivity |
+
+A ham transceiver also receives, and many cover far beyond the ham bands, so a scanner is not required for casual listening.
+
+## How scanning works
+
+<ReceiversAndScanners_Scan />
+
+A scanner steps through stored channels, called memories, much faster than you could tune by hand. On a quiet channel its squelch stays closed and it moves on. When a signal opens the squelch it stops, plays the audio, and resumes after the signal ends. Searching sweeps a frequency range instead of a stored list. See <Ref to="memories-and-scanning" /> and <Ref to="squelch-and-tones" />.
+
+## What to look for
+
+- **Coverage and modes.** The frequency range and the modes (narrow FM, wide FM, AM, SSB, CW, digital) must match what you want to hear.
+- **Sensitivity and selectivity.** How weak a signal it can pick out, and how well it rejects neighbours; see <Ref to="receiver-performance" />.
+- **Scan speed and memory organisation.** Banks and priority channels help on a busy system.
+- **Digital decoding.** Digital voice and trunked systems need a receiver that decodes them, sometimes as an option.
+- **An antenna.** Most poor reception is a poor or missing antenna, and a receiver may need a filter for a strong nearby broadcast signal.
+
+## What you listen to
+
+Amateur bands, repeaters and nets; weather; aircraft and marine channels; beacons that reveal propagation; and your own signal, to check it is clean. For SDR dongles specifically, see <Ref to="sdr-listening" />.
+
+<Callout kind="warn" title="Know the law">Listening to amateur signals is fine. Rules on what else you may monitor, and on divulging or using what you overhear, differ by country and, in the US, by state (some restrict using a scanner in a vehicle). Check local law before you listen widely.</Callout>
+
+<ExamLink groups="T4B T7A" />
+
+<Related to="memories-and-scanning sdr-listening receiver-basics receiver-performance squelch-and-tones sdr-transceivers" />

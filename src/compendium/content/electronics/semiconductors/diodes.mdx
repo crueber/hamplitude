@@ -1,0 +1,58 @@
+import { DiodeKnee } from '@/visuals/general/G6A_DiodeKnee'
+import { DiodeGallery } from '@/visuals/extra/E6B_DiodeGallery'
+import { Diodes_ZenerRegulator } from '@/visuals/compendium/Diodes_ZenerRegulator'
+
+## What it is
+
+A diode is a two-terminal part that passes current in one direction and blocks it in the other. The terminals are the **anode** (current enters) and the **cathode** (current leaves, marked with a stripe or bar). The symbol's triangle points the way conventional current flows.
+
+<Facts items={[
+  ['Silicon forward drop', 'about 0.6 to 0.7 V (typical)'],
+  ['Germanium forward drop', 'about 0.3 V (typical)'],
+  ['Schottky forward drop', 'lower than silicon, often 0.2 to 0.4 V (typical)'],
+  ['LED forward drop', 'about 2 V (red) to over 3 V (blue, white), typical'],
+]} />
+
+## The one-way valve
+
+A diode is a <Ref to="semiconductor-basics">PN junction</Ref>. Forward-biased, it conducts once the voltage passes its threshold; reverse-biased, almost nothing flows.
+
+<DiodeKnee />
+
+Once conducting, a diode drops roughly its threshold voltage whatever the current, so it dissipates (forward voltage × current) as heat. Excess current overheats the junction, a common way for a diode to fail. Every diode has a maximum forward current and a **peak inverse voltage** (PIV), the most reverse voltage it can block before breaking down.
+
+## The family
+
+<DiodeGallery />
+
+| Type | What is special | Typical use |
+|---|---|---|
+| Rectifier | built for large current and reverse voltage | converting AC to DC, see <Ref to="power-supplies" /> |
+| Zener | conducts in reverse at a set voltage, harmlessly | voltage reference, clamping spikes |
+| Schottky | metal-to-semiconductor junction: low drop, very fast | VHF/UHF mixers and detectors, low-loss rectifiers |
+| Point-contact | tiny junction, very low capacitance | RF detectors |
+| Varactor | reverse voltage changes its capacitance | voltage-tuned circuits, see <Ref to="pll-and-synthesizers" /> |
+| PIN | forward DC current sets its RF resistance | RF switches and attenuators |
+| LED | emits light when conducting | indicators, see <Ref to="optoelectronics" /> |
+
+The SCR and triac in the gallery are not true diodes but switches built from several junctions: they latch on when triggered and are used to control AC power.
+
+## Zener regulation
+
+An ordinary diode is not meant to run in reverse breakdown. A Zener is built to: above its rated voltage it conducts in reverse and holds that voltage across itself.
+
+<Diodes_ZenerRegulator />
+
+Put a Zener across the load behind a series resistor and it takes whatever current the load leaves over. Input voltage changes land on the resistor, not the output. The resistor must limit the current so the Zener stays inside its power rating. For anything demanding, an IC regulator does the same job better; see <Ref to="power-supplies" />.
+
+## In practice
+
+- **Rectifying:** a diode turns the alternating current of a transformer into pulses of one polarity. A capacitor then smooths them.
+- **Detecting:** a diode with a capacitor strips the RF from an AM signal and leaves the audio; see <Ref to="detectors-and-demodulators" />.
+- **Mixing:** Schottky diodes in a balanced ring are a classic <Ref to="mixers">mixer</Ref>.
+- **Relay protection:** a coil that is suddenly switched off produces a large voltage spike. A diode across the coil, reverse-biased in normal operation, absorbs it.
+- **Reverse polarity:** a series diode in a 12 V supply line stops a reversed connection from reaching the radio, at the price of its forward drop.
+
+<ExamLink groups="T6B G6A E6B" />
+
+<Related to="semiconductor-basics bipolar-transistors power-supplies detectors-and-demodulators mixers optoelectronics" />

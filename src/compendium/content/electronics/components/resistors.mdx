@@ -1,0 +1,51 @@
+import { Resistors_ColorCode } from '@/visuals/compendium/Resistors_ColorCode'
+import { Potentiometer } from '@/visuals/technician/T6A_Potentiometer'
+import { RealParts } from '@/visuals/general/G6A_RealParts'
+
+## What it is
+
+A resistor opposes current, turning electrical energy into heat. It sets bias currents, drops voltages, divides signals, limits current through an LED and, in larger form, soaks up power in a <Ref to="dummy-loads">dummy load</Ref>. Its value is in ohms (Ω), following <Ref to="ohms-law" />.
+
+<Facts items={[
+  ['Value', 'ohms: Ω, kΩ, MΩ'],
+  ['Tolerance', 'typically ±1% to ±10% for common parts'],
+  ['Power rating', 'watts it can dissipate continuously; 1/4 W and 1/2 W are common'],
+  ['Heat produced', 'P = I² × R = E² ÷ R'],
+]} />
+
+## Reading the colour code
+
+Small resistors are too tiny for printed numbers, so they wear bands. The first bands are digits, the next is a multiplier (how many zeros), and the last is tolerance. Precision parts use a third digit band. Common tolerance bands are brown ±1%, red ±2%, gold ±5% and silver ±10%.
+
+<Resistors_ColorCode />
+
+| Colour | Digit | Colour | Digit |
+|---|---|---|---|
+| black | 0 | blue | 6 |
+| brown | 1 | violet | 7 |
+| red | 2 | grey | 8 |
+| orange | 3 | white | 9 |
+| yellow | 4 | gold | ×0.1 (multiplier), ±5% |
+| green | 5 | silver | ×0.01 (multiplier), ±10% |
+
+Surface-mount resistors print numbers instead: **472** means 47 followed by two zeros, 4700 Ω or 4.7 kΩ.
+
+## Choosing one
+
+- **Value.** Resistors come in standard steps, so you pick the nearest. The common E12 series (typically ±10% parts) runs 10, 12, 15, 18, 22, 27, 33, 39, 47, 56, 68, 82, then repeats ×10. The E24 series (typically ±5%) adds the values in between.
+- **Power.** The resistor turns I² × R into heat. A 100 Ω resistor across 12 V dissipates 12² ÷ 100 = 1.44 W, so a 1/4 W part would burn. Choose a rating at least twice the calculated dissipation, and expect a hot resistor to be too hot to touch.
+- **Construction.** Carbon film and metal film are the everyday types, metal film being tighter and quieter. Wire-wound resistors handle high power but are coils, so they have inductance and are poor at RF. Specially wound non-inductive power resistors are used where RF matters.
+
+<RealParts />
+
+## Variable resistors
+
+A potentiometer has three terminals: the two ends of a resistive track and a moving wiper. Used as a volume control, the wiper picks off a fraction of the voltage. Wired as a two-terminal rheostat, it simply varies the resistance.
+
+<Potentiometer />
+
+<Callout kind="tip" title="Combining">Two resistors in series add. In parallel, the result is smaller than either. See <Ref to="series-and-parallel" />.</Callout>
+
+<ExamLink groups="T6A G6A" />
+
+<Related to="ohms-law power-and-energy series-and-parallel capacitors inductors-and-ferrites dummy-loads" />

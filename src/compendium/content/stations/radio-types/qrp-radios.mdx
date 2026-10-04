@@ -1,0 +1,46 @@
+import { QrpRadios_Decibels } from '@/visuals/compendium/QrpRadios_Decibels'
+
+## What it is
+
+QRP means low power: by long-standing convention 5 W or less on CW, and 10 W PEP or less on SSB. A QRP radio is a small transceiver built around that power level, with a low current drain, so it runs from a small battery and fits in a pack. The same Q signal, "QRP?", asks "shall I reduce power?".
+
+<Facts items={[
+  ['Output', 'typically 5 W or less (some portable rigs go to 10 or 20 W)'],
+  ['Receive current', 'often a few hundred mA or less'],
+  ['Supply', 'small battery pack, roughly 9 to 15 V'],
+  ['Modes', 'often CW and SSB, sometimes digital'],
+]} />
+
+## What you give up
+
+<QrpRadios_Decibels />
+
+Signal strength depends on the ratio of powers, in decibels. Going from 100 W to 5 W is a factor of 20, which is 10 × log₁₀(20) ≈ 13 dB, about two S-units on a calibrated meter. The other station hears you that much weaker, and noise and fading hurt more.
+
+You can win much of it back:
+
+- **Narrow modes.** A CW receive filter is a few hundred hertz wide, an SSB filter about 2.4 kHz. Less bandwidth means less noise, and a CW signal often readable when SSB is not. Digital modes such as FT8 work well at low power for the same reason.
+- **A good antenna.** An efficient, well-placed antenna adds more than extra watts would; see <Ref to="portable-field-antennas" />.
+- **Timing.** Choose bands and times when the path is open; see <Ref to="muf-and-luf" />.
+
+## What to look for
+
+| Feature | Why it matters |
+|---|---|
+| Size and weight | Every ounce is carried up a hill |
+| Receive current | Sets battery life, since most of the time you are listening |
+| Bands and modes | A single-band CW rig is small and simple; a multimode multiband rig is more flexible |
+| Receiver quality | Small rigs vary a lot; a quiet, selective receiver matters on a crowded band |
+| Display and controls | Readable in sunlight, usable with gloves |
+| Built-in keyer or tuner | Saves carrying extra parts; check what is included |
+| Voltage range | Accepts a battery's range from fresh to nearly flat |
+
+## In practice
+
+QRP rigs are the standard companions of summit and park activations (<Ref to="summits-on-the-air" />, <Ref to="parks-on-the-air" />), backpacking and emergency kits. Some operators build them from kits (<Ref to="kits-and-homebrew" />), and there is a whole contest class for low-power stations. At home, QRP is a way to learn how much a good antenna and good operating can do.
+
+Lower power does not mean no safety: batteries can start fires if shorted, and an antenna close to people still deserves respect; see <Ref to="battery-and-fire-safety" /> and <Ref to="portable-power" />.
+
+<ExamLink groups="G2D G4E" />
+
+<Related to="qrp-cw portable-field-antennas portable-power summits-on-the-air hf-transceivers decibels" />

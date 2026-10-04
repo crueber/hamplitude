@@ -1,0 +1,48 @@
+import { KirchhoffLaws_Node } from '@/visuals/compendium/KirchhoffLaws_Node'
+import { KirchhoffLaws_Loop } from '@/visuals/compendium/KirchhoffLaws_Loop'
+
+## Two rules of bookkeeping
+
+<Ref to="ohms-law">Ohm's law</Ref> deals with one part at a time. Kirchhoff's two laws connect the parts together, and they are just conservation: charge is never lost or created, and neither is energy.
+
+- **Current law (KCL):** the current flowing into any junction equals the current flowing out.
+- **Voltage law (KVL):** add up the voltage rises and drops around any closed loop and the total is zero.
+
+<Facts items={[
+  ['Current law', 'currents into a node = currents out'],
+  ['Voltage law', 'rises and drops around a loop sum to zero'],
+  ['Behind it', 'conservation of charge and of energy'],
+]} />
+
+## Current in equals current out
+
+<KirchhoffLaws_Node />
+
+A junction, or **node**, is where wires meet. It has no room to store charge, so whatever flows in must flow out. In the circuit above the battery supplies 1.2 A. At the first junction 0.6 A turns down through R1, leaving 0.6 A to carry on; the next junction takes 0.4 A, leaving the last 0.2 A. The branches add back up: 0.6 + 0.4 + 0.2 = 1.2 A. Move a slider and every number follows, because the law always holds.
+
+This is why in a parallel circuit the branch currents add to the total, and why the lower-resistance branch carries more.
+
+## Voltages around a loop
+
+<KirchhoffLaws_Loop />
+
+Voltage is energy per unit of charge. A battery gives each coulomb a lift; each resistor takes some of it back as heat. Complete a lap of the loop and the charge is back where it started, at the same voltage, so the lifts and drops must cancel: **E − V₁ − V₂ − V₃ = 0**.
+
+This is the reason series resistances add. KVL gives E = I × R₁ + I × R₂ + I × R₃ = I × (R₁ + R₂ + R₃), because the current is the same everywhere. The total resistance is the sum. In the same way KCL turns parallel branches into 1/R = 1/R₁ + 1/R₂ + …
+
+## Using them
+
+1. Label a current direction in each branch and a polarity across each part. A wrong guess just gives a negative answer, which is fine.
+2. Write KCL at a node or KVL around a loop, with drops as minus and rises as plus.
+3. Solve. A circuit with several loops needs one equation per unknown; simulators do this for you.
+
+Two quick examples:
+
+- **Missing drop.** A 12 V battery feeds three series parts. Two drop 3 V and 4.5 V, so the third drops 12 − 3 − 4.5 = **4.5 V**.
+- **Missing current.** 2 A arrives at a junction and leaves along two wires carrying 0.5 A and 0.8 A, so the third carries 2 − 0.5 − 0.8 = **0.7 A**.
+
+<Callout kind="note" title="Where the laws stop working">Both laws assume a circuit small compared with the wavelength. At radio frequencies, with long wires and feed lines, current and voltage differ from point to point, and you need <Ref to="characteristic-impedance">transmission-line</Ref> thinking instead.</Callout>
+
+<ExamLink groups="T5D" />
+
+<Related to="ohms-law series-and-parallel voltage-current-resistance power-and-energy reading-schematics characteristic-impedance" />

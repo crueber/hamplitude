@@ -1,0 +1,38 @@
+import { ArednMesh_Reroute } from '@/visuals/compendium/ArednMesh_Reroute'
+
+## What it is
+
+AREDN (Amateur Radio Emergency Data Network) builds a **mesh network** out of amateur radio: a web of small radio nodes that relay for each other and carry ordinary internet-style data, at speeds far above what packet radio or HF digital modes manage. It works with no internet or cell service at all, which is why it is popular for emergency and community-event communication. Because it uses amateur spectrum, only licensed amateurs may operate it, under the usual Part 97 rules.
+
+<Facts items={[
+  ['Carries', 'IP network traffic: web pages, chat, voice-over-IP, video cameras, file sharing'],
+  ['Hardware', 'ordinary Wi-Fi style routers running special firmware'],
+  ['Spectrum', 'typically microwave amateur allocations that overlap Wi-Fi channels'],
+  ['Paths', 'line of sight; range depends on terrain and antennas'],
+  ['Operators', 'licensed amateurs only, with identification'],
+]} />
+
+## How a mesh works
+
+<ArednMesh_Reroute />
+
+Each node has an **IP address** and radio links to whichever neighbours it can hear. Nodes find those neighbours with discovery protocols and build a map of the network, and a routing protocol picks the path for each packet. Nobody configures the routes by hand. If a node is lost, the rest rebuild their map and send traffic another way, as long as some path still exists. That is the strength of a mesh, and why every node should reach at least two neighbours.
+
+A laptop or phone plugs into, or connects to, the nearest node and sees everything on the mesh, as it would on any local network: a shelter's cameras, a county's file server, an IP phone at the operations center. The network can be linked to other networks, but whatever crosses the amateur links must still follow Part 97.
+
+## Why hams use it
+
+- **Speed.** Megabits per second let you move photos, forms, maps and live video, which voice nets and slow digital modes struggle with. See <Ref to="winlink-emergency" /> for the low-bandwidth alternative.
+- **Independence.** Nodes run from batteries or solar, so the network can come up when the internet is down.
+- **Experimenting.** Mesh teaches networking, antennas and microwave path planning at once, and some areas keep a permanent mesh for training and everyday use.
+
+## Practical points
+
+- **Microwave means line of sight.** Hills, buildings and even trees in the path weaken or break a link. High sites, and directional antennas pointed at each other, extend the reach; see <Ref to="line-of-sight" /> and <Ref to="microwaves" />.
+- **Rules still apply.** No encryption to hide meaning, no business traffic, and nodes must identify with the operator's call sign. See <Ref to="part-97-in-plain-words" />.
+- **Exposure counts.** Keep people away from the front of an active antenna; see <Ref to="rf-exposure" />.
+- **Mesh coverage is local.** Whether a network exists near you, and what it offers, is something to ask your local club or emergency group.
+
+<ExamLink groups="G2E E2C E8C" />
+
+<Related to="winlink-emergency internet-linking microwaves digital-atv ares-and-races ways-to-get-on-the-air" />

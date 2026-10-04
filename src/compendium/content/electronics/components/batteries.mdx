@@ -1,0 +1,54 @@
+import { Batteries_PackBuilder } from '@/visuals/compendium/Batteries_PackBuilder'
+import { BatteryResistance } from '@/visuals/general/G6A_BatteryResistance'
+import { Runtime } from '@/visuals/extra/E7D_Runtime'
+import { BatteryHazards } from '@/visuals/technician/T0A_BatteryHazards'
+
+## What it is
+
+A battery turns stored chemical energy into electrical energy. Each **cell** gives a fixed voltage set by its chemistry, not by its size; a battery is cells joined in series for voltage and in parallel for capacity. Batteries run handhelds, make portable and emergency stations possible, and back up the shack's power.
+
+<Facts items={[
+  ['Cell voltage', 'set by chemistry: about 1.2 to 3.7 V (nominal)'],
+  ['Capacity', 'amp-hours (Ah): current × time it can supply'],
+  ['Energy', 'watt-hours = volts × Ah'],
+  ['Internal resistance', 'small, and it makes voltage sag under load'],
+]} />
+
+## Chemistries
+
+| Chemistry | Nominal cell voltage | Recharge? | Notes |
+|---|---|---|---|
+| Alkaline, carbon-zinc | 1.5 V | no | single use |
+| Lead-acid (flooded, AGM, gel) | 2.0 V | yes | cheap and heavy; 6 cells make "12 V" |
+| NiMH (and older NiCd) | 1.2 V | yes | the common rechargeable AA and AAA |
+| Lithium-ion | about 3.6 to 3.7 V | yes | high energy for the weight; needs a protection circuit |
+| LiFePO4 (lithium iron phosphate) | 3.2 V | yes | lighter than lead-acid, tolerant of many cycles, more forgiving of abuse than other lithium types |
+
+Nominal voltage is a mid-discharge average. A fresh battery reads higher and an almost-empty one lower, and every chemistry has a minimum below which discharging does harm. For a 12 V lead-acid battery that is about 10.5 V; for lithium types the protection circuit enforces it.
+
+<Batteries_PackBuilder />
+
+## What the numbers mean
+
+A real battery behaves like an ideal source in series with a small resistance. Pull a large current, such as a transmitter keying up, and the terminal voltage sags. Lower internal resistance means less sag and more current available.
+
+<BatteryResistance />
+
+Capacity tells you runtime: hours = amp-hours ÷ average current. A 10 Ah battery supplying a 2 A load lasts about 5 hours, less if you must stop before it is flat or the battery is cold or old.
+
+<Runtime />
+
+## Charging and safety
+
+- **Use the charger made for the chemistry.** Lead-acid, NiMH and lithium cells each need a different charging profile; the wrong one overheats or ruins the cells.
+- **Never short a battery.** A big battery can deliver hundreds of amps into a dropped wrench or bare cable, melting metal and starting fires. Fuse the lead close to the battery.
+- **Lithium cells can burn.** Do not puncture, crush or overcharge them, and stop using one that swells, hisses or gets hot.
+- **Charging lead-acid releases hydrogen**, which is explosive. Charge in a ventilated space and keep sparks away.
+
+<BatteryHazards />
+
+If you swap a battery into a radio that expects 13.8 V, check the radio's allowed supply range against the battery's full and empty voltage.
+
+<ExamLink groups="T6A G6A T0A" />
+
+<Related to="power-and-energy battery-and-fire-safety portable-power go-kits shack-power-supplies wire-gauge-and-fusing" />

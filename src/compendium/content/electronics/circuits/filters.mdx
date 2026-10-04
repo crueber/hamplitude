@@ -1,0 +1,59 @@
+import { FilterResponse } from '@/visuals/general/G7C_FilterResponse'
+import { Filters_RcSection } from '@/visuals/compendium/Filters_RcSection'
+import { FilterShapes } from '@/visuals/extra/E7C_FilterShapes'
+
+## What it is
+
+A filter passes some frequencies and blocks others. Radios use them everywhere: to pick one signal out of a crowded band, to keep a transmitter's harmonics off the air, and to smooth the ripple out of a DC supply.
+
+<Facts items={[
+  ['Cutoff', 'the half-power (−3 dB) point'],
+  ['RC cutoff', 'fc = 1 ÷ (2π × R × C)'],
+  ['Steepness', '6 dB per octave for each pole (element) of the filter'],
+  ['Bandwidth', 'between the two −3 dB points; Q = centre frequency ÷ bandwidth'],
+]} />
+
+## Four shapes
+
+<FilterResponse />
+
+| Shape | Passes | Typical use |
+|---|---|---|
+| Low-pass | below the cutoff | transmitter harmonic filter, audio smoothing |
+| High-pass | above the cutoff | at a TV or FM receiver's antenna input, to keep HF transmissions out |
+| Band-pass | a band around the centre | IF and receiver front-end filters, repeater duplexers |
+| Band-reject (notch) | everything except a narrow band | removing one interfering tone or carrier |
+
+## How a filter works
+
+<Filters_RcSection />
+
+A capacitor's opposition to AC, its reactance, falls as frequency rises (<Ref to="reactance-and-impedance" />). In a low-pass filter the capacitor sits across the output: low frequencies find it almost an open circuit and pass; high frequencies find it almost a short and are shunted to ground. At the cutoff the capacitor's reactance equals the resistance and the output is 0.707 of the input voltage, which is half the power or −3 dB. Swap the two parts and you have a high-pass filter. With 1 kΩ and 0.1 µF the cutoff is 1.59 kHz.
+
+One RC section only falls 6 dB per octave, far too gentle for radio. Real filters use inductors and capacitors, which store energy and can resonate (<Ref to="resonance-and-q" />), and cascade several sections. Each extra section adds 6 dB per octave of skirt:
+
+| Sections (order) | Loss at twice the cutoff (Butterworth) |
+|---|---|
+| 1 | 7 dB |
+| 2 | 12 dB |
+| 3 | 18 dB |
+| 5 | 30 dB |
+
+## Shape, steepness and cost
+
+<FilterShapes />
+
+A steeper skirt always costs something. **Butterworth** keeps the passband flat but falls gradually; **Chebyshev** falls faster at the price of ripple in the passband; **elliptic** is steepest, with ripple and notches. More sections also mean more **insertion loss** (power lost in the passband) and more phase distortion.
+
+A narrow filter also needs a high Q. A 2.4 kHz SSB filter at 9 MHz has a Q of about 9 MHz ÷ 2.4 kHz = 3750, far beyond what a coil can give. That is why receivers use crystal, ceramic or mechanical filters for selectivity, and why DSP, which filters with arithmetic, is so attractive (<Ref to="dsp-basics" />).
+
+## In practice
+
+- **Terminate filters properly.** A filter is designed for a specific source and load impedance, usually 50 Ω; connect it to something else and its response changes.
+- **Match the width to the signal.** Narrower than the signal loses audio, wider lets in noise; see <Ref to="radio-filters" />.
+- **Filters can stop interference at either end.** A low-pass in the transmit line stops harmonics (<Ref to="harmonics-and-spurs" />); a filter at a victim receiver stops strong out-of-band signals (<Ref to="filters-and-ferrites-for-rfi" />).
+- **Active filters** use op-amps with resistors and capacitors, so they need no coils, and suit audio frequencies.
+
+<ExamLink groups="G7C E7C T4B" />
+
+<Related to="resonance-and-q radio-filters crystals-and-resonators dsp-basics harmonics-and-spurs filters-and-ferrites-for-rfi" />

@@ -1,0 +1,48 @@
+import { HarmonicsAndSpurs_Landing } from '@/visuals/compendium/HarmonicsAndSpurs_Landing'
+import { E1C_Spur } from '@/visuals/extra/E1C_Spur'
+
+## What it is
+
+A perfect transmitter would put out only the signal you intend. Real ones also emit **harmonics**, exact whole-number multiples of the operating frequency, and **spurious emissions**, any other unwanted signal outside the necessary bandwidth. Both can land on someone else's receiver, and they leave the transmitter, so they are **your** source to fix.
+
+<Facts items={[
+  ['Harmonic', 'n × f: 2f, 3f, 4f and so on'],
+  ['Cause', 'any stage driven into its nonlinear range, or switching'],
+  ['Fix', 'a low-pass filter after the transmitter, and not overdriving it'],
+  ['US rule below 30 MHz', 'spurs at least 43 dB below the fundamental (exam figure; details depend on power)'],
+]} />
+
+## Where harmonics come from
+
+An amplifier that flattens the peaks of a sine wave has changed its shape, and any non-sine periodic shape is a sine plus harmonics (see <Ref to="spectrum-and-fourier" />). Overdriving a linear stage does this. So does a switching amplifier on purpose: its square-edged output is rich in odd harmonics, so it needs a filter. Efficient <Ref to="amplifiers">Class C, D and E stages</Ref> depend on one.
+
+<HarmonicsAndSpurs_Landing />
+
+Harmonics of HF signals land in the VHF world. The 3rd harmonic of 21.3 MHz is 63.9 MHz, in the US VHF TV channel 3 (60 to 66 MHz), and its 5th is 106.5 MHz, inside the FM broadcast band. Likewise the 2nd harmonic of 50.1 MHz is 100.2 MHz, in the FM band. On the 2 m band, 144.2 MHz has a 3rd harmonic at 432.6 MHz, right in the 70 cm band. Each is plain multiplication, which you can check for any band you use.
+
+## Spurs that are not harmonics
+
+| Spur | Origin |
+|---|---|
+| **Parasitic oscillation** | stray inductance and capacitance make an amplifier oscillate on its own, at any frequency |
+| **Mixer and synthesizer products** | unwanted mixing outputs and oscillator leakage inside the transmitter |
+| **Splatter** | overdriven or over-processed SSB: distortion spreads the signal beyond its bandwidth, see <Ref to="speech-processing-and-mic-gain" /> |
+| **Key clicks** | a CW signal turned on and off too abruptly has sidebands far from the carrier |
+
+## How much is enough
+
+<E1C_Spur />
+
+43 dB is a power ratio of about 20,000 to 1: a 100 W transmitter may leave about 5 mW in its worst spur. That is tiny, yet it can still be noticeable in a neighbour's weak-signal receiver a few metres away. In the US, Part 97 sets the requirement, and the amount depends on frequency and power. Other countries set their own limits.
+
+## Finding it and fixing it
+
+- **Which one is it?** Interference that follows a **harmonic of your frequency** and shows up on only that one channel is a transmitter problem. A high-pass filter at the TV will not remove it, because the harmonic arrives on the channel the TV is tuned to. Interference on many channels is receiver overload instead, see <Ref to="overload-and-intermod" />.
+- **Filter it at the source.** A low-pass filter between the transmitter and the antenna passes your band and attenuates everything above it. It must be rated for your power and matched to your system, or it will heat and distort the SWR. See <Ref to="filters-and-ferrites-for-rfi" />.
+- **Do not overdrive.** Reduce drive and mic gain, keep ALC from being pegged, and run an amplifier within its rated linear drive.
+- **An antenna tuner is not a harmonic filter.** Do not rely on one for this.
+- **Look at the output.** A <Ref to="spectrum-analyzers">spectrum analyzer</Ref> fed through a suitable attenuator (never straight from the transmitter), or a second receiver tuned to the harmonic, shows what is leaving.
+
+<ExamLink groups="T7B E1C E7B" />
+
+<Related to="rfi-and-emi overload-and-intermod filters-and-ferrites-for-rfi tvi-and-consumer-electronics linear-amplifiers spectrum-analyzers" />

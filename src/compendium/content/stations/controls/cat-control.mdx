@@ -1,0 +1,48 @@
+import { CatControl_Link } from '@/visuals/compendium/CatControl_Link'
+
+## What it is
+
+**CAT** (computer-aided transceiver) is a data link that lets software read and change a radio's settings: frequency, mode, power, transmit/receive and more. It is how a logging program knows what band you are on, and how a mouse click on a spot can tune your radio. Some manufacturers use their own name for it.
+
+<Facts items={[
+  ['Carries', 'commands and readings, not audio'],
+  ['Link', 'USB virtual serial port, or a serial cable with the right voltage levels'],
+  ['Must match', 'port, speed (baud rate) and the radio model on both ends'],
+]} />
+
+## How it works
+
+<CatControl_Link />
+
+The computer sends short messages; the radio answers. Each manufacturer has its own command set. Some use readable text commands ending in a semicolon, others use compact binary frames, and some share one wire among several devices, each with its own address. You do not need to know the commands: rig-control software contains the driver for your model. A well-known open library for this is Hamlib, used inside many programs.
+
+**One program owns the port.** Two programs cannot open the same serial port at once, so a shared **rig-control program** talks to the radio and offers the other programs a way to read and set it. Many logging and digital-mode programs can do this themselves, or hand off to a rig-control layer.
+
+## What it does for you
+
+| Task | What CAT adds |
+|---|---|
+| Logging | frequency and mode filled in automatically |
+| Digital modes | the software sets the dial frequency and mode, and can key the transmitter |
+| Spotting and band maps | click a callsign, the radio tunes to it |
+| Memory management | edit and back up memory channels on a computer; see <Ref to="memories-and-scanning" /> |
+| Remote operation | change frequency and power from far away; see <Ref to="remote-operation" /> |
+| Antenna and amplifier control | other gear follows the radio's band |
+
+## Getting it working
+
+1. Connect the cable and find the **port**. A USB radio appears as a virtual serial port whose name can change if you unplug it or use another socket.
+2. Set the **speed and format** (baud rate, data and stop bits) in the radio's menu and in the software to the same values. Common speeds range from a few thousand to over a hundred thousand baud.
+3. Choose the **radio model** in the software, then test by turning the dial: the display on the computer should follow.
+
+<Callout kind="tip" title="When it fails">Wrong speed, wrong port, or a driver missing is the usual cause. Garbled data or dropouts while transmitting often mean RF is getting into the cable: use a short, good-quality cable, a <Ref to="common-mode-chokes">common-mode choke</Ref> (ferrite), and check the grounding.</Callout>
+
+## Keep control of the transmitter
+
+If software can key your transmitter, then a crashed program or a wrong setting can too. Set the radio's **time-out timer** so it stops transmitting after a few minutes, and stay at the station when software is in control. The licensee remains responsible for every transmission; see <Ref to="control-operators" />.
+
+Audio does not travel on the CAT link. For digital modes you also need a sound path to the computer; see <Ref to="computer-interfaces" />.
+
+<ExamLink groups="T4A" />
+
+<Related to="computer-interfaces memories-and-scanning digital-mode-software logging-software remote-operation hf-transceivers" />

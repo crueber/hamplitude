@@ -1,0 +1,32 @@
+import { StealthAntennas_House } from '@/visuals/compendium/StealthAntennas_House'
+
+## What it is
+
+An antenna chosen to be hard to see or easy to take down, for homes where covenants, landlords or neighbors rule out a tower and a beam. There is no free lunch: a hidden antenna is almost always smaller, lower or closer to clutter than an exposed one, and it works less well. The aim is to get the best compromise, not to match an outdoor station.
+
+## The options
+
+<StealthAntennas_House />
+
+| Option | Why it works | The compromise |
+|---|---|---|
+| Attic wire | Out of sight, protected from weather | Shingles, wiring and ducts absorb and re-radiate; noise from household electronics |
+| Window or indoor <Ref to="magnetic-loop">loop</Ref> | Tiny and tunable | Low efficiency and narrow bandwidth, close to people and noise |
+| Flagpole vertical | A normal object that hides a <Ref to="quarter-wave-vertical">vertical</Ref> | A good ground system is hard to hide |
+| Thin wire to a tree | Fine wire is almost invisible | Low and tree-dependent; wire moves in wind; usually needs a tuner |
+| Portable antenna on a stand | Only up when in use | Time to set up each time |
+
+## What to expect
+
+Indoor and hidden antennas typically lose several dB relative to a clean outdoor dipole, and sometimes much more. That can be the difference between a solid contact and no contact. To make the most of it:
+
+- **Get some height and distance from clutter.** Move it outward and up, away from wiring, pipes and big metal.
+- **Choose the mode.** Low power digital modes such as FT8 work well with compromise antennas because they decode weak signals; see <Ref to="ft8-and-ft4" />.
+- **Keep the radio side clean.** An indoor antenna sits close to home electronics: expect noise on receive, and watch for interference on the transmit side; see <Ref to="rfi-and-emi" />.
+- **Stay safe.** Antennas in a loft or by a window are close to people, so keep power low and keep them out of reach; see <Ref to="rf-exposure" />.
+
+## Rules, covenants and the law
+
+In the US, the FCC's PRB-1 limited preemption tells state and local governments to reasonably accommodate amateur antennas. It is aimed at government regulation, not at private deed restrictions or a lease, which are a contract between you and the other party. Details change and every situation is different, so neither this article nor PRB-1 is legal advice. Read your documents, ask the board or landlord, and see <Ref to="antenna-restrictions" />.
+
+<Related to="antenna-restrictions magnetic-loop loaded-and-short-antennas end-fed-half-wave long-and-random-wires portable-field-antennas" />

@@ -1,0 +1,46 @@
+import { Radiograms_Anatomy } from '@/visuals/compendium/Radiograms_Anatomy'
+
+## What it is
+
+A **radiogram** is a written message in a standard format, so that many operators can pass it along a chain of stations and it arrives unchanged. The format is essentially the same whether it travels by voice, Morse, packet or Winlink. Handling it well is mostly discipline: **copy it exactly and pass it exactly**.
+
+## The parts
+
+<Radiograms_Anatomy />
+
+A radiogram has four parts, in this order:
+
+1. **Preamble:** the information needed to **track** the message. It holds the message number, the **precedence**, the station of origin, the **check**, the place of origin and the date. Optional **handling instructions** can also appear.
+2. **Address:** who the message is for, with a telephone number if possible.
+3. **Text:** the message itself, kept short.
+4. **Signature:** who it is from.
+
+The **check** is the **number of words** in the text, so a receiving station can tell whether anything was lost or added. Count only the text, not the address or signature. The example's text has 10 words, so the check is 10.
+
+## Precedence
+
+| Precedence | Abbreviation | Meaning |
+|---|---|---|
+| Emergency | EMERGENCY | life-and-death urgency |
+| Priority | P | important, time-sensitive, but not an emergency |
+| Welfare | W | inquiring about or reporting the health and welfare of a person in an affected area |
+| Routine | R | everything else |
+
+Handling follows the precedence: emergency and priority messages go first.
+
+## Sending it
+
+- **Do not change the text.** The sender's words are the message, even if you would phrase it differently.
+- **Keep text short and plain.** Radiograms are meant to be brief, with no unusual abbreviations.
+- On voice, pass each part clearly and slowly, with a pause or spoken break between parts, and spell unusual words with the <Ref to="phonetic-alphabet">phonetic alphabet</Ref>.
+- The receiving station should **repeat the check** and confirm before the sender moves on.
+
+<Callout kind="note" title="Content still matters">Part 97 forbids obscuring the meaning of a message and bars certain content, such as business traffic. Send only what the person who wrote it wanted sent, and do not release it to anyone else.</Callout>
+
+## Where radiograms are used
+
+National and local **message-handling networks** relay them; see <Ref to="nts-and-mars" />. During a disaster, health-and-welfare traffic is the common use: people outside the area asking if family are safe. The same fields appear in simplified form on agency forms, such as the ICS-213 described in <Ref to="incident-command-system" />.
+
+<ExamLink groups="T2C" />
+
+<Related to="net-control nts-and-mars emcomm-principles winlink-emergency phonetic-alphabet voice-nets" />

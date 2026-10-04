@@ -1,0 +1,42 @@
+import { DishAntennas_Focus } from '@/visuals/compendium/DishAntennas_Focus'
+import { DishAntennas_Gain } from '@/visuals/compendium/DishAntennas_Gain'
+
+## What it is
+
+A dish is a curved reflector with a small antenna, the **feed**, at its focus. The reflector collects a wide patch of incoming wave and funnels it into the feed, and on transmit it does the reverse. Because the collecting area is huge compared with a wavelength, dishes give enormous gain on microwaves, where they are small enough to build and aim.
+
+<Facts items={[
+  ['Gain', 'efficiency × (π × D ÷ λ)², D = diameter'],
+  ['Double D or double f', '+6 dB (ideal)'],
+  ['Beamwidth', 'roughly 70 × λ ÷ D degrees'],
+  ['Typical efficiency', 'about 50 to 65% for ordinary amateur dishes'],
+  ['Polarization', 'set by the feed, not the dish'],
+]} />
+
+## How it works
+
+<DishAntennas_Focus />
+
+The surface is a paraboloid. Every ray parallel to the axis bounces to the same focus, and every path from a flat wavefront to the focus is exactly the same length, so all the contributions arrive in phase and add up. The feed is typically a small horn, a short helix or a dipole with its own small reflector, held at the focus on a boom or arm. An **offset-fed** dish has the feed beside the main beam instead of in front of it, which removes the shadow the feed would otherwise cast on the dish.
+
+## Gain and beamwidth
+
+<DishAntennas_Gain />
+
+Gain depends on diameter measured in wavelengths. Doubling the diameter quadruples the collecting area, which is +6 dB. Doubling the frequency halves the wavelength, which has the same effect. That is why the same dish is a modest antenna at 1.3 GHz and a powerful one at 10 GHz.
+
+No real dish reaches the ideal figure. The feed illuminates the dish unevenly, some of its energy spills past the rim, and the feed and its supports block part of the aperture. A ratio of 50 to 65% is typical for dishes built or bought for amateur use; the slider labels it as such.
+
+## In practice
+
+- **Narrow beam, careful aiming.** A 1 m dish at 10 GHz has a beam of only a couple of degrees. Pointing errors of a degree cost real gain, so the mount has to be rigid.
+- **Accuracy of the surface.** The reflector must match a true parabola to a small fraction of a wavelength. That is easy at 1 GHz and demanding at 24 GHz.
+- **Why not on HF or VHF.** At 144 MHz a dish ten wavelengths across is over 20 m wide, so beams and Yagi arrays take that role there.
+- **Weather.** Rain and wind loading matter, and at higher microwave frequencies rain absorbs a noticeable part of the signal.
+- **Safety.** A dish concentrates all the transmit power into the beam. Keep people out of the beam, especially near the feed. See <Ref to="rf-exposure" />.
+
+Typical amateur uses are weak-signal microwave work, earth-moon-earth contacts at the lower microwave bands, wideband links and radio astronomy; see <Ref to="microwaves" /> and <Ref to="eme-moonbounce" />.
+
+<ExamLink groups="E9D" />
+
+<Related to="gain-and-directivity yagi-uda microwaves eme-moonbounce radio-astronomy helical-and-satellite-antennas polarization" />

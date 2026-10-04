@@ -1,0 +1,46 @@
+import { Duct as T3C_Duct } from '@/visuals/technician/T3C_Duct'
+import { TroposphericPropagation_Scatter } from '@/visuals/compendium/TroposphericPropagation_Scatter'
+
+## What it is
+
+The troposphere is the lowest layer of air, where weather happens. Radio waves above about 30 MHz are not returned by the ionosphere, but the troposphere can still bend or scatter them, carrying VHF, UHF and microwave signals **well beyond the horizon**. Unlike skywave, it is driven by weather, not the Sun.
+
+<Facts items={[
+  ['Bands', 'mostly 6 m and up, strongest on 2 m, 70 cm and microwaves'],
+  ['Ordinary reach', 'the radio horizon, about 15% beyond the visual one'],
+  ['Enhanced reach', 'typically 100 to several hundred miles, much more over water'],
+  ['Cause', 'changes in air temperature and moisture with height'],
+]} />
+
+## Bending: refraction and ducting
+
+Radio waves travel slightly slower in denser, moister air. In normal air, density falls steadily with height, so the top of a wave moves a little faster than the bottom and the beam curves gently downward. That small effect is why the radio horizon sits beyond the visual one.
+
+When a layer of warm, dry air lies over cooler, moister air (a **temperature inversion**), the air's refractive index drops much faster with height than normal. The beam is then bent downward more strongly than the Earth curves away, and it can be trapped between the ground and the layer, like light in a fibre.
+
+<T3C_Duct />
+
+Ducts often form on calm, clear nights under high pressure, near weather fronts, and over water, where a thin layer of moist air sits under warmer dry air. Over open water, ducts can carry VHF and UHF signals for hundreds of miles. Ducting works best at shorter wavelengths, so the effect is usually stronger at 70 cm than on 6 m, and has nothing to do with HF.
+
+## Scattering
+
+<TroposphericPropagation_Scatter />
+
+Air is never perfectly smooth. Turbulence and humidity patches scatter a tiny part of a signal in every direction, including onward. If two stations aim narrow beams at the same patch of sky, enough energy arrives to be heard. Troposcatter works most of the time, but it is weak, fluttery and needs good antennas and power; amateur ranges are typically a few hundred miles.
+
+| Mechanism | What happens | Reach | Reliability |
+|---|---|---|---|
+| Normal refraction | beam bends slightly down | to the radio horizon, plus about 15% | always there |
+| Ducting | beam trapped in a layer | typically 100 to several hundred miles, more over water | needs the right weather |
+| Scatter | turbulence scatters a bit forward | a few hundred miles | weak but steady |
+
+## In practice
+
+- Watch the weather: a strong high-pressure system, light winds and a clear night are the classic setup. Forecast maps of "tropo" conditions exist for this reason.
+- Openings come on slowly, last hours or days, and favour paths across water or flat country.
+- Distant repeaters and simplex stations may appear on your radio and interfere with local ones. That is a hint that the band is open.
+- Signals show slow, deep fading as the layer moves.
+
+<ExamLink groups="T3C E3A" />
+
+<Related to="line-of-sight weak-signal-vhf sporadic-e six-meters microwaves skywave-and-skip" />

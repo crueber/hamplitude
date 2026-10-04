@@ -1,0 +1,49 @@
+import { IonosphereLayers_DayNight } from '@/visuals/compendium/IonosphereLayers_DayNight'
+import { IonosphereBounce } from '@/visuals/shared/IonosphereBounce'
+
+## What it is
+
+The ionosphere is a region of the upper atmosphere, starting roughly 50 km up and extending several hundred, where the air is thin and **sunlight has knocked electrons off the gas atoms**. The free electrons and charged atoms that result can bend radio waves back toward Earth. This is what makes worldwide HF communication possible.
+
+<Facts items={[
+  ['Made by', 'ultraviolet light and X-rays from the Sun'],
+  ['Layers', 'D, E, F1 and F2, from lowest to highest'],
+  ['Day and night', 'D vanishes at night; F1 and F2 merge'],
+  ['Used for', 'HF skywave: reflecting signals over the horizon'],
+]} />
+
+## Layers, from the ground up
+
+<IonosphereLayers_DayNight />
+
+The layers are regions where the density of free electrons peaks, and each behaves differently. Heights are typical and vary:
+
+| Layer | Typical height | Daytime | Night | What it does to radio |
+|---|---|---|---|---|
+| **D** | about 50 to 90 km | present | disappears | **Absorbs** HF, most strongly the lowest frequencies |
+| **E** | about 90 to 150 km | present | much weaker | Bends lower HF; hops of up to roughly 1,200 miles |
+| **F1** | about 150 to 220 km | present (summer especially) | merges into F2 | Adds ionization by day |
+| **F2** | above about 220 km | strongest | weaker, one F layer | The main layer for **long-distance** HF |
+
+The higher the layer, the farther a signal returns to Earth: see <Ref to="skywave-and-skip" />.
+
+## Why it bends HF but passes VHF
+
+<IonosphereBounce />
+
+A radio wave pushes the free electrons back and forth, and the electrons re-radiate. In a region with enough of them the wave's path curves back toward the ground. Lower frequencies bend more easily; as the frequency rises, the wave needs more and more electron density to turn, until at some point it simply passes through. HF is turned back; VHF and UHF usually escape to space (which is why they work to satellites). The highest frequency that still comes back is the subject of <Ref to="muf-and-luf" />.
+
+Where the air is thicker, as in the D layer, electrons that are set moving collide with atoms and lose the energy as heat. The wave is not bent back so much as **absorbed**, and lower frequencies suffer most.
+
+## Day, night and the Sun
+
+Ionization needs sunlight, so it follows the Sun. After sunset the D layer fades quickly because its dense air lets electrons and ions recombine fast, and the E layer weakens. The F layer lives on, because the air up there is so thin that electrons rarely meet an ion. That produces the familiar rhythm:
+
+- **Low bands (160 m and 80 m, and 40 m to a lesser degree):** absorbed by the D layer by day, so mostly short range; they open for long distances at night.
+- **High bands (15 m, 12 m, 10 m):** need strong F-layer ionization, so they work best by day and when the Sun is active; see <Ref to="solar-cycle-and-indices" />.
+
+Ionization also varies with season, latitude and the solar cycle, and bursts of solar activity can disrupt it; see <Ref to="space-weather" />.
+
+<ExamLink groups="G3C T3C" />
+
+<Related to="skywave-and-skip muf-and-luf solar-cycle-and-indices space-weather grey-line-and-long-path sporadic-e" />

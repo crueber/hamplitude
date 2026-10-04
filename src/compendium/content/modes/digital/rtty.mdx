@@ -1,0 +1,43 @@
+import { G2E_MarkSpace } from '@/visuals/general/G2E_MarkSpace'
+import { G8C_Codes } from '@/visuals/general/G8C_Codes'
+import { E2E_FskTypes } from '@/visuals/extra/E2E_FskTypes'
+
+## What it is
+
+Radioteletype (RTTY) is one of the oldest data modes still in everyday use: it began with mechanical teleprinters and now runs on a computer. It sends text by shifting between two frequencies. It is simple, needs little bandwidth and is a staple of HF contests.
+
+<Facts items={[
+  ['Keying', 'frequency shift (FSK): mark and space'],
+  ['Common amateur speed', '45.45 baud (about 60 words per minute)'],
+  ['Common shift', '170 Hz'],
+  ['Bandwidth', 'a few hundred hertz (about 250 Hz)'],
+  ['Character code', 'Baudot, 5 bits per character'],
+]} />
+
+## Mark and space
+
+<G2E_MarkSpace />
+
+A transmission is a stream of two tones. The two frequencies are called **mark** and **space**, and they are 170 Hz apart in the usual amateur setup. The receiver compares which tone is stronger at each instant and turns that into 1s and 0s. Comparing two tones is simple, which is why RTTY has run on everything from machinery to laptops.
+
+## Baudot
+
+<G8C_Codes />
+
+Each character is sent as **5 bits** (Baudot code) with a start and a stop bit around it. Five bits only gives 32 values, so two special **shift** codes switch between letters and figures. If a shift code is lost to noise, the rest of the line can print as figures instead of letters until the next shift, which is why RTTY gets a familiar scrambled look when it fades. There is no error correction.
+
+## Making the tones
+
+<E2E_FskTypes />
+
+**Direct FSK** shifts the transmitter's own frequency. **Audio FSK (AFSK)** feeds two audio tones into an SSB transmitter, which is how most people do it with a computer and sound card. With AFSK on an SSB radio, the sideband decides which tone ends up higher, so convention says to use lower sideband.
+
+<Callout kind="tip" title="Garbled but tuned in?">Three common causes: mark and space swapped (wrong sideband, or reversed in the software), the wrong baud rate, or the wrong shift. Try flipping the reverse option first.</Callout>
+
+## In practice
+
+RTTY contests are fast and noisy, using repeated short exchanges. For casual conversation it is easy to set up and works from simple equipment, though newer modes outperform it on weak, fading signals.
+
+<ExamLink groups="G2E G8C E2E" />
+
+<Related to="digital-modes-overview psk31 mfsk-and-olivia digital-modulation single-sideband digital-mode-software" />

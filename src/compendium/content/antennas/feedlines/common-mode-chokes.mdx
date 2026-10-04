@@ -1,0 +1,43 @@
+import { CommonModeChokes_Path } from '@/visuals/compendium/CommonModeChokes_Path'
+import { CommonMode } from '@/visuals/general/G6B_CommonMode'
+
+## What it is
+
+A common-mode choke keeps RF off the **outside** of a coax shield. It does this by adding impedance to current that flows the same way on both conductors, while leaving the wanted signal (equal and opposite currents inside the cable) alone. It is how you stop a feed line from acting as part of the antenna.
+
+<Facts items={[
+  ['Differential mode', 'wanted: equal and opposite currents, fields cancel'],
+  ['Common mode', 'unwanted: same direction on the whole cable, so it radiates'],
+  ['Typical choke impedance', 'a thousand ohms or more across the band'],
+  ['Made with', 'ferrite beads or cores, or coiled coax'],
+]} />
+
+## Why common-mode current exists
+
+<CommonModeChokes_Path />
+
+At radio frequencies the inside and the outside of a coax shield behave as two separate conductors, because current stays at the surface (skin effect). The inside carries the signal. The outside is a third conductor, completely separate from it, and it sits next to the antenna.
+
+Wherever the feed point is not perfectly balanced, or the antenna's fields couple onto the cable, some RF current flows along the outside. A dipole fed directly with coax is a classic case: the shield connects to one half of the antenna, and the outside of the cable offers a path to ground that the other half lacks. A vertical without good radials does the same.
+
+Once current flows on the outside, the cable is part of the antenna. It radiates, so your pattern changes. It receives, carrying household noise into the shack. It brings RF into the radio, microphone and computer leads, and touching or moving the cable can change the SWR.
+
+## What a choke does
+
+<CommonMode />
+
+A choke is an inductance placed in the path of that outside current. Pass the coax through a ferrite core. The signal current on the centre conductor and the equal and opposite current on the inside of the shield have fields that cancel, so the core sees nothing and the signal passes untouched. Current on the outside has no partner to cancel it, so the core responds with a large impedance. The choke is a **filter for the unwanted path** and leaves the intended one alone.
+
+Impedance is what counts. Aim for a high impedance on the band you use; "a thousand ohms or more" is a common target, higher where RFI is severe. A choke that works at 14 MHz may do little at 3.5 MHz or 144 MHz.
+
+## In practice
+
+- **Where:** at the antenna feed point first. If trouble persists, add one where the cable enters the shack, and on other cables (USB, audio, power).
+- **How:** several turns of coax through a toroid or a stack of clamp-on or bead ferrites; or several turns of coax coiled up (an air-core choke, effective over a narrower band). Ferrite mix matters: mix 31 is popular for HF and mix 43 for upper HF and VHF, typically.
+- **Not for SWR.** A choke does not fix a mismatched antenna and should not change the SWR of a well-behaved system; if SWR changes when you add one, you had common-mode current.
+- **A 1:1 current balun is a choke at the feed point.** See <Ref to="baluns-and-ununs" />.
+- **Power:** ferrite heats when it has to block a lot of current. Use cores rated for the power and frequency.
+
+<ExamLink groups="G6B T7B E4E" />
+
+<Related to="baluns-and-ununs coaxial-cable half-wave-dipole antenna-tuners rf-connectors" />

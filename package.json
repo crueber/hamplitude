@@ -4,14 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "bun scripts/gen-compendium.ts && vite",
+    "build": "bun scripts/gen-compendium.ts && tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
     "pools": "bun scripts/parse-pools.ts",
     "figures": "python3 scripts/extract-figures.py",
-    "validate": "bun scripts/validate-content.ts",
-    "test:flow": "bun scripts/flow-test.ts"
+    "validate": "bun scripts/validate-content.ts && bun scripts/validate-compendium.ts",
+    "test:flow": "bun scripts/flow-test.ts",
+    "gen": "bun scripts/gen-compendium.ts"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.3.0",

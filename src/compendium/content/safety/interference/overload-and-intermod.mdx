@@ -1,0 +1,52 @@
+import { Overload } from '@/visuals/technician/T7B_Overload'
+import { OverloadAndIntermod_Compression } from '@/visuals/compendium/OverloadAndIntermod_Compression'
+import { ImdProducts } from '@/visuals/extra/E4D_ImdProducts'
+
+## What it is
+
+Receiver overload happens when a signal that is far stronger than the wanted one pushes the receiver's first stages out of their straight-line range. Nothing is wrong with the strong signal's purity: the **receiver** cannot handle it. The same cause explains interference to your neighbour's TV and interference to your own receiver from a nearby station.
+
+<Facts items={[
+  ['Cause', 'a strong signal drives an amplifier or mixer into its nonlinear range'],
+  ['Where it is cured', 'ahead of the stage that overloads: at the victim receiver'],
+  ['Mode of the interferer', 'irrelevant, so changing mode will not help'],
+  ['Key sign', 'trouble across many channels, or only when a certain station is on'],
+]} />
+
+## Why strong signals do damage
+
+<Overload />
+
+Every amplifier is straight-line only over a limited range. Push harder and the output flattens at the peaks.
+
+<OverloadAndIntermod_Compression />
+
+A flattened peak is no longer a clean sine, so it carries new frequencies, and the amplifier has less gain left for anything weak. That gives four symptoms, often confused:
+
+| Effect | What happens | What you notice |
+|---|---|---|
+| **Desensitisation** | strong signal squeezes gain from the wanted signal | receiver "goes deaf" |
+| **Cross-modulation** | the strong signal's modulation is copied onto the wanted signal | you hear the other station underneath |
+| **Intermodulation** | two or more signals mix into new frequencies | phantom signals on clear channels |
+| **Audio rectification** | a junction in an audio stage detects the RF | your voice or buzz in speakers or phones |
+
+## Intermodulation arithmetic
+
+<ImdProducts />
+
+Two signals f₁ and f₂ create third-order products at **2f₁ − f₂** and **2f₂ − f₁**. They fall right beside the originals, so once made they cannot be filtered out. Set the slider to 146.61: two strong stations at 146.52 and 146.61 MHz make a product at 2 × 146.52 − 146.61 = 146.43 MHz and another at 2 × 146.61 − 146.52 = 146.70 MHz.
+
+Their level rises **3 dB for every 1 dB** of input, while the originals rise 1 dB per dB. That is why a small increase in strength brings a big jump in interference, and why a higher intercept point means a better receiver. The full treatment is in <Ref to="receiver-performance" />.
+
+## Telling them apart and curing them
+
+- **Fundamental overload** hits the victim on whatever it is tuned to, because the whole front end is swamped. It is cured by a filter at the victim's input, or by attenuation ahead of the first stage.
+- **Intermodulation** appears only when both interferers are on. Switch one off and it goes. Attenuate, or tune a preselector to reject at least one.
+- **Audio rectification** ignores the tuning knob, and it often ignores the volume control too. Fix it with chokes or bypass capacitors on the cables, see <Ref to="tvi-and-consumer-electronics" />.
+- **A noisy transmitter** can also mimic the problem: <Ref to="harmonics-and-spurs" />.
+
+<Callout kind="tip" title="Attenuate first">On a noisy low band the atmospheric noise is stronger than the receiver's own noise anyway, so adding attenuation cuts overload without hurting what you can copy.</Callout>
+
+<ExamLink groups="T7B E4D E4C G8B" />
+
+<Related to="receiver-performance rfi-and-emi harmonics-and-spurs tvi-and-consumer-electronics filters-and-ferrites-for-rfi radio-filters mixers" />

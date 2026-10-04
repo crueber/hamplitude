@@ -1,0 +1,39 @@
+import { RfConnectors_Gallery } from '@/visuals/compendium/RfConnectors_Gallery'
+
+## What it is
+
+An RF connector joins a cable to a radio, antenna or another cable. A good one is part of the transmission line: it keeps the impedance steady, holds the shield continuous and survives the weather. A bad choice or a bad installation is a common cause of loss, odd SWR and intermittent faults.
+
+<Facts items={[
+  ['Plug and socket', 'plug = male with a centre pin (in most families); socket = female'],
+  ['Impedance', 'most are 50 Ω; 75 Ω versions of some types exist'],
+  ['Pairs', 'a PL-259 plug mates with an SO-239 socket'],
+  ['Choose by', 'frequency, weather, power and how often you plug'],
+]} />
+
+## The common families
+
+<RfConnectors_Gallery />
+
+| Connector | Coupling | Typical use | Notes |
+|---|---|---|---|
+| **UHF** (PL-259 plug, SO-239 socket) | threaded | HF and VHF radios, amplifiers, mobile | cheap and robust, but the impedance is not held constant, so it is a poor choice at UHF and up; not weatherproof on its own |
+| **N** | threaded | outdoor runs, repeater sites, UHF and microwave | holds a constant impedance; sealed versions resist the weather; larger and heavier |
+| **BNC** | bayonet, quarter turn | test gear, handhelds, short jumpers | quick to connect; light duty |
+| **TNC** | threaded | mobile and vibration-prone installs, low microwave | like a BNC but locked by threads |
+| **SMA** | small threaded hex nut | handhelds, modules, microwave | small and light; delicate and low power; wears with repeated use |
+
+Other types you will meet: F connectors on 75 Ω TV cable, tiny MCX, MMCX and U.FL types inside equipment and on modules, and large DIN-type connectors on commercial and repeater cabling for high power.
+
+## What matters in practice
+
+- **Frequency.** The cheaper threaded UHF connector is fine on HF and 2 m. Move to N (or TNC or SMA, if sized for the job) for 70 cm and above.
+- **Weather.** None of these stays dry by itself. Wrap outdoor joints with self-amalgamating tape, then electrical tape over it, shaped so water sheds, and form a drip loop in the cable. A wet connector lets water wick into the cable.
+- **Installation.** Most failures are in the wiring, not the connector: a cold-soldered shield, a centre pin that is not fully seated, or a crimp that is not tight. Use the right size plug for the cable.
+- **Adapters.** Each one adds loss, a possible mismatch and one more joint to fail. Fewer is better.
+- **Gender and polarity.** Check before ordering. Some small connectors come in "reverse-polarity" forms (RP-SMA is common on Wi-Fi gear) that look the same but will not mate.
+- **Impedance.** Don't mix 50 Ω and 75 Ω versions of the same family: they can mate imperfectly and wear contacts.
+
+<ExamLink groups="T9B G6B" />
+
+<Related to="coaxial-cable feed-line-loss characteristic-impedance common-mode-chokes swr-and-reflections baluns-and-ununs" />

@@ -1,0 +1,51 @@
+import { DirectConversionAndSdr_Fold } from '@/visuals/compendium/DirectConversionAndSdr_Fold'
+import { DirectConversionAndSdr_Spin } from '@/visuals/compendium/DirectConversionAndSdr_Spin'
+import { SdrChain } from '@/visuals/general/G7C_SdrChain'
+import { SdrChain as DirectSampling } from '@/visuals/extra/E7F_SdrChain'
+
+## What it is
+
+A **direct-conversion** receiver mixes the incoming signal straight down to audio, with no IF. A **software-defined radio (SDR)** goes one step further: it digitizes the result and does the filtering and demodulation in software. Both skip the long chain of fixed filters of a <Ref to="superheterodyne" />, trading analog hardware for simpler circuits or computation.
+
+<Facts items={[
+  ['LO frequency', 'the same as the wanted signal'],
+  ['Mixer output', 'baseband: audio, or I and Q'],
+  ['Strength', 'simple, cheap, flexible'],
+  ['Challenge', 'telling the two sides of the LO apart'],
+]} />
+
+## The two-sided problem
+
+Set the local oscillator to 14.200 MHz and the difference frequency is the audio itself: a signal at 14.201 MHz gives a 1 kHz tone. But a signal at 14.199 MHz gives 1 kHz too. Both sides of the LO fold onto the same audio, with no way to tell them apart.
+
+<DirectConversionAndSdr_Fold />
+
+## I and Q: two mixers, 90° apart
+
+The fix is a second mixer fed by the same LO shifted by 90°. The two outputs are called **I** (in-phase) and **Q** (quadrature).
+
+A signal relative to the LO is just a point spinning around a circle, and I and Q are its two shadows on a pair of axes at right angles. A signal above the LO spins one way; one below spins the other. I alone cannot show the direction, but I and Q together can.
+
+<DirectConversionAndSdr_Spin />
+
+Given I and Q, software (or a few analog phasing circuits) can keep one side and cancel the other. That is how an SDR separates the wanted signal from its image without needing an image filter.
+
+## The SDR chain
+
+<SdrChain />
+
+After the I and Q mixers, an **analog-to-digital converter (ADC)** samples each output into numbers. From there everything is math: filtering to any width, demodulating any mode, drawing a waterfall of the whole band. A narrower filter is a change of numbers, not of hardware. Some SDRs skip the mixers and sample the antenna signal directly, trading simplicity for a very demanding ADC:
+
+<DirectSampling />
+
+The sample rate sets how much spectrum you see at once. The ADC's number of bits and its quality set how well weak signals are heard beside strong ones, which is the same dynamic-range problem as in any receiver (see <Ref to="receiver-performance" />).
+
+## In practice
+
+- Direct-conversion kits are popular because few parts do the job, which makes them cheap and easy to build.
+- Old simple designs suffer from hum, microphonics and, without I/Q, the second-sideband problem. Strong AM broadcast stations can also leak straight into the mixer.
+- An SDR's performance depends on the ADC, the LO's phase noise and the front-end filters just as much as on the software.
+
+<ExamLink groups="G7C E7F" />
+
+<Related to="superheterodyne receiver-basics sdr-transceivers sdr-listening sampling-and-nyquist adc-and-dac dsp-basics" />

@@ -1,0 +1,56 @@
+import { Match } from '@/visuals/extra/E7C_Match'
+import { MatchingNetworks_LNetwork } from '@/visuals/compendium/MatchingNetworks_LNetwork'
+import { MatchingNetworks_Topologies } from '@/visuals/compendium/MatchingNetworks_Topologies'
+
+## What it is
+
+A matching network makes a load look like a different impedance to whatever drives it, so that power flows into it instead of bouncing back. It is built from coils and capacitors (in theory lossless) or from transformers and transmission-line sections. The output of a transmitter, an antenna tuner and many antennas all rely on one.
+
+<Facts items={[
+  ['Goal', 'load impedance seen by the source equals what the source wants, often 50 Ω'],
+  ['L network Q', '√(R high ÷ R low − 1)'],
+  ['Series reactance', 'Q × R low'],
+  ['Shunt reactance', 'R high ÷ Q'],
+]} />
+
+## Why match
+
+A source delivers the most power when the load equals its own impedance. A transmitter is built for 50 Ω; an antenna rarely offers exactly that, and often has some reactance too. A matching network does two jobs: it cancels the reactance and it sets the resistance.
+
+<Match />
+
+A network at the transmitter does not alter the antenna or the line, which still see their original mismatch. It only makes the radio happy. See <Ref to="swr-and-reflections" /> and <Ref to="antenna-tuners" />.
+
+## The L network
+
+<MatchingNetworks_LNetwork />
+
+The L network is the building block: one series part and one shunt part. The rule is that the **shunt part goes on the side with the higher resistance** and the series part on the lower side. Then:
+
+- **Q = √(R high ÷ R low − 1).** It is fixed by the two resistances.
+- **Series reactance X = Q × R low**, **shunt reactance X = R high ÷ Q**.
+
+Worked example, 200 Ω to 50 Ω at 7.1 MHz. Q = √(200 ÷ 50 − 1) = 1.73. The series reactance is 1.73 × 50 = 86.6 Ω, which is a 1.94 µH inductor (86.6 ÷ (2π × 7.1 MHz)). The shunt reactance is 200 ÷ 1.73 = 115.5 Ω, which is a 194 pF capacitor. Checking the result, the source sees exactly 50 Ω with no reactance.
+
+In the low-pass form drawn, the series part is a coil and the shunt part a capacitor; swap them for a high-pass form. The greater the mismatch, the larger Q becomes: bandwidth narrows and losses and circulating currents grow.
+
+## Pi and T networks
+
+<MatchingNetworks_Topologies />
+
+A Pi network is two L networks back to back, with the series coil shared; a T network is the dual. The extra part brings an extra freedom: **Q can be chosen**. A higher Q filters harmonics more strongly but narrows the bandwidth and adds loss, which is why the Pi network is the usual output stage of a tube <Ref to="linear-amplifiers">amplifier</Ref>; its TUNE and LOAD controls are the two variable capacitors. Pi and T circuits are also the heart of most manual antenna tuners.
+
+## Other ways to match
+
+- **Transformers.** Impedance changes as the square of the turns ratio: a 2 : 1 ratio changes impedance 4 : 1, so 200 Ω across the larger winding looks like 50 Ω at the smaller one. Broadband and tuning-free; see <Ref to="transformers" /> and <Ref to="baluns-and-ununs" />.
+- **Quarter-wave line section.** A quarter-wavelength of line with impedance √(Z1 × Z2) matches two resistive impedances: 100 Ω line between 50 Ω and 200 Ω. See <Ref to="stubs-and-matching-sections" />.
+
+## In practice
+
+- **A network is never lossless.** Coil resistance heats up, increasingly so at high Q. A tuner can show a perfect match while turning much of the power into heat.
+- **Match at the antenna if you can.** A matched antenna avoids extra loss on the feed line, which a tuner at the radio cannot recover; see <Ref to="feed-line-loss" />.
+- **Tune at low power** and adjust for minimum reflected power, to avoid arcing and stressing the transmitter.
+
+<ExamLink groups="E7C E9E G9A" />
+
+<Related to="antenna-tuners swr-and-reflections transformers baluns-and-ununs stubs-and-matching-sections impedance-and-radiation-resistance" />

@@ -1,0 +1,39 @@
+import { E9C_FoldedDipole } from '@/visuals/extra/E9C_FoldedDipole'
+import { FoldedDipole_Wires } from '@/visuals/compendium/FoldedDipole_Wires'
+
+## What it is
+
+A half-wave dipole with a second wire joining its two ends, so it looks like a long thin loop. The feed point is at the center of one wire. It radiates like a plain dipole, but the feed-point impedance is about four times higher.
+
+<Facts items={[
+  ['Feed-point impedance', 'about 300 Ω (4 × 73 Ω ≈ 292 Ω)'],
+  ['Length', 'about a half wavelength, like a dipole'],
+  ['Pattern', 'same as a half-wave dipole'],
+  ['Bandwidth', 'somewhat wider than a plain dipole'],
+]} />
+
+<E9C_FoldedDipole />
+
+## Why four times the impedance
+
+Both wires carry current in the same direction, so both radiate, but the source feeds only one of them. Call the total radiating current I. It splits between the two wires, so each carries I ÷ 2, and the source supplies only I ÷ 2. The antenna radiates power = I² × 73 Ω, exactly as a plain dipole would. The source delivers that power from half the current, so impedance = power ÷ (I ÷ 2)² = 4 × 73 ≈ 292 Ω.
+
+With three wires each carries I ÷ 3, and the impedance is 9 times higher. For equal-diameter wires the rule is 73 Ω × n².
+
+<FoldedDipole_Wires />
+
+## Why use it
+
+- **Matching.** About 300 Ω matches 300 Ω twin-lead directly, or a 4:1 balun brings it to 75 Ω: 300 ÷ 4 = 75. Onto 50 Ω coax that leaves an SWR of 75 ÷ 50 = 1.5.
+- **Bandwidth.** The folded form is usually a little more tolerant of frequency than a thin single-wire dipole, which is often the reason for choosing it.
+- **Impedance step-up.** Parasitic elements pull a Yagi driven element's impedance down; a folded driven element lifts it back up. See <Ref to="yagi-uda" />.
+
+## In practice
+
+- Twin-lead or ladder line is a convenient way to build one: short the two ends together, and cut one conductor at the center for the feed. The insulation slows the wave, so a twin-lead version comes out shorter than a bare wire. Cut long and trim.
+- Feed through a balun and a <Ref to="common-mode-chokes">choke</Ref>, because the feed is balanced and coax is not.
+- Height and pattern behave as they do for the <Ref to="half-wave-dipole" />. Like it, it is a single-band antenna.
+
+<ExamLink groups="E9C" />
+
+<Related to="half-wave-dipole baluns-and-ununs open-wire-line yagi-uda impedance-and-radiation-resistance characteristic-impedance" />

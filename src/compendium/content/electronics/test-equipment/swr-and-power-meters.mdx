@@ -1,0 +1,53 @@
+import { SwrAndPowerMeters_Coupler } from '@/visuals/compendium/SwrAndPowerMeters_Coupler'
+import { Directional } from '@/visuals/extra/E4B_Directional'
+import { G9A_LineSwr } from '@/visuals/general/G9A_LineSwr'
+
+## What it is
+
+An in-line **SWR and power meter** (a directional wattmeter) sits in the feed line and reports how much power goes toward the antenna and how much comes back. The ratio between the two gives the SWR, the quickest check that a transmitter, line and antenna are working together. See <Ref to="swr-and-reflections" /> for what SWR means.
+
+<Facts items={[
+  ['Reads', 'forward power, reflected power, and SWR from the ratio'],
+  ['Designed for', 'a 50 Ω line, over a stated frequency and power range'],
+  ['Where', 'in the feed line, usually near the transmitter'],
+  ['Needs', 'a transmitter running (it has no signal of its own)'],
+]} />
+
+## How it works
+
+<SwrAndPowerMeters_Coupler />
+
+A short section of line runs beside the main line and picks up a tiny fraction of each passing wave. Because of its geometry, one end responds only to a wave heading toward the antenna and the other only to a wave coming back. Each end feeds a diode detector and a meter. The meter never absorbs real power; it only samples.
+
+<Directional />
+
+The power the antenna actually receives is forward minus reflected. Here are common values (all from Γ = (SWR − 1) ÷ (SWR + 1); reflected power = Γ²):
+
+| SWR | Reflected power | Return loss | Mismatch loss |
+|---|---|---|---|
+| 1.0 | 0% | infinite | 0 dB |
+| 1.5 | 4% | 14.0 dB | 0.18 dB |
+| 2.0 | 11.1% | 9.5 dB | 0.51 dB |
+| 3.0 | 25% | 6.0 dB | 1.25 dB |
+| 5.0 | 44.4% | 3.5 dB | 2.55 dB |
+
+Even 3:1 costs only about 1.25 dB, a quarter of the power. Reflections matter less to the signal than to the equipment: many transmitters fold their power back as SWR rises, to protect their output transistors.
+
+## Peak and average power
+
+Most simple meters respond to **average** power. A key-down CW or FM carrier is steady, so the reading is the true power. But a voice SSB signal rises and falls, so an average meter reads far below the **peak envelope power (PEP)** your radio is rated for. For SSB you need a meter with a peak-reading mode.
+
+## Pitfalls
+
+- **Frequency and power range.** A meter is accurate only over the band and power it was built for, and may need a minimum forward power to show SWR.
+- **It reads at its own location.** Cable loss between the meter and the antenna makes the reading look better than the antenna's own SWR:
+
+<G9A_LineSwr />
+
+- **Before or after the tuner.** A meter between rig and tuner shows what the radio sees; a meter between tuner and antenna shows the line's real SWR. See <Ref to="antenna-tuners" />.
+- **Low SWR is not a good antenna.** A dummy load reads 1:1 and radiates nothing. SWR says only that the match is good.
+- **Built-in meters** are fine for tuning but are rough indications, not calibrated instruments.
+
+<ExamLink groups="T7C T9B G9A T4A" />
+
+<Related to="swr-and-reflections antenna-analyzers-and-vnas dummy-loads antenna-tuners power-and-swr-protection coaxial-cable" />

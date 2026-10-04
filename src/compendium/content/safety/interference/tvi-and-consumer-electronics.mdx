@@ -1,0 +1,49 @@
+import { TviAndConsumerElectronics_EntryPoints } from '@/visuals/compendium/TviAndConsumerElectronics_EntryPoints'
+
+## What it is
+
+Your neighbour's TV, stereo, phone or doorbell was never designed for a transmitter a few dozen feet away. Under strong RF it can pick up your signal in places the designers never expected. The result is a picture that breaks up, speakers that carry your voice, or a gadget that misbehaves each time you key up. It is the most common interference complaint, and often cured with a cheap part.
+
+<Facts items={[
+  ['Two causes', 'device overloaded by a strong signal, or your transmitter emits something extra'],
+  ['Most common cause', 'RF on cables acting as antennas'],
+  ['Digital TV', 'works or breaks into blocks and freezes, with little in between'],
+  ['First test', 'does it follow the band you use, or happen on any band?'],
+]} />
+
+## Four ways in
+
+<TviAndConsumerElectronics_EntryPoints />
+
+Whichever way RF gets in, the symptom tells you which path to treat. Treat the path that matches.
+
+## Is it you or the device?
+
+Two different problems look alike from the living room, and the cure is at opposite ends.
+
+| Clue | Points to |
+|---|---|
+| Happens on every band you use, and on many TV channels | **Overload**: the device cannot reject a strong signal. Fix at the device. |
+| Happens on one band only, and on certain channels | Likely a **harmonic**: a multiple of your frequency lands there. Fix at your transmitter, see <Ref to="harmonics-and-spurs" />. |
+| Your own TV or radio shows it too | Your own station may be emitting something. Fix that first. |
+| Voice or buzz in speakers with the tuner off | **Audio rectification** on a cable. |
+
+Start with your own station and your own equipment, then ask to try things at the neighbour's.
+
+## Treating each way in
+
+- **Antenna input:** put a filter at the device's antenna jack: a **high-pass filter** that rejects HF but passes TV channels, or a **band-reject** (notch) filter tuned to your band, for example for 2 m interfering with FM radio.
+- **Cable TV:** make sure all coax connectors are installed properly and tight, because loose or corroded ones let your signal in. Cable operators may repair leaky lines.
+- **Speakers and audio cables:** the most frequent culprit. Wind the cable several turns through a ferrite core, and add a bypass capacitor at the input if needed. See <Ref to="filters-and-ferrites-for-rfi" />.
+- **Power cord:** clamp a ferrite on the cord, or use a plug-in line filter.
+- **Phones, baby monitors, doorbells:** the same ferrite-and-filter approach. These devices are often poorly shielded, and sometimes you can only reduce the field or relocate the antenna.
+
+<Callout kind="warn" title="Do not improvise">Add only standard filters and ferrites outside the device. Do not open a neighbour's equipment or improvise parts.</Callout>
+
+## Being a good neighbour
+
+Treat the neighbour as a partner: explain what is happening, offer to supply filters, and try them together. Rules differ by country. In the US, an amateur station must be operated properly, and consumer devices typically carry a statement that they must accept interference they receive. Where those two collide the result depends on the facts. This article does not decide fault, but good will and a few ferrites are the usual way out.
+
+<ExamLink groups="T7B G4C" />
+
+<Related to="rfi-and-emi overload-and-intermod harmonics-and-spurs filters-and-ferrites-for-rfi common-mode-and-ground-loops common-mode-chokes" />

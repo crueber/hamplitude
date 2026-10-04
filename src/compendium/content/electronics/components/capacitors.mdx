@@ -1,0 +1,44 @@
+import { Capacitors_Ranges } from '@/visuals/compendium/Capacitors_Ranges'
+import { Capacitors_Code } from '@/visuals/compendium/Capacitors_Code'
+import { LeadParasitic } from '@/visuals/extra/E6E_LeadParasitic'
+
+## What it is
+
+A capacitor is two conductive plates separated by an insulator. It stores energy in an electric field, blocks steady DC while passing changing signals, and smooths voltage. Much of electronics is the choice of *which* capacitor suits the job, because they are not interchangeable. For the theory, see <Ref to="capacitance" />.
+
+<Facts items={[
+  ['Unit', 'farad (F); in practice pF, nF and µF'],
+  ['Stores energy in', 'an electric field'],
+  ['Passes', 'AC and fast changes; blocks steady DC'],
+  ['Key ratings', 'capacitance, tolerance, working voltage'],
+]} />
+
+## Families and what each is good for
+
+<Capacitors_Ranges />
+
+- **Ceramic.** Small and cheap. The C0G (NP0) kind is very stable and low-loss, so it belongs in RF and tuned circuits. The high-capacitance kinds (X7R and similar) are fine for bypassing and decoupling but their value drifts with temperature and applied voltage, so avoid them where precision matters.
+- **Mica and film.** Stable and low-loss. Silver mica is a classic for RF filters and oscillators; film (polyester, polypropylene) is common for audio and general use.
+- **Electrolytic.** Packs a lot of capacitance into a small can, which is why it is used to filter power supplies. The price is wide tolerance, leakage, and **polarity**: it has a plus and a minus lead. Wrong way round, or over its rated voltage, it can heat, vent or burst.
+- **Tantalum.** Compact and polarised. It tolerates abuse poorly, so keep well under its voltage rating.
+- **Variable.** Meshing plates, usually with air between them, adjust capacitance for tuning antenna tuners and receivers.
+
+## Reading the numbers
+
+Small parts often carry a three-digit code instead of printing "0.1 µF".
+
+<Capacitors_Code />
+
+The working voltage is the most the capacitor should ever see, including peaks. Leave a comfortable margin; a part running close to its limit ages faster.
+
+## In practice
+
+<LeadParasitic />
+
+Every capacitor also has a little lead inductance and resistance. Above its self-resonant frequency it stops acting like a capacitor and starts acting like an inductor. This is why a big electrolytic does nothing useful at VHF, and why a small ceramic with short leads is placed right at the point it must bypass. Often both are used in parallel: the big one for low frequencies, the small one for high.
+
+<Callout kind="warn" title="Charged capacitors">A large power-supply capacitor can hold a dangerous charge long after the supply is switched off. Treat it as live until it has been discharged safely.</Callout>
+
+<ExamLink groups="T6A G6A" />
+
+<Related to="capacitance reactance-and-impedance time-constants resonance-and-q filters power-supplies" />

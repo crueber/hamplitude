@@ -1,0 +1,41 @@
+import { KitsAndHomebrew_Ladder } from '@/visuals/compendium/KitsAndHomebrew_Ladder'
+
+## What it is
+
+Homebrewing means building your own equipment, from a bagged kit to a circuit you designed yourself. It is the oldest tradition in the hobby and still one of the best ways to learn, because a circuit you have built and debugged stays understood. It is also optional: plenty of good operators never pick up an iron.
+
+<Facts items={[
+  ['Starter kit', 'a few evenings, one soldering iron, a good manual'],
+  ['You will want', 'iron, flush cutters, multimeter, good light, patience'],
+  ['Best habit', 'test each stage as you build, not at the end'],
+  ['Allowed', 'amateurs may build their own transmitters, which must still meet the rules'],
+]} />
+
+## The path in
+
+<KitsAndHomebrew_Ladder />
+
+**Kits** come with the parts, a circuit board and instructions, so the only skills needed are patience and careful soldering. Kits exist for receivers, low-power transmitters, antenna tuners, keyers, test gear and many accessories. Choose one with a clear manual and a good reputation among other builders. If you can find a local club building the same thing, even better.
+
+**Repairing and modifying** gear teaches you how a circuit works, because you must find out where it has gone wrong. Start with something inexpensive that is already broken.
+
+**Building from a published design** means finding a schematic in a book, magazine or online, buying the parts and making your own board. Pick a design that others have built successfully and reported on, so the problems you meet are known ones.
+
+**Designing your own** comes last, once you understand how the parts of a circuit interact. Free simulation software lets you test an idea before building it, but real measurements always have the final say.
+
+## Good first projects
+
+- **Wire antennas and feed lines.** A dipole or an end-fed wire is the classic first build, and you can measure how well it works. See <Ref to="half-wave-dipole" />.
+- **Cables and power leads.** DC power leads with an inline fuse, coax jumpers and audio cables teach you soldering and cable strength with little risk.
+- **Simple filters and keyers.** Low-power circuits that are easy to test with a multimeter and a receiver.
+- **A dummy load.** Useful and satisfying; keep it within its power rating. See <Ref to="dummy-loads" />.
+
+## Habits that save projects
+
+- **Read the whole manual first,** then sort the parts and check each against the list.
+- **Verify values** before soldering. A multimeter confirms a resistor's value; the colour code can be misread (see <Ref to="resistors" />).
+- **Build in stages** and test each: power, then bias, then signal. A fault is far easier to find in one stage than in a finished box. See <Ref to="troubleshooting" />.
+- **Take photos** as you go and keep notes. You will use them later.
+- **Check your signal.** A homemade transmitter must meet the same limits on spurious emissions as a store-bought one, so listen for harmonics or check with a spectrum analyzer.
+
+<Related to="soldering construction-methods reading-schematics troubleshooting multimeters clubs-and-elmers" />

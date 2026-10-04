@@ -1,0 +1,43 @@
+import { G9D_LoopPattern } from '@/visuals/general/G9D_LoopPattern'
+import { ReceiveLoopsAndActiveAntennas_ActiveBlock } from '@/visuals/compendium/ReceiveLoopsAndActiveAntennas_ActiveBlock'
+
+## What it is
+
+On the lower HF bands a receiving antenna does not have to be big or efficient. It only has to hear the signal as far above the noise as possible (see <Ref to="beverage-antennas" /> for why). That makes two small antennas useful: the **small receiving loop** and the **active antenna**, a very short probe with an amplifier right at its base. Their strength is not gain; it is that they can be small, placed away from noise, or aimed so a noise source falls in a null.
+
+<Facts items={[
+  ['Small loop size', 'under about 1/10 wavelength round'],
+  ['Small loop pattern', 'figure-8, nulls broadside to the loop'],
+  ['Loop output', 'grows with turns × area'],
+  ['Active antenna', 'short whip plus a high-impedance amplifier, powered through the coax'],
+]} />
+
+## Small loops
+
+<G9D_LoopPattern />
+
+A loop smaller than a tenth of a wavelength responds to the magnetic part of the wave. It hears best in the plane of the loop, and a signal arriving broadside to it, straight through the loop, is nulled. The null is sharp, so you can turn the loop to put it on a local noise source or a strong interfering station. Output voltage rises with the number of turns and the area enclosed, which is why a multi-turn loop of modest size can still deliver a usable signal.
+
+Close to a noise source such as a switching supply or a power line, much of the noise is in the electric field, and a loop mostly ignores that. Loops are therefore often reported to hear less local noise than a whip beside them, although the result depends on the noise source and location. A resonant loop, tuned by a capacitor, is also narrow-band, which helps reject strong signals on other frequencies.
+
+A single-turn terminated loop, such as a pennant or flag antenna, has a cardioid pattern with one null, and so a definite direction.
+
+## Active antennas
+
+<ReceiveLoopsAndActiveAntennas_ActiveBlock />
+
+A whip much shorter than a quarter wavelength behaves like a tiny capacitor with a very high reactance and almost no radiation resistance. Connect it directly to coax and nearly everything is lost to the mismatch. An **active antenna** puts a low-noise amplifier with a very high input impedance right at the whip and delivers 50 Ω to the coax. The same coax usually carries DC power up through a bias tee in the shack.
+
+On the low bands where external noise is far above the receiver's, the small signal loss does not hurt the signal-to-noise ratio, and the antenna is tiny and works across a wide frequency range without tuning.
+
+## In practice
+
+- **Overload.** A very strong nearby signal can overload the amplifier and create intermodulation products, so active antennas are most at risk near powerful transmitters.
+- **Location.** Mount either type outdoors, well away from the house, so the noise sources are not in the near field.
+- **Feed line.** Noise can ride on the outside of the coax. A <Ref to="common-mode-chokes">common-mode choke</Ref> at the antenna helps.
+- **Receive only.** Active antennas and small receiving loops are not for transmitting. Transmitting into one can destroy the amplifier.
+- **Indoors.** A small loop or active antenna inside the house is better than nothing, but it sits in the very noise it is meant to avoid.
+
+<ExamLink groups="E9H G9D" />
+
+<Related to="beverage-antennas noise-cancelling magnetic-loop direction-finding-antennas noise-and-snr power-line-noise" />

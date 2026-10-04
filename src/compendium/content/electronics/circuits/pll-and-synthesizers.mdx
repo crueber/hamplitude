@@ -1,0 +1,55 @@
+import { Pll } from '@/visuals/extra/E7H_Pll'
+import { PllAndSynthesizers_Ladder } from '@/visuals/compendium/PllAndSynthesizers_Ladder'
+import { DdsBlocks } from '@/visuals/general/G7C_DdsBlocks'
+
+## What it is
+
+A frequency synthesizer makes any of thousands of precisely known frequencies from a single stable crystal. The usual way is a **phase-locked loop** (PLL): a control system that steers a tunable oscillator until it is locked in step with a reference. Nearly every modern radio tunes this way.
+
+<Facts items={[
+  ['PLL output', 'f(out) = N × f(reference)'],
+  ['Tuning step', 'the comparison (reference) frequency'],
+  ['DDS output', 'f(out) = M × f(clock) ÷ 2ⁿ'],
+  ['Accuracy', 'inherited from the one reference crystal'],
+]} />
+
+## How a PLL works
+
+<Pll />
+
+A **voltage-controlled oscillator** (VCO) makes the output, and its frequency depends on a control voltage (see <Ref to="oscillators" />). A **divider** cuts the VCO frequency by N. A **phase detector** compares that divided signal with the reference and produces an error voltage that grows as they drift apart. A **loop filter** smooths this error into the control voltage, pulling the VCO back.
+
+When the loop is locked the divided VCO and the reference have exactly the same frequency, so the VCO runs at N times the reference and is exactly as accurate as that crystal. The loop filter sets the compromise: a wide one locks quickly but lets more reference noise through; a narrow one is cleaner but slower to settle.
+
+## Making channels
+
+<PllAndSynthesizers_Ladder />
+
+The VCO can only lock on multiples of the reference, so the reference frequency *is* the tuning step. To hear 146.520 MHz with a 5 kHz reference the divider is set to 146,520 kHz ÷ 5 kHz = 29,304. Change N by one and the output moves by one step. Radios keep the divider values for each frequency in memory, and the tuning knob is an encoder that adds or subtracts from N.
+
+Finer steps need a larger N, and in an ideal loop the phase noise from the reference and detector rises by 20 log N. **Fractional-N** synthesizers switch the divider between N and N + 1 so the average is a fraction, allowing a high reference frequency and fine steps together, at the cost of spurious tones that must be filtered.
+
+## The other approach: DDS
+
+<DdsBlocks />
+
+A **direct digital synthesizer** needs no loop. A fixed clock steps a phase counter by a tuning word M each tick, a table converts phase to sine values, and a DAC and low-pass filter turn the numbers into a wave. With a 100 MHz clock and a 32-bit counter the step is 100 MHz ÷ 2³² = 0.023 Hz, and changing frequency is instant and phase-continuous.
+
+| | PLL | DDS |
+|---|---|---|
+| Frequency range | directly to GHz | limited to below the clock rate, typically under about 40% of it |
+| Tuning step | set by the reference and N | tiny, set by the counter length |
+| Switching speed | settles in milliseconds or less | immediate |
+| Weak point | phase noise, reference spurs | spurious tones, low output level |
+
+Many designs combine the two: a DDS as a fine-stepping reference for a PLL.
+
+## In practice
+
+- **Lock detection.** A radio usually refuses to transmit if its PLL is unlocked, so it cannot wander off frequency.
+- **Every frequency scales with the reference.** A 1 ppm error is 147 Hz at 146.52 MHz, but 10 kHz at 10 GHz, which is why many microwave stations lock their references to GPS.
+- **Phase noise** limits how well a receiver separates strong neighbours; see <Ref to="receiver-performance" />.
+
+<ExamLink groups="E7H G7C" />
+
+<Related to="oscillators crystals-and-resonators mixers counters-and-signal-generators adc-and-dac superheterodyne" />

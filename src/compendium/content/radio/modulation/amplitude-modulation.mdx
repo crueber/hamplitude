@@ -1,0 +1,47 @@
+import { AmplitudeModulation_Index } from '@/visuals/compendium/AmplitudeModulation_Index'
+import { G8A_Envelope } from '@/visuals/general/G8A_Envelope'
+
+## What it is
+
+In amplitude modulation (AM) the carrier's strength follows the audio: louder sound, taller carrier. It is the oldest voice mode and the simplest to receive, which is why it survives in broadcasting and on the aircraft band.
+
+<Facts items={[
+  ['Bandwidth', '2 × the highest audio frequency (about 6 kHz for 3 kHz audio)'],
+  ['Parts of the signal', 'carrier + upper sideband + lower sideband'],
+  ['Power at 100% modulation (tone)', '2/3 carrier, 1/6 each sideband'],
+  ['Receiver', 'simple envelope detector (a diode)'],
+]} />
+
+## Where the sidebands come from
+
+<AmplitudeModulation_Index />
+
+AM multiplies the carrier by (1 + m × audio), where the **modulation depth** m runs from 0 (no audio) to 1 (100%). Multiplying two sine waves produces their sum and difference frequencies. So one audio tone at fm makes two new signals, at fc + fm and fc − fm. The result looks like a carrier whose height wobbles, but it is really three steady sine waves added together.
+
+Real speech is a spread of tones, so each sideband becomes a band: an upper sideband (USB) and a mirror-image lower sideband (LSB). Both carry the same information.
+
+## The power bill
+
+Each sideband has amplitude m/2 of the carrier, so power m²/4 of the carrier power:
+
+<Formula label="Total AM power">P = Pc × (1 + m²/2), where Pc is the unmodulated carrier power</Formula>
+
+At m = 1 that is 1.5 times the carrier power, and only 1/3 of it is in the sidebands. The carrier, two thirds of the power, carries no information at all. That inefficiency is why <Ref to="single-sideband">SSB</Ref> replaced AM for HF.
+
+## Overmodulation
+
+Push m above 100% and the carrier is cut off in the troughs of the audio. The envelope no longer matches the audio, so the signal is distorted and new sidebands appear far from the carrier: **splatter**, which interferes with neighbouring stations.
+
+<G8A_Envelope />
+
+## In practice
+
+- A diode and a capacitor recover the envelope, so even crude receivers work. See <Ref to="detectors-and-demodulators" />.
+- Natural noise (lightning, motors) adds to amplitude, so AM picks it up readily. FM largely ignores it.
+- Two AM carriers close in frequency beat together as a whistle at the difference frequency.
+- Any amplifier that follows the modulator must be **linear**, or the envelope distorts.
+- On the air, see <Ref to="am-operation" />.
+
+<ExamLink groups="G8A" />
+
+<Related to="modulation-basics single-sideband frequency-modulation am-operation detectors-and-demodulators spectrum-and-fourier" />

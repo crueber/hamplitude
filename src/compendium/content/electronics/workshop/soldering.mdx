@@ -1,0 +1,49 @@
+import { Soldering_Technique } from '@/visuals/compendium/Soldering_Technique'
+import { SolderJoints } from '@/visuals/technician/T7D_Solder'
+import { Soldering_Faults } from '@/visuals/compendium/Soldering_Faults'
+
+## What it is
+
+Soldering joins metal parts with a low-melting alloy, the **solder**, that flows into the joint and sets into a strong, conductive bond. It is the skill behind almost every build and repair, from a power lead to a circuit board to a coax connector.
+
+<Facts items={[
+  ['Solder for electronics', 'rosin-core (flux inside the wire): tin-lead or lead-free'],
+  ['Never use', 'acid-core solder or plumbing flux: it corrodes electronics'],
+  ['Lead-free melts higher', 'about 220 °C, against 183 °C for common 63/37 tin-lead'],
+  ['Rule', 'heat the parts, not the solder'],
+]} />
+
+## The technique
+
+<Soldering_Technique />
+
+The **flux** in the solder cleans the metal and lets the molten alloy spread, or "wet", across it. That only happens when both parts are hot enough, so the iron touches the pad and the lead together, and the solder is fed to the heated metal. Melting solder on the tip and dabbing it on is the classic route to a bad joint.
+
+- Keep the tip clean and **tinned** (coated with a thin layer of fresh solder); a dirty or dry tip transfers heat poorly.
+- Use enough heat to finish quickly. A cool iron held for a long time overheats the part and the board more than a hot one used briefly.
+- Hold the parts perfectly still until the solder sets. A joint moved while cooling turns dull and grainy.
+- Large parts, such as coax connectors or a ground lug, soak up heat and need a more powerful iron.
+- Heat-sensitive parts, like transistors and ICs, appreciate a clip-on heat sink or a socket.
+
+## What a good joint looks like
+
+<SolderJoints />
+
+A good joint is **shiny, smooth and concave**, with solder flowing up the lead in a cone and spreading across the pad. A **cold joint** is dull, lumpy or ball-shaped: the solder never melted fully onto the metal, so it makes a poor, often intermittent connection that may work today and fail later.
+
+<Soldering_Faults />
+
+Desolder with copper braid or a solder pump, then redo the joint with a little fresh solder, which brings fresh flux with it.
+
+## Staying safe
+
+- **Hot iron.** A tip is several hundred degrees. Keep it in its stand, never lay it on the bench, and check where the cord runs.
+- **Eye protection.** Molten solder can spit, and clipped component leads fly.
+- **Fumes.** The smoke is mostly flux. Don't breathe it: work with good ventilation or a small fume extractor.
+- **Lead.** Tin-lead solder contains lead. Don't eat or drink at the bench, and wash your hands after handling solder. Lead-free alloys avoid the lead but need more heat, and the flux fumes are still there.
+
+More in <Ref to="soldering-safety" />.
+
+<ExamLink groups="T7D" />
+
+<Related to="soldering-safety construction-methods rf-connectors kits-and-homebrew troubleshooting wire-and-cable" />

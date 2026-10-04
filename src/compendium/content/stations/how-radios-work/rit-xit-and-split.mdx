@@ -1,0 +1,47 @@
+import { RitXitAndSplit_Offsets } from '@/visuals/compendium/RitXitAndSplit_Offsets'
+import { Rit } from '@/visuals/technician/T4B_Rit'
+import { E2C_DxSplit } from '@/visuals/extra/E2C_DxSplit'
+
+## What it is
+
+A transceiver normally receives and transmits on the same frequency. Three features let you break that on purpose. **RIT** (receiver incremental tuning, also called the clarifier) shifts only the **receive** frequency by a small amount. **XIT** (transmitter incremental tuning) shifts only the **transmit** frequency. **Split** uses two separate frequencies, one VFO for receive and another for transmit.
+
+<Facts items={[
+  ['RIT / XIT range', 'a few kHz either side; ±9.99 kHz is common'],
+  ['RIT moves', 'receive only'],
+  ['XIT moves', 'transmit only'],
+  ['Split', 'receive on one VFO, transmit on the other'],
+]} />
+
+<RitXitAndSplit_Offsets />
+
+## RIT: fine-tune what you hear
+
+On SSB the receiver rebuilds the missing carrier itself. If its frequency is a little different from the other station's, **every tone in the voice shifts by the same number of hertz**: the voice sounds too high or too low and unnatural. The other station's oscillator may simply have drifted or be calibrated slightly differently from yours.
+
+<Rit />
+
+Turning the RIT knob retunes the receiver a few hertz at a time until the voice sounds natural, while **your transmit frequency stays exactly where it was**. That is the point: you do not move off the frequency you were calling on. On CW, the same shift changes the pitch of the tone you hear.
+
+## XIT: shift what you send
+
+XIT is RIT's mirror. It leaves the frequency you listen to alone and moves your transmitted signal. A typical use is to move your transmit a small fixed step away from the frequency you are listening on, for example when a station asks callers to come "up 1", 1 kHz higher.
+
+## Split: two frequencies
+
+Split uses the radio's two VFOs: A to listen, B to transmit. It is the standard way to work a rare DX station that is swamped by callers. The DX transmits on one frequency and listens on others a few kHz away, because if everyone called on the DX's own frequency, the DX could not pick anyone out and nobody else could hear them either. You listen on the DX's frequency, set the transmit VFO to where they are listening, and transmit there.
+
+<E2C_DxSplit />
+
+The operating etiquette (listen, find where they are listening, call once) is covered in <Ref to="dx-etiquette-and-split" />.
+
+## Using them safely
+
+- **Check what is on the transmit frequency** before calling. In split, you cannot hear it unless you swap or listen to it.
+- **Part 97 applies to the transmit frequency.** Your transmit VFO must stay inside the band and the privileges of your license class, even if your receive VFO is fine.
+- **Turn it off afterwards.** Leaving split or XIT on is a classic cause of calling CQ on one frequency while listening on another.
+- Repeater offsets are a related idea: the radio transmits a fixed distance from where it listens (see <Ref to="repeaters" />).
+
+<ExamLink groups="T4B" />
+
+<Related to="transceiver-block-diagram single-sideband dx-etiquette-and-split dxing ssb-voice repeaters" />

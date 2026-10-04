@@ -1,0 +1,39 @@
+import { Alias } from '@/visuals/extra/E7F_Alias'
+import { SamplingAndNyquist_Fold } from '@/visuals/compendium/SamplingAndNyquist_Fold'
+
+## What it is
+
+Sampling turns a continuous signal into a list of numbers by measuring its voltage at regular intervals. Everything digital, from a sound card to an SDR, begins this way. The **sample rate** is how many measurements are taken per second. Sample too slowly and the numbers describe a different, lower-frequency signal that was never there.
+
+<Facts items={[
+  ['Nyquist rate', 'sample at more than 2 × the highest frequency'],
+  ['Nyquist frequency', 'half the sample rate'],
+  ['Alias', 'a frequency above fs/2 reappears as |f − n × fs|'],
+  ['Cure', 'filter before sampling (anti-alias filter)'],
+]} />
+
+## Why twice
+
+<Alias />
+
+To capture a sine wave you need to catch both its upswing and its downswing, so more than two samples per cycle. With fewer, more than one sine fits the dots. The receiver can't tell which was real and reports the lowest: an **alias**. Wheels that seem to spin backwards in film are the same effect, since the camera samples too slowly.
+
+## Folding
+
+<SamplingAndNyquist_Fold />
+
+Aliasing is predictable. Input frequencies fold back at every multiple of half the sample rate, like a reflection. At fs = 8 kS/s a 5 kHz tone appears as 3 kHz (8 − 5). A real 3 kHz tone is recorded correctly, but 5 kHz and 11 kHz also land on 3 kHz. Once sampled, you cannot tell the three apart.
+
+<Formula label="Alias frequency">alias = |f − n × fs|, using the whole number n that lands it between 0 and fs/2</Formula>
+
+## In practice
+
+- **Anti-alias filter**: a low-pass filter ahead of the converter removes anything above fs/2 before it can fold into the wanted band. In a DAC, a low-pass filter after it smooths the steps into a clean wave.
+- **Voice**: telephone audio is sampled at 8 kS/s, which carries up to 4 kHz. CD audio uses 44.1 kS/s for 20 kHz. Practical filters aren't perfect, so the sample rate is picked with some margin.
+- **SDR**: a sample rate of fs gives about fs of bandwidth when the receiver samples both I and Q, which is how a cheap dongle shows a megahertz or more of spectrum.
+- **Deliberate aliasing**: a band-pass-filtered signal can be sampled at less than twice its carrier frequency, so that its alias is the wanted signal brought down. Some SDRs do this on purpose.
+- The other half of conversion is **resolution**: how many bits per sample. See <Ref to="adc-and-dac" />.
+
+<ExamLink groups="E8A E7F" />
+
+<Related to="adc-and-dac dsp-basics spectrum-and-fourier direct-conversion-and-sdr sdr-transceivers bandwidth-and-data-rate" />

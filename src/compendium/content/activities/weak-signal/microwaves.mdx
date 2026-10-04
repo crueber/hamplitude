@@ -1,0 +1,40 @@
+import { DishAntennas_Gain } from '@/visuals/compendium/DishAntennas_Gain'
+import { Microwaves_Transverter } from '@/visuals/compendium/Microwaves_Transverter'
+import { WaterDuct } from '@/visuals/extra/E3A_WaterDuct'
+
+## What it is
+
+The microwave bands begin around 1.2 GHz (23 cm) and climb through 2.3, 3.4, 5.7, 10 and 24 GHz and beyond. Wavelengths shrink to centimetres and millimetres, so even a small dish makes a very narrow, very high-gain beam, and a small station can reach surprisingly far. The work is part radio, part plumbing: dishes, waveguides, and electronics that live on a pole.
+
+<Facts items={[
+  ['Wavelength at 10 GHz', 'about 2.9 cm'],
+  ['A 60 cm dish', 'about 16 dBi at 1.3 GHz, 34 dBi at 10 GHz, 41 dBi at 24 GHz (55% efficiency)'],
+  ['Typical path', 'line of sight, sometimes enhanced by ducts or rain scatter'],
+  ['Typical modes', 'narrowband SSB or CW, and digital weak-signal modes'],
+]} />
+
+## Gain comes from the dish
+
+<DishAntennas_Gain />
+
+A dish of a fixed size gains 6 dB every time the frequency doubles, so beams grow steadily sharper. The cost is precision: the beam may be only a few degrees wide, and both stations need accurate aiming. That makes microwave stations tend to be fixed or tripod-mounted, and often coordinated by calls on a lower band.
+
+## Losses and the transverter
+
+At microwave frequencies even good coax loses many dB over a short run. The usual answer is not better cable but a different layout: the shack radio works on a lower frequency such as 144 or 432 MHz, and a **transverter** mounted at the dish converts the signal up to the microwave band and back.
+
+<Microwaves_Transverter />
+
+Waveguide, a hollow metal pipe, has far lower loss than coax at these frequencies and is used for short runs. A transverter's reference oscillator must be very stable: an error of one part in a million is 10 kHz at 10 GHz, so serious stations lock their oscillators to a very accurate reference.
+
+## How signals travel
+
+Microwaves travel in straight lines and are blocked by terrain and trees. Absorption by water vapour near 22 GHz and by oxygen near 60 GHz limits some bands. Rain also absorbs and scatters microwaves, and, surprisingly, rain scatter itself can carry a signal beyond the horizon: aim both dishes at the same rain cell. Atmospheric ducting extends range, notably over water, typically to 100 to 300 miles.
+
+<WaterDuct />
+
+<Callout kind="warn" title="Beams are concentrated">A dish focuses RF into a narrow beam. Never stand in front of a transmitting dish or look into an open waveguide, and keep the power off while adjusting anything near the feed. See <Ref to="rf-exposure" />.</Callout>
+
+<ExamLink groups="E3A E9D T7A" />
+
+<Related to="dish-antennas weak-signal-vhf eme-moonbounce tropospheric-propagation digital-atv radio-spectrum" />

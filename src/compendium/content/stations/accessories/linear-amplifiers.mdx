@@ -1,0 +1,64 @@
+import { LinearAmplifiers_Gain } from '@/visuals/compendium/LinearAmplifiers_Gain'
+import { TxChain } from '@/visuals/general/G4A_TxChain'
+import { AmpTune } from '@/visuals/general/G4A_AmpTune'
+
+## What it is
+
+A **linear amplifier** sits between the transceiver and the antenna and raises the radio's output, typically from 100 W or less to several hundred watts, up to the legal limit. "Linear" means the output is a faithful, larger copy of the input, which SSB and CW need. (An amplifier that is not linear distorts and splatters on SSB.)
+
+<Facts items={[
+  ['US limit', '1500 W PEP output, lower on some bands and for some licenses'],
+  ['Gain', 'power ratio, in dB: 10 × log₁₀(out ÷ in)'],
+  ['Needs', 'a clean, well-matched antenna, and proper drive'],
+]} />
+
+## What the extra power buys
+
+Power is judged in decibels, and one S unit is 6 dB, a factor of 4 in power (on a meter that is calibrated that way). So the gain is smaller than the watts suggest.
+
+<LinearAmplifiers_Gain />
+
+| From | To | Gain | At the far end |
+|---|---|---|---|
+| 100 W | 500 W | 7.0 dB | about 1.2 S units |
+| 100 W | 1000 W | 10 dB | about 1.7 S units |
+| 100 W | 1500 W | 11.8 dB | about 2.0 S units |
+| 1000 W | 1500 W | 1.8 dB | about 0.3 S unit |
+
+An amplifier is a real help on a weak path, but a better antenna is usually the cheaper improvement. Going from 1000 W to 1500 W is barely noticeable.
+
+## Tubes and transistors
+
+| | Vacuum tube | Solid state |
+|---|---|---|
+| Supply voltage | thousands of volts, **lethal** | typically about 50 V DC |
+| Tuning | tune and load controls | usually none: band-switched filters |
+| Warm-up | needed | instant |
+| Tolerance of mismatch | fairly tolerant | needs fast protection circuits |
+| Size and weight | large and heavy | compact |
+
+Either type needs an output **low-pass filter** to keep harmonics off the air, a fan, and a relay to switch the antenna between radio and amplifier. In a tube amplifier TUNE resonates the output for a dip in plate current, and LOAD sets the power:
+
+<AmpTune />
+
+## Connecting it properly
+
+<TxChain />
+
+- **Drive**: set the radio's power to what the manual requires. Too much drive overloads the amplifier and creates distortion that wrecks your signal on the band.
+- **ALC and keying lines**: the amplifier sends a level back to the radio's ALC to limit drive, and a keying line makes the amplifier's relay switch before RF arrives, so the relay is never hot-switched.
+- **Test into a dummy load** first, then check the antenna's SWR; a poorly matched antenna stresses the amplifier. See <Ref to="power-and-swr-protection" />.
+- Power it from a circuit rated for the load; high-power amplifiers often need their own 240 V circuit. See <Ref to="wire-gauge-and-fusing" />.
+
+## Safety
+
+<Callout kind="warn" title="Treat a tube amplifier as lethal">The high-voltage supply can hold a deadly charge after it is switched off and unplugged. Never defeat an interlock, never reach inside, and leave internal work to someone trained.</Callout>
+
+- **RF burns**: at high power an antenna, tuner or open connector can burn skin on touch. Keep them out of reach while transmitting.
+- **Ground** the chassis to the station ground with a short, wide strap and use a grounded outlet.
+- More power raises RF exposure, so recheck your distances; see <Ref to="rf-exposure" />.
+- In the US, external amplifiers that can operate below 144 MHz generally must be FCC-certified for amateur use before they are sold, though an amateur may build one for personal use. See Part 97 for the details.
+
+<ExamLink groups="G4A E1F G0B" />
+
+<Related to="vacuum-tubes amplifiers decibels power-and-swr-protection rf-exposure electrical-safety" />

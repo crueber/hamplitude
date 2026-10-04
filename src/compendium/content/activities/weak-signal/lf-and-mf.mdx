@@ -1,0 +1,38 @@
+import { LfAndMf_Efficiency } from '@/visuals/compendium/LfAndMf_Efficiency'
+import { E1A_LowBandPower } from '@/visuals/extra/E1A_LowBandPower'
+import { GroundWave } from '@/visuals/extra/E3B_GroundWave'
+
+## What it is
+
+Below the 160 m band lie two small, experimental amateur bands: **2200 m** (about 135.7 to 137.8 kHz, "LF") and **630 m** (about 472 to 479 kHz, "MF"). With wavelengths of about 2,200 m and 630 m, they are the longest waves an American ham may transmit. The activity is experimental: building huge antennas, learning ground-wave and night-time propagation, and decoding signals buried in atmospheric noise.
+
+<Facts items={[
+  ['2200 m', 'about 135.7 to 137.8 kHz; 1 W EIRP'],
+  ['630 m', 'about 472 to 479 kHz; 5 W EIRP'],
+  ['Wavelength', 'about 2,190 m and 630 m'],
+  ['Modes', 'slow CW (QRSS), WSPR and other very narrow modes'],
+]} />
+
+<E1A_LowBandPower />
+
+The limits are tiny and measured as **EIRP**: the power as radiated by the antenna, gain included. They apply in the US, with extra rules (for example, notifying power-utility systems that share these frequencies, and limits in parts of Alaska). Read the current Part 97 text before transmitting, and note that other countries differ.
+
+## The antenna problem
+
+<LfAndMf_Efficiency />
+
+A wavelength is so long that any practical antenna is a tiny fraction of one. A 30 m mast at 137 kHz is about 1.4% of a wavelength tall, and its radiation resistance is under a tenth of an ohm. Losses in the ground and coil are measured in ohms, so almost all the transmitter power heats the ground. A transmitter for a legal 1 W EIRP can therefore need tens to hundreds of watts, and the antenna carries amps through a very high reactance, producing **kilovolts** of RF at the top.
+
+<Callout kind="warn" title="Lethal voltages and burns">LF and MF antennas can carry thousands of volts and plenty of current. Keep people and animals well away from the antenna and ground system while transmitting, and do not assume that low power means low risk.</Callout>
+
+Builders respond with a **top hat** (a wire umbrella that adds capacitance and current), a large loading coil, and a huge buried or radial ground system. Receiving is far easier, since at these frequencies atmospheric noise is stronger than receiver noise, so a small loop or whip works fine.
+
+## How the signals travel
+
+<GroundWave />
+
+By day, <Ref to="ground-wave">ground wave</Ref> covers a few hundred kilometres. At night, when the D layer fades, sky wave carries 630 m and 2200 m signals much further, sometimes across oceans, mostly in winter. Lightning static is a constant background, so narrow modes help most: **QRSS** (CW so slow that a dit lasts seconds and a computer spectrogram reads it) and weak-signal digital modes such as WSPR and ones designed for these bands.
+
+<ExamLink groups="E1A" />
+
+<Related to="ground-wave receive-loops-and-active-antennas ionosphere-layers radio-spectrum noise-and-snr weak-signal-vhf" />

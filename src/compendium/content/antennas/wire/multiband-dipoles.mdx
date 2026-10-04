@@ -1,0 +1,46 @@
+import { MultibandDipoles_Harmonics } from '@/visuals/compendium/MultibandDipoles_Harmonics'
+import { MultibandDipoles_Fan } from '@/visuals/compendium/MultibandDipoles_Fan'
+import { G9D_Trap } from '@/visuals/general/G9D_Trap'
+
+## What it is
+
+One wire antenna, one feed line, more than one band. There are three ways to get there: lean on harmonics, put a separate pair of wires on the antenna for each band (a fan), or add traps. Each trades something away.
+
+<Facts items={[
+  ['Harmonic operation', 'center-fed dipole works near odd multiples of its frequency'],
+  ['Fan dipole', 'one pair of wires per band, one feed point'],
+  ['Trap dipole', 'a tuned circuit in each leg isolates the outer wire on the higher band'],
+  ['Common cost', 'compromises in bandwidth, loss or pattern; harmonics are radiated too'],
+]} />
+
+## Harmonics: the free option
+
+<MultibandDipoles_Harmonics />
+
+A <Ref to="half-wave-dipole">half-wave dipole</Ref> is also resonant near 3, 5, 7 times its frequency, because the wire is then 3, 5, 7 half-waves long and the center is still a current peak. The feed-point impedance stays low, so coax can feed it. At 2 or 4 times the frequency the center lands on a current null: impedance is very high and coax feeding is poor.
+
+A wire cut for 7.1 MHz is therefore three half-waves near 21.3 MHz, inside the 15 m band, but it does not work well in the 20 m band at twice the frequency. Real wires resonate a little off the exact multiple, and on the higher band the pattern breaks into several lobes instead of one broadside figure-8.
+
+## Fans and traps
+
+<MultibandDipoles_Fan />
+
+A **fan** is just several dipoles sharing a feed point. On each band the matching pair is resonant and the others carry little current. There are no lossy parts, but the wires interact slightly, so trimming is repeated and slow, and the spread ends need supports.
+
+<G9D_Trap />
+
+A **trap** is a parallel inductor and capacitor tuned to the higher band. At that frequency it presents a very high impedance and electrically cuts off the outer wire. On the lower band the trap acts like a coil, which loads the wire so the whole antenna can be shorter than full size. The costs are some loss in the traps, usually less bandwidth on the lower band, and weight and weatherproofing.
+
+| Approach | Strength | Cost |
+|---|---|---|
+| Odd harmonics | no extra parts | skips even-multiple bands; multi-lobed pattern |
+| Fan | simple, no trap loss | several supports, interacting wires |
+| Traps | compact, one wire | loss, narrower bandwidth, weather and weight |
+
+## In practice
+
+Any antenna that works well on several bands can also radiate the harmonics of your transmitter on them, so good filtering at the radio still matters (see <Ref to="harmonics-and-spurs" />). Where the match is poor on a band, a <Ref to="antenna-tuners">tuner</Ref> can fix what the radio sees, but not the antenna's losses. Other multiband wires: the <Ref to="off-center-fed-dipole" />, <Ref to="end-fed-half-wave" /> and <Ref to="g5rv-and-doublets">doublets</Ref>.
+
+<ExamLink groups="G9D" />
+
+<Related to="half-wave-dipole off-center-fed-dipole g5rv-and-doublets end-fed-half-wave antenna-tuners resonance-and-q" />

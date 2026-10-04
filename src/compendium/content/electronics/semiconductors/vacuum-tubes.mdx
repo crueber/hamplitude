@@ -1,0 +1,56 @@
+import { TubeAnatomy } from '@/visuals/general/G6A_TubeAnatomy'
+import { VacuumTubes_GridControl } from '@/visuals/compendium/VacuumTubes_GridControl'
+
+## What it is
+
+A vacuum tube (valve) controls current by steering electrons through a vacuum, instead of through a solid. A heated electrode gives off electrons; a positive electrode collects them; one or more wire grids in between control how many get across. Tubes were the first amplifying devices, and they are still found in the final stage of many high-power amateur amplifiers.
+
+<Facts items={[
+  ['Electrodes', 'cathode, one or more grids, plate (anode)'],
+  ['Cathode', 'must be heated before the tube works'],
+  ['Plate voltage in ham amplifiers', 'typically hundreds to thousands of volts'],
+  ['Input impedance', 'very high with a negative grid, like a FET'],
+]} />
+
+## How it works
+
+<TubeAnatomy />
+
+The **cathode** is heated until it boils electrons off its surface. The **plate** is held at a high positive voltage, so it pulls those electrons across the vacuum, and current flows. The **control grid**, a coarse mesh between them, sits at a small negative voltage relative to the cathode and repels electrons. Make it more negative and fewer get through. Make it less negative and more do.
+
+<VacuumTubes_GridControl />
+
+The grid is negative, so it collects almost no current and has very high input impedance, like the gate of a <Ref to="fets-and-mosfets">FET</Ref>. A few volts of signal on the grid swing a much larger plate current, and that current develops a large voltage across the load. That is amplification. The roles map onto transistor terminals: cathode to emitter or source, grid to base or gate, plate to collector or drain.
+
+## Grids and tube types
+
+| Type | Grids | What the extra grid does |
+|---|---|---|
+| Diode | none | passes current one way: a rectifier |
+| Triode | control grid | amplifies |
+| Tetrode | + screen grid | shields the control grid from the plate, reducing grid-to-plate capacitance and raising gain |
+| Pentode | + suppressor grid | stops electrons knocked off the plate from wandering to the screen |
+| Beam tetrode | + beam-forming plates | does the pentode's job with shaped electron beams |
+
+In a triode the capacitance between grid and plate can feed output back to the input, so an RF triode is often wired with the grid grounded, one of the <Ref to="amplifiers">three amplifier configurations</Ref>, or neutralised. A screen grid cures the problem at its root.
+
+## Why tubes still appear
+
+Tubes are a practical way to make a kilowatt or more at HF, they tolerate brief overloads, and a worn-out tube is replaced as a plug-in part. Solid-state amplifiers have their own advantages, and neither is simply better:
+
+| | Tube | Solid-state |
+|---|---|---|
+| Warm-up | needs the heater to come up | instant |
+| Tuning | tuned output (TUNE and LOAD controls) | often broadband, no tuning |
+| Supply | high voltage, low current | low voltage, high current |
+| Wear | tube gradually wears out | long-lived if protected |
+
+See <Ref to="linear-amplifiers" /> for the station side.
+
+<Callout kind="warn" title="Lethal voltages">The plate supply of an amplifier is high enough to kill, and its filter capacitors can stay charged long after the amplifier is switched off. Never open one while it is plugged in. Never defeat the safety interlocks. Unplug it, follow the manufacturer's discharge procedure, and confirm with a suitably rated meter that the high-voltage supply is at zero before putting a hand inside. If you are not trained to do this, leave it to someone who is. See <Ref to="electrical-safety" />.</Callout>
+
+Tubes run hot as well: the glass or ceramic envelope can burn, and they need the airflow the design provides.
+
+<ExamLink groups="G6A E7B" />
+
+<Related to="amplifiers linear-amplifiers bipolar-transistors fets-and-mosfets power-supplies electrical-safety" />

@@ -1,0 +1,42 @@
+import { FullWaveLoops_Pattern } from '@/visuals/compendium/FullWaveLoops_Pattern'
+
+## What it is
+
+A closed loop of wire one wavelength around, fed at a single point. The shape can be a square, diamond, triangle (a delta loop), or any outline you can support; the circumference is what counts. It has a little more gain than a dipole and a different pattern.
+
+<Facts items={[
+  ['Circumference', 'about 1005 ÷ f(MHz) feet'],
+  ['Feed-point impedance', 'typically around 100 Ω'],
+  ['Gain', 'roughly 1 dB more than a half-wave dipole'],
+  ['Pattern', 'strongest broadside to the loop, at right angles to its plane'],
+]} />
+
+<FullWaveLoops_Pattern />
+
+## How it works
+
+Current on the wire is a standing wave with its peak at the feed point and another peak directly opposite, and it is near zero at the middle of the sides in between. The currents in the two peak sides (bottom and top of the diagram) flow the same way at the same moment, so their fields add at right angles to the plane of the loop and are weaker in the plane. Two in-phase currents a quarter-wave apart make the extra gain.
+
+The feed point impedance is typically around 100 Ω, so 75 Ω coax is a natural match, or 50 Ω coax at about 2:1 SWR. A balun or common-mode choke at the feed is wise.
+
+<Callout kind="note" title="Not a small loop">A **small** loop (under a tenth of a wavelength) has a null broadside to the loop, the opposite of this pattern. See <Ref to="magnetic-loop" />.</Callout>
+
+## Sizes
+
+| Band | Frequency | Circumference | Square side |
+|---|---|---|---|
+| 80 m | 3.6 MHz | 279 ft (85 m) | 70 ft |
+| 40 m | 7.15 MHz | 141 ft (43 m) | 35 ft |
+| 20 m | 14.2 MHz | 71 ft (22 m) | 17.7 ft |
+
+Cut a bit long and trim for resonance.
+
+## In practice
+
+- **Polarization** follows the feed. Fed at the bottom or top of a vertical loop, it is horizontal; fed at a side, it is vertical.
+- **Orientation.** A vertical loop puts its lobes broadside to its plane; a loop lying horizontal sends most energy upward.
+- **Shapes.** More enclosed area generally means a little more gain. A delta needs one high support, a diamond or square needs two or more.
+- **Noise.** Many operators find a loop quieter to receive on than a dipole; being closed, it has no ends to build up static.
+- **Other bands.** A loop cut for the lowest band can also be used on higher ones, with a tuner and a changed pattern.
+
+<Related to="half-wave-dipole quad-and-delta-loop-beams magnetic-loop polarization radiation-patterns baluns-and-ununs" />

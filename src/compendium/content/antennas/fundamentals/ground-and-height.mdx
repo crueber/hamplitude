@@ -1,0 +1,51 @@
+import { GroundAndHeight_Image } from '@/visuals/compendium/GroundAndHeight_Image'
+import { G9B_DipoleHeight } from '@/visuals/general/G9B_DipoleHeight'
+import { E9C_SeaSoil } from '@/visuals/extra/E9C_SeaSoil'
+
+## What it is
+
+Earth is part of almost every antenna you will use. Radio waves bounce off the ground, and the reflection adds to or cancels the direct wave. How high the antenna is, measured in wavelengths, and what the soil is like decide the angle the signal leaves at, the feed-point impedance, and how much power is lost in the ground.
+
+<Facts items={[
+  ['Height that counts', 'height in wavelengths, not feet: the same wire is "high" on 20 m and "low" on 160 m'],
+  ['Ground gain', 'extra signal at some angles from the ground reflection'],
+  ['Horizontal wires', 'height sets takeoff angle'],
+  ['Verticals', 'soil conductivity sets the loss'],
+]} />
+
+## The mirror image
+
+<GroundAndHeight_Image />
+
+For a good conducting ground, the reflected wave behaves as if it came from an **image** of the antenna, an equal and opposite copy as far below the surface as the antenna is above. A horizontal antenna's image carries current the opposite way, so at the horizon the two waves cancel and add up only at some higher angle. A vertical antenna's image carries current the same way, so they add at low angles. Real earth is lossy and a poor mirror, and the idea is only an approximation, but it explains most of what you see.
+
+## Horizontal antennas: height sets the angle
+
+<G9B_DipoleHeight />
+
+Raise a horizontal dipole and the single high lobe splits into lobes that come down toward the horizon. For an ideal ground and a dipole seen broadside, the lowest lobe peaks at this angle:
+
+| Height | Lowest lobe peaks at |
+|---|---|
+| 0.25 λ | straight up (90°) |
+| 0.5 λ | 30° |
+| 0.75 λ | about 19° |
+| 1 λ | about 14° |
+
+On 40 m, 0.25 λ is about 34 ft and 0.5 λ about 69 ft; on 20 m the same fractions are 17 ft and 35 ft. A low wire sends most of its energy upward, excellent for <Ref to="nvis">nearby contacts</Ref> and poor for far ones. Long-distance <Ref to="skywave-and-skip">skywave</Ref> contacts favour low takeoff angles, so higher is generally better, to the limit of what you can build.
+
+## Verticals: the soil matters
+
+<E9C_SeaSoil />
+
+A vertical depends on the ground for its return path. Seawater and wet, rich soil are good conductors and give strong low-angle radiation; dry sand or rock are poor. Ground losses depend mainly on soil conductivity, and a system of <Ref to="radials-and-ground-planes">radials</Ref> reduces them by giving the current a metal path instead.
+
+## Impedance and nearby objects
+
+Ground changes the feed-point impedance of an antenna. A horizontal dipole's impedance rises and falls as height changes, settling toward its free-space value only when well up in the air; see <Ref to="impedance-and-radiation-resistance" />. Trees, buildings, fences and wiring act as imperfect ground and reflectors too, which is why measurement on site beats formulas.
+
+<Callout kind="note" title="Model, then measure">The numbers above are for an ideal flat ground. Use <Ref to="antenna-modeling">modelling</Ref> to see the effect of real soil, and an analyzer to confirm what you built.</Callout>
+
+<ExamLink groups="G9B E9A E9C" />
+
+<Related to="radiation-patterns half-wave-dipole quarter-wave-vertical radials-and-ground-planes nvis skywave-and-skip antenna-modeling" />

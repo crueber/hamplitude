@@ -1,0 +1,44 @@
+import { E2D_Jt65 } from '@/visuals/extra/E2D_Jt65'
+import { E2D_WeakPaths } from '@/visuals/extra/E2D_WeakPaths'
+
+## What it is
+
+The WSJT family is a set of weak-signal modes written by the same group of developers, in one software suite (WSJT-X). They share one idea: send tiny, structured messages, slowly and with powerful error correction, in timed slots, and decode them from signals too weak to hear. Most were designed for the hardest paths in amateur radio, such as bouncing signals off the Moon, and later found use on HF. FT8 and WSPR belong to the same family; this article covers the others.
+
+<Facts items={[
+  ['Needs', 'accurate computer clock; timed transmit and receive periods'],
+  ['Message', 'short and structured: calls, grid, report'],
+  ['Software', 'one suite handles most of them'],
+]} />
+
+## The family at a glance
+
+| Mode | Designed for | Note |
+|---|---|---|
+| JT65 | EME and weak VHF/UHF paths | Many tones; decodes very weak signals. Long, one-minute periods. |
+| JT9 | HF | Narrower than JT65, similar slow, patient style. |
+| Q65 | EME and other weak paths | Successor to JT65; averages several receive periods to dig deeper. |
+| MSK144 | Meteor scatter | Very short, fast bursts, to use a brief meteor trail. |
+| FST4 | Low-frequency and HF | Variable transmit periods and a choice of tone spacings. |
+
+JT65 and JT9 were once the standard HF weak-signal modes; FT8's faster 15-second slots have taken over most everyday HF weak-signal work, while the modes for the hardest VHF-and-up paths remain valuable.
+
+## Why different modes for different paths
+
+<E2D_Jt65 />
+
+JT65 spreads each message across many tones and adds a strong error-correcting code, so the decoder can reconstruct it even when noise hides most of the signal. Its name does not mean 65 hertz or 65 baud; it is a multi-tone audio FSK mode.
+
+<E2D_WeakPaths />
+
+The paths shape the mode:
+
+- **EME (moonbounce):** the signal travels to the Moon and back, roughly 2.5 seconds, and is extremely weak when it returns. Stations take turns in synchronised periods, and Q65 can **average** several periods so a message too weak for one period appears across a few. See <Ref to="eme-moonbounce" />.
+- **Meteor scatter:** a meteor's ionised trail reflects VHF signals for a fraction of a second. MSK144 sends fast bursts, so the message fits inside one brief reflection. See <Ref to="meteor-scatter" />.
+- **HF:** long periods gave very good sensitivity but a contact took minutes; faster slots won out for everyday use.
+
+<Callout kind="tip" title="Same clock, same slot">Each of these modes assumes both stations keep the same time and take turns. A computer clock that has drifted is a common reason a decoder hears nothing.</Callout>
+
+<ExamLink groups="E2D E2E T8D" />
+
+<Related to="ft8-and-ft4 wspr eme-moonbounce meteor-scatter weak-signal-vhf digital-mode-software" />

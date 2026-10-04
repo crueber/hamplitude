@@ -1,0 +1,49 @@
+import { DigitalModeSoftware_Stack } from '@/visuals/compendium/DigitalModeSoftware_Stack'
+import { G8C_Waterfall } from '@/visuals/general/G8C_Waterfall'
+
+## What it is
+
+Nearly every digital mode runs in software. The program turns your typing into audio tones (and back), a sound card moves that audio to and from the radio, and the radio transmits it like a voice signal. The same station setup carries many modes: you change the software, not the radio.
+
+<Facts items={[
+  ['Audio path', 'computer sound card to and from the radio'],
+  ['Keying (PTT)', 'by CAT command, serial line, VOX or an interface'],
+  ['Radio mode', 'SSB, usually USB, often a "data" setting'],
+  ['Clock', 'accurate to about a second for timed modes'],
+]} />
+
+## The chain
+
+<DigitalModeSoftware_Stack />
+
+The **modem** (the software that makes and decodes tones) is separate from the **radio**. The link between them has two jobs: carry audio each way, and turn the transmitter on and off. **CAT control** can also set the frequency and mode for you; see <Ref to="cat-control" />. Many modern radios have a built-in USB audio device; otherwise an external interface does the same job and often provides electrical isolation. See <Ref to="computer-interfaces" />.
+
+## Categories of software
+
+| Category | What it does | Well-known examples |
+|---|---|---|
+| Weak-signal suites | Timed modes such as FT8, FT4 and WSPR | WSJT-X |
+| Multi-mode keyboard programs | Many keyboard modes in one program | fldigi |
+| Keyboard messaging | Free-text, weak-signal chat | JS8Call |
+| Radio email clients | Compose and send Winlink mail | Winlink Express |
+| Software TNCs | Packet and APRS modems | Direwolf |
+| Rig control and logging | Frequency, mode, and contact logs | Hamlib-based tools, logging programs |
+
+These names are examples of each category, not recommendations. Features and platforms change; check what runs on your computer before choosing.
+
+## Getting a clean signal
+
+<G8C_Waterfall />
+
+The **waterfall** shows frequency across, time downward, and brightness as strength. It is the main tuning tool: you see signals, pick a clear spot, and see whether yours is clean. Vertical lines on either side of a signal mean it is **overdriven**.
+
+- Set the **audio level** in the computer, not with the mic gain, so the radio's ALC barely moves. More audio does not mean more power, only more distortion.
+- Turn off speech processing and use a wide, flat filter in the radio's data setting.
+- Run well below the radio's maximum power: data modes keep the transmitter on for much of the time, so the radio runs hot.
+- For timed modes, keep the clock correct, using internet or GPS time.
+
+<Callout kind="tip" title="Two audio paths">Computers often have several sound devices. Selecting the wrong one is the most common reason nothing transmits or decodes. Check the input and output are the radio's.</Callout>
+
+<ExamLink groups="G2E T4A G8C" />
+
+<Related to="digital-modes-overview computer-interfaces cat-control ft8-and-ft4 winlink speech-processing-and-mic-gain" />

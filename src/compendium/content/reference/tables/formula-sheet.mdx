@@ -1,0 +1,122 @@
+import { OhmsLaw } from '@/visuals/shared/OhmsLaw'
+import { DecibelExplorer } from '@/visuals/shared/DecibelExplorer'
+
+## How to use this sheet
+
+Every formula an operator actually reaches for, grouped by job, each with its units and a worked example. Units are base units unless noted: volts (V), amps (A), ohms (Ω), watts (W), hertz (Hz), farads (F), henries (H), seconds (s) and meters (m). Where a formula uses MHz, feet, or similar, the table says so. The worked examples are all computed.
+
+<OhmsLaw />
+
+<Callout kind="tip" title="Do the units first">Most mistakes are unit mistakes: µH treated as H, MHz as Hz. Convert everything to base units, calculate, then convert back. See <Ref to="units-and-prefixes" />.</Callout>
+
+## Electricity and power
+
+| Quantity | Formula | Example |
+|---|---|---|
+| Ohm's law (E volts, I amps, R ohms) | E = I × R;  I = E ÷ R;  R = E ÷ I | 12 V across 4 Ω gives 3 A |
+| Power (W) | P = E × I | 12 V × 3 A = 36 W |
+| Power from I and R | P = I² × R | 3² × 4 = 36 W |
+| Power from E and R | P = E² ÷ R | 12² ÷ 4 = 36 W |
+| Series resistors | R = R1 + R2 + R3 | 100 + 200 = 300 Ω |
+| Parallel resistors | 1/R = 1/R1 + 1/R2 | 100 and 300 in parallel give 75 Ω |
+| Two in parallel | R = (R1 × R2) ÷ (R1 + R2) | (100 × 300) ÷ 400 = 75 Ω |
+| N equal resistors in parallel | R = R1 ÷ N | four 200 Ω in parallel give 50 Ω |
+| Capacitors | parallel: C = C1 + C2;  series: 1/C = 1/C1 + 1/C2 | the reverse of resistors |
+| Inductors | series: L = L1 + L2;  parallel: 1/L = 1/L1 + 1/L2 | the same as resistors |
+| Voltage divider | Eout = Ein × R2 ÷ (R1 + R2) | 12 V, 1 kΩ and 2 kΩ: 8 V across the 2 kΩ |
+| Energy (Wh, kWh) | energy = P × time | 100 W for 5 h = 500 Wh |
+| Efficiency | η = Pout ÷ Pin; heat = Pin − Pout | 100 W out for 160 W in: 62.5 %, 60 W of heat |
+| Wire resistance | R = ρ × L ÷ A (copper ρ ≈ 1.72 × 10⁻⁸ Ω·m) | see <Ref to="wire-gauge-and-fusing" /> |
+| Battery runtime | hours = amp-hours ÷ amps (ideal) | 7 Ah at 2 A = 3.5 h at best |
+
+## AC, reactance and resonance
+
+| Quantity | Formula | Example |
+|---|---|---|
+| Frequency and period | f = 1 ÷ T;  T = 1 ÷ f | 7.15 MHz has a period of about 140 ns |
+| Sine waves | Erms = 0.707 × Epeak;  Epp = 2 × Epeak | 170 V peak is about 120 V rms |
+| PEP (SSB, into a load) | PEP = (0.707 × Epeak)² ÷ R | 100 V peak-to-peak into 50 Ω = 25 W |
+| Inductive reactance | XL = 2π × f × L | 10 µH at 7.1 MHz = 446 Ω |
+| Capacitive reactance | XC = 1 ÷ (2π × f × C) | 100 pF at 7.1 MHz = 224 Ω |
+| Impedance (series R and X) | Z = √(R² + X²);  X = XL − XC | R = 30 Ω, X = 40 Ω gives 50 Ω |
+| Phase angle | θ = arctan(X ÷ R) | arctan(40 ÷ 30) = 53.1° |
+| Resonant frequency | f = 1 ÷ (2π × √(L × C)) | 10 µH and 100 pF: 5.03 MHz |
+| Q of a coil | Q = XL ÷ R | |
+| Bandwidth from Q | BW = f0 ÷ Q | 7.1 MHz at Q = 71 gives 100 kHz |
+| Transformer ratios | Ep ÷ Es = Np ÷ Ns;  Ip ÷ Is = Ns ÷ Np | |
+| Impedance transformation | Zp ÷ Zs = (Np ÷ Ns)² | a 2:1 turns ratio gives 4:1 impedance |
+| RC time constant | τ = R × C (s) | 1 kΩ and 100 µF: 0.1 s |
+| RL time constant | τ = L ÷ R (s) | 10 mH and 100 Ω: 100 µs |
+
+A time constant τ is how fast a charge or decay proceeds. After 1τ a charging capacitor is at 63.2 % of the supply; after 2τ, 86.5 %; 3τ, 95.0 %; 4τ, 98.2 %; 5τ, 99.3 %. A discharging one is left with 36.8 %, 13.5 %, 5.0 %, 1.8 % and 0.7 %. See <Ref to="time-constants" /> and <Ref to="resonance-and-q" />.
+
+## Waves and antennas
+
+| Quantity | Formula | Example |
+|---|---|---|
+| Wave speed | v = f × λ (c ≈ 3 × 10⁸ m/s) | |
+| Wavelength (m) | λ = 300 ÷ f (MHz) | 146 MHz: 2.05 m |
+| Half-wave dipole (ft) | L = 468 ÷ f (MHz) | 7.15 MHz: 65.5 ft |
+| Quarter-wave (ft) | L = 234 ÷ f (MHz) | 14.2 MHz: 16.5 ft |
+| Full-wave loop (ft) | L = 1005 ÷ f (MHz) | 14.2 MHz: 70.8 ft |
+| Line length with velocity factor | physical length = electrical length × VF | quarter-wave at 146 MHz, VF 0.66: 1.06 ft |
+| Velocity factor | VF = 1 ÷ √εr | |
+| dBi and dBd | dBi = dBd + 2.15 | a 6 dBd antenna is 8.15 dBi |
+| ERP and EIRP | ERP = Ptx × G (G versus a dipole);  EIRP = ERP × 1.64 | 100 W and 6 dBd (×3.98): ERP 398 W, EIRP 653 W |
+| Radio horizon (miles) | d ≈ √(2 × h), h in feet | 100 ft: about 14 miles |
+| Free-space path loss (dB) | FSPL = 32.44 + 20 log(d km) + 20 log(f MHz) | 146 MHz, 1 km: 75.7 dB |
+| Doppler shift | Δf = f × v ÷ c (v is the speed along the line of sight) | 435 MHz, 7.5 km/s: up to about 10.9 kHz |
+
+The 468 comes from 492 (a true half wave) less about 5 % for end effect and wire; it is a first estimate, then trim for the SWR. See <Ref to="half-wave-dipole" />.
+
+## Feed lines and SWR
+
+| Quantity | Formula | Example |
+|---|---|---|
+| Coax impedance | Z0 = (138 ÷ √εr) × log(D ÷ d) | D/d = 3.5, εr = 2.25: 50.1 Ω |
+| Line impedance | Z0 = √(L ÷ C) (per unit length) | |
+| Reflection coefficient | Γ = (ZL − Z0) ÷ (ZL + Z0) | 100 Ω on 50 Ω line: Γ = 0.333 |
+| SWR | SWR = (1 + \|Γ\|) ÷ (1 − \|Γ\|) | Γ = 0.333: SWR 2.0 |
+| SWR, resistive load | SWR = ZL ÷ Z0 (or Z0 ÷ ZL, whichever is larger) | 100 Ω on 50 Ω line: 2:1 |
+| Reflected power | Pr ÷ Pf = Γ² | SWR 3: Γ = 0.5, so 25 % reflected |
+| Return loss (dB) | RL = −20 log(\|Γ\|) | Γ = 0.333: 9.5 dB |
+| Mismatch loss (dB) | ML = −10 log(1 − Γ²) | SWR 2: 0.51 dB |
+| Cable loss | total dB = dB per 100 ft × length ÷ 100 | 2.4 dB/100 ft, 150 ft: 3.6 dB |
+| Quarter-wave transformer | Zmatch = √(Z1 × Z2) | 50 Ω to 200 Ω: 100 Ω line |
+
+SWR is how a mismatch is measured; see <Ref to="swr-and-reflections" />. On a lossless line the SWR is the same everywhere along it; with real cable loss, the reading at the radio looks better than the SWR at the antenna.
+
+## Decibels and signals
+
+<DecibelExplorer />
+
+| Quantity | Formula | Example |
+|---|---|---|
+| Power ratio in dB | dB = 10 log(P2 ÷ P1) | 100 W to 50 W: −3 dB |
+| Voltage ratio in dB | dB = 20 log(E2 ÷ E1) (same impedance) | doubling the voltage: +6 dB |
+| Ratio from dB | P2 = P1 × 10^(dB ÷ 10) | 10 W with +6 dB: about 40 W |
+| dBm | dBm = 10 log(P ÷ 1 mW) | 1 W = 30 dBm; 5 W = 37 dBm |
+| S meter | 1 S unit = 6 dB; S9 = −73 dBm on HF | S5 is 24 dB below S9 |
+| Noise floor | −174 dBm/Hz + 10 log(bandwidth in Hz) + noise figure (dB) | 2.4 kHz, NF 10 dB: −130 dBm |
+| Link margin | received = transmitted + gains − losses (all in dB) | |
+
+Handy anchors: **3 dB** is double (or half) the power, **6 dB** is four times (voltage doubles), **10 dB** is ten times, and **20 dB** is a hundred times. Add dB for cascaded gains and losses. See <Ref to="decibels" />.
+
+## Modulation, data and practical rules
+
+| Quantity | Formula | Example |
+|---|---|---|
+| Mixer output | fout = f1 + f2 and f1 − f2 | 7.1 MHz mixed with 5.0 MHz gives 12.1 and 2.1 |
+| AM bandwidth | BW = 2 × highest audio frequency | 3 kHz audio: 6 kHz |
+| FM modulation index | m = deviation ÷ modulating frequency | 5 kHz ÷ 1 kHz = 5 |
+| Carson's rule (FM) | BW ≈ 2 × (deviation + highest audio) | 5 kHz, 3 kHz: 16 kHz |
+| Nyquist | sampling rate must exceed 2 × the highest frequency | |
+| Bit rate | bit rate = baud × bits per symbol | |
+| Shannon limit | C = B × log2(1 + SNR) (SNR as a ratio) | 2.5 kHz, 20 dB: 16.6 kbit/s |
+| CW speed | dit length = 1.2 ÷ WPM seconds | 20 WPM: 60 ms |
+| Duty cycle | average power = peak power × fraction of time transmitting | |
+| Rectifier ripple | full wave: 2 × line frequency; half wave: line frequency | 120 Hz at 60 Hz |
+
+<ExamLink groups="T5D G5B G5A E5A E5B G9A" />
+
+<Related to="ohms-law decibels reactance-and-impedance resonance-and-q wire-gauge-and-fusing swr-and-reflections units-and-prefixes" />

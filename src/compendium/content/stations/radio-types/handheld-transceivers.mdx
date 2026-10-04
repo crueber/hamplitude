@@ -1,0 +1,51 @@
+import { HandheldTransceivers_Chooser } from '@/visuals/compendium/HandheldTransceivers_Chooser'
+import { Loading } from '@/visuals/technician/T9A_Loading'
+
+## What it is
+
+A handheld transceiver, or HT, is a battery-powered, pocket-sized radio with its antenna attached. Most are FM transceivers for the 2 m (144 MHz) and 70 cm (430 MHz) bands. They are a common first radio because they are portable and, once programmed, reach local repeaters.
+
+<Facts items={[
+  ['Bands', 'commonly 2 m and 70 cm; some add more'],
+  ['Output', 'typically up to about 5 W, with low-power settings'],
+  ['Power', 'rechargeable pack; hours of mixed use'],
+  ['Antenna', 'short flexible "rubber duck", usually removable'],
+]} />
+
+## Where it fits
+
+<HandheldTransceivers_Chooser />
+
+An HT is the right tool for local, pocket-sized communication. It is the wrong tool for anything that needs range, because of what you give up to make it small.
+
+## Why range is limited
+
+<Loading />
+
+- **Antenna.** A flexible antenna is much shorter than the quarter-wavelength it replaces, so it is a compromise (see <Ref to="handheld-antennas" /> and <Ref to="loaded-and-short-antennas" />). It is also held low, near your body, which absorbs and detunes it.
+- **Power.** A few watts, set by what a small pack can deliver. Low power also extends battery life.
+- **Height.** At VHF and UHF, signals travel roughly line of sight, so a radio at head height reaches little farther than the nearest hill or building.
+
+The simplest big improvement is an outside antenna: an external connector lets you use a vehicle or home antenna with the same radio.
+
+## What to look for
+
+| Feature | Why it matters |
+|---|---|
+| Programming | Entering repeaters by keypad is slow; computer programming and memory channels save time |
+| Tones | CTCSS and DCS are needed to open many repeaters; see <Ref to="squelch-and-tones" /> |
+| Battery | Capacity sets runtime. A spare pack or battery case helps in the field |
+| Receiver quality | Cheap receivers can overload near strong transmitters, causing noise or silence |
+| Digital voice | Some HTs add DMR, D-STAR or Fusion; these families do not talk to each other directly |
+| Ruggedness | Water and dust resistance, a screen you can read outdoors |
+| Extras | GPS and APRS, broadcast and airband receive, speaker-mic connector |
+
+## In practice
+
+- Keep the antenna away from your face while transmitting, use low power when it is enough, and use a speaker-mic so the radio is held away from your head on long transmissions. Higher power near the body means higher exposure; see <Ref to="rf-exposure" />.
+- Use the charger made for the pack. Lithium batteries can be a fire hazard if they are shorted, damaged or charged with the wrong equipment; see <Ref to="battery-and-fire-safety" />.
+- Programming a radio for frequencies you are not licensed for, or leaving it set to a repeater's wrong offset, can cause interference. See <Ref to="memories-and-scanning" /> and <Ref to="repeaters" />.
+
+<ExamLink groups="T7A T4B T9A T0C" />
+
+<Related to="vhf-uhf-mobile-and-base handheld-antennas fm-voice repeaters memories-and-scanning hotspots-and-gateways" />

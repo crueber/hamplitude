@@ -1,0 +1,39 @@
+import { SixMeters_Seasons } from '@/visuals/compendium/SixMeters_Seasons'
+import { Modes } from '@/visuals/technician/T3C_Modes'
+
+## What it is
+
+Six meters (the 50 to 54 MHz band in the US) sits where HF ends and VHF begins, and it behaves like both. Usually it is quiet and local. Sometimes, with no warning, it opens to the world. That unpredictability earned it the name **"the magic band"**.
+
+<Facts items={[
+  ['Frequencies (US)', '50 to 54 MHz'],
+  ['Wavelength', 'about 6 m'],
+  ['Open to', 'Technician class and above'],
+  ['Antennas', 'a dipole about 3 m (9 to 10 ft) long, or a small Yagi; horizontal for weak-signal work'],
+]} />
+
+## What opens it
+
+<SixMeters_Seasons />
+
+| Mechanism | What it gives |
+|---|---|
+| **Sporadic E** | Dense patches of ionization in the E layer reflect 50 MHz. Single hops reach about 1,000 to 2,200 km, and double hops further. The most common opening, and strongest in early summer. |
+| **F2 layer** | Near the peak of the sunspot cycle, the F2 layer can carry 6 m signals across continents and oceans. Rare, but spectacular. |
+| **Trans-equatorial (TEP)** | North-south paths across the geomagnetic equator, usually in the afternoon and evening. |
+| **Meteor scatter, aurora, tropo** | Shorter, short-lived or weaker paths: see <Ref to="meteor-scatter" />, <Ref to="aurora-propagation" />, <Ref to="tropospheric-propagation" />. |
+
+Sporadic E is the heart of the band: it is short-lived, patchy and hard to predict, and a station can be loud for a few minutes and gone. See <Ref to="sporadic-e" />.
+
+<Modes />
+
+## In practice
+
+- **Listen first**. A band that sounds dead can open in minutes. Beacons (automatic transmitters sending a call sign, usually near the bottom of the band) are your clue: if you can hear a far-off beacon, there is a path.
+- **Start modestly**: a simple antenna works when the band is open, and a better one tells you sooner. Horizontal polarization is the norm.
+- **Digital modes** like FT8 are popular because they work on thin openings. Call on the CW and weak-signal segments at the bottom of the band, away from FM.
+- **Seasons**: northern-hemisphere sporadic E peaks in early summer, with a smaller winter peak. Use that when planning your time at the radio.
+
+<ExamLink groups="T3C T1B" />
+
+<Related to="sporadic-e solar-cycle-and-indices weak-signal-vhf meteor-scatter aurora-propagation ionosphere-layers" />

@@ -1,0 +1,44 @@
+import { SlowScanTv_Scan } from '@/visuals/compendium/SlowScanTv_Scan'
+import { E2B_SstvLine } from '@/visuals/extra/E2B_SstvLine'
+
+## What it is
+
+Slow-scan television (SSTV) sends a still picture as audio tones, one line at a time, in tens of seconds to a few minutes. Because the picture is just sound, it fits through an ordinary SSB voice channel on HF, or an FM voice channel on VHF, with no special transmitter.
+
+<Facts items={[
+  ['Sync pulse', '1200 Hz'],
+  ['Black', '1500 Hz'],
+  ['White', '2300 Hz'],
+  ['Audio bandwidth', 'fits in an SSB channel of about 3 kHz'],
+  ['Time per picture', 'typically tens of seconds to a few minutes, depending on mode'],
+]} />
+
+## From picture to tones
+
+The sending software scans the picture in rows. For each pixel it picks a tone whose **pitch is the brightness**: low tone for dark, high tone for bright. A short **sync** pulse of a different pitch starts each row, so the receiver knows when a new line begins.
+
+<SlowScanTv_Scan />
+
+The receiver listens, measures the pitch, and paints the pixel. Brightness is carried by frequency, not by volume, which is why SSTV survives fading and level changes better than you might expect.
+
+## Colour and the start of a picture
+
+For colour, each row is sent as several scans, one per colour, one after another, and the receiver recombines them. A header of tones called the **VIS code** comes before the first line and tells the software which SSTV mode follows, so it configures itself.
+
+<E2B_SstvLine />
+
+## Modes, time and quality
+
+An SSTV **mode** is a recipe for how many lines, how long per line and in what order the colours go. Families such as Robot, Martin, Scottie and PD exist, and they trade time for quality: a longer mode usually gives a sharper picture. A faster mode is easier to fit into a short fading-limited contact but looks rougher. This is the same trade as for all television, see <Ref to="fast-scan-tv" />.
+
+## On the air
+
+- It runs on voice frequencies, generally in the phone segments of the band plan. Check <Ref to="band-plans" />.
+- Software on a computer or phone listens through a <Ref to="computer-interfaces">sound-card connection</Ref> or even through the speaker, and the sending side feeds audio into the microphone input.
+- **Keep the audio level modest.** Overdriving a SSB transmitter distorts the tones and widens the signal; see <Ref to="speech-processing-and-mic-gain" />.
+- A picture that leans or looks sheared often means the sender's and receiver's sound-card clocks differ slightly. Most programs have a slant correction.
+- Digital SSTV modes also exist. They too produce audio, so an SSB receiver can carry them.
+
+<ExamLink groups="E2B T8D" />
+
+<Related to="fast-scan-tv digital-atv ssb-voice computer-interfaces digital-mode-software band-plans" />

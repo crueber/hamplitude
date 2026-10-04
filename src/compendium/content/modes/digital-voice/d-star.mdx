@@ -1,0 +1,41 @@
+import { DStar_VocoderChain } from '@/visuals/compendium/DStar_VocoderChain'
+import { DStar_Header } from '@/visuals/compendium/DStar_Header'
+
+## What it is
+
+D-STAR is a digital voice and data system for amateur radio, developed in Japan and built mainly into Icom radios, with some support from other makers. Your voice is turned into bits, sent with a header that names the stations involved, and can be routed across the world by **call sign**.
+
+<Facts items={[
+  ['Voice coding', 'a vocoder from the AMBE family'],
+  ['Modulation', 'GMSK'],
+  ['Addressing', 'by call sign (MY, UR, RPT1, RPT2)'],
+  ['Also carries', 'a low-speed data stream beside the voice'],
+]} />
+
+## How digital voice works
+
+An ordinary FM radio sends the sound wave itself. A digital voice radio instead uses a **vocoder** to analyse speech and describe it with a small stream of numbers, then sends only that. The receiver rebuilds a voice from them. Error-correcting bits are added so a few damaged bits can be repaired.
+
+<DStar_VocoderChain />
+
+The result is clean, noise-free audio until the signal gets too weak, then it turns robotic and drops out rather than fading into hiss. Vocoders are tuned for speech, so music and strong background noise come out poorly. See <Ref to="digital-modulation" /> and <Ref to="error-correction" />.
+
+## Routing by call sign
+
+Every D-STAR transmission starts with a header. Four fields matter to the operator:
+
+<DStar_Header />
+
+D-STAR repeaters connect to a **gateway** that is tied to a network. A station registers its call sign once; the network then notes where it was last heard and routes calls to it. **Reflectors** are shared rooms: many repeaters and hotspots link to one, and everyone connected hears everyone else, much like a conference call.
+
+## In practice
+
+- Program your **call sign into the radio** before transmitting. It is the one thing it cannot work without.
+- Use a **repeater memory** (frequency, offset, name) as you would for FM, then set UR as needed.
+- Joining a reflector usually means sending a short, specific command through the UR field.
+- A **hotspot** gives you a personal, low-power gateway at home; see <Ref to="hotspots-and-gateways" />.
+- Analog FM and D-STAR radios cannot hear each other. A D-STAR signal sounds like a buzz to an FM receiver.
+
+<ExamLink groups="T4B G8C" />
+
+<Related to="dmr system-fusion m17 internet-linking hotspots-and-gateways digital-modulation" />

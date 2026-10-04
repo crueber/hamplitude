@@ -1,0 +1,49 @@
+import { Window as G3B_Window } from '@/visuals/general/G3B_Window'
+import { CriticalAngle as G3C_CriticalAngle } from '@/visuals/general/G3C_CriticalAngle'
+import { DailyMuf as E3A_DailyMuf } from '@/visuals/extra/E3A_DailyMuf'
+
+## A window of usable frequencies
+
+For any HF path at any moment there is a band of frequencies that works. The **maximum usable frequency (MUF)** is the top of it: above the MUF the signal is not refracted back, and leaks away into space. The **lowest usable frequency (LUF)** is the bottom: below it the signal is absorbed or buried in noise. Between them is the window you operate in.
+
+<Facts items={[
+  ['MUF', 'highest frequency the ionosphere returns for that path'],
+  ['LUF', 'lowest frequency that still arrives above the noise'],
+  ['Best frequency', 'typically a little under the MUF (around 85% of it)'],
+  ['If LUF is above MUF', 'the path is closed'],
+]} />
+
+<G3B_Window />
+
+## Why there is a ceiling
+
+How far a layer can bend a wave depends on its electron density. Every layer has a **critical frequency**: the highest frequency it can return when the signal is sent straight up. A wave that meets the layer at a glancing angle needs far less bending to turn back, so the same layer can return much higher frequencies at low takeoff angles.
+
+<G3C_CriticalAngle />
+
+In a simplified model, the MUF is the critical frequency divided by the sine of the takeoff angle. A long, low-angle path might typically have an MUF around three times the layer's critical frequency, while a short, steep one is barely above it. So the MUF belongs to a path, not to a band or a place: the same ionosphere gives a high MUF to Europe and a low one to a station 200 miles away.
+
+## Why there is a floor
+
+On the way up, a signal passes through the D layer, where it makes electrons collide with air molecules and loses energy as heat. This absorption drops roughly with the square of the frequency, so lower frequencies lose far more. By day the D layer is thick and the LUF is high; after dark it fades and the LUF falls. Unlike the MUF, the LUF is not purely a property of the sky: more power, a better antenna and a quieter receive location all lower it.
+
+## How it changes
+
+The MUF follows the Sun, so it is typically:
+
+- lowest just before dawn and highest in the early afternoon
+- higher near the <Ref to="solar-cycle-and-indices">peak of the solar cycle</Ref>
+- generally better around the equinoxes than at midsummer, at mid-latitudes
+- set by the weakest hop on a multi-hop path, so a single poor stretch caps the whole route
+
+<E3A_DailyMuf />
+
+Predictions give a median expected value; the real MUF wanders from day to day, so a band can work a bit above the forecast or fail a bit below it.
+
+## In practice
+
+Tune toward the highest band that is open and work down as the day ends: 10 or 15 m at midday when they are open, 20 m through the afternoon, 40 m and 80 m after dark. A band that sounds dead often has a MUF below it, or beacons and <Ref to="spotting-networks">spotting networks</Ref> will show you where the signals are.
+
+<ExamLink groups="G3B G3C" />
+
+<Related to="ionosphere-layers skywave-and-skip solar-cycle-and-indices grey-line-and-long-path propagation-tools space-weather" />

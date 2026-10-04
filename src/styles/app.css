@@ -47,10 +47,13 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .nav a:hover, .nav button:hover { background: var(--bg-tint); color: var(--ink); }
 .nav a.active { background: color-mix(in srgb, var(--lic, var(--primary)) 16%, transparent); color: var(--ink); }
 .nav .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--lic); margin-right: 7px; }
+.nav a .short { display: none; }
 .icon-btn { width: 36px; height: 36px; display: grid; place-items: center; padding: 0 !important; }
 .streak { font-size: 13px; font-weight: 700; color: var(--accent); padding: 4px 10px; border-radius: 999px; background: var(--accent-soft); white-space: nowrap; }
 @media (max-width: 720px) {
   .nav a .full { display: none; }
+  .nav a .short { display: inline; }
+  .nav .dot { display: none; }
   .logo span { display: none; }
   .nav { gap: 2px; }
   .nav a { padding: 7px 9px; font-size: 13px; }
@@ -343,3 +346,8 @@ kbd { font-family: var(--font-mono); font-size: 11.5px; padding: 1px 6px; border
 .qrow { display: flex; gap: 12px; padding: 12px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; text-decoration: none; color: inherit; }
 .qrow:hover { border-color: var(--lic); }
 .qrow .qid { align-self: flex-start; }
+
+/* footer credit + issue link */
+.credit { margin-top: 26px; padding: 18px 20px; border-radius: var(--r-md); border: 1px solid var(--line); background: var(--surface); display: flex; flex-direction: column; gap: 4px; text-align: center; }
+.credit strong { color: var(--ink); font-family: var(--font-display); font-size: 16px; }
+.credit span { color: var(--muted); font-size: 14px; }

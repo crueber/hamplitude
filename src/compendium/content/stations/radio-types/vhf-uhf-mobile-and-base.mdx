@@ -1,0 +1,49 @@
+import { VhfUhfMobileAndBase_Reach } from '@/visuals/compendium/VhfUhfMobileAndBase_Reach'
+import { MobilePower } from '@/visuals/general/G4E_MobilePower'
+
+## What it is
+
+A VHF/UHF mobile or base radio is a 13.8 V transceiver for 2 m and 70 cm, built for a vehicle or desk and meant to connect to a real antenna. It does the same job as an <Ref to="handheld-transceivers">HT</Ref> with more power, a better antenna and a larger, easier-to-use body. Most are FM; some "all-mode" base rigs add SSB and CW for weak-signal VHF work and satellites.
+
+<Facts items={[
+  ['Typical output', 'about 25 to 75 W on FM, adjustable'],
+  ['Supply', '13.8 V DC; typically 10 A or more at full power'],
+  ['Antenna connector', 'usually an SO-239 (UHF) or N type'],
+  ['Mounting', 'dash or mount, often with a detachable control head'],
+]} />
+
+## Why it beats an HT
+
+<VhfUhfMobileAndBase_Reach />
+
+Power matters, but less than people expect. Ten times the power is only 10 dB, about 1.7 S-units. Antenna height and efficiency often matter more, because VHF and UHF travel roughly in straight lines and a taller antenna sees farther. A roof-mounted antenna on a car or a mast above the house adds height, a proper ground plane, and often some gain (see <Ref to="mobile-whips-and-loading" /> and <Ref to="five-eighths-and-colinears" />).
+
+The feed line counts too. Coax loses more at 440 MHz than at 146 MHz, so long runs need low-loss cable; see <Ref to="feed-line-loss" />.
+
+## Mobile installation
+
+<MobilePower />
+
+- Run heavy, fused power wire directly to the battery, with the fuse near the battery. The cigarette-lighter socket is usually not wired or fused for a radio's transmit current.
+- A metal roof is a good ground plane. Place the antenna near its centre.
+- Do not let a hand-held microphone distract you. Local laws on phone use while driving may apply; a hands-free setup and a passenger make it easier.
+- Keep people away from the antenna while you transmit; see <Ref to="rf-exposure" />.
+
+## Base installation
+
+A base station needs a power supply sized for the radio's full transmit current; see <Ref to="shack-power-supplies" />. Put the antenna as high as practical, away from metal, with short, low-loss coax, and protect it against lightning; see <Ref to="lightning-and-grounding" />.
+
+## What to look for
+
+| Feature | Why it matters |
+|---|---|
+| Adjustable power | Low power for local chat, high power when you need it |
+| Dual receive | Monitor two frequencies at once |
+| Detachable face | Lets the radio body hide under a seat |
+| Tones and memories | See <Ref to="squelch-and-tones" /> and <Ref to="memories-and-scanning" /> |
+| Digital or APRS | Built-in modes you may want later |
+| All-mode capability | Needed for SSB, CW and satellites |
+
+<ExamLink groups="T7A T4A G4E" />
+
+<Related to="handheld-transceivers mobile-operation mobile-whips-and-loading feed-line-loss shack-power-supplies repeaters" />

@@ -1,0 +1,52 @@
+import { RfiAndEmi_Chain } from '@/visuals/compendium/RfiAndEmi_Chain'
+import { Heard } from '@/visuals/general/G4C_Heard'
+import { NoiseGallery } from '@/visuals/extra/E4E_NoiseGallery'
+
+## What it is
+
+Radio-frequency interference (RFI) is unwanted radio energy that disturbs a receiver or an electronic device. Its wider family is electromagnetic interference (EMI), which covers any unwanted electrical noise, radio or not. Hams meet both: your signal can upset a neighbour's TV, and a neighbour's gadget can drown out your receiver.
+
+<Facts items={[
+  ['Three parts', 'source, path, victim'],
+  ['You can usually fix', 'your own transmitter, cables and receiver'],
+  ['Often not yours', 'a neighbour’s device or the utility’s equipment'],
+  ['Clue to the cause', 'what it sounds or looks like'],
+]} />
+
+## Source, path, victim
+
+<RfiAndEmi_Chain />
+
+Every interference problem is a chain of three parts, and removing any one of them ends it. The **source** produces energy it should not. The **path** carries that energy across: through the air, along a power cord or coax, or as current on a cable shield. The **victim** responds to energy it should have ignored.
+
+Most of the work is deciding which link you control. Your own transmitter is a source you can clean up. A badly shielded TV is a victim you can only help. Often the cheapest fix is on the path, a ferrite or a filter, because it works whoever owns the ends.
+
+## Three kinds of path
+
+| Path | How the energy travels | Typical cure |
+|---|---|---|
+| Radiated | through the air, picked up by a cable or the case | move the antenna, shield, filter |
+| Conducted | along the mains or other wires | line filter, ferrite, separate circuit |
+| Common-mode on cables | RF current on the outside of shields and on all conductors together | <Ref to="common-mode-chokes">common-mode choke</Ref> |
+
+The last is the most underrated. A cable that is only a few feet long can be a good antenna for HF, so RF rides into equipment on speaker, audio, USB and power leads. See <Ref to="common-mode-and-ground-loops" />.
+
+## Reading the symptom
+
+Different sources leave different fingerprints, so listen before you reach for a filter.
+
+<Heard />
+
+Garbled speech means a nearby SSB signal. Keyed thumps or clicking means CW. Wideband crackle or buzzing that comes and goes points to an arc.
+
+<NoiseGallery />
+
+A steady comb of carriers at regular spacing is typically a switching power supply, covered in <Ref to="power-line-noise" />.
+
+## Who does what
+
+Start with your own station: confirm that it is working properly and does not interfere with your own TV or radio. Then be polite and practical with a neighbour. Interference is a shared problem with a fix that is often cheap, and a cooperative approach usually works faster than an argument. In the US, amateur stations come under Part 97 and most consumer electronics under Part 15, whose labels typically say the device may not cause harmful interference and must accept interference it receives. That is a description, not a ruling on who is at fault in any case. See <Ref to="part-97-in-plain-words" />.
+
+<ExamLink groups="T7B G4C E4E" />
+
+<Related to="overload-and-intermod harmonics-and-spurs tvi-and-consumer-electronics power-line-noise filters-and-ferrites-for-rfi common-mode-and-ground-loops" />

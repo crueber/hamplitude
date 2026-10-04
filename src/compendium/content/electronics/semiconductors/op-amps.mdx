@@ -1,0 +1,48 @@
+import { OpAmpTraits } from '@/visuals/extra/E7G_OpAmpTraits'
+import { OpAmps_Gain } from '@/visuals/compendium/OpAmps_Gain'
+import { GainBandwidth } from '@/visuals/extra/E7G_GainBandwidth'
+
+## What it is
+
+An operational amplifier (op-amp) is a high-gain, direct-coupled **differential amplifier**: it amplifies the *difference* between its two inputs, and nothing else. It comes as an <Ref to="integrated-circuits">integrated circuit</Ref>, and with two or three resistors it becomes an amplifier, filter, buffer or comparator with precisely predictable behaviour.
+
+<Facts items={[
+  ['Input impedance', 'very high'],
+  ['Output impedance', 'very low'],
+  ['Open-loop gain', 'very high, often 100,000 or more at DC (typical)'],
+  ['Ideal op-amp gain vs frequency', 'does not change; real ones fall off'],
+]} />
+
+<OpAmpTraits />
+
+## Feedback sets the gain
+
+On its own an op-amp has enormous gain: a fraction of a millivolt of difference between the inputs drives the output to the supply voltage. That is too much, and too unpredictable, to use directly. So the output is fed back to the inverting (−) input. This **negative feedback** makes the op-amp adjust its output until its two inputs are almost exactly equal.
+
+With that, two rules describe an ideal op-amp: **no current flows into the inputs**, and **the two inputs sit at the same voltage**. Everything else follows from them.
+
+<OpAmps_Gain />
+
+- **Inverting:** the + input is grounded, so the − input is held at about 0 V, a virtual ground. The input current Vin ÷ R1 has nowhere to go but through Rf, so Vout = −Vin × Rf ÷ R1. The gain is **−Rf ÷ R1**.
+- **Non-inverting:** the input goes to the + input. The R1 and Rf divider must bring the − input up to Vin, which forces Vout = Vin × (1 + Rf ÷ R1). The gain is **1 + Rf ÷ R1**, never below 1.
+
+Either way the gain depends only on the resistors, not on the op-amp's own huge and variable gain. With Rf = 470 Ω and R1 = 10 Ω the inverting gain is magnitude 47, and 0.23 V in through R1 = 1 kΩ and Rf = 10 kΩ gives −2.3 V.
+
+Joining the output straight to the − input gives a **voltage follower** with gain 1: a buffer that presents a high impedance to the source and a low one to the load. With no feedback at all, the output simply swings to one rail or the other depending on which input is higher. That is a **comparator**. Adding a little positive feedback gives it hysteresis, so noise cannot make the output chatter.
+
+## Limits
+
+<GainBandwidth />
+
+- **Gain-bandwidth product:** real open-loop gain falls as frequency rises. The frequency at which it reaches 1 is the gain-bandwidth product. A stage with closed-loop gain G stays flat up to about that frequency divided by G: a 1 MHz part (typical of general-purpose types) used at a gain of 10 gives roughly 100 kHz.
+- **Output swing:** the output cannot go beyond the supply voltages, so too much gain or input clips the signal.
+- **Offset voltage:** a real op-amp needs a tiny differential input to bring its output to zero. It matters in DC and low-level circuits.
+- **Stability:** high gain and high Q in an active audio filter can make it ring or oscillate. Restrict both.
+
+## In practice
+
+Op-amps live at audio and low frequencies: microphone preamplifiers, active audio filters (a capacitor across Rf makes a low-pass), buffers, S-meter and keyer circuits, and the error amplifier in a voltage regulator. Their limited gain-bandwidth keeps them out of the RF path; that is the territory of <Ref to="bipolar-transistors">transistors</Ref> and RF ICs.
+
+<ExamLink groups="E7G" />
+
+<Related to="integrated-circuits amplifiers filters bipolar-transistors decibels power-supplies" />

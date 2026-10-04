@@ -1,0 +1,54 @@
+import { MobileOperation_Install } from '@/visuals/compendium/MobileOperation_Install'
+
+## What it is
+
+Mobile operation means using an amateur station from a moving vehicle, whether a car, truck or boat. VHF and UHF FM from a car, through repeaters, is the everyday form. HF mobile is more of a challenge, but a well-installed station can work the world. Maritime mobile does the same on the water.
+
+<Facts items={[
+  ['Typical radios', 'VHF/UHF FM mobile; some HF rigs'],
+  ['Power', 'direct from the battery, with a fuse'],
+  ['Antenna', 'on the metal body, away from occupants'],
+  ['First rule', 'drive safely; operating comes second'],
+]} />
+
+## Safety first
+
+**Driving is the job; the radio is not.** Distracted driving kills. Many places restrict handheld and even hands-free communications equipment while driving, and the rules differ by state and country. Check yours.
+
+- **Park to dial, tune and log.** Use memories, speaker mics and voice announcements so you rarely need to look.
+- **Do not log or text while driving.** If you cannot do it by touch, wait until you stop.
+- **Use a passenger.** A second person can run the radio, log and read the map.
+- **Secure everything.** A mic, handheld or radio that comes loose in a crash becomes a projectile. Mount with brackets, keep cables out of pedals and airbag paths.
+- **RF exposure:** keep antennas as far from occupants as is practical. See the RF section below.
+
+## The installation
+
+<MobileOperation_Install />
+
+**Power.** Run heavy-gauge wire straight to the battery with a **fuse close to the battery** on the positive lead. A 12 V accessory socket is not designed for a radio's current draw. Pass the cable through a grommet in the firewall. See <Ref to="power-and-swr-protection" /> and <Ref to="wire-gauge-and-fusing" />.
+
+**Antenna.** A vehicle's metal body is the ground plane; a mount on the roof or trunk usually works well. A short HF whip is a compromise: it is inefficient and narrow, which is the main limit on HF mobile; see <Ref to="mobile-whips-and-loading" />. For VHF and UHF a quarter-wave or longer whip works very well; see <Ref to="vhf-uhf-mobile-and-base" />.
+
+**Noise.** Alternators, ignition, fuel pumps and electronics add receive noise. Short, clean power and ground connections, and ferrites on leads, usually help; see <Ref to="common-mode-chokes" />.
+
+## RF exposure in a vehicle
+
+A mobile transmitter puts an antenna a few feet from the people inside. VHF and UHF mobile power is modest, but HF mobile at 100 W is another matter, and a poorly placed antenna can put a strong field at head height.
+
+- Place the antenna on the roof or trunk, not on a glass mount near the passengers.
+- Use the lowest power that makes the contact.
+- Keep handhelds and their antennas away from the head; use a speaker mic or external antenna.
+- Follow your radio's and antenna's instructions; see <Ref to="rf-exposure" />.
+
+## Maritime mobile
+
+On a boat the principles are the same, with extra considerations: a salt-water environment, vibration, and a different ground. An amateur station on a vessel needs the **master's permission**. For a US-documented vessel in international waters, that and your US license are what the rules ask; inside another country's waters, that country's rules apply.
+
+- **Amateur radio is not a marine safety service.** For distress, safety and weather, use proper marine radio equipment. Do not rely on a ham station for emergencies.
+- **Corrosion-proof the installation** and keep the power wiring fused and waterproofed.
+- **Avoid interfering** with the vessel's navigation and communications gear.
+- **Operators** often add "maritime mobile" to their signoff, and are popular targets for HF chasers.
+
+<ExamLink groups="G4E T0C" />
+
+<Related to="mobile-whips-and-loading vhf-uhf-mobile-and-base portable-power rf-exposure wire-gauge-and-fusing common-mode-chokes" />

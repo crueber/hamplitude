@@ -1,0 +1,41 @@
+import { NearAndFarField_Zones } from '@/visuals/compendium/NearAndFarField_Zones'
+import { NearField } from '@/visuals/extra/E0A_NearField'
+import { E9B_FarField } from '@/visuals/extra/E9B_FarField'
+
+## What it is
+
+The space around an antenna is not uniform. Close in, the electric and magnetic fields are tangled and the antenna's pattern is still taking shape. Far away, the fields settle into a simple radiating wave whose pattern shape no longer changes with distance. The two regions are called the **near field** and the **far field**.
+
+<Facts items={[
+  ['Reactive near field', 'roughly within λ ÷ 2π (about 0.16 λ) of a small antenna'],
+  ['Far field', 'for large antennas, commonly taken to begin beyond about 2D² ÷ λ, D being the largest dimension'],
+  ['Far field shape', 'the pattern no longer varies with distance, only its strength does'],
+  ['Free-space wave impedance', 'E ÷ H = 377 Ω, in the far field only'],
+]} />
+
+## The regions
+
+<NearAndFarField_Zones />
+
+In the **reactive near field** energy is stored in the fields and returned to the antenna each cycle, like a capacitor and inductor. The electric and magnetic fields are out of step, and their ratio varies with position. Further out the **radiating near field** carries true radiation, but the pattern is still changing with distance. In the **far field** the electric and magnetic fields are in step at a fixed ratio, the pattern is fixed, and strength simply falls with distance.
+
+The boundaries are rules of thumb. A small antenna such as a dipole reaches the far field within a wavelength or so. For a large antenna the reactive region reaches roughly 0.62√(D³ ÷ λ) and the far field begins beyond 2D² ÷ λ, which grows with the square of its size: a 3 m dish at 10 GHz has a far field that begins about 600 m away.
+
+## Near-field behaviour
+
+<NearField />
+
+Near a dipole the electric field is strongest at the ends and the magnetic field at the centre, so the two peaks are in different places, and ground reflections and nearby objects change the fields from spot to spot. Nothing here is predicted by the simple far-field formulas.
+
+## Why it matters
+
+- **Pattern, gain and ERP** are far-field concepts. A measurement or a pattern plot only means what it says when taken far enough out; see <Ref to="radiation-patterns" />.
+- **RF exposure.** The usual power-density formulas assume the far field. Close to an antenna, especially within a wavelength or so, the field strength can differ from that prediction and vary a lot from point to point. Treat the area around an antenna conservatively and use the official guidance; see <Ref to="rf-exposure" />.
+- **Coupling.** Metal in the near field, such as a gutter, tower or another antenna, picks up energy and detunes the antenna. Keep such objects well clear of an antenna where you can.
+- **Small loops** and similar antennas favour one field (here magnetic) in the near field, which is why a small receiving loop can reject some local noise; see <Ref to="receive-loops-and-active-antennas" />.
+
+<E9B_FarField />
+
+<ExamLink groups="E9B E0A" />
+
+<Related to="radiation-patterns rf-exposure electromagnetic-waves how-antennas-work ground-and-height gain-and-directivity" />

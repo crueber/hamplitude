@@ -1,0 +1,56 @@
+import { WavelengthExplorer } from '@/visuals/shared/WavelengthExplorer'
+import { SameSpeed } from '@/visuals/shared/SameSpeed'
+import { QuarterWave } from '@/visuals/technician/T9A_QuarterWave'
+
+## What it is
+
+**Frequency** is how many complete cycles of the wave pass a point each second, measured in hertz (Hz). **Wavelength** is the distance the wave travels during one cycle. They describe the same wave from two angles, and because every radio wave travels at the same speed, knowing one tells you the other.
+
+<Facts items={[
+  ['Frequency', 'cycles per second: Hz, kHz, MHz, GHz'],
+  ['Wavelength', 'metres (or feet) per cycle: symbol λ'],
+  ['Link', 'speed of light = frequency × wavelength'],
+  ['Shortcut', 'λ in metres = 300 ÷ f in MHz'],
+]} />
+
+## The link between them
+
+<SameSpeed />
+
+Think of a wave as a train of crests moving at a fixed speed, about 300 million metres per second. Make the source wiggle faster and the crests are packed closer together; slow it down and they spread out. The speed never changes, only the spacing does:
+
+<Formula label="Wavelength and frequency">λ (m) = 300 ÷ f (MHz), and so f (MHz) = 300 ÷ λ (m)</Formula>
+
+<WavelengthExplorer />
+
+The 300 is the speed of light rounded to three figures, which is accurate to well under a tenth of a percent: plenty for antennas. For feet use 984 ÷ f (MHz). Always check the units: megahertz gives metres, kilohertz would give kilometres.
+
+The time for one cycle is the **period**, 1 ÷ f. At 14.2 MHz that is about 70 nanoseconds.
+
+## Why wavelength is the number antennas care about
+
+An antenna's size is judged against the wavelength, not in feet. A half-wave dipole is half a wavelength long whatever the band, so higher frequency means a smaller antenna.
+
+| Band | Example frequency | Wavelength |
+|---|---|---|
+| 80 m | 3.7 MHz | 81 m |
+| 40 m | 7.15 MHz | 42 m |
+| 20 m | 14.2 MHz | 21 m |
+| 10 m | 28.4 MHz | 10.6 m |
+| 6 m | 50.1 MHz | 6.0 m |
+| 2 m | 146 MHz | 2.05 m |
+| 70 cm | 446 MHz | 67 cm |
+
+Band names are only nominal wavelengths: at 146 MHz the 2 m band's wavelength is really about 2.05 m, and the 80 m band spans roughly 75 to 86 m. See the <Ref to="amateur-band-chart" /> for the actual ranges.
+
+<QuarterWave />
+
+Wavelength also shapes how a signal behaves. Short waves are easily blocked or soaked up by buildings, hills and foliage, while long waves slip around them. See <Ref to="line-of-sight" /> and <Ref to="ground-wave" />.
+
+## In a cable or other material
+
+In free space the speed is about 300 million metres per second. In coaxial cable it is slower, by a fraction called the **velocity factor** (often around two thirds for solid-polyethylene coax, depending on the cable), so a wavelength inside the cable is shorter than in air. That is why a "quarter-wave" piece of coax is cut shorter than a quarter wavelength in air. The frequency stays the same; only the speed and the wavelength change. See <Ref to="feed-line-loss" />.
+
+<ExamLink groups="T3B" />
+
+<Related to="electromagnetic-waves radio-spectrum units-and-prefixes half-wave-dipole feed-line-loss amateur-band-chart" />

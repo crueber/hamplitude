@@ -1,0 +1,48 @@
+import { G8A_DigitalMod } from '@/visuals/general/G8A_DigitalMod'
+import { G2E_Ft8Slots } from '@/visuals/general/G2E_Ft8Slots'
+import { Ft8AndFt4_Qso } from '@/visuals/compendium/Ft8AndFt4_Qso'
+
+## What it is
+
+FT8 is a weak-signal mode for making quick contacts, even when signals are barely audible or the antenna is modest. Instead of free conversation, you exchange a short, fixed series of messages in timed slots, and the computer decodes them from below the noise. FT4 is its faster sibling, aimed at contests. Both come with the WSJT-X software.
+
+<Facts items={[
+  ['FT8 slot', '15 seconds, transmit or listen in each'],
+  ['FT4 slot', '7.5 seconds'],
+  ['FT8 keying', '8-tone frequency shift'],
+  ['FT4 keying', '4-tone frequency shift'],
+  ['FT8 bandwidth', 'about 50 Hz'],
+  ['Common 20 m frequency', '14.074 MHz (USB)'],
+]} />
+
+## How it squeezes data out of noise
+
+<G8A_DigitalMod />
+
+Each message is tiny, so it can be packed with heavy **forward error correction** and sent slowly relative to its length. FT8 sends one of eight tones at a time, the tone chosen by the data. A transmission occupies about 13 seconds of the 15-second slot. The receiver uses the error-correcting code to find the message that best fits what it heard.
+
+The signal report in an FT8 exchange is the decoder's estimate of the **signal-to-noise ratio** measured in a 2.5 kHz bandwidth, not an S-meter reading. Negative numbers are normal; a report of +3 means 3 dB above the noise in that reference bandwidth.
+
+## A contact, slot by slot
+
+<Ft8AndFt4_Qso />
+
+Each station transmits in one slot and listens in the next. Typically you see the call, then grid squares, then reports, then a closing 73. The fixed format is what lets the decoder be so sensitive, and also why you cannot chat freely (see <Ref to="js8call" /> for that).
+
+## Timing and where to answer
+
+<G2E_Ft8Slots />
+
+Slots begin at fixed times, so your computer clock must be accurate to about a second. FT8 does not synchronise to the other station: everyone's clock is the reference. Software decodes every signal in the passband at once, so the waterfall shows many stations at different audio frequencies.
+
+To answer a CQ, pick an **empty spot** on the waterfall and transmit in the **alternate** slot from the station you are answering.
+
+## In practice
+
+- Use USB, and turn the audio level down until the radio's ALC barely moves; an overdriven signal spreads across the waterfall and annoys neighbours.
+- FT8 keys the transmitter for most of each slot, so run well below the radio's rated power.
+- FT4 trades some sensitivity for a quicker exchange, which suits contests. In VHF contests the exchange uses the grid square instead of a signal report.
+
+<ExamLink groups="G2E E2E E2D T8D G8C" />
+
+<Related to="js8call wspr jt-modes digital-mode-software digital-modes-overview noise-and-snr" />

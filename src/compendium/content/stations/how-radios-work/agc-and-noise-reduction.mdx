@@ -1,0 +1,56 @@
+import { AgcAndNoiseReduction_Agc } from '@/visuals/compendium/AgcAndNoiseReduction_Agc'
+import { Blanker } from '@/visuals/general/G4A_Blanker'
+import { Passband } from '@/visuals/general/G4A_Passband'
+
+## What it is
+
+Signals vary enormously in strength, and noise rides along with them. Three receiver features deal with this: **AGC** (automatic gain control) keeps the audio level steady, a **noise blanker** removes short sharp pulses, and **noise reduction** (usually DSP) thins out continuous hiss. Each suits a particular problem and does nothing for the others.
+
+## AGC: gain that follows the signal
+
+Signals at the antenna can differ by 100 dB or more, but your ears want a fairly steady volume. The AGC circuit measures the signal level late in the IF chain, turns it into a control voltage, and uses that to **reduce the gain of earlier stages** when the signal is strong. The S-meter in many receivers reads the same control voltage (see <Ref to="signal-reports" />).
+
+Two times set its behaviour: **attack** (how fast it turns the gain down, a few milliseconds) and **decay** or **release** (how fast the gain comes back after the signal drops).
+
+<AgcAndNoiseReduction_Agc />
+
+| Setting | Decay (typical) | Good for |
+|---|---|---|
+| Fast | a fraction of a second | CW and digital modes: weak signals return quickly between strong ones |
+| Slow | a second or two | SSB and AM: steady volume through pauses in speech, without noise rushing up between words |
+| Off | none | rare: working a very weak signal near a strong one, with RF gain set by hand |
+
+Too fast an AGC on SSB makes background noise surge up in every pause. A strong noise burst or nearby signal also turns the gain down, so a weak signal can seem to "pump".
+
+## Noise blanker: for pulses
+
+Impulse noise (ignition sparks, electric fences, arcing power lines, some switching supplies) arrives as very short, strong pulses. The blanker detects each pulse and **turns the signal path off for its duration**, a matter of microseconds or milliseconds. Because the pulse is so short, you hear almost nothing missing.
+
+<Blanker />
+
+It has to sit **ahead of the narrow filters**: a pulse is only short and sharp while the signal is still wide. It does nothing against continuous noise, and a very strong nearby signal can look like a pulse and get chopped, causing distortion. Turn it off if the audio sounds ragged.
+
+## Noise reduction and notch filters
+
+Continuous noise (hiss, buzz, the "grass" on a band) has no pulses to blank. **DSP noise reduction** works on the sampled audio: voice and CW have structure that repeats from moment to moment, noise does not. The processor emphasises the repeating parts and suppresses the random ones.
+
+It cannot create signal that is not there, and strong settings make speech sound "watery" or digitally garbled. A modest setting can make weak signals easier to copy.
+
+A **notch filter** is the tool for a single steady carrier or whistle: it cuts a very narrow slice out of the passband while leaving the rest.
+
+<Passband />
+
+## Which tool for which noise
+
+| Problem | Try |
+|---|---|
+| Fast clicks and pops | noise blanker |
+| Steady hiss | noise reduction, narrower filter |
+| A single tone or carrier | notch filter |
+| Loud adjacent signal | narrower filter, passband shift |
+| Strong signal fading everything | AGC, or less RF gain |
+| Noise from your own house | find and fix the source (see <Ref to="rfi-and-emi" />) |
+
+<ExamLink groups="T4B G4A E4E" />
+
+<Related to="receiver-basics receiver-performance radio-filters noise-and-snr rfi-and-emi power-line-noise noise-cancelling" />

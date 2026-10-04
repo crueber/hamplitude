@@ -1,0 +1,51 @@
+import { Gauge } from '@/visuals/general/G0B_Gauge'
+import { WireAndCable_VoltageDrop } from '@/visuals/compendium/WireAndCable_VoltageDrop'
+
+## What it is
+
+Wire joins every part of a station, and it is not free. It has resistance, so it drops voltage and turns current into heat; it must be sized for the current it carries; and its insulation, flexibility and weather resistance must suit where it runs. Coax and other feed lines are a separate subject: see <Ref to="coaxial-cable" />.
+
+<Facts items={[
+  ['Size', 'AWG: a lower number is thicker wire'],
+  ['Rule of thumb', 'every 3 AWG steps halves or doubles the cross-section; every 6 doubles the diameter'],
+  ['Matters most', 'DC power leads: they carry the most current'],
+  ['Current ratings', 'depend on insulation and installation: use the reference table'],
+]} />
+
+## Gauge: thick wire, less resistance
+
+<Gauge />
+
+Wire thickness is given as **American Wire Gauge (AWG)**. The scale runs backwards: the bigger the number, the thinner the wire. A thicker conductor has less resistance, so it wastes less power and runs cooler.
+
+| AWG | Diameter | Resistance, copper (per 1000 ft) |
+|---|---|---|
+| 10 | 2.59 mm | about 1.0 Ω |
+| 12 | 2.05 mm | about 1.6 Ω |
+| 14 | 1.63 mm | about 2.5 Ω |
+| 16 | 1.29 mm | about 4.0 Ω |
+| 18 | 1.02 mm | about 6.4 Ω |
+
+Resistance rises with length, so long runs need thicker wire. How much current a given wire may carry safely depends on its insulation, how it is bundled and the surrounding temperature. For those numbers, use the <Ref to="wire-gauge-and-fusing">wire gauge and fusing reference</Ref> and fuse each circuit to protect the thinnest wire in it.
+
+## Voltage drop on a power lead
+
+A transceiver running from 13.8 V is sensitive to this. Transmit current flows through both leads, so the drop is the current times the resistance of the whole round trip. A drop that looks small can still make the radio's output sag or shut it off on voltage peaks.
+
+<WireAndCable_VoltageDrop />
+
+## Choosing wire for the job
+
+- **Stranded or solid.** Stranded wire bends many times without breaking, so use it for anything that moves or is handled, like power cords and antenna wire. Solid wire is stiffer and suits fixed wiring and the legs of components.
+- **Insulation.** Wire meant for outdoors must resist sunlight and weather. Wire that will carry mains voltage must be rated for it.
+- **Antenna wire.** Hard-drawn copper and copper-clad steel resist stretching, while soft stranded copper is easy to handle but can stretch and sag over time.
+- **Multiconductor cable.** Rotator and control cables use several small conductors; pick a gauge that covers the voltage drop over the run, not just the current.
+- **Audio, data and shielded cable.** Shielding keeps RF out of a microphone or audio line. Twisted-pair and shielded cables carry data; a ferrite is often needed on them too.
+
+At RF the current crowds toward the surface of a conductor, which is why flat strap and thick tubing are used where it matters; see <Ref to="skin-effect" />.
+
+<Callout kind="warn" title="Never undersize">A wire thinner than the fuse protecting it can overheat and ignite its insulation before the fuse opens. Pick the wire for the load's current, then fuse to protect that wire.</Callout>
+
+<ExamLink groups="G0B T4A" />
+
+<Related to="wire-gauge-and-fusing coaxial-cable skin-effect switches-relays-fuses electrical-safety shack-power-supplies" />

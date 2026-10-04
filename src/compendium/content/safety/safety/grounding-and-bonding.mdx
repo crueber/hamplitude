@@ -1,0 +1,48 @@
+import { GroundingAndBonding_Purposes } from '@/visuals/compendium/GroundingAndBonding_Purposes'
+import { GroundZ } from '@/visuals/general/G4C_GroundZ'
+import { SinglePoint } from '@/visuals/extra/E4E_SinglePoint'
+
+## What it is
+
+"Ground" is one word for three different jobs: keeping you safe from a fault, giving lightning somewhere to go, and giving RF a reference. A good station serves all three with one **bonded** system, where every ground is joined to the others with a low-impedance connection.
+
+<Facts items={[
+  ['Safety ground', 'the green wire back to the panel; makes the breaker trip'],
+  ['Lightning ground', 'outside the building, to earth'],
+  ['RF ground', 'short and direct, never assumed'],
+  ['Common practice', 'bond everything; single-point entry panel'],
+]} />
+
+## Three jobs
+
+<GroundingAndBonding_Purposes />
+
+**Safety.** If a hot wire touches a metal case, the **equipment-ground conductor** gives the fault current an easy path back to the service panel, so the breaker trips fast and the case does not stay live. It is the wire back to the panel that does this, not a ground rod in the earth. Never remove a ground pin.
+
+**Lightning.** The surge needs a path to earth that avoids you and your equipment. The ground system goes **outside** the building, with an arrester where each feed line enters. A ground rod's main job is letting a strike's charge dissipate into the earth. It cannot make a station lightning-proof; see <Ref to="lightning-safety" />.
+
+**RF.** At radio frequencies a wire has **impedance**, not just resistance. A long ground wire can leave RF voltage on your equipment, and at a quarter wavelength it behaves like an open circuit.
+
+<GroundZ />
+
+## Why bond
+
+Two separate grounds are at different potentials while a surge flows between them. Anything connected to both, such as a coax shield or a power cord, carries that difference through your equipment. **Bonding** ties the grounds together so they rise and fall as one.
+
+So bond the tower, the antenna entry panel, the ground rods and the house electrical ground with heavy conductors. Electrical codes generally call for this, and it is why you should **not build a separate "clean" radio ground** instead. Bonding equipment enclosures to each other with short, heavy conductors also reduces the voltage differences that drive hum and RF problems; see <Ref to="common-mode-and-ground-loops" />.
+
+A **single-point** arrangement is common practice: every feed line and control cable passes a protector on one panel, with a single connection to the ground system.
+
+<SinglePoint />
+
+## In practice
+
+- Keep ground conductors **short, direct and wide**, with gentle bends and no loops. A flat strap carries RF better than a thin wire.
+- Make lightning-ground connections with clamps rated for the job, not by relying on solder: a strike's heat can destroy the joint. Match metals to avoid corrosion, which raises resistance over time.
+- Do not use gas piping, and do not rely on a water pipe, as your station ground.
+- A ground rod is not an antenna counterpoise. A vertical needs radials; see <Ref to="radials-and-ground-planes" />.
+- Ground and bonding rules vary by location and installation. Follow your **local electrical code**, and use a licensed electrician for work on the mains side.
+
+<ExamLink groups="T0A T0B G0B G4C E0A E4E" />
+
+<Related to="lightning-safety lightning-and-grounding electrical-safety tower-safety common-mode-and-ground-loops radials-and-ground-planes" />

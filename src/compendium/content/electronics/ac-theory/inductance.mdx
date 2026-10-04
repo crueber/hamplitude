@@ -1,0 +1,44 @@
+import { Inductance_Coil } from '@/visuals/compendium/Inductance_Coil'
+import { Inductance_BackEmf } from '@/visuals/compendium/Inductance_BackEmf'
+
+## What it is
+
+A coil of wire stores energy in the **magnetic field** around it. Inductance is how strongly the coil resists any change in its current. The coil is the mirror image of a capacitor: where a capacitor resists changes in voltage, an inductor resists changes in current.
+
+<Facts items={[
+  ['Unit', 'henry (H); in practice nH, µH and mH'],
+  ['Voltage', 'v = L × (rate of change of current)'],
+  ['Energy', '½ × L × I²'],
+  ['In series', 'inductances add'],
+]} />
+
+## How it works
+
+Current through a wire makes a magnetic field. Coil the wire and the fields of all the turns add up inside the coil. Now change the current. The field has to change with it, and a changing field induces a voltage in the wire, in a direction that **opposes the change** (Lenz's law). The coil pushes back against a rise and props up a fall.
+
+<Inductance_BackEmf />
+
+That is why a steady current produces no voltage across an ideal coil, and why a very fast change produces a very large one. Switch off current through a relay coil or motor and the collapsing field can spike the voltage to many times the supply. Diodes across such coils absorb that kick.
+
+Energy is stored in the field while the current flows: ½ × L × I². It cannot vanish instantly, which is what makes the current resist sudden changes.
+
+## What sets the inductance
+
+<Inductance_Coil />
+
+Inductance grows with the **square of the number of turns**. More turns make more field for each amp, and every turn also links more of the field made by all the others. Inductance also rises with a fatter coil (more area), and falls as the coil is stretched out (the field spreads over a longer path).
+
+A **magnetic core** makes a large difference. Iron or ferrite concentrates the field, multiplying the inductance by the core's permeability, which can be many times that of air. The cost: cores saturate and lose energy at RF. See <Ref to="inductors-and-ferrites" />.
+
+For a single-layer air-core coil, Wheeler's formula (above) is good to within about 1% when the coil is at least about as long as its radius. For example, 20 turns on a 1-inch-diameter form 1 inch long gives about 6.9 µH.
+
+## In practice
+
+- **Series** inductances add, and **parallel** combine like resistors: the reverse of capacitors.
+- Every length of wire is an inductor: roughly 1 nH per millimetre of lead. At VHF and above that is enough to matter, and it is why component leads are kept short.
+- Two coils placed close together share flux, so a change in one induces a voltage in the other. That is mutual inductance, and it is the basis of the <Ref to="transformers">transformer</Ref>. Unwanted coupling between coils in a circuit is a classic cause of oscillation and interference.
+- Coil resistance adds loss; the ratio of reactance to that resistance is the coil's Q, see <Ref to="resonance-and-q" />.
+
+<ExamLink groups="T5C T6A G5A G5C E6D" />
+
+<Related to="capacitance reactance-and-impedance transformers inductors-and-ferrites resonance-and-q time-constants" />

@@ -5,6 +5,8 @@ import { POOLS, allGroups, getGroup, isLicense } from '@/data'
 import { getGroupContent, hasLesson, loadLesson } from '@/content'
 import { mdxComponents } from '@/mdx/components'
 import { update } from '@/lib/store'
+import { examLinks } from '@/compendium/loader'
+import { articleHref, getArticle } from '@/compendium/taxonomy'
 
 const lazyCache = new Map<string, ReturnType<typeof lazy>>()
 function lessonComponent(id: string) {
@@ -56,6 +58,7 @@ export function LessonPage() {
   const prev = groups[idx - 1]
   const next = groups[idx + 1]
   const title = content?.title ?? info.group.topics.split(';')[0]
+  const deeper = (examLinks[group!] ?? []).map((p) => getArticle(p)).filter((a) => !!a)
 
   return (
     <div data-license={license}>
@@ -88,6 +91,14 @@ export function LessonPage() {
             </div>
           )}
         </div>
+
+        {deeper.length > 0 && (
+          <section className="deeper" data-license="compendium">
+            <h2>Go deeper</h2>
+            <p>Compendium articles on the ideas in this lesson, beyond what the exam asks.</p>
+            <ul>{deeper.map((a) => <li key={a!.path}><Link to={articleHref(a!.path)}>{a!.title}</Link></li>)}</ul>
+          </section>
+        )}
 
         <div className="lesson-foot" ref={footRef}>
           <h2>Check what stuck</h2>

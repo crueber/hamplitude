@@ -1,0 +1,57 @@
+import { Superheterodyne_Chain } from '@/visuals/compendium/Superheterodyne_Chain'
+import { G8B_Mixer } from '@/visuals/general/G8B_Mixer'
+import { Image } from '@/visuals/extra/E4C_Image'
+
+## What it is
+
+The superheterodyne ("superhet") receiver converts every signal you tune to onto **one fixed intermediate frequency (IF)**. Amplifiers and filters built for that single frequency can be excellent, and they never need retuning. Nearly every analog and many digital receivers, from broadcast radios to HF rigs, work this way.
+
+<Facts items={[
+  ['Key relation', 'IF = |LO − RF|'],
+  ['Common IFs (typical)', '455 kHz, 9 MHz, 10.7 MHz, tens of MHz in modern HF rigs'],
+  ['Tuning knob moves', 'the local oscillator (LO), not the filters'],
+  ['Weak point', 'the image frequency, 2 × IF from the signal'],
+]} />
+
+## Tuning by moving the LO
+
+<Superheterodyne_Chain />
+
+The mixer multiplies the incoming signal by the local oscillator and produces the **sum and difference** of their frequencies (see <Ref to="mixers" />). The IF filter keeps only the difference. To tune a different station you change the LO so that the *new* signal also lands on 9 MHz:
+
+| Dial frequency | LO (IF + RF) | Difference |
+|---|---|---|
+| 7.000 MHz | 16.000 MHz | 9.000 MHz |
+| 14.200 MHz | 23.200 MHz | 9.000 MHz |
+| 21.200 MHz | 30.200 MHz | 9.000 MHz |
+
+<G8B_Mixer />
+
+Moving the LO slides the whole band past a fixed window. This is why the selecting filter can be a fixed, narrow, high-quality one. The LO itself is usually a <Ref to="pll-and-synthesizers">synthesizer</Ref>, so tuning is accurate and stable.
+
+## The image problem
+
+The mixer cannot tell which side of the LO a signal is on. A station at 14.200 MHz gives 23.200 − 14.200 = 9 MHz. But a station at 32.200 MHz gives 32.200 − 23.200 = 9 MHz as well. That unwanted second frequency, **2 × IF above the signal**, is the **image**. Once it is through the mixer it cannot be separated from the wanted signal, so it must be stopped *before* the mixer, by the RF band-pass filter.
+
+<Image />
+
+That is where the IF choice matters:
+
+- A **low IF** (say 455 kHz) puts the image only 910 kHz away (at 15.110 MHz for a 14.200 MHz signal), too close for a front-end filter to reject.
+- A **high IF** puts the image far away, so simple front-end filters stop it. But narrow, steep filters are hard to make at high frequencies.
+
+## Double conversion
+
+The usual answer is two conversions. A first, **high IF** pushes the image far out of the way and lets a roofing filter remove strong neighbours. A second mixer then brings the signal down to a **low IF** (or to audio in DSP), where narrow filters are easy and cheap. Many modern HF radios go further and use a very high first IF, well above the top of HF, so all the images fall outside the bands they cover.
+
+<Callout kind="note" title="Sidebands can flip">When the LO is above the signal, the mixer reverses the spectrum: the upper sideband becomes a lower one. The radio compensates by choosing which side of the IF filter and BFO to use, so you never notice.</Callout>
+
+## Pitfalls
+
+- **Image and other spurious responses** show up as signals that appear on the wrong dial frequency.
+- **Birdies:** harmonics and mixing products of the radio's own oscillators land on certain frequencies as steady whistles or carriers with no antenna attached.
+- Each conversion adds noise and distortion, so a good design keeps the number of stages small.
+
+<ExamLink groups="G7C G8B E4C" />
+
+<Related to="receiver-basics direct-conversion-and-sdr radio-filters receiver-performance mixers oscillators pll-and-synthesizers" />

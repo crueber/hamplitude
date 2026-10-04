@@ -1,0 +1,47 @@
+import { BalunsAndUnuns_Types } from '@/visuals/compendium/BalunsAndUnuns_Types'
+import { G5C_ImpedanceRatio } from '@/visuals/general/G5C_ImpedanceRatio'
+
+## What it is
+
+A **balun** (balanced-to-unbalanced) connects a balanced antenna or line to unbalanced coax. An **unun** (unbalanced-to-unbalanced) connects two unbalanced sides. Either is usually a transformer wound on a ferrite or powdered-iron core, and either can also change impedance. Which one you want depends on the antenna.
+
+<Facts items={[
+  ['Balanced', 'two conductors carrying equal and opposite currents (a dipole, ladder line)'],
+  ['Unbalanced', 'one conductor and a ground or shield (coax, a vertical, an end-fed wire)'],
+  ['Common ratios', '1:1, 4:1 (balun); 9:1, 49:1 (unun)'],
+  ['Impedance ratio', 'turns ratio squared'],
+]} />
+
+## How it works
+
+<BalunsAndUnuns_Types />
+
+**Why balance matters.** A dipole is two equal halves, so each half should carry the same current. Coax is unbalanced: its shield and its centre conductor do different jobs. Connect coax straight to a dipole and the shield side of the antenna has another path to follow, the outside of the shield itself, so some current flows on the cable instead of the antenna. That is <Ref to="common-mode-chokes">common-mode current</Ref>. A 1:1 balun forces the currents to be equal and opposite, which is the same job as a choke at the feed point.
+
+**Why impedance matters.** A transformer scales impedance by the square of its turns ratio, so a 2:1 turns ratio gives 4:1 and a 7:1 ratio gives 49:1.
+
+<G5C_ImpedanceRatio />
+
+A half-wave wire fed at one end has a very high impedance, a few thousand ohms, which a 49:1 unun turns into something near 50 Ω (50 × 49 = 2450 Ω). A 9:1 unun suits loads of a few hundred ohms (9 × 50 = 450 Ω) and is common with random wires. A 4:1 balun suits a balanced load of roughly 200 to 300 Ω. These ratios are rules of thumb; real antennas vary with height, length and band.
+
+## Types and uses
+
+| Device | Changes Z? | Balanced and unbalanced? | Typical use |
+|---|---|---|---|
+| 1:1 balun / current balun | no | yes | dipoles, Yagis, loops fed with coax |
+| 4:1 balun | yes | yes | folded dipoles (about 300 Ω), ladder line to a coax output |
+| 9:1 unun | yes | no (both unbalanced) | random wires and long wires |
+| 49:1 unun | yes | no | end-fed half-wave wires |
+| 1:1 unun / choke | no | no | keeps common-mode current off a vertical's feed line |
+
+## In practice
+
+- Put the balun at the **feed point** for a dipole. A long coax with no balun lets current flow on the cable.
+- Mind the **power rating**. Transformers and chokes made of ferrite heat up. Under high power, with a large mismatch ratio, or at a frequency where the core is lossy, they run hot and can fail; use parts rated for the power and frequency.
+- Match the ratio to the **real load**, not just the nominal one. If the antenna isn't close to the assumed impedance, the SWR won't be good and the balun runs hotter.
+- A ladder-line tuner's balun is often in the tuner, not the line. See <Ref to="antenna-tuners" /> and <Ref to="open-wire-line" />.
+- No balun is a bad idea on a dipole with a long run of coax: the cable can radiate, pick up noise and cause interference in the shack.
+
+<ExamLink groups="G5C G6B E6D" />
+
+<Related to="common-mode-chokes open-wire-line antenna-tuners half-wave-dipole end-fed-half-wave coaxial-cable" />

@@ -1,0 +1,40 @@
+import { MoxonAndHexBeams_Shapes } from '@/visuals/compendium/MoxonAndHexBeams_Shapes'
+
+## What it is
+
+Both are compact two-element wire beams that bend their elements instead of keeping them straight. The **Moxon rectangle** is a single-band beam shaped like a rectangle with the tips of the two elements bent toward each other. The **hex beam** nests wire elements for several bands on one frame of spreaders. Each takes a lighter, smaller package than a full-size <Ref to="yagi-uda">Yagi</Ref> and keeps a clean pattern.
+
+<Facts items={[
+  ['Moxon width', 'roughly a third of a wavelength, about 70% of a full two-element Yagi'],
+  ['Moxon front-to-back', 'typically 20 dB or more, often better than a plain Yagi'],
+  ['Moxon feed point', 'close to 50 Ω, usually fed directly'],
+  ['Hex beam bands', 'several HF bands on one frame, commonly within 20 m through 6 m'],
+]} />
+
+## Bending elements
+
+<MoxonAndHexBeams_Shapes />
+
+A two-element Yagi gets its pattern from a reflector spaced well behind the driven element, and the elements are about half a wavelength wide. Bending the ends of the Moxon's elements toward each other does two things: it shortens the span, and it couples the tips strongly across a small gap. The currents then settle into the phase that cancels radiation to the rear over a wide range of frequencies. You get most of a two-element Yagi's forward gain, roughly 5 to 6 dBi in free space, and a deep rear null.
+
+You cannot guess Moxon dimensions. Width, tail lengths and gap are a set of ratios found by <Ref to="antenna-modeling">antenna modeling</Ref>, so build from published or modeled tables for your wire size and band.
+
+## The hex beam
+
+A hex beam holds two bent wire elements per band on six fiberglass spreaders radiating from a central hub. The elements for different bands are nested on the same spreaders and share one feed line, so one compact antenna covers many bands. Gain is in the territory of a two-element Yagi, often a little less, and the pattern stays usable across each band. Shapes and claims vary between designs, so compare modeled or measured data rather than advertising.
+
+## Compared
+
+| | Full-size 2-element Yagi | Moxon | Hex beam |
+|---|---|---|---|
+| Size | widest | about 70% as wide | compact, round footprint |
+| Gain | the most of the three | a little less | similar or a little less |
+| Front-to-back | moderate | high | moderate to good |
+| Bands | one (or traps) | one | several |
+| Weight | boom and aluminum tubing | light wire frame | light, wire on spreaders |
+
+These are typical trends, not guarantees. Wire beams are lighter and need smaller rotators, but they have more parts that can sag, tangle or fail in ice and heavy wind than a rigid aluminum Yagi.
+
+<Callout kind="note">Wire elements lose a little to resistance, and bent elements can be detuned by nearby metal. A wire beam installed close to a tower or gutters will not match its model.</Callout>
+
+<Related to="yagi-uda quad-and-delta-loop-beams log-periodic antenna-modeling rotators radiation-patterns" />

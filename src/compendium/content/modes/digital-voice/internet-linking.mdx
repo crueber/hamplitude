@@ -1,0 +1,44 @@
+import { NetLink } from '@/visuals/technician/T8C_NetLink'
+import { InternetLinking_Topologies } from '@/visuals/compendium/InternetLinking_Topologies'
+
+## What it is
+
+Internet linking uses **voice over IP (VoIP)** to connect amateur stations that are far apart. A **gateway** (a node with a radio on one side and an internet connection on the other) lets a signal heard on one repeater be played out of another on the far side of the world, or from a phone with no radio at all.
+
+<NetLink />
+
+Three long-standing systems do this for analog voice. They differ in who can join, and how you control them.
+
+## Two shapes
+
+<InternetLinking_Topologies />
+
+A link can join two nodes, one conversation at a time, or many nodes at a **hub**, where everyone hears everyone. All three systems can do both in some form; each leans one way.
+
+## EchoLink, IRLP and AllStar
+
+| | EchoLink | IRLP | AllStar |
+|---|---|---|---|
+| Need a radio? | No: PC or phone software works | Yes: a radio node | Yes for a radio node; software clients exist |
+| Control | Software menu; DTMF from a radio | DTMF tones from the radio | DTMF commands and scripts |
+| A node is | Software, with or without a radio interface | A dedicated computer and radio | Open-source software on a small computer and radio |
+| Leans toward | Individual users reaching nodes and conferences | Node-to-node links and shared reflectors | Networks of many linked nodes |
+
+- **EchoLink** is a free software system you run on a computer or phone. You register your call sign and provide proof of license; then you can connect to a gateway repeater without a radio.
+- **IRLP** (Internet Radio Linking Project) connects radio systems, such as repeaters, over the internet. Over the air, you dial a node using **DTMF** tones.
+- **AllStar** is built on Asterisk, open-source telephone-exchange software, so nodes can be linked together in flexible ways. Many hobbyists run one on a small computer.
+
+Digital voice systems have their own linking; see <Ref to="d-star" />, <Ref to="dmr" /> and <Ref to="system-fusion" />, and <Ref to="hotspots-and-gateways" />.
+
+## Rules and etiquette
+
+<Callout kind="warn" title="Linking creates no new freedoms">The rules still apply to the station that originates each transmission. What is said must be legal for that station, wherever it is heard, and the control operator of each node stays responsible for what that node transmits.</Callout>
+
+- Identify with your own call sign, as you would on the air.
+- Remember the audience. A linked repeater may be heard on many others.
+- Listen for a link in progress before keying up, and use the node's published procedures.
+- Disconnect when you finish, so the repeater returns to local use.
+
+<ExamLink groups="T8C T4A" />
+
+<Related to="repeaters hotspots-and-gateways d-star dmr system-fusion simplex" />

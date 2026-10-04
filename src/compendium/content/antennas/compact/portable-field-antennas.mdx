@@ -1,0 +1,41 @@
+import { PortableFieldAntennas_LinkedDipole } from '@/visuals/compendium/PortableFieldAntennas_LinkedDipole'
+
+## What it is
+
+An antenna you can carry in a pack, put up in minutes with one support and take down again without leaving a trace. It is the kit behind hilltop, park and campsite operating, and it is usually used at low power, so efficiency matters: every dB you waste is a bigger share of a small signal.
+
+## What a good one looks like
+
+- **Light and compact.** Wire, a telescoping fiberglass pole, a short length of light coax and a tuner or matching box weigh little.
+- **Quick and forgiving.** It works the first time and tolerates trees, rocks and the lie of the land.
+- **Efficient for its size.** Full-size wire beats a small loaded antenna if you have the room.
+- **Simple supports.** One pole, one tree branch or one throw line.
+
+## Common choices
+
+| Antenna | How it works | Trade-off |
+|---|---|---|
+| Linked or inverted-V dipole | A <Ref to="half-wave-dipole">dipole</Ref> on a pole, with links to change band | Efficient, needs room for two legs |
+| <Ref to="end-fed-half-wave">End-fed half-wave</Ref> | A wire fed at one end through a matching transformer, one band at a time or on harmonics | One support, but needs a choke or counterpoise |
+| Vertical with radials | A telescopic whip over a few wires | Quick, low profile, but ground loss; see <Ref to="radials-and-ground-planes" /> |
+| <Ref to="long-and-random-wires">Random wire</Ref> and tuner | Any length of wire against a counterpoise | Flexible; the tuner hides losses |
+| <Ref to="magnetic-loop">Small loop</Ref> | A tuned loop on a tripod | Compact, but narrow and inefficient on low bands |
+| Roll-up J-pole | Ladder-line version for VHF and UHF | Cheap, light, suits handhelds; see <Ref to="j-pole-and-slim-jim" /> |
+
+## A linked dipole
+
+<PortableFieldAntennas_LinkedDipole />
+
+A linked dipole is a family of dipoles in one wire. Each leg is cut for the highest band; at one or more points a link (a plug, a clip or a connector) joins the next stretch of wire. Open the link and the antenna is the short band's dipole; close it and the extra wire adds the length for the lower band. Each leg is 234 ÷ f(MHz) feet, so 16.5 ft on 20 m and 32.7 ft on 40 m: cut a little long, then trim. Because it is just wire and connectors, it has no trap or coil losses.
+
+## In practice
+
+- **Height helps.** A dipole just above the ground sends most energy upward, good for nearby contacts. Raise the middle as high as the pole allows and let the ends slope down, which makes an <Ref to="inverted-v" />.
+- **Keep RF off the coax.** Use a <Ref to="common-mode-chokes">common-mode choke</Ref>, especially with end-fed and vertical antennas.
+- **Carry spares.** A tape measure, a small analyzer or SWR meter and spare connectors are worth the weight.
+- **Look up before you throw.** Poles, wire and throw lines can reach overhead power lines. Carbon fiber poles conduct, and even fiberglass can when wet or dirty. Keep the whole antenna, pole and line well clear of any overhead wire, farther than the pole is tall.
+- **Weather.** Do not operate or stand next to a tall pole or tree in a thunderstorm. Take the antenna down at the first sign of lightning; see <Ref to="lightning-safety" />.
+
+See <Ref to="parks-on-the-air" /> and <Ref to="summits-on-the-air" /> for the activities that drive these designs, and <Ref to="portable-power" /> for the rest of the kit.
+
+<Related to="half-wave-dipole end-fed-half-wave magnetic-loop parks-on-the-air summits-on-the-air portable-power qrp-radios" />

@@ -1,0 +1,50 @@
+import { SeriesParallel } from '@/visuals/shared/SeriesParallel'
+import { G5C_Combiner } from '@/visuals/general/G5C_Combiner'
+import { SeriesAndParallel_Divider } from '@/visuals/compendium/SeriesAndParallel_Divider'
+
+## Two ways to connect parts
+
+Parts joined end to end, so one path runs through all of them, are in **series**. Parts joined across the same two points, so the current has a choice of paths, are in **parallel**. Every larger circuit is built from these two patterns.
+
+<SeriesParallel />
+
+| | Series | Parallel |
+|---|---|---|
+| Current | the **same** in every part | **splits**; the branches add up to the total |
+| Voltage | **splits**; the drops add up to the supply | the **same** across every branch |
+| Total resistance | R₁ + R₂ + … (always larger) | smaller than the smallest branch |
+
+The reasons follow from conservation, covered in <Ref to="kirchhoff-laws" />: in series there is nowhere for current to go but through the next part, and in parallel each branch is connected straight to the supply.
+
+## Combining resistors
+
+Series resistances simply add: 100 Ω + 220 Ω = 320 Ω. Parallel ones are easier to understand as extra paths. Each added branch gives current another way through, so the total resistance falls.
+
+<G5C_Combiner kinds={['R']} />
+
+For two branches, **R = (R₁ × R₂) ÷ (R₁ + R₂)**: 47 Ω and 100 Ω in parallel give 4700 ÷ 147 = **32 Ω**. Two equal resistors give half of one: 100 Ω ∥ 100 Ω = 50 Ω. For more branches, add the reciprocals: 1/R = 1/R₁ + 1/R₂ + …; 10, 20 and 50 Ω give 1/10 + 1/20 + 1/50 = 0.17, so 5.88 Ω. A quick check: the answer must be smaller than your smallest branch.
+
+Mixed circuits are solved by reducing: replace each parallel group by its equivalent, then add what is in series. A 100 Ω in series with two 100 Ω in parallel is 100 + 50 = 150 Ω.
+
+## The voltage divider
+
+<SeriesAndParallel_Divider />
+
+Two resistors in series share the supply in proportion to their size. The current is E ÷ (R₁ + R₂), and each resistor drops its own R × I, so **V₂ = E × R₂ ÷ (R₁ + R₂)**. With 12 V across 30 Ω and 10 Ω the current is 0.3 A and the drops are 9 V and 3 V.
+
+A divider gives a lower voltage, but only if the load takes little current. Connect a load across R₂ and it is in parallel with it, lowering R₂ and the output. Two 10 kΩ resistors from 12 V give 6 V; a 10 kΩ load on the lower one makes it 5 kΩ and the output falls to 4 V. The same effect makes a low-resistance voltmeter read low.
+
+## The current divider
+
+In parallel, current favours the easier path: branch currents are in inverse proportion to resistance. A total of 3 A into 10 Ω and 20 Ω parallel branches splits 2 A and 1 A, because the 10 Ω branch is half the resistance and takes twice the current.
+
+## Where you meet them
+
+- Household outlets, and the accessories on a 13.8 V bus, are in **parallel**, so each gets the full voltage and one failing leaves the rest running.
+- A fuse goes in **series** with what it protects, so all the current must pass through it. See <Ref to="switches-relays-fuses" />.
+- Cells in **series** add voltage (eight 1.5 V cells make 12 V); cells in **parallel** add capacity at the same voltage. See <Ref to="batteries" />.
+- Capacitors and inductors combine differently from resistors; see <Ref to="capacitance" />.
+
+<ExamLink groups="T5D G5C G5B" />
+
+<Related to="ohms-law kirchhoff-laws resistors capacitance multimeters voltage-current-resistance" />

@@ -1,0 +1,46 @@
+import { GoKits_Budget } from '@/visuals/compendium/GoKits_Budget'
+
+## What it is
+
+A **go kit** (or go bag) is a ready-packed set of equipment that lets you operate on short notice, away from home, with no mains power. The idea is that you grab it and leave without thinking. The arithmetic of power is the part most people get wrong, so most of this article is about that.
+
+## What to pack
+
+Build the kit in layers and **test the whole thing together** before you need it.
+
+| Group | Examples | Why |
+|---|---|---|
+| Radio | handheld with spare battery, or a mobile/HF radio | the core of the kit |
+| Antenna | a better antenna than the rubber duck, plus a way to hang it | antenna and feed-line problems are common |
+| Feed line and connectors | coax, adapters, a spare of each connector you use | the wrong plug stops everything |
+| Power | battery, charger, fused leads, spare cells | see the budget below |
+| Paperwork | frequency and contact lists, forms, maps, pencils, notebook | paper needs no battery |
+| Light and tools | headlamp, basic tools, tape, cable ties | work in the dark, make repairs |
+| Personal | water, food, medicine, weather clothing | you cannot operate if you are unwell |
+| Identification | ID, and anything your group asks you to carry | served agencies decide who gets in |
+
+Keep it **modular**: a small handheld pouch for the first hour, and a larger box for a long deployment.
+
+## The power budget
+
+Power is a budget of **current over time**. Battery capacity is in amp-hours (Ah); average current in amps. **Hours = usable Ah ÷ average amps**. A transmitter draws far more than a receiver, so the average depends on how much you transmit.
+
+<GoKits_Budget />
+
+Check the worked example in the diagram: receive 1.5 A for 80% of the time plus transmit 20 A for 20% gives 1.5 × 0.8 + 20 × 0.2 = **5.2 A average**. A 35 Ah battery with 80% usable holds 28 Ah, and 28 ÷ 5.2 is about **5.4 hours**. These currents are illustrative of a typical 100 W HF radio; look up your own radio's figures, and remember a 5 or 10 W radio will draw much less.
+
+- **Usable fraction** matters. Many batteries should not be drained fully; a lead-acid battery lasts longer if you stop well short of empty. Chemistries differ, so see <Ref to="batteries" />.
+- **Voltage sags** under load, and radios stop working below a minimum voltage even when the battery has charge left.
+- **Solar or a generator** extend the budget. Solar needs a charge controller; see <Ref to="portable-power" />.
+
+<Callout kind="warn" title="Safe power">Fuse every battery lead close to the battery and use wire of adequate gauge; see <Ref to="wire-gauge-and-fusing" /> and <Ref to="battery-and-fire-safety" />. Never run a generator indoors, in a garage, in a tent or near an open window: its exhaust contains carbon monoxide, which is invisible and deadly.</Callout>
+
+## Practice before it matters
+
+- Do a full power-up of the kit at home and at a park, with everything unplugged from the wall.
+- Rotate batteries and check chargers on a schedule, and refresh the paperwork.
+- Take it to <Ref to="field-day" /> or an <Ref to="public-service-events">event</Ref>: the best test of a kit is a real exercise.
+
+<ExamLink groups="G4E E7D" />
+
+<Related to="portable-power batteries shack-power-supplies battery-and-fire-safety winlink-emergency emcomm-principles" />

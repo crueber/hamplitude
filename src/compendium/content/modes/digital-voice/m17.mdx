@@ -1,0 +1,44 @@
+import { M17_Stream } from '@/visuals/compendium/M17_Stream'
+import { DStar_VocoderChain } from '@/visuals/compendium/DStar_VocoderChain'
+
+## What it is
+
+M17 is an **open-source** digital voice protocol designed by and for amateurs. Its specification is public and its voice coding uses Codec2, an open vocoder, so anyone can build compatible software, radios or hotspots without licensing a proprietary chip.
+
+<Facts items={[
+  ['Voice coding', 'Codec2, an open-source vocoder'],
+  ['Modulation', 'four-level FSK'],
+  ['Specification', 'public, free to implement'],
+  ['Addressing', 'call signs carried in the stream'],
+]} />
+
+## The open difference
+
+Most digital voice systems rely on a proprietary vocoder, usually implemented in a dedicated chip. That is practical, but it means the vocoder cannot be freely modified or run purely in software. Codec2 is published, so M17 can be implemented in ordinary code.
+
+| | Proprietary vocoder | Codec2 |
+|---|---|---|
+| Source | Closed; usually a chip | Open source |
+| Added to a project by | Licensing | Compiling the library |
+| Home-built radios | Harder | Easier |
+
+The overall chain is the same as in other digital voice modes:
+
+<DStar_VocoderChain />
+
+## How a transmission is organised
+
+M17 sends a **link setup** at the start, naming source and destination, and then a stream of short frames. Each frame carries a piece of that link setup alongside the voice, so a receiver tuning in mid-conversation can learn who is talking within a few frames. See also <Ref to="error-correction" />.
+
+<M17_Stream />
+
+Call signs are part of the digital stream itself. Networks can use them to route calls, and like D-STAR, M17 uses **reflectors** as shared rooms joined over the internet.
+
+## In practice
+
+- M17 is a younger, community-driven project, so the range of radios and hotspots depends on what builders have made. Check what hardware and software currently support it.
+- In the US, Part 97 forbids encoding transmissions to hide their meaning, so keep M17 traffic in the clear.
+- Radios from other digital voice systems cannot decode it, and it cannot decode them.
+- Many hobbyists enjoy it because the whole system, from codec to hotspot, can be studied and modified.
+
+<Related to="d-star dmr system-fusion internet-linking digital-modulation error-correction" />

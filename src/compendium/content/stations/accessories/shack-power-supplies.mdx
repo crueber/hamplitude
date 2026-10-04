@@ -1,0 +1,63 @@
+import { ShackPowerSupplies_WireDrop } from '@/visuals/compendium/ShackPowerSupplies_WireDrop'
+import { SwitchmodeSize } from '@/visuals/general/G7A_SwitchmodeSize'
+import { PowerSupplyHazards } from '@/visuals/technician/T0A_PowerSupplyHazards'
+
+## What it is
+
+Most transceivers run on **13.8 V DC**, the voltage of a car's charging system. A shack power supply turns household AC into steady 13.8 V DC and must deliver the radio's full **transmit current**, which is many times what it draws when receiving.
+
+<Facts items={[
+  ['Nominal voltage', '13.8 V DC; radios commonly tolerate roughly ±15% (check the manual)'],
+  ['50 W FM radio', 'about 12 A on transmit'],
+  ['100 W HF radio', 'typically 20 to 22 A on transmit (typical, check the manual)'],
+]} />
+
+## Sizing for current
+
+The current is set by the radio's power-amplifier efficiency. A linear amplifier stage typically converts only about 40 to 50% of its DC input into RF. So 100 W of output needs roughly 200 to 250 W of DC, which is 14.5 to 18 A at 13.8 V, and the rest of the radio adds to that. Manufacturers publish the figure; use theirs.
+
+| Radio output | Typical transmit current (illustrative) |
+|---|---|
+| 5 W QRP HF rig | about 1 to 2 A |
+| 50 W FM mobile | about 12 A |
+| 100 W HF | about 20 to 22 A |
+| 200 W HF | roughly 30 to 40 A |
+
+Choose a supply whose **continuous** rating meets or exceeds the radio's maximum transmit current. A supply with some margin runs cooler and keeps its voltage steadier. Digital modes and FM send a continuous carrier, so they are a heavier load than SSB speech.
+
+## Linear or switching
+
+<SwitchmodeSize />
+
+A **linear** supply uses a mains transformer: it is heavy and makes little radio noise, but wastes energy as heat. A **switching** supply chops the power at a high frequency: it is light, small and efficient, but a poorly filtered one can leak RF noise that you hear on receive. Either works. Listen for noise on the bands you use, and move the supply and its cables away from the receive antenna and feed line. For more on how these work see <Ref to="power-supplies" />.
+
+## Voltage drop in the cable
+
+Wire has resistance, and at 20 A even a little matters: the volts lost in the wire are volts the radio does not get, and that power turns to heat in the cable.
+
+<ShackPowerSupplies_WireDrop />
+
+Both wires carry the current, so the length counted is twice the distance. A common design goal is a drop of no more than about 3%, which is 0.4 V at 13.8 V.
+
+| Wire | Drop at 20 A, 6 ft each way |
+|---|---|
+| 14 AWG | 0.61 V |
+| 12 AWG | 0.38 V |
+| 10 AWG | 0.24 V |
+| 8 AWG | 0.15 V |
+
+Thicker wire has a lower AWG number. Keep runs short, and use the gauge in the radio's manual as a minimum. See <Ref to="wire-gauge-and-fusing" /> for ampacity.
+
+## Protection and safety
+
+<PowerSupplyHazards />
+
+- **Fuse the positive lead** and, with a battery, put the fuse **within inches of the battery terminal**. A short between the battery and a distant fuse is protected by nothing.
+- Do not open a power supply. It holds mains voltage, and the capacitors can stay charged after it is unplugged.
+- Good supplies include **over-voltage protection**: a failed regulator can otherwise send the full unregulated voltage into the radio.
+- Plug into a grounded outlet and do not block the vents or fan.
+- Use connectors rated for the current and polarised so they cannot be reversed. Reversed polarity can destroy a radio.
+
+<ExamLink groups="T4A T0A G7A E7D" />
+
+<Related to="power-supplies batteries wire-gauge-and-fusing portable-power linear-amplifiers electrical-safety" />

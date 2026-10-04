@@ -1,0 +1,54 @@
+import { Gauge } from '@/visuals/general/G0B_Gauge'
+import { WireGaugeAndFusing_Drop } from '@/visuals/compendium/WireGaugeAndFusing_Drop'
+
+## Gauge numbers run backwards
+
+Wire thickness in North America is given as an **AWG** number (American Wire Gauge), and **a smaller number means thicker wire**. Thicker wire has less resistance, carries more current and heats less. Two regularities make it easy to remember: every **3 gauges** doubles or halves the cross-section area, and every **6 gauges** doubles or halves the diameter.
+
+<Facts items={[
+  ['Diameter', 'd(mm) = 0.127 × 92^((36 − AWG) ÷ 39)'],
+  ['Every 3 gauges', 'area (and resistance) changes by 2×'],
+  ['Every 10 gauges', 'area changes by about 10×'],
+  ['The fuse protects', 'the wire, not the radio'],
+]} />
+
+## The numbers
+
+| AWG | Diameter | Area | Resistance (copper) | Building-wire rating |
+|---|---|---|---|---|
+| 22 | 0.64 mm | 0.33 mm² | 16.1 Ω per 1000 ft | signal wiring only |
+| 20 | 0.81 mm | 0.52 mm² | 10.2 Ω per 1000 ft | signal wiring only |
+| 18 | 1.02 mm | 0.82 mm² | 6.4 Ω per 1000 ft | light loads only |
+| 16 | 1.29 mm | 1.31 mm² | 4.0 Ω per 1000 ft | light loads only |
+| 14 | 1.63 mm | 2.08 mm² | 2.5 Ω per 1000 ft | 15 A |
+| 12 | 2.05 mm | 3.31 mm² | 1.6 Ω per 1000 ft | 20 A |
+| 10 | 2.59 mm | 5.26 mm² | 1.0 Ω per 1000 ft | 30 A |
+| 8 | 3.26 mm | 8.37 mm² | 0.63 Ω per 1000 ft | 40 A |
+| 6 | 4.12 mm | 13.3 mm² | 0.40 Ω per 1000 ft | 55 A |
+
+Diameters and resistances come from the formula above, for solid copper at 20 °C. The ratings are the **conservative** figures used for building (mains) wiring. A rating also depends on insulation, bundling and heat, so it is a ceiling for planning rather than a promise. Stranded wire is slightly less conductive than solid for the same gauge.
+
+## Fuses protect the wire
+
+<Gauge />
+
+A fuse or breaker exists to open the circuit before the **wire** gets hot enough to melt its insulation or start a fire. So size it to the thinnest wire in the circuit: a 20 A breaker needs at least 12 AWG, a 15 A breaker at least 14 AWG. A bigger fuse than the wire rates for lets the wire overheat first.
+
+- **Put the fuse at the source** (for a car battery, close to the battery, in the positive lead) so the whole wire is protected, including a short anywhere along it.
+- **On AC, fuse only the hot wire.** Never fuse neutral or the safety ground. See <Ref to="electrical-safety" />.
+- **The fuse must be above normal load and below the wire's rating.** Too small and it blows in use; too large and it does not protect.
+- **Radio fuses are extra protection** for the radio. They do not replace the fuse at the battery.
+
+## Voltage drop matters for radios
+
+A 100 W HF radio on 13.8 V can draw 20 A or more when transmitting. Even wire that is rated for the current wastes voltage, and a drop at the radio makes it distort or shut down. Voltage is lost on the way out **and** back, so the resistance counts twice the length.
+
+<WireGaugeAndFusing_Drop />
+
+At 20 A over a 10 ft run (20 ft of wire in the loop): 14 AWG loses about 1.0 V (7 %), 12 AWG 0.64 V (4.6 %), and 10 AWG 0.40 V (2.9 %). (14 AWG is already past its rating at 20 A.) Use thicker wire, or shorten the run, until the drop is small.
+
+<Callout kind="warn" title="Do not rely on thin wire and a big fuse">A short in thin wire can draw more than its rating without ever blowing an oversized fuse. If you are unsure, choose the thicker wire and the smaller fuse.</Callout>
+
+<ExamLink groups="T0A G0B" />
+
+<Related to="wire-and-cable switches-relays-fuses electrical-safety shack-power-supplies power-and-energy ohms-law" />

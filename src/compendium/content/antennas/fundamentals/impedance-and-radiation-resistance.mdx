@@ -1,0 +1,50 @@
+import { G9B_FeedPoint } from '@/visuals/general/G9B_FeedPoint'
+import { ImpedanceAndRadiationResistance_Sweep } from '@/visuals/compendium/ImpedanceAndRadiationResistance_Sweep'
+
+## What it is
+
+Feed-point impedance is the voltage-to-current ratio at the spot where the feed line meets the antenna. It is a complex quantity, **R + jX**: the resistance R is the part that takes power, and the reactance X is energy sloshing back and forth. Matching this to the feed line is what keeps <Ref to="swr-and-reflections">SWR</Ref> low.
+
+<Facts items={[
+  ['Half-wave dipole', 'about 73 Ω in free space; over real ground it varies with height, often roughly 50 to 100 Ω'],
+  ['Quarter-wave vertical', 'about 36 Ω over a perfect ground'],
+  ['Folded dipole', 'about four times the dipole, around 300 Ω'],
+  ['At resonance', 'reactance X is zero and only resistance remains'],
+]} />
+
+## Radiation resistance
+
+The resistance at the feed point has two parts. **Loss resistance** is real: wire, ground and coil losses that turn into heat. **Radiation resistance** is a stand-in. No physical resistor exists, but power really does leave the antenna as a wave, and from the transmitter's side that looks exactly like power being used up in a resistance. The power radiated is I² × R(rad).
+
+<Key>Radiation resistance is how the transmitter "sees" the power that leaves as radio waves.</Key>
+
+A short antenna has a very low radiation resistance, a few ohms or less, so its wire and ground losses can matter as much as the radiation. That is why efficiency falls as antennas shrink; see <Ref to="bandwidth-and-efficiency" />.
+
+## Where you feed it matters
+
+<G9B_FeedPoint />
+
+On a resonant wire the current and voltage are not the same everywhere. Voltage is highest at the ends and current at the centre, and impedance is voltage divided by current, so it is **low at the centre and very high toward the ends**. Feeding a half-wave wire in the middle gives a few tens of ohms; feeding it at one end gives thousands. See <Ref to="end-fed-half-wave" /> and <Ref to="off-center-fed-dipole" /> for antennas that exploit this.
+
+## Resonance and reactance
+
+<ImpedanceAndRadiationResistance_Sweep />
+
+A wire too short for the frequency looks like a capacitor in series with its resistance (negative X); one too long looks like an inductor (positive X). At the resonant frequency the two cancel and X is zero. This is why trimming length moves the SWR minimum; see <Ref to="half-wave-dipole" />.
+
+## What changes feed-point impedance
+
+- **Position of the feed point** along the antenna, as above.
+- **Length versus frequency**: the reactance.
+- **Height above ground**, and the soil beneath: a dipole's resistance rises and falls as ground reflections reinforce or oppose the radiated field; see <Ref to="ground-and-height" />.
+- **Nearby objects** such as walls, gutters and trees.
+
+It does **not** depend on the length of the feed line or on any tuner at the radio, and it does not change with power. A tuner can make the radio see 50 Ω, but it does not change the antenna. See <Ref to="antenna-tuners" />.
+
+## In practice
+
+Measure feed-point impedance with an <Ref to="antenna-analyzers-and-vnas">antenna analyzer</Ref> at the feed point rather than guess. If it is not near the feed line's <Ref to="characteristic-impedance">characteristic impedance</Ref>, match it where the problem is: adjust height or length, or add a matching section or <Ref to="baluns-and-ununs">transformer</Ref>.
+
+<ExamLink groups="G9B E9A E9D" />
+
+<Related to="characteristic-impedance swr-and-reflections bandwidth-and-efficiency matching-networks baluns-and-ununs half-wave-dipole" />

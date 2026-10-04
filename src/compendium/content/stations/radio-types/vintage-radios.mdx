@@ -1,0 +1,45 @@
+import { VintageRadios_Voltages } from '@/visuals/compendium/VintageRadios_Voltages'
+import { PowerSupplyHazards } from '@/visuals/technician/T0A_PowerSupplyHazards'
+
+## What it is
+
+A vintage radio is older amateur or military-surplus gear, often built with vacuum tubes. The heaviest are nicknamed "boat anchors". People restore and operate them for the sound of AM, the pleasure of fixing something, the history and the build quality, or simply because they are fun. See <Ref to="vacuum-tubes" /> for how a tube works.
+
+## How they differ
+
+| | Vintage tube gear | Modern transceiver |
+|---|---|---|
+| Frequency control | Analog dial; may drift | Synthesizer, stable, memories |
+| Warm-up | Minutes for heaters and drift to settle | Immediate |
+| Receiver filtering | Often wide; fewer options | Narrow DSP or crystal filters |
+| Bands and modes | Often missing newer bands; may be AM only | Wide coverage, many modes |
+| Tuning the transmitter | Operator tunes the final stage and loading | Automatic |
+| Repair | Many parts can be replaced by a hobbyist | Surface-mount parts, often specialised |
+| Weight and power | Heavy, uses a lot of power | Light and efficient |
+
+Old rigs reward patience and operator skill, but they are not as good at coping with crowded bands as modern ones.
+
+## Safety first
+
+<VintageRadios_Voltages />
+
+Solid-state radios run internally on low-voltage DC (a mains-powered one still has mains voltage in its power supply). Tube gear generates hundreds or thousands of volts internally, enough to kill, and large capacitors can hold that charge long after the radio is unplugged.
+
+<PowerSupplyHazards />
+
+- Never open or work on a live set. Unplug it, then discharge the capacitors using the method an experienced person has shown you.
+- Some old receivers connect the chassis to the mains with no isolating transformer, which makes a shock hazard on the outside of the case.
+- Old power cords, wax or paper capacitors and oil-filled capacitors can fail, leak or burn. Some old oil-filled capacitors contain PCBs, which are toxic: do not handle a leaking one bare-handed, and dispose of it as local rules require.
+- If you do not know how to work on lethal voltages, do not open it. Ask an experienced restorer or a club; see <Ref to="clubs-and-elmers" /> and <Ref to="electrical-safety" />.
+
+## Bringing one back
+
+Restorers usually inspect and clean first, replace the parts that age worst (old electrolytic and paper capacitors, brittle wiring, the power cord), check the power supply before applying full power, and then bring the set up cautiously. Guides, schematics and manuals for most models are available from collectors' groups. The reward is a working piece of radio history.
+
+## Can it go on the air?
+
+Before transmitting with an old rig, check that it is stable enough to stay in the band, and that it does not radiate spurious signals or harmonics. Older transmitters may need a filter or repair to be clean; see <Ref to="harmonics-and-spurs" />. Old rigs often skip newer bands, so check what you can use. Modern rules still apply to you, not the radio's age; see <Ref to="part-97-in-plain-words" />.
+
+<ExamLink groups="G6A G4A" />
+
+<Related to="vacuum-tubes am-operation linear-amplifiers harmonics-and-spurs electrical-safety hf-transceivers" />

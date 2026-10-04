@@ -1,0 +1,47 @@
+import { ScopeVsSpectrum } from '@/visuals/extra/E4A_ScopeVsSpectrum'
+import { SpectrumAnalyzers_Rbw } from '@/visuals/compendium/SpectrumAnalyzers_Rbw'
+import { TwoTone } from '@/visuals/extra/E4B_TwoTone'
+
+## What it is
+
+A **spectrum analyzer** plots signal strength against frequency. Where an <Ref to="oscilloscopes">oscilloscope</Ref> shows the shape of a signal over time, an analyzer separates it into its frequency components, so you see every carrier, harmonic, spur and noise floor as a spike or a hump. It is the tool for checking whether a transmitter is clean.
+
+<Facts items={[
+  ['Vertical axis', 'power in dBm (dB relative to 1 mW), usually 10 dB per division'],
+  ['Horizontal axis', 'frequency: centre and span, or start and stop'],
+  ['Key settings', 'resolution bandwidth, reference level, input attenuation'],
+  ['Input limit', 'often only about +20 to +30 dBm, and little or no DC; check the manual'],
+]} />
+
+## What it shows
+
+<ScopeVsSpectrum />
+
+A typical analyzer sweeps a narrow filter across the span and plots the power it finds at each frequency. Others, including SDR-based ones, capture a block of samples and use an FFT (see <Ref to="spectrum-and-fourier" />). Either way, the result is the signal's ingredients. Two-tone testing is the classic use: feed an SSB transmitter two audio tones and the analyzer shows the two wanted lines plus any intermodulation products beside them.
+
+<TwoTone />
+
+## Resolution bandwidth
+
+<SpectrumAnalyzers_Rbw />
+
+The **resolution bandwidth (RBW)** is the width of the sweeping filter, and it is the setting that matters most.
+
+- A **narrow** RBW separates signals that are close together and lowers the noise floor: random noise power falls 10 dB for every tenfold narrowing, so weak signals emerge.
+- But a narrow RBW sweeps slowly, roughly with the square of the narrowing: ten times narrower is about a hundred times slower. Sweeping faster than the filter can settle gives wrong, low readings.
+
+Set RBW as wide as you can while still separating what you need to see.
+
+## Dynamic range and overload
+
+An analyzer can only show a weak signal beside a strong one over a limited range, set by its noise floor at the bottom and its own distortion at the top. Drive the front end too hard and its mixer makes harmonics and intermodulation that **aren't in your signal**. A quick test: add 10 dB of input attenuation. A genuine harmonic falls by the same 10 dB as the carrier, so its level relative to the carrier is unchanged. An internally generated second harmonic falls 20 dB, so it drops 10 dB relative to the carrier.
+
+## Connecting a transmitter
+
+<Callout kind="warn" title="Never connect a transmitter directly">A 100 W transmitter is +50 dBm, far above the input limit of most analyzers, and a single keying can destroy the front end. Take a sample through a directional coupler or a high-power attenuator rated for the full power: 40 dB of attenuation brings 100 W (+50 dBm) down to 10 mW (+10 dBm). Add attenuation until the reading is safe, and keep the transmitter into a <Ref to="dummy-loads">dummy load</Ref> or antenna.</Callout>
+
+Common uses: checking harmonics and spurs (see <Ref to="harmonics-and-spurs" />), two-tone IMD, filter response with a tracking generator, and hunting local noise with a sensitive antenna.
+
+<ExamLink groups="E4A E4B" />
+
+<Related to="oscilloscopes spectrum-and-fourier harmonics-and-spurs decibels overload-and-intermod antenna-analyzers-and-vnas" />

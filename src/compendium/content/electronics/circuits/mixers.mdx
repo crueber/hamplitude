@@ -1,0 +1,49 @@
+import { Mixers_Multiply } from '@/visuals/compendium/Mixers_Multiply'
+import { G8B_Mixer } from '@/visuals/general/G8B_Mixer'
+
+## What it is
+
+A mixer takes two signals and produces new ones at the **sum** and the **difference** of their frequencies. It moves a signal from one frequency to another without disturbing the information it carries. That one trick lets a receiver turn any station into the same fixed intermediate frequency, and lets a transmitter build its signal at a convenient low frequency and then shift it up to the band.
+
+<Facts items={[
+  ['Output', 'f1 + f2 and f1 − f2'],
+  ['Receiver example', '14.2 MHz signal, 23.2 MHz oscillator: 9.0 MHz and 37.4 MHz'],
+  ['Image', 'a second frequency, twice the IF away, that mixes to the same IF'],
+]} />
+
+## How it works
+
+<Mixers_Multiply />
+
+Mixing is multiplication. Multiply two sine waves and trigonometry gives sin A × sin B = ½ [cos(A − B) − cos(A + B)]: two new waves, one at the difference frequency and one at the sum. The original frequencies are gone from an ideal product.
+
+This is not the same as adding signals. Two signals fed through a perfectly linear circuit simply stay as they were; no new frequencies appear. A mixer needs something non-linear, such as a diode or transistor, or a switch that flips the signal on and off, to do the multiplying. Real mixers are never perfect, so they also leak some of the inputs and make extra products such as 2 × f1 − f2, which is where interference comes from.
+
+## In a receiver
+
+<G8B_Mixer />
+
+A **superheterodyne** receiver mixes the incoming signal with a **local oscillator** (LO) so that the wanted signal always lands on one fixed **intermediate frequency** (IF), where narrow filters and high-gain amplifiers are easy to build. Tuning the radio simply moves the LO: with a 9.0 MHz IF the LO is the signal frequency plus 9.0 MHz, so a 14.2 MHz signal needs 23.2 MHz. See <Ref to="superheterodyne" />.
+
+The catch is the **image**. A signal at 32.2 MHz (LO plus 9.0 MHz) also differs from the LO by exactly 9.0 MHz, so it lands on the same IF and the mixer cannot tell the two apart. The only defence is a filter ahead of the mixer. A higher IF puts the image farther from the wanted signal, so the filter has an easier job.
+
+Subtracting also flips the spectrum when the LO is above the signal: upper sideband arrives at the IF as lower sideband. Radios allow for this when they decide which sideband to show you.
+
+## Kinds of mixer
+
+| Type | How it works | Notes |
+|---|---|---|
+| Single diode or transistor | one non-linear device | simple; leaks inputs and makes many products |
+| Balanced and double-balanced | diodes and transformers cancel the inputs at the output | the common choice; needs a strong LO, typically several milliwatts |
+| Active (such as transistor and IC types) | amplifier and mixer together | gain, but overloads sooner |
+| Switching and sampling | a fast switch alternately connects and reverses the signal | very clean; the basis of many SDR front ends |
+
+## In practice
+
+- **A strong signal can overload the mixer**, producing intermodulation products across the band. A receiver's ability to resist this is its dynamic range; see <Ref to="overload-and-intermod" /> and <Ref to="receiver-performance" />.
+- **LO purity matters.** Noise on the oscillator is mixed into every signal, so it limits selectivity; see <Ref to="oscillators" />.
+- **The same circuit does more than receive.** Balanced modulators and product detectors (<Ref to="detectors-and-demodulators" />) are mixers, a **transverter** is a mixer pair around a transceiver, and a direct-conversion receiver sets the LO right on the signal so the difference is the audio (<Ref to="direct-conversion-and-sdr" />).
+
+<ExamLink groups="T7A G8B E7E E4C" />
+
+<Related to="superheterodyne oscillators filters detectors-and-demodulators direct-conversion-and-sdr overload-and-intermod" />

@@ -1,0 +1,45 @@
+import { RemoteOperation_Path } from '@/visuals/compendium/RemoteOperation_Path'
+import { E1C_LinkLoss } from '@/visuals/extra/E1C_LinkLoss'
+
+## What it is
+
+A **remote station** keeps the radio and antenna in one place while you operate from another, over the internet or another link. People do it to escape antenna restrictions, noisy neighbourhoods and poor sites, to use a better location, to operate while travelling, or because a physical limitation makes a home station difficult. It is the same amateur radio, with the control point separated from the transmitter.
+
+<Facts items={[
+  ['You are', 'the control operator, and responsible for the transmissions'],
+  ['The station', 'radio, antenna, and a computer or controller on site'],
+  ['The link', 'carries audio and control commands, usually over the internet'],
+  ['Typical delay', 'tens to hundreds of milliseconds'],
+]} />
+
+## How it works
+
+<RemoteOperation_Path />
+
+At the remote site, a computer connects the radio to the network: it passes audio in and out, sends the rig's control commands (see <Ref to="cat-control" />), and often switches antennas, tuners and power; see <Ref to="antenna-switching" /> and <Ref to="rotators" />. At your end, software gives you what looks like a normal radio panel and plays the audio through a headset. A small board such as a Raspberry Pi often does the site work; see <Ref to="raspberry-pi-and-arduino" />.
+
+The link adds **latency**, the delay between your action and the signal changing. Voice and slow CW tolerate it, but fast back-and-forth, such as a high-speed CW exchange or quick break-in, suffers. Digital modes avoid the problem when the decoding software runs at the station, because its timing is then independent of your internet connection.
+
+## The rules in general
+
+Remote operation is still amateur radio under the same rules. The ideas that matter:
+
+- **There must be a control operator** for the station whenever it transmits, and that person needs the privileges for the frequencies in use. When you control a station remotely, that is you.
+- **The station's location decides the rules.** Running a US station from abroad needs your US license; running a station in another country generally means following that country's rules, so check before you try. See <Ref to="operating-abroad" />.
+- **Identification works as usual**, with your own call sign. When the transmitter is in the US, no extra indicator is needed.
+- **The transmitter must stop if control is lost.** In the US a station must stop transmitting within 3 minutes of a control-link failure, so design it so that a failed link never leaves it transmitting.
+
+<E1C_LinkLoss />
+
+For what a control operator and control point are, and how remote differs from local and automatic control, see <Ref to="control-operators" />. These are the general ideas; the details of your situation are in Part 97 and your own country's regulations.
+
+## Building it well
+
+- **Fail safe.** Use a transmitter time-out timer and a watchdog that drops the transmitter if the link or the software stops responding. Keep a way to power the station down that does not depend on the same internet link.
+- **Secure access.** Strong passwords, a VPN rather than an open port, and never sharing your login. Anyone who can reach the controls is, in effect, using your license.
+- **Think about unattended hardware.** Rotators move, tuners hunt and amplifiers run hot with nobody watching. Fit protection, and keep fire and electrical safety in mind; see <Ref to="electrical-safety" />.
+- **Shared stations** run by clubs or others give you a remote station without building one. The rules are the same, and you are still responsible for what you send.
+
+<ExamLink groups="T1E G1D E1C E2C" />
+
+<Related to="control-operators operating-abroad cat-control raspberry-pi-and-arduino antenna-switching internet-linking" />

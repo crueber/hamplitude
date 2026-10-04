@@ -1,0 +1,50 @@
+import { AmateurSatellites_Altitude } from '@/visuals/compendium/AmateurSatellites_Altitude'
+import { E2A_Transponder } from '@/visuals/extra/E2A_Transponder'
+import { UVMode } from '@/visuals/technician/T8B_UVMode'
+
+## What they are
+
+Amateur satellites are radio relays that orbit the Earth, built by volunteers and universities and carried into space as secondary payloads. Their gift to the hobby is **height**: from orbit, two stations thousands of kilometres apart can both see the satellite, so a handheld radio can reach a station on another continent.
+
+<Facts items={[
+  ['Typical orbit', 'low Earth orbit, a few hundred to about 1,000 km up'],
+  ['Lap time', 'about 90 to 105 minutes in low orbit'],
+  ['Pass length', 'up to about 10 to 15 minutes, horizon to horizon'],
+  ['Needed to use one', 'a Technician license or higher; usually a directional antenna'],
+]} />
+
+## The orbit sets everything
+
+<AmateurSatellites_Altitude />
+
+The higher the satellite, the slower it moves, the longer each lap takes, and the more of the Earth it sees at once. Low Earth orbit (LEO) is the sweet spot for amateurs: close enough for weak signals, high enough to see a few thousand kilometres. The price is a short pass: the satellite crosses your sky in minutes, then you wait hours for the next. Some satellites fly in higher or elongated orbits and stay in view much longer; one placed at a particular height over the equator hangs over one spot. See <Ref to="satellite-operating">working satellites</Ref> for how a pass actually goes.
+
+## What is on board
+
+Most amateur satellites carry one of a few payloads:
+
+| Payload | What it does |
+|---|---|
+| **FM repeater** | A repeater in the sky: one user at a time, simple radios work. |
+| **Linear transponder** | Relays a whole slice of spectrum, so many users and any mode (SSB, CW, digital) share it. |
+| **Beacon and telemetry** | Broadcasts the satellite's health: battery, temperature, orientation. |
+| **Digipeater or store-and-forward** | Packet relay, or messages held and delivered on a later pass. |
+
+An amateur satellite receives on an **uplink** band and retransmits on a different **downlink** band, so it can listen and talk at the same time. Satellite "modes" name the pair, uplink first: **U/V** is 70 cm up, 2 m down.
+
+<UVMode />
+
+A linear transponder does not decode anything; it shifts the whole passband and amplifies it, often flipping it so that tuning your uplink up moves the downlink down (an **inverting** transponder).
+
+<E2A_Transponder />
+
+## Facts that cause surprises
+
+- Satellite equipment, frequencies and even which satellites are alive change constantly. Look up current status rather than trusting a printed list.
+- On a full-duplex pass you can hear yourself on the downlink: a good check that your signal got through.
+- Shared transponders are shared power. Keep your signal no stronger than the beacon or the other users on the passband; see <Ref to="satellite-operating" />.
+- The antenna on a satellite spins or tumbles, so ground antennas for satellites are often <Ref to="helical-and-satellite-antennas">circularly polarized</Ref>.
+
+<ExamLink groups="T8B E2A E1D" />
+
+<Related to="satellite-operating iss-and-ariss helical-and-satellite-antennas radio-spectrum polarization" />

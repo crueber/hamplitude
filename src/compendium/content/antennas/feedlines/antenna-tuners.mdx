@@ -1,0 +1,45 @@
+import { AntennaTuners_LNetwork } from '@/visuals/compendium/AntennaTuners_LNetwork'
+import { AntennaTuners_Placement } from '@/visuals/compendium/AntennaTuners_Placement'
+
+## What it is
+
+An antenna tuner (also antenna coupler, matching network or ATU) is an adjustable network of inductors and capacitors that sits between the transmitter and the feed line. It transforms whatever impedance it sees on the output into the 50 Ω the transmitter wants. It is a **matching device for the radio**, not a way of making an antenna resonate.
+
+<Facts items={[
+  ['What it adjusts', 'the impedance the radio sees'],
+  ['Components', 'variable L and C (sometimes a transformer)'],
+  ['Set per', 'frequency; retune when you change band or move far in a band'],
+  ['Does not change', 'the antenna itself: resonance, pattern, efficiency'],
+]} />
+
+## How it matches
+
+<AntennaTuners_LNetwork />
+
+The classic L-network has one series inductor and one shunt capacitor. The shunt part goes across the higher of the two impedances, and together the two parts step the resistance up or down; a reactive load shifts the values needed, so the tuner also cancels its reactance. A common tuner uses several variable parts so it can cover many loads and bands; the tuning knobs or the processor in an auto tuner find the combination where reflected power is least.
+
+A bigger mismatch needs a higher Q, which means more circulating current in the parts and so more loss. A tuner working near its limit can get warm and waste a surprising fraction of your power.
+
+## What a tuner does not do
+
+<AntennaTuners_Placement />
+
+The key point is where the tuner sits.
+
+- **At the radio** it makes the transmitter see 1:1, protecting it and letting it deliver full power. The feed line between the tuner and the antenna still carries the original SWR, with its extra loss. See <Ref to="swr-and-reflections" />.
+- It does **not** make a poor antenna radiate better. A short, lossy or badly sited antenna is still short, lossy or badly sited.
+- It does **not** broaden the antenna's bandwidth. It re-tunes you to a new frequency.
+- **At the antenna** (a remote tuner at the feed point) it fixes the match for the entire line. This is the better arrangement for a high-SWR load on lossy coax, but it needs a weatherproof unit and a way to power and control it at the antenna.
+
+A tuner shines when the line is **low-loss** (see <Ref to="open-wire-line" />) or the mismatch is modest. Then the feed-line loss from the SWR is small and the tuner can safely finish the job.
+
+## In practice
+
+- Types: manual tuners (widest range, a bit of skill), the automatic tuner built into many transceivers (limited range), external automatic tuners, and remote tuners at the antenna. The range of an automatic tuner is limited; check its manual.
+- Tune at low power with the radio's tune function, and avoid hot-switching a manual tuner under power: arcs and damage follow.
+- Fed with ladder line, you need a tuner with balanced output, or a <Ref to="baluns-and-ununs">balun</Ref> between the tuner's coax output and the line.
+- A tuner is not a substitute for a well-built antenna cut to the right length. Match at the feed point where you can, tune for the residual.
+
+<ExamLink groups="T9B E7C" />
+
+<Related to="swr-and-reflections baluns-and-ununs open-wire-line feed-line-loss characteristic-impedance stubs-and-matching-sections" />

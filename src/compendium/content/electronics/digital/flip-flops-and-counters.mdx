@@ -1,0 +1,46 @@
+import { FlipFlopsAndCounters_DType } from '@/visuals/compendium/FlipFlopsAndCounters_DType'
+import { Divider } from '@/visuals/extra/E7A_Divider'
+import { CounterShift } from '@/visuals/general/G7B_CounterShift'
+
+## What it is
+
+A **flip-flop** is a circuit that remembers one bit. Gates alone have no memory: their output follows their inputs. A flip-flop feeds its output back so it holds its last state until told to change. Chain flip-flops together and you get **counters**, **dividers** and **shift registers**, the parts that give digital circuits memory and a sense of order.
+
+<Facts items={[
+  ['Stores', 'one bit per flip-flop'],
+  ['Changes on', 'the clock edge, rising or falling'],
+  ['N flip-flops count', '0 to 2ᴺ − 1 (2ᴺ states)'],
+  ['N flip-flops divide by', '2ᴺ'],
+]} />
+
+## The D flip-flop
+
+<FlipFlopsAndCounters_DType />
+
+The **D** (data) flip-flop is the workhorse. On each clock edge it copies D to Q, then holds Q until the next edge, however D wanders in between. The clock is what keeps a whole circuit in step: every flip-flop updates at the same instant, so signals can't race each other.
+
+Two simpler cousins you will meet: the **SR latch**, which is set or reset directly with no clock, and the **JK** flip-flop, which toggles when both inputs are high. Tie a D flip-flop's inverted output back to its own D and it **toggles** on every clock edge.
+
+## Counting and dividing
+
+A toggling flip-flop makes one output cycle for every two clock cycles, so it halves the frequency. Feed that output to the next flip-flop and halve again:
+
+<Divider />
+
+N flip-flops divide by 2ᴺ and, read together, count in binary from 0 to 2ᴺ − 1. A **decade counter** is arranged to count 0 to 9 then roll over, dividing by 10. Ten million hertz through seven decade counters is 1 Hz, which is how a crystal clock becomes a one-second tick. Dividers like this also sit inside <Ref to="pll-and-synthesizers">synthesizers</Ref> and in the **prescalers** that let a frequency counter handle VHF; see <Ref to="counters-and-signal-generators" />.
+
+## Shift registers
+
+<CounterShift />
+
+A **shift register** is flip-flops in a line, each feeding the next. On every clock edge each bit moves one place. Clocking in eight bits one after another turns a serial stream into an 8-bit parallel word, or the reverse. Serial links, the control chips behind displays and band-switch outputs, and many radio data buses work this way: few wires, one bit per tick.
+
+## In practice
+
+- Everything in a clocked circuit depends on a clean clock. A noisy or slow-rising edge can trigger twice and miscount.
+- Mechanical switches bounce, producing a burst of edges; a counter will happily count them all, so buttons need debouncing in hardware or software.
+- Pulses that arrive near a clock edge can leave a flip-flop in an unpredictable state briefly; this is why inputs from the outside world are usually passed through a flip-flop or two first.
+
+<ExamLink groups="G7B E7A E4A" />
+
+<Related to="logic-gates adc-and-dac microcontrollers pll-and-synthesizers counters-and-signal-generators oscillators" />

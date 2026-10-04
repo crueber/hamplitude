@@ -1,0 +1,42 @@
+import { MeterHookup } from '@/visuals/technician/T7D_MeterHookup'
+import { Multimeters_Loading } from '@/visuals/compendium/Multimeters_Loading'
+import { Ohmmeter } from '@/visuals/technician/T7D_Ohmmeter'
+
+## What it is
+
+A **multimeter** measures voltage, current and resistance with one instrument and a pair of probes. Most also test continuity (with a beep), check diodes, and some measure capacitance or frequency. It is the first instrument for any fault: is the supply there, is the fuse good, is the cable connected end to end.
+
+<Facts items={[
+  ['Voltmeter', 'connects across (in parallel with) the part'],
+  ['Ammeter', 'connects in the path (in series)'],
+  ['Ohmmeter', 'part out of circuit, power off'],
+  ['Digital input resistance', 'typically about 10 MΩ'],
+]} />
+
+## Connecting it
+
+<MeterHookup />
+
+A voltmeter has very high resistance so it barely disturbs the circuit: touch it across the part. An ammeter has very low resistance so it can sit in the current's path: you must break the circuit and put the meter in the gap. The small voltage it drops there is its **burden**, usually unnoticeable but worth knowing for sensitive circuits. For heavy currents (the several amps a transceiver draws) use a clamp meter, or a meter with a high-current range, within its rating and for short times.
+
+<Callout kind="warn" title="The classic mistake">Measuring voltage with the probes left in the current jacks puts the ammeter, a near short circuit, across the source. At best it blows the meter's fuse; at worst it damages the meter or the source. Set the dial and the jacks together, every time.</Callout>
+
+<Ohmmeter />
+
+An ohmmeter makes its own small test current, so the circuit must be **unpowered**, and the part ideally isolated, or other paths in the circuit will give a false reading. Discharge capacitors first.
+
+## Loading: the meter is a resistor too
+
+<Multimeters_Loading />
+
+Every voltmeter draws a little current through its own input resistance, which forms a voltage divider with the circuit's own resistance. A 10 MΩ digital meter on a 1 MΩ source reads 10 ÷ 11 = 90.9% of the true value; on a 100 kΩ source, 99%. An analog meter is much worse: a 20 kΩ-per-volt meter on its 10 V range is only 200 kΩ, and it reads 66.7% on a 100 kΩ source. Remedies: measure where the impedance is low, use a high-impedance meter, or know the error.
+
+## Reading AC and RF
+
+Most meters read AC volts correctly only for a sine wave at the mains' frequency, or a little higher. An ordinary meter measures the average and scales it to RMS, so a distorted wave reads wrong; a **true-RMS** meter handles other shapes. Meters cannot read RF directly: their circuits stop at roughly the audio range. A diode **RF probe** converts RF to a DC level for a DC meter, giving a rough indication, not a calibrated measurement. Use a <Ref to="oscilloscopes">scope</Ref> or a <Ref to="swr-and-power-meters">power meter</Ref> for RF.
+
+<Callout kind="warn" title="Safety: mains and power supplies">Household 120 V AC swings up to about 170 V peak, and 240 V up to about 340 V. Use a meter with a **CAT rating** appropriate to where you measure (outlets, distribution panels), undamaged leads with finger guards, and one hand where possible, never touching metal parts. Never measure resistance or continuity on a live circuit. Large capacitors in power supplies hold dangerous charge after switch-off: see <Ref to="electrical-safety" />. When unsure, don't.</Callout>
+
+<ExamLink groups="T7D" />
+
+<Related to="ohms-law oscilloscopes electrical-safety troubleshooting power-supplies voltage-current-resistance" />

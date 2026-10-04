@@ -1,0 +1,43 @@
+import { Piezo } from '@/visuals/extra/E6D_Piezo'
+import { CrystalEquiv } from '@/visuals/extra/E6D_CrystalEquiv'
+import { CrystalsAndResonators_Stability } from '@/visuals/compendium/CrystalsAndResonators_Stability'
+
+## What it is
+
+A thin slice of quartz, with a metal electrode on each face, that vibrates at a precise frequency when a voltage is applied. It behaves like an extremely good tuned circuit: far more stable and far narrower than any coil and capacitor can manage. Radios use it to set frequencies exactly and to build very selective filters.
+
+<Facts items={[
+  ['Effect', 'piezoelectric: voltage flexes it, flexing makes voltage'],
+  ['Acts like', 'a series RLC branch in parallel with a small capacitance'],
+  ['Strength', 'very high Q, so a very sharp and stable resonance'],
+  ['Weakness', 'its frequency is fixed (it can be pulled only a little)'],
+]} />
+
+## How it works
+
+<Piezo />
+
+Squeeze quartz and it generates a voltage; apply a voltage and it flexes. Put it in a feedback loop and its mechanical ringing is converted back and forth into electrical energy, so the circuit locks onto the crystal's natural frequency. The slice's thickness and cut set that frequency.
+
+<CrystalEquiv />
+
+Electrically it shows two resonances very close together: a **series resonance** where its impedance is lowest, and a slightly higher **parallel resonance** where it is highest. Crystal filters use the series resonance; many oscillators run it between the two, where a small load capacitor can pull it slightly in frequency. That is why a crystal is specified with a particular load capacitance.
+
+## What it buys you
+
+<CrystalsAndResonators_Stability />
+
+An ordinary LC oscillator drifts with temperature and supply voltage. A crystal oscillator is typically far steadier, and a temperature-compensated (TCXO) or oven-controlled (OCXO) version steadier still. That is the reference a <Ref to="pll-and-synthesizers">synthesizer</Ref> locks to, and the clock that keeps a transmitter on frequency inside the band.
+
+## Where you meet them
+
+- **Reference and clock.** A single crystal, often a few to tens of MHz, sets the frequency of a radio or a microcontroller. A small 32.768 kHz crystal is the familiar watch-type clock part.
+- **Filters.** Several crystals connected as a ladder give a narrow band-pass filter to select one SSB or CW signal. See <Ref to="radio-filters" />.
+- **Ceramic resonators.** The same idea in a ceramic material: cheaper and faster to start, but less accurate, fine for a simple microcontroller clock.
+- **Overtones.** Beyond a few tens of MHz, crystals are usually run on an overtone (an odd multiple of the fundamental) rather than cut ever thinner.
+
+<Callout kind="tip" title="Handle with care">Driving a crystal too hard raises its frequency error and, in the extreme, can damage it. Dropping one onto a hard floor can crack the quartz.</Callout>
+
+<ExamLink groups="E6D" />
+
+<Related to="oscillators resonance-and-q radio-filters pll-and-synthesizers filters counters-and-signal-generators" />

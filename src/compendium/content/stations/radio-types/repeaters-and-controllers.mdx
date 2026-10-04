@@ -1,0 +1,40 @@
+import { RepeaterFlow } from '@/visuals/shared/RepeaterFlow'
+import { RepeatersAndControllers_Blocks } from '@/visuals/compendium/RepeatersAndControllers_Blocks'
+import { Duplexer } from '@/visuals/extra/E7C_Duplexer'
+
+## What it is
+
+A repeater is an automatic station that receives your signal on one frequency and retransmits it, at the same time, on another. Placed on a hill or tall building, it lets low-power radios reach far beyond what they could manage directly.
+
+<RepeaterFlow />
+
+This article covers the hardware. Using one is in <Ref to="repeaters" />.
+
+## The blocks
+
+<RepeatersAndControllers_Blocks />
+
+- **Receiver.** Tuned to the input frequency. It needs to be sensitive, because it has to hear a handheld's small signal.
+- **Transmitter.** Sends on the output frequency, usually at much higher power than a handheld.
+- **Controller.** The brain. It detects a valid signal (and the access tone, if required), keys the transmitter, passes the audio through, enforces a timeout timer, sends the station ID and courtesy tone automatically, and may link to other repeaters or accept remote commands.
+- **Duplexer.** Lets one antenna be shared; see below.
+- **Power.** A dedicated supply, often with battery backup so the repeater works during a power cut.
+
+Repeaters are normally automatically controlled, with a control operator able to shut them down; see <Ref to="control-operators" />.
+
+## Why the duplexer
+
+<Duplexer />
+
+The transmitter is far stronger than the signal the receiver is trying to hear, and the two frequencies sit close together, typically 600 kHz apart on 2 m and 5 MHz on 70 cm. Without filtering, the transmitter would drown out the receiver (<Ref to="overload-and-intermod">desensitising it</Ref>). A duplexer uses high-Q cavity filters, tuned to each frequency, so one antenna sends and receives. The alternative is two antennas separated vertically so little power couples between them.
+
+## In practice
+
+- **Coverage is lopsided.** The repeater may reach you while your handheld cannot reach it. Good sites and sensitive receivers matter as much as repeater power.
+- **A repeater is a shared resource.** Frequencies are coordinated to avoid interference; the people behind it pay for the site, power and upkeep. See <Ref to="repeater-directories" />.
+- **Linking.** Controllers can tie repeaters together by radio or the internet; see <Ref to="internet-linking" />.
+- **Digital repeaters** (DMR, D-STAR, Fusion) add the equipment needed to decode and regenerate the digital signal.
+
+<ExamLink groups="T1F T2A T2B E7C" />
+
+<Related to="repeaters fm-voice squelch-and-tones internet-linking repeater-directories hotspots-and-gateways" />

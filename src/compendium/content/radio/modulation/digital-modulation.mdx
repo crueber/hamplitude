@@ -1,0 +1,47 @@
+import { DigitalModulation_Keying } from '@/visuals/compendium/DigitalModulation_Keying'
+import { DigitalModulation_Constellation } from '@/visuals/compendium/DigitalModulation_Constellation'
+
+## What it is
+
+Digital modulation sends bits by switching the carrier between a few distinct states. The three knobs from <Ref to="modulation-basics" /> are still the only ones: shift the amplitude (ASK), the frequency (FSK) or the phase (PSK), or combine amplitude and phase (QAM). The receiver only has to decide which state it saw, not measure a smooth value, so a digital signal can be recovered cleanly from a noisy one.
+
+<Facts items={[
+  ['Symbol', 'one state of the carrier, held for a short time'],
+  ['Symbol rate', 'symbols per second, measured in baud'],
+  ['Bit rate', 'symbol rate × bits per symbol'],
+  ['More states per symbol', 'more bits, but less noise tolerated'],
+]} />
+
+## Three ways to shift
+
+<DigitalModulation_Keying />
+
+- **ASK**: amplitude. Switching the carrier fully on and off is on-off keying, which is what CW does.
+- **FSK**: frequency. RTTY uses two tones; many modes use more (FT8 has eight).
+- **PSK**: phase. Binary PSK (BPSK) uses two phases 180° apart. It is efficient because it needs only one tone.
+
+On the air you often meet **AFSK**: the tones are made as audio by a computer sound card and sent through an ordinary SSB transmitter. The radio never knows it carries data. Keep the audio level down, since overdriving it causes distortion that widens the signal.
+
+| Mode | Modulation | Typical figures |
+|---|---|---|
+| CW | on-off keying | speed in words per minute |
+| RTTY | 2-tone FSK | 45.45 baud, 170 Hz shift |
+| PSK31 | BPSK | 31.25 baud |
+| FT8 | 8-tone FSK | 6.25 baud, 8 tones |
+| 1200-baud packet | 2-tone AFSK | 1200 and 2200 Hz tones |
+
+## More bits per symbol
+
+<DigitalModulation_Constellation />
+
+A **constellation** plots each allowed symbol as a point: angle is phase, distance from the centre is amplitude. QPSK has four phases (2 bits per symbol). 16-QAM has 16 amplitude-and-phase combinations (4 bits), 64-QAM has 64 (6 bits). With M points, the bits per symbol is log₂ M.
+
+The catch is spacing. At the same average power the points of a denser constellation sit closer together, so smaller noise pushes a symbol across a boundary and it is misread. Each extra two bits per symbol needs very roughly 6 dB more signal-to-noise ratio. High-order modes are for strong, clean paths; BPSK and FSK are for weak, noisy ones. Neighbouring points are usually labelled in **Gray code**, where adjacent points differ in one bit, so a near-miss costs one bit error instead of several.
+
+## Keeping it narrow
+
+Changing state abruptly splashes energy across the spectrum, like a key click. Good digital modes smooth the transitions. PSK31 shapes each symbol with a smooth envelope that passes through zero exactly when the phase flips, which keeps the signal near 31 Hz wide. See <Ref to="psk31" /> and <Ref to="bandwidth-and-data-rate" />.
+
+<ExamLink groups="E8C G8C G8A" />
+
+<Related to="modulation-basics bandwidth-and-data-rate error-correction digital-modes-overview psk31 rtty ft8-and-ft4" />

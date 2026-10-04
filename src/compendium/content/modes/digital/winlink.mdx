@@ -1,0 +1,39 @@
+import { G2E_Winlink } from '@/visuals/general/G2E_Winlink'
+import { Winlink_Session } from '@/visuals/compendium/Winlink_Session'
+
+## What it is
+
+Winlink is a worldwide radio email system: you write an ordinary email on your computer, and your radio delivers it to an internet address without any phone or internet connection on your end. It works on HF, VHF and UHF, using several data modes underneath, and can run over packet radio. That makes it the amateur answer to "how do I send an email from a boat, a mountain or a disaster area?"
+
+<Facts items={[
+  ['What it carries', 'email with small attachments'],
+  ['Needs', 'a computer, a radio and modem or sound-card software'],
+  ['Link modes', 'VARA, ARDOP, PACTOR, VHF packet'],
+  ['Bridge to internet', 'a gateway station'],
+]} />
+
+## How a message gets through
+
+<G2E_Winlink />
+
+Your station connects by radio to a **gateway**, which is a radio station that has an internet connection and passes messages to and from the central Winlink servers. Gateways publish the frequencies they listen on. To contact one, you transmit a **connect request** on that frequency. The gateway replies and the two stations exchange messages.
+
+Gateways work in a link-by-link, ARQ style: each block is acknowledged and repeated if damaged, as described in <Ref to="vara-and-ardop" />. That is why Winlink can move small attachments over a noisy HF path, which keyboard modes are not designed for.
+
+## A session
+
+<Winlink_Session />
+
+Because the system **stores and forwards** messages, you do not need to be on the air while writing or reading. The radio is only used for the short exchange, which is fast compared with typing a long message live. If you cannot reach a gateway, you can also connect **peer to peer** to another Winlink station; no gateway or internet is needed.
+
+## In practice
+
+- You need client software that handles the connection and the modem, and a Winlink account tied to your call sign.
+- Pick a gateway you can actually reach, on a band and time of day where the path is open. See <Ref to="skywave-and-skip" />.
+- Interference on a gateway channel appears as retries, long pauses and failed connections. Listen first so you do not transmit over another connection.
+- Messages are subject to Part 97 like anything else sent by amateur radio. Keep traffic noncommercial and in plain language.
+- Emergency use is covered in <Ref to="winlink-emergency" />.
+
+<ExamLink groups="G2E" />
+
+<Related to="vara-and-ardop packet-radio winlink-emergency digital-modes-overview ares-and-races digital-mode-software" />

@@ -1,0 +1,60 @@
+import { ElectricalSafety_Current } from '@/visuals/compendium/ElectricalSafety_Current'
+import { PowerSupplyHazards } from '@/visuals/technician/T0A_PowerSupplyHazards'
+import { Gfci } from '@/visuals/general/G0B_Gfci'
+import { FuseFire } from '@/visuals/technician/T0A_FuseFire'
+
+## What it is
+
+Mains power, power supplies, tube amplifiers and generators can kill, and the cause is always the same: **current through the body**. A well-built shack is safe. Accidents come from open cabinets, improvised wiring, wet conditions, stored charge, and working on equipment that is still live.
+
+<Facts items={[
+  ['US household power', '120 V to ground, 240 V for large loads'],
+  ['What injures', 'current through the body, not voltage alone'],
+  ['Rule one', 'never work on live circuits'],
+  ['This article', 'principles only, not wiring instructions'],
+]} />
+
+## How shock injures
+
+<ElectricalSafety_Current />
+
+Current heats tissue, upsets nerves and the heart's rhythm, and clenches muscles. The figures are small: a few milliamps hurts, and roughly ten can lock your hand around the conductor. Higher currents can upset the heart. Voltage is what pushes the current, and your skin resistance sets how much flows. Wet or broken skin lets far more through, so the same voltage is much more dangerous in a damp basement than at a dry bench.
+
+Power supplies add a trap: **filter capacitors keep their charge after switch-off**, and amplifiers can hold lethal voltages for a long time.
+
+<PowerSupplyHazards />
+
+## Devices that protect
+
+| Device | Protects | How it works |
+|---|---|---|
+| Fuse or breaker | the wiring, so against fire | opens when current exceeds its rating |
+| GFCI | you | trips when current leaks to ground, as through a person |
+| Equipment ground (green wire) | you | gives a fault an easy path so the breaker trips |
+| Interlock | you | removes dangerous voltage when a cabinet opens |
+
+A **fuse or breaker protects the wire, not the load**. It goes in series with the hot conductor, never the neutral or ground, and is sized for the thinnest wire in the circuit, never for the equipment. A larger fuse lets the wire overheat before it opens.
+
+<FuseFire />
+
+A **GFCI** compares the current going out on the hot wire with the current returning on the neutral. If some is missing, it is flowing somewhere else, perhaps through you, and the GFCI cuts power in a fraction of a second. Use one wherever it is damp, outdoors and in the garage.
+
+<Gfci />
+
+Never defeat a protection: no cheater plugs, no cut ground pins, no bypassed interlocks, no oversized fuses.
+
+## Working safely
+
+- **Unplug, don't just switch off.** Where others could re-energize the circuit, lock out and tag the breaker.
+- **Discharge capacitors** with a proper discharge tool, then check with a meter rated for that voltage. Do not trust a bleeder resistor or a switch-off alone.
+- **Work dead.** Measuring inside live high-voltage equipment is for trained people, not a casual check.
+- Keep hands, floor and clothing dry, remove jewelry, and have someone nearby when working on high voltage.
+- Use cords and power strips within their ratings, and replace damaged ones.
+- **Never back-feed a house from a generator** through a wall outlet; it can kill utility workers. A transfer switch installed by a licensed electrician is the correct way.
+- New circuits, 240 V outlets for amplifiers and subpanels are jobs for a **licensed electrician**, following the National Electrical Code and **local electrical code**.
+
+<Callout kind="warn" title="If someone is shocked">Cut the power first, at the breaker or by unplugging. Do not touch a person who is still in contact with the circuit, and stay clear of anything high-voltage. Call emergency services.</Callout>
+
+<ExamLink groups="T0A G0B" />
+
+<Related to="grounding-and-bonding wire-gauge-and-fusing switches-relays-fuses power-supplies battery-and-fire-safety lightning-safety" />

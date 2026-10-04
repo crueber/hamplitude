@@ -1,0 +1,31 @@
+import { SpectrumAndFourier_Views } from '@/visuals/compendium/SpectrumAndFourier_Views'
+
+## What it is
+
+Any signal can be described two ways: how its voltage changes with time (the **time domain**, what an oscilloscope shows), or which sine waves it is made of (the **frequency domain**, what a spectrum analyzer shows). The bridge between them is the **Fourier transform**: every signal is a sum of sine waves, and each ingredient has a frequency and an amplitude.
+
+<Facts items={[
+  ['Repeating wave', 'a fundamental plus harmonics at 2×, 3×, 4× ...'],
+  ['Square wave', 'odd harmonics only, amplitude 1/k'],
+  ['Pure sine', 'one line only'],
+  ['FFT', 'a fast algorithm that computes the spectrum from samples'],
+]} />
+
+## Two views of one signal
+
+<SpectrumAndFourier_Views />
+
+Try it: pick **Square** and add components one at a time. A single sine is the fundamental. Add the 3rd harmonic and the shape starts to square off. Each additional odd harmonic sharpens the corners. The wave and its spectrum hold exactly the same information; the spectrum is simply the view that makes sense of frequency.
+
+The **AM tone** setting shows why that matters in radio. Three steady lines (carrier plus two sidebands) add up to a wave whose height rises and falls: the AM envelope is the beat between them. What looks like "changing amplitude" in time is a set of constant sine waves in frequency. The same goes for every mode.
+
+## Why it matters
+
+- **Filters, mixers and sidebands** are described in frequency. "SSB has one sideband" is a statement about spectrum, which you cannot see in the waveform.
+- **Distortion creates harmonics.** A distorted sine, like an overdriven amplifier's output, contains whole-number multiples of its frequency. That is why transmitters need a low-pass filter. See <Ref to="harmonics-and-spurs" />.
+- **Speed costs bandwidth.** The sharper a change in time, the wider its spectrum, which is why a key click spreads and why a pulse of short duration is wide. See <Ref to="bandwidth-and-data-rate" />.
+- **Instruments and software** do this all the time: spectrum analyzers, SDR waterfalls and the FFT inside <Ref to="dsp-basics">DSP</Ref> take a window of samples and show the spectrum. See <Ref to="spectrum-analyzers" />.
+
+<ExamLink groups="E8A" />
+
+<Related to="modulation-basics amplitude-modulation sampling-and-nyquist spectrum-analyzers harmonics-and-spurs dsp-basics" />

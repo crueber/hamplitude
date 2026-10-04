@@ -1,0 +1,44 @@
+import { Rotators_System } from '@/visuals/compendium/Rotators_System'
+import { Rotators_Pointing } from '@/visuals/compendium/Rotators_Pointing'
+
+## What it is
+
+A rotator is a motor that turns a directional antenna so you can aim it. A controller in the shack tells it where to go and shows where it is pointing. The more directional the antenna, the narrower its beam, and the more a rotator is worth.
+
+<Facts items={[
+  ['Rated for', 'a maximum antenna wind area and weight, and a turning and holding torque'],
+  ['Azimuth', 'compass bearing, turning the antenna around a vertical mast'],
+  ['Elevation', 'up-and-down aim, used for satellites and moonbounce'],
+  ['Bearings', 'map and beam headings are true bearings; a compass reads magnetic'],
+]} />
+
+## The parts
+
+<Rotators_System />
+
+The antenna sits on a **mast**. A **thrust bearing** on the tower's top plate supports the mast and carries the weight and much of the wind load, so the **rotator** below only has to turn it and hold it. A position sensor inside the rotator reports the bearing along a **control cable** to the controller, which also drives the motor. Because the rotator is not meant to carry the load, a mast, bearing and tower top that are properly built matter as much as the motor.
+
+## Why aim at all
+
+<Rotators_Pointing />
+
+A beam's gain comes from its narrow main lobe; see <Ref to="radiation-patterns" /> and <Ref to="gain-and-directivity" />. A modest HF beam has a main lobe tens of degrees wide, so a bearing that is off by 10° costs well under 1 dB. A big VHF array or a dish with a lobe of a few degrees must be pointed accurately, or the gain is wasted. Try the sliders. The back of a beam is a null: rotating it also lets you reject a noisy or unwanted station.
+
+## Choosing one
+
+| Antenna | Rotator class |
+|---|---|
+| Small VHF/UHF beam or light TV-type antenna | light-duty |
+| HF multiband beam, large VHF array | medium to heavy-duty, with a separate thrust bearing |
+| Satellite or moonbounce antennas | azimuth and elevation, with accurate position control |
+
+Choose from the maker's specifications. Match the antenna's wind area and weight to the rotator's rating, with margin, and follow the stated mast size and the maximum height of mast above the bearing. Overloading a rotator is a common way to damage it, and a rotator is not a safety device.
+
+## In practice
+
+- **Align it.** Set the controller so that the antenna really points where the dial says, by comparing with a known bearing. Map and beam headings use true north, so correct a compass reading for local magnetic declination.
+- **Let it stop** before reversing, and do not repeatedly slam the controller back and forth; the motor and gears take the load.
+- **Mind the cables.** Leave a loose, flexible loop of coax at the top so the feed line does not wind up or pull on the antenna as it turns. Know where the stop is: many rotators turn about a full circle, so the compass has a beginning and an end.
+- **Safety.** A rotator can start without warning. Before anyone climbs, switch off and unplug the controller (lock out the power), and make sure everyone on the tower and the ground knows. See <Ref to="tower-safety" /> and <Ref to="towers-and-masts" />.
+
+<Related to="towers-and-masts yagi-uda gain-and-directivity radiation-patterns dish-antennas tower-safety" />

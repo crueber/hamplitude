@@ -1,0 +1,46 @@
+import { LoggingSoftware_Flow } from '@/visuals/compendium/LoggingSoftware_Flow'
+
+## What it is
+
+Logging software replaces the paper logbook. You type a call sign, and it records the time, band and mode, looks up the station, warns you of duplicates, and exports the record in a standard format. Choosing one is mostly about which of your activities you care about.
+
+<Facts items={[
+  ['Exchange format', 'ADIF'],
+  ['Contest log format', 'Cabrillo'],
+  ['Time', 'recorded in UTC'],
+  ['Cost', 'from free to commercial; no software is required by the FCC'],
+]} />
+
+## How a logger fits in
+
+<LoggingSoftware_Flow />
+
+Information arrives from you, from the radio if the software can talk to it (see <Ref to="cat-control" />), from callbook lookups and from spots. The program stores it, uses it to help you in the moment, and exports it to wherever you need it. The standard hand-off is **ADIF**, a plain-text format that nearly every program reads and writes; see <Ref to="logging-and-qsl" />. Contest entries use the **Cabrillo** format.
+
+## Kinds of program
+
+| Kind | Strengths | Good for |
+|---|---|---|
+| **General loggers** | long-term records, award tracking, QSL and upload tools | everyday operating, DX, awards |
+| **Contest loggers** | very fast entry, dupe checking, score and rate display, keyer support | contests |
+| **Digital-mode programs** | can log contacts as they decode and send | FT8, RTTY and other digital modes |
+| **Mobile and field apps** | work offline, simple entry, upload later | portable and activation work |
+| **Paper** | needs no power and no computer | field backup, always-works |
+
+Many loggers cover several of these. A contest program that records ADIF is often enough for an operator who does both.
+
+## Features that matter
+
+- **Duplicate checking.** Tells you at once if you have already worked a station on this band and mode. In a contest that saves points and time. See <Ref to="contesting" />.
+- **Radio control.** Frequency, mode and sometimes power are filled in for you, so the log matches what the radio did.
+- **Callbook lookup.** Name, location and grid square appear when you type the call; see <Ref to="callbooks-and-lookup" />.
+- **Award tracking.** It shows which places or states you still need; see <Ref to="awards" />.
+- **Confirmation uploads.** Sending logs to online confirmation systems directly saves doing it by hand.
+- **Import and export.** Being able to leave is as important as how it looks today. Test an export before you commit your whole history to a program.
+- **Backups.** Keep your log somewhere other than the one machine.
+
+<Callout kind="tip" title="Log in UTC, always">Use UTC on every entry so both ends of a contact record the same time. A wrong clock is a classic cause of unconfirmed contacts, so keep the computer's time synchronised.</Callout>
+
+<ExamLink groups="E2C G2D" />
+
+<Related to="logging-and-qsl cat-control contesting awards spotting-networks callbooks-and-lookup" />

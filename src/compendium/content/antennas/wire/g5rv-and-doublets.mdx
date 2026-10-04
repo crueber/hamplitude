@@ -1,0 +1,40 @@
+import { G5rvAndDoublets_Layouts } from '@/visuals/compendium/G5rvAndDoublets_Layouts'
+
+## What they are
+
+A **doublet** is a center-fed wire dipole, fed with balanced open-wire or ladder line instead of coax, and matched with a tuner. The **G5RV** is one specific doublet design, named after its designer's call sign: a 102 ft flat top, about 34 ft of open-wire line, then a balun and coax. Both are multiband wires built on the same idea.
+
+<Facts items={[
+  ['G5RV flat top', '102 ft (31 m), full-size version'],
+  ['G5RV line section', 'about 34 ft (10.4 m) of open-wire line, then balun and coax'],
+  ['Doublet flat top', 'at least a half wavelength on the lowest band'],
+  ['Match', 'a tuner, nearly always'],
+]} />
+
+<G5rvAndDoublets_Layouts />
+
+## Why open-wire line
+
+When an antenna is not matched to the line, the line carries standing waves, and its own loss is applied to power that bounces back and forth. <Ref to="open-wire-line">Open-wire line</Ref> has very low loss at HF, so it can carry a high SWR with little penalty. The tuner then matches that mismatch to the radio. That is what lets one wire cover many bands.
+
+Open-wire line is also balanced, like a dipole, so it keeps RF off the line, provided it is fed from a balanced tuner or through a balun. See <Ref to="baluns-and-ununs" />. At higher bands the flat top is many half-waves long, so the pattern divides into several lobes; the antenna works on those bands, but not as a clean broadside figure-8.
+
+## The G5RV, in detail
+
+The G5RV is built around 20 m. There the flat top is about 1.5 wavelengths long and the line section is roughly a half wavelength. A half-wave section repeats the impedance at its far end, so on 20 m the coax sees roughly what the wire presents. On other bands the section transforms the wire's impedance to something else, so most operators use a tuner.
+
+The honest trade-offs:
+
+- It is a **compromise**, not a design that is matched on every band. A tuner is normally needed, and on bands far from 20 m the coax after the line section can run at high SWR and lose power.
+- The balun or choke where the ladder line meets the coax matters; it keeps common-mode current off the coax.
+- It is fixed-size, so you pay in space whether or not you use the bands. Shorter versions exist.
+
+## Doublets and the Zepp family
+
+A doublet has no fixed rules: choose a flat top at least a half wavelength on the lowest band (longer gives more freedom), run ladder line to the shack, and tune. A center-fed 1.25 wavelength dipole is the **extended double Zepp**, with a little more gain than a half-wave dipole. A half-wave fed at its end is a Zepp; see <Ref to="end-fed-half-wave" />.
+
+<Callout kind="tip" title="Keep the line clear">Ladder line works best kept away from metal, gutters and walls. Use standoffs, and avoid coiling it or bundling it with coax.</Callout>
+
+<ExamLink groups="E9C" />
+
+<Related to="open-wire-line antenna-tuners baluns-and-ununs multiband-dipoles feed-line-loss half-wave-dipole" />

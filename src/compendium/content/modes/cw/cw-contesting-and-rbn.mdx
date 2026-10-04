@@ -1,0 +1,37 @@
+import { CwContestingAndRbn_Skimmers } from '@/visuals/compendium/CwContestingAndRbn_Skimmers'
+
+## Fast exchanges
+
+In a CW contest the aim is as many contacts as possible in a fixed time, so every QSO is stripped to the minimum: a call sign, a short exchange, and a thanks. A typical exchange is the report and a serial number or location, sent once.
+
+| Sent | Meaning |
+|---|---|
+| **5NN** | the report 599, with **N** standing in for 9 (a "cut number") |
+| a number or place | the contest's required exchange, e.g. a serial number, state or zone |
+| **TU** | thank you, contact over; the next call follows immediately |
+
+Operators typically send at speeds well above casual QSOs, and a computer or the radio's keyer sends stored messages (call, exchange, CQ) at the press of a key so the operator can listen. There are two basic styles: **running** (calling CQ on one frequency and letting callers come to you) and **search and pounce** (tuning around and calling others). For how scoring and categories work, see <Ref to="contesting" />, and <Ref to="logging-software" /> for the software.
+
+<Callout kind="note">Contest rules say which exchanges count and which kinds of outside help (such as spots) are allowed in each category. Check the rules of the contest you enter.</Callout>
+
+## The Reverse Beacon Network
+
+A normal beacon is a transmitter that sends a known signal so you can listen and judge propagation. The **Reverse Beacon Network (RBN)** turns that around: you transmit, and a network of volunteer **skimmer** receivers listens, decodes the Morse by software, and reports what it hears.
+
+<CwContestingAndRbn_Skimmers />
+
+A skimmer typically decodes many signals across a band at once. When it hears a station calling CQ, it publishes a **spot**: who, on what frequency, at what signal-to-noise ratio, and at what speed. The spots from all skimmers are collected and shown publicly, and are available to logging software.
+
+## What it is good for
+
+- **Being found.** In a contest, a CQ that gets spotted draws callers from stations watching the spots.
+- **Free signal reports.** Which skimmers heard you, and how strongly, shows where your signal reaches. Changing antenna or power and comparing spots is a simple way to measure a difference; see <Ref to="qrp-cw" />.
+- **Seeing the band open.** The spots of other stations show where and when propagation is working.
+
+## Limits
+
+Decoding is automatic, so mistakes happen: spots can be wrong, especially for weak or fast signals, and the numbers depend on each skimmer's receiver and local noise. Read the SNR as a comparison between your own tests, not an exact measurement. For how decoding works and where it fails, see <Ref to="cw-decoding" />.
+
+<ExamLink groups="T8C E2C" />
+
+<Related to="contesting dxing logging-software cw-procedures cw-decoding qrp-cw" />

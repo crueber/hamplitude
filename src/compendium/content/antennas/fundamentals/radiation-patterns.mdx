@@ -1,0 +1,56 @@
+import { RadiationPatterns_Cuts } from '@/visuals/compendium/RadiationPatterns_Cuts'
+import { E9B_ReadPolar } from '@/visuals/extra/E9B_ReadPolar'
+import { DipoleDonutPattern } from '@/visuals/shared/DipoleDonutPattern'
+
+## What it is
+
+A radiation pattern maps how strongly an antenna radiates, and by reciprocity how well it receives, in each direction. Because real antennas are three-dimensional, patterns are drawn as flat slices called polar plots.
+
+<Facts items={[
+  ['Main lobe', 'the direction of strongest radiation'],
+  ['Null', 'a direction where radiation drops to almost nothing'],
+  ['Beamwidth', 'angle between the two half-power (−3 dB) points of the main lobe'],
+  ['Front-to-back', 'main lobe strength divided by strength directly behind, in dB'],
+]} />
+
+## Reading a polar plot
+
+<E9B_ReadPolar />
+
+The plot is centred on the antenna. Distance from the centre shows relative strength in that direction, and rings are usually marked in dB, with the outer ring the peak. The strongest direction is the **main lobe**; weaker ones are **side lobes** and the dips between are **nulls**.
+
+- **Beamwidth** is how wide the main lobe is, measured between the points where power has fallen to half (−3 dB). A narrow beam means high <Ref to="gain-and-directivity">gain</Ref>.
+- **Front-to-back ratio** compares the peak to the opposite direction. A high figure means the antenna rejects signals from behind.
+- **Front-to-side ratio** does the same for 90° off the peak.
+
+A null is as useful as a lobe: pointing one at a source of local noise can improve reception. See <Ref to="noise-cancelling" />.
+
+## Two slices of one shape
+
+<DipoleDonutPattern />
+
+The donut is the whole pattern of a half-wave dipole, but a page can only show a slice. Looking down gives the **azimuth** cut, the pattern around the compass. Looking from the side gives the **elevation** cut, the pattern versus angle above the horizon. Slide the elevation below to see how the azimuth cut changes with the angle you slice at.
+
+<RadiationPatterns_Cuts />
+
+For HF this matters a lot. The elevation pattern, shaped by height above ground (see <Ref to="ground-and-height" />), decides whether your signal leaves at a low angle for long-distance contacts or a high angle for nearby ones; see <Ref to="skywave-and-skip" />.
+
+## Common shapes
+
+| Antenna | Azimuth pattern | Notes |
+|---|---|---|
+| Horizontal dipole | figure-8, strongest broadside to the wire | elevation pattern depends on height |
+| Vertical monopole | circle (omnidirectional) | low-angle radiation, none straight up |
+| Small loop | figure-8, deep nulls perpendicular to the loop's plane | see <Ref to="direction-finding-antennas" /> |
+| Yagi beam | one main lobe, small back lobe | narrower with more elements |
+
+## In practice
+
+- Patterns in books are usually for **ideal** surroundings. Soil, nearby wires, buildings and your own feed line all reshape the real pattern.
+- Pattern, gain and beamwidth are tied together: gain in one direction is taken from the others.
+- Plots describe the **far field**. Very close to the antenna the fields behave differently; see <Ref to="near-and-far-field" />.
+- To check your own antenna's pattern, use <Ref to="antenna-modeling">modelling software</Ref> or compare signal reports from known stations around the compass.
+
+<ExamLink groups="E9B T9A" />
+
+<Related to="gain-and-directivity ground-and-height near-and-far-field antenna-modeling half-wave-dipole yagi-uda" />

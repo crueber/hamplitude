@@ -1,0 +1,44 @@
+import { ConstructionMethods_Methods } from '@/visuals/compendium/ConstructionMethods_Methods'
+import { LeadParasitic } from '@/visuals/extra/E6E_LeadParasitic'
+
+## What it is
+
+Building a circuit means turning a schematic into real parts that are physically connected, held in place and protected. How you do it matters more as frequency rises: at audio and DC almost anything works, but at RF every lead is an inductor and every close pair of wires a capacitor, so layout becomes part of the design.
+
+<Facts items={[
+  ['Audio and DC', 'forgiving: any method works'],
+  ['RF', 'short leads, solid ground and tidy layout matter'],
+  ['Prototype', 'breadboard, perfboard or dead-bug'],
+  ['Final', 'printed circuit board, in an enclosure'],
+]} />
+
+## Choosing a method
+
+<ConstructionMethods_Methods />
+
+**Dead-bug** (parts soldered in the air, often with an IC glued or soldered upside down) and **Manhattan** construction (small copper-clad pads glued to a ground-plane board) are favourites for RF. The copper sheet gives every part a short, solid ground and the parts stay close together. Both are quick to modify, which is what you want while experimenting.
+
+## Why layout matters at RF
+
+<LeadParasitic />
+
+A lead a few centimetres long has enough inductance to matter at VHF, and in sensitive circuits at HF, and wires running side by side couple signals between them. Good habits follow from that:
+
+- Keep leads **short** and direct, especially in tuned circuits and in the paths that carry RF.
+- Give every stage a **common ground** plane or bus, rather than a long thin ground wire.
+- Place bypass capacitors right at the part they serve, with minimal lead length.
+- Keep input and output of an amplifier apart so the output cannot feed back to the input and cause oscillation.
+- Don't run RF wires parallel with audio or power wires; cross them at right angles if you must.
+
+## Protecting what you build
+
+- **Enclosure.** A metal box shields the circuit from outside RF and keeps its own RF in. Bond the box to circuit ground and use shielded connectors for RF in and out. A plastic box shields nothing.
+- **Mechanical strength.** Support heavy parts like transformers and connectors on the box, not on the board. Add strain relief where cables enter, and insulate any exposed mains terminals.
+- **Static.** Many chips and FETs can be destroyed by a static spark you never feel. Touch grounded metal before handling them, and keep them in their packaging until needed.
+- **Labelling.** Mark connectors and controls, and note on paper what each wire is. You will forget.
+
+Whichever method you pick, check each joint (see <Ref to="soldering" />) and test the circuit stage by stage rather than all at once; see <Ref to="troubleshooting" />.
+
+<ExamLink groups="T7D" />
+
+<Related to="soldering reading-schematics kits-and-homebrew troubleshooting rf-connectors integrated-circuits" />

@@ -1,0 +1,60 @@
+import { Capacitance_Plates } from '@/visuals/compendium/Capacitance_Plates'
+import { Storage } from '@/visuals/technician/T5C_Storage'
+
+## What it is
+
+Two conductors separated by an insulator make a capacitor. Put a voltage across it and it stores charge, and with it energy, in the **electric field** between the conductors. Capacitance is how much charge it holds for each volt.
+
+<Facts items={[
+  ['Unit', 'farad (F); in practice pF, nF and µF'],
+  ['Charge', 'Q = C × V'],
+  ['Energy', '½ × C × V²'],
+  ['In parallel', 'capacitances add'],
+]} />
+
+## How it works
+
+<Capacitance_Plates />
+
+Connect a battery and electrons are drawn off one plate and pushed onto the other. The two plates now carry opposite charges that attract each other across the gap, and that attraction is what holds the charge in place. Three things raise the capacitance:
+
+- **Bigger plates.** More room for charge.
+- **A smaller gap.** Opposite charges are closer, so they hold each other more strongly.
+- **A better dielectric.** The insulator's molecules turn to line up with the field, which cancels part of it. Less field per unit of charge means the same voltage holds more charge. The factor is the dielectric constant, εr.
+
+| Dielectric | Typical εr |
+|---|---|
+| Air | 1 |
+| PTFE (Teflon) | about 2 |
+| Polyester film | about 3 |
+| Mica | about 6 |
+| High-k ceramic | hundreds to thousands |
+
+No current flows through the insulator. Current flows in the wires only while the voltage is *changing*, as the plates charge or discharge: i = C × (rate of change of voltage). Once the voltage is steady, current stops. So a capacitor **blocks DC but passes AC**, because AC never stops changing. How well it passes AC depends on frequency; see <Ref to="reactance-and-impedance" />.
+
+<Storage />
+
+## The numbers
+
+A 100 µF capacitor across a 13.8 V supply holds Q = 100 µF × 13.8 V = 1.38 mC and stores ½ × 100 µF × 13.8² = 9.5 mJ. Energy grows with the square of the voltage, so doubling the voltage stores four times as much.
+
+Capacitors combine **opposite to resistors**, and the plates explain why:
+
+| Connection | Result | Why |
+|---|---|---|
+| Parallel | C = C1 + C2 | plate areas add |
+| Series | 1/C = 1/C1 + 1/C2 | gaps stack, so the gap grows |
+
+Two 100 pF capacitors in series give 50 pF; in parallel, 200 pF. The voltage rating of a series pair is also higher, but only if the voltage divides evenly.
+
+## In practice
+
+- A capacitor is rated for a maximum **voltage** as well as its capacitance. Exceeding it breaks down the dielectric.
+- Real capacitors are not ideal: their leads add a little inductance, and their dielectric leaks. Choosing among ceramic, film, electrolytic and variable types is covered in <Ref to="capacitors" />.
+- Large capacitors store energy long after the power is off. A charged filter capacitor in a power supply can be dangerous; see <Ref to="electrical-safety" />.
+
+<Callout kind="warn" title="Stored charge">Never assume a capacitor is empty. High-voltage supplies and amplifiers can hold a lethal charge after being switched off and unplugged. Follow the discharge procedure for the equipment, and do not work inside one until you know it is safe.</Callout>
+
+<ExamLink groups="T5C T6A G5A G5C" />
+
+<Related to="inductance reactance-and-impedance capacitors time-constants resonance-and-q electrical-safety" />

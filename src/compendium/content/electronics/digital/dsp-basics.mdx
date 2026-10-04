@@ -1,0 +1,45 @@
+import { DspBasics_Fir } from '@/visuals/compendium/DspBasics_Fir'
+import { Fft, SsbQuadrature } from '@/visuals/extra/E7F_Dsp'
+
+## What it is
+
+**Digital signal processing (DSP)** is doing the work of filters, mixers and demodulators with arithmetic on a stream of numbers instead of with coils, capacitors and crystals. An ADC turns the signal into samples, a processor does the maths, and a DAC (or the screen) turns the result back into something you can hear or see. See <Ref to="adc-and-dac" />.
+
+<Facts items={[
+  ['Core operation', 'multiply recent samples by coefficients and add them up'],
+  ['Filter types', 'FIR (feed-forward only) and IIR (with feedback)'],
+  ['FFT bin width', 'sample rate ÷ number of points'],
+  ['Cost', 'processing delay (latency) and limits set by the ADC'],
+]} />
+
+## Filtering with maths
+
+<DspBasics_Fir />
+
+The simplest digital filter averages the last few samples. Random noise changes sign from sample to sample and tends to cancel, while a slow signal barely changes, so it survives. Averaging N samples cuts random noise by about 10 × log₁₀(N) dB.
+
+A general **FIR** (finite impulse response) filter does the same with a different weight for each sample. Choosing the weights shapes the response: low-pass, band-pass, or the very steep "brick-wall" edges that make a 300 Hz CW filter or a narrow SSB passband possible. Doing that with real components would need many precisely matched parts. In DSP, changing a bandwidth is just loading new numbers, which is why a modern radio can offer adjustable filter widths and shifts at the press of a button.
+
+The cost is **delay**: a symmetrical FIR filter (which has linear phase, so every frequency is delayed equally) of N taps delays the signal by (N − 1) ÷ 2 samples. A 255-tap filter at 48 kHz delays it 127 samples, which is 2.65 ms. An **IIR** filter feeds its output back, needing far fewer calculations for a given steepness, but it can behave less predictably.
+
+## Seeing the spectrum
+
+<Fft />
+
+The **FFT** (fast Fourier transform) turns a block of samples into a spectrum, one line per frequency "bin". Bin width is the sample rate divided by the number of points: at 48 kHz with 4096 points, about 11.7 Hz. Narrower bins need more samples, so they take longer to collect. This is the engine behind waterfalls, band scopes and decoders for modes like FT8. See <Ref to="spectrum-and-fourier" />.
+
+## Demodulating with maths
+
+<SsbQuadrature />
+
+Once a signal is a stream of numbers, mixing it is multiplying and demodulating it is arithmetic. SDR receivers keep two copies of the signal 90° apart (I and Q); the maths then separates the upper sideband from the lower, cancels the unwanted one, and recovers AM, FM or SSB audio without any hardware change. Noise reduction, notch filters that automatically follow a whistle, and automatic gain control are all programs running on the sample stream.
+
+## Limits worth knowing
+
+- DSP cannot fix what the ADC lost. A strong signal that overloads the converter is distorted before any maths happens, so analog filtering and gain control ahead of it still matter.
+- Sample rate sets the highest frequency available (half the sample rate), and bits set the dynamic range.
+- Heavy processing adds latency, which can be noticeable when you monitor your own transmitted audio.
+
+<ExamLink groups="E7F G7C E4E" />
+
+<Related to="adc-and-dac sampling-and-nyquist spectrum-and-fourier direct-conversion-and-sdr radio-filters agc-and-noise-reduction" />

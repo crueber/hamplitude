@@ -1,0 +1,45 @@
+import { Nvis as G3C_Nvis } from '@/visuals/general/G3C_Nvis'
+import { G9B_DipoleHeight } from '@/visuals/general/G9B_DipoleHeight'
+
+## What it is
+
+Near-vertical incidence skywave (NVIS) sends an HF signal almost straight up so the ionosphere returns it steeply, landing within a few hundred miles. It fills the gap that ordinary low-angle skip leaves around the transmitter, and gives **reliable regional coverage** with no dependence on line of sight, which is why it is a staple of emergency and disaster communications.
+
+<Facts items={[
+  ['Takeoff angle', 'steep, typically 70 degrees up to straight overhead'],
+  ['Coverage', 'from your own location out to roughly 300 miles, no skip zone'],
+  ['Bands', 'usually 80 m and 40 m; 60 m and 160 m are also used'],
+  ['Antenna', 'low horizontal wire, typically a tenth to a quarter wavelength up'],
+]} />
+
+## Why it works
+
+<G3C_Nvis />
+
+Normal HF contacts use low takeoff angles, so the signal lands far away and leaves a skip zone around you: too far for the ground wave, too close for the sky wave. Aim the signal steeply and the same layer returns it close by instead. The ground wave covers the first few miles, NVIS the rest of the region, and the two overlap.
+
+Sending a signal straight up has a hard rule: it returns only if its frequency is below the layer's **critical frequency**, which is typically a few MHz to around 10 MHz depending on the time and the solar cycle. Higher, and it passes through into space. Lower, and the D layer absorbs it in daytime. That leaves a narrow window, so the right band changes through the day.
+
+| Time | Typical NVIS band |
+|---|---|
+| Daytime | 40 m; 60 m or 80 m when the critical frequency is low |
+| Evening and night | 80 m, sometimes 160 m |
+
+These are rough guides: check which band the signals from your area actually favour. The <Ref to="muf-and-luf">MUF and LUF</Ref> window for a near-vertical path is simply narrow and low.
+
+## The antenna
+
+<G9B_DipoleHeight />
+
+A horizontal dipole close to the ground radiates mostly straight up, because the ground reflection cancels the low-angle radiation and reinforces the overhead lobe. A tenth to a quarter wavelength high works well; higher, and more energy goes out at low angles, the opposite of what you want. A <Ref to="quarter-wave-vertical">vertical</Ref> has a null straight up, so it is a poor NVIS choice, while a low <Ref to="inverted-v">inverted-V</Ref> or dipole is a good one.
+
+## In practice
+
+- Plan for a few hundred miles of coverage in every direction, over hills and valleys alike.
+- Move between 40 m and 80 m as the day ends, using beacons or a net to confirm.
+- Horizontal polarization, a low antenna and modest power are often enough: simple and cheap, which helps in emergencies.
+- Signals can be strong at short range even when a high-angle path would be silent. See <Ref to="ares-and-races" /> for how it is used.
+
+<ExamLink groups="G3C" />
+
+<Related to="skywave-and-skip ground-wave ionosphere-layers muf-and-luf half-wave-dipole inverted-v emcomm-principles" />

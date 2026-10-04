@@ -1,0 +1,59 @@
+import { QuarterWaveVertical_Image } from '@/visuals/compendium/QuarterWaveVertical_Image'
+import { QuarterWave as T9A_QuarterWave } from '@/visuals/technician/T9A_QuarterWave'
+import { G9B_DipoleLength } from '@/visuals/general/G9B_DipoleLength'
+
+## What it is
+
+A single vertical element, a quarter-wavelength tall, fed at its base against a ground system. It is the workhorse omnidirectional antenna: it radiates equally in every compass direction, which suits repeaters, mobile and base stations, and low-angle HF work.
+
+<Facts items={[
+  ['Length', '234 ÷ f(MHz) feet'],
+  ['Feed-point impedance', 'about 36 Ω over a perfect ground'],
+  ['Gain', 'up to about 5 dBi over perfect ground, less over real soil'],
+  ['Polarization', 'vertical'],
+  ['Azimuth pattern', 'omnidirectional (a circle from above)'],
+]} />
+
+## Half a dipole, plus a mirror
+
+<QuarterWaveVertical_Image />
+
+A quarter-wave element only has half the length of a <Ref to="half-wave-dipole">half-wave dipole</Ref>. A conducting ground makes up the rest: it reflects the antenna's field as if a mirror-image element continued below the surface. Element plus image behave like a full half-wave dipole, with the current peaking at the base and zero at the tip.
+
+Two things follow from that:
+
+- Only the upper half is real, so it needs **a good ground** for the missing half to exist. How good, and how to build it, is the subject of <Ref to="radials-and-ground-planes" />.
+- Because the image sits at the feed point, the antenna sees only half of a dipole's impedance: about 36 Ω rather than 73 Ω.
+
+## Length
+
+<T9A_QuarterWave />
+
+The rule is the dipole rule halved:
+
+<Formula label="Quarter-wave monopole">length (ft) = 234 ÷ f(MHz)</Formula>
+
+The 234 is slightly less than a true quarter of a free-space wavelength, because the element is electrically a little longer than it looks.
+
+<G9B_DipoleLength />
+
+| Band | Frequency | Element length |
+|---|---|---|
+| 40 m | 7.15 MHz | 32.7 ft |
+| 20 m | 14.2 MHz | 16.5 ft |
+| 10 m | 28.4 MHz | 8.2 ft |
+| 6 m | 50.2 MHz | 4.7 ft |
+| 2 m | 146 MHz | 19.2 in |
+| 70 cm | 446 MHz | 6.3 in |
+
+## Why choose one
+
+- **Low-angle radiation.** Energy leaves close to the horizon, which is good for long-distance HF contacts and for local VHF/UHF FM. A horizontal dipole has to be high, about half a wavelength or more, to send much energy at low angles on the low bands.
+- **One support, small footprint.** A single pole needs less room than a dipole on 40 m or 80 m.
+- **Matches vertically polarized stations.** FM repeaters, handhelds and mobile rigs use vertical polarization, so a vertical avoids cross-polarization loss; see <Ref to="polarization" />.
+
+The price is that a vertical receives more local man-made noise than a horizontal antenna, and on HF its performance depends heavily on the ground system. Short, loaded versions trade efficiency for size; see <Ref to="loaded-and-short-antennas" />.
+
+<ExamLink groups="T9A G9B" />
+
+<Related to="radials-and-ground-planes five-eighths-and-colinears half-wave-dipole ground-and-height polarization impedance-and-radiation-resistance mobile-whips-and-loading" />

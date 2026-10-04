@@ -1,0 +1,46 @@
+import { MfskAndOlivia_Redundancy } from '@/visuals/compendium/MfskAndOlivia_Redundancy'
+import { ArqFec as E8C_ArqFec } from '@/visuals/extra/E8C_ArqFec'
+
+## What it is
+
+A group of keyboard modes that send text on **many tones** with built-in error correction. They are built to survive the conditions that wreck RTTY and PSK31: fading, interference, static crashes and signals below the noise. They are slower and typically wider, but they keep a conversation going when the simple modes cannot.
+
+<Facts items={[
+  ['MFSK16', '16 tones, bandwidth about 316 Hz'],
+  ['MT63', 'many tones, long error correction, a wide signal'],
+  ['Olivia', 'tones and bandwidth are configurable'],
+  ['Contestia', 'a relative of Olivia with a smaller character set'],
+  ['Keyboard-to-keyboard', 'yes, with a delay'],
+]} />
+
+## How they work
+
+**MFSK** is multiple frequency-shift keying: instead of two tones (mark and space), the signal picks one tone out of many each symbol, so each symbol carries several bits. **Olivia** and **MT63** go further and send each character spread across many tones and over time, with error-correcting code across the whole group.
+
+<MfskAndOlivia_Redundancy />
+
+If a burst of static or a fade wipes out some symbols, there is still enough left to reconstruct the character.
+
+<E8C_ArqFec />
+
+This is **forward error correction (FEC)**, the second approach in the diagram above: the receiver fixes errors using the redundancy it was sent. There is no return channel, so it works for one-way broadcast and group chat as well as two-way conversation.
+
+## What it costs
+
+- **Speed.** Text is slow. Olivia in particular is far slower than PSK31.
+- **Delay.** Characters arrive in blocks, only after the whole block has been received. A reply feels like a short wait.
+- **Bandwidth.** Robust configurations take wider slices of the band than PSK31. MT63 is wide; Olivia lets you pick between narrower and wider settings, and the narrower ones are slower.
+
+## Choosing one
+
+| Situation | Leans toward |
+|---|---|
+| Fading, flutter, noisy HF paths | Olivia or MFSK16 |
+| Lots of static crashes or impulse noise | MT63 |
+| Clean, strong, narrow-band signals | PSK31 or RTTY |
+
+Both stations must agree on the mode and its settings, so operators arrange them in advance or announce them on the air.
+
+<ExamLink groups="E2E G8C E8C" />
+
+<Related to="digital-modes-overview psk31 rtty error-correction js8call digital-mode-software" />

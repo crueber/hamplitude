@@ -1,0 +1,50 @@
+import { SymbolRate } from '@/visuals/extra/E8C_SymbolRate'
+import { BandwidthAndDataRate_Shannon } from '@/visuals/compendium/BandwidthAndDataRate_Shannon'
+
+## What it is
+
+A signal needs **bandwidth**: a slice of spectrum its sidebands occupy. How fast you can send information through a slice depends on how wide it is and how far the signal stands above the noise. Understanding those two limits explains why CW is narrow but slow, why a video link needs megahertz, and why FT8 works when you cannot hear a thing.
+
+<Facts items={[
+  ['Bit rate', 'symbol rate × bits per symbol'],
+  ['Bandwidth', 'roughly the symbol rate, for a well-shaped digital signal'],
+  ['Shannon limit', 'C = B × log₂(1 + S/N)'],
+  ['Noise', 'grows in proportion to bandwidth'],
+]} />
+
+## Symbols and bits
+
+<SymbolRate />
+
+A **symbol** is one state of the carrier, held briefly. Symbol rate (baud) is how often it changes. The rate at which the waveform changes decides how much spectrum it fills, so bandwidth tracks the symbol rate. Bit rate is symbol rate times bits per symbol, so carrying more bits per symbol (see <Ref to="digital-modulation" />) raises the data rate without widening the signal. Shaping the transitions smoothly keeps the bandwidth close to the symbol rate; abrupt transitions spread it wider.
+
+Even simple Morse follows this: its width grows with keying speed, and with how sharply the keying is shaped. A sharp edge makes clicks. A rough rule is about 4 Hz per word per minute: 13 wpm is about 52 Hz wide.
+
+## The Shannon limit
+
+<BandwidthAndDataRate_Shannon />
+
+Claude Shannon showed that no matter how clever the scheme, the maximum error-free rate through a noisy channel is C = B × log₂(1 + S/N), with S/N as a plain ratio, not dB. Two consequences:
+
+- **At a fixed S/N, doubling bandwidth doubles the capacity.** But a wider channel also admits twice the noise, so unless power rises, S/N falls by 3 dB.
+- **Raising SNR helps only logarithmically**: at good SNR, each doubling of signal power (3 dB) adds about one bit per second per hertz.
+
+At low SNR capacity is small but never zero, which is what weak-signal modes exploit. FT8 occupies about 50 Hz and decodes down to roughly −20 dB signal to noise in the usual 2.5 kHz reference. That is about −3 dB within its own 50 Hz, where the Shannon limit is near 30 bit/s. FT8 carries about 6 bit/s of message, comfortably inside the limit. Real modes sit below the limit; none can exceed it.
+
+| Mode | Bandwidth | Why |
+|---|---|---|
+| FT8, PSK31 | 31 to 50 Hz | very slow symbols |
+| CW | tens to a few hundred Hz | depends on speed and shaping |
+| SSB voice | 2.4 to 3 kHz | the voice itself |
+| FM voice | 10 to 16 kHz | deviation plus audio |
+| Digital TV | MHz | many bits per second |
+
+## In practice
+
+- **A narrower mode (or receiver filter) hears weaker signals**, because half the bandwidth admits half the noise power: 3 dB better. See <Ref to="noise-and-snr" />.
+- **Slow is a feature**: weak-signal modes buy sensitivity with time, and with <Ref to="error-correction">error correction</Ref>.
+- Space signals by about their own width, so neighbours don't overlap. See <Ref to="band-plans" />.
+
+<ExamLink groups="E8C G8B" />
+
+<Related to="digital-modulation error-correction noise-and-snr spectrum-and-fourier digital-modes-overview ft8-and-ft4" />

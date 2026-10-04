@@ -1,0 +1,49 @@
+import { FastScanTv_Tradeoff } from '@/visuals/compendium/FastScanTv_Tradeoff'
+import { E2B_Interlace } from '@/visuals/extra/E2B_Interlace'
+import { E2B_Vsb } from '@/visuals/extra/E2B_Vsb'
+
+## What it is
+
+Fast-scan television (FSTV, or analog ATV) is real-time moving video, sent the way broadcast TV was: a new picture many times a second. It looks like television, and you watch it on a television, but the signal is enormously wider than any voice mode.
+
+<Facts items={[
+  ['Bandwidth', 'about 6 MHz for a full analog TV channel'],
+  ['Lines per frame', '525 (NTSC)'],
+  ['Rate', 'about 30 frames, 60 fields per second'],
+  ['Where', 'typically 70 cm and higher bands'],
+]} />
+
+## Why it is so wide
+
+A picture contains a lot of detail. SSTV sends it slowly through a narrow channel; fast-scan sends a fresh frame every 1/30 of a second, so the same amount of detail has to go through thousands of times faster, and the channel has to be proportionally wider. Speed is paid for in bandwidth.
+
+<FastScanTv_Tradeoff />
+
+A 6 MHz signal also lets in 6 MHz of noise, roughly 34 dB more than a 2.4 kHz SSB signal, so a fast-scan picture needs a much stronger signal at the receiver than speech does. See <Ref to="noise-and-snr" />.
+
+## How the picture is made
+
+The video is scanned in lines. In North American NTSC, 525 lines make a frame, sent as two interlaced fields, odd lines first and then even, to reduce flicker.
+
+<E2B_Interlace />
+
+To save bandwidth, the video is sent as **vestigial sideband** AM: one full sideband and a stub of the other. The low video frequencies are kept, and the whole thing is narrower than ordinary double-sideband AM.
+
+<E2B_Vsb />
+
+Sound travels on a separate subcarrier in the same channel.
+
+## Where and how
+
+A 6 MHz signal won't fit in the HF or low VHF bands, which are narrow and shared with many modes. Fast-scan therefore lives on **70 cm and higher** bands, where there is room. On 70 cm the channels overlap some cable-TV channels, so a **cable-ready television** can receive it directly. On higher bands a converter is needed first.
+
+- A camera's video output goes into the transmitter and the audio into its sound input.
+- Range is line-of-sight like other VHF/UHF/microwave work, so antenna height and gain matter. See <Ref to="line-of-sight" /> and <Ref to="yagi-uda" />.
+- Repeaters, called ATV repeaters, exist in some areas to extend coverage.
+- Because the signal is wide and the bands busy, check the band plan and coordinate before you transmit; see <Ref to="band-plans" />.
+
+Digital video, covered in <Ref to="digital-atv" />, is the modern alternative.
+
+<ExamLink groups="E2B T8A T8D" />
+
+<Related to="slow-scan-tv digital-atv radio-spectrum modulation-basics bandwidth-and-data-rate band-plans" />

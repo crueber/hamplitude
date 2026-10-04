@@ -1,0 +1,51 @@
+import { HfTransceivers_Connections } from '@/visuals/compendium/HfTransceivers_Connections'
+import { TransceiverBlocks } from '@/visuals/shared/TransceiverBlocks'
+
+## What it is
+
+A transceiver is a transmitter and receiver sharing one box, one frequency control and one antenna. An HF transceiver covers the shortwave bands, usually 160 m through 10 m, often 6 m too, and is the usual heart of a home station. It is the radio you use to work other continents.
+
+<Facts items={[
+  ['Typical output', '100 W (QRP and 200 W models exist)'],
+  ['Power', '13.8 V DC; typically 20 A or more at full output'],
+  ['Modes', 'SSB, CW, AM, FM and digital modes through a computer'],
+  ['Receive', 'usually general coverage, well beyond the ham bands'],
+]} />
+
+## How it fits the station
+
+<HfTransceivers_Connections />
+
+Inside, one set of circuits is shared between receive and transmit, and the push-to-talk line decides which path is live:
+
+<TransceiverBlocks />
+
+How the stages work is covered in <Ref to="transceiver-block-diagram" />. The rig is only part of the system: the <Ref to="antenna-tuners">tuner</Ref>, <Ref to="shack-power-supplies">power supply</Ref> and antenna decide how well it performs.
+
+## What to look for
+
+| Feature | Why it matters |
+|---|---|
+| Receiver performance | Crowded bands put many strong signals near the one you want. Dynamic range and selectivity decide whether you hear it cleanly; see <Ref to="receiver-performance" /> |
+| Filters and DSP | Narrow CW and SSB filters, notch and noise reduction make weak signals readable; see <Ref to="radio-filters" /> |
+| Built-in antenna tuner | Matches a modest mismatch so the rig sees a load it can drive. It cannot fix a poor antenna |
+| Spectrum display | Shows activity around you at a glance, a feature of <Ref to="sdr-transceivers" /> and many hybrids |
+| Computer interface | USB for <Ref to="cat-control" /> and digital-mode audio |
+| Amplifier and key jacks | Keying line and ALC input for a <Ref to="linear-amplifiers">linear amplifier</Ref>, plus key or paddle jack |
+| Split, RIT, dual receive | Working DX and contests; see <Ref to="rit-xit-and-split" /> |
+| Cooling and duty cycle | Digital modes and RTTY transmit continuously, which heats the final amplifier. Run well below full power for those |
+
+Among full-size rigs, output power varies little. The differences are mostly receiver quality, filtering, display and convenience.
+
+## In practice
+
+- Use the lowest power that makes the contact. Most contacts do not need 100 W, and a clean signal at lower power beats a distorted one at full power.
+- Adjust mic gain and processing so the ALC stays in its range; see <Ref to="speech-processing-and-mic-gain" />.
+- Some compact HF rigs are built for vehicles, with a detachable front panel; see <Ref to="mobile-operation" />.
+- Know your license privileges before transmitting: bands and modes differ by class. Output power also matters for <Ref to="rf-exposure" />.
+
+<Callout kind="tip" title="Antenna first">A better antenna improves both transmit and receive. A modest rig on a good antenna usually outperforms an expensive rig on a poor one.</Callout>
+
+<ExamLink groups="T7A T4A G4A G7C" />
+
+<Related to="transceiver-block-diagram receiver-performance sdr-transceivers cat-control antenna-tuners linear-amplifiers shack-power-supplies" />

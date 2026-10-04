@@ -1,0 +1,38 @@
+import { MultibandDipoles_Harmonics } from '@/visuals/compendium/MultibandDipoles_Harmonics'
+import { OffCenterFedDipole_Layout } from '@/visuals/compendium/OffCenterFedDipole_Layout'
+
+## What it is
+
+A dipole fed not at its center but about one third of the way along, through a 4:1 transformer to coax. The off-center feed is chosen so that the feed-point impedance stays similar on several harmonically related bands (for example 80, 40, 20 and 10 m), which is how it works on all of them without a tuner. It is also called a Windom, after an older, related design.
+
+<Facts items={[
+  ['Feed point', 'about one third from one end (typical)'],
+  ['Transformer', '4:1 current balun (typical)'],
+  ['Bands', 'the fundamental and most harmonics, but not multiples of the third'],
+  ['Critical parts', 'the transformer and the common-mode choke'],
+]} />
+
+<OffCenterFedDipole_Layout />
+
+## Why one third
+
+<MultibandDipoles_Harmonics feed={1/3} />
+
+Current on the wire is a standing wave with a null at each end. Feed point impedance depends on how much current is flowing at the feed point: the less current, the higher the impedance.
+
+Place the feed one third along the wire and the arithmetic is neat. At the fundamental, 2nd and 4th harmonics, the feed point carries the same fraction of peak current, about 87% (the sine of 60°). The impedance is therefore about 1.3 times the lowest possible value on each of those bands, and the same transformer serves them all.
+
+A center feed would have a current null on the even harmonics, and the same one-third feed has a null on the 3rd, 6th and so on. A wire cut for 40 m, for example, has its third harmonic in the 15 m band, which this feed point serves poorly.
+
+## The trade-offs
+
+- **The 4:1 transformer.** Feed-point impedance is typically in the region of 100 to 300 Ω (it varies with band, height and surroundings), and the 4:1 brings that toward 50 Ω. Expect a useful but rarely perfect SWR that changes across each band. Core, winding and power rating decide loss and heating; see <Ref to="baluns-and-ununs" />.
+- **Unequal legs.** The antenna is lopsided as seen from the coax, so RF current is more likely to flow on the outside of the shield. A good <Ref to="common-mode-chokes">common-mode choke</Ref> at the feed point is part of the design, not an extra.
+- **Pattern.** At the higher bands the wire is several half-waves long, so the pattern has several lobes rather than one broadside figure-8.
+- **Coverage.** Only the harmonically related bands work; others, such as 30 m, 17 m or 12 m, usually need a tuner and are not always good.
+
+<Callout kind="warn" title="Keep the ends out of reach">As with any half-wave wire, the ends carry high RF voltage. Keep them, and the whole wire, well away from people and from power lines.</Callout>
+
+<ExamLink groups="E9C" />
+
+<Related to="half-wave-dipole multiband-dipoles end-fed-half-wave baluns-and-ununs common-mode-chokes g5rv-and-doublets" />

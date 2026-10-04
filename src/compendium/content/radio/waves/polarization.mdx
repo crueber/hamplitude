@@ -1,0 +1,45 @@
+import { Polarization as WireDirection } from '@/visuals/technician/T9A_Polarization'
+import { Polarization as TiltMismatch } from '@/visuals/technician/T3A_Polarization'
+import { Circular } from '@/visuals/extra/E3A_Circular'
+
+## What it is
+
+Polarization is the **direction of a wave's electric field**. A vertical antenna produces a vertically polarized wave, a horizontal one produces a horizontally polarized wave. A receiving antenna picks up the most signal when it is lined up with the field it is receiving.
+
+<Facts items={[
+  ['Linear', 'vertical or horizontal, set by the antenna direction'],
+  ['Circular', 'the field rotates once per cycle, right-hand or left-hand'],
+  ['Mismatch', 'costs 3 dB at 45°, and 20 dB or more when crossed at 90°'],
+]} />
+
+## Why the wire's direction matters
+
+<WireDirection />
+
+Current moves along the wire, so the electric field it creates points along the wire too. A wave leaving a vertical whip has its field swinging up and down; a horizontal dipole swings it sideways. To catch that wave, the receiving antenna's wire must be able to follow the same swing. A receiver crossed at 90° has almost nothing to grab.
+
+## How much a mismatch costs
+
+<TiltMismatch />
+
+Tilting the receiving antenna by an angle θ from the transmitted field reduces received **power** by cos²θ. That is 3 dB at 45°, 6 dB at 60°, and falls away steeply near 90°. In real life the loss at 90° is limited by reflections and imperfect antennas, but it is still typically 20 dB or more: the difference between a clear contact and none.
+
+On a clean line-of-sight path, such as a repeater, simplex or a link, matching polarization matters. By convention FM voice and repeaters use vertical polarization, because handhelds, mobile whips and base verticals are all vertical. Weak-signal SSB and CW on VHF and UHF traditionally use horizontal, so beams there are horizontal.
+
+## Circular, and when polarization stops mattering
+
+<Circular />
+
+In **circular polarization** the electric field rotates as the wave moves, tracing a corkscrew. It is right-hand or left-hand depending on the direction of rotation. A linear antenna hears a circular wave with a fixed loss of about 3 dB at any tilt, and two circular antennas of opposite sense are strongly mismatched. Satellites favour circular polarization because the satellite's orientation keeps changing and the wave's polarization can be rotated on its way through the ionosphere (Faraday rotation), so a fixed linear antenna would fade in and out.
+
+Polarization matters much less in other situations:
+
+- **HF skywave.** The ionosphere twists and scrambles polarization, so a signal arrives with whatever it ended up with. What matters on HF is the takeoff angle and the pattern, not the polarization.
+- **Reflections.** A signal bouncing off buildings or terrain arrives partly changed, which is one reason a handheld works indoors even when held crooked.
+- **Ground wave.** Low-band ground-wave signals are vertically polarized, because the ground quickly kills a horizontally polarized one; see <Ref to="ground-wave" />.
+
+<Callout kind="tip" title="At the bench">If a VHF signal is weak, try rotating or tilting the antenna before anything else. If a repeater signal improves when you hold the handheld upright, you have found a polarization mismatch.</Callout>
+
+<ExamLink groups="T3A T9A" />
+
+<Related to="electromagnetic-waves ground-wave radiation-patterns how-antennas-work fm-voice helical-and-satellite-antennas" />

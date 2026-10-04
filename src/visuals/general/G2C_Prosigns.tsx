@@ -23,9 +23,10 @@ function Morse({ x, y, code, col }: { x: number; y: number; code: string; col: s
 }
 
 /** CW prosigns, Morse patterns, and the RST 'C' suffix. */
-export function G2C_Prosigns() {
+/** `exam` adds the note that highlighted prosigns are the exam answers (right for the lesson, wrong elsewhere). */
+export function G2C_Prosigns({ exam = true }: { exam?: boolean } = {}) {
   return (
-    <Diagram w={640} h={330} title="CW prosigns are sent as one run-together character. AR ends a formal message. KN means listening only for the station or stations named. SK and BK are other prosigns, for ending a contact and for break. In an RST report, a C added at the end means a chirpy or unstable signal" caption="Prosign = letters sent run together. Highlighted ones are the exam answers.">
+    <Diagram w={640} h={330} title="CW prosigns are sent as one run-together character. AR ends a formal message. KN means listening only for the station or stations named. SK and BK are other prosigns, for ending a contact and for break. In an RST report, a C added at the end means a chirpy or unstable signal" caption={exam ? "Prosign = letters sent run together. Highlighted ones are the exam answers." : "Prosign = letters sent run together as one character."}>
       {ROWS.map(([name, code, mean, col, hot], i) => {
         const y = 12 + i * 52
         return (

@@ -1,0 +1,42 @@
+import { SporadicE_Reach } from '@/visuals/compendium/SporadicE_Reach'
+import { SporadicE as E3B_SporadicE } from '@/visuals/extra/E3B_SporadicE'
+
+## What it is
+
+Sporadic E (written Es) is a thin, dense patch of ionization that appears in the E region, roughly 100 km up, for minutes to hours. It is dense enough to reflect frequencies far above what the E layer normally handles, so it can open the **10 m, 6 m and occasionally 2 m** bands to stations far beyond the horizon. "Sporadic" is the honest word: it comes and goes, and no one can promise it.
+
+<Facts items={[
+  ['Height', 'about 100 km (E region)'],
+  ['Typical single hop', 'about 1,000 to 2,000 km (roughly 600 to 1,300 miles)'],
+  ['Bands', '10 m and 6 m often; 2 m occasionally'],
+  ['Season', 'peaks in summer, smaller peak in winter'],
+]} />
+
+## Why it works
+
+<SporadicE_Reach />
+
+The leading explanation is that winds at different heights in the E region shear against each other and squeeze long-lived metal ions, left behind by burning meteors, into thin, dense sheets. A sheet of electrons that dense reflects VHF as a mirror would. The details are still debated, which is partly why forecasting it is hard.
+
+Geometry then sets the distance. The layer is so low that a signal leaving along the horizon meets it at a shallow angle, and the ground distance for one hop is limited to roughly 2,200 km. Most hops are shorter. Two hops, with a bounce off the ground between them, reach roughly twice as far, which is how Es can occasionally link far-apart regions.
+
+## When it happens
+
+<E3B_SporadicE />
+
+In the northern hemisphere Es is most likely from late spring through summer, with a smaller peak around midwinter, and during the daytime and early evening. The southern hemisphere shows the same pattern shifted by six months. It is largely independent of the <Ref to="solar-cycle-and-indices">solar cycle</Ref>, so it can liven up 10 m and 6 m even when the sunspot count is low.
+
+## How it behaves
+
+Openings can start suddenly and end the same way, and the clouds drift, so signals often swell and fade within minutes. A band may be loud while the one above it is silent, because each cloud has its own ceiling. Several clouds can open different directions at once, so a beacon on the band tells you more than a forecast.
+
+## In practice
+
+- Listen to beacons and watch spotting tools to see when a band opens: see <Ref to="spotting-networks" />.
+- A modest horizontal antenna, even a dipole or small beam, is usually enough on 6 m; Es can deliver loud signals.
+- On 10 m, Es gives "short skip" contacts of a few hundred to a thousand-plus miles that ordinary F-layer skip would overshoot.
+- When 2 m opens it is brief and rare, a good reason to keep a rig on and monitor.
+
+<ExamLink groups="T3C E3B" />
+
+<Related to="ionosphere-layers skywave-and-skip meteor-scatter six-meters weak-signal-vhf tropospheric-propagation propagation-tools" />

@@ -1,0 +1,39 @@
+import { AntennaSwitching_Routing } from '@/visuals/compendium/AntennaSwitching_Routing'
+import { Lightning } from '@/visuals/general/G0B_Lightning'
+
+## What it is
+
+An **antenna switch** routes one radio to any of several antennas (or several radios to one antenna) without moving connectors. It also gives you a place to park a dummy load for testing, and a way to ground unused antennas.
+
+<AntennaSwitching_Routing />
+
+## Kinds of switch
+
+| Type | How it works | Good for |
+|---|---|---|
+| **Manual coax switch** | a rotary or push-button switch in the shack | a few antennas, one feed line each |
+| **Remote switch** | relays in a weatherproof box near the antennas, with a control cable or DC sent on the coax | several antennas on one coax, towers and long runs |
+| **Multi-radio switch** | connects any of several radios to any of several antennas | stations that share antennas between radios |
+
+A remote switch saves running a feed line for every antenna, but adds a control cable and an outdoor part that can fail. Keep that control wire away from the RF feed line, and use ferrite chokes or bypassing to stop RF getting into it.
+
+## What the ratings mean
+
+- **Frequency range.** A switch rated to HF can behave badly at VHF or UHF: loss rises and isolation falls. Check it covers every band you use.
+- **Power rating.** Choose one rated well above your power, including any amplifier, and rated for the SWR it will see. Ratings usually assume a good match.
+- **Insertion loss.** A good switch adds only a small fraction of a dB at HF.
+- **Isolation.** How well a port that is not selected is kept out of the one that is. Isolation is expressed in dB: at 60 dB, 1500 W is reduced to about 1.5 mW, and at 50 dB to about 15 mW. Isolation drops as frequency rises, and it matters most when two radios share a site, or one antenna sits close to another.
+
+## Operating safely
+
+- **Never switch while transmitting.** Switching under power can arc the contacts, and many rotary switches momentarily open the line, a severe mismatch that can damage the radio or an amplifier. Stop transmitting, or turn the power down, before switching.
+- **Label every position**, and check that the right antenna is selected before you transmit. A wrong position is a common cause of a sudden high SWR; see <Ref to="power-and-swr-protection" />.
+- **A grounded position is not lightning protection.** It helps with static build-up. For storms, the safest practice is to **physically disconnect** feed lines and move them away from equipment, together with surge arrestors where the lines enter and a bonded ground system.
+
+<Lightning />
+
+- With two radios on one antenna, an **interlock** or transmit inhibit stops the second one from keying while the first is in use. A transmitter connected to another radio's receiver input can destroy it.
+
+<ExamLink groups="T0A G0B" />
+
+<Related to="lightning-and-grounding lightning-safety dummy-loads coaxial-cable rf-connectors station-layout linear-amplifiers" />

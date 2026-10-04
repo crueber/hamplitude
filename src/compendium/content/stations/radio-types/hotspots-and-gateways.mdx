@@ -1,0 +1,51 @@
+import { HotspotsAndGateways_Path } from '@/visuals/compendium/HotspotsAndGateways_Path'
+import { NetLink } from '@/visuals/technician/T8C_NetLink'
+
+## What it is
+
+A hotspot is a tiny personal digital-voice station: a radio modem with a small computer, connected to your home internet. Your digital handheld talks to it at very low power, and it carries the audio to an internet-based network. It is your own private link to that network, with or without a repeater nearby.
+
+<Facts items={[
+  ['Radio side', 'typically a small fraction of a watt on a simplex frequency'],
+  ['Network side', 'your home internet connection'],
+  ['You need', 'a digital handheld, a call sign and a registration for the network'],
+  ['Range', 'roughly a house or yard'],
+]} />
+
+## How a call travels
+
+<HotspotsAndGateways_Path />
+
+1. Your handheld, set to a digital voice mode, sends voice as digital data to the hotspot.
+2. The hotspot receives it, wraps it in internet packets and sends it over your home network.
+3. Network servers route it to the right place: a talkgroup, reflector or room that you chose.
+4. A remote repeater or another hotspot transmits it, and the other station hears you.
+
+Only the two ends are radio. The long distance is the internet, so latency and outages matter. A network is not a substitute for radio in an emergency; see <Ref to="emcomm-principles" />.
+
+## Hotspot or repeater?
+
+| | Hotspot | Repeater |
+|---|---|---|
+| Owner | You | A club or group |
+| Coverage | A house or yard | A wide area |
+| Power | Milliwatts | Watts |
+| Good for | Reaching the network from home | Everyone in the area, including mobile use |
+
+## Other gateways
+
+A gateway is any station that connects a radio network to another network. The hotspot is the personal version.
+
+<NetLink />
+
+Others include EchoLink and similar nodes (voice linked over the internet), APRS gateways that put position and message packets on the internet, and Winlink gateways for email by radio; see <Ref to="internet-linking" />, <Ref to="aprs" /> and <Ref to="winlink" />.
+
+## In practice
+
+- You are the control operator of your hotspot, and its transmissions carry your call sign, so the rules still apply. Pick a frequency that will not interfere with local repeaters or other users.
+- Each digital voice family (<Ref to="dmr" />, <Ref to="d-star" />, <Ref to="system-fusion" />) has its own registration, networks and radio settings, so a radio and a hotspot must be set for the same one.
+- Keep it away from the radio you use to talk to it, and keep its power low. Overloading your own receiver is a common first problem.
+
+<ExamLink groups="T4A T8C" />
+
+<Related to="internet-linking dmr d-star system-fusion repeaters-and-controllers handheld-transceivers" />

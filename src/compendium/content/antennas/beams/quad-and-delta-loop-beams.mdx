@@ -1,0 +1,47 @@
+import { QuadAndDeltaLoopBeams_Loops } from '@/visuals/compendium/QuadAndDeltaLoopBeams_Loops'
+
+## What it is
+
+A quad is a beam whose elements are closed loops of wire, each about one wavelength round, instead of straight rods. A **square** quad hangs its loops on crossed spreaders; a **delta loop** uses triangles. The loops are spaced along a boom exactly as in a <Ref to="yagi-uda">Yagi</Ref>: a driven loop, a slightly larger reflector and sometimes a director.
+
+<Facts items={[
+  ['Driven loop', 'about 1005 ÷ f(MHz) feet of wire round'],
+  ['Reflector loop', 'a few percent longer, about 1030 ÷ f(MHz) feet'],
+  ['Element spacing', 'typically around 0.2 wavelength'],
+  ['Typical gain', 'two elements: about 7 dBi, often compared with a three-element Yagi'],
+]} />
+
+## Loop elements
+
+<QuadAndDeltaLoopBeams_Loops />
+
+A full-wave loop is resonant when the wire is a little over one wavelength round, so the sides of a square are each about a quarter wavelength. Current flows all the way round, and radiation is greatest broadside, perpendicular to the loop's plane. That is why the beam points along the boom and why a single loop already has some gain, about 1 dB over a dipole. See <Ref to="full-wave-loops" />.
+
+An isolated loop presents roughly 100 Ω at the feed point. A reflector nearby lowers it, often to somewhere near 50 to 75 Ω, so a quad can often be fed with coax without a complicated match.
+
+## Polarization
+
+Where you feed the loop sets the polarization:
+
+- feed the middle of a horizontal wire: **horizontal** polarization
+- feed the middle of a vertical wire: **vertical** polarization
+
+A loop standing on its tip (a diamond) is fed at a lower corner for horizontal, and at a side corner for vertical.
+
+## Square or delta, and how it compares
+
+| | Square quad | Delta loop |
+|---|---|---|
+| Shape | four equal sides | three equal sides, apex up |
+| Support | crossed spreaders, more arms | often fewer support points |
+| Pattern | broadside to the loop | the same idea |
+
+Against a Yagi, a quad is often said to give similar gain from a shorter boom, a wider SWR bandwidth, and quieter reception, because the closed loop has no free ends to pick up static. How big the advantage is depends on the design and is debated, so treat those as typical trends. The costs are bulk, wind load and the fragility of wire and spreaders.
+
+## In practice
+
+- Because the wire path is a full wavelength, a quad on 40 m is a very large structure. It is far more common on 20 m and up.
+- Trim the loop length for resonance, not the spreaders. Wire stretches over time, so recheck SWR after the first weeks outdoors.
+- A small loop (under a tenth of a wavelength) behaves very differently: it has a figure-8 pattern, a very narrow bandwidth and an efficiency limited by its tiny radiation resistance. See <Ref to="magnetic-loop" />.
+
+<Related to="yagi-uda full-wave-loops moxon-and-hex-beams magnetic-loop radiation-patterns polarization" />

@@ -1,0 +1,57 @@
+import { Squelch } from '@/visuals/technician/T4B_Squelch'
+import { Ctcss } from '@/visuals/technician/T2B_Ctcss'
+import { Dtmf } from '@/visuals/technician/T2B_Dtmf'
+import { Reverse } from '@/visuals/technician/T2B_Reverse'
+
+## What it is
+
+**Squelch** mutes the speaker when nothing useful is being received, so you are not listening to hiss between transmissions. **Tones** extend the idea: a radio can send a tone to unlock a repeater, or stay muted until it hears the right tone.
+
+## How squelch decides
+
+An FM receiver with no signal produces loud wideband noise. A real signal "quiets" the receiver: noise drops, and the squelch circuit watches for that drop. Below the threshold the audio is gated off; above it, the gate opens.
+
+<Squelch />
+
+Set the threshold just above the noise. Too high and weak signals stay muted. To hear a very weak signal, turn the squelch down until the noise is always on, then listen through it. Many radios have a **monitor** button that opens the squelch while held.
+
+<Facts items={[
+  ['Noise (carrier) squelch', 'opens when noise falls; the usual FM kind'],
+  ['Tone squelch', 'also needs a matching sub-audible tone'],
+  ['Used on', 'FM; SSB and CW receivers usually run with it open'],
+]} />
+
+## Tones that ride under the voice
+
+A sub-audible tone is added below the voice band, so it is not heard but a receiver can detect it.
+
+<Ctcss />
+
+| Method | What is sent | Typical use |
+|---|---|---|
+| **CTCSS** (often "PL") | one continuous low tone, roughly 67 to 254 Hz, one of dozens of standard values | repeater access and quiet channels |
+| **DCS** (often "DPL") | a continuous low-speed digital code, a three-digit octal number | same job, a different signalling method |
+| **DTMF** | two audible tones at once per key | control: remote commands, linking, and dialling on some systems |
+| **Tone burst** | a short audible tone at the start of a transmission, commonly 1750 Hz | opening repeaters in Europe and some other regions; not used for US access |
+
+A tone is a **key, not a lock**. It tells a repeater "this signal is meant for you", or tells your receiver "only open for this group". It does not encrypt anything, and anyone can open their squelch and hear the conversation.
+
+## Using them
+
+- **Tone**: your radio transmits the tone; you still hear everything. This is what most repeaters need for access, and the required tone is listed in repeater directories.
+- **Tone squelch**: your radio transmits the tone and also stays muted until it receives the same tone. Useful for ignoring other users on a busy channel, but it can hide a station you actually want to hear.
+- If a repeater seems dead, a missing or wrong tone is the first thing to check. Use the monitor button to confirm the channel really is busy.
+
+<Dtmf />
+
+Touch-tone keys are used for control rather than access: the low tone and high tone together identify the key, so a tone decoder can tell one key from another even in noise.
+
+To see whether you can reach another station directly, swap your receive and transmit frequencies and listen on the repeater's input:
+
+<Reverse />
+
+<Callout kind="tip" title="Transmit tone vs receive tone">On many repeaters the tone you transmit and the tone the repeater sends back are different. Radios let you set each separately, so a tone setting that "works" does not mean you are decoding correctly.</Callout>
+
+<ExamLink groups="T4B T2B" />
+
+<Related to="repeaters fm-voice simplex frequency-modulation repeaters-and-controllers receiver-basics" />

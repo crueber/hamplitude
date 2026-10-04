@@ -1,0 +1,42 @@
+import { E9C_LongWire } from '@/visuals/extra/E9C_LongWire'
+import { LongAndRandomWires_FeedZ } from '@/visuals/compendium/LongAndRandomWires_FeedZ'
+import { G9B_RandomWire } from '@/visuals/general/G9B_RandomWire'
+
+## What it is
+
+A **long wire** is a wire at least about a wavelength long, usually fed at one end. A **random wire** is a wire of any convenient length, with a tuner or matching box making up the difference. Both are the cheapest antennas to build, and both ask more of the station than they seem to.
+
+<Facts items={[
+  ['Feed', 'one end of the wire, against a counterpoise or ground'],
+  ['Pattern (long wire)', 'more lobes as it gets longer, closer to the wire axis'],
+  ['Needs', 'a tuner, and a deliberate counterpoise'],
+  ['Risk', 'RF in the shack'],
+]} />
+
+## Long wires: lobes, not a beam
+
+<E9C_LongWire />
+
+As an unterminated wire grows longer in wavelengths, extra lobes appear and the main lobes swing toward the wire's own axis. Gain over a dipole grows slowly, and the pattern has many lobes and nulls, so a long wire is not a precise beam. Adding a terminating resistor at the far end turns a bidirectional pattern into a unidirectional one; this is how a rhombic or <Ref to="beverage-antennas">Beverage</Ref> works.
+
+## Random wires: any length, but not any impedance
+
+<LongAndRandomWires_FeedZ />
+
+Any wire can be tuned, but the feed-point impedance depends on its length in wavelengths. The curve is a schematic from an ideal wire: it repeats every half wavelength and is very high near each multiple of a half wave. A tuner can match it, but high impedance means high voltage, and loss in the tuner and any feed line rises. Pick a length that avoids half-wave multiples on the bands you use; no one length is good on every band.
+
+## The station is part of it
+
+<G9B_RandomWire />
+
+With the wire connected straight to the radio there is no coax shield to keep RF contained, so station equipment may carry significant RF current. You see it as a tingling mic, a hot case or a computer that glitches when you transmit. Keep this in check by:
+
+- Supplying a **counterpoise**: one or more wires, or a ground connection, at the feed point, rather than letting your cables act as one.
+- Putting the tuner at the wire's feed point, or using a transformer there (often 9:1) and running coax from it, with a <Ref to="common-mode-chokes">common-mode choke</Ref>.
+- Remembering that a tuner makes the radio happy but does not reduce losses in the wire's system; see <Ref to="antenna-tuners" />.
+
+<Callout kind="warn" title="Wire and power lines">Never string or throw a line anywhere near power lines. Keep the feed end of a high-power wire out of reach, as it can burn.</Callout>
+
+<ExamLink groups="G9B E9C" />
+
+<Related to="end-fed-half-wave antenna-tuners common-mode-chokes beverage-antennas radials-and-ground-planes half-wave-dipole" />

@@ -1,0 +1,56 @@
+import { Ionizing } from '@/visuals/technician/T0C_Ionizing'
+import { RfExposure_Levers } from '@/visuals/compendium/RfExposure_Levers'
+import { ExposureFactors } from '@/visuals/technician/T0C_ExposureFactors'
+
+## What it is
+
+RF exposure is the radio-frequency energy your body absorbs from a transmitting antenna. At amateur frequencies and powers, the effect that matters is **heating**. The FCC sets exposure limits, and the licensee is responsible for keeping everyone, including family and neighbors, within them.
+
+<Facts items={[
+  ['Type of radiation', 'non-ionizing: it heats, it does not break chemical bonds'],
+  ['What the limits protect against', 'tissue heating'],
+  ['What sets exposure', 'power, frequency, distance, duty cycle, antenna pattern'],
+  ['Who is responsible', 'the station licensee'],
+]} />
+
+## How RF affects the body
+
+<Ionizing />
+
+Radio waves carry far too little energy per photon to damage molecules the way X-rays do. What they can do is warm tissue, much as a microwave oven warms food, but at levels far lower. That is why the limits are about heating, and why "non-ionizing" does not mean "harmless": enough RF can still overheat tissue.
+
+The body does not absorb every frequency equally. Absorption is strongest around the VHF range, so the limits are strictest there. Limits are also tighter for the general public, who may be exposed without knowing it, than for people who know about the hazard and can control it.
+
+Touching an antenna while it transmits is a separate hazard: an **RF burn** at the point of contact.
+
+## What sets your exposure
+
+<RfExposure_Levers />
+
+In the far field, power density is roughly power times antenna gain, divided by the square of the distance:
+
+<Formula label="Far-field estimate">S = P × G ÷ (4π × R²)</Formula>
+
+So **distance is your strongest lever**: doubling it quarters the exposure. Close to an antenna the simple formula is unreliable, because the fields are complicated; see <Ref to="near-and-far-field" />.
+
+Limits apply to the **average** over a set time, so **duty cycle** matters: the share of time you actually transmit. FM and most digital modes put out constant power whenever they are keyed; SSB speech and CW average much less. **Pattern** matters because a beam concentrates power in one direction. Behind or beside it you usually see far less than in front.
+
+<ExposureFactors />
+
+## Keeping it under control
+
+Stations are expected to be evaluated for compliance, and the rules include exemptions for lower-power operation that depend on band and power. Do not rely on memory or rules of thumb: check the **current FCC rules** and **OET Bulletin 65**, which covers amateur stations. Even an exempt station must still meet the limits. You can evaluate by calculation, computer modeling, or measurement with calibrated equipment, and you should re-evaluate whenever the transmitter or antenna system changes.
+
+The practical controls are simple:
+
+- Put antennas high and away from where people sit, sleep, work or play. Indoor and attic antennas deserve extra care.
+- Use the lowest power that makes the contact, and transmit only when you need to.
+- Never point a directional antenna at people. High-gain dishes and long beams can put a lot of power in a narrow beam.
+- With a handheld, keep the antenna away from your face.
+- Turn the transmitter off before touching or adjusting an antenna.
+
+<Callout kind="warn" title="Working on the antenna">Anyone climbing near a transmitting antenna is in the strongest fields. Switch off, and lock out the transmitter, before going up.</Callout>
+
+<ExamLink groups="T0C G0A E0A" />
+
+<Related to="near-and-far-field gain-and-directivity radiation-patterns electromagnetic-waves microwaves tower-safety" />

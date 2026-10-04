@@ -1,0 +1,44 @@
+import { BandPlans_Layers } from '@/visuals/compendium/BandPlans_Layers'
+
+## Rules and plans
+
+Every amateur band has two layers. The FCC's rules are mandatory: they fix the band edges, power limits and which emissions each part of the band may carry. On top of that, operators agree a **band plan**: a voluntary guideline for using different modes or activities within a band. Breaking a band plan is not an FCC violation, but following it keeps SSB out of the digital segment and weak CW signals from being drowned out, so everybody gets more contacts.
+
+<BandPlans_Layers />
+
+<Facts items={[
+  ['FCC rules', 'mandatory; set by law'],
+  ['Band plan', 'voluntary; set by convention and clubs'],
+  ['HF habit', 'CW lowest, then digital, then phone highest'],
+  ['VHF/UHF habit', 'weak signal low, FM repeaters and simplex above'],
+]} />
+
+## Why the plans look the way they do
+
+- **Narrow modes go low.** CW and most digital modes are only a few hundred hertz wide or less, so they cluster together, away from wide voice signals that would otherwise swamp them.
+- **Weak-signal work needs quiet.** The DX windows and weak-signal segments exist so that faint signals are not covered by repeaters or nearby stations.
+- **Repeaters need coordination.** FM repeaters are paired inputs and outputs, so their channels are laid out in blocks. Local volunteer groups called frequency coordinators assign them. See <Ref to="repeaters" />.
+- **Calling frequencies bring people together.** Everyone agrees where to meet, then moves off to talk. The national FM simplex calling frequency on 2 m is 146.520 MHz.
+- **Digital modes cluster on shared frequencies.** Weak-signal modes such as FT8 use agreed dial frequencies on each band so that stations can find each other. See <Ref to="ft8-and-ft4" />.
+
+## Real examples
+
+| Where | What it is | Rule or plan? |
+|---|---|---|
+| 6 m, 50.0 to 50.1 MHz | CW only | FCC rule |
+| 6 m, 50.1 to 50.125 MHz | DX window: contacts with stations outside the contiguous 48 states | Voluntary plan |
+| 2 m, 144.0 to 144.1 MHz | CW only | FCC rule |
+| 2 m, 146.52 MHz | National FM simplex calling frequency | Voluntary plan |
+| 2 m repeaters | Commonly offset by plus or minus 600 kHz | Local coordination |
+| 70 cm repeaters | Commonly offset by plus or minus 5 MHz | Local coordination |
+| 30 m | No phone, no images | FCC rule |
+| HF, below 10 MHz | Lower sideband for voice (60 m uses upper) | Convention |
+| HF, above 10 MHz | Upper sideband for voice | Convention |
+
+These examples are only illustrative: band plans vary with region and change over time. Look for your national society's plan (the ARRL publishes one for the US) and your local repeater coordinator's listings.
+
+<Callout kind="tip" title="Following a plan is good practice">"Follow the voluntary band plan" is part of choosing a frequency courteously. If you are unsure, listen: the way others use a part of the band usually tells you what it is for. See <Ref to="operating-etiquette" />.</Callout>
+
+<ExamLink groups="T2A G2B" />
+
+<Related to="amateur-band-chart operating-etiquette repeaters simplex digital-modes-overview dx-etiquette-and-split" />

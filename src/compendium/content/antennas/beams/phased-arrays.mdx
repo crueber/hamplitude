@@ -1,0 +1,42 @@
+import { PhasedArrays_Pair } from '@/visuals/compendium/PhasedArrays_Pair'
+import { PhasedArrays_FourSquare } from '@/visuals/compendium/PhasedArrays_FourSquare'
+import { Phasing as E9E_Phasing } from '@/visuals/extra/E9E_Phasing'
+
+## What it is
+
+A phased array is two or more antennas fed together so their signals add up in some directions and cancel in others. No single element has to be directional: the pattern comes from **how many elements**, **how far apart** they are and **the phase of the current in each**. Change the phase and the pattern changes, without moving anything.
+
+<Facts items={[
+  ['Two knobs', 'spacing (in wavelengths) and relative phase (in degrees)'],
+  ['Quarter-wave spacing, 90° phase', 'cardioid: one lobe, a deep null behind'],
+  ['Half-wave spacing, in phase', 'figure-8 broadside to the line of elements'],
+  ['Half-wave spacing, 180° phase', 'figure-8 along the line of elements'],
+]} />
+
+## Why spacing and phase steer the beam
+
+<PhasedArrays_Pair />
+
+Look in any direction and the waves from the elements arrive having travelled different distances. A direction where the spacing difference, plus the feed phase difference, adds up to zero (or a whole number of cycles) has the waves reinforcing: a lobe. Where they differ by half a cycle they cancel: a null.
+
+For two elements a quarter wave apart, the extra path adds 90°. Feed the element nearer the wanted direction so its current lags by 90° and the waves line up in that direction and oppose each other the other way: the pattern points toward the lagging element. Spacing and phase set everything else. The sliders work out the whole pattern for you: try the three presets, which are the combinations listed at the top.
+
+## Steering with four elements
+
+<PhasedArrays_FourSquare />
+
+Four vertical elements on a quarter-wave square give a single lobe with about 5 to 6 dB more gain than one element, and an ideal front-to-back ratio over 20 dB. Feed the elements 0°, 90°, 90° and 180° and the beam goes toward the 180° corner. Switching the phasing between corners turns the beam in four steps. This is the **four-square**, a popular low-band array because a vertical has a low takeoff angle but no gain by itself.
+
+## In practice
+
+<E9E_Phasing />
+
+- The relative current phase comes from a **phasing line**, a cable section of calculated length, or a network of coils and capacitors. Its job is to make the phase difference you want.
+- Real arrays do not match the ideal numbers on this page. The elements couple to each other, which changes the current in each one, so builders adjust and measure the array rather than trusting a formula.
+- Gain figures here are ideal and relative to one element. Losses in feed lines, networks and grounds subtract from them.
+- Stacking two <Ref to="yagi-uda">Yagis</Ref> vertically is a phased array in the vertical plane: it narrows the beam in elevation, not in azimuth.
+- On receive, a two-element phased pair can steer a null toward noise or an interfering signal. See <Ref to="noise-cancelling" />.
+
+<ExamLink groups="E9C E9E" />
+
+<Related to="yagi-uda noise-cancelling radiation-patterns gain-and-directivity quarter-wave-vertical stubs-and-matching-sections direction-finding-antennas" />

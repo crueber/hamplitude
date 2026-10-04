@@ -1,0 +1,48 @@
+import { Lightning } from '@/visuals/general/G0B_Lightning'
+import { TowerGround } from '@/visuals/technician/T0B_TowerGround'
+import { SinglePoint } from '@/visuals/extra/E4E_SinglePoint'
+
+## What it is
+
+A lightning protection and grounding system gives a strike a controlled, low-resistance path into the earth outside your home, and keeps every piece of grounded metal at the same voltage so that current has no reason to jump through you or your equipment. An outdoor antenna is a tall piece of metal wired straight into the house, so this matters.
+
+<Callout kind="warn" title="Nothing makes a station lightning-proof">A direct or nearby strike can still destroy equipment, start a fire or injure people, however well the station is protected. Every practice here reduces risk. None removes it. Stay inside and away from antennas, towers and cables during a thunderstorm.</Callout>
+
+<Facts items={[
+  ['Rule of the system', 'divert it outside, bond every ground together, protect at the entry'],
+  ['Tower ground', 'a separate 8-ft ground rod at each leg, bonded to the leg and to each other'],
+  ['Surge arrestors', 'on a grounded panel where feed lines enter the building'],
+  ['Governing rules', 'local electrical codes, so ask the building authority or an electrician'],
+]} />
+
+## The pieces
+
+<Lightning />
+
+- **An outside ground system.** The lightning ground is outside the building, so the current is dissipated there rather than inside the walls. A ground rod's job is exactly this charge dissipation.
+- **Bonding.** Every ground rod and ground system is connected together, including the building's electrical service ground. Separate, unconnected grounds let a strike drive current between them and through whatever links them, your radio included.
+- **Arrestors at the entry.** Coax and other feed lines pass through arrestors mounted on a grounded panel where they enter the building. The arrestor passes the radio signal normally and diverts a surge to the panel's ground.
+- **The tower** gets its own ground, with a rod at each leg:
+
+<TowerGround />
+
+## Short, straight and gently bent
+
+A lightning surge rises in a fraction of a microsecond, so to it even a short wire acts as inductance, not just resistance. A long ground lead or one with sharp bends can develop a large voltage across it, enough to arc to nearby metal. So ground connections are **short and direct**, with gentle bends rather than right angles, and with no drip loops that lengthen the path. Use heavy conductors suited to the job, and have the work checked against local code.
+
+## One entry point
+
+<SinglePoint />
+
+Bring everything that enters the station (coax, rotator and control cables) in at the same place, on a panel bonded to one ground, with the AC power protection and the building's service ground bonded to it. If each cable were grounded in a different place, the strike would find the differences between the grounds, and that is where equipment gets damaged.
+
+## What to do about storms
+
+- **Disconnect early.** When thunderstorms are forecast or approaching, before they are close, stop operating, unplug the feed lines from the radios and move them clear (or onto a ground), and unplug AC power and data cables. A disconnected cable gives a surge nowhere to go inside the equipment. Surges can also arrive from strikes that are not close. Once lightning is near, do not go out to the cables or the tower; leave them as they are.
+- **Keep away from the tower** and the cable runs. Never climb in or near a storm.
+- **Inspect and maintain.** Check connections for corrosion or looseness, and replace protectors after a strike or as the maker advises, since they can wear out.
+- **Do the work properly.** Grounding is regulated by local electrical codes. An electrician or experienced installer can design it, and check where buried utilities run before driving a rod.
+
+<ExamLink groups="T0B T0A G0B E0A" />
+
+<Related to="lightning-safety grounding-and-bonding tower-safety towers-and-masts electrical-safety common-mode-and-ground-loops" />

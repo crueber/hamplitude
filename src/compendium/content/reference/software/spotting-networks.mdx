@@ -1,0 +1,35 @@
+import { SpottingNetworks_Sources } from '@/visuals/compendium/SpottingNetworks_Sources'
+
+## What it is
+
+A **spot** is a short report that a station was heard on a certain frequency at a certain time. **Spotting networks** collect these reports and publish them, so you can see **where the activity is** without tuning across the band, and **which paths are open** from your location. They are one of the most useful tools for HF, DX and portable activations. How well each works depends on its volunteers and their equipment; check each service's own documentation.
+
+## Where spots come from
+
+<SpottingNetworks_Sources />
+
+- **Human spots.** An operator hears or works a rare or interesting station and posts it. The best-known system is the **DX cluster**: a network of servers that distribute spots to subscribers, typically through a logging program or a web page. Programs such as **Parks on the Air** and **Summits on the Air** have their own spot pages, where activators often post themselves.
+- **Automatic spots.** A receiver runs a **decoder** and uploads everything it decodes. The **Reverse Beacon Network** does this with "skimmers", chiefly for CW and RTTY (see <Ref to="cw-contesting-and-rbn" />). **PSK Reporter** collects reports from software that decodes digital modes. **WSPR** stations report each other's low-power beacon signals; see <Ref to="wspr" />.
+
+## What they tell you
+
+| You want to know | Look at |
+|---|---|
+| Is a rare station on the air, and where? | DX cluster |
+| Is my signal getting out, and where is it heard? | automatic reports of your own call |
+| Does this band open to that region now? | a map of automatic reports |
+| Where are the activators today? | the activator spot pages |
+
+An automatic report of **your own** signal is useful feedback: it shows how far a given antenna or band reached, with no need for someone to be listening for you.
+
+## Reading them wisely
+
+- A spot means "heard **there**". A signal that skimmers heard strongly may be inaudible at your station.
+- **Absence is not evidence.** No spots may just mean no receivers or no operators in that region.
+- Human spots can be wrong: mistyped call signs, wrong frequency or **busted** spots that a decoder misread. Confirm by listening before you call.
+- Receiver density follows population, so activity near big cities is over-represented.
+- Be considerate when you **spot yourself**: follow the rules of the service and do not post if you are not actually on the air.
+
+For how to behave once you find a rare station, see <Ref to="dx-etiquette-and-split" />. In a contest, spotting assistance is a separate category; check the contest rules.
+
+<Related to="cw-contesting-and-rbn dxing wspr ft8-and-ft4 propagation-tools dx-etiquette-and-split" />

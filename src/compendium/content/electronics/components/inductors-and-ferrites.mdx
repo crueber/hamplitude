@@ -1,0 +1,54 @@
+import { InductorsAndFerrites_ToroidTurns } from '@/visuals/compendium/InductorsAndFerrites_ToroidTurns'
+import { ToroidField } from '@/visuals/extra/E6D_ToroidField'
+import { Toroid } from '@/visuals/general/G6B_Toroid'
+import { CommonMode } from '@/visuals/general/G6B_CommonMode'
+
+## What it is
+
+An inductor is a coil of wire. It stores energy in a magnetic field and resists changes in current, so it passes DC easily but opposes fast-changing signals. Wound on a magnetic core, the same wire gives far more inductance; wound for a different purpose, the core becomes a **ferrite** that soaks up unwanted RF. The theory is in <Ref to="inductance" />.
+
+<Facts items={[
+  ['Unit', 'henry (H); in practice µH and mH'],
+  ['Stores energy in', 'a magnetic field'],
+  ['Passes', 'DC; opposes AC more as frequency rises'],
+  ['Inductance rises with', 'turns squared, and with core permeability'],
+]} />
+
+## Cores and winding
+
+Without a core (an air-core coil), inductance depends on turns, diameter and length. A magnetic core multiplies inductance, so fewer turns do the job. Two core materials do most of the work in radio:
+
+| Core | Typical use |
+|---|---|
+| Powdered iron | tuned circuits and filters: stable with temperature, good Q |
+| Ferrite | transformers, chokes and EMI suppression: very high permeability |
+
+Different ferrite *mixes* work best in different frequency ranges, so the mix, not the size, must match your band.
+
+<Toroid />
+
+A **toroid** (ring) keeps nearly all the magnetic field inside the core. Coils on a ring therefore couple little to their neighbours, which is why they suit compact RF circuits.
+
+<ToroidField />
+
+The core maker publishes an **AL value** (inductance per turn squared) so you can calculate the winding.
+
+<InductorsAndFerrites_ToroidTurns />
+
+## Ferrites as chokes
+
+A ferrite bead or clamp-on core adds impedance in the path of RF current. It does nothing to the wanted signal travelling inside a cable, because the currents inside are equal and opposite and their fields cancel. It does oppose current flowing on the *outside* of the cable (common-mode). Cores can also work as suppressors of parasitic oscillation on amplifier leads.
+
+<CommonMode />
+
+For how to wind or choose one for the antenna feed line, see <Ref to="common-mode-chokes" />.
+
+## Pitfalls
+
+- A real coil has a little capacitance between turns. Above its **self-resonant frequency** it behaves as a capacitor, not an inductor.
+- A core can saturate: with too much current the inductance collapses and the core heats up. Power chokes need cores sized for the current.
+- A ferrite in a transmitting path dissipates energy as heat. A core that is too small, or the wrong mix, can get hot at high power.
+
+<ExamLink groups="E6D G6B T6A" />
+
+<Related to="inductance transformers common-mode-chokes filters-and-ferrites-for-rfi resonance-and-q capacitors" />

@@ -1,0 +1,45 @@
+import { IssAndAriss_Pass } from '@/visuals/compendium/IssAndAriss_Pass'
+import { E2A_GroundTrack } from '@/visuals/extra/E2A_GroundTrack'
+
+## What it is
+
+The International Space Station carries amateur radio equipment, operated by astronauts and supported by **ARISS** (Amateur Radio on the International Space Station), an international group of volunteer radio operators, national amateur societies and the space agencies. Its flagship activity is **school contacts**: students ask astronauts questions over an amateur radio link, live, from the classroom.
+
+<Facts items={[
+  ['Altitude', 'about 400 km (it varies a little)'],
+  ['Lap time', 'about 92 minutes, so 15 to 16 laps a day'],
+  ['Orbit tilt', '51.6° to the equator: never passes over higher latitudes'],
+  ['Pass length', 'up to about 10 minutes'],
+]} />
+
+## How a pass looks
+
+<IssAndAriss_Pass />
+
+The ISS is low and fast, so everything happens in a few minutes. A pass that goes nearly overhead gives about 10 minutes above the horizon, a low pass far less. A scheduled school contact is built around the best pass for the school and must squeeze its questions into the useful part of it.
+
+The Earth turns beneath the orbit, so each lap's ground track lands about 23° of longitude further west than the last.
+
+<E2A_GroundTrack />
+
+Because of the 51.6° tilt, the station is never directly overhead at latitudes beyond that. Radio passes work in daylight or darkness, whether or not you can see the station.
+
+## What you can do
+
+- **Listen.** On an ordinary VHF or UHF receiver you may hear school contacts, voice, or occasionally packet or image transmissions, as they happen. A simple antenna and a handheld radio can be enough.
+- **Talk to the station.** Sometimes there is a repeater or digipeater on board that any licensed operator can use, subject to the crew's schedule.
+- **Join an event.** Amateur-radio image (SSTV) events and school contacts run on a schedule posted by ARISS.
+
+Equipment, frequencies and schedules change. Always check the ARISS website for what is currently available before you try to transmit.
+
+<Callout kind="note" title="Be a good neighbour">During a scheduled school contact, only the school and the astronaut should transmit. Listen, do not call.</Callout>
+
+## Good habits
+
+- Predict the pass with a tracking program and note the elevation: low passes are hard.
+- Expect Doppler of a few kHz on 2 m; retune as in <Ref to="satellite-operating" />.
+- Choose a spot with a clear view toward the horizon. Trees and buildings are the usual culprit.
+
+<ExamLink groups="T8B" />
+
+<Related to="amateur-satellites satellite-operating helical-and-satellite-antennas handheld-antennas ways-to-get-on-the-air" />

@@ -1,0 +1,43 @@
+import { ControlChain } from '@/visuals/technician/T1E_ControlChain'
+import { Privileges } from '@/visuals/technician/T1E_Privileges'
+import { ControlTypes } from '@/visuals/technician/T1E_ControlTypes'
+
+## Someone must always be in charge
+
+A **control operator** is a licensed amateur designated by the station licensee to be responsible for the station's transmissions and for following the rules. A station may never transmit without one. If you own and run your own station you are both licensee and control operator; if someone else is at the controls, **both of you** answer for what the station does.
+
+<ControlChain />
+
+## Privileges follow the operator
+
+The privileges in force at any moment are those of the **control operator's license class**, not of the owner or the radio. An Extra who lets a Technician operate gets Technician privileges, and the Technician cannot operate in Extra-only segments (except in an emergency).
+
+<Privileges />
+
+The same logic applies to relays. A repeater that transmits on 10 m is transmitting in an HF band, so its control operator needs HF privileges: a General or higher. A Technician may still use it from the 2 m side. For a station working through a satellite, any amateur whose privileges include the **uplink** frequency may be its control operator.
+
+## Where the control point is
+
+The **control point** is the place where the control operator function is performed.
+
+<ControlTypes />
+
+| Control | Where is the operator? | Notes |
+|---|---|---|
+| **Local** | At the station | The usual case at home |
+| **Remote** | Elsewhere, linked to the station | Any station may be remotely controlled, for example over the internet |
+| **Automatic** | No operator at a control point | Repeaters; some limited digital stations |
+
+Sending CW or an ID by computer, or operating over the internet, is not automatic control. Automatic means no operator at a control point.
+
+## Responsibility in practice
+
+- **Remote stations** need a way to shut down. If the control link fails, the station must stop transmitting within **3 minutes**. Whose rules apply depends on the station: running a **US station from abroad** needs only your US license, while running a **foreign station from the US** means that country's rules.
+- **Automatic stations** have limits on what they may carry. Third-party traffic under automatic control is allowed only with data or RTTY, never voice or CW. Automatically controlled digital stations may talk to each other only in the places the rules allow.
+- **Repeaters and forwarding** do not move the blame. If something improper is relayed, the control operator of the **originating** station is responsible.
+- **Guests** can speak on your station under your control operator's supervision. A person without a license may take part only while a licensed control operator is at the controls. See <Ref to="part-97-in-plain-words" /> for third-party rules.
+- **Club stations** are licensed to a trustee and at least four members, with a control operator for each session. See <Ref to="clubs-and-elmers" />.
+
+<ExamLink groups="T1E G1D G1E E1C" />
+
+<Related to="license-classes part-97-in-plain-words repeaters repeaters-and-controllers remote-operation operating-abroad" />

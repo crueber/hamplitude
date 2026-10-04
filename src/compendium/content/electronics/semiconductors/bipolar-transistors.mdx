@@ -1,0 +1,55 @@
+import { TransistorParts } from '@/visuals/technician/T6B_TransistorParts'
+import { BipolarTransistors_Bias } from '@/visuals/compendium/BipolarTransistors_Bias'
+import { Configs } from '@/visuals/extra/E7B_Configs'
+
+## What it is
+
+A bipolar junction transistor (BJT) is a three-terminal device in which a small current into one terminal, the **base**, controls a much larger current flowing between the other two, the **collector** and **emitter**. Used between its extremes it is an amplifier; driven all the way on or off it is a switch.
+
+<Facts items={[
+  ['Types', 'NPN and PNP'],
+  ['Turn-on voltage, base to emitter', 'about 0.6 to 0.7 V (silicon)'],
+  ['Current gain β (hFE)', 'typically tens to a few hundred; varies widely'],
+  ['Current relationship', 'Ic ≈ β × Ib, and Ie = Ib + Ic'],
+]} />
+
+<TransistorParts />
+
+## How it works
+
+An NPN transistor is a thin P layer (the base) sandwiched between two N layers. The base-emitter junction is an ordinary <Ref to="semiconductor-basics">forward-biased PN junction</Ref>, so it conducts once the base is about 0.6 to 0.7 V above the emitter. That injects electrons from the emitter into the base.
+
+The base is very thin and lightly doped, so almost all of those electrons are swept on across the reverse-biased base-collector junction into the collector. Only a small fraction leaves through the base terminal. The result: collector current is a fixed multiple of base current. That multiple is the **beta**, or current gain.
+
+A PNP is the mirror image: every polarity is reversed and the emitter arrow points inward. In the symbol, the arrow always sits on the emitter and points the way conventional current flows.
+
+## Switch or amplifier
+
+<BipolarTransistors_Bias />
+
+- **Cutoff**: no base current, so no collector current. An open switch.
+- **Saturation**: so much base current that the load, not the transistor, limits collector current. The transistor drops only a few tenths of a volt, like a closed switch.
+- **Active region**: in between, collector current follows base current. A varying signal on the base becomes a larger copy at the collector. That is amplification.
+
+Beta is not precisely controlled. It differs from one transistor to the next and changes with temperature, so real circuits use bias networks and negative feedback rather than counting on a particular beta.
+
+## Three ways to wire it
+
+<Configs />
+
+| Configuration | Voltage gain | Input / output | Typical use |
+|---|---|---|---|
+| Common emitter | high, output inverted | medium / medium | general amplifier stages |
+| Common collector (emitter follower) | just under 1 | high / low | buffer between stages |
+| Common base | high | low / high | VHF and UHF amplifiers |
+
+## In practice
+
+- **Where they appear:** audio and RF amplifiers, oscillators, mixers, and power-amplifier stages in many radios. At higher power and frequency, <Ref to="fets-and-mosfets">MOSFETs</Ref> are also common.
+- **Heat:** the turn-on voltage falls as temperature rises (roughly 2 mV per °C, typically). If the bias is not stabilised, current rises, the part heats further, and it can destroy itself: **thermal runaway**. Power stages use heatsinks and emitter resistors.
+- **Frequency:** gain falls at high frequency. The alpha cutoff frequency is where the common-base gain has dropped to 0.7 of its value at 1 kHz, a measure of how high a transistor is useful.
+- **Limits:** every transistor has maximum voltage, current and power ratings. Exceeding any one ends its life.
+
+<ExamLink groups="T6B G6A E6A" />
+
+<Related to="semiconductor-basics diodes fets-and-mosfets amplifiers oscillators vacuum-tubes" />

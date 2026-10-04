@@ -1,0 +1,51 @@
+import { NoiseAndSnr_Levels } from '@/visuals/compendium/NoiseAndSnr_Levels'
+import { NoiseAndSnr_Sources } from '@/visuals/compendium/NoiseAndSnr_Sources'
+import { Sensitivity } from '@/visuals/general/G7C_Sensitivity'
+
+## What it is
+
+**Noise** is unwanted random radio energy that adds to your signal. Whether you can copy a station depends less on how strong it is than on how far it stands above the noise: the **signal-to-noise ratio (SNR)**, normally quoted in decibels. A weak signal over a quiet background can be perfectly readable; a strong signal on a noisy band may not be.
+
+<Facts items={[
+  ['SNR', 'signal power ÷ noise power, in dB'],
+  ['Thermal noise', '−174 dBm per hertz at room temperature'],
+  ['Bandwidth', 'doubling it adds 3 dB of noise'],
+]} />
+
+## What SNR looks like
+
+<NoiseAndSnr_Levels />
+
+Slide it down and the signal sinks into the hash. Your ears and brain, or a decoder, can still dig a tone out of noise well below the point where you can see it on a screen, and some digital modes decode signals around 20 dB below the noise in a 2.5 kHz bandwidth. The limit is set by the SNR in the bandwidth you are listening to; see <Ref to="decibels" /> for the dB arithmetic.
+
+## Where noise comes from
+
+<NoiseAndSnr_Sources />
+
+- **Thermal noise.** Every warm object has randomly jiggling electrons, which produce noise in any circuit or antenna. Its power is k × T × bandwidth, which at room temperature is **−174 dBm in every hertz**. It sets the floor that no receiver can beat.
+- **Receiver noise.** The receiver's own circuits add noise on top, measured by its noise figure; see <Ref to="receiver-performance" />.
+- **Atmospheric noise.** Lightning storms around the world produce static that travels by skywave. It is worst on the low HF bands, at night and in summer, and fades with rising frequency.
+- **Man-made noise.** Power lines, switching power supplies, motors, LED lighting and computers radiate hash. In towns it often dominates on HF and into VHF. See <Ref to="power-line-noise" />.
+- **Galactic noise.** The sky itself hisses, most noticeable on the upper HF and VHF bands when man-made noise is low.
+
+## Bandwidth and the noise floor
+
+Noise power is proportional to the bandwidth you let in. Every doubling adds 3 dB of noise, so a narrow filter that passes only the signal cuts noise without cutting signal:
+
+<Formula label="Receiver noise floor">−174 dBm/Hz + 10 log₁₀(bandwidth in Hz) + noise figure in dB</Formula>
+
+<Sensitivity />
+
+At 2.4 kHz, the SSB voice bandwidth, thermal noise alone is about −140 dBm. A CW filter 500 Hz wide is about 7 dB quieter, which is why CW can get through when SSB cannot.
+
+## What to do about it
+
+Find out which noise is limiting you, because the fix differs.
+
+- **Noise arriving from outside** (HF, and any noisy location): a quieter receiver won't help, because the noise comes in with the signal. Raise the signal with a better antenna, find and fix local noise sources, move the antenna away from them, and use a narrower filter or <Ref to="noise-cancelling">noise cancelling</Ref>.
+- **Noise from the receiver itself** (VHF, UHF and microwaves, with weak signals): put a low-noise preamplifier at the antenna, and keep feed-line loss before it small; see <Ref to="receiver-performance" />.
+- **Everywhere:** a more directional antenna hears less noise from other directions as well as more signal.
+
+<ExamLink groups="E4C E4E T4B" />
+
+<Related to="decibels receiver-performance agc-and-noise-reduction power-line-noise noise-cancelling bandwidth-and-data-rate" />

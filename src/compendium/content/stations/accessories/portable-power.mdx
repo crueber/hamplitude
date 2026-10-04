@@ -1,0 +1,51 @@
+import { PortablePower_Runtime } from '@/visuals/compendium/PortablePower_Runtime'
+import { SolarWiring } from '@/visuals/general/G4E_SolarWiring'
+import { BatteryHazards } from '@/visuals/technician/T0A_BatteryHazards'
+
+## What it is
+
+Running a station away from the mains means running it from batteries, charged from a solar panel, a vehicle or a generator. The questions to answer are: how much energy does the station use, how much can the battery supply, and how will it be recharged?
+
+## How long will it last?
+
+A battery's size is its capacity in **amp-hours** (Ah). Divide the usable amp-hours by the average current to get hours:
+
+<Formula label="Runtime estimate">usable Ah ÷ average current (A) = hours</Formula>
+
+<PortablePower_Runtime />
+
+Average current mixes the small receive current with the large transmit current by how often you transmit. A QRP radio at 5 W on a 20 Ah lead-acid battery can run for many hours; a 100 W radio at 25% transmit time will drain the same battery quickly. These are **estimates**: SSB speech draws less than the peak figure, while digital modes and FM draw near peak all the time.
+
+## Choosing a battery
+
+| | Sealed lead-acid | Lithium iron phosphate (LiFePO4) |
+|---|---|---|
+| Weight | heavy | much lighter for the same usable energy |
+| Usable capacity | about half, for long life | most of it, with a built-in protection board |
+| Voltage as it discharges | sags steadily | stays nearly flat, then drops quickly |
+| Charging | simple charger | needs a charger or controller made for it |
+
+Both are nominally 12 V and fall within what most radios accept (check the manual). A lead-acid battery that is nearly flat may sag too low under a transmit peak, so the radio's output drops, which is the voltage-drop problem again; see <Ref to="shack-power-supplies" />. See <Ref to="batteries" /> for the chemistry.
+
+## Solar charging
+
+A silicon cell makes about 0.5 V, so a "12 V" panel is many cells in series, with an open-circuit voltage well above 12 V. Connected directly to a battery it could overcharge it, so a **charge controller** sits between them. A series diode stops the battery discharging through the panel at night.
+
+<SolarWiring />
+
+A panel's rated watts are for full sun at the best angle; real output is usually lower. A rough sizing check is panel watts ÷ about 14 V for the maximum charging current. Partial shade can cut a panel's output sharply.
+
+## Safety
+
+<BatteryHazards />
+
+- **Fuse the positive lead within inches of the battery**, sized to the wire. A battery can deliver hundreds of amps into a short, enough to melt wire and start a fire.
+- Remove rings and metal watches around terminals, and cover exposed terminals when moving a battery.
+- Charge a battery only with a charger made for its chemistry, at a sensible rate. Charging or discharging too fast overheats it, and lithium cells can catch fire.
+- A lead-acid battery can release hydrogen when charging, so charge it somewhere ventilated and away from sparks.
+- Run a generator outdoors, well away from tents, windows and doors: its exhaust contains deadly carbon monoxide.
+- Check airline rules before travelling with lithium batteries.
+
+<ExamLink groups="T4A T0A G4E E7D" />
+
+<Related to="batteries qrp-radios go-kits portable-field-antennas wire-gauge-and-fusing battery-and-fire-safety field-day" />

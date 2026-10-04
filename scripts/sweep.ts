@@ -7,14 +7,11 @@
 import { chromium } from 'playwright-core'
 import { readdirSync } from 'node:fs'
 import { join, resolve } from 'node:path'
+import { targets } from './targets'
 
 const ROOT = resolve(import.meta.dir, '..')
 const filters = process.argv.slice(2)
-const ids: { lic: string; id: string }[] = []
-for (const lic of ['technician', 'general', 'extra'])
-  for (const f of readdirSync(join(ROOT, 'src/content', lic)).filter((f) => f.endsWith('.mdx')))
-    ids.push({ lic, id: f.replace('.mdx', '') })
-const todo = ids.filter((x) => !filters.length || filters.includes(x.lic) || filters.includes(x.id))
+const todo = targets(filters)
 
 const b = await chromium.launch({ executablePath: '/usr/bin/chromium', args: ['--no-sandbox'] })
 let bad = 0
@@ -27,10 +24,10 @@ for (const mode of ['light', 'dark', 'mobile'] as const) {
   const errs: string[] = []
   p.on('pageerror', (e) => errs.push(String(e)))
   p.on('console', (m) => m.type() === 'error' && errs.push(m.text()))
-  for (const { lic, id } of todo) {
+  for (const { label, url, wait } of todo) {
     errs.length = 0
-    await p.goto(`http://localhost:5173/#/${lic}/${id}`)
-    await p.waitForSelector('.concept', { timeout: 8000 }).catch(() => errs.push('no .concept rendered'))
+    await p.goto(`http://localhost:5173/#${url}`)
+    await p.waitForSelector(wait, { timeout: 8000 }).catch(() => errs.push(`nothing rendered (${wait})`))
     await p.waitForTimeout(250)
     const r = await p.evaluate(() => {
       const out: string[] = []
@@ -53,7 +50,7 @@ for (const mode of ['light', 'dark', 'mobile'] as const) {
       return out
     })
     const all = [...errs, ...r]
-    if (all.length) { bad++; console.log(`✗ [${mode}] ${lic}/${id}: ${all.join(' | ')}`) }
+    if (all.length) { bad++; console.log(`✗ [${mode}] ${label}: ${all.join(' | ')}`) }
   }
   await ctx.close()
 }

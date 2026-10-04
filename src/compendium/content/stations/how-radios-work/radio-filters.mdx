@@ -1,0 +1,55 @@
+import { RadioFilters_Funnel } from '@/visuals/compendium/RadioFilters_Funnel'
+import { FilterResponse } from '@/visuals/general/G7C_FilterResponse'
+import { Selectivity } from '@/visuals/extra/E4C_Selectivity'
+
+## What it is
+
+A filter passes some frequencies and blocks others. A radio uses a whole series of them, from broad ones at the antenna to very narrow ones near the speaker, because **each filter protects the stages after it** and the last ones decide what you hear. The narrower and steeper the final filter, the better the receiver separates a signal from its neighbours (see <Ref to="receiver-performance" />).
+
+<Facts items={[
+  ['Typical SSB filter', 'about 2.4 kHz wide'],
+  ['Typical CW filter', 'about 250 to 500 Hz wide'],
+  ['AM / FM', 'about 6 kHz / 12 to 15 kHz'],
+  ['Width measured at', 'the −6 dB points, usually'],
+]} />
+
+## A series of narrowing windows
+
+<RadioFilters_Funnel />
+
+1. **Band-pass (preselector)** at the antenna. Passes a band and rejects far-away signals such as broadcast stations. LC filters (coils and capacitors) do this; see <Ref to="filters" />.
+2. **Roofing filter** just after the first mixer. Narrower than the band but wider than the final filter (a few kHz to about 15 kHz is typical), it keeps strong nearby signals out of the later amplifiers and converters, which would otherwise overload. It sets how well the receiver stands up to crowded bands.
+3. **IF filter.** The workhorse that sets the audio bandwidth: wider for SSB, narrower for CW.
+4. **DSP filter** (digital). Works on the digitized signal, in the final stage: any width, any shape, adjustable from the front panel.
+
+## Shape matters as much as width
+
+<FilterResponse />
+
+A filter has a **passband** (what it lets through), **skirts** (how it falls off) and a **stop-band** (what it rejects). Two filters of the same 2.4 kHz width can behave very differently: one with steep skirts removes a strong signal 2 kHz away, one with gentle skirts lets it through. The ratio of widths at two attenuation levels (often −60 dB to −6 dB) is the **shape factor**: closer to 1 means steeper skirts.
+
+## Types you will meet
+
+| Type | Where | Character |
+|---|---|---|
+| LC (coils and capacitors) | RF band-pass, output low-pass | cheap, broad, gentle skirts; works at any frequency |
+| Ceramic | low-frequency IFs such as 455 kHz | inexpensive, moderate steepness |
+| Crystal (quartz) | IFs and roofing filters, typically megahertz | very steep and stable; each width needs its own set of crystals |
+| Mechanical | 455 kHz IFs in older high-end radios | steep and rugged, narrow |
+| DSP | digital stage after the ADC | any width and shape, adjustable; cannot protect the analog stages before it |
+
+That last point is why even an SDR still needs good analog filters ahead of its converter: DSP cannot un-overload an amplifier.
+
+## In practice
+
+- **Match the width to the signal.** Too wide lets in noise and neighbours; too narrow clips the signal itself (see <Ref to="receiver-performance" />).
+- **Very narrow filters "ring":** after each dit the filter keeps ringing for a moment, which blurs fast CW. Extremely narrow is not always better.
+- **IF shift or passband tuning** slides the passband up or down without changing the pitch of the signal, to move an interfering signal out of the edge.
+
+<Selectivity />
+
+- **Transmit filters too.** Every transmitter has a low-pass filter before the antenna (see <Ref to="transmitter-basics" />), and an SSB transmitter uses a sideband filter.
+
+<ExamLink groups="G7C T4B E7C" />
+
+<Related to="receiver-performance superheterodyne agc-and-noise-reduction filters crystals-and-resonators receiver-basics harmonics-and-spurs" />

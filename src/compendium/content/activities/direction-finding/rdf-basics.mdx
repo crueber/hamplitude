@@ -1,0 +1,50 @@
+import { Bearings as T8C_Bearings } from '@/visuals/technician/T8C_Bearings'
+import { RdfBasics_Fix } from '@/visuals/compendium/RdfBasics_Fix'
+
+## What it is
+
+Radio direction finding (RDF) means working out where a signal is coming from by measuring the direction it arrives from. One reading gives a direction, not a place; the skill is combining several. Amateurs use it for fox hunts, for tracking down interference, and for finding a stuck transmitter or a lost beacon. The antennas that make it possible are in <Ref to="direction-finding-antennas" />; this article is about the technique.
+
+<Facts items={[
+  ['Bearing', 'compass direction to the signal, clockwise from north (0° north, 90° east)'],
+  ['Readings needed', 'two to fix a position, a third to confirm'],
+  ['Best crossing angle', 'close to 90° between bearings'],
+  ['Biggest enemy', 'reflections, and standing too close to the antenna'],
+]} />
+
+## Bearings and a fix
+
+<T8C_Bearings />
+
+A bearing is a line on the map, not a point. Take one, move to a different place, take another, and the lines cross at the transmitter. A third bearing from a third place tells you whether to trust the first two: if all three agree, you have it.
+
+Real bearings are never exact, so each is better thought of as a **wedge** whose width grows with distance: an error of 5° is about 90 m sideways at 1 km. Where the wedges overlap is where the transmitter might be.
+
+<RdfBasics_Fix />
+
+Two lessons fall out of this. A smaller reading error shrinks the overlap proportionally. And the **angle between the bearings** matters as much as their accuracy. With a 5° error, a 90° crossing leaves an uncertain region about a quarter of your distance across; at 30° it is more than half, a long thin smear. Bearings taken from nearly the same direction say almost nothing about distance. So move sideways, not forwards.
+
+## Taking a good reading
+
+- **Stand clear.** Hold the antenna out at arm's length. Your body, a vehicle or a metal fence close to it distorts the pattern and bends the bearing.
+- **Match polarization.** Hold the antenna so it matches the transmitter's polarization, usually vertical on VHF. A mismatch weakens the signal and can blur the bearing; see <Ref to="polarization" />.
+- **Read from open, high ground** where you can. Buildings, trees and hills reflect and block signals.
+- **Take more than one reading** at each place, turning the antenna through the whole circle. If the signal seems to come from several directions, believe the strongest or most repeatable.
+- **Agree on north.** A compass points to magnetic north, while many maps are drawn to true north. The difference, called declination, depends on where you are. Correct for it, or use one reference throughout.
+
+## When bearings lie
+
+| Problem | What you see | What to do |
+|---|---|---|
+| Reflections (multipath) | Bearing changes when you move a few steps | Take several readings; trust the ones that agree |
+| Front-or-back ambiguity | Two opposite directions both look right | Use a sense antenna, or take a second bearing from elsewhere |
+| Receiver overload | Strong signal from every direction | Add attenuation until the meter moves again |
+| Sky-wave on HF | Direction wanders, bearing makes little sense | Hunt on VHF or UHF where the signal travels in a straight line |
+
+Near the transmitter, a bearing from one spot is no longer enough. Switch from plotting lines to simply walking toward the strongest signal, reducing sensitivity as you go; <Ref to="fox-hunting-and-ardf" /> covers that final approach.
+
+<Callout kind="warn" title="Safety">Watch where you are walking and driving, not at the meter. Stay out of private property and away from roads, traffic and power lines, and never climb to reach a transmitter.</Callout>
+
+<ExamLink groups="T8C E9H" />
+
+<Related to="direction-finding-antennas fox-hunting-and-ardf yagi-uda radiation-patterns polarization line-of-sight" />

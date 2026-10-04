@@ -1,0 +1,46 @@
+import { G9B_FeedPoint } from '@/visuals/general/G9B_FeedPoint'
+import { MultibandDipoles_Harmonics } from '@/visuals/compendium/MultibandDipoles_Harmonics'
+import { EndFedHalfWave_System } from '@/visuals/compendium/EndFedHalfWave_System'
+
+## What it is
+
+A half-wavelength wire fed at one end, not the middle. The end of a half-wave wire is a very high impedance, so a transformer at the feed point steps it down to about 50 Ω for coax. The older name for the end-fed half-wave idea is the Zepp, where the wire was fed through a tuned open-wire feeder instead of a transformer.
+
+<Facts items={[
+  ['Length', 'about 468 ÷ f(MHz) feet, trimmed in place'],
+  ['Feed-point impedance', 'typically a few thousand ohms'],
+  ['Transformer', 'commonly 49:1 or 64:1 in impedance (typical)'],
+  ['Multiband', 'also works near each harmonic, odd and even'],
+]} />
+
+## Why the end is high impedance
+
+<G9B_FeedPoint />
+
+Impedance is voltage divided by current. At the end of the wire the current must be zero and the voltage is at its peak, so the ratio is very high. Drag the feed point toward the end in the diagram above and watch the impedance climb.
+
+The real value depends on wire diameter, height and surroundings, so transformers are built for a typical figure. A 49:1 impedance ratio turns 50 Ω into 49 × 50 = 2450 Ω, and 64:1 into 3200 Ω. Since impedance scales with the square of the turns ratio, 49:1 is 7:1 in turns and 64:1 is 8:1. A real feed point varies from the design value, so the SWR is usable, not perfect.
+
+## Harmonics come free
+
+<MultibandDipoles_Harmonics feed={0} />
+
+At every harmonic the end of the wire is still a current null and a voltage peak. The same transformer sees a similarly high impedance on each, so an end-fed half-wave cut for 7.1 MHz is also near resonance at 14.2, 21.3 and 28.4 MHz: the 40, 20, 15 and 10 m bands. Unlike a center-fed dipole, it does not skip the even multiples. Impedances on the different bands are similar, not identical, and the higher bands have multi-lobed patterns.
+
+## The return path
+
+<EndFedHalfWave_System />
+
+A wire fed at one end has only one conductor. The current needs somewhere to return, and the transformer's other terminal connects to the coax shield. Without something to stop it, RF flows on the outside of the coax as well. The result is a feed line that radiates, RF in the shack and SWR that changes when you touch the cable. The fix is a <Ref to="common-mode-chokes">common-mode choke</Ref> near the feed point and, in many designs, a short counterpoise wire.
+
+## Trade-offs
+
+- **Transformer quality** sets loss, bandwidth and heating at power. See <Ref to="baluns-and-ununs" />.
+- **Easy to deploy:** one wire, one support, no center insulator, and it can run vertical, sloping or as an <Ref to="inverted-v">inverted V</Ref>-style shape. It is popular for portable work.
+- **Pattern** follows the wire's orientation and height, as for a <Ref to="half-wave-dipole" />.
+
+<Callout kind="warn" title="High voltage at the feed end">100 W into 2450 Ω is about 495 V RMS (V = √(P × R)), and 1500 W gives about 1900 V, more if the impedance is higher. The feed end is an RF burn and flashover hazard: keep it out of reach and away from foliage.</Callout>
+
+<ExamLink groups="E9C G9B" />
+
+<Related to="half-wave-dipole baluns-and-ununs common-mode-chokes multiband-dipoles off-center-fed-dipole long-and-random-wires" />

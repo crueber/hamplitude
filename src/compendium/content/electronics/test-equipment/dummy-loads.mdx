@@ -1,0 +1,43 @@
+import { DummyLoad } from '@/visuals/technician/T7C_DummyLoad'
+import { DummyLoads_Voltage } from '@/visuals/compendium/DummyLoads_Voltage'
+import { DummyLoads_Match } from '@/visuals/compendium/DummyLoads_Match'
+
+## What it is
+
+A **dummy load** is a resistor of 50 Ω, built to handle a transmitter's power, that stands in for an antenna. The transmitter delivers its power into the resistor, which turns it all into heat, so almost nothing is radiated. You use it any time you want a transmitter running without putting a signal on the air.
+
+<Facts items={[
+  ['Resistance', '50 Ω, non-inductive, to match the line'],
+  ['Rated in', 'watts, for a stated time and frequency range'],
+  ['Match', 'near 1:1 SWR across its rated frequencies'],
+  ['Where the power goes', 'all of it to heat'],
+]} />
+
+## What it's for
+
+<DummyLoad />
+
+- **Testing and tuning** a transmitter or amplifier without causing interference or being heard by anyone.
+- **Measuring output power** with a wattmeter or a scope, with no antenna's SWR affecting the result.
+- **Comparing**: if a problem disappears when you swap the antenna for a dummy load, the antenna or feed line is at fault, not the radio.
+- **A known 50 Ω** reference for calibrating an <Ref to="antenna-analyzers-and-vnas">analyzer</Ref>, or terminating an unused port.
+
+## Power, voltage and heat
+
+<DummyLoads_Voltage />
+
+Across a 50 Ω load the voltage follows from P = V² ÷ R, so V = √(P × R). 100 W gives 70.7 V RMS, which is 100 V peak and 200 V peak-to-peak, with 1.41 A flowing. At 1,500 W it is 274 V RMS and about 5.5 A. These are real voltages, so treat the terminals of a loaded load as live.
+
+The load must also cope with the heat. A rating in watts is for a particular time: some loads are rated continuous, others only for a short on-time in each few minutes. A mode with a steady carrier (key-down CW, FM, RTTY, a long tune-up) puts the full power in constantly, while voice SSB has a much lower average. The rating is usually quoted at a particular frequency and may fall at higher frequencies; check it.
+
+## Is it really 50 Ω?
+
+<DummyLoads_Match />
+
+A resistor has a little stray inductance and capacitance, and these matter more as frequency rises. A basic load that is fine on HF can read poorly at 144 or 440 MHz, so its SWR reading is misleading there. Use a load rated for the band in question. Common builds are a high-power resistor on a finned heat sink, or an oil-filled can for longer, heavier duty.
+
+<Callout kind="warn" title="Safety: heat and voltage">A load running at its rating gets very hot: don't touch it while transmitting or soon afterwards, and keep it away from anything that burns. Never exceed its power or time rating, and never leave a loaded transmitter unattended. Keep your fingers off the connector when the transmitter is keyed: RF can burn you, and 100 W puts 70 V across it.</Callout>
+
+<ExamLink groups="T7C" />
+
+<Related to="swr-and-power-meters antenna-analyzers-and-vnas oscilloscopes spectrum-analyzers transmitter-basics swr-and-reflections" />

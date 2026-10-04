@@ -1,0 +1,49 @@
+import { BatteryHazards } from '@/visuals/technician/T0A_BatteryHazards'
+import { BatteryAndFireSafety_Fusing } from '@/visuals/compendium/BatteryAndFireSafety_Fusing'
+
+## What it is
+
+A battery stores a great deal of energy and will release it as fast as the circuit lets it. Nothing in the battery limits a short circuit, so the **wiring is the only limit**: it can glow, melt its insulation and start a fire. Add the chemistry (acid, explosive gas, thermal runaway) and a battery deserves respect even at 12 V.
+
+<Facts items={[
+  ['Main hazard', 'a short circuit: huge current, heat, fire'],
+  ['Lead-acid', 'hydrogen gas while charging; sulfuric acid'],
+  ['Lithium', 'thermal runaway when abused or damaged'],
+  ['Rule', 'fuse the positive lead, close to the battery'],
+]} />
+
+## Short circuits and fusing
+
+<BatteryHazards />
+
+A 12 V battery can deliver hundreds of amps or more into a short. It is the short that is dangerous, not the shock from touching the terminals. Keep metal tools and jewelry away from terminals, and cover them.
+
+<BatteryAndFireSafety_Fusing />
+
+The **fuse protects the wire**, so it goes in the positive lead **as close to the battery as practical**. A fuse at the radio leaves the whole cable unprotected. Size it to the wire's rating, not the radio's appetite, and use a fuse rated for DC and for the very large fault current a big battery can deliver. See <Ref to="wire-gauge-and-fusing" />.
+
+## Chemistry
+
+| Type | Main hazards | Precautions |
+|---|---|---|
+| Flooded lead-acid | hydrogen gas while charging, which can explode; corrosive acid | ventilate; no sparks or flames; eye protection |
+| Sealed lead-acid (AGM, gel) | valves can vent gas if overcharged | correct charger; do not charge a swollen case |
+| Lithium iron phosphate | more stable, but still burns if shorted, overcharged or crushed | pack with a battery management system (BMS) |
+| Other lithium-ion and LiPo | thermal runaway: overheating, venting, hard-to-extinguish fire | protection circuit; never charge damaged cells |
+
+In **thermal runaway**, a cell's own heat triggers reactions that make more heat, and it can spread to neighboring cells. Causes include overcharging, a short, physical damage and high temperatures.
+
+- Use a charger **matched to the chemistry** and cell count, never charge a frozen, swollen or damaged battery, and follow the manufacturer's limits.
+- Charge lithium on a non-flammable surface, where you would notice a problem, and not under a pillow or beside papers.
+- If a pack swells, hisses, smokes or gets hot: stop, disconnect if you safely can, move away, and call the fire department if it ignites. Do not fight a large pack fire.
+- Do not mix old and new batteries, or different chemistries, in one bank.
+
+## What else burns
+
+Overloaded cords and power strips, amplifier vents blocked by clutter, hot dummy loads, power resistors and soldering irons all start fires. Keep a smoke alarm in the shack and a suitable fire extinguisher within reach. Never use water on burning electrical equipment: cut the power first if you can do so safely.
+
+Run a **generator outdoors**, away from doors and windows, with a carbon monoxide alarm indoors. Let it cool before refueling, and store fuel away from it.
+
+<ExamLink groups="T0A G0B" />
+
+<Related to="batteries portable-power electrical-safety wire-gauge-and-fusing switches-relays-fuses go-kits" />

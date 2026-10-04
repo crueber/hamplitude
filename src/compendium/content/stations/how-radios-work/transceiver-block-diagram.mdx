@@ -1,0 +1,40 @@
+import { TransceiverBlocks } from '@/visuals/shared/TransceiverBlocks'
+import { TransceiverBlockDiagram_Shared } from '@/visuals/compendium/TransceiverBlockDiagram_Shared'
+import { TxChain } from '@/visuals/general/G4A_TxChain'
+
+## What it is
+
+A transceiver is a transmitter and a receiver in one box, built so that they **share everything they can**: the antenna connection, the frequency source, often a filter or two, the power supply and the control logic. Only one side works at a time, and the push-to-talk (PTT) or key line decides which.
+
+<TransceiverBlocks />
+
+## What is shared
+
+<TransceiverBlockDiagram_Shared />
+
+- **Frequency source.** One synthesizer (see <Ref to="pll-and-synthesizers" />) serves both paths, so receive and transmit are on the same frequency by construction: tune to a station and you are set to answer it. Offsetting them deliberately is the subject of <Ref to="rit-xit-and-split" />.
+- **IF filter and mixers.** Many designs use the same filter and sometimes the same mixer for both directions. In others the paths are separate, but the principle holds.
+- **Transmit/receive relay.** A relay (or fast electronic switch) connects the single antenna to either the receiver input or the power amplifier output. It also protects the sensitive receiver from the transmitter's power.
+- **Control logic.** A microcontroller handles the display, memories, mode, and the timing of switching.
+
+## Switching between receive and transmit
+
+The order matters. When you press PTT, a typical radio does these steps in a few milliseconds:
+
+1. mute the receiver, so it passes no thump and is not overloaded,
+2. switch the antenna relay from the receiver to the transmitter,
+3. turn on the transmitter chain, with the power amplifier last.
+
+Releasing PTT reverses the order. If the relay switched while full power was flowing, its contacts would arc ("hot switching"), and the same is true for an external amplifier or antenna tuner that keys with the radio. This is why equipment that works together passes control lines between boxes, so the radio can wait for the amplifier's relay (see the keying line below). CW **break-in** (QSK) does this switching between every dit and dah, so the relay or electronic switch has to be very fast.
+
+<TxChain />
+
+## Beyond the basics
+
+- **SDR transceivers** replace most of the blocks with a few converters and software: the same mixer or ADC path can be used for both directions (see <Ref to="sdr-transceivers" />).
+- **Transverters** add a conversion stage outside the radio to reach bands it does not cover (for example a 28 MHz transceiver driving a microwave band).
+- **Duplex operation** (a repeater, or full-duplex satellite work) transmits and receives at the same time on different frequencies, so it needs separate antennas or a duplexer or diplexer to keep the transmitter out of the receiver.
+
+<ExamLink groups="T7A G7C G4A" />
+
+<Related to="receiver-basics transmitter-basics rit-xit-and-split hf-transceivers sdr-transceivers power-and-swr-protection pll-and-synthesizers" />

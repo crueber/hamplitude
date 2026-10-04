@@ -1,0 +1,45 @@
+import { Parity } from '@/visuals/extra/E8D_Parity'
+import { ErrorCorrection_Hamming } from '@/visuals/compendium/ErrorCorrection_Hamming'
+
+## What it is
+
+Radio links make errors: noise, fading and interference flip bits. Error control adds **redundant** bits, extra data that carries no message by itself but lets the receiver check, and sometimes repair, what arrived. There are two jobs: **detect** an error, and **correct** it.
+
+<Facts items={[
+  ['Detect', 'parity bit, checksum, CRC'],
+  ['Correct without asking', 'forward error correction (FEC)'],
+  ['Correct by asking again', 'ARQ: automatic repeat request'],
+  ['Cost', 'extra bits, so a lower data rate'],
+]} />
+
+## Detecting errors
+
+<Parity />
+
+A **parity bit** is chosen so the count of ones is even (or odd). If one bit flips, the count is wrong and the receiver knows something broke, but not where. Two flips cancel and slip past. A **CRC** (cyclic redundancy check) is a stronger version: the sender divides the whole message by a fixed polynomial and appends the remainder. The receiver repeats the sum, and any mismatch means a fault. A 16-bit CRC catches essentially all short bursts of errors, and AX.25 packet frames end with one.
+
+## Correcting them
+
+<ErrorCorrection_Hamming />
+
+A **Hamming code** shows the idea. Three parity checks each cover a different overlapping set of the seven bits. A single error fails a unique combination of checks, and the combination is the position number, so the receiver can flip that bit back. Cost: 7 bits sent for every 4 of data. Real modes use stronger codes: convolutional codes, Reed-Solomon, and LDPC, which FT8 uses along with a CRC. All work the same way, spending redundancy to locate errors.
+
+The simplest code is repetition: send everything twice. The AMTOR FEC mode did this, and the receiver took whichever copy it could read. **Interleaving** shuffles bits in time so one burst of fading becomes scattered single errors, which codes handle easily.
+
+| | ARQ | FEC |
+|---|---|---|
+| How | detect, then ask for a resend | send enough redundancy to repair |
+| Needs a return path | yes | no |
+| Good for | two-way links such as packet, PACTOR, VARA | broadcasts, weak signals, one-way paths |
+| Weakness | stalls or gives up on poor links | extra bits on every message, even clean ones |
+
+## Limits and trade-offs
+
+- A code can fix only so many errors. Beyond that it fails abruptly, not gradually.
+- Redundancy lowers the data rate: the **code rate** is data bits over total bits (4/7 here).
+- Shannon showed that good enough codes can make errors vanishingly rare as long as the data rate stays below the channel capacity. See <Ref to="bandwidth-and-data-rate" />.
+- Many modes mix both: FEC to repair most errors, and a CRC to catch the rest.
+
+<ExamLink groups="E8C G8C E8D" />
+
+<Related to="digital-modulation bandwidth-and-data-rate digital-modes-overview packet-radio ft8-and-ft4 vara-and-ardop" />

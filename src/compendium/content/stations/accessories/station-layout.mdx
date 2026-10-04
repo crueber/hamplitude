@@ -1,0 +1,42 @@
+import { StationLayout_Plan } from '@/visuals/compendium/StationLayout_Plan'
+import { LightningEntry } from '@/visuals/technician/T0A_LightningEntry'
+
+## What it is
+
+Layout is how the radio, accessories, power and cables are arranged. A good layout makes the station comfortable to operate for hours, safe to run, and quiet in the receiver. Most of it is common sense, but the safety and interference parts are worth doing on purpose.
+
+<StationLayout_Plan />
+
+## Arrange for operating
+
+- Put the **radio, keyer or mic, and log** within easy reach, and the things you touch least (supply, amplifier, tuner) further away.
+- Keep short runs where length hurts: DC cable from supply to radio (see <Ref to="shack-power-supplies" />), and radio to tuner or amplifier.
+- Place the **screen and keyboard** at a comfortable height, with the chair set so your wrists and shoulders are relaxed. A few hours of poor posture can stop the fun.
+- Good lighting and a reachable power switch for everything are worth more than another gadget.
+- Leave space behind the equipment for airflow, and do not stack heat-producing gear.
+
+## Wiring: RF, AC and DC
+
+- Bring antenna feed lines in through one **entry panel** and ground it, so surge arrestors sit where the lines enter the building and a strike has a short path to ground. See <Ref to="lightning-and-grounding" />.
+
+<LightningEntry />
+
+- Keep **AC cords and RF feed lines apart**, and if they must cross, cross at a right angle. Run signal and audio cables away from power cables.
+- Power the station from a **properly grounded outlet** and a protected circuit. A power strip with a breaker is convenient, but do not overload it: a high-power amplifier usually needs its own circuit; see <Ref to="linear-amplifiers" />.
+- Keep each radio's **ground connection short and wide**, bonded to the station ground. See <Ref to="grounding-and-bonding" />.
+- **Label** cables at both ends. When something stops working, the labels save hours.
+
+## Keep the receiver quiet
+
+Switching power supplies, computers, chargers and LED lighting all create RF noise, and the shack is full of them. Space them from the radio and its antenna feed, use <Ref to="common-mode-chokes">common-mode chokes</Ref> on their cables, and keep the receive antenna away from the building's wiring. Run a test: turn each device off and listen. See <Ref to="rfi-and-emi" /> and <Ref to="common-mode-and-ground-loops" />.
+
+## Safety around the station
+
+- **RF exposure**: keep antennas away from where people sit, and do not put an antenna feed point close to the operating position. See <Ref to="rf-exposure" />.
+- **Fire**: keep flammable material away from the amplifier and the supply, and keep a suitable extinguisher in reach. Never leave equipment on and unattended if it gets hot.
+- **Children and pets**: keep tower, antenna and amplifier areas out of reach.
+- During a storm, **disconnect** the antennas from the equipment and move the lines away; see <Ref to="lightning-safety" />.
+
+<ExamLink groups="T4A T0A G4C" />
+
+<Related to="grounding-and-bonding electrical-safety rf-exposure rfi-and-emi antenna-switching shack-power-supplies" />

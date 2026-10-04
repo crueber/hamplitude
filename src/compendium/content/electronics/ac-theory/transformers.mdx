@@ -1,0 +1,58 @@
+import { Transformers_Ideal } from '@/visuals/compendium/Transformers_Ideal'
+import { G5C_ImpedanceRatio } from '@/visuals/general/G5C_ImpedanceRatio'
+
+## What it is
+
+A transformer is two coils sharing a magnetic field. AC in one winding, the **primary**, induces AC in the other, the **secondary**, with no electrical connection between them. It can step voltage up or down, and it can make one impedance look like another.
+
+<Facts items={[
+  ['Voltage', 'Vs ÷ Vp = Ns ÷ Np'],
+  ['Current', 'Is ÷ Ip = Np ÷ Ns (the other way up)'],
+  ['Impedance', 'Zp ÷ Zs = (Np ÷ Ns)²'],
+  ['Passes DC?', 'No: AC only'],
+]} />
+
+## How it works
+
+<Transformers_Ideal />
+
+Alternating current in the primary makes an alternating magnetic field in the core. That field links the secondary, where, as in any <Ref to="inductance">inductor</Ref>, a changing field induces a voltage. Each turn of wire sees the same changing field and so gets the same voltage, which means the **voltage is proportional to the number of turns**. Twice the turns, twice the volts.
+
+This needs a *changing* field, so a transformer works on AC only. DC through the primary makes a steady field and no output. Worse, a mains transformer has little resistance in its primary, so DC on it can burn it out.
+
+## Voltage, current and impedance
+
+An ideal transformer loses nothing, so power in equals power out. If the voltage goes down by some ratio, the current goes up by the same ratio.
+
+Worked example: 120 V on 100 turns, 10 turns on the secondary, with a 4 Ω load.
+
+- Secondary voltage: 120 × 10 ÷ 100 = **12 V**
+- Secondary current: 12 ÷ 4 = **3 A**, power 36 W
+- Primary current: 36 ÷ 120 = **0.3 A**
+- The source sees 120 ÷ 0.3 = **400 Ω**, which is 4 Ω × 10²
+
+Impedance goes with the **square** of the turns ratio because voltage is scaled by the ratio and current by its inverse, so their quotient is scaled twice.
+
+<G5C_ImpedanceRatio />
+
+That is how a transformer matches an antenna to a feed line:
+
+| Impedance ratio | Turns ratio | Maps 50 Ω to | Typical use |
+|---|---|---|---|
+| 4 : 1 | 2 : 1 | 200 Ω | 4:1 balun or unun |
+| 9 : 1 | 3 : 1 | 450 Ω | 9:1 unun, often used with random wires |
+| 49 : 1 | 7 : 1 | 2450 Ω | end-fed half-wave transformer |
+
+## Real transformers
+
+- **Core.** Mains transformers use laminated steel; RF transformers use ferrite or powdered-iron cores, or no core at all at VHF. Neither works well in the other's job.
+- **Losses.** Winding resistance, core losses and leakage flux (field that does not link both windings) all waste power as heat.
+- **Saturation.** Too much flux and the core cannot carry more, the inductance collapses and the current soars.
+- **Frequency.** The lower the frequency, the more core a given power needs, which is why a 60 Hz supply transformer is heavy and a switch-mode supply running at tens of kHz or more is small; see <Ref to="power-supplies" />.
+- **Broadband RF.** Wide-range baluns and ununs use transmission-line transformer techniques, covered in <Ref to="baluns-and-ununs" />.
+
+<Callout kind="warn" title="Higher voltage out">A step-up transformer, such as the one in a linear amplifier power supply, can make a secondary voltage that is lethal at a current far below any fuse rating. Treat the secondary as seriously as the mains.</Callout>
+
+<ExamLink groups="G5C T6D E6D" />
+
+<Related to="inductance baluns-and-ununs end-fed-half-wave power-supplies matching-networks inductors-and-ferrites" />

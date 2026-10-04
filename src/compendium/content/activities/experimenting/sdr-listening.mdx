@@ -1,0 +1,46 @@
+import { SdrListening_Window } from '@/visuals/compendium/SdrListening_Window'
+
+## What it is
+
+A **software-defined radio (SDR)** receiver digitises a whole slice of spectrum and leaves the tuning, filtering and demodulating to software. Inexpensive USB SDR dongles, of which the RTL-SDR is the best-known example, put a wideband receiver in reach of anyone with a computer. You can listen with one, see everything in a band at a glance, and learn a lot about how signals look.
+
+<Facts items={[
+  ['Window', 'typically a couple of MHz seen at once, set by the sample rate'],
+  ['Coverage', 'low-cost dongles typically tune from tens of MHz to well over 1 GHz'],
+  ['HF', 'usually needs an upconverter or a special direct-sampling mode'],
+  ['Weak point', 'a low-resolution converter, so strong signals overload it'],
+]} />
+
+## A window on the band
+
+<SdrListening_Window />
+
+A traditional receiver hears one signal at a time. An SDR hears a whole **window** at once, and its width is set by how fast the converter samples. The software turns the window into a spectrum and a scrolling **waterfall** where each signal is a bright trace, then demodulates whichever one you pick. Moving the centre frequency slides the window, and you can record the whole window to listen to later. The signal chain behind this is in <Ref to="direct-conversion-and-sdr" />.
+
+Seeing everything is the big advantage: you notice a signal you were not tuned to, spot interference, and watch the band open and close. The cost is **detail**: a wide window shows less of each signal.
+
+## What you can listen to
+
+| Listening | What the SDR adds |
+|---|---|
+| Local repeaters, simplex and APRS on VHF and UHF | See at once which channels are active |
+| Your own signal | Check it is clean and see how it sounds elsewhere |
+| Beacons and weak-signal activity | A waterfall picks out signals you could miss by ear |
+| Interference | Watch noise change as you unplug things; see <Ref to="rfi-and-emi" /> |
+| Weather, aircraft and other services | Fun to explore; check the law on what you may monitor |
+| Internet-linked receivers | Listen through another person's antenna and receiver |
+
+Many digital modes are decoded by software, so an SDR plus a computer can receive several signals in one window, each decoded separately. The same idea powers the panadapter built into many transceivers; see <Ref to="sdr-transceivers" />.
+
+## Getting good results
+
+- **The antenna matters most.** The small whip in the box is a compromise. An antenna cut for the band, outdoors and high, makes a bigger difference than any setting; see <Ref to="receive-loops-and-active-antennas" />.
+- **Watch for overload.** A strong nearby broadcast or transmitter can overwhelm a cheap converter, producing phantom signals across the window. Reduce the gain, add a filter for the offender, or move the antenna; see <Ref to="overload-and-intermod" />. More gain is not better.
+- **Expect some drift.** Many low-cost dongles use simple timing crystals that drift as they warm up, so frequencies read slightly off until you apply a correction.
+- **Keep the computer quiet.** USB cables and computer power supplies radiate noise. A short extension cable, ferrites on the leads and a little distance help.
+
+<Callout kind="warn" title="Know the law">Listening to amateur signals is fine. Rules on monitoring other services, and on using or sharing what you hear, differ by country and sometimes by state. Check local law, and remember a receive-only SDR cannot transmit.</Callout>
+
+<ExamLink groups="G7C E7F E4C" />
+
+<Related to="receivers-and-scanners direct-conversion-and-sdr sdr-transceivers receiver-performance spectrum-analyzers adc-and-dac" />

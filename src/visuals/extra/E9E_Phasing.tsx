@@ -8,6 +8,9 @@ const OPTS = [
 ]
 
 /** Two driven elements λ/4 apart. The phasing line sets their relative phase and so the pattern. */
+/** Floating-point residue (6e-15) should read as an exact null. */
+const snap = (v: number) => (Math.abs(v) < 1e-6 ? 0 : v)
+
 export function Phasing() {
   const [ph, setPh] = useState(90)
   const R = 96, cx = 470, cy = 150
@@ -70,8 +73,8 @@ export function Phasing() {
         <T x={cx} y={cy + R + 26} anchor="middle" size={13} bold color={C.signal}>{short}</T>
       </Diagram>
       <Controls>
-        <Readout label="Toward element A (top)" value={fmt(front * 100, 3)} unit="% of max" color="var(--d-signal)" />
-        <Readout label="Toward element B (bottom)" value={fmt(back * 100, 3)} unit="% of max" color="var(--d-signal)" />
+        <Readout label="Toward element A (top)" value={fmt(snap(front * 100), 3)} unit="% of max" color="var(--d-signal)" />
+        <Readout label="Toward element B (bottom)" value={fmt(snap(back * 100), 3)} unit="% of max" color="var(--d-signal)" />
       </Controls>
       <div style={{ margin: '-6px 0 14px' }}>
         <Choice label="Phase between elements" value={ph} onChange={setPh} options={OPTS.map((o) => ({ value: o.v, label: o.label }))} />

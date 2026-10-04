@@ -6,6 +6,7 @@ import { LessonPage } from '@/pages/Lesson'
 import { ExamPage, GroupPractice, Review } from '@/pages/Practice'
 import { Browse } from '@/pages/Browse'
 import { SettingsPage } from '@/pages/Settings'
+import { CompendiumRoute } from '@/compendium/pages'
 
 // Hash routing keeps the site deployable on any static host with zero server config.
 const router = createHashRouter(
@@ -14,6 +15,7 @@ const router = createHashRouter(
       <Route index element={<Home />} />
       <Route path="settings" element={<SettingsPage />} />
       <Route path="browse/:license" element={<Browse />} />
+      <Route path="compendium/*" element={<CompendiumRoute />} />
       <Route path=":license" element={<LicensePage />} />
       <Route path=":license/review" element={<Review />} />
       <Route path=":license/exam" element={<ExamPage />} />

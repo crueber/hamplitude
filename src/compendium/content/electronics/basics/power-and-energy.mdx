@@ -1,0 +1,47 @@
+import { G5B_PowerCalc } from '@/visuals/general/G5B_PowerCalc'
+import { PowerAndEnergy_Energy } from '@/visuals/compendium/PowerAndEnergy_Energy'
+
+## What they are
+
+**Power** is how fast energy is used or delivered, in watts (W). **Energy** is the total amount used, in joules (J), or in the units on an electricity bill, kilowatt-hours (kWh). Power is the rate; energy is power kept up for a time.
+
+<Facts items={[
+  ['Power', 'P = E × I, in watts'],
+  ['1 watt', '1 volt × 1 ampere = 1 joule per second'],
+  ['Energy', 'watts × time: joules (W·s), watt-hours (Wh) or kWh'],
+  ['1 Wh', '3600 J'],
+]} />
+
+## Power from voltage and current
+
+A volt is one joule of energy per coulomb of charge, and an ampere is one coulomb per second. Multiply them and the coulombs cancel, leaving joules per second: watts.
+
+<G5B_PowerCalc />
+
+A 13.8 V radio drawing 10 A is using 13.8 × 10 = **138 W**. Rearranged, I = P ÷ E: 138 W from 13.8 V means 10 A, which tells you how heavy the wiring and fuse must be.
+
+## Three forms, one idea
+
+Substituting <Ref to="ohms-law">Ohm's law</Ref> into P = E × I gives two more forms. Pick whichever uses the two quantities you know.
+
+| You know | Use | Example |
+|---|---|---|
+| E and I | P = E × I | 13.8 V, 10 A: 138 W |
+| I and R | P = I² × R | 15 A through 0.1 Ω: 225 × 0.1 = 22.5 W |
+| E and R | P = E² ÷ R | 120 V across 14.4 Ω: 14 400 ÷ 14.4 = 1000 W |
+
+The squares matter. **Double the current and the heat in a given resistance quadruples**, which is why undersized power wiring gets hot so quickly and why a small drop in a power lead matters most at high current. Likewise a heater element drawing 1000 W from 120 V has a resistance of 14.4 Ω and takes about 8.3 A.
+
+## Energy and running time
+
+<PowerAndEnergy_Energy />
+
+Energy is power multiplied by time. A 1000 W heater running 3 hours uses 3 kWh. Battery capacity is energy too: a 12 V, 7 Ah battery holds about 12 × 7 = 84 Wh, so a 20 W load would run it for at most 84 ÷ 20 = 4.2 hours. That is an ideal figure; real batteries deliver less, and many should not be drained fully. See <Ref to="batteries" /> and <Ref to="portable-power" />.
+
+## Where the power goes
+
+Energy is not lost; it is converted. In a resistor it becomes heat, in a lamp light and heat, in a speaker sound, and in an antenna it is radiated as radio waves. The rating printed on a part is the most it can convert safely. A common 1/4 W resistor with 10 V across 1 kΩ dissipates 0.1 W and is fine; the same 10 V across 100 Ω dissipates 1 W and will overheat. A <Ref to="dummy-loads">dummy load</Ref> is simply a resistor built to turn transmitter power into heat on purpose.
+
+<ExamLink groups="T5C G5B" />
+
+<Related to="ohms-law voltage-current-resistance batteries shack-power-supplies decibels dummy-loads" />

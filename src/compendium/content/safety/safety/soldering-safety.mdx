@@ -1,0 +1,41 @@
+import { SolderingSafety_Bench } from '@/visuals/compendium/SolderingSafety_Bench'
+
+## What it is
+
+Soldering is routine, which is exactly why people get careless. The bench hazards are **heat**, **fumes**, **flying debris** and **lead**. All four are easy to control with habits that cost nothing once they are automatic. For the technique itself, see <Ref to="soldering" />.
+
+<Facts items={[
+  ['Iron tip', 'typically 300 to 400 °C'],
+  ['Tin-lead solder melts', 'about 183 °C (63/37)'],
+  ['Lead-free melts', 'about 220 °C, so irons run hotter'],
+  ['Main lead risk', 'residue on hands, then food or mouth'],
+]} />
+
+## The bench
+
+<SolderingSafety_Bench />
+
+**Burns.** The tip is hot enough to burn instantly and to ignite paper, plastic and cord insulation. Always return the iron to its stand, never lay it down, route the cord where you cannot snag it, and unplug it when you leave. Molten solder drips and flicks. Cool a burn under running water and get medical help if it is serious.
+
+**Fumes.** The smoke is mostly **flux**, which irritates eyes, nose and lungs and can trigger asthma. Keep your face out of the plume. A small fan or fume extractor drawing it away from you, or a good breeze from an open window, is enough for hobby use.
+
+**Eyes.** Solder spits, flux can pop, and clipped leads fly. Wear safety glasses, and hold or shield a lead as you cut it so it cannot fly.
+
+**Lead.** At normal soldering temperatures the fumes are mostly flux, not lead. The lead hazard is **residue** on your hands and the bench, which reaches your mouth through food, drink or a cigarette. Wash your hands after soldering and before eating. Keep solder and scraps away from children and pets, and take waste to local hazardous-waste disposal. Lead-free solder avoids the lead but is no excuse to skip ventilation.
+
+## Other materials in the shack
+
+| Material | Hazard | Precaution |
+|---|---|---|
+| Isopropyl alcohol, solvents | flammable vapor | small amounts, away from the iron, ventilated |
+| Acid-core or plumbing flux | corrosive to electronics | never use it for electronics |
+| Some older high-power RF parts | may contain beryllium oxide ceramic, toxic as dust | do not break, grind or open them |
+| Some old oil-filled capacitors and transformers | may contain PCBs | do not open; dispose as hazardous waste |
+
+Soldering also puts you near the other shack hazards. **Never solder on a live circuit** or on a supply whose capacitors are still charged; see <Ref to="electrical-safety" />. Check the label or data sheet if you are unsure what is in a part.
+
+<Callout kind="tip" title="Habits that work">Glasses on, extractor on, iron in the stand, wash your hands. Do them in that order, every session.</Callout>
+
+<ExamLink groups="T7D G0B" />
+
+<Related to="soldering electrical-safety battery-and-fire-safety construction-methods kits-and-homebrew rf-connectors" />

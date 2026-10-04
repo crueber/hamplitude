@@ -1,0 +1,52 @@
+import { Switches } from '@/visuals/technician/T6A_Switches'
+import { Relay } from '@/visuals/technician/T6D_Relay'
+import { SwitchesRelaysFuses_Flyback } from '@/visuals/compendium/SwitchesRelaysFuses_Flyback'
+import { FuseFire } from '@/visuals/technician/T0A_FuseFire'
+
+## What they are
+
+A **switch** opens and closes a circuit by hand. A **relay** does the same electrically: a small current in a coil moves contacts that switch a different, possibly much bigger, circuit. A **fuse** (or circuit breaker) is a deliberate weak point that opens by itself when current is too high. Switches and relays *control*; fuses *protect*.
+
+<Facts items={[
+  ['Pole', 'one separate circuit switched'],
+  ['Throw', 'one position each circuit can be switched to'],
+  ['Contact rating', 'maximum current and voltage, lower for DC than for AC'],
+  ['Fuse rating', 'current at which it opens, matched to the wire it protects'],
+]} />
+
+## Switches
+
+<Switches />
+
+Describe a switch by its **poles** and **throws**: SPST is a plain on/off, SPDT picks between two paths (such as two antennas), DPDT switches two circuits at once. Switches are also **momentary** (spring-return, like a push-to-talk) or **latching**. Check the contact ratings: a switch rated for mains AC can fail quickly on a DC load of similar current, because a DC arc is harder to snuff out.
+
+## Relays
+
+<Relay />
+
+The coil is an electromagnet, so a relay isolates the control circuit from the switched one. That lets a microcontroller key a transmitter, or a front-panel button switch an antenna. Relays come in several forms:
+
+- **General-purpose and power relays** switch DC or AC supplies.
+- **RF (coaxial) relays** are built to switch RF with a controlled impedance, for transmit-receive changeover or antenna selection. An ordinary relay is not a substitute at VHF and above.
+- **Latching relays** hold their position with no coil current.
+- **Solid-state relays** use semiconductors instead of moving contacts: silent and fast, but with a voltage drop and different limits.
+
+A coil stores energy in its magnetic field. When the current is cut, the field collapses and drives the voltage sharply the other way. A **flyback diode** across the coil, with its cathode toward the positive side so it does nothing while the coil is energised, gives that current a path.
+
+<SwitchesRelaysFuses_Flyback />
+
+## Fuses and breakers
+
+<FuseFire />
+
+A fuse protects the **wiring**, and by extension the equipment and the building. Its rating must be no higher than the current the thinnest wire in the circuit can safely carry; see <Ref to="wire-gauge-and-fusing" /> for the numbers. It is wired in series with the hot (positive) lead, as close as practical to the source, so the whole length of wire is protected.
+
+- A **fast-acting** fuse opens quickly on an overload; a **slow-blow** (time-delay) type tolerates the brief surge when a motor or large capacitor starts.
+- A **circuit breaker** does the same job and can be reset. Use ones rated for the voltage and for DC if it is a DC circuit.
+- **Replace a blown fuse with the same type and rating** only after finding out why it blew. Never use a larger one, foil or a wire strap.
+
+<Callout kind="warn" title="Fuse the live side">A fuse in the ground or neutral lead leaves the equipment energised when it blows. Put fuses and breakers in the hot conductor. See <Ref to="electrical-safety" />.</Callout>
+
+<ExamLink groups="T6A T6D T0A" />
+
+<Related to="electrical-safety wire-gauge-and-fusing antenna-switching shack-power-supplies diodes wire-and-cable" />

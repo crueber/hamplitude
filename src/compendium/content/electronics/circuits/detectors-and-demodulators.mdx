@@ -1,0 +1,49 @@
+import { EnvelopeDetector, ProductDetector } from '@/visuals/extra/E7E_Detectors'
+import { DetectorsAndDemodulators_SCurve } from '@/visuals/compendium/DetectorsAndDemodulators_SCurve'
+
+## What it is
+
+A detector (or demodulator) recovers the original information, such as voice or data, from a modulated carrier. It undoes what the transmitter's <Ref to="modulation-basics">modulator</Ref> did, so each type of modulation needs its own kind of detector.
+
+<Facts items={[
+  ['AM', 'envelope detector: a diode and a capacitor'],
+  ['SSB, CW', 'product detector: a mixer plus a BFO'],
+  ['FM', 'discriminator, quadrature detector or PLL'],
+  ['SDR', 'any of them, done by arithmetic'],
+]} />
+
+## AM: follow the envelope
+
+<EnvelopeDetector />
+
+In AM the audio is the outline, or **envelope**, of the carrier's peaks. A diode passes only one half of each RF cycle; a capacitor and resistor then hold the voltage between peaks, so the output traces the envelope and the RF is filtered away. The result is the audio.
+
+The capacitor and resistor must be chosen with care. Their time constant (<Ref to="time-constants" />) must be much longer than one carrier cycle, or the RF ripple remains, and much shorter than one audio cycle, or the output cannot follow falling peaks. For a 455 kHz carrier (2.2 µs per cycle) and 3 kHz audio (333 µs), 10 kΩ and 2.2 nF give 22 µs, comfortably between.
+
+An envelope detector needs the carrier. SSB and CW have none, so it would produce nothing useful from them.
+
+## SSB and CW: put the carrier back
+
+<ProductDetector />
+
+A single-sideband signal contains no carrier; the audio is only in the *offset* of the sideband from where the carrier would be. A **product detector** is a <Ref to="mixers">mixer</Ref> fed with the signal and a locally generated carrier from a **BFO** (beat frequency oscillator). The difference between them is the audio.
+
+That makes the BFO's frequency critical. If it is off by 100 Hz, every audio tone shifts by 100 Hz and voices sound unnaturally high or low, which is why <Ref to="rit-xit-and-split">fine tuning</Ref> exists. For CW the same trick makes the tone: a carrier that is 700 Hz away from the BFO is heard as a 700 Hz note, and you set the pitch by tuning slightly off.
+
+## FM: turn frequency into voltage
+
+<DetectorsAndDemodulators_SCurve />
+
+FM carries the audio in the carrier's *frequency*, so the detector must convert frequency to voltage. A **discriminator** does it with a tuned circuit whose output voltage rises on one side of the carrier frequency and falls on the other, the S-shaped curve above. A **quadrature detector** (common in ICs) and a <Ref to="pll-and-synthesizers">phase-locked loop</Ref>, whose control voltage follows the signal's frequency, do the same job differently.
+
+A **limiter** stage ahead of an FM detector clips off every change in amplitude. The information is in the frequency, so nothing is lost, while much of the noise and fading, which are amplitude changes, disappears. This is why a strong FM signal sounds so quiet and clean. A crude alternative: an AM radio tuned slightly to the side of an FM signal turns the frequency swings into amplitude changes on the filter slope and sounds rough but intelligible.
+
+## In practice
+
+- **Software-defined radios** compute the detection: the signal arrives as numbers, and a program does the envelope, product or FM maths, so one radio can offer any mode; see <Ref to="direct-conversion-and-sdr" /> and <Ref to="dsp-basics" />.
+- **Distortion points to a tuning error.** A product detector that sounds like "Donald Duck" is off in frequency; an FM signal that is distorted may be too wide for the receiver's filter.
+- **Digital modes** are usually received as SSB: the detector's audio carries the modem tones to the computer.
+
+<ExamLink groups="E7E G7C E7H" />
+
+<Related to="modulation-basics amplitude-modulation frequency-modulation single-sideband mixers superheterodyne" />

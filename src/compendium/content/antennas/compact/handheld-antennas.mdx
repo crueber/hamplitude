@@ -1,0 +1,42 @@
+import { HandheldAntennas_Lengths } from '@/visuals/compendium/HandheldAntennas_Lengths'
+import { Loading as T9A_Loading } from '@/visuals/technician/T9A_Loading'
+
+## What it is
+
+The antenna on a handheld transceiver (HT) is a compromise: it has to be short enough to carry, flexible enough to survive a pocket and still radiate. The standard "rubber duck" is a coil of wire inside a flexible sleeve. It works, but a better antenna is often the easiest way to improve an HT.
+
+<Facts items={[
+  ['Quarter-wave whip', '19.2 in on 2 m, about 6.3 in on 70 cm'],
+  ['Half-wave', '38.4 in on 2 m'],
+  ['Rubber duck', 'about 7 in, loaded; typically less efficient than a full-size antenna'],
+  ['Connector', 'usually SMA; male and female, and reverse-polarity, versions exist'],
+]} />
+
+## Choices drawn to scale
+
+<HandheldAntennas_Lengths />
+
+- **Rubber duck.** A helix (a coil) wound along a short flexible core, loaded to look like a quarter-wave. It is compact and rugged and its efficiency is low, as with any <Ref to="loaded-and-short-antennas">short antenna</Ref>.
+- **Quarter-wave whip.** A straight piece of wire or telescoping rod. Efficient, but the radio's case and your hand act as the other half of the antenna.
+- **Half-wave telescopic.** A longer antenna with a small matching network at its base. It relies less on the radio body and often works better.
+- **5/8-wave whip.** More gain on paper in the open; see <Ref to="five-eighths-and-colinears" />.
+
+On the signal side, longer is generally better until size becomes a nuisance. The difference between a duck and a good full-size antenna can be several dB.
+
+## The radio is part of the antenna
+
+<T9A_Loading />
+
+A handheld on its own has no ground plane. Your hand, the case and the battery pack form a rough counterpoise, so how you hold the radio changes the signal. A hand wrapped around the case or the antenna and a body close to the radio absorb RF. Hold the radio upright and, if you can, away from your body. A metal vehicle body screens a handheld inside it, which is why people switch to an outside antenna in a car.
+
+## Getting more from an HT
+
+- **Get higher.** Height beats antenna length. A few feet up a hill or a building matters more than any whip.
+- **Use an external antenna.** A magnetic-mount whip on a car roof, a roll-up J-pole from a window, or a small Yagi, all through a short coax. See <Ref to="j-pole-and-slim-jim" />.
+- **Keep the coax short.** Thin coax wastes more of the signal at VHF and UHF, so use the shortest, best-quality run you can.
+- **Check connectors.** Match male and female and standard or reverse-polarity SMA before buying.
+- **Mind exposure.** Keep the antenna away from your face and eyes and don't hold or touch it while transmitting; see <Ref to="rf-exposure" />.
+
+<ExamLink groups="T9A" />
+
+<Related to="handheld-transceivers loaded-and-short-antennas j-pole-and-slim-jim polarization rf-connectors line-of-sight" />

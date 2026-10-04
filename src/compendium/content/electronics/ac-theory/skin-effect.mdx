@@ -1,0 +1,51 @@
+import { SkinEffect_Depth } from '@/visuals/compendium/SkinEffect_Depth'
+import { E5D_SkinEffect } from '@/visuals/extra/E5D_SkinEffect'
+
+## What it is
+
+At DC, current spreads evenly through a wire's whole cross-section. As the frequency rises it crowds into a thin layer at the **surface**, and the middle of the wire carries almost nothing. Less metal is working, so the wire's resistance goes up with frequency.
+
+<Facts items={[
+  ['Skin depth', 'δ = √(ρ ÷ (π × f × μ))'],
+  ['Copper', 'about 66 µm at 1 MHz'],
+  ['Scaling', 'depth falls as 1 ÷ √f; resistance rises as √f'],
+]} />
+
+## Why it happens
+
+<E5D_SkinEffect />
+
+Alternating current makes an alternating magnetic field, and that field extends through the wire's own metal. In the centre the field induces voltages that oppose the current. Near the surface there is less of this. The current takes the path of least opposition, which is outward, and the higher the frequency the stronger the push.
+
+The **skin depth** δ is how far in the current has fallen to about a third of its surface value. It shrinks with the square root of frequency, and with lower resistivity and permeability.
+
+## The numbers
+
+<SkinEffect_Depth />
+
+| Frequency | Skin depth in copper |
+|---|---|
+| 1.8 MHz | 49 µm |
+| 7.1 MHz | 25 µm |
+| 14.2 MHz | 18 µm |
+| 28.4 MHz | 12 µm |
+| 146 MHz | 5.5 µm |
+| 446 MHz | 3.1 µm |
+
+Aluminum is roughly 25 to 30% deeper than copper, because its resistivity is higher.
+
+Skin effect only matters once the depth is smaller than the wire's radius. For 14 AWG wire (1.63 mm diameter) that begins around 6.6 kHz, and at 60 Hz the depth is 8.5 mm, so mains wiring is untouched. At 14.2 MHz, the thin-layer model puts the wire's resistance at roughly 23 times its DC value. That is a rough guide, but the trend is certain.
+
+## In practice
+
+- **Only the surface counts.** A hollow tube with a wall a few skin depths thick conducts RF as well as a solid rod of the same diameter. Plating a surface with a better conductor, such as silver, helps at VHF and above, which is why microwave parts are often silver-plated.
+- **Copper-clad steel** wire has a steel core for strength and a copper skin that carries the RF, which works at HF where the skin is thin.
+- **Bigger helps less.** Doubling a wire's diameter cuts its DC resistance to a quarter but its RF resistance only to a half, because RF follows the surface (the circumference), not the area.
+- **Coils and coax.** Skin effect is part of why coil Q is hard to raise and why coax loss climbs with frequency; see <Ref to="resonance-and-q" /> and <Ref to="feed-line-loss" />.
+- **Litz wire** twists many thin insulated strands, each thinner than the skin depth, so every strand is fully used. It helps in audio, LF and MF coils (typically up to a MHz or two, depending on strand size) and does not at higher HF and VHF.
+
+For full-size antennas the extra wire loss is usually small next to the radiation resistance. It matters more in short loaded antennas, small loops and coils; see <Ref to="conductors-and-insulators" /> for what makes a good conductor in the first place.
+
+<ExamLink groups="E5D" />
+
+<Related to="conductors-and-insulators inductors-and-ferrites wire-and-cable coaxial-cable feed-line-loss resonance-and-q" />

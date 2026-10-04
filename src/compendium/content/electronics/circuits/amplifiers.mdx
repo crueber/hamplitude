@@ -1,0 +1,53 @@
+import { TransistorGain } from '@/visuals/technician/T6B_TransistorGain'
+import { AmpClasses } from '@/visuals/general/G7B_AmpClasses'
+import { Amplifiers_Tradeoff } from '@/visuals/compendium/Amplifiers_Tradeoff'
+
+## What it is
+
+An amplifier makes a signal bigger. It does not create energy: a small input signal steers a much larger flow of power taken from a DC supply, and the output is a bigger copy of the input. Radios use amplifiers everywhere, from a microvolt-level receiver front end to the final stage that drives the antenna.
+
+<Facts items={[
+  ['Power gain', 'P(out) ÷ P(in), usually in dB'],
+  ['Example', '1 W in, 100 W out = 20 dB'],
+  ['Stages in a chain', 'gains in dB simply add'],
+  ['Ideal efficiency', 'class A 50%, class B 78.5%, class C higher'],
+]} />
+
+## How it works
+
+<TransistorGain />
+
+In a <Ref to="bipolar-transistors">transistor</Ref> (or a <Ref to="fets-and-mosfets">FET</Ref>, or a <Ref to="vacuum-tubes">tube</Ref>) a small control signal changes how much current the device lets through from the supply. A wiggle at the input becomes a larger wiggle in the output current, and a load such as a resistor, tuned circuit or antenna turns that into voltage and power. Between fully off and fully on, the device acts like a variable resistor steered by the input. That middle region is where amplification happens; a device driven only fully on or off is acting as a switch instead.
+
+The device is first given a steady DC **bias** so that it sits partway along its range. Where you put the bias, relative to the signal, decides the amplifier's **class**.
+
+## Classes of operation
+
+<AmpClasses />
+
+The class is how much of each input cycle the device conducts. More conduction keeps the output a faithful copy of the input; less conduction wastes less power as heat.
+
+<Amplifiers_Tradeoff />
+
+| Class | Conducts | Linear? | Used for |
+|---|---|---|---|
+| A | all 360° | best | low-level stages, drivers, receiver preamps |
+| AB | 180° to 360° | good | SSB and other linear power amplifiers |
+| B | about 180° | fair, usually two devices in push-pull | linear stages that need better efficiency |
+| C | less than 180° | poor | CW and FM only |
+
+Classes D, E and F use the device as a fast switch, with a filter to recover the sine wave. They reach efficiencies well above class C, which is why they appear in compact, low-heat power amplifiers.
+
+**Linearity matters when the amplitude carries information.** SSB and AM change with the signal's strength, so a non-linear amplifier distorts them and spreads a wide, messy signal called splatter. CW and FM have constant amplitude, so they can use class C: a tuned circuit at the output rebuilds the sine wave from the current pulses. See <Ref to="harmonics-and-spurs" /> and <Ref to="overload-and-intermod" />.
+
+## In practice
+
+- **Heat is the cost of linearity.** Even ideally, a class A stage delivering 100 W turns another 100 W of supply power into heat, and a class B stage about 27 W; real stages are worse. Heatsinks, fans and duty cycle follow from this.
+- **Do not overdrive.** The output cannot exceed what the supply allows. Past that point the peaks flatten (compression), making distortion. A <Ref to="linear-amplifiers">linear amplifier</Ref> needs just enough drive, and an ALC line to the radio helps prevent excess.
+- **Gains multiply, so dB add.** A 15 dB preamp, a 10 dB gain stage and 3 dB of loss give 22 dB overall. See <Ref to="decibels" />.
+- **Noise is added at every stage.** A receive preamp helps weak signals only if the first stage adds little noise; a strong signal can overload it. See <Ref to="receiver-performance" />.
+- **Amplifier plus feedback can oscillate**, sometimes by accident. Careful layout, bypassing and sometimes neutralizing prevent it; made on purpose it is an <Ref to="oscillators">oscillator</Ref>.
+
+<ExamLink groups="T6B T7A G7B E7B" />
+
+<Related to="oscillators filters linear-amplifiers transmitter-basics bipolar-transistors op-amps" />

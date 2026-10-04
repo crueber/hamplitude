@@ -5,6 +5,7 @@ import '@fontsource-variable/space-grotesk'
 import '@fontsource-variable/jetbrains-mono'
 import './styles/tokens.css'
 import './styles/app.css'
+import './styles/compendium.css'
 import App from './App'
 
 createRoot(document.getElementById('root')!).render(

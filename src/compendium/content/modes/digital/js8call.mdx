@@ -1,0 +1,42 @@
+import { Js8call_Hops } from '@/visuals/compendium/Js8call_Hops'
+
+## What it is
+
+JS8Call is a keyboard-to-keyboard mode built on FT8's weak-signal technology, but with the freedom FT8 lacks: you type your own text, in a conversation, to a specific station, and messages can be passed along. It is a way to keep chatting on a weak or noisy path where PSK31 or RTTY would fail.
+
+<Facts items={[
+  ['Built on', 'FT8-style modulation and error correction'],
+  ['Timing', 'timed slots; several speeds available'],
+  ['Message style', 'free text, directed to a station'],
+  ['Needs', 'a computer clock accurate to about a second'],
+]} />
+
+## What it adds to FT8
+
+<Js8call_Hops />
+
+FT8 sends fixed messages in a rigid script. JS8Call borrows the same ingredients: tones that are heavily error-corrected and decoded below the noise, in timed slots. On top it breaks your text into small **frames**, one per slot, and adds the conventions of a conversation:
+
+- **Free text** is split into frames, so an arbitrary sentence takes several slots.
+- **Directed messages** address another operator, who can reply automatically with an acknowledgement.
+- **Relaying** lets a station that hears both ends pass the message on, so a message can cross a gap that no single path covers.
+- Stations can announce themselves with periodic **heartbeats**, so others know who is on.
+
+## The trade-off
+
+The cost is time. Text is slow, because every message must be broken up and sent in slots. There are several speeds: slower ones are more sensitive, faster ones finish sooner, and both stations must use the same one. Expect a short sentence to take many seconds, not the instant feel of PSK31.
+
+| | FT8 | JS8Call |
+|---|---|---|
+| Message | fixed script | free text |
+| Conversation | exchange reports and sign off | open-ended |
+| Relaying | no | yes |
+| Speed | quickest contact | slower, deliberate |
+
+## In practice
+
+JS8Call suits low-power operating, camping and emergency-minded operators, since you can pass real information and use relays without internet. As with FT8, use USB, keep audio levels low, and run less than your rated power, because the transmitter is on for much of each slot. Check your computer's clock before you start.
+
+<Callout kind="note">Like all amateur modes, anything you send must follow Part 97: identified by your call sign, and with no encryption or other meaning-obscuring codes.</Callout>
+
+<Related to="ft8-and-ft4 psk31 mfsk-and-olivia digital-mode-software winlink-emergency digital-modes-overview" />

@@ -1,0 +1,52 @@
+import { LogicGates_Explorer } from '@/visuals/compendium/LogicGates_Explorer'
+import { LogicGates_Squelch } from '@/visuals/compendium/LogicGates_Squelch'
+import { PositiveLogic } from '@/visuals/extra/E7A_PositiveLogic'
+
+## What it is
+
+A logic gate is a tiny circuit that looks at one or two inputs, each either **high (1)** or **low (0)**, and sets its output high or low by a fixed rule. Everything digital, from a keyer to a transceiver's processor, is built by wiring huge numbers of gates together.
+
+<Facts items={[
+  ['Logic 0', 'a voltage near 0 V'],
+  ['Logic 1', 'a voltage near the supply, commonly 3.3 V or 5 V'],
+  ['Threshold', 'set by the logic family; the zone between 0 and 1 is undefined'],
+  ['Built from', 'a handful of transistors per gate'],
+]} />
+
+## The seven gates
+
+<LogicGates_Explorer />
+
+The rule for each is one short sentence, and the truth table lists every case:
+
+| Gate | Output is 1 when | Handy to know |
+|---|---|---|
+| NOT | the input is 0 | an inverter |
+| AND | both inputs are 1 | "all conditions met" |
+| OR | either input is 1 | "any condition met" |
+| NAND | not both inputs are 1 | AND followed by NOT |
+| NOR | neither input is 1 | OR followed by NOT |
+| XOR | the inputs differ | a "difference" detector |
+| XNOR | the inputs match | a "same" detector |
+
+The bubble on a symbol's output means "inverted". NAND and NOR are **universal**: any other gate can be built from NAND gates alone, which is why chips are often full of them.
+
+## Gates in the shack
+
+Gates combine into decisions. A tone-squelch circuit passes audio only when a carrier is present **and** the right sub-audible tone is detected, **or** when you hold the monitor button:
+
+<LogicGates_Squelch />
+
+XOR is especially useful: wired to two signals of the same frequency, its output is high for as long as they disagree, which makes it a simple phase detector (see <Ref to="pll-and-synthesizers" />). An XOR and an AND together add two bits (XOR gives the sum, AND the carry), which is how arithmetic is built.
+
+## Levels and polarity
+
+<PositiveLogic />
+
+"High means 1" is called positive logic, and is the usual convention. Many control lines are **active low**: the action happens when the line goes low, often drawn with a bar over the name. A radio's push-to-talk input is a familiar example: grounding it means transmit.
+
+<Callout kind="warn" title="Mind the voltages">A 5 V output can damage a 3.3 V input, so check each chip's limits or use a level shifter. Don't leave an input of a CMOS gate unconnected: it floats and picks up noise, so tie it firmly high or low.</Callout>
+
+<ExamLink groups="G7B E6C E7A" />
+
+<Related to="flip-flops-and-counters integrated-circuits microcontrollers squelch-and-tones pll-and-synthesizers" />

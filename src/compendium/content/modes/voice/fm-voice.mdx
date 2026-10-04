@@ -1,0 +1,48 @@
+import { ModulationWaves } from '@/visuals/shared/ModulationWaves'
+import { Deviation } from '@/visuals/technician/T7B_Deviation'
+import { FmVoice_Capture } from '@/visuals/compendium/FmVoice_Capture'
+
+## What it is
+
+In FM voice the transmitter's **frequency** is pushed up and down in step with your voice while its power stays constant. It is the everyday mode of VHF and UHF: handhelds, car radios, repeaters and local simplex chats. It sounds clean and quiet, and it is built for short, reliable, local contacts rather than long distances.
+
+<Facts items={[
+  ['Typical signal width', 'roughly 10 to 16 kHz (about 5 kHz deviation, 3 kHz audio)'],
+  ['Where', 'mostly 10 m and up; the VHF/UHF bands above all'],
+  ['Range', 'line of sight, so local'],
+  ['Polarization', 'vertical, by convention'],
+]} />
+
+<ModulationWaves />
+
+The theory is in <Ref to="frequency-modulation" />. Here is what it means at the radio.
+
+## Why it sounds the way it does
+
+Most noise (static, ignition, lightning) changes a signal's **height**, not its frequency. An FM receiver clips off height variations and listens only to frequency, so a decent signal arrives almost noise-free. The price is bandwidth: roughly 10 to 16 kHz, several times an <Ref to="single-sideband">SSB</Ref> signal.
+
+How far the frequency swings is the **deviation**, and it follows how loud you speak. Too much and the signal spills into neighbouring channels and sounds distorted.
+
+<Deviation />
+
+Two behaviours surprise newcomers:
+
+- **Capture.** When two signals share a channel, the receiver locks onto the stronger and the weaker vanishes, rather than both being heard.
+- **All or nothing.** Above a threshold the audio is quiet and full. Below it, noise rushes in quickly. FM is poor at digging a weak signal out of the noise; SSB and CW do that far better.
+
+<FmVoice_Capture />
+
+## In practice
+
+- **Speak normally**, a few inches from the microphone. Shouting or pressing the mic to your lips over-deviates.
+- **Match the repeater's setting.** Many radios offer a narrow FM setting, roughly half the deviation. A mismatch sounds too quiet or distorted.
+- **Set squelch** just above the noise, so the speaker stays silent between transmissions. See <Ref to="squelch-and-tones" />.
+- **Use the lowest power that works.** Handhelds often have a high/low switch.
+- **Listen first.** Capture means a stronger station will wipe out a conversation you could not hear.
+- **Hold the antenna upright**, matching the vertical polarization of nearly everyone else.
+
+Through a repeater, see <Ref to="repeaters" />; direct, see <Ref to="simplex" />.
+
+<ExamLink groups="T8A T2B G8A" />
+
+<Related to="frequency-modulation repeaters simplex squelch-and-tones handheld-transceivers modulation-basics" />

@@ -1,0 +1,53 @@
+import { OhmsLaw } from '@/visuals/shared/OhmsLaw'
+import { OhmsLaw_Graph } from '@/visuals/compendium/OhmsLaw_Graph'
+
+## What it says
+
+For a given resistance, the current is proportional to the voltage across it. Push twice as hard and twice as much flows. Make the path twice as resistive and half as much flows.
+
+<Formula label="Ohm's law">I = E ÷ R</Formula>
+
+The same relationship rearranged gives **E = I × R** and **R = E ÷ I**. Put E on top of a triangle with I and R below; cover the one you want and what is left is the formula.
+
+<OhmsLaw />
+
+<Facts items={[
+  ['Current', 'I = E ÷ R (amperes)'],
+  ['Voltage', 'E = I × R (volts)'],
+  ['Resistance', 'R = E ÷ I (ohms)'],
+  ['Defining ohm', '1 Ω lets 1 A flow when 1 V is across it'],
+]} />
+
+## Why it works
+
+<OhmsLaw_Graph />
+
+In a resistor the current rises in step with the voltage, so the graph is a straight line through zero. A bigger resistance gives a shallower line: the same voltage drives less current. The resistance is the ratio E ÷ I, and for a resistor it stays the same whatever the voltage.
+
+That is not true of every part. A lamp filament's resistance climbs as it heats, and a diode or LED passes almost nothing until the voltage reaches about its forward voltage, then conducts hard. Ohm's law still describes any single moment, but only for resistors is the ratio constant.
+
+## Worked examples
+
+Always convert to base units first: volts, amperes, ohms.
+
+| To find | Formula | Example |
+|---|---|---|
+| Current | I = E ÷ R | 13.8 V across 27 Ω: 13.8 ÷ 27 = **0.511 A** (511 mA) |
+| Voltage | E = I × R | 0.25 A through 47 Ω: 0.25 × 47 = **11.75 V** |
+| Resistance | R = E ÷ I | 5 V and 20 mA (0.02 A): 5 ÷ 0.02 = **250 Ω** |
+
+**A real job: an LED resistor.** An LED wants about 20 mA and drops roughly 2 V (typical for a red one). On a 13.8 V supply the resistor must drop the other 11.8 V, so R = 11.8 ÷ 0.02 = **590 Ω**. Choose the next standard value up, 620 Ω, and the current is 11.8 ÷ 620 = 19 mA: slightly dim, never overloaded. Rounding up is the safe direction.
+
+<Callout kind="tip" title="A shortcut worth knowing">Volts divided by kilohms gives milliamperes, so the prefixes cancel for you: 12 V across 4.7 kΩ is 12 ÷ 4.7 = 2.55 mA. See <Ref to="units-and-prefixes" />.</Callout>
+
+## Common mistakes
+
+- **Mixing prefixes.** 20 mA is 0.02 A, not 20 A. Convert before you divide.
+- **Mixing parts.** E and I must belong to the same part: the voltage across a resistor with the current through that same resistor. Using the supply voltage with one resistor's value in a multi-resistor circuit gives a wrong answer. See <Ref to="series-and-parallel" />.
+- **Treating everything as a resistor.** For a diode, LED or lamp, the ratio E ÷ I changes with conditions.
+
+Combine this with <Ref to="power-and-energy">power</Ref> and you can answer nearly any DC circuit question: how much current, how much heat, how much battery.
+
+<ExamLink groups="T5D" />
+
+<Related to="voltage-current-resistance power-and-energy series-and-parallel kirchhoff-laws resistors units-and-prefixes" />

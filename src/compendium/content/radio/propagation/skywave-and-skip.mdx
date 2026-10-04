@@ -1,0 +1,46 @@
+import { SkywaveAndSkip_Hop } from '@/visuals/compendium/SkywaveAndSkip_Hop'
+import { Scatter } from '@/visuals/general/G3C_Scatter'
+
+## What it is
+
+**Skywave** is a signal that goes up, is bent back by the <Ref to="ionosphere-layers">ionosphere</Ref>, and returns to Earth far away. One trip up and down is a **hop**. The empty stretch between where your ground wave dies out and where the first hop lands is the **skip zone**. Skywave is how a few watts on HF can reach another continent.
+
+<Facts items={[
+  ['One hop, E layer', 'up to roughly 1,200 miles'],
+  ['One hop, F2 layer', 'up to roughly 2,500 miles'],
+  ['Skip zone', 'no skywave signal; nearer than the first hop'],
+  ['Multi-hop', 'bounce between ground and ionosphere, once per hop'],
+]} />
+
+## What sets the hop length
+
+<SkywaveAndSkip_Hop />
+
+Two things set how far the first hop lands:
+
+- **Takeoff angle.** A signal sent along the horizon makes the longest hop. The steeper it goes up, the closer it comes down, until at straight up it returns almost on top of you.
+- **Layer height.** For the same angle a higher layer returns the signal farther out, which is why F2 hops are about twice as long as E hops.
+
+The distance in the diagram comes from simple geometry: the signal is treated as reflecting from a mirror at a typical layer height over a round Earth. Real layers bend the wave gradually instead of reflecting it, so the numbers are indicative. The highest frequencies that return at all are covered in <Ref to="muf-and-luf" />.
+
+## The skip zone
+
+When you are too close, the ground wave has already faded and the skywave is still passing overhead. That gap is silent, not because the signal is switched off but because the energy is somewhere else. Raise the frequency and the first-hop landing moves farther out, so the skip zone widens. Lower the frequency and it closes up; <Ref to="nvis" /> exploits this: on a low enough HF frequency, a signal sent almost straight up still returns and covers the region around you.
+
+<Scatter />
+
+The zone is rarely perfectly silent. Small amounts of energy scatter into it by irregular paths, producing weak, fluttery signals.
+
+## Multi-hop and what limits it
+
+To go farther than one hop, the signal returns to the ground, reflects, and goes up again. Each hop costs energy: the ground reflection (better over sea than dry land) and a second trip through the absorbing D layer, so multi-hop paths lose strength with each hop. Paths to the far side of the world take several hops, which is one reason they are usually weaker than shorter ones.
+
+## In practice
+
+- **Low takeoff angle wins for DX.** An antenna that sends more energy at low angles, such as a high horizontal dipole or a vertical, makes longer hops. See <Ref to="ground-and-height" />.
+- **A close contact can be "in the skip".** On HF, a station a couple of hundred miles away may be inaudible while one across the ocean booms in. Try a lower band.
+- **Frequency choice follows the Sun.** Which band is open shifts with time of day, season and the solar cycle; see <Ref to="solar-cycle-and-indices" />.
+
+<ExamLink groups="G3C G3B T3C" />
+
+<Related to="ionosphere-layers muf-and-luf nvis ground-wave grey-line-and-long-path ground-and-height" />

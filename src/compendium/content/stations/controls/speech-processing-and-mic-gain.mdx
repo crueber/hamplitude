@@ -1,0 +1,51 @@
+import { SpeechProcessingAndMicGain_Chain } from '@/visuals/compendium/SpeechProcessingAndMicGain_Chain'
+import { G2A_AlcGain } from '@/visuals/general/G2A_AlcGain'
+import { Processor } from '@/visuals/general/G4D_Processor'
+
+## What it is
+
+Three controls shape the voice that reaches the antenna on SSB: **mic gain**, the optional **speech processor** (compression), and **ALC**, the automatic level control that watches the result. The goal is a clean, readable signal at the power the radio is rated for, without a wide, splattery one.
+
+<SpeechProcessingAndMicGain_Chain />
+
+## Mic gain and ALC
+
+The final amplifier can only be driven so hard. **ALC** is a feedback circuit that detects too much drive and turns it down, and the **ALC meter** shows you when it is acting. Past that point, more gain just flattens the tops of the speech peaks.
+
+<G2A_AlcGain />
+
+Flattened peaks mean distortion and extra frequencies on either side of your signal (intermodulation products), so your signal gets wider and neighbours hear it as **splatter**. More mic gain does not give more power once ALC is working; it only gives more distortion.
+
+**To set mic gain:**
+
+1. Turn the speech processor off and use the mic at its normal distance.
+2. Speak at your normal conversational level, and watch the ALC meter.
+3. Raise the gain until the meter just touches the radio's ALC zone on your loudest peaks, and no further.
+4. Ask for a report, or listen to a recording of your own signal.
+
+<Callout kind="warn" title="Digital modes: ALC stays quiet">With data modes such as FT8, the ALC should show little or no movement. ALC action distorts these signals. Lower the audio level from the computer instead; see <Ref to="computer-interfaces" />.</Callout>
+
+## Compression
+
+Speech is bursty: the peaks are far higher than the average. A **speech processor** compresses the audio so quiet syllables are lifted toward the loud ones. The peaks stay at the transmitter's limit, so the **average power rises** while the peak does not. The signal sounds louder and "punches through" a crowded band.
+
+<Processor />
+
+| Level of processing | Result |
+|---|---|
+| Off or light (a few dB) | natural voice, a modest gain in readability |
+| Heavy | harsh, tiring voice, more distortion, more noise brought up with the speech |
+
+Compression is most useful for weak-signal or DX work and on noisy bands. In a quiet band with a strong signal, or in conversation with a friend, **less is more**. Some radios compress the audio; others clip the RF waveform and filter it afterward, which can add more talk power but also distorts sooner when overdone.
+
+## Clean audio first
+
+Processing cannot fix poor audio. Before reaching for it:
+
+- Keep the mic at a consistent distance, a few finger-widths from your mouth, and speak across rather than into it to reduce pops.
+- Check for **RF feedback**: if the power meter or ALC jumps when you touch the cable, RF is getting into the mic line. A <Ref to="common-mode-chokes">common-mode choke</Ref> on the cable usually helps.
+- Use the radio's transmit equalizer or bandwidth setting to trim extra bass, which wastes power below the voice range. See <Ref to="microphones-and-headsets" />.
+
+<ExamLink groups="T4B G4A G4D" />
+
+<Related to="single-sideband ssb-voice microphones-and-headsets computer-interfaces overload-and-intermod power-and-swr-protection" />

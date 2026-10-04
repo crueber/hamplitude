@@ -1,0 +1,42 @@
+import { HfMultibandVerticals_Trap } from '@/visuals/compendium/HfMultibandVerticals_Trap'
+import { G9D_Screwdriver } from '@/visuals/general/G9D_Screwdriver'
+
+## What it is
+
+One vertical that works on several HF bands. A full-size quarter-wave is different on every band (32.7 ft on 40 m, 16.5 ft on 20 m), so a multiband vertical uses a trick to look the right length on each: **traps**, **switched or tuned sections**, a **motorized coil**, or an **automatic tuner** at the base. Each trick has a different price.
+
+## Trap verticals
+
+<HfMultibandVerticals_Trap />
+
+A **trap** is a parallel coil and capacitor tuned to a band. At its resonant frequency it blocks RF, so everything above it is cut off and the lower section is a quarter-wave on that band. Below that frequency the trap acts like a coil: the RF passes and the trap loads the antenna, so the whole vertical is electrically a quarter-wave on the lower band while being physically shorter. Add more traps for more bands.
+
+It is a simple fixed antenna with no tuning. The trade-offs are a little loss in each trap, and a narrower bandwidth on the lowest bands, where the antenna is shortened the most.
+
+## Other ways to cover bands
+
+| Approach | How it works | Trade-off |
+|---|---|---|
+| Traps | Parallel-resonant traps isolate sections | Fixed bands, trap loss, narrow low-band bandwidth |
+| Parallel or switched elements | A separate resonant wire or relay-selected section for each band | More wire or complexity, but each band can be full-size |
+| Motorized coil | A motor moves a tap on a coil to retune on command | One band at a time; the short loaded radiator is narrow and lossier |
+| Base tuner on a long radiator | A remote tuner matches whatever frequency you choose | Works on any band, but the radiator's efficiency is still set by its length and ground |
+
+<G9D_Screwdriver />
+
+A tuner at the base, or a motorized coil, makes the antenna match the radio; it does not make a short radiator more efficient. See <Ref to="antenna-tuners" />.
+
+## The ground system still decides
+
+Whatever the trick, a vertical works against its ground: radials or a counterpoise. A different set of radials for each band, or a large uniform radial field, is the usual answer; see <Ref to="radials-and-ground-planes" />. A shortened vertical on 80 m or 160 m with a poor ground can waste most of the power, because its radiation resistance is only a few ohms; see <Ref to="loaded-and-short-antennas" />.
+
+## In practice
+
+- **Check the bands.** Not every multiband vertical covers every band: read the specification, and confirm whether extra bands need extra radials or a tuner.
+- **Raise the base** if you can, with elevated radials, to reduce ground loss.
+- **Keep it out of reach.** The tip and any coils can carry high RF voltage while transmitting; mount where people and pets cannot touch it, and see <Ref to="rf-exposure" />.
+- **Add a choke** at the feed point so RF stays off the coax; see <Ref to="common-mode-chokes" />.
+
+<ExamLink groups="G9D G9B" />
+
+<Related to="quarter-wave-vertical radials-and-ground-planes mobile-whips-and-loading antenna-tuners multiband-dipoles loaded-and-short-antennas" />

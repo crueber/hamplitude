@@ -1,0 +1,38 @@
+import { G9D_LogPeriodic } from '@/visuals/general/G9D_LogPeriodic'
+import { LogPeriodic_GainCurves } from '@/visuals/compendium/LogPeriodic_GainCurves'
+
+## What it is
+
+A log-periodic dipole array (LPDA, or just "log periodic") is a beam made of many dipoles on a boom, each longer than the one in front, all connected to the same feed line. It trades some gain for **bandwidth**: one antenna, one coax and a good SWR across a whole range of frequencies, such as several HF bands.
+
+<Facts items={[
+  ['Element lengths and spacings', 'each a fixed ratio larger than the last'],
+  ['Bandwidth', 'a design range of 2:1 or more is common'],
+  ['Typical gain', 'moderate: often about 5 to 8 dBi for amateur designs'],
+  ['Feed', 'one coax; adjacent elements connected in reversed sense'],
+]} />
+
+## How it works
+
+<G9D_LogPeriodic />
+
+Every dipole is a resonant half-wave antenna at some frequency. Because the lengths run in a geometric series, there is always a short stretch of boom where elements are close to a half wavelength at the signal frequency. That **active region** does the radiating, and it slides along the boom as you change frequency. Longer elements behind it act as a reflector and shorter ones in front as directors, so the beam points toward the short end.
+
+Both the lengths and the spacings change by a constant ratio, so the electrical behaviour repeats each time the frequency is multiplied by a fixed amount. Plotted on a logarithmic frequency axis it repeats periodically: hence the name. The exam describes this as element length and spacing varying logarithmically along the boom.
+
+## Gain for bandwidth
+
+<LogPeriodic_GainCurves />
+
+A <Ref to="yagi-uda">Yagi</Ref> uses every element for one narrow band, so it has more gain per element. In a log-periodic most elements are idle at any one frequency, so the gain per element is lower, but the pattern and the feed point impedance stay steady over a wide range. Wide bandwidth is the advantage; extra gain is not.
+
+## In practice
+
+- Multiband HF versions let one rotatable antenna cover, for example, 20 through 10 m. They are long, heavy and wind-loaded, because the longest element must suit the lowest frequency.
+- At VHF and UHF the same idea is a familiar sight as a television-style array, and is used for wideband monitoring and testing.
+- Expect a front-to-back ratio typically in the mid-teens of dB or better, depending on the design.
+- Outside the design range the gain and SWR fall away, so check that every band you want sits inside it.
+
+<ExamLink groups="G9D" />
+
+<Related to="yagi-uda moxon-and-hex-beams bandwidth-and-efficiency radiation-patterns rotators multiband-dipoles" />

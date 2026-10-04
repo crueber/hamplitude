@@ -1,0 +1,56 @@
+import { Resonance } from '@/visuals/technician/T6D_Resonance'
+import { ResonanceAndQ_Curve } from '@/visuals/compendium/ResonanceAndQ_Curve'
+
+## What it is
+
+An inductor and a capacitor together can pass energy back and forth, like a pendulum. They do it most readily at one frequency, the **resonant frequency**, where their reactances are equal and opposite. A circuit built for this is a **tuned circuit**, and it is how a radio picks one signal out of many. **Q** measures how sharp the tuning is.
+
+<Facts items={[
+  ['Resonant frequency', 'f₀ = 1 ÷ (2π√(LC))'],
+  ['Quality factor', 'Q = X ÷ R'],
+  ['Bandwidth', 'BW = f₀ ÷ Q (between −3 dB points)'],
+  ['At resonance', 'XL = XC'],
+]} />
+
+## How it works
+
+<Resonance />
+
+A charged capacitor discharges into the coil. The current builds a magnetic field; when the capacitor is empty the field collapses, pushing current on and charging the capacitor the other way. The energy swings between electric and magnetic fields, once per cycle. Resistance slowly drains it, so the swing dies away unless a source keeps topping it up.
+
+Set XL = XC and solve for the frequency and you get f₀ = 1 ÷ (2π√(LC)). Larger L or C means a lower frequency, and to double the frequency you need a quarter of the L × C. A 10 µH coil with 100 pF resonates at 5.03 MHz.
+
+At resonance the two reactances cancel, with different results depending on how the parts are connected:
+
+| | Series | Parallel |
+|---|---|---|
+| Impedance at f₀ | lowest (just R) | highest (about Q × XL) |
+| Behaviour | passes f₀, current peaks | rejects f₀ from the line, or selects it as a voltage |
+| Used as | band-pass path, or a shunt notch to ground | tank circuit, selective load, in-line trap |
+
+In the parallel case the current circulating between L and C is large, but the current drawn from the source is small, hence the high impedance. For the 10 µH and 100 pF example with 5 Ω of coil resistance, that impedance is about 20 kΩ.
+
+## Q and bandwidth
+
+<ResonanceAndQ_Curve />
+
+**Q** is the ratio of reactance to resistance. Equivalently, it is 2π times the energy stored divided by the energy lost per cycle. Lower resistance means higher Q, a taller and narrower peak. Bandwidth, measured between the half-power (−3 dB) points, is the centre frequency divided by Q.
+
+For the same example (XL = 316 Ω, R = 5 Ω): Q = 63, and BW = 5.03 MHz ÷ 63 = about 80 kHz.
+
+High Q is more selective, but it carries costs:
+
+- A **series** circuit at resonance puts Q times the source voltage across L and across C. One volt in, 63 V across the coil here: enough to break down parts at transmitter power.
+- A narrow circuit must be tuned accurately, and it can cut off the sidebands of a wide signal.
+- Loading the circuit with a source or a load resistance lowers the working (**loaded**) Q below the coil's own (**unloaded**) Q.
+
+## In practice
+
+- Receivers, <Ref to="filters">filters</Ref>, <Ref to="oscillators">oscillators</Ref> and <Ref to="antenna-tuners">antenna tuners</Ref> are built from tuned circuits.
+- Coil resistance sets most of the loss, so coil construction is largely a fight for Q; see <Ref to="inductors-and-ferrites" /> and <Ref to="skin-effect" />.
+- Quartz <Ref to="crystals-and-resonators">crystals</Ref> act like tuned circuits with a Q far beyond what coils and capacitors can reach.
+- Antennas are resonant too, and a short, loaded antenna has a high Q and therefore a narrow bandwidth: see <Ref to="bandwidth-and-efficiency" />.
+
+<ExamLink groups="T6D G5A E5A" />
+
+<Related to="reactance-and-impedance filters oscillators antenna-tuners crystals-and-resonators bandwidth-and-efficiency" />

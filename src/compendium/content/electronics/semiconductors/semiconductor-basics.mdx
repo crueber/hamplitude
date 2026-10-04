@@ -1,0 +1,55 @@
+import { SemiconductorBasics_Doping } from '@/visuals/compendium/SemiconductorBasics_Doping'
+import { SemiconductorBasics_PnJunction } from '@/visuals/compendium/SemiconductorBasics_PnJunction'
+
+## What it is
+
+A semiconductor conducts a little, somewhere between a <Ref to="conductors-and-insulators">conductor and an insulator</Ref>. What makes it useful is that you can *control* how well it conducts, by adding impurities, applying a voltage, or shining light on it. Every diode, transistor and integrated circuit is built on that one trick.
+
+<Facts items={[
+  ['Most common material', 'silicon'],
+  ['Silicon junction threshold', 'about 0.6 to 0.7 V (typical)'],
+  ['Germanium junction threshold', 'about 0.3 V (typical)'],
+  ['Microwave devices', 'often gallium arsenide'],
+]} />
+
+## Doping: choosing the carriers
+
+In a pure silicon crystal every atom shares its four outer electrons with four neighbours. All the electrons are tied up in bonds, so there are almost no free charge carriers. **Doping** replaces a tiny fraction of the atoms with an impurity:
+
+<SemiconductorBasics_Doping />
+
+- **N-type**: a **donor** atom (five outer electrons, such as phosphorus or arsenic) brings one electron too many. That electron is free to move.
+- **P-type**: an **acceptor** atom (three outer electrons, such as boron) leaves a gap where an electron should be, called a **hole**. A neighbouring electron can hop in, which moves the hole the other way. A hole behaves like a mobile positive charge.
+
+Each type is still electrically neutral overall. N-type is not "negative"; it just has spare electrons that can move.
+
+## The PN junction
+
+Join a P region to an N region and electrons from the N side wander across and fill holes on the P side. That leaves a thin layer around the join with **no free carriers**, the **depletion region**, and fixed charged atoms on either side that create a built-in barrier. In silicon the barrier is roughly 0.7 V.
+
+<SemiconductorBasics_PnJunction />
+
+- **Forward bias** (P positive, N negative): the applied voltage works against the barrier and the depletion region shrinks. Once the voltage reaches about 0.6 to 0.7 V in silicon, carriers pour across and current flows.
+- **Reverse bias** (P negative): the voltage pulls holes and electrons away from the junction. The depletion region widens, and only a minute leakage current flows.
+
+<Key>A PN junction passes current one way only, and only after about 0.6 to 0.7 V (silicon) of forward voltage.</Key>
+
+## From junction to device
+
+One junction is a <Ref to="diodes">diode</Ref>. Two junctions back to back make a <Ref to="bipolar-transistors">bipolar transistor</Ref>. An electrically controlled channel of N or P material makes a <Ref to="fets-and-mosfets">FET</Ref>. Thousands to billions of these on one piece of silicon make an <Ref to="integrated-circuits">integrated circuit</Ref>.
+
+| Material | Where you meet it |
+|---|---|
+| Silicon | almost everything: diodes, transistors, chips, solar cells |
+| Germanium | early transistors and diodes; lower threshold, rarely used now |
+| Gallium arsenide | microwave amplifiers and fast devices |
+| Silicon carbide, gallium nitride | high-power and high-voltage switching and RF power devices |
+
+Two practical consequences:
+
+- **The threshold is set by the material.** An LED's forward voltage is set by its semiconductor's band gap, so different colours drop different voltages.
+- **Heat matters.** A junction's conduction rises with temperature, so a part that heats up can draw more current and heat further. That feedback is why transistors in power stages need heatsinks and careful biasing.
+
+<ExamLink groups="T6B G6A E6A" />
+
+<Related to="diodes bipolar-transistors fets-and-mosfets integrated-circuits conductors-and-insulators optoelectronics" />

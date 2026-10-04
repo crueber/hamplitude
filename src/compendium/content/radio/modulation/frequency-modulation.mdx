@@ -1,0 +1,47 @@
+import { FrequencyModulation_Bessel } from '@/visuals/compendium/FrequencyModulation_Bessel'
+import { Deviation } from '@/visuals/technician/T7B_Deviation'
+
+## What it is
+
+In frequency modulation (FM) the carrier's strength never changes; its frequency swings up and down with the audio. The loudness of the sound sets how far it swings (the **deviation**), and the pitch sets how fast. FM is the standard mode for VHF and UHF voice and repeaters.
+
+<Facts items={[
+  ['Typical ham voice deviation', 'about ±5 kHz (VHF/UHF)'],
+  ['Modulation index', 'β = deviation ÷ audio frequency'],
+  ['Bandwidth (Carson\'s rule)', 'about 2 × (deviation + highest audio frequency)'],
+  ['Example', '2 × (5 + 3) = 16 kHz'],
+]} />
+
+## How it works
+
+<Deviation />
+
+An FM transmitter bends its oscillator's frequency in proportion to the audio voltage, for example with a varactor diode. See <Ref to="oscillators" />. With no audio the carrier sits still on its channel. Talk louder, or move closer to the microphone, and the swing grows. Too much and the signal spills over into adjacent channels (**over-deviation**), which is why radios limit it.
+
+The receiver's **limiter** squashes every amplitude variation flat, then a discriminator turns frequency changes back into voltage. Because FM keeps nothing in its amplitude, noise that rides on the amplitude is thrown away with it.
+
+## Sidebands and bandwidth
+
+<FrequencyModulation_Bessel />
+
+A tone makes a carrier plus a whole family of sidebands, spaced by the audio frequency. Their heights follow Bessel functions of the index β. Small β gives one pair of sidebands, much like AM. Large β spreads the power over many pairs, and the carrier line itself can shrink toward nothing.
+
+There is no sharp edge, but **Carson's rule** is a handy rule of thumb: roughly 98% or more of the power lies within 2 × (Δf + fm).
+
+| | Deviation | Audio | β | Carson width |
+|---|---|---|---|---|
+| Ham voice, narrow FM | ±5 kHz | 3 kHz | 1.7 | 16 kHz |
+| FM broadcast | ±75 kHz | 15 kHz | 5 | 180 kHz |
+
+Broadcast FM trades width for quality. Ham voice FM is deliberately narrower.
+
+## In practice
+
+- **Capture effect**: when two FM signals share a channel, the stronger one (even by just a few dB) tends to win outright and the weaker one disappears, rather than the two mixing as in AM.
+- **Quieting**: above a threshold, FM is much quieter than AM. Below it, noise rises suddenly and the signal falls apart.
+- **Pre-emphasis**: noise in an FM receiver is worst at high audio frequencies, so the transmitter boosts highs and the receiver cuts them back. Net response is flat, with less hiss.
+- FM is far less suited to weak-signal HF work: it needs a strong signal to quiet, and it is wide. See <Ref to="fm-voice" /> and <Ref to="single-sideband" />.
+
+<ExamLink groups="T8A G8B E8B E7E" />
+
+<Related to="modulation-basics amplitude-modulation fm-voice repeaters squelch-and-tones spectrum-and-fourier" />

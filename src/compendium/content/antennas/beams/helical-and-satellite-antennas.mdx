@@ -1,0 +1,49 @@
+import { HelicalAndSatelliteAntennas_Helix } from '@/visuals/compendium/HelicalAndSatelliteAntennas_Helix'
+import { E2A_Polarization } from '@/visuals/extra/E2A_Polarization'
+import { E9D_Circular } from '@/visuals/extra/E9D_Circular'
+
+## What it is
+
+A helical antenna is a wire wound like a corkscrew. Wound the right way, it sends out a wave whose electric field **rotates** as it travels: **circular polarization**. Circular polarization is the standard answer to a problem satellites create: you cannot know, or hold steady, how a tumbling spacecraft's antenna is oriented relative to yours.
+
+<Facts items={[
+  ['Axial-mode helix', 'about 1 λ round each turn, about ¼ λ between turns'],
+  ['Pattern', 'a beam along the axis, away from the reflector'],
+  ['Gain', 'rises with turns: ten turns is roughly 15 dBi (typical)'],
+  ['Polarization', 'circular, with the same handedness as the winding'],
+]} />
+
+## The helix
+
+<HelicalAndSatelliteAntennas_Helix />
+
+In **axial mode**, the circumference is about one wavelength, so the currents on opposite sides of each turn are in step and the antenna radiates along its axis. A reflector plate behind the feed points all the energy forward. Ten turns gives roughly 15 dBi and a beam about 30° wide, wide enough to forgive a small aiming error. The beam sharpens as you add turns.
+
+A helix wound like an ordinary screw thread is **right-handed** and radiates right-hand circular polarization (RHCP). A left-hand winding radiates LHCP. In the radio convention a right-hand wave turns clockwise as seen from behind it, looking the way it travels, like a right-hand screw driven away from you. (Optics uses the opposite convention.)
+
+A short helix also exists in everyday radios: the coil in a "rubber duck" works in **normal mode**, radiating broadside like a loaded whip rather than along its axis. See <Ref to="handheld-antennas" /> and <Ref to="loaded-and-short-antennas" />.
+
+## Why satellites like circular polarization
+
+<E2A_Polarization />
+
+A spinning satellite, or the ionosphere twisting a wave by Faraday rotation, keeps changing the angle of a linear signal. A linear antenna on the ground then fades deeply as the angles cross. A circular antenna receives a linear wave at half power, 3 dB less than a perfect match, but at a steady level at any angle. A fixed 3 dB loss is easier to live with than random fades to nothing.
+
+| Transmit | Receive | Result |
+|---|---|---|
+| right-hand circular | right-hand circular | matched: full signal |
+| right-hand circular | left-hand circular | opposite senses: a very deep loss |
+| circular | linear, any angle | about 3 dB below a perfect match |
+| linear | linear | full when aligned, a null at 90° |
+
+A reflection reverses the handedness of a circular wave, so a ground-bounced signal arrives opposite to the direct one and is largely rejected.
+
+## Circular from linear antennas
+
+<E9D_Circular />
+
+Two crossed linear antennas fed 90° apart also make circular polarization. Satellite stations often use two Yagis mounted on the same boom at right angles, fed through a harness that makes the 90° difference. Reversing the phase swaps handedness, so some stations can switch between RHCP and LHCP.
+
+<ExamLink groups="E9D E2A T8B" />
+
+<Related to="polarization amateur-satellites satellite-operating yagi-uda dish-antennas handheld-antennas eme-moonbounce" />

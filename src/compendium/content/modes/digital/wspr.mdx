@@ -1,0 +1,44 @@
+import { Wspr_Beacons } from '@/visuals/compendium/Wspr_Beacons'
+
+## What it is
+
+WSPR (pronounced "whisper", for Weak Signal Propagation Reporter) is not for conversation at all. A station transmits a tiny beacon with its call sign, location and power, and any station that decodes it uploads a report. The result is a live map of where a given signal is reaching, from almost no power.
+
+<Facts items={[
+  ['Transmission', 'about 2 minutes, in 2-minute slots'],
+  ['Carries', 'call sign, grid square, power in dBm'],
+  ['Bandwidth', 'a few hertz'],
+  ['Typical power', 'from milliwatts to a few watts'],
+  ['Purpose', 'propagation checking and antenna comparison'],
+]} />
+
+## How it works
+
+<Wspr_Beacons />
+
+The signal is extremely narrow and very slow, so a receiver can integrate it over nearly two minutes and pull it out from deep in the noise. Every message is the same shape: who you are, where you are, and how much power you used. Because the transmit power is **in the message**, a listener's report includes both how strong the signal was and how much power produced it.
+
+That makes WSPR a quick answer to "is this band open, and how well does my antenna work?" Leave a low-power beacon running, and see which stations around the world hear it.
+
+## Power in dBm
+
+Power is given in **dBm**, decibels relative to one milliwatt, so a milliwatt-level beacon and a transmitter of a few watts fit the same scale. See <Ref to="decibels" />.
+
+| Power | dBm |
+|---|---|
+| 1 mW | 0 |
+| 10 mW | 10 |
+| 100 mW | 20 |
+| 1 W | 30 |
+| 5 W | 37 |
+
+## In practice
+
+- Both the transmitting and the listening station need accurate computer clocks, since slots start on fixed even minutes.
+- A station cannot listen while it transmits, so it alternates slots. Many people run receive-only to study conditions.
+- It is one-way: nobody replies, and the "contact" is the report that arrives on the map.
+- Use low power and modest audio levels, and treat the transmitter as in constant use during its slot.
+
+<ExamLink groups="G8C T8D" />
+
+<Related to="ft8-and-ft4 jt-modes digital-modes-overview spotting-networks propagation-tools decibels" />

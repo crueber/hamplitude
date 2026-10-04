@@ -1,0 +1,46 @@
+import { ModulationWaves } from '@/visuals/shared/ModulationWaves'
+import { AmOperation_PowerSplit } from '@/visuals/compendium/AmOperation_PowerSplit'
+import { G8A_Envelope } from '@/visuals/general/G8A_Envelope'
+
+## What it is
+
+In AM (amplitude modulation) the **height** of a constant-frequency carrier follows your voice. It is the oldest voice mode, the one used by broadcast stations and aircraft radios. It is wider and less efficient than SSB, but simple to generate and receive, and it carries natural, full-bodied audio.
+
+<Facts items={[
+  ['Bandwidth', 'about twice the highest audio frequency (roughly 6 kHz)'],
+  ['Carrier', 'always on, even when you are silent'],
+  ['Power in the carrier', 'two thirds of the total at full modulation'],
+  ['Receiver', 'a simple envelope detector is enough'],
+]} />
+
+<ModulationWaves />
+
+## Where the power goes
+
+An AM signal is a carrier plus two **sidebands**, mirror copies of the voice above and below it. The sidebands carry all the information. The carrier carries none; it only gives a simple receiver something to compare against. At full modulation, each sideband gets a quarter of the carrier's power, so just a third of the total is voice. Drag the slider to see the split.
+
+<AmOperation_PowerSplit />
+
+This is why <Ref to="single-sideband">SSB</Ref> has largely replaced AM on crowded HF bands: it drops the carrier and one sideband, putting everything into the voice in half the space.
+
+## Why anyone still uses it
+
+- **Simplicity.** Old transmitters and receivers, including classic tube gear, are AM. Restoring and using them is a hobby of its own.
+- **Audio quality.** With a wide receiver filter, speech sounds natural, and many operators like the "broadcast" character.
+- **No sideband to choose and no capture.** Two overlapping stations are both heard, unlike FM.
+- **Aviation.** The civil aircraft band uses AM, so listening there is a good way to hear it.
+
+## In practice
+
+- AM activity gathers in informal "AM windows" on the HF bands, commonly near 3.885, 7.290 and 14.286 MHz. Listen for where people actually are.
+- Use a **wide filter** (about 6 kHz) on receive for full audio, or a narrower one to cut noise.
+- Two carriers a few hundred hertz apart produce a whistling **heterodyne**.
+- **Don't overmodulate.** Going past 100% distorts the envelope and spreads splatter into other channels.
+
+<G8A_Envelope />
+
+Phone emissions, AM included, are permitted only in the phone portions of each band; see <Ref to="band-plans" />.
+
+<ExamLink groups="G8A" />
+
+<Related to="amplitude-modulation modulation-basics single-sideband detectors-and-demodulators ssb-voice band-plans" />

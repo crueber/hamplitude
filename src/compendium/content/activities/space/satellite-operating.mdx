@@ -1,0 +1,38 @@
+import { DopplerPass } from '@/visuals/shared/DopplerPass'
+import { SatelliteOperating_Doppler } from '@/visuals/compendium/SatelliteOperating_Doppler'
+import { UplinkLevel } from '@/visuals/technician/T8B_UplinkLevel'
+
+## A pass in four steps
+
+A satellite is only usable while it is above your horizon, so working one is a short, planned event: **predict** it, **point** at it, **tune** for Doppler as it moves, and **listen** before you talk.
+
+1. Find the pass with a tracking program or app. It needs your location and the satellite's **Keplerian elements** (orbit numbers, often distributed as "two-line elements"), and gives rise time, set time, the highest elevation and the direction to point.
+2. Wait for **AOS** (acquisition of signal), when the satellite clears the horizon. Higher passes are better: a satellite low on the horizon is behind trees and buildings.
+3. Listen on the downlink first, then call.
+4. Stop at **LOS** (loss of signal).
+
+## Doppler: the frequency moves
+
+<DopplerPass />
+
+Because the satellite is moving at about 7.5 km/s, its signal is raised in frequency while it approaches and lowered while it recedes, and the shift is zero at closest approach. The shift is proportional to frequency; at its largest, near the horizon, it is about 24 parts per million (speed toward you divided by the speed of light):
+
+<SatelliteOperating_Doppler />
+
+For a satellite at a typical few hundred kilometres, that is about 3 to 4 kHz either way on 2 m, about 10 kHz on 70 cm and about 30 kHz on 23 cm. A narrow SSB or CW signal moves right out of your passband, so you retune a little as the pass goes: start high at AOS and step down. Tracking software can do this for you through <Ref to="cat-control">CAT control</Ref>. FM signals are wide enough to tolerate some error, but on 70 cm you still retune in steps.
+
+## Power and antennas
+
+A satellite hears you from hundreds or thousands of kilometres away, so you do not need much power, just a decent antenna and a clear view of the sky. A handheld radio with a small hand-aimed directional antenna is enough for FM satellites.
+
+Aim to **match the beacon**: on a linear transponder, your downlink should be no louder than the satellite's beacon. A stronger uplink steals power from everyone else.
+
+<UplinkLevel />
+
+Two other effects to know: a tumbling satellite, or the ionosphere, can rotate the polarization of the wave, so a **circularly polarized** antenna avoids the fades a linear one would suffer; and your own radio's receive and transmit frequencies must each be corrected for Doppler if you want to stay on the same spot on the transponder.
+
+<Callout kind="tip" title="Listen before you transmit">If you cannot hear the downlink, the satellite cannot hear you either. Try a pass listening only, then add the transmitter.</Callout>
+
+<ExamLink groups="T8B E2A" />
+
+<Related to="amateur-satellites iss-and-ariss helical-and-satellite-antennas polarization cat-control" />

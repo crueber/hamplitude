@@ -1,0 +1,52 @@
+import { RepeaterFlow } from '@/visuals/shared/RepeaterFlow'
+import { Repeaters_RadioSettings } from '@/visuals/compendium/Repeaters_RadioSettings'
+import { Ctcss } from '@/visuals/technician/T2B_Ctcss'
+
+## What it is
+
+A repeater is a station, usually on a tall building or hill, that **listens on one frequency and retransmits what it hears on another**, at higher power and from a better antenna. A handheld that could barely reach across town can then talk across a whole region.
+
+<Facts items={[
+  ['2 m offset (US, typical)', '600 kHz'],
+  ['70 cm offset (US, typical)', '5 MHz'],
+  ['Access tones', 'CTCSS, about 67 to 254 Hz'],
+  ['Mode', 'usually FM; some are digital'],
+]} />
+
+<RepeaterFlow />
+
+It must receive and transmit at the same time, so the two frequencies must differ. If it used one, its own output would drown out the weak signal it is trying to hear. The hardware is covered in <Ref to="repeaters-and-controllers" />.
+
+## Setting your radio
+
+You need four things, all listed in a <Ref to="repeater-directories">repeater directory</Ref>: the repeater's **output** frequency (where you listen), the **offset** direction and size, an **access tone**, and the mode. The radio works out the transmit frequency.
+
+<Repeaters_RadioSettings />
+
+Offset direction follows the part of the band. On 2 m in the US, repeaters whose output is below about 147 MHz typically use a minus offset (you transmit lower than you listen); those from 147 MHz up typically use plus. Don't rely on memory; use the directory.
+
+The **reverse** key swaps your receive and transmit frequencies, so you can listen to the repeater's input. If you hear the other station strongly there, you are close enough to talk <Ref to="simplex">direct</Ref> and leave the repeater free.
+
+## Tones
+
+Many repeaters ignore signals that don't carry a quiet **CTCSS** tone below the voice band. This stops them being triggered by distant stations on the same frequency. It is an access gate, not security. Some repeaters use digital-coded squelch (DCS) instead.
+
+<Ctcss />
+
+No tone, or the wrong one, and the repeater does not answer, though you can still hear it. A common beginner mistake. See <Ref to="squelch-and-tones" />.
+
+## Using one
+
+- **Listen first.** If a conversation is under way, wait.
+- **Just give your call sign** to let people know you are around: "W1ABC listening". There is no need for "CQ" on a repeater.
+- **Pause between transmissions** so others can break in, and keep each over short. Repeaters have a timer that shuts them off if you hold the key too long.
+- **Identify** with your call sign at least every 10 minutes and at the end of a conversation. The repeater's own identification does not count as yours.
+- **Use the lowest power that works.** If the repeater already hears you clearly, extra power adds nothing.
+- **Don't "kerchunk"**: keying up without speaking to test it. Say your call sign instead.
+- **Assume an audience.** Repeaters may be linked to others far away; see <Ref to="internet-linking" />.
+
+Some repeaters are open to all; others are for members or have rules posted by their owners. Follow them.
+
+<ExamLink groups="T2B T2A T1F" />
+
+<Related to="repeaters-and-controllers squelch-and-tones simplex repeater-directories fm-voice internet-linking" />

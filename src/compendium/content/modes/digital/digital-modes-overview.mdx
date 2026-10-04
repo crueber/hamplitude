@@ -1,0 +1,48 @@
+import { DigitalModesOverview_Tradeoff } from '@/visuals/compendium/DigitalModesOverview_Tradeoff'
+import { G8C_ModeSketches } from '@/visuals/general/G8C_ModeSketches'
+import { E2E_ModeCompare } from '@/visuals/extra/E2E_ModeCompare'
+
+## What a data mode is
+
+A digital mode turns text or files into a pattern of audio tones, sends them through an ordinary radio, and has a computer turn them back into text at the far end. The radio is just a transmitter and receiver; the **mode** is the agreement between the two computers about how bits become sound. Different modes exist because different jobs want different trade-offs.
+
+<Facts items={[
+  ['Needs', 'a computer or other modem, plus a radio'],
+  ['Typical HF carrier', 'audio tones sent through an SSB radio'],
+  ['Core trade-off', 'speed against weak-signal toughness'],
+]} />
+
+## One trade-off underneath everything
+
+<DigitalModesOverview_Tradeoff />
+
+A slower signal gives the receiver more time to decide what it heard, so it can pull data from below the noise (see <Ref to="noise-and-snr" /> and <Ref to="bandwidth-and-data-rate" />). Add <Ref to="error-correction">error correction</Ref> and it gets tougher still, at the cost of more symbols. So the weakest-signal modes are the slowest, and the fast modes need a good path.
+
+<E2E_ModeCompare />
+
+## The families
+
+<G8C_ModeSketches />
+
+| Job | Modes | Idea |
+|---|---|---|
+| Keyboard chat, no connection | <Ref to="psk31" />, <Ref to="rtty" />, <Ref to="mfsk-and-olivia" /> | Type, and the other end sees it. No acknowledgement. |
+| Weak-signal contacts | <Ref to="ft8-and-ft4" />, <Ref to="jt-modes" /> | Short, timed, heavily error-corrected messages. |
+| Keyboard messaging, weak-signal | <Ref to="js8call" /> | FT8-style modulation with free text. |
+| Propagation beacons | <Ref to="wspr" /> | Transmit a tiny report; listeners map where it arrived. |
+| Position and short messages | <Ref to="packet-radio" />, <Ref to="aprs" /> | Addressed frames, often relayed by digipeaters. |
+| Email and files | <Ref to="winlink" />, <Ref to="vara-and-ardop" /> | A two-way link that asks for retransmission of errors. |
+
+Digital **voice** (<Ref to="dmr" />, <Ref to="d-star" /> and others) is a different thing: it sends speech, digitised, and is covered separately.
+
+## Three ideas that recur
+
+- **Keying:** how bits change the carrier. Frequency shifts (FSK) and phase shifts (PSK) are the common ones; see <Ref to="digital-modulation" />.
+- **Error handling:** either **FEC** (extra bits let the receiver fix errors alone) or **ARQ** (the receiver detects an error and asks for a resend). ARQ needs a two-way path; FEC works one-way.
+- **Timing:** a few modes need clocks agreed to about a second, because transmissions happen in fixed slots.
+
+<Callout kind="note" title="Every data mode shares the same chain">Software makes tones, a sound card carries them, and an SSB radio sends them. The practical setup is the same for nearly all of them: see <Ref to="digital-mode-software" /> and <Ref to="computer-interfaces" />.</Callout>
+
+<ExamLink groups="T8D G2E G8C E2E E8C" />
+
+<Related to="psk31 ft8-and-ft4 packet-radio winlink digital-mode-software digital-modulation error-correction" />

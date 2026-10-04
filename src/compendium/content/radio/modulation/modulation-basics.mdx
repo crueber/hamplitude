@@ -1,0 +1,49 @@
+import { ModulationBasics_Chain } from '@/visuals/compendium/ModulationBasics_Chain'
+import { ModulationWaves } from '@/visuals/shared/ModulationWaves'
+
+## What it is
+
+Modulation is how information gets onto a radio wave. A transmitter makes a steady **carrier** at the operating frequency, then changes one of its properties in step with the message. A receiver measures that change and recovers the message, which is **demodulation**. Without it, a carrier says only "I am here".
+
+<Facts items={[
+  ['Carrier', 'a steady RF sine wave at the operating frequency'],
+  ['What can change', 'amplitude, frequency or phase'],
+  ['Message', 'analog (voice) or digital (a stream of bits)'],
+  ['Side effect', 'the signal spreads into sidebands either side of the carrier'],
+]} />
+
+## Three knobs
+
+<ModulationBasics_Chain />
+
+A sine wave has only three properties, so there are only three things to vary. Every mode you will meet is one of them, or a mix:
+
+- **Amplitude**: how strong the wave is. Morse code switches it on and off; <Ref to="amplitude-modulation">AM</Ref> makes it follow the audio.
+- **Frequency**: how fast it oscillates. <Ref to="frequency-modulation">FM</Ref> nudges it up and down with the audio.
+- **Phase**: where in its cycle the wave starts. Digital modes such as PSK31 flip it; see <Ref to="digital-modulation" />.
+
+<ModulationWaves />
+
+## Why a carrier at all
+
+Audio is far too low in frequency to radiate usefully, and every station would land on top of every other. A carrier moves the message up to an assigned frequency, so many stations can share the spectrum, each in its own slice, and so antennas can be a practical size.
+
+## The price: bandwidth
+
+A perfectly steady carrier occupies almost no spectrum, but it carries nothing. Any change you make creates new frequencies either side, the **sidebands**. A faster or bigger change means a wider signal. That is the central trade-off of every mode: information needs bandwidth. See <Ref to="spectrum-and-fourier" /> for why, and <Ref to="bandwidth-and-data-rate" /> for the numbers.
+
+| Mode | What varies | Typical width |
+|---|---|---|
+| CW (Morse) | amplitude, on and off | under about 200 Hz |
+| SSB voice | amplitude and phase, one sideband | 2.4 to 3 kHz |
+| AM voice | amplitude | about 6 kHz |
+| FM voice | frequency | about 10 to 16 kHz |
+| FT8 | frequency, 8 tones | 50 Hz |
+
+Widths are typical, and depend on speed, filtering and settings.
+
+<Callout kind="note" title="Where the work happens">In a receiver, a <Ref to="mixers">mixer</Ref> shifts the signal to a convenient frequency, and a <Ref to="detectors-and-demodulators">detector</Ref> recovers the message. Software-defined radios do the same arithmetic on numbers; see <Ref to="sampling-and-nyquist" />.</Callout>
+
+<ExamLink groups="T8A G8A E8B" />
+
+<Related to="amplitude-modulation frequency-modulation single-sideband digital-modulation what-is-cw detectors-and-demodulators" />

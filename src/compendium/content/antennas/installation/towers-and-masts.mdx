@@ -1,0 +1,48 @@
+import { TowersAndMasts_Types } from '@/visuals/compendium/TowersAndMasts_Types'
+import { PowerLineClear } from '@/visuals/technician/T0B_PowerLineClear'
+import { ClimbRules } from '@/visuals/technician/T0B_ClimbRules'
+
+## What it is
+
+A tower or mast holds an antenna up in clear air, away from the buildings, trees and ground that absorb and scatter radio waves. The right support depends on the antenna's weight and wind area, the height you want, the space you have and the rules where you live. Putting one up is a construction project, not just a radio one.
+
+<Facts items={[
+  ['Loads', 'wind, ice and the weight of everything on it'],
+  ['Wind force', 'rises with the antenna\'s exposed area and with the square of the wind speed'],
+  ['Clearance', 'if it could fall onto a power line, it is in the wrong place'],
+  ['Climbing', 'trained, harnessed, tied off, and never alone'],
+]} />
+
+## Choosing a support
+
+<TowersAndMasts_Types />
+
+| Type | Good for | Trade-offs |
+|---|---|---|
+| Mast or pole | wire antennas, small VHF/UHF antennas, light loads | limited height, often needs guy wires |
+| Guyed tower | great height from light structure and a small footprint | guy anchors need land; guys must be kept tensioned |
+| Self-supporting | no guys, small footprint | much heavier, costly, big concrete foundation |
+| Crank-up or tilt-over | lowering the antenna for work at ground level | moving parts to maintain; locks must be used |
+
+Choose from the manufacturer's rating, not from the picture: every tower is rated for a limit of antenna wind area at a stated wind speed, with specific foundation and guy requirements. If the plan includes more or bigger antennas than the rating, choose a bigger tower, or fewer antennas. Do not guess.
+
+## Safety before you start
+
+<PowerLineClear />
+
+- **Power lines first.** Look up before anything else. Place the structure and antennas so that if any part fell, no part of it could come within 10 feet of a power wire. That is a minimum; more is better. Never raise or lower a tower or long mast near overhead lines, and do not attach an antenna to a utility pole.
+- **Rules and permits.** Many places require a building permit, and some require engineered drawings. See <Ref to="antenna-restrictions" />. Above 200 feet, or near airports, federal notification and registration may also apply.
+- **Buried utilities.** Have them marked before you dig a foundation or an anchor (in the US, call 811).
+- **Foundations and anchors** follow the manufacturer's drawings and local code, and often the advice of an engineer. A concrete footing sized for the wrong soil, or a short guy anchor, is how towers fall.
+- **Guy hardware.** Turnbuckles should have a safety wire through them so vibration cannot loosen them.
+- **Grounding** follows local electrical code and is covered in <Ref to="lightning-and-grounding" />.
+
+## Working on a tower
+
+<ClimbRules />
+
+Climbing is a skilled job. Anyone who goes up should be trained, wear a rated harness and use **100% tie-off**, with a lanyard attached to the tower at all times. Never climb without a helper on the ground. Lock out and tag the power to any equipment on the tower first. A crank-up tower must not be climbed unless it is fully retracted or its mechanical locks are installed. Stay off the tower in wind, storms or ice. For tall towers or anything you are unsure about, hire a professional installer; the cost is small next to a fall.
+
+<ExamLink groups="T0B G0B E0A G1B" />
+
+<Related to="tower-safety rotators lightning-and-grounding antenna-restrictions electrical-safety yagi-uda" />

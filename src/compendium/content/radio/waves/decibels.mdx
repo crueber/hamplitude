@@ -1,0 +1,61 @@
+import { DecibelExplorer } from '@/visuals/shared/DecibelExplorer'
+import { Decibels_Budget } from '@/visuals/compendium/Decibels_Budget'
+
+## What it is
+
+A decibel (dB) expresses a **ratio** on a logarithmic scale. It answers "how many times stronger or weaker?" with a small, additive number. Radio needs this because signal levels span an absurd range: a 100 W transmitter can be a hundred billion billion times stronger than a very faint signal a good receiver can still copy. On a log scale that whole span is only about 200 dB.
+
+<Facts items={[
+  ['Power', 'dB = 10 × log₁₀(P₂ ÷ P₁)'],
+  ['Voltage or current', 'dB = 20 × log₁₀(V₂ ÷ V₁)'],
+  ['+3 dB', 'power × 2 (about)'],
+  ['+10 dB', 'power × 10 (exactly)'],
+  ['A loss', 'a negative dB: −3 dB halves the power'],
+]} />
+
+## The numbers worth knowing
+
+<DecibelExplorer />
+
+Learn three anchors and you can estimate almost anything. **3 dB is a doubling, 10 dB is ten times, and every 10 dB is another factor of ten.** Gains add as dB, so 6 dB is two doublings (×4), 13 dB is 10 + 3 (×20), and 7 dB is 10 − 3 (×5).
+
+| dB | Power ratio | Voltage ratio |
+|---|---|---|
+| 1 | 1.26 | 1.12 |
+| 3 | 2.0 | 1.41 |
+| 6 | 4.0 | 2.0 |
+| 10 | 10 | 3.16 |
+| 20 | 100 | 10 |
+| 30 | 1,000 | 31.6 |
+| −3 | 0.5 | 0.71 |
+| −10 | 0.1 | 0.32 |
+| −20 | 0.01 | 0.1 |
+
+Voltage and current use 20 instead of 10 because power goes as the **square** of voltage: double the voltage across a fixed resistance and you get four times the power, which is 6 dB, not 3. A factor of 2 is 6 dB if it is voltage and 3 dB if it is power.
+
+<Callout kind="warn" title="Check the quantity">"6 dB" is ×4 in power but only ×2 in voltage. Always ask which one is being quoted.</Callout>
+
+## dB with a reference
+
+A bare dB is a ratio with no absolute level. Adding a letter fixes a reference:
+
+| Unit | Reference | Example |
+|---|---|---|
+| **dBm** | 1 milliwatt | 0 dBm = 1 mW, +30 dBm = 1 W, +50 dBm = 100 W |
+| **dBW** | 1 watt | +20 dBW = 100 W |
+| **dBi** | an isotropic radiator (an ideal point source) | a half-wave dipole has 2.15 dBi |
+| **dBd** | a half-wave dipole | a dipole is 0 dBd |
+
+The two antenna units differ by a fixed 2.15 dB: **dBi = dBd + 2.15**. A gain quoted in dBi sounds bigger than the same antenna in dBd, so check which is meant when comparing antennas. See <Ref to="gain-and-directivity" />.
+
+dB values of the same kind combine freely: a level in dBm plus a gain in dB is a level in dBm. Subtract two levels in dBm and you get a plain dB. Never add two dBm values together, since that would mean multiplying two powers.
+
+## Adding up a station
+
+<Decibels_Budget />
+
+Here 3 dB of cable loss halves the power, and a 6 dB antenna gain then multiplies it by four, for a net +3 dB: 100 W becomes about 200 W of effective radiated power. Working in dB turns that chain of multiplying into simple addition; see <Ref to="feed-line-loss" /> and <Ref to="gain-and-directivity" />. The same arithmetic describes receiver sensitivity and <Ref to="noise-and-snr" />, and one nominal S-meter step is 6 dB, a factor of four in power.
+
+<ExamLink groups="G5B T5B" />
+
+<Related to="power-and-energy gain-and-directivity feed-line-loss attenuators noise-and-snr signal-reports" />

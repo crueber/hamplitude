@@ -1,0 +1,43 @@
+import { AntennaModeling_Pipeline } from '@/visuals/compendium/AntennaModeling_Pipeline'
+
+## What it is
+
+Antenna modeling is predicting how an antenna will behave by calculation, before you cut any wire. You describe the wires, their height, the ground and the frequency; the program returns the pattern, gain, feed-point impedance and SWR. It lets you try a dozen variations in an evening for no cost, and see effects such as <Ref to="ground-and-height">height</Ref> that are hard to measure.
+
+<Facts items={[
+  ['Method', 'Method of Moments, the basis of NEC (Numerical Electromagnetics Code) programs'],
+  ['Inputs', 'wire geometry, conductor, ground, source position, frequency'],
+  ['Outputs', 'pattern, gain, feed-point impedance, SWR, wire currents'],
+  ['Segmenting rule', 'a common guideline: at least about 10 segments per half wavelength'],
+]} />
+
+## How it works
+
+<AntennaModeling_Pipeline />
+
+The program divides every wire into short **segments** and assumes the current is roughly uniform within each one. Each segment's current produces a field, which acts on every other segment, so the solver sets up and solves a large set of simultaneous equations for all the currents at once. From those currents it computes the far-field pattern, and from the current at the source segment, the feed-point impedance. That is the **Method of Moments**.
+
+The wire has to be cut finely enough to follow the true current. Using fewer than about 10 segments per half wavelength is a classic mistake: the computed feed-point impedance can come out wrong. Segments that are extremely short compared with the wire diameter, or sudden size changes between neighbours, cause errors too.
+
+## What it can and cannot tell you
+
+| Reliable for | Be careful with |
+|---|---|
+| Trends: what happens when you raise, lengthen or add an element | Absolute gain and impedance, which depend on the inputs |
+| Pattern shape, lobes and nulls, front-to-back | Real soil: it is usually treated as one uniform layer, and your yard is not |
+| Where current flows, including on the feed line or tower | Buildings, trees and wiring unless you model them |
+| Comparing candidate designs on equal terms | Loss in coils, traps and connectors unless you enter it |
+
+The model contains exactly what you typed. A good model of the wrong antenna is still wrong, and the results come out with many decimal places whether or not they deserve them.
+
+## In practice
+
+- **Validate first.** Model a plain half-wave dipole and check it against known results (roughly 70 to 73 Ω in free space, 2.15 dBi) before trusting the program on a design you care about. Compare relative changes more than absolute figures.
+- **Change one thing at a time**, so you know what caused each difference.
+- **Use a sensible ground** such as poor, average or good soil, and see how much the answer moves. If it moves a lot, treat the result as a range.
+- **Then build and measure** with an <Ref to="antenna-analyzers-and-vnas">analyzer</Ref>, and feed what you find back into the model. Modeling reduces surprises; it does not replace measuring.
+- **Match what you want to know.** Modeling can predict a pattern, not whether the band will be open; see <Ref to="skywave-and-skip" />.
+
+<ExamLink groups="E9B" />
+
+<Related to="radiation-patterns ground-and-height impedance-and-radiation-resistance gain-and-directivity antenna-analyzers-and-vnas half-wave-dipole" />

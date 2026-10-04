@@ -1,0 +1,51 @@
+import { MobileWhipsAndLoading_Vehicle } from '@/visuals/compendium/MobileWhipsAndLoading_Vehicle'
+import { Whip as G4E_Whip } from '@/visuals/general/G4E_Whip'
+import { E9D_LoadPlace } from '@/visuals/extra/E9D_LoadPlace'
+
+## What it is
+
+A vertical whip, usually short, bolted to a vehicle. On VHF and UHF a full quarter-wave whip is only inches to a couple of feet long and fits easily. On HF the whip is far too short, so a **loading coil** makes it behave as if it were longer, at some cost in efficiency.
+
+## The vehicle is the ground plane
+
+<MobileWhipsAndLoading_Vehicle />
+
+A whip is half of a <Ref to="quarter-wave-vertical">quarter-wave vertical</Ref>. The metal body supplies the other half, and return current spreads through the roof and panels. That makes the mount matter:
+
+- **Roof center** gives the most even all-round pattern.
+- **Trunk lip, bumper or fender** skews the pattern and shades it toward the cab.
+- **Poor electrical contact** between the mount and the body wastes power. Bond the base to bare metal.
+- **Fiberglass or plastic bodies** have no ground plane, so you need a counterpoise wire or plate.
+
+## Why it needs loading
+
+A quarter-wave on 40 m is 32.7 ft, taller than any car can carry. A typical 8 ft whip is a very different fraction of a quarter-wave on each band:
+
+| Band | Quarter-wave | An 8 ft whip is about |
+|---|---|---|
+| 80 m | 65 ft | 12% |
+| 40 m | 32.7 ft | 24% |
+| 20 m | 16.5 ft | 49% |
+| 15 m | 11.0 ft | 72% |
+| 10 m | 8.2 ft | 97% |
+
+Below its resonant length a whip looks capacitive. A coil of the right inductance cancels that, so the antenna is resonant and the coax sees a usable load. But radiation resistance falls roughly with the square of the length, while the coil adds its own loss resistance, so the shorter the whip, the more power ends up as heat; see <Ref to="loaded-and-short-antennas" />.
+
+<G4E_Whip />
+
+## Where to put the coil
+
+<E9D_LoadPlace />
+
+Radiation comes from current. A coil at the base leaves a whip with little current to radiate. A coil near the center keeps more of the radiator carrying useful current, so it beats a base coil, and a capacitance hat at the top adds still more. The compromise is mechanical: high loading is heavier and harder to mount, and the tip voltage rises.
+
+## In practice
+
+- **Narrow bandwidth.** A loaded whip is a high-Q antenna; changing frequency by more than a small amount means retuning. A motor-driven coil (a screwdriver antenna) or a tapped coil handles that; see <Ref to="hf-multiband-verticals" />.
+- **Mind the clearance.** Whips on a moving vehicle strike low bridges, garage doors and power lines. Know your height.
+- **Tip voltage.** Do not touch the whip or its coil while transmitting. A corona ball on the tip reduces arcing and the chance of a painful RF burn.
+- **People inside the car.** The cab is within a short distance of the antenna; see <Ref to="rf-exposure" /> and <Ref to="mobile-operation" />.
+
+<ExamLink groups="T9A G4E E9D" />
+
+<Related to="quarter-wave-vertical loaded-and-short-antennas hf-multiband-verticals mobile-operation bandwidth-and-efficiency rf-exposure" />

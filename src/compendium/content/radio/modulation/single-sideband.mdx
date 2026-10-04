@@ -1,0 +1,46 @@
+import { SingleSideband_Power } from '@/visuals/compendium/SingleSideband_Power'
+import { SsbChain } from '@/visuals/general/G7C_SsbChain'
+import { Sidebands } from '@/visuals/technician/T8A_Sidebands'
+
+## What it is
+
+Single sideband (SSB) is AM with the carrier and one of the two sidebands thrown away. What remains is the information, in about half the bandwidth, with all the transmitter's power spent on it. It is the standard HF voice mode.
+
+<Facts items={[
+  ['Bandwidth', 'about 2.4 to 3 kHz'],
+  ['Suppressed', 'the carrier and one sideband'],
+  ['Convention', 'LSB below 10 MHz, USB above (and USB on 60 m)'],
+  ['Power rating', 'PEP: peak envelope power'],
+]} />
+
+## Why drop the carrier and a sideband
+
+<SingleSideband_Power />
+
+In AM the carrier is steady and tells the receiver nothing. The two sidebands are mirror copies of one another. Remove all that redundancy and you have a signal half as wide (so the receiver lets in half as much noise) and with every watt carrying speech.
+
+A bonus: with nobody talking, an SSB transmitter sends nothing. Power follows your voice, so it is rated in **PEP**, the power at the peaks of the audio envelope.
+
+## Making and receiving it
+
+<SsbChain />
+
+A **balanced modulator** multiplies audio by the carrier and cancels the carrier, leaving two sidebands. A sharp filter then removes one. (The *phasing method* does the same with maths and a 90° shift, common in <Ref to="direct-conversion-and-sdr">SDR</Ref>.)
+
+The receiver must put the missing carrier back with a local oscillator in a **product detector**. If that oscillator is off by a few hertz, every voice tone moves by the same few hertz, and the voice turns thin or "Donald Duck". You fix this by tuning, or with <Ref to="rit-xit-and-split">RIT</Ref>.
+
+## Upper or lower
+
+<Sidebands />
+
+The audio is placed above the carrier frequency (USB) or mirrored below it (LSB). Which one you use is a pure convention: LSB on 160, 80 and 40 m, USB on 20 m and up, and USB on 60 m, so that both ends of a contact agree. The dial shows the suppressed carrier, so the signal extends 3 kHz away from the number on the display. On a band edge, keep the whole signal inside.
+
+## Trade-offs
+
+- Needs accurate tuning and a stable oscillator.
+- Needs **linear** amplifiers, because distortion makes intermodulation splatter. See <Ref to="linear-amplifiers" />.
+- Overdriving the microphone gain does just that: flat-topping, wide, ugly signal.
+
+<ExamLink groups="G2A G8A T8A G7C E7E" />
+
+<Related to="modulation-basics amplitude-modulation ssb-voice linear-amplifiers speech-processing-and-mic-gain rit-xit-and-split" />

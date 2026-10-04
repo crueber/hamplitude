@@ -1,0 +1,50 @@
+import { FoxHuntingAndArdf_Cycle } from '@/visuals/compendium/FoxHuntingAndArdf_Cycle'
+import { FoxHuntingAndArdf_Attenuator } from '@/visuals/compendium/FoxHuntingAndArdf_Attenuator'
+
+## What it is
+
+A **fox hunt** is a game of hide and seek on the radio. Someone hides a small transmitter, the "fox", and everyone else finds it with direction-finding gear. The organised, competitive form is **ARDF** (Amateur Radio Direction Finding), also called radiosport, a footrace between several hidden transmitters with a map and a compass. Both teach <Ref to="rdf-basics" /> in a fun way, and both are a good first step toward tracking down real interference.
+
+<Facts items={[
+  ['Fox', 'a low-power hidden transmitter, usually sending a repeating Morse ID or voice'],
+  ['Typical bands', 'VHF FM for casual hunts; 2 meters and 80 meters for ARDF competition'],
+  ['Hunter kit', 'directional antenna, receiver with a meter or audio, attenuator, map and compass'],
+  ['Goal', 'reach the fox (or all the foxes) as quickly as possible'],
+]} />
+
+## Two ways to play
+
+| | Casual fox hunt | ARDF competition |
+|---|---|---|
+| Foxes | Usually one | Typically several, each with its own identifier |
+| Where | Town or countryside, often by car | On foot, in woods or open country |
+| Gear | Handheld or mobile Yagi, loop or Doppler set | Compact handheld receiver and directional antenna |
+| Scoring | First to find it | Find the required foxes, fastest wins |
+| Often organised by | A local club | Amateur radio societies, national and international |
+
+Casual hunts are friendly: a club hides a transmitter, and a few cars or groups of walkers set off. Competitions are strict about the course, time limits and rules, so check the current rules of the event you enter.
+
+## How a competition runs
+
+<FoxHuntingAndArdf_Cycle />
+
+In the classic format, only one fox transmits at a time. Each takes a turn of about a minute, then the cycle repeats. So you can only take a bearing on a given fox during its minute, and you plan your route around where you think the others are. Between bearings you move, using the map to decide where to try next. Competitors visit the foxes in any order, and the clock keeps running.
+
+## The final approach
+
+Far from the fox you take bearings and walk toward the crossing point. Close to it the signal gets so strong that the receiver is **overloaded** and reads full scale from every direction, so you can no longer tell which way is best. The cure is to reduce sensitivity as you approach: an **attenuator** in the antenna line, or the receiver's own gain control.
+
+<FoxHuntingAndArdf_Attenuator />
+
+Free-space signal level rises about 6 dB each time the distance halves. A few turns of the attenuator, 10 dB or 20 dB at a time, keep the meter in the middle of its range, where it moves as you swing the antenna. That is how you finish: switch in more attenuation, find the direction, walk, repeat, until you are standing next to the fox with the receiver almost deaf.
+
+## Tips
+
+- Practise on a friend's transmitter before a real event.
+- A fox is an amateur station like any other. A licensed operator is responsible for it, and it must identify as the rules require; see <Ref to="part-97-in-plain-words" />.
+- Terrain matters. On a hunt, a signal that seems to come from the wrong way is often a reflection off a hillside or building.
+- Stay safe: watch for traffic, uneven ground, wildlife and weather, and respect private land.
+
+<ExamLink groups="T8C" />
+
+<Related to="rdf-basics direction-finding-antennas yagi-uda handheld-antennas clubs-and-elmers radio-spectrum" />

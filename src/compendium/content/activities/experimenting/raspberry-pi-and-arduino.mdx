@@ -1,0 +1,43 @@
+import { RaspberryPiAndArduino_Spectrum } from '@/visuals/compendium/RaspberryPiAndArduino_Spectrum'
+
+## What it is
+
+Two kinds of cheap board show up all over ham shacks. An **Arduino-class microcontroller** runs a single program and handles pins and timing. A **Raspberry Pi-class single-board computer** runs a full operating system such as Linux, with networking, USB and a screen. Both are small, inexpensive and easy to start with, and picking the right one is most of the design.
+
+<Facts items={[
+  ['Microcontroller', 'one program, runs at power-on, reacts in microseconds, milliamps'],
+  ['Single-board computer', 'full operating system, networking, USB, watts of power'],
+  ['Pin voltage', 'commonly 3.3 V on a Pi, 5 V or 3.3 V on microcontroller boards'],
+  ['Pin current', 'only milliamps; never drive a radio or relay straight from a pin'],
+]} />
+
+## Which one for which job
+
+<RaspberryPiAndArduino_Spectrum />
+
+Ask what the job needs. If it is **timing and pins** (generate a dit exactly 60 ms long, read a potentiometer, switch a relay) a microcontroller does it with less power, less cost and no operating system to boot. If it is **software and networking** (decode FT8, run a web server, talk to an internet gateway) a small computer is the better fit. Many projects use one of each: a Pi for the software, a microcontroller for the real-time job.
+
+A tiny example of the kind of arithmetic a keyer does, using the Morse unit of 1.2 ÷ WPM seconds (see <Ref to="morse-alphabet" />):
+
+```
+// 60 ms at 20 WPM
+int dit_ms = 1200 / wpm;
+```
+
+## What hams build
+
+- **Digital-voice hotspots.** A Pi links a handheld to internet-based digital voice networks; see <Ref to="hotspots-and-gateways" />.
+- **Headless digital stations.** A Pi runs software such as WSJT-X (<Ref to="ft8-and-ft4" />) with a USB audio interface and rig control. Pair it with a remote link and you have a <Ref to="remote-operation">remote station</Ref>.
+- **APRS trackers, digipeaters and gateways**; see <Ref to="aprs" />.
+- **Keyers, rotator controllers, beacons, antenna switches and meters**, mostly microcontroller jobs; see <Ref to="microcontrollers" />, <Ref to="keys-and-paddles" /> and <Ref to="rotators" />.
+- **SDR hosts, loggers and clocks.** A Pi can run an SDR dongle and share its output over the network, keep a logbook, or serve accurate time from GPS.
+
+## Doing it safely
+
+- **Isolate the radio.** Key a transmitter through a transistor or optocoupler, and use a USB audio interface with isolation. A direct wire from a board to a radio invites hum, damage and ground loops; see <Ref to="computer-interfaces" /> and <Ref to="cat-control" />.
+- **Respect the logic level.** A Pi's pins are 3.3 V only. 5 V on one can destroy the board.
+- **Keep RF out and noise down.** A transmitter nearby can crash or confuse a board, and switching power supplies, USB and clocks can spray noise into your receiver. Use a metal case, ferrites and short leads; see <Ref to="common-mode-and-ground-loops" />.
+- **Shut a Pi down cleanly.** Cutting power can corrupt the storage card. Use a proper shutdown, or a design meant for sudden power loss.
+- **An unattended station is still a station.** A hotspot, beacon or gateway must be under proper control and identify as the rules require; see <Ref to="control-operators" />.
+
+<Related to="microcontrollers hotspots-and-gateways computer-interfaces digital-mode-software kits-and-homebrew remote-operation" />

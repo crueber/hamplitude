@@ -1,0 +1,38 @@
+import { MemoriesAndScanning_Scan } from '@/visuals/compendium/MemoriesAndScanning_Scan'
+
+## What it is
+
+A **memory channel** stores a complete radio setup under one number or name: frequency, mode, repeater offset, tone and more. **Scanning** steps through frequencies or memories and stops when it hears a signal. Together they turn a radio with hundreds of options into one you can use with a single knob.
+
+<MemoriesAndScanning_Scan />
+
+## What a memory remembers
+
+Typically: the receive frequency, the **offset** and direction for a repeater, the CTCSS or DCS <Ref to="squelch-and-tones">tone</Ref>, the mode, the power level, and a text name. A repeater memory is worth having because the offset and tone are exactly the details people forget or mistype.
+
+- **Memory mode** versus **VFO mode**: in VFO mode you tune freely with the dial or keypad; in memory mode the dial just moves between stored channels. On many radios, changes made while in memory mode affect only a temporary copy until you store them.
+- Most radios keep a **call channel** or favourite for quick access, and some have separate **banks** so you can group channels by purpose: local repeaters, simplex, weather, a net.
+- Memories can be loaded in bulk from a computer, and a **code plug** is the same idea for digital radios: a file of channels, talkgroups and settings written into the radio. See <Ref to="cat-control" />.
+
+## The kinds of scan
+
+| Scan | Steps through | Use |
+|---|---|---|
+| **Memory scan** | your stored channels, skipping any marked to skip | monitor your local repeaters and simplex channels |
+| **Programmed (band) scan** | everything between two limit frequencies, in tuning steps | find activity on a band segment |
+| **Priority or dual watch** | the current channel, with a periodic check of a priority channel | stay on one conversation without missing a net |
+| **Tone scan** | the tones on an active signal | find which CTCSS tone a repeater uses |
+
+The scanner moves on at a fixed rate until the squelch opens, holds while the signal lasts, then **resumes** after a pause. A hold that is too short loses the reply to a short transmission; one that is too long delays the next channel. Most radios let you pick time-based or carrier-based resume.
+
+## Pitfalls
+
+- Scanning relies on the <Ref to="squelch-and-tones">squelch</Ref>. If it is open, the scan stops on noise at once; set it just above the noise first.
+- A **step size** that does not match the band plan skips real channels or lands between them. On VHF FM that is commonly 5, 10, 12.5, 15, 20 or 25 kHz, depending on the region and band plan.
+- Scanning HF is rarely useful: signals fade, and SSB and CW have no carrier to stop on. It is mainly an FM and VHF/UHF tool.
+
+<Callout kind="tip" title="Name the channels">A short label such as the repeater's call sign or "SIMPLEX 1" beats a frequency when you are driving or on a net. Keep names short enough to fit your radio's display.</Callout>
+
+<ExamLink groups="T4B" />
+
+<Related to="squelch-and-tones cat-control receivers-and-scanners repeater-directories handheld-transceivers rit-xit-and-split" />

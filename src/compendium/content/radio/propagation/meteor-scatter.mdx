@@ -1,0 +1,49 @@
+import { Meteor as E3A_Meteor } from '@/visuals/extra/E3A_Meteor'
+import { MeteorScatter_Pings } from '@/visuals/compendium/MeteorScatter_Pings'
+
+## What it is
+
+Every day, vast numbers of grain-sized meteoroids hit the upper atmosphere and burn up around 100 km up. Each leaves a narrow trail of ionized air, tens of kilometres long, that can reflect VHF radio waves for a moment. Stations that bounce signals off these trails can talk to each other over distances of **roughly 1,000 to 2,000 km** with nothing more than modest power, and without any help from the Sun.
+
+<Facts items={[
+  ['Height', 'about 80 to 120 km (E region)'],
+  ['Best bands', '6 m and 2 m (28 to 148 MHz work best)'],
+  ['Typical distance', 'about 1,000 to 2,000 km (roughly 600 to 1,300 miles)'],
+  ['Typical burst', 'a fraction of a second; some last seconds'],
+]} />
+
+## How it works
+
+<E3A_Meteor />
+
+A meteoroid heats the air around it and strips electrons from the molecules, leaving a thin column of free electrons. That column acts like a short, slender mirror for VHF. The trail fades within moments as the electrons spread out and recombine with the air. Faint trails give an almost instant, brief echo; the rare dense ones reflect more strongly and for longer, lasting several seconds, and occasionally much longer.
+
+Lower frequencies give stronger, longer echoes; higher ones need more power for weaker, briefer echoes. That is why 6 m and 2 m are favoured and 70 cm is much harder.
+
+<MeteorScatter_Pings />
+
+## When it works
+
+A burst only happens if a trail forms in the right place, so the signal is never continuous: you hear silence, then a ping, then silence. More meteors mean more bursts, and the number varies:
+
+- **Daily background**: random meteors arrive all the time, most often around dawn and least in the evening, because at dawn your side of the Earth faces forward into the debris as the planet travels around the Sun.
+- **Meteor showers**: the Earth crosses a stream of debris left by a comet or asteroid, giving a burst of activity for a day or a few days.
+
+| Shower | Typical peak |
+|---|---|
+| Quadrantids | early January |
+| Lyrids | about April 22 |
+| Eta Aquariids | early May |
+| Perseids | about August 12 |
+| Leonids | about November 17 |
+| Geminids | about December 14 |
+
+Peak dates drift by a day or so, and rates differ a lot from year to year.
+
+## In practice
+
+Meteor scatter is a weak-signal mode. Operators agree on a schedule, take alternating timed periods (often 15 seconds), and send a short message over and over so it can be assembled from whatever bursts arrive. Fast digital modes designed for this, such as MSK144, decode a message from a single short ping; older practice used very fast CW. Directional antennas help, and both stations aim directly at each other.
+
+<ExamLink groups="T3C E3A" />
+
+<Related to="sporadic-e weak-signal-vhf six-meters digital-modes-overview aurora-propagation eme-moonbounce" />

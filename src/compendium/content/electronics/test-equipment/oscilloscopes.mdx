@@ -1,0 +1,48 @@
+import { Oscilloscopes_Screen } from '@/visuals/compendium/Oscilloscopes_Screen'
+import { ProbeComp } from '@/visuals/extra/E4A_ProbeComp'
+import { Scope } from '@/visuals/general/G4B_Scope'
+
+## What it is
+
+An **oscilloscope** draws voltage against time. It shows the actual shape of a signal: whether a keying waveform has clean edges, whether an audio signal is clipping, whether a power supply has ripple. Where a <Ref to="multimeters">multimeter</Ref> gives one number, a scope shows the whole waveform.
+
+<Facts items={[
+  ['Vertical axis', 'voltage, set in volts per division'],
+  ['Horizontal axis', 'time, set in time per division'],
+  ['Bandwidth', 'the frequency where the display reads 3 dB (about 30%) low'],
+  ['Typical probe', '×10 attenuation, about 10 MΩ input'],
+]} />
+
+## Reading the screen
+
+<Oscilloscopes_Screen />
+
+The grid is 10 divisions across and typically 8 tall. You choose how many volts and how much time each division stands for, then **count divisions**: height × volts per division is volts, and width of one cycle × time per division is the period, which gives frequency as 1 ÷ period.
+
+The **trigger** is what makes the picture hold still. The scope starts each sweep when the signal crosses the trigger level, so every sweep begins at the same point on the wave and they overlap. Set the level outside the signal and it never triggers, and the display drifts or smears. Also check the **coupling**: DC shows the whole signal including any DC level, AC blocks the DC so a small ripple on top of a large DC voltage can be seen.
+
+## Probes
+
+A probe isn't just a wire. A standard **×10 probe** contains a resistor that forms a divider with the scope's 1 MΩ input, cutting the signal by ten but loading the circuit with about 10 MΩ and only around ten picofarads or so. That is far gentler than a bare lead, which would load a circuit with the cable's capacitance. The price is a smaller signal, and the scope must be told: set its probe-attenuation setting to ×10 or every reading is ten times too small.
+
+<ProbeComp />
+
+The probe's capacitance must be tuned to match the scope input. Touch it to the scope's built-in square-wave output and adjust the trimmer until the tops are flat. Keep the ground clip short, as a long ground lead rings and distorts fast edges.
+
+## Limits and uses
+
+- **Bandwidth.** A scope rated at 100 MHz reads 30% low at 100 MHz. A common rule is to choose bandwidth at least five times the highest frequency you care about, which keeps the error around 2%.
+- **Digital scopes sample.** Too slow a sample rate shows a false, lower-frequency wave; see <Ref to="sampling-and-nyquist" />.
+- **A scope shows time, not frequency.** To see harmonics or distortion products, use a <Ref to="spectrum-analyzers">spectrum analyzer</Ref>.
+
+In the shack, a scope checks a CW keying envelope or SSB two-tone output:
+
+<Scope />
+
+Across a 50 Ω dummy load, a steady 100 W carrier gives 70.7 V RMS, which is 100 V peak and **200 V peak-to-peak**. Use a high-voltage probe, an attenuator or a capacitive pick-off, never a 10× probe on a kilowatt. See <Ref to="dummy-loads" />.
+
+<Callout kind="warn" title="Safety: the ground clip is not floating">A scope's ground lead is usually connected to the mains safety earth through its power cord. Clipping it to a circuit that is not isolated from the mains, such as one with a live chassis, shorts that circuit to earth and can cause a fire or shock. Don't probe mains-powered circuits unless they are isolated, and never defeat the scope's earth pin. Stay within the probe's voltage rating.</Callout>
+
+<ExamLink groups="E4A E4B" />
+
+<Related to="spectrum-analyzers multimeters dummy-loads ac-dc-and-waveforms sampling-and-nyquist counters-and-signal-generators" />

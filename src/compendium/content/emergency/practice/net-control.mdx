@@ -1,0 +1,37 @@
+import { NetControl_Session } from '@/visuals/compendium/NetControl_Session'
+import { Net } from '@/visuals/technician/T2C_Net'
+
+## What it is
+
+A **net** is an on-air meeting. In a **directed net**, one station, the **net control station (NCS)**, runs it: calls it to order, decides who speaks next and keeps order. Without one, a busy channel degrades into everybody talking at once. The NCS is the traffic director, not the boss: it does not choose the net's schedule or check licenses.
+
+<Net />
+
+Stations transmit **only when directed**. The one exception is a station with **emergency traffic**, which may break in and say so.
+
+## Running the session
+
+<NetControl_Session />
+
+The order above is typical. A few points make it work:
+
+- **Open clearly.** Say what the net is, its purpose and the frequency, and give your own call sign. Identify as <Ref to="part-97-in-plain-words">Part 97 requires</Ref>: at least every 10 minutes and at the end of the contact.
+- **Ask for emergency and priority traffic first**, before routine check-ins, so urgent items are not stuck behind a long list.
+- **Take check-ins in an orderly way.** Ask for calls in groups, such as by call sign suffix, or by a list the net uses. Repeat each call so everyone hears it, and write it down.
+- **Keep your own transmissions short.** Every second of NCS talk is a second a station cannot get through.
+
+## Traffic and relays
+
+**Traffic** means the formal messages the net exchanges. The NCS pairs up stations: "K1ABC, you have a message for the shelter; go to W2DEF and pass it." Messages follow the format in <Ref to="radiograms" />.
+
+When one station cannot hear another, the NCS can ask a third to **relay**. Where reach is the limit, big nets use an **alternate NCS** or a relay station and, for large incidents, multiple linked nets.
+
+<Callout kind="tip" title="Name your backup">Before a long net starts, appoint an alternate NCS. If you fade out or must leave, the net continues without a pause.</Callout>
+
+## Joining a net
+
+Listen first to learn the format. Check in when called, using the style that net asks for (often just a call sign, phonetically). Then wait for direction. If you have something urgent, say so and be ready to give it briefly.
+
+<ExamLink groups="T2C" />
+
+<Related to="voice-nets nets emcomm-principles radiograms incident-command-system phonetic-alphabet" />

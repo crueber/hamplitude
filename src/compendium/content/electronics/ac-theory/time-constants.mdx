@@ -1,0 +1,49 @@
+import { TimeConstants_RcCharge } from '@/visuals/compendium/TimeConstants_RcCharge'
+import { E5B_TimeConstant } from '@/visuals/extra/E5B_TimeConstant'
+
+## What it is
+
+A capacitor cannot change voltage instantly, and an inductor cannot change current instantly. Connect either through a resistor to a supply and the change builds up smoothly. The **time constant**, τ (tau), says how quickly.
+
+<Facts items={[
+  ['RC circuit', 'τ = R × C'],
+  ['RL circuit', 'τ = L ÷ R'],
+  ['After 1 τ', '63.2% of the way'],
+  ['After 5 τ', '99.3%: for practical purposes, done'],
+]} />
+
+## Why the curve bends
+
+<TimeConstants_RcCharge />
+
+An empty capacitor is a short circuit for an instant, so the full supply voltage appears across the resistor and the current is large. As the capacitor fills, its voltage opposes the supply, the voltage left across the resistor shrinks, and so does the current. The capacitor then fills more slowly. Every interval closes the same *fraction* of what is left, never a fixed amount, which is what makes the curve exponential.
+
+| Time | Charging (of final) | Discharging (left) |
+|---|---|---|
+| 1 τ | 63.2% | 36.8% |
+| 2 τ | 86.5% | 13.5% |
+| 3 τ | 95.0% | 5.0% |
+| 4 τ | 98.2% | 1.8% |
+| 5 τ | 99.3% | 0.7% |
+
+An RL circuit is the same shape with current in place of voltage. A coil resists the current change, and the resistor limits how far it can go. Note that τ = L ÷ R means a *larger* resistance makes an RL circuit **faster**, the opposite of an RC circuit.
+
+## Working it out
+
+<E5B_TimeConstant />
+
+- 100 kΩ × 10 µF = **1 s**
+- 4.7 kΩ × 0.1 µF = **470 µs**
+- 10 mH ÷ 100 Ω = **100 µs**
+
+Resistance in ohms and capacitance in farads give τ in seconds. Keep the units straight: <Ref to="units-and-prefixes" /> helps with the prefixes.
+
+## Where it shows up
+
+- **Filters.** An RC low-pass filter has its corner frequency at f = 1 ÷ (2π × R × C), which is 0.159 ÷ τ. 4.7 kΩ with 0.1 µF gives 339 Hz. See <Ref to="filters" />.
+- **Timing and smoothing.** AGC attack and decay, CW keying shaping, switch debouncing and delay circuits are all RC time constants.
+- **Discharge.** A bleeder resistor drains a power-supply capacitor. 100 kΩ across 100 µF gives τ = 10 s, so after 5 τ, about 50 s, it is below 1% of its starting voltage. That is still dangerous on a high-voltage supply, and a capacitor with no bleeder can take far longer. Never trust a supply that has just been switched off, and confirm with a meter; see <Ref to="electrical-safety" />.
+
+<ExamLink groups="E5B" />
+
+<Related to="capacitance inductance reactance-and-impedance filters power-supplies resonance-and-q" />

@@ -23,9 +23,12 @@ export function Layout() {
           <nav className="nav" aria-label="Licence classes">
             {LICENSES.map((l) => (
               <NavLink key={l} to={`/${l}`} data-license={l} className={({ isActive }) => (isActive || pathname.startsWith(`/${l}/`) ? 'active' : '')}>
-                <i className="dot" />{POOLS[l].name}
+                <i className="dot" />{l === 'technician' ? <><span className="full">Technician</span><span className="short">Tech</span></> : POOLS[l].name}
               </NavLink>
             ))}
+            <NavLink to="/compendium" className={({ isActive }) => `cmp-link${isActive || pathname.startsWith('/compendium') ? ' active' : ''}`}>
+              <i className="dot" />Compendium
+            </NavLink>
             {streak > 1 && <span className="streak" title="Days in a row you've practised">🔥 {streak}</span>}
             <button className="icon-btn" onClick={cycleTheme} aria-label={`Theme: ${theme}. Click to change.`} title={`Theme: ${theme}`}>
               <ThemeIcon theme={theme} />
@@ -60,6 +63,13 @@ function Footer() {
           Always check <a href="https://www.ncvec.org" target="_blank" rel="noreferrer">ncvec.org</a> for the pool in effect on your exam date.
         </p>
         <p><Link to="/settings">Settings &amp; progress</Link> · Progress is saved only in this browser.</p>
+        <div className="credit">
+          <strong>Brought to you by N0ZSY (Chris) and AI; Keep up the Hamplitude!</strong>
+          <span>
+            Found something wrong with a question, an explanation or an article?{' '}
+            <a href="https://github.com/crueber/hamplitude/issues" target="_blank" rel="noreferrer">Report it on GitHub Issues</a>.
+          </span>
+        </div>
       </div>
     </footer>
   )

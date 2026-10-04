@@ -1,0 +1,51 @@
+import { NoiseCancelling_Layout } from '@/visuals/compendium/NoiseCancelling_Layout'
+import { NoiseCancelling_Phasor } from '@/visuals/compendium/NoiseCancelling_Phasor'
+
+## What it is
+
+Noise cancelling removes **local** noise before the receiver by using a second antenna. The second antenna hears the same noise, mainly. Its output is adjusted in size and phase and added to the main antenna's so the two noise signals are equal and opposite and cancel. The second antenna is chosen to hear the wanted signal much more weakly than the noise, so most of the signal survives.
+
+It is a different tool from a noise blanker (which mutes short pulses) or software noise reduction, which work on the signal after the receiver. Cancelling works on the radio wave itself.
+
+<Facts items={[
+  ['Needs', 'a main antenna, a noise antenna, and an adjustable phase and gain stage'],
+  ['Works best on', 'one dominant noise source: a power line, a switching supply'],
+  ['Cancels when', 'noise at the two antennas is equal in size and opposite in phase'],
+  ['Depth of null', 'depends on how well the two settings are matched'],
+]} />
+
+## How it works
+
+<NoiseCancelling_Layout />
+
+The noise antenna's job is to hear the noise at least as well as the main antenna while hearing the wanted signal as poorly as possible. A small antenna close to the noise source, or one oriented differently from the main antenna, often does that, because local noise is strong nearby but the distant signal reaches both antennas with about the same weak field.
+
+Noise from one place arrives at the two antennas with a different size and a different phase, because the paths differ. The adjustment stage corrects for both. When the two noise voltages are equal and opposite, they sum to nothing.
+
+## Setting the null
+
+<NoiseCancelling_Phasor />
+
+In the phasor picture each noise voltage is an arrow. The adjusted noise from the second antenna is added tip to tail. Only when it is the same length as the first and points the opposite way does the sum collapse to zero. Gain alone shortens or lengthens the arrow; phase alone swings it round, so you need both, one after the other.
+
+The null is sharp. For each depth of cancellation, this is the largest gain error or phase error (either one alone) that still allows it:
+
+| Cancellation | Gain error | Phase error |
+|---|---|---|
+| 10 dB | about 2.4 dB | about 18° |
+| 20 dB | about 0.8 dB | about 6° |
+| 30 dB | about 0.3 dB | about 2° |
+| 40 dB | about 0.1 dB | about 0.6° |
+
+Real noise drifts with temperature, wind and the source's own behaviour, so deep nulls need occasional readjustment.
+
+## In practice
+
+- A canceller helps with one noise source in one direction. Many separate sources (every house on the street) cannot all be nulled at once.
+- The same effect is an array with a null pointed at the noise; see <Ref to="phased-arrays" />. Adaptive cancellers in some radios do the adjustment automatically.
+- Cancelling is a remedy, not a cure. Finding and fixing the source is better. See <Ref to="power-line-noise" /> and <Ref to="rfi-and-emi" />.
+- If the wanted signal is strong in the noise antenna, it is cancelled along with the noise. Choose a noise antenna that hears the noise much better than the signal.
+
+<ExamLink groups="E4E" />
+
+<Related to="phased-arrays receive-loops-and-active-antennas beverage-antennas agc-and-noise-reduction power-line-noise noise-and-snr" />

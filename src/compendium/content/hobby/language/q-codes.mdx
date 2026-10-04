@@ -1,0 +1,57 @@
+import { G2C_QSignals } from '@/visuals/general/G2C_QSignals'
+
+## Three letters, a whole sentence
+
+Q-codes are three-letter signals that all start with Q. They were created for telegraph operators so that common messages could be sent in a few characters, in any language. Each code has two forms: a **statement**, and the same code with a question mark, which turns it into a **question**.
+
+<Facts items={[
+  ['Format', 'Q plus two letters'],
+  ['Statement', 'QRM = "I am being interfered with"'],
+  ['Question', 'QRM? = "Are you being interfered with?"'],
+  ['Used on', 'CW most; a few (QSO, QRM, QTH) on voice too'],
+]} />
+
+<G2C_QSignals />
+
+## The common ones
+
+These are the Q-codes an operator meets every week. The official list is much longer, and only a fraction of it is used in ham radio.
+
+| Code | As a statement | As a question |
+|---|---|---|
+| **QRL** | This frequency is busy | Is this frequency in use? |
+| **QRM** | I am being interfered with by other stations | Are you being interfered with? |
+| **QRN** | I am troubled by static (natural noise) | Are you troubled by static? |
+| **QRO** | Increase power | Shall I increase power? |
+| **QRP** | Reduce power | Shall I reduce power? |
+| **QRQ** | Send faster | Shall I send faster? |
+| **QRS** | Send slower | Shall I send slower? |
+| **QRT** | I am stopping transmission (shutting down) | Shall I stop sending? |
+| **QRU** | I have nothing for you | Have you anything for me? |
+| **QRV** | I am ready | Are you ready? |
+| **QRX** | I will call you again later; please stand by | When will you call again? |
+| **QRZ** | You are being called by ... | Who is calling me? |
+| **QSB** | Your signals are fading | Are my signals fading? |
+| **QSK** | I can hear you between my signals; break in | Can you hear me between your signals? |
+| **QSL** | I acknowledge receipt (I got that) | Can you acknowledge receipt? |
+| **QSO** | I can communicate with ... (a contact) | Can you communicate with ... ? |
+| **QSP** | I will relay the message | Will you relay a message? |
+| **QSY** | Change frequency ("I am changing to ...") | Shall I change frequency? |
+| **QTC** | I have messages (traffic) for you | How many messages have you? |
+| **QTH** | My location is ... | What is your location? |
+
+A few memory hooks: **QRM** is **M**an-made interference and **QRN** is **N**atural noise; **QRS** is **S**low and **QRQ** is the opposite; **QRP** is low power and **QRO** is high.
+
+## How they are used in practice
+
+- **Ask before you transmit.** "QRL?" on CW, or "Is the frequency in use?" on voice, is how you check a frequency before calling CQ. See <Ref to="operating-etiquette" />.
+- **One code, both directions.** If someone answers your "QRL?" with "QRL", the frequency is busy. No reply means it is probably clear, but listen and ask again.
+- **Stretched meanings.** Hams use some as nouns and verbs: a QSO is a contact, QRP is low-power operating, "QSY" means moving to another frequency, a QSL card confirms a contact. "QRM" and "QRN" are shorthand for human and natural interference.
+- **Don't double up.** The code already carries the meaning: "QRP" alone says low power, and "QRZ?" alone asks who is calling.
+- **On voice, plain language is clearer.** Q-codes shine on CW, where short is fast. On a repeater, just say what you mean.
+
+<Callout kind="note" title="Not all Q-codes are for hams">Codes beginning with Q are shared among aeronautical, maritime and amateur services, and some mean something different there. In this list the meanings are the common amateur ones.</Callout>
+
+<ExamLink groups="G2C T2B" />
+
+<Related to="ham-abbreviations operating-etiquette cw-procedures morse-alphabet phonetic-alphabet logging-and-qsl" />

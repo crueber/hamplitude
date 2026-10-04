@@ -1,0 +1,38 @@
+import { PropagationTools_Flow } from '@/visuals/compendium/PropagationTools_Flow'
+
+## What it is
+
+Propagation tools help you decide **which band to try and when**, instead of tuning around hoping. They fall into three families, which answer different questions. This article describes the categories, not any one product: features and availability change, so check each tool's own documentation.
+
+## Three kinds of tool
+
+<PropagationTools_Flow />
+
+| Kind | Answers | Typical examples |
+|---|---|---|
+| **Space weather data** | How active is the sun, and how disturbed is Earth's magnetic field? | solar flux, A and K indices, X-ray and solar wind readings, published by space-weather agencies |
+| **Prediction models** | Between these two places at this time, which frequencies should work? | HF prediction programs (many built on the VOACAP engine), usually run on your computer or on a website |
+| **Live reports** | What is actually being heard right now? | maps built from <Ref to="spotting-networks">spotting networks</Ref>, beacons and WSPR |
+
+For VHF and UHF, the idea is the same, but the inputs are **weather** rather than the sun: forecasts that show where **tropospheric ducting** is likely, and <Ref to="sporadic-e" /> or <Ref to="aurora-propagation" /> alerts. See <Ref to="tropospheric-propagation" />.
+
+## Reading the numbers
+
+Space weather data are inputs, not answers. In general, a higher **solar flux** means stronger ionisation and better support for the higher HF bands, while a high **K or A index** means a disturbed field and degraded paths, especially near the poles. <Ref to="solar-cycle-and-indices" /> explains each one, and <Ref to="space-weather" /> explains what drives them.
+
+A **prediction model** takes a path, a date and time, transmit power, antennas and a smoothed sunspot figure, and returns an estimate of the **MUF** (see <Ref to="muf-and-luf" />) and the likelihood a signal will get through. Predictions are statistical: they describe a typical day in that month, not today.
+
+## Using them together
+
+1. **Plan** with a prediction: which band and hour look promising for the place you want to reach?
+2. **Check the sun**: is anything disturbing the field today?
+3. **Look at live reports**: are stations from that region being heard on that band now?
+4. **Decide by listening.** A real signal on the band outranks any chart.
+
+When a forecast and a live report disagree, **believe the live report**: it is the measurement, while the forecast is an average.
+
+<Callout kind="note" title="Bias in the data">Live maps show only where receivers are listening. A band that looks empty on a map may be open to a place no one is monitoring.</Callout>
+
+<ExamLink groups="G3A G3B E3C" />
+
+<Related to="solar-cycle-and-indices muf-and-luf space-weather spotting-networks skywave-and-skip ionosphere-layers" />

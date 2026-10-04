@@ -1,0 +1,45 @@
+import { Eme } from '@/visuals/extra/E3A_Eme'
+import { EmeMoonbounce_Budget } from '@/visuals/compendium/EmeMoonbounce_Budget'
+import { E2D_EmeSequence } from '@/visuals/extra/E2D_EmeSequence'
+
+## What it is
+
+**Earth-Moon-Earth (EME)**, or moonbounce, uses the Moon as a passive reflector. You aim a powerful signal at it and listen for your own echo, or for another station's, a couple of seconds later. Any two stations that can both see the Moon can work each other, which on Earth means up to about 12,000 miles apart.
+
+<Facts items={[
+  ['Round trip', 'about 2.4 to 2.7 seconds'],
+  ['Path loss', 'about 252 dB on 2 m, 271 dB on 23 cm, 289 dB on 3 cm (average distance)'],
+  ['Antenna gain needed', 'high: big Yagi arrays or dishes'],
+  ['Moon reflectivity', 'poor: only a small fraction of the power is returned'],
+]} />
+
+## The path is brutal
+
+<Eme />
+
+The Moon is roughly 384,000 km away, and the signal has to cover that twice. Free-space loss alone, Earth to Moon one way, is about 187 dB on 2 m. The Moon is a big target but a poor reflector, and the whole round trip, with 0 dBi antennas and the Moon at average distance, costs about **252 dB**: your echo is about 1 part in 10²⁵ of what you sent. Compare a 100 km terrestrial VHF path, at about 116 dB.
+
+<EmeMoonbounce_Budget />
+
+When the Moon is closest (perigee) the path is shortest and the loss least, by about 2 dB against apogee. The loss rises with frequency, but so does the gain of a given antenna, and gain at both ends counts. At a fixed antenna size, the higher bands do better on paper; the cost is narrower beams to aim and harder equipment.
+
+## What a station needs
+
+- **High gain**: arrays of Yagis on 2 m and 70 cm, dishes on 23 cm and up. Doubling the antenna area (say, twice as many Yagis) adds about 3 dB at each end, so 6 dB for the link.
+- **Power**: hundreds of watts to the legal limit on the low bands, although small stations can still hear their own echo or work big stations.
+- **A quiet receiver**: a low-noise preamplifier at the antenna, and a narrow filter, because the echo is far below the noise.
+- **Tracking**: the Moon moves across the sky, and the antenna must follow it in both azimuth and elevation, usually automatically.
+
+## Operating it
+
+Because the echo takes about 2.5 seconds, contacts cannot work like a conversation. Stations agree on a **shared clock** and alternate: one period you transmit, the next you listen.
+
+<E2D_EmeSequence />
+
+The Moon's rocking (**libration**) smears the echo in frequency, causing a fast, flutter-like fading. On the lower bands the ionosphere can also twist the polarization (Faraday rotation), fading linear antennas in and out. The Earth's rotation gives Doppler: hundreds of hertz on 2 m and kilohertz on 23 cm, so software corrects for it. Weak-signal digital modes from WSJT-X, such as Q65 or JT65, can decode signals below the noise; strong stations can also work CW.
+
+<Callout kind="tip" title="Hearing your own echo">Hearing your own echo is the first goal. It proves your antenna, power, receiver and tracking all work, without needing a partner.</Callout>
+
+<ExamLink groups="E3A E2D" />
+
+<Related to="meteor-scatter dish-antennas yagi-uda weak-signal-vhf microwaves decibels" />

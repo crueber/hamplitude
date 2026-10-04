@@ -1,0 +1,50 @@
+import { Contesting_Exchange } from '@/visuals/compendium/Contesting_Exchange'
+import { Contesting_RunVsSearch } from '@/visuals/compendium/Contesting_RunVsSearch'
+import { E2C_ContestBands } from '@/visuals/extra/E2C_ContestBands'
+
+## What it is
+
+A contest is a timed competition to make as many contacts as possible, usually with as many different places as possible, within a fixed period (often 24 or 48 hours, sometimes just a few). Contests are short, fast and efficient: each contact is a quick exchange of a few details. They are among the busiest times on the bands.
+
+<Facts items={[
+  ['Duration', 'a few hours to a weekend'],
+  ['A contact', 'seconds: call, exchange, thanks'],
+  ['Typical score', 'QSO points × multipliers'],
+  ['Log', 'submitted electronically, often in Cabrillo format'],
+]} />
+
+## Anatomy of a contact
+
+<Contesting_Exchange />
+
+Each contest defines its **exchange**: the information both sides must send for the contact to count, for example a signal report plus a serial number, a state or section, a grid square, or a name. It also defines who may contact whom, which bands and modes are in play, and how contacts are scored. **Check the rules for each contest; they change from year to year.**
+
+Sending only the exchange is good contest practice. Skip the small talk, and do not add "please copy" or work the same station twice to be sure it is in their log.
+
+## Scoring and strategy
+
+Most contests multiply two things: a number of **QSO points** (what each contact is worth) and a number of **multipliers** (distinct places, bands or other things the contest rewards). A rough shape:
+
+<Formula label="Typical contest score">score = QSO points × multipliers</Formula>
+
+That is why a distant new multiplier is worth more than another nearby station, and why rate (contacts per hour) is only half the story.
+
+<Contesting_RunVsSearch />
+
+Other choices: which band to be on at which hour (higher bands during the day, lower ones at night, following <Ref to="skywave-and-skip">propagation</Ref>), which category to enter (single operator, multi-operator, low power or QRP, assisted or not), and how much antenna you can bring to bear. Contests skip some bands; HF contests generally avoid 30, 17 and 12 m.
+
+<E2C_ContestBands />
+
+## Who it is for
+
+- **Casual entrants** make a handful of contacts and send a log. Every contact helps the stations that need your multiplier.
+- **Serious competitors** build big antenna systems and operate for the whole weekend. Many contests also have low-power and casual categories.
+- **Anyone testing a station** can use a contest for a high-density test of antennas and receivers.
+
+You must still **identify your station** as the FCC requires, whatever the contest says, and keep your signal clean. A contest is no excuse for a wide, splattering signal: see <Ref to="operating-etiquette" />.
+
+<Callout kind="tip" title="Try one with a low bar">Pick a contest, call a few stations, and send the log. Logging software that checks for duplicates makes it far easier; see <Ref to="logging-software" />.</Callout>
+
+<ExamLink groups="T8C G2D E2C" />
+
+<Related to="cw-contesting-and-rbn logging-software dx-etiquette-and-split signal-reports operating-etiquette awards" />

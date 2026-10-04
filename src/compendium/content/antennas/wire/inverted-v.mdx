@@ -1,0 +1,39 @@
+import { G9D_InvertedV } from '@/visuals/general/G9D_InvertedV'
+import { InvertedV_Angle } from '@/visuals/compendium/InvertedV_Angle'
+
+## What it is
+
+A <Ref to="half-wave-dipole">half-wave dipole</Ref> hung from a single support at its center, with the two legs sloping down like an upside-down V. It needs one tall mast instead of two, which is why it is such a common first HF antenna.
+
+<Facts items={[
+  ['Wire length', 'a little shorter than the flat dipole (trim to resonance)'],
+  ['Feed-point impedance', 'typically below 73 Ω; about 50 Ω near a 120° included angle'],
+  ['Pattern', 'broadly like a dipole, with the nulls off the ends filled in'],
+  ['Polarization', 'mostly horizontal, with some vertical'],
+]} />
+
+<G9D_InvertedV />
+
+## What the droop changes
+
+Bending the legs downward does three things at once.
+
+- **Impedance drops.** The legs are closer together and partly cancel each other's fields, so for the same current less power is radiated: the radiation resistance falls from the 73 Ω of a flat dipole. Near a 120° included angle it is typically close to 50 Ω, a convenient match for 50 Ω coax. Sharper angles go lower still.
+- **The pattern rounds out.** Sloping wire radiates some vertically polarized energy, so the deep nulls off the ends of a flat dipole become shallower. Broadside gain is slightly lower.
+- **The resonant length shifts.** Expect to trim the wire a little shorter than the flat-top formula says.
+
+<InvertedV_Angle />
+
+## In practice
+
+- **Angle.** Most are built with an included angle of roughly 90° to 120° or wider. A very steep V gives up performance and brings the ends close to the ground.
+- **Height.** The same rules as a flat dipole apply: the apex height sets the elevation pattern; see <Ref to="ground-and-height" />.
+- **Tune it in place.** Cut each leg long, then shorten both equally while watching the SWR. Nearby masts, trees and buildings shift the result.
+- **Feed.** Direct 50 Ω coax works, through a 1:1 balun or <Ref to="common-mode-chokes">common-mode choke</Ref> at the feed point.
+- **Support.** A non-conductive mast (fiberglass, wood, PVC) stays out of the antenna's way; a metal mast can detune it.
+
+<Callout kind="warn" title="Ends are high voltage">The ends of any half-wave dipole carry the highest RF voltage, and an inverted V brings them down toward head height. Keep them and their ropes well out of reach, and keep every mast, line and wire far from power lines while you are raising them.</Callout>
+
+<ExamLink groups="G9D" />
+
+<Related to="half-wave-dipole multiband-dipoles slopers-and-inverted-l ground-and-height baluns-and-ununs" />

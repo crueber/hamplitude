@@ -1,0 +1,39 @@
+import { PacketRadio_Network } from '@/visuals/compendium/PacketRadio_Network'
+import { PacketArq } from '@/visuals/technician/T8D_PacketArq'
+
+## What it is
+
+Packet radio chops data into small, self-contained **packets**, each with an address, the data, and a check value, and sends them over a radio link. It is how amateurs adopted the ideas behind computer networking: several stations can share one channel, messages are addressed to specific stations, and errors are detected. Amateur packet uses a protocol called **AX.25**, an adaptation of an early network standard with call signs as the addresses.
+
+<Facts items={[
+  ['Protocol', 'AX.25'],
+  ['Typical VHF speed', '1200 baud (audio FSK); 9600 baud also used'],
+  ['Hardware', 'a modem (a TNC, or a software equivalent) and a radio'],
+  ['Address', 'call signs, with an optional suffix (SSID)'],
+]} />
+
+## Anatomy of a packet
+
+<PacketArq />
+
+Every packet starts with a **header**, which holds the routing and handling information: who it is from, who it is for, and any relay stations to pass through. Then comes the data, and then a **checksum**. The receiver recomputes the checksum: if it does not match, the packet was damaged.
+
+In **connected mode**, the receiver acknowledges every good packet and asks for a resend of a damaged one. This is **ARQ**: error detected, retransmission requested. If it keeps failing, the link gives up and the connection is dropped. In **unconnected** mode a packet is sent once with no acknowledgement, which is how broadcasts and <Ref to="aprs" /> work.
+
+## Digipeaters and networks
+
+<PacketRadio_Network />
+
+VHF and UHF signals travel in straight lines, so two stations separated by hills or distance may not hear each other. A **digipeater** (digital repeater) on high ground hears the packet and sends it again. The relay path is written in the packet header, so the stations choose the route, and each hop is another chance for the channel to be busy.
+
+Beyond single hops, **nodes** can route traffic over several links, and bulletin-board systems (**BBSs**) store messages for stations to read later. A newer relative of the idea, high-speed amateur data networks built from Wi-Fi hardware, is covered in <Ref to="aredn-mesh" />.
+
+## In practice
+
+- A **TNC** is the modem that converts packets to audio and back. Hardware boxes did this originally; software running on a computer's sound card can now do the same job.
+- HF packet exists, but is slower and more fragile, since HF noise and fading cause many retries. Packet's role there has largely been taken by newer modes (see <Ref to="vara-and-ardop" />).
+- Today most packet traffic is not keyboard chat but <Ref to="aprs" /> beacons and radio email access through <Ref to="winlink" /> nodes.
+
+<ExamLink groups="T8D G8C E2D" />
+
+<Related to="aprs winlink vara-and-ardop digital-modes-overview error-correction aredn-mesh" />

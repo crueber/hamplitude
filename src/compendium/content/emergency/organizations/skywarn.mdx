@@ -1,0 +1,44 @@
+import { Skywarn_Beam } from '@/visuals/compendium/Skywarn_Beam'
+
+## What it is
+
+**SKYWARN** is the US National Weather Service's volunteer storm-spotter program. Trained spotters report what severe weather is actually doing where they are: hail, damaging wind, tornadoes, flooding. Anyone can be trained, but amateurs are a natural fit because their radios still work when phones and power fail, and because they already know how to run a net. It is run by the weather service, not by an amateur organisation, and unlike RACES it does not need civil-defense certification.
+
+<Facts items={[
+  ['Run by', 'the National Weather Service (a US government agency)'],
+  ['Who', 'trained volunteers; many, but not all, are amateurs'],
+  ['What they report', 'what they see: hail, wind, funnels, flooding, damage'],
+  ['How', 'often a net on a local repeater, relayed to the forecast office'],
+]} />
+
+## Why spotters matter
+
+<Skywarn_Beam />
+
+Radar is the forecaster's main tool, but it has limits. A radar beam travels straight while the Earth curves away beneath it, so far from the radar the beam passes above the lowest part of a storm, the part that reaches the ground. Radar sees precipitation and its motion at the height of the beam, not necessarily the hail or damaging wind at street level. A spotter on the ground supplies **ground truth**: what is really happening, and when. Forecasters combine the two when deciding whether to warn.
+
+## What a good report contains
+
+Say what you saw, where and when, in plain words, without guessing.
+
+| Item | Example |
+|---|---|
+| What | hail, wind damage, funnel cloud, flooding, snow |
+| How big or how bad | hail compared with a coin or ball; whether limbs or whole trees are down |
+| Where | an exact place: nearest road crossing, direction and distance from a known landmark |
+| When | the time you saw it, not the time you reported it |
+
+Report only what you observe yourself. If you did not see a tornado, do not call it one. A clear "hail the size of a quarter, at Main and Fifth, five minutes ago" is far more useful than a dramatic guess.
+
+<Callout kind="warn" title="Spotters stay safe">Report from a sturdy place, not by driving toward a storm. Lightning, hail, flooded roads and tornadoes injure spotters. Take shelter when a storm reaches you, and never climb a tower or mast in a thunderstorm; see <Ref to="lightning-safety" />.</Callout>
+
+## Getting involved
+
+- Take a spotter class from your local National Weather Service forecast office or emergency management agency. Training teaches what to look for and how to report.
+- Ask your local club or ARES group whether there is a weather net on a local repeater, and how it passes reports on.
+- Learn the net discipline: wait to be called, keep reports short and exact, and let net control relay them. See <Ref to="voice-nets" /> and <Ref to="net-control" />.
+- Spotter activity is organised locally, so ask your local group how it works where you live.
+
+<ExamLink groups="T2C" />
+
+<Related to="ares-and-races net-control voice-nets lightning-safety repeaters emcomm-principles" />

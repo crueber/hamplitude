@@ -1,0 +1,48 @@
+import { E9D_ShortWhip } from '@/visuals/extra/E9D_ShortWhip'
+import { E9D_QBandwidth } from '@/visuals/extra/E9D_QBandwidth'
+
+## What it is
+
+Any antenna shorter than its natural resonant length, made to behave as though it were longer. The shrinking is done by adding **inductance** (a loading coil), adding **capacitance** (a top hat), or folding the wire into a helix or meander. It makes antennas fit on a car, a handheld or a small lot. It never makes them as efficient as a full-size antenna.
+
+<Facts items={[
+  ['Radiation resistance', 'falls roughly with the square of the length'],
+  ['Efficiency', 'radiation resistance ÷ (radiation resistance + loss resistance)'],
+  ['Bandwidth', 'narrower: a short antenna has a high Q'],
+  ['Pattern', 'almost the same as the full-size antenna; only efficiency changes'],
+]} />
+
+## Why short means inefficient
+
+An antenna turns power into radio waves through its **radiation resistance**, a fictional resistor that stands in for the power that leaves as waves. Everything else, such as the coil's wire, the ground and the conductors, is **loss resistance**. They sit in series, so the same current flows through both and power splits in proportion:
+
+<Formula label="Efficiency">η = R<sub>rad</sub> ÷ (R<sub>rad</sub> + R<sub>loss</sub>)</Formula>
+
+A short antenna has little radiation resistance. Losses do not shrink with it, so the wasted share grows. Approximate numbers for a short whip over ground, with 5 Ω of coil and ground loss (illustrative):
+
+| Whip height | Radiation resistance | Efficiency |
+|---|---|---|
+| ¼ λ (full size) | 36 Ω | 88% |
+| 0.15 λ | about 9 Ω | about 64% |
+| 0.10 λ | about 4 Ω | about 44% |
+| 0.05 λ | about 1 Ω | about 17% |
+
+<E9D_ShortWhip />
+
+The slider shows the other half of the trade: the coil that cancels the whip's reactance has its own resistance, equal to its reactance divided by its Q. A better coil, with thick wire and a good form, wastes less. A shorter whip needs a bigger coil and loses more.
+
+## Narrow bandwidth
+
+<E9D_QBandwidth />
+
+To add reactance without adding radiation, the antenna ends up with large stored energy compared with the power it radiates: a high Q. High Q gives a narrow bandwidth, so a loaded antenna must be retuned when you move across a band. The loss and the narrowness are two sides of the same fact.
+
+## Making the best of it
+
+- **Spend length where the current is.** Radiation comes from current, and current is greatest near the feed point. Top-loading with a hat and center-loading with a coil let more of the radiator carry current than a coil at the base; see <Ref to="mobile-whips-and-loading" />.
+- **Build a good ground.** On a vertical, ground loss adds to the problem; see <Ref to="radials-and-ground-planes" />.
+- **Know when it matters less.** On the low HF bands the noise from the sky is high enough that a weak signal is limited by noise, not by the antenna, so a small loss hurts receiving less than it hurts transmitting.
+
+<ExamLink groups="E9D T9A" />
+
+<Related to="mobile-whips-and-loading magnetic-loop bandwidth-and-efficiency impedance-and-radiation-resistance resonance-and-q handheld-antennas portable-field-antennas" />

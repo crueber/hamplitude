@@ -1,0 +1,53 @@
+import { FiltersAndFerritesForRfi_Responses } from '@/visuals/compendium/FiltersAndFerritesForRfi_Responses'
+import { FiltersAndFerritesForRfi_Placement } from '@/visuals/compendium/FiltersAndFerritesForRfi_Placement'
+import { RfiPaths } from '@/visuals/general/G4C_RfiPaths'
+
+## What it is
+
+There are two main tools for treating RFI, and each fits a different path. A **filter** sits in the signal path and passes some frequencies while blocking others. A **ferrite choke** sits on a cable and blocks the unwanted common-mode current while leaving the wanted signal alone. Choose by asking where the interference travels: **on the wanted signal** needs a filter, **on the outside of a cable** needs a choke.
+
+<Facts items={[
+  ['Filter', 'frequency-selective, in series with the signal'],
+  ['Ferrite choke', 'adds impedance to common-mode current only'],
+  ['Bypass capacitor', 'shorts RF to ground, passes audio'],
+  ['Placement rule', 'ahead of the stage that is being upset'],
+]} />
+
+## Three filters, three jobs
+
+<FiltersAndFerritesForRfi_Responses />
+
+- **Low-pass** passes everything below a cutoff. At your transmitter's output it passes your HF band and attenuates harmonics above it.
+- **High-pass** passes everything above a cutoff. At a TV's antenna input it passes the TV channels and blocks HF signals below them.
+- **Band-reject** (notch) blocks one narrow band and passes the rest, for example a 2 m signal getting into an FM radio. A length of coax cut as a stub can serve as a cheap one: see <Ref to="stubs-and-matching-sections" />.
+
+The theory is in <Ref to="filters" />. For the receiver's own filters, see <Ref to="radio-filters" />.
+
+## Where each one goes
+
+<FiltersAndFerritesForRfi_Placement />
+
+Harmonics are the transmitter's fault, so the low-pass filter goes **at the transmitter**. Overload is the receiver's weakness, so the filter goes **at the receiver's antenna input**, because filtering your own coax does nothing once your signal is already inside their set. A filter helps most when it is placed ahead of the first active stage, where overload begins. See <Ref to="harmonics-and-spurs" /> and <Ref to="overload-and-intermod" />.
+
+## Ferrite chokes and bypass capacitors
+
+<RfiPaths />
+
+A ferrite core on a cable raises the impedance of any current that flows the same way on all conductors, which is the common-mode current that makes cables act as antennas. Wanted signal currents are equal and opposite, cancel inside the core, and pass untouched. For the full mechanism see <Ref to="common-mode-chokes" />.
+
+- **Pass every conductor together** through the core: both wires of a speaker pair, or the whole power cord, not one wire alone.
+- **Mix matters.** A ferrite works over a certain frequency range. Mix 31 is popular for HF and mix 43 for upper HF and VHF, typically. A core that suits your band does the most.
+- **More turns** through the core generally means more impedance, though stray capacitance limits it at high frequency, so fewer turns can win on VHF.
+- **Clamp-on** cores are convenient for fixed cables. Toroids can take more turns.
+- A **bypass capacitor** of small value, typically in the nanofarad range, across an audio input shorts the RF to ground while the audio passes. A ferrite and a capacitor are often used together.
+
+## Pitfalls
+
+- A low-pass filter at the transmitter must be rated for the power and the frequency, and matched to the line, or it overheats and disturbs the SWR.
+- Ham filters are generally 50 Ω with PL-259 or similar connectors, and TV and cable filters are 75 Ω with F connectors. Do not mix them up.
+- A ferrite does nothing against interference that is on the wanted signal itself. That needs a filter.
+- A choke on the wrong cable, or in the wrong place, does nothing. Treat the cable the interference actually uses.
+
+<ExamLink groups="T7B G4C G6B E7C E4E" />
+
+<Related to="common-mode-chokes filters radio-filters inductors-and-ferrites harmonics-and-spurs overload-and-intermod common-mode-and-ground-loops" />

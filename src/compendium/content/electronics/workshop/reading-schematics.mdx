@@ -1,0 +1,56 @@
+import { SchematicVsPicture } from '@/visuals/technician/T6C_SchematicVsPicture'
+import { SymbolGallery } from '@/visuals/shared/SchematicSymbolGallery'
+import { ReadingSchematics_Conventions } from '@/visuals/compendium/ReadingSchematics_Conventions'
+
+## What it is
+
+A schematic is a map of **connections**, not of the physical parts. Symbols stand for components and lines for the wires that join them. Once you can read one, you can build from a published design, repair a radio from its manual, or work out how a circuit behaves without ever seeing it.
+
+<Facts items={[
+  ['Shows', 'which parts connect to which'],
+  ['Does not show', 'size, position or colour of parts'],
+  ['Part names', 'a letter for the type plus a number: R1, C3, Q2'],
+  ['Convention', 'inputs on the left, outputs on the right, power at the top, ground at the bottom'],
+]} />
+
+## Connections, not appearance
+
+<SchematicVsPicture />
+
+Draw the same circuit as a photograph and as a schematic and only the connections carry over. A schematic is laid out for readability, so a wire that looks long on paper may be a short link on the board, and parts that sit side by side on the page may be far apart in the box.
+
+## Reading one
+
+<ReadingSchematics_Conventions />
+
+Start at the source and follow the path of current, one part at a time. At each component, ask what it does to the signal or the current. Where a wire splits into branches, the dot shows that they are joined.
+
+Each part carries a **reference designator** and often a value. Letters follow convention:
+
+| Letter | Part | Letter | Part |
+|---|---|---|---|
+| R | resistor | Q | transistor |
+| C | capacitor | U | integrated circuit |
+| L | inductor | T | transformer |
+| D | diode, LED | S | switch |
+| F | fuse | Y | crystal |
+
+Values may be written with the prefix in place of the decimal point to avoid a lost dot: **4k7** is 4.7 kΩ and **2n2** is 2.2 nF.
+
+## The symbols
+
+<SymbolGallery group="basic" />
+
+<SymbolGallery group="semi" />
+
+Symbols vary a little between countries and eras. The US style used here draws the resistor as a zigzag; the international style uses a box. Some diagrams draw ground as the three-line symbol, others as a bar with slanted hatch lines. The idea is the same.
+
+## In practice
+
+- Many schematics repeat the power connections by **labels** (+12 V, GND) rather than drawing every wire, so a symbol meaning "ground" appears all over the page.
+- A block diagram shows stages and signal flow; a schematic shows the components inside each stage. Read the block diagram first to know where you are.
+- Before building, check that every pin is accounted for. Symbols for transistors and ICs show which lead is which.
+
+<ExamLink groups="T6C G7A" />
+
+<Related to="construction-methods kits-and-homebrew troubleshooting series-and-parallel semiconductor-basics multimeters" />

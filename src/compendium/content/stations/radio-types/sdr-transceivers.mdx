@@ -1,0 +1,46 @@
+import { SdrTransceivers_Panadapter } from '@/visuals/compendium/SdrTransceivers_Panadapter'
+import { SdrChain } from '@/visuals/general/G7C_SdrChain'
+
+## What it is
+
+A software-defined radio does its filtering, demodulating and modulating in digital processing instead of in analog circuits. The antenna signal is converted to numbers and software turns them into audio; on transmit, software builds the signal. An SDR transceiver is a full station radio built this way, and it can show you a whole slice of a band at once.
+
+<Facts items={[
+  ['Core idea', 'convert early, do the radio in DSP'],
+  ['Signature feature', 'spectrum and waterfall display'],
+  ['Forms', 'stand-alone radio, or a box run from a computer'],
+  ['Updates', 'new features often arrive by software update'],
+]} />
+
+## How it works
+
+<SdrChain />
+
+The receive path mixes the signal down to two outputs a quarter-cycle apart (I and Q), samples them, and lets software handle everything else; some designs sample the antenna signal directly. The mechanism is in <Ref to="direct-conversion-and-sdr" />, and the numbers behind it in <Ref to="adc-and-dac" /> and <Ref to="sampling-and-nyquist" />.
+
+## What it gives you
+
+<SdrTransceivers_Panadapter />
+
+The display shows every signal in the slice at once. You see an open band, a rare station or a pileup, and tune by clicking on it. Filter width, shape and notches are settings rather than hardware, so they change instantly. Digital processing also supports noise reduction and, in some designs, several receivers at once.
+
+## Stand-alone or computer-driven
+
+| | Stand-alone | Computer-driven |
+|---|---|---|
+| Controls | Front panel and screen | Mouse, keyboard, maybe a control surface |
+| Dependence | None | Needs a working computer and software |
+| Flexibility | Fixed feature set | Very flexible and extensible |
+| Remote operation | Possible with extras | Natural, since software already talks over a network |
+
+## What to look for
+
+- **Dynamic range.** Strong signals across the whole slice reach the converter at the same time. Front-end filtering, converter quality and design choices decide how well it copes; see <Ref to="receiver-performance" />.
+- **Transmit cleanliness.** The signal is only as clean as the converters and amplifier. Check how it sounds and what it radiates.
+- **Latency.** Digital processing adds a small delay, noticeable in CW break-in or on a slow computer.
+- **Interfaces.** CAT, audio and network access; see <Ref to="cat-control" />.
+- **Software support.** For a computer-driven radio, the program is the front panel.
+
+<ExamLink groups="G7C E4C" />
+
+<Related to="direct-conversion-and-sdr dsp-basics sdr-listening hf-transceivers remote-operation receiver-performance" />

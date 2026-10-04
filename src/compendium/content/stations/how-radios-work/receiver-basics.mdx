@@ -1,0 +1,47 @@
+import { ReceiverBasics_Chain } from '@/visuals/compendium/ReceiverBasics_Chain'
+import { SensSel } from '@/visuals/technician/T7A_SensSel'
+
+## What it is
+
+A receiver has three jobs: **pick** the one signal you want out of thousands, **boost** it until it is big enough to use, and **turn it back into sound** (or data). Every receiver design, from a crystal set to a software-defined radio, is a different way of doing those three things.
+
+<Facts items={[
+  ['Weak signal', '0.5 µV into 50 Ω ≈ −113 dBm'],
+  ['Speaker needs', 'around a watt (+30 dBm)'],
+  ['Total gain', 'well over 100 dB, typically'],
+  ]} />
+
+## Antenna to speaker
+
+<ReceiverBasics_Chain />
+
+1. **Antenna.** It delivers every signal on its frequency range at once, microvolts or less, in a sea of noise.
+2. **RF stage.** A band-pass filter rejects signals far from the band you are tuned to; an optional amplifier adds a little gain ahead of the noisiest later stages.
+3. **Mixer.** Shifts the wanted signal to a fixed intermediate frequency (IF), so the hard filtering can be done at one frequency. See <Ref to="superheterodyne" /> and <Ref to="mixers" />.
+4. **IF filter.** The narrow filter that does most of the selecting. Its width sets how much of the band you hear; see <Ref to="radio-filters" />.
+5. **Detector.** Recovers the message from the radio signal. The kind depends on the mode.
+6. **Audio amplifier.** Raises the audio to speaker or headphone level.
+
+An **AGC** circuit watches the signal level at the end of the IF chain and turns the gain down for strong signals, so loudness stays steady (see <Ref to="agc-and-noise-reduction" />).
+
+## The detector depends on the mode
+
+| Mode | Detector | What it does |
+|---|---|---|
+| AM | envelope detector | follows the rising and falling amplitude of the carrier |
+| SSB, CW, digital audio | product detector | mixes the signal with a locally made carrier (the BFO), leaving the audio as the difference |
+| FM | discriminator or quadrature detector | turns frequency changes into voltage changes |
+
+SSB has no carrier of its own to follow, so the receiver supplies one. If that carrier is a little off, voices sound too high or too low; this is why SSB needs accurate tuning (see <Ref to="rit-xit-and-split" />).
+
+## Why all the stages?
+
+Gain alone does not make a receiver: amplifying everything amplifies the strong neighbours too, and the noise. The art is amplifying **after** enough filtering, and filtering where it is easiest. A tuned filter narrow enough to pass one SSB signal is hard to build at 14 MHz, and harder still to retune across a band, which is the reason most receivers shift the signal to a fixed frequency first.
+
+<SensSel />
+
+The quality of that job is described by **sensitivity** (hearing weak signals), **selectivity** (separating close ones) and **dynamic range** (coping with strong ones): see <Ref to="receiver-performance" />.
+
+<ExamLink groups="T7A T4B G7C" />
+
+<Related to="superheterodyne direct-conversion-and-sdr receiver-performance radio-filters detectors-and-demodulators agc-and-noise-reduction" />

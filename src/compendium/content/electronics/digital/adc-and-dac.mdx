@@ -1,0 +1,53 @@
+import { AdcAndDac_Code } from '@/visuals/compendium/AdcAndDac_Code'
+import { Adc } from '@/visuals/extra/E8A_Adc'
+import { SdrChain } from '@/visuals/extra/E7F_SdrChain'
+
+## What it is
+
+An **analog-to-digital converter (ADC)** measures a voltage many times a second and reports each measurement as a binary number. A **digital-to-analog converter (DAC)** does the reverse, turning numbers back into a voltage. They are the doorway between the analog world of antennas, microphones and speakers and the digital world of processors and software.
+
+<Facts items={[
+  ['Levels', '2ⁿ for an n-bit converter'],
+  ['Step size (1 LSB)', 'reference voltage ÷ 2ⁿ'],
+  ['Ideal signal-to-noise', 'about 6.02 × n + 1.76 dB (full-scale sine)'],
+  ['Sample rate', 'must exceed twice the highest signal frequency'],
+]} />
+
+## Two choices: how often and how finely
+
+<AdcAndDac_Code />
+
+An ADC makes two independent decisions. **How often** to measure is the sample rate: too slow and fast signals are misread as slower ones (aliasing, covered in <Ref to="sampling-and-nyquist" />). **How finely** to measure is the resolution in bits. An n-bit converter can only report one of 2ⁿ values, so every sample is rounded to one of those steps, and the rounding error is heard or seen as a low level of noise.
+
+<Adc />
+
+Each extra bit halves the step and adds about 6 dB of ideal signal-to-noise ratio:
+
+| Bits | Levels | Step at 3.3 V reference | Ideal SNR |
+|---|---|---|---|
+| 8 | 256 | 12.9 mV | 49.9 dB |
+| 10 | 1,024 | 3.22 mV | 62.0 dB |
+| 12 | 4,096 | 0.806 mV | 74.0 dB |
+| 16 | 65,536 | 0.050 mV | 98.1 dB |
+
+Real converters fall short of the ideal figure through their own noise and distortion, so datasheets quote an "effective" number of bits.
+
+## Converters in ham gear
+
+- **Sound cards and codecs** turn the receiver's audio into numbers for digital modes, and numbers back into audio tones to transmit, typically at 44.1 or 48 thousand samples per second.
+- **SDR receivers** put the ADC early in the signal path, in some designs right at the antenna end, so the radio becomes software:
+
+<SdrChain />
+
+- **Microcontrollers** use a small built-in ADC to read a battery voltage, a rotator's position potentiometer, or the forward and reflected voltages of an <Ref to="swr-and-power-meters">SWR meter</Ref>. See <Ref to="microcontrollers" />.
+- **DDS signal sources** use a DAC to draw a sine wave from a table of numbers; see <Ref to="counters-and-signal-generators" />.
+
+## The DAC side
+
+A DAC's output is a staircase, one step per sample. A **low-pass filter** after it (the reconstruction filter) smooths the stairs into a clean wave and removes the sampling products. Common designs are a resistor ladder (R-2R), where each bit switches a binary-weighted current, and a fast **PWM** (pulse-width modulated) output followed by a filter, where the average voltage follows the pulse width.
+
+<Callout kind="tip" title="Anti-alias in, reconstruct out">Put a low-pass filter before an ADC so nothing above half the sample rate gets in to alias, and one after a DAC to smooth the output. Both are analog parts of an otherwise digital chain.</Callout>
+
+<ExamLink groups="E8A E7F" />
+
+<Related to="sampling-and-nyquist dsp-basics microcontrollers direct-conversion-and-sdr counters-and-signal-generators" />

@@ -1,0 +1,46 @@
+import { BandwidthAndEfficiency_SwrCurve } from '@/visuals/compendium/BandwidthAndEfficiency_SwrCurve'
+import { E9A_Efficiency } from '@/visuals/extra/E9A_Efficiency'
+
+## What it is
+
+**Bandwidth** is the range of frequencies over which an antenna does its job acceptably. The usual yardstick is SWR below a chosen limit, often 2:1. **Efficiency** is the fraction of the power delivered to the antenna that is actually radiated rather than turned into heat. They are separate properties, and small antennas tend to be poor at both.
+
+<Facts items={[
+  ['SWR bandwidth', 'the frequency span where SWR stays under a limit (a choice, not a law)'],
+  ['Q', 'roughly centre frequency ÷ bandwidth: high Q means narrow'],
+  ['Efficiency', 'R(rad) ÷ (R(rad) + R(loss))'],
+  ['Half the power lost', '50% efficient, which is 3 dB down'],
+]} />
+
+## Bandwidth
+
+<BandwidthAndEfficiency_SwrCurve />
+
+A resonant antenna has one frequency where its reactance is zero, and the SWR climbs on either side as the reactance grows (see <Ref to="impedance-and-radiation-resistance" />). How wide the usable stretch is depends on **Q**. A low-Q antenna, such as one made of thick conductors or a <Ref to="folded-dipole" />, covers more spectrum than a high-Q one, such as a short loaded whip or a small <Ref to="magnetic-loop" />.
+
+Compare with what the band demands: a US 40 m band is about 4% wide, 80 m about 13%, 2 m under 3%. A simple dipole may cover 40 m or 2 m but only part of 80 m; at the band edge you retune, or add a <Ref to="antenna-tuners">tuner</Ref>.
+
+A narrow bandwidth is not automatically bad. It also filters out strong signals far from your frequency.
+
+## Efficiency
+
+<E9A_Efficiency />
+
+The antenna's feed-point resistance is the sum of two parts, the radiation resistance and the loss resistance. The same current flows through both, so the power splits in the same ratio as the resistances. With 12 Ω of radiation resistance and 8 Ω of loss, efficiency is 12 ÷ 20 = 60%: 40% of your power heats the antenna and ground, a loss of about 2.2 dB.
+
+Typical places the losses hide:
+
+- **Ground and radials** under a vertical: more radials, lower loss; see <Ref to="radials-and-ground-planes" />.
+- **Loading coils and traps**, which add resistance in the current path.
+- **Thin or poor conductors**, and corroded joints.
+- **Lossy surroundings** such as nearby buildings and wet foliage.
+
+<Callout kind="warn" title="Low SWR does not mean efficient">A dummy load has a perfect SWR and radiates nothing. SWR says how well the antenna matches the line, not how much of the power escapes as radio waves. Feed line loss is a separate loss on top; see <Ref to="feed-line-loss" />.</Callout>
+
+## The trade-off
+
+Make an antenna much smaller than a wavelength and its radiation resistance falls while its loss resistance does not, so efficiency drops. At the same time its Q rises, so the bandwidth narrows. There is no free lunch: a small antenna can be efficient or broadband, but is rarely both. See <Ref to="loaded-and-short-antennas" /> and <Ref to="mobile-whips-and-loading" />.
+
+<ExamLink groups="E9A E9D G9C" />
+
+<Related to="impedance-and-radiation-resistance gain-and-directivity resonance-and-q loaded-and-short-antennas folded-dipole swr-and-reflections" />

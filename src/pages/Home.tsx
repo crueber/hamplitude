@@ -21,15 +21,26 @@ export function Home() {
             </p>
             <div className="actions">
               <a className="btn btn-primary btn-lg" style={{ ['--lic' as string]: 'var(--technician)' }} href="#/technician">Start with Technician</a>
-              <a className="btn btn-lg" href="#classes">Pick a class</a>
+              <button className="btn btn-lg" onClick={() => document.getElementById('classes')?.scrollIntoView({ behavior: 'smooth' })}>Pick a license</button>
             </div>
           </div>
           <div className="hero-art"><HeroArt /></div>
         </div>
       </section>
 
-      <div className="wrap" id="classes">
-        <h2 className="section-title">Choose your license</h2>
+      <div className="wrap">
+        <Link to="/compendium" className="cmp-promo" data-license="compendium">
+          <div>
+            <div className="eyebrow">Compendium</div>
+            <h3>Beyond the exam: everything an operator should understand</h3>
+            <p>Concept articles on antennas, radios, Morse and digital modes, propagation, electronics and operating, with the same visual style. No questions, just the ideas.</p>
+          </div>
+          <span className="btn btn-primary">Open the compendium →</span>
+        </Link>
+      </div>
+
+      <div className="wrap">
+        <h2 className="section-title" id="classes">Study for your license</h2>
         <div className="lic-grid">
           {LICENSES.map((l) => {
             const p = POOLS[l]

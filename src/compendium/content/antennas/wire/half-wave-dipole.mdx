@@ -1,0 +1,60 @@
+import { HalfWaveDipole_Standing } from '@/visuals/compendium/HalfWaveDipole_Standing'
+import { DipoleDonutPattern } from '@/visuals/shared/DipoleDonutPattern'
+import { G9B_DipoleLength } from '@/visuals/general/G9B_DipoleLength'
+import { G9B_DipoleHeight } from '@/visuals/general/G9B_DipoleHeight'
+
+## What it is
+
+Two equal lengths of wire, a quarter-wavelength each, fed at the centre. Together they span half a wavelength, hence the name. It is the simplest efficient antenna, and the yardstick other antennas are measured against.
+
+<Facts items={[
+  ['Length', '468 ÷ f(MHz) feet'],
+  ['Feed-point impedance', 'about 73 Ω in free space'],
+  ['Gain', '2.15 dBi (0 dBd, by definition)'],
+  ['Polarization', 'same as the wire: horizontal wire, horizontal polarization'],
+]} />
+
+## How it works
+
+<HalfWaveDipole_Standing />
+
+A wave travels to the end of the wire and reflects, setting up a standing wave. At the ends the current has nowhere to go, so it is zero and the voltage is highest. In the middle it is the other way round: high current, low voltage.
+
+That is why the centre is the natural place to feed it: it presents a low impedance, close enough to 50 Ω coax. Feeding at an end instead means high voltage and low current, a very high impedance; see <Ref to="end-fed-half-wave" />.
+
+## Length
+
+<G9B_DipoleLength />
+
+Radio waves travel slightly slower along a wire than through free space, and the wire's ends add a little capacitance. Both effects make the antenna electrically longer than it looks, so the wire is cut about 5% short of a true half wavelength. That is the 468 in the formula, rather than 492.
+
+| Band | Frequency | Total length |
+|---|---|---|
+| 40 m | 7.15 MHz | 65.5 ft (about 20 m) |
+| 20 m | 14.2 MHz | 33.0 ft (about 10 m) |
+| 2 m | 146 MHz | 38.5 in |
+
+<Callout kind="tip" title="Trim in steps">Cut a little long, then shorten both legs equally while watching the SWR dip. Cutting makes the resonant frequency go up; you can't put wire back.</Callout>
+
+## Pattern
+
+<DipoleDonutPattern />
+
+The antenna radiates best at right angles to the wire and not at all along it, like a donut with the wire through the hole. Seen from above, that is a figure-8.
+
+Height above ground matters as much as the antenna itself:
+
+<G9B_DipoleHeight />
+
+Low (well under a quarter wavelength) it sends most energy upwards, good for contacts within a few hundred miles. Raised toward a half wavelength or more, more energy goes out at low angles, better for distant stations.
+
+## In practice
+
+- Feed with coax through a 1:1 balun or <Ref to="common-mode-chokes">common-mode choke</Ref>, so RF stays off the outside of the cable.
+- It works as a flat line, or drooped into an <Ref to="inverted-v" /> if you have one tall support.
+- It is naturally narrow-band: a few percent of the frequency. Multiband versions use <Ref to="multiband-dipoles">fan or trap designs</Ref>.
+- Nearby trees, metal and buildings pull the resonant frequency down, so a real antenna is often a bit shorter than the formula says.
+
+<ExamLink groups="T9A G9B" />
+
+<Related to="inverted-v folded-dipole off-center-fed-dipole baluns-and-ununs radiation-patterns coaxial-cable" />

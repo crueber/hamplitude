@@ -1,0 +1,56 @@
+import { Mosfet } from '@/visuals/general/G6A_Mosfet'
+import { FetGate } from '@/visuals/extra/E6A_FetGate'
+import { GateProtect } from '@/visuals/extra/E6A_GateProtect'
+
+## What it is
+
+A field-effect transistor (FET) controls the current through a **channel** with the electric field from a **gate**. Its three terminals are the **source** (where carriers enter), the **drain** (where they leave) and the gate. Because the gate is controlled by *voltage* and draws almost no steady current, a FET has a very high DC input impedance, far higher than a <Ref to="bipolar-transistors">bipolar transistor</Ref>.
+
+<Facts items={[
+  ['Controlled by', 'gate voltage, not gate current'],
+  ['Input impedance (DC)', 'very high'],
+  ['Families', 'JFET and MOSFET; N-channel and P-channel'],
+  ['MOSFET on-resistance', 'milliohms to ohms (typical)'],
+]} />
+
+## How it works
+
+Picture a strip of N-type semiconductor from source to drain: current flows through it like water through a hose. The gate squeezes or opens that hose.
+
+- **JFET:** the gate is a reverse-biased PN junction beside the channel. More reverse voltage widens the <Ref to="semiconductor-basics">depletion region</Ref>, which pinches the channel and cuts the current. A JFET conducts with zero gate voltage and is turned *down* by the gate.
+- **MOSFET:** the gate is a metal (or polysilicon) plate separated from the channel by a thin layer of insulating oxide, so almost no steady gate current flows. The gate acts like one plate of a capacitor.
+
+<Mosfet />
+
+MOSFETs come in two modes:
+
+- **Enhancement mode:** no channel at zero gate voltage, so it is off. A gate voltage beyond a threshold pulls charge carriers in and forms the channel.
+- **Depletion mode:** a channel exists at zero gate voltage, so it conducts until the gate pushes the carriers out. This is the case where a FET passes current with no gate voltage applied.
+
+<FetGate />
+
+On the symbol, an arrow pointing toward the channel marks an N-channel device; pointing away marks P-channel. A **dual-gate** MOSFET has a second gate, handy for gain control and mixing.
+
+## FET or bipolar?
+
+| | Bipolar | FET |
+|---|---|---|
+| Controlled by | base current | gate voltage |
+| Input impedance | moderate | very high |
+| Gain measured by | current gain (β) | transconductance |
+| Strengths | simple, cheap, high gain | low noise, easy to drive, efficient switch |
+
+## In practice
+
+- **Switching:** a fully-on MOSFET looks like a small resistor, so it wastes little power. At 10 A through 10 mΩ the loss is I²R = 10² × 0.01 = 1 W. That makes MOSFETs the standard choice for switching power supplies, motor drivers and transmit/receive switching.
+- **RF:** JFETs and GaAs FETs make low-noise preamplifiers, dual-gate MOSFETs serve in older receivers' mixers and gain-controlled stages, and RF power MOSFETs build the output stages of many modern transmitters and solid-state amplifiers.
+- **Static damage:** the oxide under the gate is extremely thin, and a spark of static electricity can puncture it permanently. Touch grounded metal (or wear a wrist strap) before handling MOSFETs, and keep them in conductive foam until installed.
+- **Built-in protection:** many devices include a Zener across gate and source to clamp spikes.
+
+<GateProtect />
+
+- **Never leave the gate floating.** A gate with nothing attached can drift and turn the device partly on; a resistor to source gives it a defined state.
+
+<ExamLink groups="T6B G6A E6A" />
+
+<Related to="semiconductor-basics bipolar-transistors integrated-circuits amplifiers power-supplies diodes" />

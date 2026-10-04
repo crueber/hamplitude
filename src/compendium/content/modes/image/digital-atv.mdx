@@ -1,0 +1,42 @@
+import { DigitalAtv_Cliff } from '@/visuals/compendium/DigitalAtv_Cliff'
+import { E2B_DigitalTv } from '@/visuals/extra/E2B_DigitalTv'
+
+## What it is
+
+Digital amateur television (DATV) sends video as data, using the same **DVB** (Digital Video Broadcasting) standards as digital broadcast and satellite TV. Video is compressed first, so a good picture needs much less bandwidth than analog fast-scan, and error correction repairs damage on the way.
+
+<Facts items={[
+  ['Standards', 'DVB-T and DVB-S are both used'],
+  ['Bandwidth', 'usually far below analog TV; depends on the settings'],
+  ['Where', 'typically 70 cm and higher bands'],
+  ['Failure style', 'fine, then suddenly blocky or gone'],
+]} />
+
+## From camera to RF
+
+1. **Compression** removes the redundancy in the video and sound. Modern coding makes a watchable picture possible in a small fraction of the data that raw video needs.
+2. **Forward error correction (FEC)** adds extra bits so the receiver can repair errors. A coding rate of 3/4 means that three out of every four bits are data, and the rest, 25%, are for correction.
+3. **Modulation** puts the bits onto the carrier. DVB-T amateur TV uses **QPSK or QAM**; denser patterns carry more bits per symbol but need a cleaner signal. See <Ref to="digital-modulation" />.
+
+<E2B_DigitalTv />
+
+The receiver does it in reverse: demodulate, correct errors, decompress, display. Bandwidth, symbol rate and the data rate you can get from them are the subject of <Ref to="bandwidth-and-data-rate" />.
+
+## Behaviour on the air
+
+Analog picture quality falls slowly as the signal gets weaker: snow builds up but you can still see a picture. Digital error correction hides noise completely up to a point, then fails at once.
+
+<DigitalAtv_Cliff />
+
+This is the **cliff effect**. When the picture breaks into blocks or freezes, a modest improvement in signal, such as a better antenna, a shorter feed line, or a lower-rate setting, may bring it back at full quality.
+
+## In practice
+
+- Setting a lower symbol rate or a more robust coding rate narrows the signal and makes it work at lower strength, at the expense of picture quality or detail.
+- Compression and error correction add a small delay, so a DATV picture lags a moment behind real life.
+- Like analog ATV, it is line-of-sight on the UHF and microwave bands, so antenna height and aim matter; see <Ref to="line-of-sight" />.
+- Check the band plan for where wide-signal TV belongs; see <Ref to="band-plans" />.
+
+<ExamLink groups="E2B E8C" />
+
+<Related to="fast-scan-tv slow-scan-tv digital-modulation bandwidth-and-data-rate error-correction line-of-sight" />

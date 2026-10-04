@@ -1,0 +1,48 @@
+import { MagneticLoop_Model } from '@/visuals/compendium/MagneticLoop_Model'
+import { G9D_LoopPattern } from '@/visuals/general/G9D_LoopPattern'
+
+## What it is
+
+A single turn of thick tube or coax, much smaller than a wavelength (typically a circumference of about 1/10 to 1/4 wavelength), tuned to resonance by a variable capacitor. A small second loop couples it to the radio. It fits where no dipole will, indoors, on a balcony or in a backpack, but it pays for the size with efficiency and bandwidth.
+
+<Facts items={[
+  ['Size', 'circumference under about ¼ λ; a loop about 1 m across is typical for the upper HF bands'],
+  ['Q', 'hundreds to over a thousand, which is very high'],
+  ['Bandwidth', 'only a few kHz to a few tens of kHz on HF: retune for each frequency change'],
+  ['Efficiency', 'a few percent or less on the lowest bands, good on the highest'],
+  ['Capacitor voltage', 'thousands of volts at ordinary power'],
+]} />
+
+## How it works
+
+The loop and its capacitor form a parallel resonant circuit, like a coil and capacitor in a filter. Current circulates round the loop, and it is that current that radiates. Seen from far away the loop makes a figure-eight, with its strongest signal in the plane of the loop and nulls broadside to it.
+
+<G9D_LoopPattern />
+
+A small loop has a tiny radiation resistance, because it goes up with the fourth power of its size: halve the diameter and it falls by 16 times. The wire's own resistance is not tiny, so efficiency is a competition between two very small numbers.
+
+## Size, band and efficiency
+
+<MagneticLoop_Model />
+
+Try the model. Make the loop bigger or the frequency higher and radiation resistance climbs quickly; shrink it or drop to a lower band and efficiency collapses. Even a hundredth of an ohm of extra loss, from thin tubing, a poor capacitor or an untidy joint, can cost a decibel or more on the low bands. So loops are built from fat copper or aluminum tube with short, solid, well-made connections.
+
+The other side of the same coin is **Q**. Radiation and loss resistance are both small, so the circuit resonates sharply. That gives:
+
+- **Narrow bandwidth.** A loop is tuned for the signal you are on; if you move a few kHz you retune. Motorized tuning capacitors are common.
+- **Selectivity.** The loop rejects out-of-band energy, and a small loop is often quieter on receive in a noisy house, because it is less sensitive to nearby electrical noise.
+
+## Safety: high voltage
+
+<Callout kind="warn" title="Thousands of volts on the capacitor">The tuning capacitor carries very high RF voltage, the model above shows about 8 kV peak for a 1 m loop on 20 m at 100 W. Keep people and pets away, never touch the loop or capacitor while transmitting, use a capacitor rated for the voltage, and run lower power if you are unsure. Strong fields close to a small loop also matter for exposure; see <Ref to="rf-exposure" />.</Callout>
+
+## In practice
+
+- **Tuning.** Tune for the lowest SWR with the radio on low power; a loop that is off resonance by a few kHz can look badly mismatched.
+- **Location.** Keep it clear of large metal, wiring and people, which detune it and add loss.
+- **Polarization.** A vertical loop is vertically polarized; one laid flat is horizontally polarized.
+- **Receive-only versions** are described in <Ref to="receive-loops-and-active-antennas" />.
+
+<ExamLink groups="G9D E9H" />
+
+<Related to="loaded-and-short-antennas resonance-and-q bandwidth-and-efficiency full-wave-loops receive-loops-and-active-antennas stealth-antennas rf-exposure" />

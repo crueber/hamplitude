@@ -1,0 +1,52 @@
+import { Horizon } from '@/visuals/technician/T3C_Horizon'
+import { LineOfSight_Path } from '@/visuals/compendium/LineOfSight_Path'
+
+## What it is
+
+Above about 30 MHz, signals mostly travel in **straight lines**. Two stations can talk when their antennas can effectively "see" each other, with a little help from the atmosphere that carries the path somewhat past the horizon you can see. This is the normal way VHF, UHF and microwave signals work, and it is why antenna height matters more than power.
+
+<Facts items={[
+  ['Radio horizon', 'about 1.41 × √height (ft) miles, per antenna'],
+  ['Between two antennas', '1.41 × (√h₁ + √h₂) miles'],
+  ['Metric', 'about 4.12 × √height (m) km'],
+  ['Compared with the visual horizon', 'about 15% farther'],
+]} />
+
+## The radio horizon
+
+<Horizon />
+
+The Earth curves away beneath a straight line, so an antenna only sees as far as the ground allows: the geometric horizon is about 1.22 × √h miles with h in feet. Radio goes a bit further because the air thins with height, which bends a wave slightly downward and lets it follow the curve. The usual allowance is to pretend the Earth is one third bigger (4/3 of its radius), which turns 1.22 into **1.41**.
+
+<Formula label="Radio horizon of one antenna">d (miles) = 1.41 × √h (feet)</Formula>
+
+The square root means height pays off slowly: four times the height only doubles the range.
+
+| Antenna height | Radio horizon |
+|---|---|
+| 6 ft (a handheld at head height) | about 3.5 miles |
+| 30 ft | about 7.7 miles |
+| 100 ft | about 14 miles |
+| 500 ft | about 32 miles |
+| 1,000 ft | about 45 miles |
+| 10,000 ft (an aircraft) | about 140 miles |
+
+## Two antennas
+
+<LineOfSight_Path />
+
+Each antenna has its own horizon, and the two stations can connect when those horizons meet or overlap. The maximum distance between them is the **sum of the two**: a station at 50 ft and one at 200 ft reach about 1.41 × (7.1 + 14.1) = 30 miles. Try the sliders: each extra foot added to the lower antenna gains more distance than a foot added to the higher one.
+
+These distances are the optimistic limit. They assume a smooth Earth; hills, buildings and trees cut them short, and they ignore signal strength: a path can be clear yet too weak to copy.
+
+## In practice
+
+- **Height beats power.** Doubling antenna height extends the horizon by about 41%, while doubling power buys only 3 dB and cannot help a blocked path. Repeaters sit on towers and mountaintops for this reason.
+- **Clear the path.** Obstacles near the line, not just on it, weaken the signal. Practical links try to keep a zone around the line clear, not merely the line itself.
+- **Short waves cast sharper shadows.** UHF and microwaves are blocked and absorbed by walls, hills and foliage more than VHF, while longer waves bend around obstacles more readily. See <Ref to="frequency-and-wavelength" />.
+- **Taller means more cable.** A higher antenna gains range but needs a longer feed line, which has loss; see <Ref to="feed-line-loss" />.
+- **Beyond the horizon happens.** Weather, the ionosphere and even meteor trails sometimes carry VHF signals far past line of sight; see <Ref to="tropospheric-propagation" /> and <Ref to="sporadic-e" />.
+
+<ExamLink groups="T3C E3C" />
+
+<Related to="tropospheric-propagation sporadic-e ground-wave frequency-and-wavelength feed-line-loss towers-and-masts" />

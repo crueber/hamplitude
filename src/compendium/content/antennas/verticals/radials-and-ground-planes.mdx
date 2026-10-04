@@ -1,0 +1,43 @@
+import { RadialsAndGroundPlanes_Return } from '@/visuals/compendium/RadialsAndGroundPlanes_Return'
+import { RadialsAndGroundPlanes_Loss } from '@/visuals/compendium/RadialsAndGroundPlanes_Loss'
+import { G9B_GroundPlane } from '@/visuals/general/G9B_GroundPlane'
+
+## What it is
+
+Radials are wires laid out from the base of a vertical. They act as the antenna's other half, carrying the return current back to the feed point so it does not have to travel through the soil. Without them a <Ref to="quarter-wave-vertical">quarter-wave vertical</Ref> cannot work properly.
+
+## Why a vertical needs them
+
+<RadialsAndGroundPlanes_Return />
+
+Current that flows up the element has to return to the transmitter. Ordinary soil is a poor conductor, so on its own it behaves like a resistor in series with the antenna. Power that goes into that resistance is turned into heat instead of radio waves.
+
+<RadialsAndGroundPlanes_Loss />
+
+The antenna's radiation resistance is only about 36 Ω, so even 10 Ω of ground loss wastes more than a fifth of your power (36 ÷ 46 = 78% efficient). The goal of a ground system is to make the loss resistance a small fraction of 36 Ω.
+
+## Two kinds of ground system
+
+| | Ground-mounted | Elevated |
+|---|---|---|
+| Layout | Many radials on or just under the soil | A few radials, a quarter-wave long, some height above ground |
+| How many | Dozens are common; each extra one helps less | Typically 2 to 4 per band |
+| Why | Spreads the return current over a large area to cut soil loss | The radials are the entire counterpoise, so soil matters much less |
+| Trade-off | Lots of wire; tuned length matters little | One set of radials per band; supports needed |
+
+Gains from extra ground-mounted radials flatten out: going from a handful to a few dozen helps a lot, going from dozens to hundreds helps little. Soil quality matters too. Seawater is an excellent ground and poor dry soil is a bad one.
+
+<G9B_GroundPlane />
+
+Elevated radials also set the feed impedance. Flat they leave it near 36 Ω, and sloping them downward raises it toward 50 Ω, a better match for coax. Neither the exact number of radials nor the exact angle is critical; plan on adding wire until the ground loss stops mattering.
+
+## In practice
+
+- On VHF and UHF a handful of short rods is enough: they are only inches long, and they form a good ground plane.
+- On a car, the metal body is the ground plane; see <Ref to="mobile-whips-and-loading" />.
+- Radials lying on the grass are a trip and mower hazard: bury them, pin them down or mark them.
+- Radials are different from a safety ground. A radial system does not protect against lightning; see <Ref to="lightning-and-grounding" />.
+
+<ExamLink groups="G9B E9C" />
+
+<Related to="quarter-wave-vertical ground-and-height bandwidth-and-efficiency impedance-and-radiation-resistance mobile-whips-and-loading hf-multiband-verticals" />

@@ -1,0 +1,42 @@
+import { PskShaping as E8C_PskShaping } from '@/visuals/extra/E8C_PskShaping'
+import { E2E_Varicode } from '@/visuals/extra/E2E_Varicode'
+import { Keying as T8D_Keying } from '@/visuals/technician/T8D_Keying'
+
+## What it is
+
+PSK31 is a keyboard-to-keyboard chat mode: you type, the other operator sees it appear almost as you type it. It sends text on a single, very narrow signal, so it works well with low power and simple antennas, and many conversations fit in a tiny slice of a band. The name means **P**hase **S**hift **K**eying at about **31** baud.
+
+<Facts items={[
+  ['Symbol rate', 'about 31.25 baud'],
+  ['Bandwidth', 'about 31 Hz'],
+  ['Keying', 'phase shift (BPSK; QPSK31 adds error correction)'],
+  ['Character code', 'Varicode, variable length'],
+  ['Error correction', 'none in the basic BPSK31 mode'],
+]} />
+
+## How it works
+
+<T8D_Keying />
+
+CW switches a carrier on and off. PSK31 leaves the tone on and flips its **phase**: a reversal of phase is one value of a bit, no reversal is the other. A sharp reversal would splatter energy across the band, so PSK31 fades the amplitude smoothly down to zero at each reversal and back up.
+
+<E8C_PskShaping />
+
+That smooth shaping is why the signal stays about 31 Hz wide. It also means a clean transmitter matters: an overdriven or distorted PSK31 signal grows extra traces on the waterfall and wastes its narrow-band advantage.
+
+## Varicode
+
+<E2E_Varicode />
+
+Instead of giving every character the same number of bits, Varicode gives **common letters short codes** and rare ones long codes. Lower-case text therefore goes faster than text full of capitals, digits and symbols, because those need longer bit sequences. Capitals are not sent with more power, only with more bits.
+
+## In practice
+
+- The signal is a thin line on the <Ref to="digital-mode-software">waterfall</Ref>: click on it to tune. The software follows small drifts, but the narrow signal needs a stable radio.
+- It uses an SSB radio with computer audio, normally upper sideband. Run modest power and keep audio levels low enough that the radio's ALC is not working.
+- With no error correction, a weak or fading signal turns into gibberish. The basic mode is best at moderate strength with a clean path; modes built for the weakest signals appear in <Ref to="ft8-and-ft4" /> and <Ref to="mfsk-and-olivia" />.
+- Contacts are conversational: call CQ, then trade names, locations and signal reports as in <Ref to="ragchewing" />.
+
+<ExamLink groups="G8C T8D E2E" />
+
+<Related to="digital-modes-overview rtty mfsk-and-olivia digital-modulation digital-mode-software ragchewing" />

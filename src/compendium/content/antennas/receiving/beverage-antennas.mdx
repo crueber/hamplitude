@@ -1,0 +1,42 @@
+import { Beverage as E9H_Beverage } from '@/visuals/extra/E9H_Beverage'
+import { BeverageAntennas_SnrBudget } from '@/visuals/compendium/BeverageAntennas_SnrBudget'
+
+## What it is
+
+A Beverage is a long, low, **terminated** wire that listens in one direction. It is a receiving antenna for MF and the low HF bands, used on 160, 80 and 40 m to pull weak signals out of atmospheric noise. It is not a transmitting antenna.
+
+<Facts items={[
+  ['Length', 'at least 1 wavelength; longer is more directional'],
+  ['Height', 'low, typically a few metres or less above ground'],
+  ['Termination', 'a resistor near the wire\'s characteristic impedance, typically a few hundred ohms'],
+  ['Best direction', 'toward the terminated end'],
+  ['Gain', 'well below a dipole, often negative in dBi'],
+]} />
+
+## How it works
+
+<E9H_Beverage />
+
+A wave arriving along the wire from the far end sweeps down it, in step with the signal it is inducing, so the contributions add as they travel to the receiver. A wave from behind travels the other way, to the far end, where the **termination resistor** absorbs it. Without the resistor it would reflect and come back, and the antenna would hear both directions. Because the wire is close to the ground, it responds best to low-angle waves, which are the ones that carry long-distance signals on these bands.
+
+The resistor is set for the least variation in SWR across the band, which in practice also gives the best rejection of the reverse direction.
+
+## Why a weak antenna can hear better
+
+<BeverageAntennas_SnrBudget />
+
+What matters in receiving is not how strong the signal is but how far it stands above the **noise**. On 160 and 80 m, atmospheric noise is usually far stronger than the noise inside the receiver, and it arrives at the antenna together with the signal. If you make the antenna 10 dB less efficient, both signal and band noise fall by 10 dB and the ratio is untouched. The receiver's own noise is still far below both.
+
+A directional antenna changes the ratio: a Beverage hears the wanted direction and rejects thunderstorms, stations and noise from everywhere else. A weak antenna that rejects noise beats a strong one that does not, which is why directivity is much more important than losses at 160 and 80 m. On a quiet band such as VHF the opposite is true: the receiver's own noise dominates, so a lossy antenna really does cost signal-to-noise. Try both bands above. See <Ref to="noise-and-snr" />.
+
+## In practice
+
+- **Space.** A one-wavelength Beverage on 160 m is over 500 feet long, which is why they need plenty of land.
+- **Direction.** One wire covers one direction. Several wires, or a switched pair, cover more.
+- **Receive only.** Never connect the transmitter to it; the termination and matching transformer are not rated for power.
+- **Matching.** The receive end usually has a transformer from the wire's few-hundred-ohm impedance to 50 Ω coax, and a ground rod.
+- **Hazards.** A long low wire is easy to trip over and can be hit by lawn equipment. Mark it clearly.
+
+<ExamLink groups="G9D E9H" />
+
+<Related to="noise-and-snr receive-loops-and-active-antennas noise-cancelling long-and-random-wires lf-and-mf radiation-patterns" />

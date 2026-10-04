@@ -1,0 +1,50 @@
+import { TransmitterBasics_Chain } from '@/visuals/compendium/TransmitterBasics_Chain'
+import { SsbChain } from '@/visuals/general/G7C_SsbChain'
+import { TxChain } from '@/visuals/general/G4A_TxChain'
+
+## What it is
+
+A transmitter makes a clean radio-frequency signal at the frequency you chose, **puts your message onto it** (modulation), and **amplifies it** to the power you need. Its stages run in the opposite order to a receiver's: from low-level, low-power circuits at the start to a powerful final amplifier at the end.
+
+<Facts items={[
+  ['Typical HF rig output', '100 W (varies widely)'],
+  ['Where the message goes on', 'early, at low power, then it is only amplified'],
+  ['Last stage before the antenna', 'a low-pass filter'],
+  ['Rule of thumb', 'generate cleanly, amplify faithfully, filter at the end'],
+]} />
+
+## Microphone to antenna
+
+<TransmitterBasics_Chain />
+
+1. **Audio amplifier.** Lifts the tiny microphone voltage to a usable level. Too much gain overdrives the later stages (see <Ref to="speech-processing-and-mic-gain" />).
+2. **Modulator.** Combines the audio with a carrier from an oscillator. For SSB a *balanced modulator* cancels the carrier and leaves two sidebands (see <Ref to="single-sideband" />).
+3. **Filter.** Removes one sideband. SSB also works by phasing methods in DSP.
+4. **Mixer.** Moves the finished signal from the fixed frequency where it was made (here 9 MHz) to the operating frequency. The VFO sets where it lands: 9.0 + 5.2 = 14.2 MHz. The <Ref to="mixers">mixer</Ref> also makes the difference, 3.8 MHz, which a filter removes.
+5. **Driver and power amplifier.** Raise power in steps. The amplifiers must be **linear** for SSB, so the signal's shape is not distorted; see <Ref to="amplifiers" />.
+6. **Low-pass filter.** Real amplifiers also make harmonics (multiples of the operating frequency). The filter removes them so they are not radiated (see <Ref to="harmonics-and-spurs" />).
+
+## Other modes use the same blocks
+
+- **CW:** an oscillator is switched on and off by the key, with the edges shaped so the signal doesn't click. Often no modulator at all.
+- **FM:** the audio changes the frequency of an oscillator directly, or a phase modulator does it. A chain of multiplier stages can raise the frequency, which also multiplies the deviation. The amplifiers can be non-linear (Class C), which is more efficient.
+- **Digital modes:** the computer provides audio tones that enter the same SSB chain at the microphone input (see <Ref to="computer-interfaces" />).
+
+<SsbChain />
+
+## What makes a transmitter good
+
+| Quality | What it means |
+|---|---|
+| Linearity | the output is a faithful, scaled-up copy of the input; poor linearity splatters beyond the signal's width |
+| Spectral purity | few harmonics and spurious signals |
+| Frequency stability | stays on frequency; oscillator drift is the common cause of drifting signals |
+| Efficiency | how much DC power becomes RF; the rest is heat |
+
+Overdriving any stage (excessive mic gain, too much drive to an amplifier) makes the output wider and dirtier. An ALC circuit watches the output and turns the drive down to avoid it, which is why you watch the ALC meter and not the power meter when setting mic gain.
+
+<TxChain />
+
+<ExamLink groups="T7A G7C G4A" />
+
+<Related to="transceiver-block-diagram single-sideband modulation-basics amplifiers linear-amplifiers harmonics-and-spurs speech-processing-and-mic-gain" />

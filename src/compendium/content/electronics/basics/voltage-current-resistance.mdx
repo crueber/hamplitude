@@ -1,0 +1,58 @@
+import { VoltageCurrentResistance_WaterPipe } from '@/visuals/compendium/VoltageCurrentResistance_WaterPipe'
+import { ElectricUnits } from '@/visuals/shared/ElectricUnits'
+
+## What they are
+
+Every circuit, from a flashlight to a transceiver, comes down to three quantities:
+
+- **Voltage** is the electrical push. It is the energy given to each unit of charge, measured in volts (V), and written **E** in this site (many books use V).
+- **Current** is the flow of charge past a point, measured in amperes (A), written **I**.
+- **Resistance** is how strongly a part opposes that flow, measured in ohms (Ω), written **R**.
+
+Nothing in a circuit happens without all three. The next article, <Ref to="ohms-law" />, ties them into one equation.
+
+<Facts items={[
+  ['Voltage', 'E, in volts (V): the push'],
+  ['Current', 'I, in amperes (A): the flow'],
+  ['Resistance', 'R, in ohms (Ω): the opposition'],
+  ['1 ampere', '1 coulomb of charge per second, about 6.24 × 10¹⁸ electrons'],
+]} />
+
+## The water analogy
+
+<VoltageCurrentResistance_WaterPipe />
+
+Picture a closed loop of pipe with a pump. The pump supplies **pressure**; the water that moves is the **flow rate**; a narrow section of pipe **resists** the flow. Change any one and the others respond: more pressure gives more flow, and a narrower pipe gives less.
+
+The analogy also shows two things beginners often miss:
+
+- A pump with no complete loop moves nothing. A battery with nothing connected has voltage but no current. Current needs a closed path.
+- Pressure is a difference between two places. Voltage is likewise always **between two points**, never at a single point.
+
+## Across, through and in the way
+
+Voltage, current and resistance are measured and described differently:
+
+| Quantity | Applies | You say | Meter hookup |
+|---|---|---|---|
+| Voltage | between two points | "across" the part | voltmeter in parallel |
+| Current | along a path | "through" the part | ammeter in series |
+| Resistance | a property of the part | "of" the part | ohmmeter, power off |
+
+"The voltage through a resistor" is the classic slip. Use **voltage across, current through**. See <Ref to="multimeters" /> for how the hookups work, and <Ref to="series-and-parallel" /> for what "in series" and "in parallel" mean.
+
+<ElectricUnits keys={['voltage', 'current', 'resistance']} caption="Each quantity has exactly one unit." />
+
+## What is actually moving
+
+Current is the flow of electrons through a conductor, but by convention it is drawn as flowing from the positive terminal to the negative one, the opposite way to the electrons. The convention was set before electrons were discovered; every equation and schematic arrow uses it, so use it too.
+
+Electrons themselves drift very slowly. In a 1 mm² copper wire carrying 1 A they creep along at about 0.07 mm per second. A lamp lights at once because the electric field that pushes them travels through the wire at a large fraction of the speed of light, moving all the electrons together, like a pipe already full of water.
+
+Resistance turns electrical energy into heat, which is the subject of <Ref to="power-and-energy" />. What gives a material its resistance is covered in <Ref to="conductors-and-insulators" />.
+
+<Callout kind="tip" title="Rough sizes to calibrate with">A "12 V" radio supply is usually about 13.8 V. A 100-watt HF transceiver draws on the order of 20 A at full power. An LED indicator takes around 20 mA. US mains is nominally 120 V.</Callout>
+
+<ExamLink groups="T5A T5D" />
+
+<Related to="ohms-law power-and-energy series-and-parallel units-and-prefixes conductors-and-insulators multimeters" />

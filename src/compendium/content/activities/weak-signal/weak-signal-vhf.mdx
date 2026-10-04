@@ -1,0 +1,38 @@
+import { WeakSignalVhf_Floor } from '@/visuals/compendium/WeakSignalVhf_Floor'
+import { E2D_WeakPaths } from '@/visuals/extra/E2D_WeakPaths'
+
+## What it is
+
+Most VHF and UHF activity is FM through repeaters, but the bands also hold a quiet world of **weak-signal** operating: SSB, CW and digital modes at the very edge of what a receiver can detect, on paths that go far beyond ordinary line of sight. It rewards good antennas, patience and careful listening.
+
+<Facts items={[
+  ['Bands', '6 m, 2 m, 1.25 m, 70 cm and up'],
+  ['Modes', 'SSB, CW, and weak-signal digital such as FT8, MSK144 and Q65'],
+  ['Polarization', 'horizontal, by convention'],
+  ['Typical SSB calling frequencies', 'near 50.125, 144.200 and 432.100 MHz (check the band plan)'],
+]} />
+
+## Why narrow is quiet
+
+<WeakSignalVhf_Floor />
+
+Noise power is proportional to bandwidth. A signal 2.4 kHz wide (SSB) lets in 2.4 kHz of noise; a 100 Hz CW signal lets in 24 times less, about 14 dB. Digital modes go further: they pack the message into a few tens of hertz and use error-correcting codes, so a decoder can recover a message even when the signal is below the noise in a normal 2.5 kHz voice bandwidth. Narrower signals also need the transmitter and receiver to stay on frequency, so a stable oscillator matters.
+
+## Making the rest of the difference
+
+Every decibel counts, and the choices are the same ones that decide any link budget:
+
+- **Antenna gain**: a long Yagi, or several stacked, sharpens the beam and adds gain at both ends. Weak-signal operators use horizontal polarization, which matches the other stations and reduces pickup of local vertically polarized FM signals and noise.
+- **Low feed-line loss**: at VHF and UHF, a long coax run eats the signal before the receiver sees it. See <Ref to="feed-line-loss" />.
+- **A low-noise preamp at the antenna**, ahead of the feed line, so the first stage sets the noise figure and not the cable.
+- **A quiet site** away from household electronics, because man-made noise at VHF raises the floor.
+
+## Where the signals come from
+
+<E2D_WeakPaths />
+
+Weak-signal operators work far beyond the horizon using tropospheric enhancement and scatter, <Ref to="sporadic-e">sporadic E</Ref>, <Ref to="meteor-scatter">meteor scatter</Ref>, <Ref to="aurora-propagation">aurora</Ref> and <Ref to="eme-moonbounce">moonbounce</Ref>. Many of these paths are brief or random, so people gather near **calling frequencies**, and arrange contacts with each other online. They report their location as a **grid square** (the Maidenhead locator), which also drives contests and awards. See <Ref to="tropospheric-propagation" />.
+
+<ExamLink groups="E2D E3A T3C" />
+
+<Related to="six-meters microwaves meteor-scatter sporadic-e tropospheric-propagation noise-and-snr" />

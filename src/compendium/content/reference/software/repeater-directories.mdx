@@ -1,0 +1,43 @@
+import { RepeaterDirectories_Entry } from '@/visuals/compendium/RepeaterDirectories_Entry'
+
+## What it is
+
+A **repeater directory** is a list of repeaters with the details you need to use them: where they are, what frequency, what offset and tone, and what mode. Nobody memorises them. You use the directory once to find a repeater in a new area, then store it in a radio memory. This article describes the kinds of directory, not any one service: contents and availability change, so read each one's own documentation.
+
+## What a listing contains
+
+<RepeaterDirectories_Entry />
+
+| Field | Meaning |
+|---|---|
+| **Output frequency** | what the repeater transmits: the frequency you listen to |
+| **Offset** | the shift from output to the frequency you transmit on, as a direction (plus or minus) and an amount |
+| **Access tone** | a CTCSS (PL) tone your transmission must carry, or a digital code or talkgroup |
+| **Mode** | FM, or a digital system such as DMR, D-STAR or Fusion |
+| **Location and coverage** | the nearest town, site and approximate range |
+| **Access and sponsor** | open to all, members only, or closed, plus the club or owner |
+| **Linking** | whether it connects to others, by radio or internet |
+
+Standard offsets depend on the band: typically 600 kHz on 2 m and 5 MHz on 70 cm. In the example, 146.940 − 0.600 = 146.340 MHz is where your radio transmits. Details are in <Ref to="repeaters" /> and <Ref to="squelch-and-tones" />.
+
+## Kinds of directory
+
+- **Online databases** that anyone can search by place, band or mode, often fed by owners and users. Some can export a file for your radio.
+- **Printed and downloadable books** from national groups and clubs.
+- **Local frequency coordinators:** volunteer bodies that assign repeater frequencies in an area so that repeaters do not interfere with each other. A coordinator's own list is the most authoritative source for that region, though it may not cover every repeater.
+- **Club and group pages**, which give access rules, net times and operating notes the big databases leave out.
+- **Programming software**, which often has its own import, search or download features.
+
+## Using them
+
+1. **Search** by where you are or are going.
+2. **Check the date** and the status. Repeaters go off the air, change tones, or become private.
+3. **Listen first.** Hear the output before you transmit, to confirm it is active and to learn its etiquette. See <Ref to="repeaters" />.
+4. **Enter it correctly**: output frequency, offset direction, tone. A wrong tone is the usual reason you can hear a repeater but cannot open it.
+5. **Respect access.** A **closed** repeater is for members; use an open one, or ask.
+
+<Callout kind="tip" title="Verify before you rely on it">Before an event or a trip, test your stored repeaters, and have simplex frequencies ready as a fallback; see <Ref to="simplex" />.</Callout>
+
+<ExamLink groups="T2A T2B" />
+
+<Related to="repeaters simplex squelch-and-tones memories-and-scanning hotspots-and-gateways repeaters-and-controllers" />

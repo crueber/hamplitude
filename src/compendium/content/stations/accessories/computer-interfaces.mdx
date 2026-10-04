@@ -1,0 +1,41 @@
+import { ComputerInterfaces_Paths } from '@/visuals/compendium/ComputerInterfaces_Paths'
+
+## What it is
+
+A **computer interface** lets a computer talk to a radio for digital modes such as FT8, PSK31 or RTTY. The software makes and decodes the signal in the computer's **sound card**, so the radio only has to supply audio and be told when to transmit. Three jobs, always: receive audio, transmit audio, and a transmit key.
+
+<ComputerInterfaces_Paths />
+
+## Three ways to connect
+
+| Method | What it is | Notes |
+|---|---|---|
+| **Radio with built-in USB** | one cable gives the computer a sound device and a control port | simplest; no extra box |
+| **External interface box** | a unit with its own sound device, isolation and transmit key | works with radios that have no USB audio |
+| **Computer's own sound card** | audio cables from line in and out to the radio, with an isolating interface | common; needs care with levels |
+
+On the radio, choose the **data or accessory port** where one exists: its audio is flat and skips the microphone's shaping, so tones go out unchanged. A microphone jack can work, but the radio's own speech processing and equalizer must then be off.
+
+## Setting levels
+
+- **Receive**: adjust the radio's audio-out or the computer's input so the software's level meter sits in the middle, neither tiny nor clipping.
+- **Transmit**: raise the software's output until the radio just starts to show ALC, then back it off until the ALC is quiet. A digital signal should use almost no ALC; ALC action distorts it. Set output power with the radio's power control, not by driving the audio harder.
+- Too much drive makes a wide, dirty signal. Other stations see it as a spread of extra tones.
+
+<Callout kind="warn" title="Watch the computer's sounds">Turn off system sounds and notifications, and disable audio enhancements. Otherwise an email chime or a video can go out over the air.</Callout>
+
+## Keying the transmitter
+
+The radio needs to be told to transmit. Options: a **CAT command** (see <Ref to="cat-control" />), a **serial control line** such as RTS or DTR, or an audio-actuated **VOX**. A serial or CAT key is the most predictable; VOX can clip the start of a transmission or trigger on a stray sound.
+
+Timed modes like FT8 also need an accurate computer clock, usually within about a second, so use a time-sync tool or network time.
+
+## Noise and ground loops
+
+Connecting a computer to a radio creates an extra path for current and noise. A **ground loop** shows up as hum or buzz, and computer and power-supply noise can leak into receive audio. Isolation transformers in the audio lines break ground loops, and **ferrite chokes** on the USB and audio cables help against RF. See <Ref to="common-mode-and-ground-loops" /> and <Ref to="filters-and-ferrites-for-rfi" />.
+
+If a transmission makes the computer reset or freeze, RF is entering a cable. Shorten, shield or choke it, and keep the computer and its cables away from the antenna's feed line.
+
+<ExamLink groups="T4A T4B" />
+
+<Related to="cat-control digital-mode-software digital-modes-overview ft8-and-ft4 common-mode-and-ground-loops speech-processing-and-mic-gain" />

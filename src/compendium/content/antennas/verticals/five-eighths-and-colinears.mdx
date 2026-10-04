@@ -1,0 +1,38 @@
+import { WhipElevation as T9A_WhipElevation } from '@/visuals/technician/T9A_WhipElevation'
+import { FiveEighthsAndColinears_Colinear } from '@/visuals/compendium/FiveEighthsAndColinears_Colinear'
+
+## What it is
+
+A longer vertical that squeezes the same power into a flatter pattern. Gain does not come from nowhere: the antenna sends less energy up at the sky and more toward the horizon, where the other station is. The two common ways are a single **5/8-wave** radiator and a **colinear**, a stack of half-wave sections.
+
+<Facts items={[
+  ['5/8-wave length', '0.625 wavelengths, about 4 ft on 2 m'],
+  ['5/8 gain over a ¼ λ', 'about 3 dB on paper, over a perfect ground'],
+  ['Colinear gain', 'up to about 3 dB each time the number of sections doubles; real antennas fall short'],
+  ['Pattern', 'omnidirectional in azimuth, flatter in elevation'],
+]} />
+
+## The 5/8-wave whip
+
+<T9A_WhipElevation />
+
+A longer radiator concentrates the radiation. A ¼ λ whip puts its strongest signal at the horizon and spreads the rest up into the sky. At 5/8 λ the elevation pattern is flatter and low, so more energy reaches the horizon for the same power. That is roughly 3 dB on paper, over a perfect ground plane. Much longer than 5/8 λ and a lobe appears at higher angles, which is why 5/8 is the usual stopping point for a single element.
+
+A 5/8 λ element is not resonant by itself: it looks capacitive at the feed point. A small **loading coil at the base** cancels that and sets the impedance; the exact coil depends on the design. It still needs a ground plane or radials, and the gain disappears if they are poor.
+
+## Colinears
+
+<FiveEighthsAndColinears_Colinear />
+
+Simply joining two half-wave sections end to end does not add gain: the current reverses at the junction, so the radiation from one cancels the other's. A **phasing coil** (or a loop or stub) between them flips the upper current into step with the lower one. The two sections now radiate together, and the pattern flattens further. Three or more sections work the same way.
+
+## Trade-offs
+
+- **Height.** More gain means a taller antenna and a flatter, narrower elevation pattern.
+- **Overshooting nearby stations.** A very flat pattern can send energy over the heads of stations that are close or far below the antenna, such as in hilly country. A short, low-gain antenna can serve them better.
+- **Check the units.** Manufacturers quote gain in dBi or dBd, and the two differ by 2.15 dB; see <Ref to="gain-and-directivity" />.
+- **Ground still matters.** Gain figures assume a good ground plane, or a vehicle roof. A poor one can cost more than the extra length gains.
+
+<ExamLink groups="T9A" />
+
+<Related to="quarter-wave-vertical radials-and-ground-planes gain-and-directivity radiation-patterns j-pole-and-slim-jim mobile-whips-and-loading" />

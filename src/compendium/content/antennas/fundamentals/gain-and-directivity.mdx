@@ -1,0 +1,52 @@
+import { GainAndDirectivity_Beam } from '@/visuals/compendium/GainAndDirectivity_Beam'
+import { G9C_DbiDbd } from '@/visuals/general/G9C_DbiDbd'
+
+## What it is
+
+Antenna gain measures how much stronger the signal is in an antenna's best direction than it would be from a reference antenna fed the same power. It is a redistribution, not an amplifier: whatever is gained in one direction is taken from others.
+
+<Facts items={[
+  ['Isotropic radiator', '0 dBi: a hypothetical point source with the same strength in every direction'],
+  ['Half-wave dipole', '2.15 dBi, which is 0 dBd by definition'],
+  ['Convert', 'dBi = dBd + 2.15'],
+  ['Rule of thumb', 'every +3 dB doubles the power density in the best direction'],
+]} />
+
+## Where gain comes from
+
+<GainAndDirectivity_Beam />
+
+A lossless antenna radiates all the power you feed it, whatever its shape. An isotropic radiator spreads that power over a whole sphere. An antenna that squeezes the same power into a narrower beam must have a stronger signal inside the beam, and weaker signal outside it. **Narrower beam, more gain.**
+
+Two words are worth separating:
+
+- **Directivity** describes only the shape of the pattern: how concentrated the beam is.
+- **Gain** is directivity minus the antenna's own losses. A lossless antenna has gain equal to its directivity. A lossy one has less; see <Ref to="bandwidth-and-efficiency" />.
+
+<Key>Gain does not add power. It points the power you already have.</Key>
+
+## dBi and dBd
+
+Gain is quoted in <Ref to="decibels">decibels</Ref> against one of two references. **dBi** is relative to an isotropic radiator. **dBd** is relative to a half-wave dipole. A dipole is already 2.15 dB better than isotropic, so the same antenna has a number 2.15 larger in dBi.
+
+<G9C_DbiDbd />
+
+| Antenna | dBd | dBi |
+|---|---|---|
+| Isotropic radiator (hypothetical) | −2.15 | 0 |
+| Half-wave dipole | 0 | 2.15 |
+| Antenna with 6 dBi | 3.85 | 6 |
+| Antenna with 10 dBd | 10 | 12.15 |
+
+Always check which reference a gain figure uses. The same antenna reads 2.15 higher in dBi than in dBd, so two gain figures can only be compared when they share a reference.
+
+## In practice
+
+- **Effective radiated power.** Add the gain and subtract the losses, then convert once to a power ratio. Example: 100 W, a 10 dBi antenna and 2 dB of feed line loss leaves a net +8 dB, a ratio of 6.31, so about 631 W EIRP. ERP is measured against a dipole instead, so subtract 2.15 dB more: about 385 W ERP.
+- **Gain is directional.** The quoted figure is at the peak. Gain in the direction you do not need is wasted. A <Ref to="five-eighths-and-colinears">colinear vertical</Ref> gains by flattening its pattern toward the horizon, which helps for local VHF contacts but sends less upward.
+- **Gain works both ways.** It helps you hear in the favoured direction as well as be heard, and it makes pointing matter: see <Ref to="rotators" /> and <Ref to="yagi-uda" />.
+- **Higher gain means more careful safety.** The beam concentrates RF exposure along its axis; see <Ref to="rf-exposure" />.
+
+<ExamLink groups="T9A G9C E9A E9B" />
+
+<Related to="radiation-patterns bandwidth-and-efficiency decibels yagi-uda dish-antennas half-wave-dipole" />

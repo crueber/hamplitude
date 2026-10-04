@@ -1,0 +1,40 @@
+import { GreyLineAndLongPath_Terminator } from '@/visuals/compendium/GreyLineAndLongPath_Terminator'
+import { LongPath as E3B_LongPath } from '@/visuals/extra/E3B_LongPath'
+import { Paths as G3B_Paths } from '@/visuals/general/G3B_Paths'
+
+## Two ways to beat the usual rules
+
+Both effects are about how day and night shape the ionosphere. The **grey line** (also written gray line) is the moving band around the day-night boundary, where HF signals can travel unusually well. **Long path** means signals arriving the long way round the world instead of the short way.
+
+<Facts items={[
+  ['Grey line', 'the twilight band around sunrise or sunset'],
+  ['Typical enhancement', 'roughly an hour at a given location'],
+  ['Great circle, both ways', 'about 24,900 miles in total'],
+  ['Long-path beam heading', 'short-path heading plus 180 degrees'],
+]} />
+
+## The grey line
+
+<GreyLineAndLongPath_Terminator />
+
+The D layer, which absorbs HF during the day, fades quickly after sunset and has not yet built up around sunrise. Near the terminator it is weak or absent, yet the F layer is still ionized from sunlight. So two stations near the boundary have a low-loss path: signals pass the lower layers easily and are refracted by the F layer. It helps most on the lower bands, where daytime D-layer absorption is the big problem.
+
+The boundary sweeps around the Earth as it turns, so each opening drifts through the day. At the equinoxes the boundary runs roughly north-south, so north-south paths can lie along it. At the solstices it is tilted, so the paths that line up change with the season.
+
+<Callout kind="note">The grey line makes a path easier, not guaranteed. Frequency still has to sit below the <Ref to="muf-and-luf">MUF</Ref> and the field has to be quiet.</Callout>
+
+## Long path
+
+<E3B_LongPath />
+
+A signal leaving your antenna goes both ways along the great circle: the short arc and the long one. Normally the short path wins because it is shorter and has fewer hops, but the long path can be stronger when the short one is closed: crossing a disturbed polar region, or in daylight at a frequency the daytime D layer absorbs. A long path that runs along the grey line, or through darkness on a low band, often works well.
+
+To try it, point your antenna 180 degrees from the short-path heading. Which paths work long way round depends on the season, the band and the time of day.
+
+<G3B_Paths />
+
+If both paths are open you hear the same signal twice. A signal going all the way around the world takes roughly one-seventh of a second, so the late copy sounds like an echo or a hollow, flanged tone. Rotating the antenna to peak one path usually kills the other.
+
+<ExamLink groups="G3B E3B" />
+
+<Related to="muf-and-luf ionosphere-layers skywave-and-skip solar-cycle-and-indices dxing propagation-tools" />

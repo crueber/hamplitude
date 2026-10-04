@@ -1,0 +1,47 @@
+import { E9D_YagiElements } from '@/visuals/extra/E9D_YagiElements'
+import { G9C_YagiRoles } from '@/visuals/general/G9C_YagiRoles'
+import { YagiUda_Tradeoff } from '@/visuals/compendium/YagiUda_Tradeoff'
+
+## What it is
+
+A Yagi-Uda, usually just a Yagi, is a row of parallel elements on a boom: one **driven element** connected to the feed line, a **reflector** behind it and one or more **directors** in front. Together they concentrate your signal into one direction and favour signals arriving from that direction when receiving. It is the classic HF, VHF and UHF beam.
+
+<Facts items={[
+  ['Driven element', 'about ½ wavelength'],
+  ['Reflector', 'a few percent longer than the driven element'],
+  ['Directors', 'a few percent shorter than the driven element'],
+  ['Typical gain', '3 elements: roughly 7 to 8 dBi (5 to 6 dBd)'],
+  ['Front-to-back', 'typically 15 to 25 dB, depending on the design'],
+]} />
+
+## How it works
+
+<E9D_YagiElements />
+
+Only the driven element is connected to the radio. Its field reaches the other elements and sets up currents in them, and they re-radiate. Each parasitic element's length, a little above or below resonance, sets the **phase** of its current. With the right lengths and spacing (typically 0.1 to 0.25 wavelength), the three fields add up in front and largely cancel behind. The beam points from the reflector toward the directors.
+
+A two-element Yagi with normal spacing is usually built with a reflector rather than a director, because that arrangement gives more gain.
+
+## More elements, more gain
+
+<G9C_YagiRoles />
+
+Adding directors and lengthening the boom narrows the beam and raises the gain, with diminishing returns: each doubling of the element count adds at best around 3 dB. That is the same power-ratio idea as in <Ref to="gain-and-directivity" />. The price is size, weight and wind load.
+
+## The trade-off
+
+<YagiUda_Tradeoff />
+
+Element lengths and spacing can be tuned for maximum forward gain, maximum front-to-back ratio, or a wide SWR bandwidth, but not all three at once. A design tuned hard for gain usually has a narrower bandwidth and a larger rear lobe. Fatter or tapered elements widen the bandwidth. Loading coils in series with elements narrow it.
+
+## In practice
+
+- The feed-point impedance of a Yagi optimised for gain is usually well below 50 Ω, so it is matched with a gamma match, a hairpin (beta) match or a folded driven element.
+- Two identical Yagis stacked at least about ½ wavelength apart give up to roughly 3 dB more gain (a wider spacing is usual for a full 3 dB) and a narrower beam in elevation, not in azimuth.
+- Polarization follows the elements. HF Yagis are horizontal; at VHF and UHF, FM operators use vertical and weak-signal operators horizontal. See <Ref to="polarization" />.
+- The main lobe carries the exposure: keep it pointed away from people. See <Ref to="rf-exposure" />.
+- Height matters as much as element count; see <Ref to="ground-and-height" />. A rotator turns it; see <Ref to="rotators" />.
+
+<ExamLink groups="T9A G9C E9D" />
+
+<Related to="quad-and-delta-loop-beams log-periodic moxon-and-hex-beams phased-arrays radiation-patterns gain-and-directivity rotators" />

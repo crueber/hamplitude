@@ -1,0 +1,46 @@
+import { G2A_SsbSpectrum } from '@/visuals/general/G2A_SsbSpectrum'
+import { G2A_SidebandStrip } from '@/visuals/general/G2A_SidebandStrip'
+import { Rit } from '@/visuals/technician/T4B_Rit'
+
+## What it is
+
+Single sideband (SSB) is the standard voice mode on HF. It is AM with the carrier and one of the two sidebands removed, so the only thing transmitted is the voice itself, in about 3 kHz of spectrum. All of your power goes into speech, which is why SSB reaches farther than other voice modes on the same power and fits more stations on a band.
+
+<Facts items={[
+  ['Bandwidth', 'about 2.4 to 3 kHz'],
+  ['Sideband habit', 'LSB on 160, 80 and 40 m; USB on 20 m and up'],
+  ['60 m', 'upper sideband only (US)'],
+  ['Silence', 'no power is sent when you are not talking'],
+]} />
+
+<G2A_SsbSpectrum />
+
+See <Ref to="single-sideband" /> for how it is made.
+
+## Which sideband
+
+Whether the voice sits just below the carrier frequency (lower sideband, LSB) or just above it (upper sideband, USB) is **convention, not law**. By habit: LSB below 10 MHz, USB above, and USB on VHF and UHF. In the US, 60 m is the exception where USB is required.
+
+<G2A_SidebandStrip />
+
+Both stations should use the same sideband. The wrong one sounds like unintelligible mush.
+
+## Tuning a signal in
+
+SSB sends no carrier to zero in on, so you tune by ear: nudge the dial until the voice sounds natural. Off by even 100 Hz, speech sounds too high or too low ("Donald Duck"), because every pitch shifts by the same number of hertz. The **RIT** (clarifier) fixes this on receive without moving your transmit frequency.
+
+<Rit />
+
+The dial shows where the suppressed carrier would be. An LSB signal extends **below** that number and a USB signal **above** it, so near a band edge keep the whole 3 kHz inside the band.
+
+## Operating
+
+- **Listen, then ask.** "Is the frequency in use?" and wait. Then call "CQ CQ CQ, this is W1ABC, W1ABC, calling CQ and listening," with your call sign in <Ref to="phonetic-alphabet">phonetics</Ref>.
+- **Answering.** Give their call once, then yours.
+- **Breaking in.** At a pause, give only your call sign. Don't barge in.
+- **Don't overdrive.** Too much microphone gain flat-tops the audio and splatters across neighbours. Watch the ALC meter; see <Ref to="speech-processing-and-mic-gain" />.
+- **Leave room.** Keep about 3 kHz between conversations, and never tune up on a busy frequency.
+
+<ExamLink groups="G2A T8A G4D" />
+
+<Related to="single-sideband rit-xit-and-split speech-processing-and-mic-gain phonetic-alphabet operating-etiquette hf-transceivers" />

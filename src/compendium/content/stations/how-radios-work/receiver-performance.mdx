@@ -1,0 +1,58 @@
+import { ReceiverPerformance_Three } from '@/visuals/compendium/ReceiverPerformance_Three'
+import { Sensitivity } from '@/visuals/general/G7C_Sensitivity'
+import { Window } from '@/visuals/extra/E4D_Window'
+
+## What it is
+
+Three numbers describe how good a receiver is. **Sensitivity** is how weak a signal it can hear. **Selectivity** is how well it separates a signal from close neighbours. **Dynamic range** is how strong the other signals can be before they spoil reception. A radio that is strong in one can be poor in another, which is why no single number describes a receiver.
+
+<ReceiverPerformance_Three />
+
+## Sensitivity: a question of noise
+
+Every receiver adds noise of its own, and even a perfect one sees thermal noise. A signal is heard only if it stands above the **noise floor**:
+
+<Formula label="Noise floor">−174 dBm/Hz + 10 log(bandwidth in Hz) + noise figure (dB)</Formula>
+
+| Bandwidth | Floor with a 10 dB noise figure (typical example) |
+|---|---|
+| 15 kHz (FM) | −122 dBm |
+| 2.4 kHz (SSB) | −130 dBm |
+| 500 Hz (CW) | −137 dBm |
+
+Two levers move the floor: a **narrower bandwidth** (about 7 dB lower from SSB to CW) and a **lower noise figure**. The minimum discernible signal (MDS) is roughly the noise floor.
+
+<Sensitivity />
+
+On the lower HF bands, atmospheric and man-made noise arriving at the antenna is usually stronger than the receiver's own, so a better noise figure or a preamp gains little; on VHF and UHF, where outside noise is low, it can matter a lot. See <Ref to="noise-and-snr" />.
+
+## Selectivity: filter width and skirts
+
+Selectivity comes from filters (see <Ref to="radio-filters" />). Two properties matter: the **bandwidth** (about 2.4 kHz for SSB, a few hundred Hz for CW) and how steeply the **skirts** fall away on each side. A filter that is narrow at its top but slopes gently still lets a strong neighbour through.
+
+## Dynamic range: strong signals
+
+A strong signal does harm in two ways:
+
+- **Blocking (gain compression).** A strong signal overloads an early stage, which turns its gain down. Weak signals on any frequency then fade or vanish.
+- **Intermodulation.** Two strong signals mix inside the receiver, producing false signals at other frequencies, called third-order products (see <Ref to="overload-and-intermod" />).
+
+Dynamic range is the span in dB from the noise floor up to the level at which one of these appears.
+
+<Window />
+
+Good HF receivers reach more than 100 dB (typical for a modern design); simple ones are far less. Specifications state the signal spacing, since a close pair is much harder than a widely spaced one.
+
+## In practice
+
+| What you notice | Likely limit |
+|---|---|
+| a weak station is hidden by hiss | sensitivity (or just outside noise) |
+| two stations heard together on one frequency | selectivity |
+| false signals, or everything fades when a neighbour transmits | dynamic range |
+
+If strong signals are the trouble, reducing the receiver's gain (RF gain, attenuator, preamp off) usually helps, and costs little on the lower HF bands where noise dominates anyway.
+
+<ExamLink groups="T7A G7C E4C E4D" />
+
+<Related to="receiver-basics radio-filters agc-and-noise-reduction overload-and-intermod noise-and-snr decibels attenuators" />

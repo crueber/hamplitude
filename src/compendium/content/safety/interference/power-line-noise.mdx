@@ -1,0 +1,42 @@
+import { PowerLineNoise_Hunt } from '@/visuals/compendium/PowerLineNoise_Hunt'
+import { NoiseGallery } from '@/visuals/extra/E4E_NoiseGallery'
+
+## What it is
+
+Electrical noise on the bands comes from two families. **Arcing and sparking**, such as a failing connection on a power pole, makes broadband crackle or buzz. **Switching electronics**, such as chargers, LED lighting, solar inverters and power-line network adapters, make a hash of regular, closely spaced carriers. Neither is meant to transmit, but both do.
+
+<Facts items={[
+  ['Arcing noise', 'rough buzz or crackle at the mains rate, strongest on low frequencies'],
+  ['Switching noise', 'carriers at regular spacing, equal to the switching frequency'],
+  ['Weather and load', 'can change it: dry or wet, heating or cooling kicking in'],
+  ['Where it lives', 'inside your house, next door, or on the utility’s poles'],
+]} />
+
+## What each source looks like
+
+<NoiseGallery />
+
+Listen first. A buzz or roar that comes and goes is likely an arc, from a thermostat, a doorbell transformer, or a sign. A steady comb of carriers across a wide range is a switching power supply. On the waterfall of an SDR the comb is unmistakable. Unsteady signals fixed on specific frequencies often come from computer or network gear.
+
+## Hunting it down
+
+<PowerLineNoise_Hunt />
+
+1. **Is it yours?** Use a battery-powered radio so you can switch things off. If the noise drops when you cut the mains at your own breaker, it is inside your house. Then unplug and switch circuits one at a time. Never open the panel cover or any wiring: that is for an electrician.
+2. **Find the area.** Tune an AM radio to a quiet spot between stations and walk or drive. It gets louder as you approach, because arc noise is strongest on the lowest frequencies, but it is so widely spread that it only gets you close.
+3. **Pinpoint it.** Move up to VHF or UHF, where the noise is weaker but more localized, and use a handheld receiver with a directional antenna. Take a bearing from two or more places, and where they cross is the likely source. Noise often travels along the wires, so bearings may spread along the line; trust the strongest point.
+4. **Confirm.** An ultrasonic detector listens for the sharp hiss of an arc and can finish the job from the ground.
+
+<Callout kind="warn" title="Keep clear">Never touch a power line or pole, and treat any downed or hanging wire as live. Do not raise a metal antenna or mast under or near a line. Stay well away and work from the ground. Report the problem; let the utility fix it.</Callout>
+
+## Switching noise and what to do
+
+Unplug suspects one at a time while listening: chargers, LED bulbs, dimmers, solar controllers, network adapters, TVs. The culprit disappears when its power does. Then you can swap it for a different model, put a ferrite or filter on its cord, or move your antenna farther from it. A <Ref to="noise-cancelling">noise-cancelling antenna</Ref> and DSP noise reduction, see <Ref to="agc-and-noise-reduction" />, can help afterward, and a <Ref to="receive-loops-and-active-antennas">small receive loop</Ref> hears less local noise than a large wire.
+
+## Reporting it
+
+When it is not yours, record where and when the noise is strongest, the frequency, and a short recording. Give that to the neighbour or the utility with a polite note. Utilities typically have a process for noise reports. In the US such devices are generally covered by Part 15 of the FCC rules; the exact obligations are not covered here.
+
+<ExamLink groups="E4E G4C" />
+
+<Related to="rfi-and-emi noise-and-snr noise-cancelling direction-finding-antennas agc-and-noise-reduction filters-and-ferrites-for-rfi" />

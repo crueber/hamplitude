@@ -46,6 +46,7 @@
   --technician: #1f9d63;
   --general: #2f6fe0;
   --extra: #8b4fd8;
+  --compendium: #c2701a;
 
   /* diagram palette — meaning is consistent everywhere:
      voltage=red, current=blue, resistance=amber, power=violet, signal=teal */
@@ -92,6 +93,7 @@
   --technician: #3ddc97;
   --general: #6aa3ff;
   --extra: #b98cff;
+  --compendium: #f0a64b;
 
   --d-voltage: #ff6b70;
   --d-current: #6aa3ff;
@@ -133,6 +135,7 @@
     --technician: #3ddc97;
     --general: #6aa3ff;
     --extra: #b98cff;
+    --compendium: #f0a64b;
     --d-voltage: #ff6b70;
     --d-current: #6aa3ff;
     --d-resist: #ffb23d;

@@ -1,0 +1,56 @@
+import { ReactanceAndImpedance_Explorer } from '@/visuals/compendium/ReactanceAndImpedance_Explorer'
+import { E5C_PhasorWheel } from '@/visuals/extra/E5C_PhasorWheel'
+
+## What it is
+
+**Reactance** is how a capacitor or inductor opposes alternating current. It is measured in ohms, but unlike resistance it does not turn power into heat: the part stores energy and gives it back each cycle. **Impedance** is the total opposition to AC, combining resistance and reactance.
+
+<Facts items={[
+  ['Inductive reactance', 'XL = 2π × f × L'],
+  ['Capacitive reactance', 'XC = 1 ÷ (2π × f × C)'],
+  ['Series R and X', 'Z = √(R² + X²)'],
+  ['Phase angle', 'arctan(X ÷ R)'],
+]} />
+
+## Reactance changes with frequency
+
+<ReactanceAndImpedance_Explorer />
+
+An inductor resists *changes* in current. The faster the AC reverses, the harder it pushes back, so inductive reactance **rises** in proportion to frequency. A capacitor passes current in proportion to how fast its voltage changes (see <Ref to="capacitance" />). Faster changes mean more current for the same voltage, so capacitive reactance **falls** as frequency rises.
+
+The two are opposites. At DC a capacitor is an open circuit and an inductor is a short; at very high frequency the reverse is true. For example:
+
+- 10 µH at 7.1 MHz: XL = 2π × 7.1 MHz × 10 µH = **446 Ω**
+- 100 pF at 7.1 MHz: XC = 1 ÷ (2π × 7.1 MHz × 100 pF) = **224 Ω**
+- 1 µF at 1 kHz: XC = **159 Ω**
+
+## Voltage and current fall out of step
+
+<E5C_PhasorWheel />
+
+Through a resistor, voltage and current rise and fall together. A reactive part breaks that:
+
+- **Inductor:** voltage leads current by 90°. The voltage is greatest when the current is changing fastest, which is at the current's zero crossing. *ELI*: voltage (E) before current (I) in an inductor (L).
+- **Capacitor:** current leads voltage by 90°. The current is greatest when the voltage is changing fastest. *ICE*: current (I) before voltage (E) in a capacitor (C).
+
+Because voltage and current peak at different moments, a pure reactance absorbs no net power. Energy flows in during part of the cycle and out during the next.
+
+## Adding up to impedance
+
+In a series circuit XL and XC point opposite ways and partly cancel, leaving a net X = XL − XC. Resistance and reactance are 90° apart, so they combine like the sides of a right triangle, not by simple addition:
+
+Z = √(R² + X²), and the current is shifted by arctan(X ÷ R).
+
+With R = 50 Ω and XL = 50 Ω: Z = 70.7 Ω, and the current lags the voltage by 45°. With R = 30 Ω and X = 40 Ω you get the familiar 3-4-5 triangle: Z = 50 Ω at 53°.
+
+When XL and XC are equal they cancel completely, leaving only R. That is <Ref to="resonance-and-q">resonance</Ref>.
+
+## In practice
+
+- An antenna analyzer reports impedance as **R + jX**: a feed point of 50 + j25 Ω has 50 Ω of resistance and 25 Ω of inductive reactance. The j is explained in <Ref to="phasors-and-complex-numbers" />.
+- Reactance in the antenna or line is a mismatch you can cancel with an opposite reactance. This is what a <Ref to="matching-networks">matching network</Ref> and an <Ref to="antenna-tuners">antenna tuner</Ref> do.
+- A small capacitor has low reactance at RF but very high reactance at DC and audio. Bypass capacitors use this to shunt RF to ground, and coupling capacitors to pass a signal while blocking DC.
+
+<ExamLink groups="T5C G5A E5B" />
+
+<Related to="capacitance inductance phasors-and-complex-numbers resonance-and-q matching-networks filters" />

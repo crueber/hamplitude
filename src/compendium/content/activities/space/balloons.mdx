@@ -1,0 +1,40 @@
+import { Balloons_Flight } from '@/visuals/compendium/Balloons_Flight'
+import { Balloons_Horizon } from '@/visuals/compendium/Balloons_Horizon'
+
+## What it is
+
+A high-altitude balloon carries a small light payload, often a low-power transmitter and a GPS receiver, up into the stratosphere. It rises until the balloon bursts, and the payload falls back on a parachute to be found and recovered. That gives you a radio station thirty kilometres up on a small budget.
+
+<Facts items={[
+  ['Burst height', 'typically 25 to 35 km'],
+  ['Climb', 'a few metres per second, roughly 1.5 to 2 hours'],
+  ['Transmit power', 'low: milliwatts to a watt or so'],
+  ['Common uses', 'tracking and telemetry, cameras, school science, experiments'],
+]} />
+
+## A flight
+
+<Balloons_Flight />
+
+A balloon filled with a limited amount of lifting gas expands as the air thins, until it bursts. The payload then descends on a parachute: fast at first in thin air, slower near the ground. The whole flight takes two to three hours, and the payload can land many kilometres away, because winds at different heights push it along.
+
+The transmitter's job is to report where it is. Typical payloads send position, altitude and temperature using a tracking mode such as APRS or a low-power digital mode, so volunteers can follow the flight and the owners can recover it.
+
+## Why it is heard so far
+
+<Balloons_Horizon />
+
+Radio at VHF and UHF travels in nearly straight lines, so range is set by the horizon, and the horizon grows with the square root of height. At 30 km the radio horizon is about 700 km: a tiny transmitter can be heard across several states. That also means a single receiver can track a whole flight, and a network of volunteers can follow one across country.
+
+## Rules and cautions
+
+<Callout kind="warn" title="Aviation rules apply">Aviation authorities regulate unmanned balloons. In the US, the FAA has rules for unmanned free balloons that depend on payload weight and how it is rigged, and some flights need notice or authorization. Check the current regulations before you launch, and make sure your payload is light and safe if it comes down on people or aircraft.</Callout>
+
+- On the radio side it is an ordinary amateur station: operate within your license privileges and **identify with your call sign**. Keep power low.
+- GPS receivers have height and speed limits unless set to an "airborne" mode, and some stop reporting at high altitude. Test your tracker's mode.
+- Batteries lose capacity in the stratospheric cold, so plan for it.
+- Ask permission before searching private land, and never recover a payload from a power line or other hazard.
+
+<ExamLink groups="E1D" />
+
+<Related to="amateur-satellites aprs line-of-sight radio-spectrum weak-signal-vhf" />

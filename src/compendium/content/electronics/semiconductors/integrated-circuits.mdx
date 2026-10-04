@@ -1,0 +1,50 @@
+import { IcFamilies } from '@/visuals/general/G6B_IcFamilies'
+import { CmosThreshold } from '@/visuals/extra/E6C_CmosThreshold'
+import { IntegratedCircuits_Package } from '@/visuals/compendium/IntegratedCircuits_Package'
+
+## What it is
+
+An integrated circuit (IC, or chip) is a complete circuit, with its transistors, diodes, resistors and capacitors, built on one tiny slice of silicon and sealed in a package with pins. Putting everything on one die makes circuits smaller, cheaper, more reliable and better matched than the same circuit built from separate parts. An IC may hold a handful of transistors or billions.
+
+<Facts items={[
+  ['Made from', 'one piece of silicon (a die) in a package'],
+  ['Main families', 'analog, digital, mixed-signal, RF (MMIC)'],
+  ['Lowest-power logic', 'CMOS'],
+]} />
+
+## Kinds of IC
+
+<IcFamilies />
+
+| Kind | What it does | Examples you meet in radios |
+|---|---|---|
+| Analog (linear) | works on smoothly varying signals | <Ref to="op-amps">op-amps</Ref>, audio amplifiers, voltage regulators, comparators, 555 timers |
+| Digital | works on ones and zeros | <Ref to="logic-gates">gates</Ref>, <Ref to="flip-flops-and-counters">counters</Ref>, memory |
+| Mixed-signal | bridges the two | <Ref to="adc-and-dac">ADCs and DACs</Ref>, <Ref to="pll-and-synthesizers">PLL synthesizers</Ref> |
+| RF / MMIC | a whole microwave amplifier, mixer or switch on one chip | gain blocks and preamplifiers, typically with 50 Ω input and output |
+| Programmable | a processor or logic array you program | <Ref to="microcontrollers">microcontrollers</Ref>, DSPs, FPGAs |
+
+An FPGA is not programmed with instructions but *configured*, using a hardware description language (HDL), to wire up its own gates into the circuit you describe.
+
+## Digital families
+
+Digital chips are built in **logic families**. **TTL** (bipolar transistors) is older and uses more power. **CMOS** (<Ref to="fets-and-mosfets">MOSFETs</Ref>) uses very little power when idle, and its input switches at about half the supply voltage, which gives it good noise immunity. **BiCMOS** combines the two: the high input impedance of CMOS with the strong output drive of bipolar transistors.
+
+<CmosThreshold />
+
+## Packages
+
+<IntegratedCircuits_Package />
+
+## In practice
+
+- **Read the datasheet:** it gives the pinout, the supply-voltage range and the absolute maximum ratings. Exceeding a maximum, even briefly, can destroy a chip.
+- **Bypass the supply:** put a small capacitor (commonly about 0.1 µF) across the supply pins, close to the chip. It supplies the brief current spikes digital chips draw.
+- **Do not leave inputs floating:** an unconnected CMOS input can drift and make the output erratic. Tie it high or low, or use a pull-up or pull-down resistor.
+- **Match logic levels:** a 5 V output can overdrive a 3.3 V-only input. Check both chips' ratings or use a level shifter.
+- **Static:** CMOS chips are static-sensitive just as MOSFETs are. Handle them with care.
+- **Noise:** the fast edges of digital chips radiate. A microcontroller or switching regulator can be a source of radio interference; see <Ref to="rfi-and-emi" />.
+
+<ExamLink groups="T6D G6B E6C" />
+
+<Related to="op-amps logic-gates microcontrollers adc-and-dac pll-and-synthesizers fets-and-mosfets" />

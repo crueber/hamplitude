@@ -1,0 +1,50 @@
+import { StubReactance } from '@/visuals/extra/E9F_StubReactance'
+import { QSection } from '@/visuals/extra/E9E_QSection'
+import { StubsAndMatchingSections_Gamma } from '@/visuals/compendium/StubsAndMatchingSections_Gamma'
+
+## What it is
+
+A wave takes time to travel along a line, so the impedance seen at one end depends on what is at the other end and on the line's length, and it repeats every half wavelength. That lets short lengths of line behave as **reactances, filters and impedance transformers**, with no inductors or capacitors at all.
+
+<Facts items={[
+  ['Quarter-wave transformer', 'Zin = Zq² ÷ ZL, so Zq = √(Z1 × Z2)'],
+  ['Shorted stub', 'looks inductive for less than ¼ λ; open at exactly ¼ λ'],
+  ['Open stub', 'looks capacitive for less than ¼ λ; short at exactly ¼ λ'],
+  ['Length', 'multiply by the cable velocity factor'],
+]} />
+
+## Stubs
+
+<StubReactance />
+
+A **stub** is a short length of line with its far end shorted or open. Seen from the other end, its reactance swings from inductive to capacitive and back as its length changes, and it repeats every half wavelength. At exactly a quarter wavelength a shorted stub looks like an open circuit and an open stub looks like a short; at a half wavelength, the reverse.
+
+That makes stubs useful as:
+
+- **Matching elements:** a stub in parallel at the right distance from a mismatched load cancels its reactance. The right length and position can be found on the <Ref to="smith-chart" />.
+- **Filters and traps:** a quarter-wave open stub across a line shorts out its own frequency, so it notches an unwanted signal; a quarter-wave shorted stub is invisible at its frequency but shorts the second harmonic.
+- **Insulators:** a quarter-wave shorted stub looks like an open circuit at its frequency, so it makes a "metallic insulator": a support that barely loads the line.
+
+## Quarter-wave sections
+
+<QSection />
+
+A quarter-wave length of line turns impedance upside down: **Zin = Zq² ÷ ZL**. Choose a section whose impedance Zq is the geometric mean of the two sides, **√(Z1 × Z2)**, and it matches them. Between 50 Ω and 100 Ω that is √5000 ≈ 70.7 Ω; between 50 Ω and 200 Ω it is exactly 100 Ω. It matches exactly at one frequency (and at odd multiples of it), and works acceptably over a modest band around it.
+
+In practice the section is cut to a quarter of the wavelength **in the cable**, so use the <Ref to="feed-line-loss">velocity factor</Ref>: a quarter wave of 0.66 coax at 14.2 MHz is about 11.4 ft. A common trick uses 75 Ω coax to match 50 Ω to about 112 Ω (75² ÷ 50).
+
+## The gamma match
+
+<StubsAndMatchingSections_Gamma />
+
+A Yagi's driven element has a low impedance at its centre, often well below 50 Ω, and the centre is a voltage null that can be bonded to the metal boom. A **gamma match** taps the element away from the centre with a rod and shorting strap, where the impedance is higher, and a series capacitor cancels the rod's inductance. Adjust strap position and capacitor for the lowest SWR. Related are the **T-match**, which taps the element with a pair of rods, and the **hairpin (beta) match**, which puts an inductance across the feed point of an element insulated from the boom.
+
+## In practice
+
+- Use real, measured cable lengths and the datasheet velocity factor, then trim with an antenna analyzer.
+- Stubs and quarter-wave sections are narrow-band tools. A tuner is better when frequency changes widely.
+- Check the SWR across the whole band afterward: a section that is perfect at the centre frequency drifts off at the edges.
+
+<ExamLink groups="E9E E9F E9G" />
+
+<Related to="characteristic-impedance swr-and-reflections smith-chart feed-line-loss antenna-tuners baluns-and-ununs" />

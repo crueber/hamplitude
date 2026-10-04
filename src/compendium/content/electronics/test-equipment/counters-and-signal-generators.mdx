@@ -1,0 +1,55 @@
+import { CountersAndSignalGenerators_Gate } from '@/visuals/compendium/CountersAndSignalGenerators_Gate'
+import { Prescaler } from '@/visuals/extra/E4A_Prescaler'
+import { DdsBlocks } from '@/visuals/general/G7C_DdsBlocks'
+
+## What it is
+
+A **frequency counter** measures how often a signal repeats, to a precision far finer than a radio dial. A **signal generator** does the opposite: it makes a clean signal of known frequency and level to feed into something under test. Together they let you check a transmitter's frequency, align a receiver, and test filters and amplifiers.
+
+<Facts items={[
+  ['Counter resolution', '1 ÷ gate time (1 s gate: 1 Hz)'],
+  ['Counter accuracy', 'set by its time base, in parts per million'],
+  ['Generator types', 'RF, audio, function (square, triangle), sweep'],
+  ['S9 reference', '50 µV across 50 Ω, which is −73 dBm'],
+]} />
+
+## How a counter works
+
+<CountersAndSignalGenerators_Gate />
+
+A counter opens a **gate** for a precisely timed interval and counts the pulses that arrive. Count ÷ gate time is the frequency. A longer gate gives finer **resolution**: 0.1 s gives 10 Hz, 1 s gives 1 Hz, 10 s gives 0.1 Hz. Because the gate can open at any moment relative to the signal, the count can be one too high or low: the "±1 count" uncertainty, which is exactly the resolution.
+
+Above the counter's own limit, a **prescaler** divides the signal down first, and the display multiplies the result back:
+
+<Prescaler />
+
+## Resolution is not accuracy
+
+A display of 1 Hz resolution means little if the gate is the wrong length. The gate is timed by the counter's **time base**, a crystal oscillator, and any error in it scales with the frequency being measured. Error = frequency × (ppm ÷ 1,000,000), so at 144.2 MHz:
+
+| Time base (typical) | Error in ppm | Error at 144.2 MHz |
+|---|---|---|
+| Basic crystal | about 10 | about 1.4 kHz |
+| Temperature-compensated (TCXO) | about 1 | about 144 Hz |
+| Oven-controlled (OCXO) | about 0.01 | about 1.4 Hz |
+| GPS-disciplined | far better than 0.001 | negligible for amateur use |
+
+Check a counter's time base against a known standard such as the WWV time signals on 10 MHz, or a GPS-disciplined source. The same limits apply to the frequency display on a radio: it is only as good as its reference crystal. See <Ref to="crystals-and-resonators" />.
+
+## Signal generators
+
+- **RF signal generator.** A calibrated frequency and a known, adjustable output level, often with AM or FM modulation. It is how you measure a receiver's sensitivity and check an S-meter. By the common HF convention S9 is 50 µV across 50 Ω, which is −73 dBm: (50 × 10⁻⁶)² ÷ 50 = 5 × 10⁻¹¹ W.
+- **Audio and function generators.** Sine, square and triangle waves at audio frequency. Two audio tones fed to an SSB transmitter make the **two-tone test** of linearity, read with a <Ref to="spectrum-analyzers">spectrum analyzer</Ref>.
+- **Sweep generators** step the frequency across a range, for plotting a filter's response with a scope or analyzer.
+
+Modern generators are built around a **DDS** (direct digital synthesizer): a counter-like accumulator steps through a sine table at the crystal's clock rate, and a DAC makes the wave.
+
+<DdsBlocks />
+
+With a 32-bit accumulator on a 100 MHz clock the frequency step is 100 MHz ÷ 2³² = about 0.023 Hz, and the crystal sets the accuracy. See <Ref to="pll-and-synthesizers" />.
+
+<Callout kind="warn" title="Protect the counter and the generator">Connect a transmitter to a counter only through a pickup or attenuator, never straight to the input. The counter's input can't handle the voltage of a 100 W signal (70 V RMS into 50 Ω). A generator's output can also be damaged if power gets back into it.</Callout>
+
+<ExamLink groups="E4A E7H G7C" />
+
+<Related to="oscillators crystals-and-resonators pll-and-synthesizers oscilloscopes spectrum-analyzers decibels" />

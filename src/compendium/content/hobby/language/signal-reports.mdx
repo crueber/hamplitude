@@ -1,0 +1,52 @@
+import { SMeter } from '@/visuals/general/G4D_SMeter'
+
+## Telling someone how they sound
+
+A signal report tells the other operator how well you copy them. It is the one piece of information every contact is expected to exchange. Phone uses two numbers (**RS**); CW and digital text modes use three (**RST**).
+
+<Facts items={[
+  ['R: readability', '1 to 5'],
+  ['S: strength', '1 to 9'],
+  ['T: tone (CW only)', '1 to 9'],
+  ['Typical', '59 on phone, 599 on CW'],
+]} />
+
+## The RST scales
+
+| Digit | R: readability | S: strength | T: tone (CW) |
+|---|---|---|---|
+| 1 | Unreadable | Faint, barely perceptible | Very rough, like a 60 Hz hum |
+| 2 | Barely readable, occasional words | Very weak | Very rough AC tone |
+| 3 | Readable with considerable difficulty | Weak | Rough AC tone, unfiltered |
+| 4 | Readable with practically no difficulty | Fair | Rough, some trace of filtering |
+| 5 | Perfectly readable | Fairly good | Filtered, but strong ripple |
+| 6 | | Good | Filtered, definite ripple |
+| 7 | | Moderately strong | Near-pure tone, trace of ripple |
+| 8 | | Strong | Near-perfect tone |
+| 9 | | Extremely strong | Perfect, pure tone |
+
+Read it as a sentence: **"you're 5 by 9"** means perfectly readable and extremely strong. On CW, a report of **599** is "perfect on everything". A weak signal with a clean tone, copied with effort, might be 339.
+
+## How honest are reports?
+
+In practice **59** (and **599**) is given to almost everyone, especially in contests, where the exchange must be fast. Treat that as a polite formality. In an ordinary QSO, an honest report ("I'm copying you 4 by 6, with some QSB") is much more useful, and worth giving when conditions are marginal. Digital modes such as FT8 are different: the software sends the received signal-to-noise ratio in dB, which is a real measurement.
+
+## The S meter
+
+<SMeter />
+
+The S meter on a receiver measures signal strength. **One S unit is 6 dB**, a factor of four in power. Above S9 the scale is read in dB: "20 over nine" means 20 dB stronger than S9. A common calibration, the amateur HF convention, puts S9 at 50 µV across 50 Ω, which is **−73 dBm**; the usual VHF/UHF convention puts it 20 dB lower, at −93 dBm.
+
+| Reading | Level (HF convention) | Voltage at 50 Ω |
+|---|---|---|
+| S1 | −121 dBm | 0.2 µV |
+| S3 | −109 dBm | 0.8 µV |
+| S5 | −97 dBm | 3.2 µV |
+| S7 | −85 dBm | 12.6 µV |
+| S9 | −73 dBm | 50 µV |
+
+<Callout kind="warn" title="Treat your S meter as a rough guide">Many radios' meters are not accurately calibrated, and they depend on AGC and settings. They are good for comparing one signal with another on the same radio, much less for absolute numbers. Your S meter reads what arrives at your receiver; it says nothing about how loud you are on the other end.</Callout>
+
+<ExamLink groups="G4D G2D" />
+
+<Related to="decibels noise-and-snr receiver-performance ham-abbreviations operating-etiquette" />

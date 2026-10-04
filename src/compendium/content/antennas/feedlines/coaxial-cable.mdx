@@ -1,0 +1,51 @@
+import { CoaxialCable_Fields } from '@/visuals/compendium/CoaxialCable_Fields'
+import { CoaxLayers } from '@/visuals/technician/T7C_CoaxLayers'
+
+## What it is
+
+Coaxial cable ("coax") is a centre conductor wrapped in an insulator, then a tubular shield, then a jacket. It is the default feed line in amateur radio because it is self-contained: you can run it along a mast, bury it, or lay it next to metal without disturbing the antenna.
+
+<Facts items={[
+  ['Typical impedance', '50 Ω for radios and antennas; 75 Ω for cable TV and video'],
+  ['Velocity factor', 'about 0.66 (solid plastic) to 0.8 (foam), typically'],
+  ['Loss', 'rises with frequency; falls as the cable gets thicker'],
+  ['Shield', 'braid, foil, or both'],
+]} />
+
+## How it works
+
+<CoaxialCable_Fields />
+
+The signal travels in the insulator between the centre conductor and the shield. The current on the centre conductor is matched by an equal and opposite current on the inside surface of the shield, so their fields cancel outside the cable. At radio frequencies, current crowds onto surfaces (skin effect), so the **inside** of the shield carries the signal while the **outside** is a separate conductor. That detail matters later: if current ever flows on the outside, the cable itself radiates and picks up noise. See <Ref to="common-mode-chokes" />.
+
+The ratio of the conductor sizes and the insulator together set the <Ref to="characteristic-impedance">characteristic impedance</Ref>. The insulator also sets the <Ref to="feed-line-loss">velocity factor</Ref>.
+
+## Choosing a coax
+
+Thicker cable has lower loss, but it is heavier, stiffer and costs more. Foam insulation lowers loss further. The usual families, from thin to thick:
+
+| Class | Typical use | Trade-off |
+|---|---|---|
+| Thin (RG-174 type) | short jumpers, handhelds, QRP | flexible but lossy |
+| RG-58 type | short HF runs, portable work | cheap and light; loss grows quickly on VHF and UHF |
+| RG-8X type | medium runs, mobile | a middle path |
+| RG-213 / RG-8 type | HF and VHF base stations | thick, low loss, solid and stiff |
+| Foam low-loss ("LMR-400 class") | long VHF and UHF runs | low loss for its size; stiffer, wants matching connectors |
+| Hardline | repeater sites, very long runs | lowest loss; rigid or semi-rigid, costly, special connectors |
+
+Pick by **frequency and length**: on HF, 100 feet of RG-8X is usually fine; on 70 cm the same run can swallow most of your power. See <Ref to="feed-line-loss" /> for the numbers.
+
+<CoaxLayers />
+
+Why 50 Ω? For air-filled coax, loss is lowest near 77 Ω and power handling is best near 30 Ω; 50 Ω is the compromise that became the standard.
+
+## In practice
+
+- Don't kink it or crush it. A sharp bend changes the spacing between conductors, which disturbs the impedance and can damage the dielectric.
+- Seal outdoor connectors. Water that enters a cut end or an open connector wicks along the cable and ruins it, and foam cable is especially vulnerable.
+- Use cable rated for UV and outdoor use, or protect it, because jackets crack in sunlight over years.
+- 75 Ω cable works in a pinch for short runs on HF, but it is not a match for 50 Ω gear. See <Ref to="swr-and-reflections" />.
+
+<ExamLink groups="T9B G9A T7C" />
+
+<Related to="characteristic-impedance feed-line-loss open-wire-line rf-connectors common-mode-chokes swr-and-reflections" />

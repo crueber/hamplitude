@@ -1,0 +1,44 @@
+import { Chain as E3C_Chain } from '@/visuals/extra/E3C_Chain'
+import { FlareClass as E3C_FlareClass } from '@/visuals/extra/E3C_FlareClass'
+import { Scales as E3C_Scales } from '@/visuals/extra/E3C_Scales'
+
+## What it is
+
+Space weather is the changing behaviour of the Sun and of the space between the Sun and Earth. Storms on the Sun can darken HF for an hour, close polar paths for days, or light the sky with an aurora. It matters because the same ionosphere that makes HF work is the thing the Sun is disturbing.
+
+<Facts items={[
+  ['Flare light arrives', 'in about 8 minutes (speed of light)'],
+  ['Flare class scale', 'A, B, C, M, X: each step 10 times stronger'],
+  ['Storm particles arrive', 'typically hours to a few days after a coronal mass ejection'],
+  ['K index', '0 to 9; 5 or more is a geomagnetic storm'],
+]} />
+
+## Two kinds of event, two arrival times
+
+<E3C_Chain />
+
+A **solar flare** is a sudden burst of energy from the Sun. Its X-rays and ultraviolet travel at the speed of light, so the effects come about 8 minutes after the flash is seen. A **coronal mass ejection (CME)** throws a cloud of charged particles into space. These are slower, so they take typically from about half a day to a few days to arrive, if the cloud is aimed at Earth. Flares often come with CMEs, but they are separate events and do separate things.
+
+<E3C_FlareClass />
+
+## What they do to radio
+
+**Flare: radio blackout.** The X-rays heavily ionize the D layer on the sunlit side of the Earth. That layer absorbs HF, so the lower bands fade or vanish, and a sudden burst of noise may appear. It starts abruptly, typically lasts from minutes to a couple of hours, and does not affect the night side. The stronger the flare, the higher in frequency the blackout reaches.
+
+**CME or fast solar wind: geomagnetic storm.** When the particle cloud hits Earth's magnetic field, especially when its own field points southward and links up with Earth's, energy pours in. HF paths, particularly near the poles, become noisy and weak, and the MUF often drops. The same storms push the aurora south and open VHF paths (see <Ref to="aurora-propagation" />). The K and A indices track the disturbance.
+
+<E3C_Scales />
+
+**Energetic protons: radiation storm.** Fast particles from large flares can flood the polar regions and strongly absorb HF there, so trans-polar paths can stay dead for days while paths at lower latitude remain fine.
+
+Coronal holes, large dark patches on the Sun, also fire fast streams of solar wind. They cause milder, repeating disturbances, about every 27 days as the Sun turns.
+
+## In practice
+
+- A sudden loss of signals on the sunlit side, no change at night, hints at a flare blackout: wait, or try a higher band.
+- Watch the K and A indices before a contest or DX trip; a high K usually means HF is worse than the flux number suggests.
+- Space-weather agencies publish warnings and watches; treat them as probabilities, not promises.
+
+<ExamLink groups="G3A E3C" />
+
+<Related to="solar-cycle-and-indices muf-and-luf aurora-propagation ionosphere-layers propagation-tools grey-line-and-long-path" />

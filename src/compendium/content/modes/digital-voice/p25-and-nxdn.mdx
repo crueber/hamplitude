@@ -1,0 +1,41 @@
+import { P25AndNxdn_Access } from '@/visuals/compendium/P25AndNxdn_Access'
+
+## What they are
+
+P25 and NXDN are digital voice standards created for **professional land mobile radio**: public safety, utilities, transport. A few amateurs use them because commercial radios are widely available second-hand, and because many multi-mode hotspots can carry them. Neither was designed for amateur radio, so some features do not fit it.
+
+<Facts items={[
+  ['P25 (Project 25)', 'public-safety standard; Phase 1 and Phase 2'],
+  ['NXDN', 'developed by Icom and Kenwood'],
+  ['Modulation', 'four-level FSK in P25 Phase 1 and NXDN'],
+  ['Access codes', 'P25: NAC. NXDN: RAN.'],
+]} />
+
+## Sharing the spectrum
+
+Digital voice squeezes more calls into the same spectrum in different ways. The two standards take different routes.
+
+<P25AndNxdn_Access />
+
+- **P25 Phase 1** sends one call per 12.5 kHz channel. **Phase 2** adds two time slots in the same 12.5 kHz, as <Ref to="dmr" /> does.
+- **NXDN** can use channels of 6.25 kHz, so two calls fit in the space of one 12.5 kHz channel, or 12.5 kHz where wider is wanted.
+
+P25 Phase 1 and NXDN use four-level frequency shifts (see <Ref to="system-fusion" />). All of them rely on a vocoder, as in <Ref to="d-star" />.
+
+## Getting in
+
+| | P25 | NXDN |
+|---|---|---|
+| Access code | NAC, a code in the signal; a receiver set to one NAC ignores others | RAN, similar idea |
+| Who to hear | a **talkgroup** ID | a **talkgroup** or unit ID |
+| Origin | Public-safety standard | Commercial two-way radio |
+
+Amateur networks that carry these modes work much like the DMR ones: repeaters or hotspots link over the internet and talkgroups pick the conversation. See <Ref to="internet-linking" />.
+
+## Amateur-radio cautions
+
+- **No encryption.** Commercial P25 and NXDN radios can scramble audio. Part 97 forbids encoding messages to obscure their meaning, so any such feature must be off.
+- **Check the band.** Professional radios are made for other services and may not cover or be programmable on amateur channels.
+- **Other digital modes cannot decode them.** A receiver must understand the same standard and vocoder.
+
+<Related to="dmr system-fusion d-star m17 digital-modulation hotspots-and-gateways" />

@@ -1,0 +1,47 @@
+import { Oscillators_Ringing } from '@/visuals/compendium/Oscillators_Ringing'
+import { OscLoop } from '@/visuals/general/G7B_OscLoop'
+import { OscTypes } from '@/visuals/extra/E7H_OscTypes'
+
+## What it is
+
+An oscillator makes a steady sine wave by itself, from nothing but a DC supply. It is the heart of every radio: the transmitter's carrier, the receiver's local oscillator and the clock of every digital circuit all begin as an oscillator.
+
+<Facts items={[
+  ['LC frequency', 'f = 1 ÷ (2π√(LC))'],
+  ['Example', '5.0 µH and 100 pF give about 7.1 MHz'],
+  ['Starting rule', 'loop gain of at least 1, with feedback in phase'],
+  ['Stability', 'measured in ppm: 1 ppm at 144 MHz is 144 Hz'],
+]} />
+
+## How it works
+
+<Oscillators_Ringing />
+
+A tuned circuit (a coil and a capacitor) swaps energy back and forth at its <Ref to="resonance-and-q">resonant frequency</Ref>, but its small resistance steals a little each cycle, so the ringing dies away. An oscillator adds an <Ref to="amplifiers">amplifier</Ref> that takes a sample of the output and feeds it back in phase to replace exactly what was lost.
+
+<OscLoop />
+
+Two conditions must hold: the feedback arrives **in phase** with the signal, and the **loop gain** (amplifier gain times feedback fraction) is at least 1. Only the tuned circuit's frequency satisfies the phase condition, so that is the frequency you get. Start-up is from random noise: with loop gain a little over 1 the noise grows until the amplifier runs out of room and limits, which settles the gain at an effective 1.
+
+## Kinds of oscillator
+
+<OscTypes />
+
+| Type | What sets the frequency | Typical role |
+|---|---|---|
+| Colpitts, Hartley | coil and capacitor (LC) | tunable VFO, VCO |
+| Pierce and other crystal oscillators | quartz crystal | fixed frequency, very stable |
+| VCO | LC with a <Ref to="diodes">varactor</Ref> | frequency set by a control voltage; see <Ref to="pll-and-synthesizers" /> |
+
+A **VFO** (variable frequency oscillator) tunes an LC circuit with a variable capacitor or inductor. A **crystal** oscillator gets its frequency from the mechanical vibration of a quartz slice, which has an enormously higher Q than any coil, so it is far more stable. See <Ref to="crystals-and-resonators" />.
+
+## In practice
+
+- **Drift** is slow wander as parts warm up. LC oscillators use temperature-stable (NP0 or C0G) capacitors, a rigid build and a regulated supply. Crystal types add temperature compensation (TCXO) or a heated oven (OCXO), each better than the last.
+- **Buffer the output.** A following stage isolates the oscillator from changes in its load; otherwise tuning the next stage pulls the frequency.
+- **Purity counts.** Noise on the oscillator (phase noise) is copied onto every signal it mixes, and it limits how well a receiver copes with strong neighbours; see <Ref to="receiver-performance" />.
+- **Accidental oscillation** is any amplifier with enough stray feedback, such as a power amplifier squealing at its own frequency. Layout, bypass capacitors and neutralizing cure it.
+
+<ExamLink groups="G7B G7C E7H" />
+
+<Related to="amplifiers resonance-and-q crystals-and-resonators pll-and-synthesizers mixers" />

@@ -1,0 +1,48 @@
+import { Optoelectronics_LedResistor } from '@/visuals/compendium/Optoelectronics_LedResistor'
+import { SolarCell } from '@/visuals/extra/E6F_SolarCell'
+import { Optoisolator } from '@/visuals/extra/E6F_Optoisolator'
+
+## What it is
+
+Optoelectronic devices turn electricity into light or light into electricity. **Emitters** such as LEDs make light; **detectors** such as photodiodes and solar cells respond to it; and an **optoisolator** pairs one of each so a signal can cross a gap with no electrical connection.
+
+<Facts items={[
+  ['LED forward drop', 'about 2 V (red) to over 3 V (blue, white), typical'],
+  ['Silicon solar cell, open circuit', 'about 0.5 V per cell'],
+  ['Most common optoisolator', 'an LED and a phototransistor'],
+]} />
+
+## Light emitters
+
+An LED is a forward-biased <Ref to="diodes">PN junction</Ref>. When electrons cross the junction and fall into holes, they release the energy as light. The size of the semiconductor's **band gap** sets both the colour and the forward voltage: a wider gap gives a shorter wavelength (towards blue) and a higher voltage drop. Infrared LEDs, invisible to the eye, drive remote controls and optical data links.
+
+An LED has no way to limit its own current, so it needs a series resistor.
+
+<Optoelectronics_LedResistor />
+
+The resistor takes the leftover voltage, so its value is **R = (supply − LED drop) ÷ current**. Real parts vary, so check the datasheet for the drop and the maximum current.
+
+## Light detectors
+
+- **Photodiode:** a PN junction, usually reverse-biased, in which light frees charge carriers and so produces a small current proportional to the light. It is fast, and is used in optical data receivers and light meters.
+- **Phototransistor:** a transistor whose base current comes from light. It is more sensitive than a photodiode but slower.
+- **Photoconductor:** a crystalline semiconductor whose resistance *falls* when light shines on it. The classic light-dependent resistor.
+- **Photovoltaic (solar) cell:** needs no external supply. Photons hand their energy to electrons in a junction, which then drive current through a load.
+
+<SolarCell />
+
+A silicon cell makes about 0.5 V however large it is; its *current* follows the light and its area. Panels connect cells in series to raise the voltage. A cell's efficiency is the fraction of the light energy it converts to electrical energy. Silicon is by far the most common material in power-generating panels. For using one at a station, see <Ref to="portable-power" />.
+
+## Optoisolators
+
+An optoisolator (or optocoupler) puts an LED and a phototransistor in one package, facing each other across an insulating gap. A current in the LED makes light, the light turns the phototransistor on, and the signal gets across although the two sides share no electrical connection.
+
+<Optoisolator />
+
+That isolation is the point. It keeps a control circuit separate from a higher-voltage circuit, breaks <Ref to="common-mode-and-ground-loops">ground loops</Ref> between a computer and a radio, and protects a delicate input from the other side's faults. A **solid-state relay** is the same idea: an optoisolator driving a semiconductor switch in place of a coil and contacts. Mains wiring still demands a part and a layout rated for it. Isolation is only as good as the device's rating.
+
+A related device is the optical shaft encoder: a slotted wheel interrupts a light beam, and counting the pulses tells a circuit how far a knob has turned.
+
+<ExamLink groups="E6F E6B" />
+
+<Related to="diodes semiconductor-basics bipolar-transistors portable-power computer-interfaces common-mode-and-ground-loops" />

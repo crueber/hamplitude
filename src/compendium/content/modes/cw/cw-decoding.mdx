@@ -1,0 +1,34 @@
+import { CwDecoding_Pipeline } from '@/visuals/compendium/CwDecoding_Pipeline'
+
+## Copying by ear
+
+Most CW is decoded by the operator. At first you write each letter down as you hear it. With practice you stop writing and keep the letters in your head, then hear whole words and short phrases at once, which is called **head copy**. Experienced operators often copy a letter or two behind what they are hearing, which gives the brain time to recognise a word as a whole. Skill is built on the habits in <Ref to="learning-morse" />.
+
+A trained ear is surprisingly good: it can pick a steady tone from noise, follow a fading signal, and read an operator's own rhythm. That is why a narrow filter and a good ear can often beat a decoder on weak signals.
+
+## What a decoder does
+
+Decoding software, built into some radios and available as an app or part of <Ref to="digital-mode-software" />, listens to audio and works in four steps.
+
+<CwDecoding_Pipeline />
+
+1. **Filter** the audio around a single pitch, so other tones and noise are ignored.
+2. **Decide on or off:** is the tone's level above a threshold?
+3. **Measure** how long each tone and each silence lasts.
+4. **Classify** them. Dit and dah are told apart by length, since a dah is three dits; gaps are told apart the same way. The program looks the pattern up and prints the letter. It continually adjusts to the sender's speed.
+
+Decoders get their audio from the radio through a <Ref to="computer-interfaces">computer interface</Ref>, or from the computer's microphone.
+
+## Where decoders work, and where they don't
+
+They do best with clean, steady, machine-sent code at a moderate speed. They struggle with:
+
+- **Noise and fading,** which flip the on/off decision and add or delete elements.
+- **Hand-sent code,** whose dits, dahs and gaps are uneven, so the 1:3 ratio rule gives wrong guesses.
+- **Overlapping signals and QRM.** A person can pick one signal from several; a decoder usually can't.
+
+Errors are most noticeable on weak signals, where you need decoding most. The Reverse Beacon Network relies on automatic decoding, which is why its spots can contain mistakes; see <Ref to="cw-contesting-and-rbn" />.
+
+<Callout kind="tip" title="Use it as a check">A decoder is a good way to check what you copied or to follow a QSO while still learning. If you rely on it every time, though, you won't build the skill that makes CW work when conditions are poor.</Callout>
+
+<Related to="learning-morse cw-contesting-and-rbn morse-alphabet noise-and-snr digital-mode-software computer-interfaces" />

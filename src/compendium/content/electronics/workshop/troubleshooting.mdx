@@ -1,0 +1,43 @@
+import { Troubleshooting_Flow } from '@/visuals/compendium/Troubleshooting_Flow'
+import { Troubleshooting_HalfSplit } from '@/visuals/compendium/Troubleshooting_HalfSplit'
+
+## What it is
+
+Troubleshooting is finding why something does not work, and doing it by method instead of by luck. It applies equally to a failed homebrew circuit, a dead radio and a station whose SWR has suddenly jumped. The method is the same each time: observe, narrow down, measure, fix one thing, retest.
+
+<Facts items={[
+  ['First', 'describe the symptom exactly'],
+  ['Most faults are', 'power, connectors, solder joints, or a simple mistake'],
+  ['Core technique', 'split the system in half and test the middle'],
+  ['Golden rule', 'change one thing at a time'],
+]} />
+
+## A routine that works
+
+<Troubleshooting_Flow />
+
+Begin with the symptom: *what* is wrong, *when* it happens, and whether it is constant or intermittent. Then check the dull things first, because they are by far the most common causes. Is the supply on, is the fuse intact, is the connector seated, is the cable plugged into the right socket? Look for burnt parts or discolouration, and gently wiggle wires and connectors while watching for the fault to come and go.
+
+Only after that do you need to measure. A <Ref to="multimeters">multimeter</Ref> is the main tool, and an oscilloscope or RF probe helps for signals. Compare each reading with what the schematic or manual says it should be.
+
+## Half-splitting
+
+If nothing is obvious, don't test every stage from the front. Pick a test point in the middle of the signal path. If the signal is correct there, the fault must be after it; if not, before. Then split the faulty half again.
+
+<Troubleshooting_HalfSplit />
+
+Eight stages take only three tests this way. It works for a receiver, a power chain from battery to radio, or a feed line from radio to antenna: any chain where you can tap the signal part-way along.
+
+## Habits that help
+
+- **Make it safe first.** Disconnect power, and discharge any large capacitors before working inside equipment. Never work on live mains. See <Ref to="electrical-safety" />.
+- **Compare with something known to be good:** a second identical radio, a spare cable, or the same circuit on another board. Swapping one part at a time is a fast, honest test.
+- **Suspect what changed.** If it worked yesterday, ask what has been touched, moved or added since.
+- **Re-check joints and connectors** before replacing a part. A cold joint (see <Ref to="soldering" />) or a poorly seated connector is more likely than a failed part.
+- **Keep notes.** Write down readings and what you changed, so you can undo a step that made things worse.
+
+For antenna and feed-line faults, measurements such as SWR, together with a <Ref to="dummy-loads">dummy load</Ref> to separate the radio from the antenna, are quick ways to split the system; see <Ref to="swr-and-power-meters" />.
+
+<ExamLink groups="T7C T7D" />
+
+<Related to="multimeters oscilloscopes swr-and-power-meters dummy-loads soldering construction-methods" />

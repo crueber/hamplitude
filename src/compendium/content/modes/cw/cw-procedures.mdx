@@ -1,0 +1,57 @@
+import { HamAbbreviations_CqCall } from '@/visuals/compendium/HamAbbreviations_CqCall'
+import { G2C_Prosigns } from '@/visuals/general/G2C_Prosigns'
+import { CwProcedures_Qso } from '@/visuals/compendium/CwProcedures_Qso'
+
+## Calling and answering
+
+A CW contact follows a standard pattern, so strangers who share no language can still complete one. To start, listen first, then ask **QRL?** ("is this frequency in use?") before you call. If it is clear, send a CQ.
+
+<HamAbbreviations_CqCall />
+
+Answer by sending their call sign once or twice, **DE**, and your call sign. Answer at or below the speed of the CQ, and tune your transmitter to the frequency you hear them on, so they are not hunting for you. Then wait for them to come back.
+
+## Prosigns
+
+A **prosign** is a procedural signal. Most are two letters sent run together as one character, with no gap between them, and are written with a bar over the letters or just as the pair. A few procedural signals, like K, are a single letter.
+
+<G2C_Prosigns exam={false} />
+
+| Signal | Means |
+|---|---|
+| **K** | over: go ahead |
+| **KN** | go ahead, only the station I named |
+| **AR** | end of message |
+| **AS** | wait |
+| **BK** | break: quick hand-over between stations |
+| **BT** | pause, a separator between parts of a message; often written = |
+| **SK** | end of contact |
+
+## A typical QSO
+
+<CwProcedures_Qso />
+
+A first exchange is usually the **RST** report, a name and a location. In RST, the numbers give **R**eadability (1 to 5), **S**trength (1 to 9) and **T**one (1 to 9), so 599 is perfect. A trailing **C** flags a chirpy signal, a tone that shifts as it is keyed.
+
+| Short form | Meaning |
+|---|---|
+| DE | from |
+| R | received, all copied |
+| UR | your |
+| TNX, TU | thanks, thank you |
+| FB | fine business, "great" |
+| HW? | how do you copy? |
+| PSE, AGN | please, again |
+| 73 | best regards |
+
+Many more are in <Ref to="ham-abbreviations" />, and the Q-codes (QRS, send slower; QSY, change frequency) in <Ref to="q-codes" />.
+
+## Good CW manners
+
+- **Match speed.** Send no faster than the other operator can copy. QRS is a polite request to slow down.
+- **Don't send faster than you can copy.** A fast CQ invites replies you may not understand.
+- **Full break-in (QSK)** lets you hear the other station between your own elements, so they can interrupt in the middle of your transmission. Without it, you need to flip to receive.
+- **Send your call sign clearly,** and repeat it when the band is noisy.
+
+<ExamLink groups="G2C" />
+
+<Related to="morse-alphabet q-codes ham-abbreviations operating-etiquette cw-contesting-and-rbn learning-morse" />

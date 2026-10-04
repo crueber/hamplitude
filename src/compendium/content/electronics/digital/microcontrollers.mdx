@@ -1,0 +1,43 @@
+import { Microcontrollers_Anatomy } from '@/visuals/compendium/Microcontrollers_Anatomy'
+import { Microcontrollers_HamUses } from '@/visuals/compendium/Microcontrollers_HamUses'
+
+## What it is
+
+A **microcontroller** is a whole small computer on one chip: a processor, memory, and ready-made circuits for reading and driving pins. You write a program, load it once, and it runs the moment power is applied. It is the cheap, flexible brain behind keyers, rotator controllers, beacons and countless gadgets, and it is what boards such as the Arduino, the Raspberry Pi Pico and the ESP32 are built around.
+
+<Facts items={[
+  ['Typical memory', 'kilobytes of RAM and flash (not gigabytes)'],
+  ['Typical clock', 'roughly a few MHz to a few hundred MHz'],
+  ['Pin voltage', '3.3 V or 5 V logic, depending on the chip'],
+  ['Pin current', 'only a few to a few tens of mA per pin'],
+]} />
+
+## What's inside
+
+<Microcontrollers_Anatomy />
+
+The **flash** memory holds your program and survives power-off; **RAM** holds the numbers it is working with and doesn't. The **peripherals** do work in hardware so the processor doesn't have to. A timer can count out a 60 ms dit without the program watching a clock; an ADC (see <Ref to="adc-and-dac" />) turns a voltage into a number; a serial port talks to a GPS, a display or a radio.
+
+A microcontroller is not the same as a single-board computer such as a Raspberry Pi: the latter runs a full operating system and is covered in <Ref to="raspberry-pi-and-arduino" />. A microcontroller runs one program, starts instantly, and reacts in microseconds, which is ideal for timing-critical jobs like keying.
+
+## What hams build with them
+
+<Microcontrollers_HamUses />
+
+- **CW keyers.** The program reads the paddles and generates perfectly timed dits and dahs, using the dit length of 1.2 ÷ WPM seconds (60 ms at 20 WPM; see <Ref to="morse-alphabet" />). See <Ref to="keys-and-paddles" />.
+- **Rotator controllers** read the position with the ADC and switch the motor relays to reach a chosen bearing; see <Ref to="rotators" />.
+- **Beacons and WSPR transmitters**, where a programmable clock-generator chip sets the frequency and the microcontroller steps it, with a precise timer for the schedule.
+- **Antenna switches, band decoders, SWR and power meters, CAT interfaces and repeater controllers**, all small jobs of "read this, decide, drive that".
+
+Any station you build is still a station: an unattended beacon needs identification and control as the rules require; see <Ref to="control-operators" />.
+
+## Connecting to the real world
+
+- **Drive loads through a part that can take it.** A pin supplies only a few mA. Use a transistor or driver for relays and LEDs, with a diode across a relay coil to absorb its voltage spike.
+- **Isolate the radio.** Key a transmitter with a transistor or optocoupler across its key jack, after checking the line's voltage and polarity.
+- **Keep RF out.** A nearby transmitter can upset a microcontroller: use a metal box, short wires, bypass capacitors on the supply and ferrites on the leads.
+- **Match voltages.** Don't feed 5 V into a 3.3 V pin.
+
+<Callout kind="warn" title="Check the key line first">Most solid-state radios key at low voltage and current. Some older tube transmitters key a much higher voltage, enough to destroy the circuit or shock you. Measure the open-circuit voltage at the key jack with a <Ref to="multimeters">meter</Ref> before connecting anything, and use an optocoupler or relay when unsure.</Callout>
+
+<Related to="raspberry-pi-and-arduino keys-and-paddles rotators adc-and-dac logic-gates cat-control" />

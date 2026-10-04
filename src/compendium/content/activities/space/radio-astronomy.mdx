@@ -1,0 +1,36 @@
+import { RadioAstronomy_Spectrum } from '@/visuals/compendium/RadioAstronomy_Spectrum'
+
+## What it is
+
+Radio astronomy is listening to the radio emissions of the sky: the Sun, Jupiter, the Milky Way, hydrogen gas, and the meteors that burn up overhead. It is a receive-only side of the hobby, using ordinary amateur gear (an antenna, a receiver or software-defined radio, and a computer) to record signals no one transmitted.
+
+<Facts items={[
+  ['Needs', 'antenna, receiver, computer logging'],
+  ['Transmit?', 'no, observations are receive-only'],
+  ['Good first projects', 'solar noise, meteor counts, Jupiter bursts'],
+  ['Hydrogen line', '1420.4 MHz, wavelength about 21 cm'],
+]} />
+
+## What there is to hear
+
+<RadioAstronomy_Spectrum />
+
+- **The Sun** is the loudest radio source. Solar flares and storms make bursts of noise across the spectrum, and the Sun's overall radio output at 2800 MHz (10.7 cm) is the basis of the solar flux index used in <Ref to="solar-cycle-and-indices" />.
+- **Jupiter** produces bursts of noise near 20 MHz, readable with a simple HF receiver and an antenna.
+- **Galactic background** is the hiss of the Milky Way. At low frequencies it is stronger than any receiver noise, which is why HF receivers do not need to be extremely quiet.
+- **Hydrogen** gas emits and absorbs at 1420.4 MHz. A small dish and an SDR can map the Milky Way and measure its rotation through Doppler.
+- **Meteors** leave ionized trails that reflect radio waves. Listening to a distant, normally inaudible station or beacon and counting the echoes is a simple way to count meteors. See <Ref to="meteor-scatter" />.
+
+## Tools and technique
+
+A radio astronomy receiver measures **power over time**. You do not want clean audio, you want a stable recording of how the noise level changes as the sky drifts through the antenna beam. Points that matter:
+
+- A stable receiver and logging over long periods, with the automatic gain control off, so a change in level means a change in the sky.
+- A quiet site away from noise, because the signals are weak and local interference hides them.
+- Calibration: the Sun is a handy reference. Pointing a dish at the Sun and then at cold sky shows a jump in noise, which is a quick check of your whole receive system. A solid dish also focuses sunlight on its feed, so keep it on the Sun only briefly.
+
+The ionosphere can be monitored too: a solar flare changes how the sunlit ionosphere absorbs HF and affects very low frequency signals, a disturbance that shows up in a log within minutes.
+
+<Callout kind="note" title="Hands off the protected band">The 1400 to 1427 MHz range around the hydrogen line is reserved for passive observation. Transmitting there is not allowed.</Callout>
+
+<Related to="solar-cycle-and-indices meteor-scatter noise-and-snr dish-antennas ionosphere-layers" />
