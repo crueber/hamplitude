@@ -2,6 +2,8 @@
   "name": "hamplitude",
   "private": true,
   "version": "0.0.0",
+  "license": "SEE LICENSE IN LICENSE",
+  "author": "Christopher Rueber (N0ZSY)",
   "type": "module",
   "scripts": {
     "dev": "bun scripts/gen-compendium.ts && vite",

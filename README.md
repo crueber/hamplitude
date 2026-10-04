@@ -94,3 +94,12 @@ Known caveats worth a human glance before relying on them:
 * Compendium articles state typical or illustrative figures as such, and avoid regulations, dates and program rules that change; readers are told to check current rules.
 
 Not affiliated with the FCC, NCVEC, or any VEC. Always check ncvec.org for the pool in effect on your exam date.
+
+## License
+
+Copyright © 2026, Christopher Rueber (N0ZSY). Released under the [O'Saasy License](LICENSE): MIT-style permissions, plus a
+condition that the software may not be used to directly compete with the original licensor by offering it to third parties as a
+hosted or SaaS product.
+
+Third-party material keeps its own terms: the question text comes from the NCVEC pools, which the NCVEC Question Pool Committee
+released into the public domain, and the bundled fonts (Inter, Space Grotesk, JetBrains Mono, via Fontsource) are under the SIL Open Font License.
