@@ -23,16 +23,11 @@ const extraLinks = [
   `<link rel="manifest" href="${site.base}site.webmanifest">`,
 ].join('\n    ')
 
-// optional privacy-friendly analytics: injected only when a GoatCounter site code is configured
-const analytics = seoConfig.goatcounterCode
-  ? `\n    <script data-goatcounter="https://${seoConfig.goatcounterCode}.goatcounter.com/count" data-goatcounter-settings='{"no_onload":true}' async src="https://gc.zgo.at/count.js"></script>`
-  : ''
-
 function assemble(seo: unknown, body: string, prerenderedPath: string | null): string {
   let h = template
     .replace(/<title>[\s\S]*?<\/title>\s*/, '')
     .replace(/<meta name="description"[^>]*>\s*/, '')
-    .replace('</head>', `    ${ssr.headHtml(seo)}\n    ${extraLinks}${analytics}\n  </head>`)
+    .replace('</head>', `    ${ssr.headHtml(seo)}\n    ${extraLinks}\n  </head>`)
     .replace('<div id="root"></div>', `<div id="root">${body}</div>`)
   // the page records which URL it was rendered for, so the browser only hydrates it when it is really at that URL
   if (prerenderedPath !== null) h = h.replace('<html lang="en">', `<html lang="en" data-prerendered data-pre-path="${site.base.replace(/\/$/, '')}${prerenderedPath === '/' ? '/' : prerenderedPath + '/'}">`)

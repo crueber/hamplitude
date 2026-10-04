@@ -26,7 +26,7 @@ bun scripts/interact.ts [filter]  # drive every slider/button; flags errors and 
 ## Search engines and analytics
 
 Every indexable page is prerendered to static HTML with full SEO metadata (canonical, Open Graph, JSON-LD), plus a sitemap, robots.txt
-and an IndexNow ping on deploy; routes are real URLs, not hashes. Privacy-friendly analytics (GoatCounter) switches on with one config value.
+and an IndexNow ping on deploy; routes are real URLs, not hashes. Privacy-friendly analytics (GoatCounter, no third-party script, respects Do Not Track) switches on with one config value.
 Going live on a custom domain is a `public/CNAME` file. See **SEO.md** for the go-live checklist and the Search Console / Bing steps.
 
 ## Question pools

@@ -18,7 +18,7 @@ const WORKERS = 4
 let next = 0
 async function worker() {
   const ctx = await browser.newContext({ viewport: { width: 1200, height: 900 } })
-  await ctx.route(/gc\.zgo\.at|goatcounter\.com/, (r) => r.fulfill({ contentType: 'text/javascript', body: '' })) // tests must never count as real visits
+  await ctx.route(/gc\.zgo\.at|goatcounter\.com/, (r) => r.fulfill({ contentType: 'image/gif', body: '' })) // tests must never count as real visits
   const page = await ctx.newPage()
   const errs: string[] = []
   page.on('pageerror', (e) => errs.push('pageerror: ' + String(e).slice(0, 160)))

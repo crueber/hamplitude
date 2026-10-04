@@ -50,15 +50,24 @@ link-preview debugger for the social card. New sites can take days to weeks to a
 
 ## Analytics
 
-Recommended: **GoatCounter**: free for non-commercial sites, open source, a ~3.5 KB script, **no cookies and no personal data**
-(so no consent banner, which matters because the site promises that progress stays in the visitor's browser), and it works with
-this app's client-side routing.
+**GoatCounter** (free for non-commercial sites, open source). **No cookies and no personal data**, so no consent banner is needed,
+which matters because the site promises that progress stays in the visitor's browser.
 
-1. Create a site at goatcounter.com; you choose a code, e.g. `hamplitude` (dashboard at `hamplitude.goatcounter.com`).
-2. Put that code in `seo.config.json` → `goatcounterCode` and push. Until it's set, nothing is loaded and nothing is counted.
-3. The footer then adds a line saying visits are counted anonymously. Localhost is ignored automatically.
+It is enabled by `goatcounterCode` in `seo.config.json` (currently `hamplitude`; dashboard at `hamplitude.goatcounter.com`).
+Empty means nothing is sent.
 
-Alternatives if you prefer: **Cloudflare Web Analytics** (free, cookieless, if your DNS is on Cloudflare), **Plausible** or
-**Umami** (self-hostable). Swapping providers means changing `src/components/Analytics.tsx` and the script tag in `scripts/prerender.ts`.
-Google Analytics works too but needs cookie-consent handling and is a poor fit for a privacy-minded site. Search Console and
-Bing Webmaster Tools (above) already cover the search side of "who finds this and how".
+How it counts (`src/components/Analytics.tsx`): GoatCounter's own `count.js` only requests a 1x1 image from
+`<code>.goatcounter.com/count` with the page details in the query string. The app makes that request itself, so **no third-party
+script is loaded** (many DNS and ad blockers list `gc.zgo.at`) and every client-side navigation is counted, not just the first page.
+It sends the path, page title, screen size and, on the landing page only, an outside referrer. It does **not** count:
+
+* visitors with **Do Not Track** or **Global Privacy Control** switched on
+* `localhost`, `*.local` and `file:` (development)
+* automated browsers (flagged as bots)
+
+A few blockers still list `*.goatcounter.com`, so expect some undercounting; Search Console and Bing Webmaster Tools (above) are
+unaffected by blockers and show how people find the site. If *you* browse with a DNS blocker such as Pi-hole, allowlist
+`hamplitude.goatcounter.com` to see your own visits and the dashboard.
+
+Alternatives if you ever want to switch: Cloudflare Web Analytics (free, cookieless, needs Cloudflare DNS), Plausible or Umami
+(self-hostable). Google Analytics needs cookie-consent handling and is a poor fit for a privacy-minded site.
