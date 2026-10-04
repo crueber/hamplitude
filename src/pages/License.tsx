@@ -1,4 +1,5 @@
-import { Link, Navigate, useParams } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
+import { useRouteParams } from '@/lib/useRouteParams'
 import { LICENSE_BLURB, POOLS, isLicense } from '@/data'
 import { getGroupContent, hasLesson } from '@/content'
 import { useStore } from '@/lib/store'
@@ -9,7 +10,7 @@ import { Ring } from '@/components/Ring'
 const titleCase = (s: string) => s.toLowerCase().replace(/(^|\s|-|\/)([a-z])/g, (_, a, b) => a + b.toUpperCase()).replace(/\bAnd\b/g, 'and')
 
 export function LicensePage() {
-  const { license } = useParams()
+  const { license } = useRouteParams()
   const cards = useStore((s) => s.cards)
   const read = useStore((s) => s.lessonsRead)
   const exams = useStore((s) => s.exams)

@@ -20,7 +20,7 @@ export function Home() {
               Short, visual explanations of the ideas behind every question in the official FCC pools — so whatever the exam asks, you can reason your way to the answer.
             </p>
             <div className="actions">
-              <a className="btn btn-primary btn-lg" style={{ ['--lic' as string]: 'var(--technician)' }} href="#/technician">Start with Technician</a>
+              <Link className="btn btn-primary btn-lg" style={{ ['--lic' as string]: 'var(--technician)' }} to="/technician">Start with Technician</Link>
               <button className="btn btn-lg" onClick={() => document.getElementById('classes')?.scrollIntoView({ behavior: 'smooth' })}>Pick a license</button>
             </div>
           </div>

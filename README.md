@@ -14,13 +14,20 @@ It has two halves that share one visual kit:
 ```bash
 bun install
 bun run dev        # http://localhost:5173
-bun run build      # type-check + production build into dist/ (deploy anywhere static)
+bun run build      # type-check, build, then prerender ~460 pages into dist/ (deploy anywhere static)
 bun run validate   # check lessons AND compendium articles against their authoring contracts
 bun run test:flow  # Playwright smoke test of the learner flow (needs dev server)
+bun scripts/hydration-check.ts   # load every prerendered page from the production build (needs `bunx vite preview --port 4173`)
 bun scripts/sweep.ts [filter]     # render every lesson/article in light/dark/mobile: console errors, overflow, clipped diagram labels
 bun scripts/interact.ts [filter]  # drive every slider/button; flags errors and NaN/undefined in text
                                   # filters: technician|general|extra|T5D|compendium|antennas/wire|half-wave-dipole ...
 ```
+
+## Search engines and analytics
+
+Every indexable page is prerendered to static HTML with full SEO metadata (canonical, Open Graph, JSON-LD), plus a sitemap, robots.txt
+and an IndexNow ping on deploy; routes are real URLs, not hashes. Privacy-friendly analytics (GoatCounter) switches on with one config value.
+Going live on a custom domain is a `public/CNAME` file. See **SEO.md** for the go-live checklist and the Search Console / Bing steps.
 
 ## Question pools
 

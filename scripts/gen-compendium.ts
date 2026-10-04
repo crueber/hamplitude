@@ -24,6 +24,21 @@ const plain = (mdx: string) =>
     .replace(/\s+/g, ' ')
     .trim()
 
+/** First real prose paragraph of an article, as plain text: the best meta description. */
+function lead(mdx: string): string {
+  const body = mdx.replace(/^import .*$/gm, '')
+  for (const block of body.split(/\n\s*\n/)) {
+    const b = block.trim()
+    if (!b || /^(<|\||#|-|\*\s|\d+\.|>|`)/.test(b)) continue
+    const t = b
+      .replace(/<Ref[^>]*>([^<]*)<\/Ref>/g, '$1').replace(/<[^>]+>/g, '')
+      .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1').replace(/[*_`]/g, '').replace(/\s+/g, ' ').trim()
+    if (t.length >= 40) return t
+  }
+  return ''
+}
+
+const leads: Record<string, string> = {}
 const index: { p: string; t: string; s: string; x: string }[] = []
 const examLinks: Record<string, string[]> = {}
 let written = 0
@@ -33,6 +48,7 @@ for (const a of FLAT) {
   if (existsSync(f)) {
     const mdx = readFileSync(f, 'utf8')
     text = plain(mdx).slice(0, 5000)
+    leads[a.path] = lead(mdx)
     written++
     for (const m of mdx.matchAll(/<ExamLink\s+groups="([^"]+)"/g))
       for (const g of m[1].split(/[\s,]+/).filter(Boolean)) (examLinks[g] ??= []).push(a.path)
@@ -41,4 +57,5 @@ for (const a of FLAT) {
 }
 writeFileSync(join(OUT, 'search-index.json'), JSON.stringify(index))
 writeFileSync(join(OUT, 'exam-links.json'), JSON.stringify(examLinks))
+writeFileSync(join(OUT, 'descriptions.json'), JSON.stringify(leads))
 console.log(`compendium: ${written}/${FLAT.length} articles indexed, ${Object.keys(examLinks).length} exam groups linked`)

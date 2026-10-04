@@ -5,14 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "bun scripts/gen-compendium.ts && vite",
-    "build": "bun scripts/gen-compendium.ts && tsc -b && vite build",
+    "build": "bun scripts/gen-compendium.ts && tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && bun scripts/prerender.ts",
     "lint": "oxlint",
     "preview": "vite preview",
     "pools": "bun scripts/parse-pools.ts",
     "figures": "python3 scripts/extract-figures.py",
     "validate": "bun scripts/validate-content.ts && bun scripts/validate-compendium.ts",
     "test:flow": "bun scripts/flow-test.ts",
-    "gen": "bun scripts/gen-compendium.ts"
+    "gen": "bun scripts/gen-compendium.ts",
+    "brand": "bun scripts/make-brand-assets.ts"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.3.0",

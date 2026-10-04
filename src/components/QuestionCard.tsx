@@ -38,7 +38,7 @@ export function QuestionCard({ question: q, seed, picked, revealed, onPick, hide
       <h2 className="qtext">{q.q}</h2>
       {q.figure && (
         <figure className="qfig">
-          <img src={`./figures/${q.figure}.svg`} alt={`Figure ${q.figure}`} />
+          <img src={`${import.meta.env.BASE_URL}figures/${q.figure}.svg`} alt={`Figure ${q.figure}`} />
           <figcaption>Figure {q.figure}</figcaption>
         </figure>
       )}

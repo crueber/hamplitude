@@ -1,5 +1,6 @@
 import { Suspense, lazy, useEffect, useMemo, useRef } from 'react'
-import { Link, Navigate, useLocation, useParams } from 'react-router-dom'
+import { Link, Navigate, useLocation } from 'react-router-dom'
+import { useRouteParams } from '@/lib/useRouteParams'
 import { MDXProvider } from '@mdx-js/react'
 import { POOLS, allGroups, getGroup, isLicense } from '@/data'
 import { getGroupContent, hasLesson, loadLesson } from '@/content'
@@ -17,7 +18,7 @@ function lessonComponent(id: string) {
 const titleCase = (s: string) => s.toLowerCase().replace(/(^|\s|-|\/)([a-z])/g, (_, a, b) => a + b.toUpperCase()).replace(/\bAnd\b/g, 'and')
 
 export function LessonPage() {
-  const { license, group } = useParams()
+  const { license, group } = useRouteParams()
   const { hash, pathname } = useLocation()
   const footRef = useRef<HTMLDivElement>(null)
   const info = group ? getGroup(group) : undefined

@@ -34,7 +34,8 @@ jobs:
       - name: Validate lesson content
         run: bun run validate
 
-      # Type-checks, then builds into dist/. Hash routing + relative asset paths mean it works under /<repo>/ with no config.
+      # Type-checks, builds, then prerenders every route to static HTML (with SEO tags), the sitemap, robots.txt and 404.html.
+      # Base path and site URL come from public/CNAME: present = custom domain at the root, absent = /<repo>/ project page.
       - name: Build
         run: bun run build
 
@@ -53,3 +54,18 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # Pings IndexNow (Bing, and through it DuckDuckGo, Yandex...) with the sitemap URLs. Only meaningful on the custom domain;
+  # failure here (e.g. DNS still propagating) must never fail the deploy.
+  indexnow:
+    needs: deploy
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.2
+      - name: Submit URLs to IndexNow
+        if: hashFiles('public/CNAME') != ''
+        run: bun scripts/indexnow.ts

@@ -4,8 +4,9 @@ const b = await chromium.launch({ executablePath: '/usr/bin/chromium', args: ['-
 const p = await (await b.newContext({ viewport: { width: 1000, height: 900 } })).newPage()
 const errs: string[] = []
 p.on('pageerror', (e) => errs.push(String(e)))
+const HX = (process.env.HX_BASE ?? 'http://localhost:5173')
 const ok = (c: boolean, m: string) => { console.log(c ? '✓' : '✗', m); if (!c) process.exitCode = 1 }
-await p.goto('http://localhost:5173/#/technician/T5D/practice'); await p.waitForTimeout(600)
+await p.goto(`${HX}/technician/T5D/practice`); await p.waitForTimeout(600)
 ok((await p.locator('.choice').count()) === 4, 'practice shows 4 choices')
 const qid = await p.locator('.qid').first().innerText()
 await p.keyboard.press('1'); await p.waitForTimeout(300)
@@ -17,12 +18,12 @@ ok((await p.locator('.quiz-count').innerText()).startsWith('2/'), 'advances to q
 const card = await p.evaluate(() => JSON.parse(localStorage.getItem('hamplitude:v1')!).cards)
 ok(Object.keys(card).length === 1, 'progress persisted to localStorage')
 // exam
-await p.goto('http://localhost:5173/#/technician/exam'); await p.waitForTimeout(600)
+await p.goto(`${HX}/technician/exam`); await p.waitForTimeout(600)
 ok((await p.locator('.exam-nav button').count()) === 35, 'exam has 35 questions (one per group)')
-await p.goto('http://localhost:5173/#/extra/exam'); await p.waitForTimeout(600)
+await p.goto(`${HX}/extra/exam`); await p.waitForTimeout(600)
 ok((await p.locator('.exam-nav button').count()) === 50, 'extra exam has 50 questions')
 // figure question renders
-await p.goto('http://localhost:5173/#/technician/T6C/practice'); await p.waitForTimeout(600)
+await p.goto(`${HX}/technician/T6C/practice`); await p.waitForTimeout(600)
 let sawFig = false
 for (let i = 0; i < 12 && !sawFig; i++) {
   if (await p.locator('.qfig img').count()) { sawFig = true; break }

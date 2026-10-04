@@ -21,7 +21,7 @@ const page = await ctx.newPage()
 const errors: string[] = []
 page.on('pageerror', (e) => errors.push(String(e)))
 page.on('console', (m) => m.type() === 'error' && errors.push(m.text()))
-await page.goto(`${opt('base') ?? 'http://localhost:5173'}/#${route}`)
+await page.goto(`${opt('base') ?? (process.env.HX_BASE ?? 'http://localhost:5173')}${route}`)
 await page.waitForTimeout(Number(opt('wait') ?? 900))
 const click = opt('click')
 if (click) { await page.click(click); await page.waitForTimeout(500) }

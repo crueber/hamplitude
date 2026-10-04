@@ -10,8 +10,10 @@ const load = (): string[] => { try { return JSON.parse(localStorage.getItem(KEY)
 
 /** Three-level tree: Section > Subsection > Article. Open state persists; the current path is always open. */
 export function Sidebar({ current, onNavigate }: { current: string; onNavigate?: () => void }) {
-  const [open, setOpen] = useState<Set<string>>(() => new Set(load()))
   const [section, sub] = current.split('/')
+  // First render depends only on the URL, so prerendered HTML and hydration agree; saved state merges in after mount.
+  const [open, setOpen] = useState<Set<string>>(() => new Set([section, `${section}/${sub}`].filter((k) => !k.startsWith('/') && !k.endsWith('/') && k !== 'undefined' && !k.includes('undefined'))))
+  useEffect(() => setOpen((o) => new Set([...o, ...load()])), [])
 
   useEffect(() => {
     if (!section) return

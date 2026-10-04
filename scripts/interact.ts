@@ -23,7 +23,7 @@ let bad = 0, controls = 0
 for (const { label, url, wait } of todo) {
   errs.length = 0
   const problems: string[] = []
-  await p.goto(`http://localhost:5173/#${url}`)
+  await p.goto(`${(process.env.HX_BASE ?? 'http://localhost:5173')}${url}`)
   await p.waitForSelector(wait, { timeout: 8000 }).catch(() => problems.push(`nothing rendered (${wait})`))
   await p.waitForTimeout(200)
   const check = async (when: string) => {

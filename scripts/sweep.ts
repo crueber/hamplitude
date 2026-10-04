@@ -26,7 +26,7 @@ for (const mode of ['light', 'dark', 'mobile'] as const) {
   p.on('console', (m) => m.type() === 'error' && errs.push(m.text()))
   for (const { label, url, wait } of todo) {
     errs.length = 0
-    await p.goto(`http://localhost:5173/#${url}`)
+    await p.goto(`${(process.env.HX_BASE ?? 'http://localhost:5173')}${url}`)
     await p.waitForSelector(wait, { timeout: 8000 }).catch(() => errs.push(`nothing rendered (${wait})`))
     await p.waitForTimeout(250)
     const r = await p.evaluate(() => {

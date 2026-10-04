@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { Navigate, useParams } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
+import { useRouteParams } from '@/lib/useRouteParams'
 import { getGroup, isLicense } from '@/data'
 import { getGroupContent } from '@/content'
 import { groupSession, reviewSession } from '@/lib/sessions'
@@ -7,7 +8,7 @@ import { Quiz } from '@/components/Quiz'
 import { ExamRunner } from '@/components/ExamRunner'
 
 export function GroupPractice() {
-  const { license, group } = useParams()
+  const { license, group } = useRouteParams()
   const [run, setRun] = useState(0)
   const info = group ? getGroup(group) : undefined
   if (!isLicense(license) || !info || info.license !== license) return <Navigate to="/" replace />
@@ -22,7 +23,7 @@ function GroupQuiz({ license, group, title, onRestart }: { license: 'technician'
 }
 
 export function Review() {
-  const { license } = useParams()
+  const { license } = useRouteParams()
   const [run, setRun] = useState(0)
   if (!isLicense(license)) return <Navigate to="/" replace />
   return <ReviewQuiz key={`${license}:${run}`} license={license} onRestart={() => setRun((n) => n + 1)} />
@@ -34,7 +35,7 @@ function ReviewQuiz({ license, onRestart }: { license: 'technician' | 'general' 
 }
 
 export function ExamPage() {
-  const { license } = useParams()
+  const { license } = useRouteParams()
   if (!isLicense(license)) return <Navigate to="/" replace />
   return <ExamRunner key={license} license={license} />
 }

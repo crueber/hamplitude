@@ -4,6 +4,9 @@ import { cycleTheme, useApplyTheme } from '@/lib/theme'
 import { streakDays } from '@/lib/srs'
 import { useStore } from '@/lib/store'
 import { LogoMark } from './Logo'
+import { Analytics } from './Analytics'
+import { Seo } from './Seo'
+import seoConfig from '../../seo.config.json'
 
 export function Layout() {
   useApplyTheme()
@@ -11,7 +14,8 @@ export function Layout() {
   const activity = useStore((s) => s.activity)
   const streak = streakDays(activity)
   const { pathname } = useLocation()
-  const focus = /\/(practice|exam|review)$/.test(pathname)
+  // distraction-free pages: only the real exam routes, never a compendium page that merely ends in /practice
+  const focus = /^\/(technician|general|extra)\/(review|exam|[A-Za-z0-9]+\/practice)\/?$/.test(pathname)
 
   return (
     <>
@@ -36,6 +40,8 @@ export function Layout() {
           </nav>
         </div>
       </header>
+      <Seo />
+      <Analytics />
       <main><Outlet /></main>
       {!focus && <Footer />}
       <ScrollRestoration />
@@ -62,13 +68,17 @@ function Footer() {
           Explanations and visuals are original. Hamplitude is independent: not affiliated with the FCC, the NCVEC, or any VEC.
           Always check <a href="https://www.ncvec.org" target="_blank" rel="noreferrer">ncvec.org</a> for the pool in effect on your exam date.
         </p>
-        <p><Link to="/settings">Settings &amp; progress</Link> · Progress is saved only in this browser.</p>
+        <p>
+          <Link to="/settings">Settings &amp; progress</Link> · Progress is saved only in this browser.
+          {seoConfig.goatcounterCode && ' Visits are counted anonymously (no cookies, no personal data).'}
+        </p>
         <div className="credit">
           <strong>Brought to you by N0ZSY (Chris) and AI; Keep up the Hamplitude!</strong>
           <span>
             Found something wrong with a question, an explanation or an article?{' '}
             <a href="https://github.com/crueber/hamplitude/issues" target="_blank" rel="noreferrer">Report it on GitHub Issues</a>.
           </span>
+          <a className="credit-domain" href="https://hamplitude.net" target="_blank" rel="noreferrer">hamplitude.net</a>
         </div>
       </div>
     </footer>

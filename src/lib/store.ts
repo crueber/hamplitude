@@ -88,16 +88,19 @@ export function useStore<T>(selector: (s: State) => T): T {
       return () => listeners.delete(cb)
     },
     () => selector(state),
+    // Prerendered pages (and the first hydration pass) must not depend on this browser's saved progress.
+    () => selector(DEFAULTS),
   )
 }
 
-// keep tabs in sync
-window.addEventListener('storage', (e) => {
-  if (e.key === KEY) {
-    state = load()
-    listeners.forEach((l) => l())
-  }
-})
+// keep tabs in sync (browser only: this module is also imported while prerendering)
+if (typeof window !== 'undefined')
+  window.addEventListener('storage', (e) => {
+    if (e.key === KEY) {
+      state = load()
+      listeners.forEach((l) => l())
+    }
+  })
 
 export const dayKey = (d = new Date()) =>
   `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
