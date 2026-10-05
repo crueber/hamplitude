@@ -67,6 +67,16 @@ export function seoFor(rawPath: string): Seo {
     }
   }
 
+  if (parts[0] === 'acknowledgements' && parts.length === 1) {
+    return {
+      title: `Acknowledgements | ${SITE_NAME}`,
+      description: clip('The people behind Hamplitude: the family who inspired it, the creators who help bring newcomers into amateur radio, and its open-source contributors.'),
+      path, type: 'website',
+      jsonLd: [{ '@context': 'https://schema.org', '@type': 'AboutPage', name: 'Acknowledgements', url: canonicalUrl(path), inLanguage: 'en', isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: `${SITE_URL}/` } },
+        breadcrumb([['Home', '/'], ['Acknowledgements', '/acknowledgements']])],
+    }
+  }
+
   // compendium
   if (parts[0] === 'compendium') {
     const [, sec, sub, art] = parts
@@ -160,7 +170,7 @@ export function seoFor(rawPath: string): Seo {
 
 /** Every URL that should be indexed (prerendered and listed in the sitemap), in a sensible order. */
 export function allPages(): string[] {
-  const out = ['/']
+  const out = ['/', '/acknowledgements']
   for (const l of LICENSES) { out.push(`/${l}`); for (const g of allGroups(l)) out.push(`/${l}/${g.id}`) }
   out.push('/compendium')
   for (const s of SECTIONS) { out.push(`/compendium/${s.slug}`); for (const b of s.subs) out.push(`/compendium/${s.slug}/${b.slug}`) }

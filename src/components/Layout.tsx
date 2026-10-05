@@ -70,7 +70,7 @@ function Footer() {
           Always check <a href="https://www.ncvec.org" target="_blank" rel="noreferrer">ncvec.org</a> for the pool in effect on your exam date.
         </p>
         <p>
-          <Link to="/settings">Settings &amp; progress</Link> · Progress is saved only in this browser.
+          <Link to="/settings">Settings &amp; progress</Link> · <Link to="/acknowledgements">Acknowledgements</Link> · Progress is saved only in this browser.
           {seoConfig.goatcounterCode && ' Visits are counted anonymously (no cookies, no personal data).'}
         </p>
         <div className="credit">

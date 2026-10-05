@@ -95,6 +95,10 @@ Known caveats worth a human glance before relying on them:
 
 Not affiliated with the FCC, NCVEC, or any VEC. Always check ncvec.org for the pool in effect on your exam date.
 
+## Contributing
+
+Fixes and improvements are welcome; see **CONTRIBUTING.md**. Contributors are thanked on the site's Acknowledgements page (`src/data/contributors.json`).
+
 ## License
 
 Copyright © 2026, Christopher Rueber (N0ZSY). Released under the [O'Saasy License](LICENSE): MIT-style permissions, plus a

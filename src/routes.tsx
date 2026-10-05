@@ -8,6 +8,7 @@ import { LessonPage } from '@/pages/Lesson'
 import { ExamPage, GroupPractice, Review } from '@/pages/Practice'
 import { Browse } from '@/pages/Browse'
 import { SettingsPage } from '@/pages/Settings'
+import { Acknowledgements } from '@/pages/Acknowledgements'
 import { CompendiumRoute } from '@/compendium/pages'
 
 /** Shared by the browser (main.tsx) and the static prerenderer (entry-server.tsx). */
@@ -15,6 +16,7 @@ export const routes = createRoutesFromElements(
   <Route element={<Layout />}>
     <Route index element={<Home />} />
     <Route path="settings" element={<SettingsPage />} />
+    <Route path="acknowledgements" element={<Acknowledgements />} />
     <Route path="browse/:license" element={<Browse />} />
     <Route path="compendium/*" element={<CompendiumRoute />} />
     {LICENSES.map((l) => (

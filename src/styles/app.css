@@ -359,3 +359,34 @@ kbd { font-family: var(--font-mono); font-size: 11.5px; padding: 1px 6px; border
 .contact-btn:hover { background: var(--primary-soft); }
 .contact-open { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px; }
 .contact-open code { color: var(--ink); font-size: 14px; }
+
+/* ───────── acknowledgements ───────── */
+.ack { max-width: 880px; padding-bottom: 24px; }
+.ack-head { padding: 44px 0 6px; }
+.ack-head h1 { font-size: clamp(32px, 5vw, 48px); letter-spacing: -0.03em; max-width: 16em; }
+.ack-head .lead { font-size: 19px; color: var(--ink-2); margin: 12px 0 0; }
+.ack-h2 { font-size: 24px; margin: 44px 0 14px; }
+.ack-inspire { margin-top: 8px; }
+.ack-family { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.ack-call { display: flex; flex-direction: column; gap: 6px; padding: 28px 26px; border-radius: var(--r-lg); border: 1px solid color-mix(in srgb, var(--primary) 40%, var(--line)); background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 13%, var(--surface)), var(--surface)); box-shadow: var(--shadow); }
+.ack-sign { font-family: var(--font-mono); font-weight: 700; font-size: clamp(34px, 6vw, 52px); letter-spacing: 0.02em; color: var(--primary); line-height: 1.05; }
+.ack-rel { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--ink); }
+.ack-note { font-size: 18px; color: var(--ink-2); max-width: 40em; margin: 18px 0 0; }
+.ack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.ack-card { padding: 22px 24px; border-radius: var(--r-md); border: 1px solid var(--line); background: var(--surface); box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 8px; }
+.ack-card h3 { font-size: 22px; font-family: var(--font-mono); }
+.ack-card h3 small { display: block; font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--muted); margin-top: 2px; }
+.ack-card p { margin: 0; color: var(--ink-2); }
+.ack-card a { margin-top: auto; padding-top: 6px; font-weight: 650; }
+.ack-sub { color: var(--ink-2); max-width: 44em; margin: 0 0 14px; }
+.ack-empty { display: flex; flex-direction: column; gap: 4px; padding: 22px 24px; border-radius: var(--r-md); border: 2px dashed var(--line-strong); color: var(--ink-2); }
+.ack-empty strong { color: var(--ink); font-family: var(--font-display); font-size: 17px; }
+.ack-people { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.ack-people li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); }
+.ack-pname { font-weight: 650; display: inline-flex; gap: 10px; align-items: baseline; }
+.ack-pname code { font-size: 13px; color: var(--primary); }
+.ack-pdo { color: var(--muted); font-size: 14.5px; }
+.ack-sign-off { margin: 44px 0 0; font-family: var(--font-display); font-size: 22px; font-weight: 600; }
+.ack-sign-off span { color: var(--primary); font-family: var(--font-mono); font-size: 18px; margin-left: 6px; }
+.ack-back { margin: 10px 0 0; }
+@media (max-width: 700px) { .ack-family, .ack-grid { grid-template-columns: 1fr; } }
