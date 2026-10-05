@@ -353,3 +353,9 @@ kbd { font-family: var(--font-mono); font-size: 11.5px; padding: 1px 6px; border
 .credit span { color: var(--muted); font-size: 14px; }
 .credit-domain { margin-top: 6px; font-family: var(--font-mono); font-size: 13px; font-weight: 600; letter-spacing: 0.02em; color: var(--primary); text-decoration: none; }
 .credit-domain:hover { text-decoration: underline; }
+
+.credit-contact { color: var(--muted); font-size: 14px; margin-top: 2px; }
+.contact-btn { display: inline-block; font: inherit; font-size: 13.5px; font-weight: 650; color: var(--primary); background: none; border: 1px solid color-mix(in srgb, var(--primary) 45%, var(--line)); border-radius: 99px; padding: 3px 12px; margin-left: 6px; text-decoration: none; cursor: pointer; }
+.contact-btn:hover { background: var(--primary-soft); }
+.contact-open { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px; }
+.contact-open code { color: var(--ink); font-size: 14px; }

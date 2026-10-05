@@ -5,6 +5,7 @@ import { streakDays } from '@/lib/srs'
 import { useStore } from '@/lib/store'
 import { LogoMark } from './Logo'
 import { Analytics } from './Analytics'
+import { ContactEmail } from './ContactEmail'
 import { Seo } from './Seo'
 import seoConfig from '../../seo.config.json'
 
@@ -78,6 +79,7 @@ function Footer() {
             Found something wrong with a question, an explanation or an article?{' '}
             <a href="https://github.com/crueber/hamplitude/issues" target="_blank" rel="noreferrer">Report it on GitHub Issues</a>.
           </span>
+          <span className="credit-contact">Questions or ideas? <ContactEmail /></span>
           <a className="credit-domain" href="https://hamplitude.net" target="_blank" rel="noreferrer">hamplitude.net</a>
         </div>
       </div>
