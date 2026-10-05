@@ -9,6 +9,8 @@ import { ContactEmail } from './ContactEmail'
 import { Seo } from './Seo'
 import seoConfig from '../../seo.config.json'
 
+const TELEGRAM_URL = 'https://t.me/+jKyxHkUB_sYyOGQx'
+
 export function Layout() {
   useApplyTheme()
   const theme = useStore((s) => s.settings.theme)
@@ -80,6 +82,10 @@ function Footer() {
             <a href="https://github.com/crueber/hamplitude/issues" target="_blank" rel="noreferrer">Report it on GitHub Issues</a>.
           </span>
           <span className="credit-contact">Questions or ideas? <ContactEmail /></span>
+          <span className="credit-contact">
+            Talk with other hams and learners:{' '}
+            <a className="contact-btn" href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">Join our Telegram group</a>
+          </span>
           <a className="credit-domain" href="https://hamplitude.net" target="_blank" rel="noreferrer">hamplitude.net</a>
         </div>
       </div>
