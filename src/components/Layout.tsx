@@ -27,7 +27,7 @@ export function Layout() {
           <Link to="/" className="logo" aria-label="Hamplitude home">
             <LogoMark /> <span>Ham<b>plitude</b></span>
           </Link>
-          <nav className="nav" aria-label="Licence classes">
+          <nav className="nav" aria-label="License classes">
             {LICENSES.map((l) => (
               <NavLink key={l} to={`/${l}`} data-license={l} className={({ isActive }) => (isActive || pathname.startsWith(`/${l}/`) ? 'active' : '')}>
                 <i className="dot" />{l === 'technician' ? <><span className="full">Technician</span><span className="short">Tech</span></> : POOLS[l].name}
@@ -36,7 +36,7 @@ export function Layout() {
             <NavLink to="/compendium" className={({ isActive }) => `cmp-link${isActive || pathname.startsWith('/compendium') ? ' active' : ''}`}>
               <i className="dot" />Compendium
             </NavLink>
-            {streak > 1 && <span className="streak" title="Days in a row you've practised">🔥 {streak}</span>}
+            {streak > 1 && <span className="streak" title="Days in a row you've practiced">🔥 {streak}</span>}
             <button className="icon-btn" onClick={cycleTheme} aria-label={`Theme: ${theme}. Click to change.`} title={`Theme: ${theme}`}>
               <ThemeIcon theme={theme} />
             </button>

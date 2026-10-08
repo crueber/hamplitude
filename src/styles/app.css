@@ -60,6 +60,12 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .nav .dot { margin-right: 5px; }
   .topbar .wrap { gap: 10px; }
 }
+@media (max-width: 420px) {
+  .nav { gap: 0; }
+  .nav a { padding: 7px 7px; font-size: 12.5px; }
+  .icon-btn { width: 32px; height: 32px; }
+  .topbar .wrap { gap: 6px; }
+}
 
 /* ───────── buttons ───────── */
 .btn {

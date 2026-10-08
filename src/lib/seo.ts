@@ -56,8 +56,8 @@ export function seoFor(rawPath: string): Seo {
   // home
   if (parts.length === 0) {
     return {
-      title: `${SITE_NAME}: ham radio exam prep and a free ham radio compendium`,
-      description: clip(`Visual, concept-first ham radio exam prep for the Technician, General and Extra classes, plus a free compendium of ${articleTotal} articles on antennas, radios, modes and electronics.`),
+      title: `${SITE_NAME}: understand ham radio, don't memorize it`,
+      description: clip(`A free ham radio compendium of ${articleTotal} visual concept articles on antennas, radios, modes and electronics, plus exam prep for the Technician, General and Extra classes.`),
       path, type: 'website',
       jsonLd: [{
         '@context': 'https://schema.org', '@type': 'WebSite', name: SITE_NAME, url: `${SITE_URL}/`, inLanguage: 'en',

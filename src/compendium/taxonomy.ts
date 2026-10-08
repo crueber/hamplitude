@@ -51,7 +51,7 @@ export const SECTIONS: SectionDef[] = [
         ['license-classes', 'License classes and privileges', 'Technician, General and Extra: what each adds and how upgrading works.'],
         ['call-signs', 'Call signs and what they mean', 'Prefixes, numbers, suffixes and how a call is assigned.'],
         ['vanity-and-special-event-calls', 'Vanity and special-event calls', 'Choosing your own call, and temporary event call signs.'],
-        ['part-97-in-plain-words', 'Part 97 in plain words', 'The FCC rules every amateur operates under, organised by what you want to do.'],
+        ['part-97-in-plain-words', 'Part 97 in plain words', 'The FCC rules every amateur operates under, organized by what you want to do.'],
         ['control-operators', 'Control operators and control points', 'Who is responsible for a station, and how remote and automatic control fit in.'],
         ['operating-abroad', 'Operating abroad', 'ITU regions, reciprocal licensing and CEPT.'],
       ]),
@@ -60,7 +60,7 @@ export const SECTIONS: SectionDef[] = [
         ['q-codes', 'Q-codes', 'Three-letter shorthand like QTH, QSL and QRM, and what each means.'],
         ['ham-abbreviations', 'Ham abbreviations and numbers', '73, 88, CQ, DX, QSO and other jargon, decoded.'],
         ['signal-reports', 'Signal reports: RS, RST and the S-meter', 'How to tell someone how well you hear them, in numbers.'],
-        ['operating-etiquette', 'On-air etiquette', 'Listening first, calling CQ, taking turns, and being a good neighbour on the band.'],
+        ['operating-etiquette', 'On-air etiquette', 'Listening first, calling CQ, taking turns, and being a good neighbor on the band.'],
         ['logging-and-qsl', 'Logging and QSL confirmations', 'Keeping a log, paper cards, Logbook of the World and eQSL.'],
       ]),
     ],
@@ -70,7 +70,7 @@ export const SECTIONS: SectionDef[] = [
     blurb: 'Waves, the spectrum, how signals travel, and how information rides on them.',
     subs: [
       sub('waves', 'Waves and the spectrum', 'The physics every radio is built on.', [
-        ['electromagnetic-waves', 'Electromagnetic waves', 'Electric and magnetic fields travelling together at the speed of light.'],
+        ['electromagnetic-waves', 'Electromagnetic waves', 'Electric and magnetic fields traveling together at the speed of light.'],
         ['frequency-and-wavelength', 'Frequency and wavelength', 'Two ways to describe the same wave, tied together by the speed of light.'],
         ['radio-spectrum', 'The radio spectrum', 'LF to microwaves: where the bands sit and what each is good for.'],
         ['polarization', 'Polarization', "The orientation of a wave's electric field, and why antennas must match it."],
@@ -131,7 +131,7 @@ export const SECTIONS: SectionDef[] = [
         ['skin-effect', 'Skin effect and RF resistance', 'Why current crowds to the surface at high frequency.'],
       ]),
       sub('components', 'Components', 'The parts, what they do, and how to choose them.', [
-        ['resistors', 'Resistors', 'Types, ratings, tolerance and the colour code.'],
+        ['resistors', 'Resistors', 'Types, ratings, tolerance and the color code.'],
         ['capacitors', 'Capacitors', 'Ceramic, electrolytic, film and variable: choosing the right one.'],
         ['inductors-and-ferrites', 'Inductors, toroids and ferrites', 'Cores, permeability, and why ferrite beads matter.'],
         ['crystals-and-resonators', 'Crystals and resonators', 'Piezoelectric frequency references and filters.'],
@@ -405,7 +405,7 @@ export const SECTIONS: SectionDef[] = [
         ['remote-bases-and-hf-links', 'Remote bases and HF links', 'Bringing HF to VHF users with a remotely controlled station.'],
         ['repeater-frequency-coordination', 'Frequency coordination and the ARRL', 'Who coordinates repeater pairs, what ARRL does and does not do, and how to apply.'],
         ['fcc-rules-for-repeaters', 'FCC rules for repeaters', 'What Part 97 says about repeater licensing, control, identification and responsibility.'],
-        ['site-permits-and-local-approvals', 'Sites, permits and local approvals', 'Landlords, zoning, tower rules, aviation and RF-exposure checks, and neighbours.'],
+        ['site-permits-and-local-approvals', 'Sites, permits and local approvals', 'Landlords, zoning, tower rules, aviation and RF-exposure checks, and neighbors.'],
         ['repeater-hardware-and-duplexers', 'Repeater hardware and duplexers', 'Radios, controller, duplexer, antenna and power: what each does and how they fit.'],
         ['repeater-coverage-and-antennas', 'Repeater antennas and coverage', 'Height, gain, link budget and why the handheld usually limits the range.'],
         ['digital-voice-repeaters', 'Digital-voice repeaters', 'DMR, D-STAR and Fusion repeaters: what changes and what coordination still means.'],
@@ -424,14 +424,14 @@ export const SECTIONS: SectionDef[] = [
     blurb: 'How amateurs support their communities when normal communications fail.',
     subs: [
       sub('organizations', 'Organizations and programs', 'The groups amateurs serve through.', [
-        ['ares-and-races', 'ARES and RACES', 'Organised emergency communications.'],
+        ['ares-and-races', 'ARES and RACES', 'Organized emergency communications.'],
         ['skywarn', 'SKYWARN and weather spotting', 'Reporting severe weather.'],
-        ['cert-and-community-events', 'CERT and community events', 'Supporting neighbours and events.'],
+        ['cert-and-community-events', 'CERT and community events', 'Supporting neighbors and events.'],
         ['nts-and-mars', 'NTS and MARS', 'Message-handling networks.'],
       ]),
       sub('practice', 'Emergency practice', 'The skills and kit for when it matters.', [
         ['emcomm-principles', 'Principles of emergency communication', 'What to do and what not to.'],
-        ['incident-command-system', 'The Incident Command System', 'How responders are organised.'],
+        ['incident-command-system', 'The Incident Command System', 'How responders are organized.'],
         ['net-control', 'Net control procedures', 'Running an emergency net.'],
         ['radiograms', 'Radiograms and message handling', 'Formal written traffic.'],
         ['winlink-emergency', 'Winlink for emergencies', 'Email when the internet is down.'],
