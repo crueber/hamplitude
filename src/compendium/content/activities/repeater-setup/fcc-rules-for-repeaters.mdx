@@ -1,0 +1,58 @@
+import { FccRulesForRepeaters_WhoAnswers } from '@/visuals/compendium/FccRulesForRepeaters_WhoAnswers'
+
+## What the rules say a repeater is
+
+Part 97 defines a **repeater** as an amateur station that simultaneously retransmits the transmission of another amateur station on a different channel or channels (47 CFR 97.3). It is not a separate class of license. It is an ordinary amateur station doing a particular job.
+
+- **Who may be one.** Any amateur station licensed to a Technician, General, Advanced or Amateur Extra operator may be a repeater, and holders of those licenses may be its control operator, within the privileges of their class (97.205(a)).
+- **No "repeater license".** The license grants Part 97 describes are an individual operator/primary station license, a club station license (a trustee for a club of at least four persons) and a military recreation station license (97.5(b)). A repeater runs under one of these. Many repeaters are club stations.
+- **The call sign.** The repeater is a station, so it needs a call sign of its own to identify with (97.119). It is whatever call sign the license covering that station carries.
+
+This article is about the US. Other countries license repeaters differently.
+
+## Where, and under what control
+
+A repeater may receive and retransmit only on the 10 m band and shorter wavelengths, and not in these segments (97.205(b), as of October 2026):
+
+| Band | Repeaters not allowed in |
+|---|---|
+| 10 m | 28.0 to 29.5 MHz (only 29.5 to 29.7 MHz is open) |
+| 6 m | 50.0 to 51.0 MHz |
+| 2 m | 144.0 to 144.5 and 145.5 to 146.0 MHz |
+| 1.25 m | 222.00 to 222.15 MHz |
+| 70 cm | 431.0 to 433.0 and 435.0 to 438.0 MHz |
+
+Every HF band except the top of 10 m is therefore closed to repeaters; see <Ref to="hf-and-10-meter-repeaters" />. A repeater on 10 m needs a control operator with HF privileges, which is why <Ref to="control-operators" /> says a General or higher.
+
+**Automatic control** is permitted for repeaters (97.205(d)). The control operator need not be at a control point, but still must ensure the station operates properly (97.105(a)). Automatic control must stop if a Regional Director notifies the station that it is transmitting improperly or causing harmful interference, and must not resume without that director's approval (97.109(d)).
+
+**Closed access** is allowed: a repeater may limit its use to certain stations (97.205(e)). This does not make a frequency exclusive; Part 97 says no frequency is assigned for the exclusive use of any station (97.101(b)), and the FCC has said the same about coordinated closed repeaters.
+
+## Identification and responsibility
+
+The repeater must send its call sign at the end of each communication and at least every 10 minutes during one, by CW or, on phone, in English (97.119(a), (b)). A controller usually does this automatically. Your own call sign is a separate duty.
+
+<FccRulesForRepeaters_WhoAnswers />
+
+The licensee is responsible for the proper operation of the station, and when the control operator is another person, both are equally responsible (97.103(a)). The control operator of a repeater that inadvertently retransmits communications that break the rules is not accountable for them (97.205(g)), so the person who sent them answers, as the Technician exam teaches.
+
+Other automatic retransmission is the exception: only auxiliary, repeater and space stations may automatically retransmit other amateurs (97.113(d)); anyone else must do it manually (FCC amateur FAQ). An **auxiliary station**, such as a link or control link, transmits point to point inside a system of cooperating stations, on 2 m and shorter wavelengths with its own excluded segments, and it too may be automatically controlled (97.201).
+
+## Where the FCC stops
+
+The FCC licenses the station and writes the rules. It does not choose your frequency pair, and coordination is not a condition of operating a repeater (FCC letter DA 09-2559); see <Ref to="repeater-frequency-coordination" />. It does not grant you a tower site either: see <Ref to="site-permits-and-local-approvals" />. Rules change, so check the current text of Part 97 before you build.
+
+<Sources items={[
+  ['47 CFR 97.205: Repeater station', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-C/section-97.205', 'who, where, automatic control, closed access, responsibility'],
+  ['47 CFR 97.3: Definitions', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-A/section-97.3', 'repeater, auxiliary station, control operator, frequency coordinator'],
+  ['47 CFR 97.5: Station license required', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-A/section-97.5', 'the types of license grant'],
+  ['47 CFR 97.109: Station control', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-B/section-97.109', 'automatic control and when it must cease'],
+  ['47 CFR 97.119: Station identification', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-B/section-97.119', 'call sign every 10 minutes and at the end'],
+  ['47 CFR 97.201: Auxiliary station', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-C/section-97.201', 'link and control stations'],
+  ['FCC: Amateur Communications and Operations FAQ', 'https://www.fcc.gov/wireless/bureau-divisions/mobility-division/amateur-radio-service/amateur-communications-operations', 'only auxiliary, repeater and space stations may retransmit automatically'],
+  ['FCC letter DA 09-2559', 'https://docs.fcc.gov/public/attachments/DA-09-2559A1.txt', 'coordination is not required and gives no exclusive channel'],
+]} />
+
+<ExamLink groups="T1F T2A G1E E1C" />
+
+<Related to="control-operators part-97-in-plain-words repeaters repeaters-and-controllers repeater-frequency-coordination hf-and-10-meter-repeaters" />

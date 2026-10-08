@@ -151,7 +151,7 @@ function Toc() {
   useEffect(() => {
     let tries = 0
     const t = setInterval(() => {
-      const hs = [...document.querySelectorAll<HTMLElement>('#article-body h2')].filter((h) => h.id && !h.closest('.related'))
+      const hs = [...document.querySelectorAll<HTMLElement>('#article-body h2')].filter((h) => h.id && !h.closest('.related') && !h.closest('.sources'))
       if (hs.length || ++tries > 25) {
         clearInterval(t)
         setItems(hs.map((h) => ({ id: h.id, text: h.textContent ?? '' })))

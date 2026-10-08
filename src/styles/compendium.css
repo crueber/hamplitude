@@ -161,3 +161,11 @@
 @media (max-width: 720px) {
   .article-body table, .lesson-body table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 }
+
+/* primary sources */
+.sources { margin-top: 40px; padding: 18px 20px; border-radius: var(--r-md); border: 1px solid var(--line); background: var(--bg-tint); }
+.article-body .sources h2 { font-size: 18px; margin: 0 0 10px; padding: 0; border: 0; }
+.sources ul { list-style: none; margin: 0; padding: 0 !important; display: grid; gap: 8px; }
+.sources li { font-size: 15.5px; }
+.sources a { font-weight: 650; }
+.src-note { color: var(--muted); font-size: 14.5px; }

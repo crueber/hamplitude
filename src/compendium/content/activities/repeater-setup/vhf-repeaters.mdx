@@ -1,0 +1,51 @@
+import { VhfRepeaters_Pairs } from '@/visuals/compendium/VhfRepeaters_Pairs'
+
+## What it is
+
+A VHF repeater works on 6 m (50 to 54 MHz), 2 m (144 to 148 MHz) or 1.25 m (222 to 225 MHz). VHF is the classic repeater territory: signals travel mostly in straight lines, so antenna height buys range, and a hilltop site lets a handheld reach across a region. A Technician or higher licensee may hold a repeater station and be its control operator; Technicians have full privileges on all three bands (47 CFR 97.205(a), 97.301).
+
+<Facts items={[
+  ['2 m offset', '600 kHz, plus or minus (usual)'],
+  ['1.25 m offset', '1.6 MHz (ARRL), input below output'],
+  ['6 m offset', '500 kHz between the plan\'s blocks; 1 MHz and other splits are common locally'],
+  ['Quarter-wave whip', 'about 56 in (6 m), 20 in (2 m), 13 in (1.25 m)'],
+]} />
+
+## What VHF is good at
+
+- **Coverage from height.** The radio horizon is a little beyond the visible one (see <Ref to="line-of-sight" />), so a tall site matters more than extra power. Lower VHF also bends over hill crests slightly better than UHF.
+- **Manageable hardware.** Antennas are a few feet long, and cable loss is modest, so a good antenna at the top of a tower is practical. See <Ref to="repeater-coverage-and-antennas" />.
+- **FM that ignores static-type noise**, which suits mobile and handheld users; see <Ref to="fm-voice" />.
+
+The trade-off is how far VHF sometimes travels. Two quirks create co-channel interference between repeaters on the same pair:
+
+- **Tropospheric ducting.** A temperature inversion can trap VHF near the ground for hundreds of miles, so a distant repeater's output suddenly arrives on your channel. See <Ref to="tropospheric-propagation" />.
+- **Sporadic E on 6 m** (and sometimes 2 m), most often in late spring and summer, can bring in stations and repeaters from far away; see <Ref to="sporadic-e" />.
+
+Coordinators space repeaters that share a pair by distance, and an access tone (CTCSS) keeps far-off signals from keying yours, but neither removes the problem entirely.
+
+## Pairs and sub-bands
+
+Part 97 keeps repeaters out of the weak-signal and satellite segments (50.0 to 51.0 MHz, 144.0 to 144.5, 145.5 to 146.0 and 222.00 to 222.15 MHz). Inside the rest, the ARRL band plan, which is voluntary, lays out blocks for repeater inputs and outputs, and a local **frequency coordinator** recommends the actual pair; see <Ref to="repeater-frequency-coordination" />. Slide the output below to see its input.
+
+<VhfRepeaters_Pairs />
+
+On 2 m the direction follows the part of the band: outputs from 147.00 MHz up usually use a plus offset, the others a minus. The plan itself notes that locally coordinated plans take precedence over the national one, and that some regions use channels differently, so treat the picture as the national default and your <Ref to="repeater-directories">directory</Ref> as the truth.
+
+## In practice
+
+- **Power and height.** Transmitters typically run tens of watts at the antenna. More power rarely helps, because the weak handheld signal going back to the repeater limits range, not the repeater's strong output. Height is the biggest lever.
+- **The duplexer.** A 600 kHz split is a tiny fraction of 146 MHz, so the filters must be sharp, which usually means large high-Q cavities. This is often the bulkiest part of a 2 m site; see <Ref to="repeater-hardware-and-duplexers" />.
+- **Rules that matter.** A repeater may be automatically controlled, may limit access to chosen users, and is not accountable for rule-breaking transmissions it retransmits by accident (97.205(d), (e), (g)). If two repeaters interfere, both licensees are responsible, unless only one is coordinated (97.205(c)). See <Ref to="fcc-rules-for-repeaters" />.
+- **Other countries differ.** In Europe and Africa 2 m is 144 to 146 MHz, and 1.25 m is largely an Americas band, so offsets and band plans vary by country.
+
+<Sources items={[
+  ['47 CFR 97.205: Repeater station', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-C/section-97.205', 'who may be a repeater, excluded segments, control, interference'],
+  ['47 CFR 97.301: Authorized frequency bands', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-D/section-97.301', 'which classes may use 6 m, 2 m and 1.25 m, and the ITU regions'],
+  ['ARRL band plan', 'https://www.arrl.org/band-plan', 'the input and output blocks on 6 m, 2 m and 1.25 m'],
+  ['ARRL: Repeaters, what are they and how to use them', 'https://www.arrl.org/files/file/Technology/tis/info/pdf/repeater1.pdf', 'older ARRL sheet giving the 1.6 MHz offset on 1.25 m'],
+]} />
+
+<ExamLink groups="T2A T2B T3C" />
+
+<Related to="uhf-repeaters repeaters repeaters-and-controllers repeater-coverage-and-antennas repeater-frequency-coordination band-plans" />

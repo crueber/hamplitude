@@ -1,0 +1,47 @@
+import { DigitalVoiceRepeaters_Systems } from '@/visuals/compendium/DigitalVoiceRepeaters_Systems'
+
+## What changes, and what does not
+
+A digital-voice repeater still receives on one frequency and retransmits on another, so everything in <Ref to="repeater-hardware-and-duplexers" /> and <Ref to="repeater-coverage-and-antennas" /> applies: the same duplexer, antenna, feed line and site. Part 97 defines a repeater by what it does (it retransmits another amateur station on a different channel), not by its mode. What is new is the **modem and the network** behind the controller: a digital repeater decodes the signal, and usually connects to the internet to link to others. The modes themselves are in <Ref to="dmr" />, <Ref to="d-star" /> and <Ref to="system-fusion" />; this article is about being the repeater.
+
+<DigitalVoiceRepeaters_Systems />
+
+## Three systems, three kinds of address
+
+- **DMR.** One 12.5 kHz channel carries two time slots, so the repeater can hold two conversations at once. Users reach a conversation by **talkgroup**; a **color code** keeps unwanted signals out. Each user and each repeater needs an ID, and RadioID.net is a central registry that issues them, linked to a call sign and backed by an uploaded license. Its own FAQ says a repeater ID is for a full repeater system, and that it does not issue talkgroups. Several independent networks exist, each with its own rules for talkgroups.
+- **D-STAR.** Calls are routed by **call sign**. A repeater connects to a **gateway**; Icom states that the repeater's call sign and IP address must be registered with the gateway server. Users set RPT1 and RPT2 (the repeater and gateway call signs) and UR (who they want). Users register their call sign on the D-STAR gateway network; the volunteer-run registration site says it requires a valid amateur license.
+- **System Fusion.** Yaesu describes its repeater as a dual mode repeater working in digital C4FM or analog FM. Linking uses **WIRES-X**: a node is the access point to the internet, and node owners create **rooms** that nodes join to share calls.
+
+A radio works only with its own system: a DMR radio cannot use a D-STAR repeater.
+
+## Mixed-mode repeaters
+
+Some repeaters serve analog FM and one digital mode from one site, either by switching automatically or by running separate channels. That saves a tower and an antenna, but analog and digital users cannot decode each other's transmissions unless the repeater is built to convert between them (Yaesu says WIRES-X lets C4FM stations talk to analog FM stations). In practice: listen for a while before you transmit, and expect a digital signal to sound like a buzz or hiss on an FM radio.
+
+## Coordination, identification and responsibility
+
+**Coordination.** Part 97 does not require it, though most repeater owners coordinate, and if two repeaters interfere and only one is coordinated, the other's licensee has primary responsibility for resolving it (97.205(c)). That is true for digital repeaters too. Coordinators set their own policies, including whether to assign pairs to digital use, so ask yours. ARRL says it is not itself a frequency coordinator. Its repeater directory lists digital repeaters, but a directory listing is not coordination.
+
+**Identification.** Part 97.119(a) says each station must transmit its call sign on its transmitting channel at the end of each communication and at least every 10 minutes during one. Under 97.119(b) the call sign must be sent with an emission authorized for that channel: by CW, by phone in English, or, in the cases the rule lists, by RTTY or image emission. The rule has no separate paragraph for digital voice. It does not say whether call signs carried in a digital header or network registration count, so do not assume it. The conservative habit is to have the controller send a voice or CW ID, and to ask the trustee how the repeater identifies.
+
+**Linking.** A transmission that is linked is heard on every repeater joined to it, and each repeater's control operator remains responsible for what that repeater transmits; see <Ref to="internet-linking" />. Part 97 forbids messages encoded to obscure their meaning (97.113(a)(4)), so encryption is off. A repeater may not retransmit signals from other than an amateur station (97.113(c)). A network's own rules (talkgroup use, ID use) are its policy, not law.
+
+This article describes the US; other countries differ.
+
+<Sources items={[
+  ['47 CFR 97.119: Station identification', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-B/section-97.119', 'what the rule requires, and which emissions may carry the call sign'],
+  ['47 CFR 97.205: Repeater station', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-C/section-97.205', 'coordinated repeaters have priority in interference'],
+  ['47 CFR 97.113: Prohibited transmissions', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-B/section-97.113', 'no messages encoded to obscure meaning; retransmission limits'],
+  ['ARRL: Frequency coordinators', 'https://www.arrl.org/frequency-coordinators', 'ARRL is not a coordinator; coordinators are volunteers'],
+  ['ARRL: Auxiliary Station FAQ', 'https://www.arrl.org/auxiliary-station-faq', 'coordination is not required by the FCC, but most repeaters are coordinated'],
+  ['RadioID.net: FAQ', 'https://radioid.net/faq', 'DMR ID registry: repeater IDs, license upload, no talkgroups issued'],
+  ['DMR Association', 'https://www.dmrassociation.org/', 'two time slots in a 12.5 kHz channel'],
+  ['Icom America: D-STAR', 'https://www.icomamerica.com/lineup/amateur/d-star/', 'RPT1 and RPT2, gateway, repeater registration'],
+  ['D-STAR gateway registration', 'https://regist.dstargateway.org/Dstar.do', 'volunteer-run call sign registration; license required'],
+  ['Yaesu: WIRES-X', 'https://systemfusion.yaesu.com/wires-x/', 'nodes and rooms; C4FM and analog FM'],
+  ['Yaesu: DR-2X repeater', 'https://yaesu.com/product-detail.aspx?Model=DR-2X&CatName=Repeaters', 'a dual mode C4FM and FM repeater'],
+]} />
+
+<ExamLink groups="T2B T4B G8C" />
+
+<Related to="dmr d-star system-fusion internet-linking hotspots-and-gateways repeater-frequency-coordination fcc-rules-for-repeaters" />

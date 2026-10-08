@@ -1,0 +1,50 @@
+import { RepeaterRoadmap_Steps } from '@/visuals/compendium/RepeaterRoadmap_Steps'
+
+## What it is
+
+Putting a repeater on the air is a project with ten steps and four different authorities. Most of the work is yours; a few steps need someone else's agreement. Knowing who decides what, and in which order, saves months and money.
+
+Two things are easy to confuse. The **FCC license** is legal permission to transmit, and it is held by a person or a club. **Frequency coordination** is a volunteer body's recommendation of which channels will cause the least interference. In the US there is no separate "repeater license": under Part 97 a repeater is simply an amateur station whose licensee holds a Technician or higher license, and any such station may be a repeater (47 CFR 97.205(a)).
+
+<RepeaterRoadmap_Steps />
+
+## The route in order
+
+The ten steps in the diagram group into seven stages:
+
+1. **Plan.** Purpose, owner and budget come first; see <Ref to="planning-a-repeater" />. Decide whether the owner is an individual or a club, because that decides whose call sign and name go on the station license.
+2. **Band and site.** The goal and the terrain pick the band (<Ref to="vhf-repeaters" />, <Ref to="uhf-repeaters" />, <Ref to="hf-and-10-meter-repeaters" />), and the site must give you height, power, access and a landlord's written permission.
+3. **Coordination.** Coordinators usually want the site coordinates, antenna height and power in the application, so the site comes first. See <Ref to="repeater-frequency-coordination" />.
+4. **Approvals.** Local zoning, tower and aviation rules and RF-exposure limits can apply even to a small antenna; see <Ref to="site-permits-and-local-approvals" />.
+5. **Build, install, tune.** Test everything on a bench before the site: <Ref to="repeater-hardware-and-duplexers" /> and <Ref to="repeater-coverage-and-antennas" />.
+6. **Identify and set up.** The repeater is a station and must identify itself like any other; the rules are in <Ref to="fcc-rules-for-repeaters" />.
+7. **Announce and run.** Get listed in a <Ref to="repeater-directories">directory</Ref>, then keep it healthy: <Ref to="running-a-repeater" />.
+
+<Callout kind="note" title="Coordination is not a license">The FCC has said that coordination is not required as a condition of operating a repeater, and a coordinator cannot grant permission to transmit. But if two repeaters interfere, the rules put the main burden of fixing it on the one that was not coordinated (97.205(c)), so skipping it is a gamble. Coordinators have no power to assign frequencies; they recommend. See <Ref to="repeater-frequency-coordination" />.</Callout>
+
+## Who decides what
+
+| Question | Who answers |
+|---|---|
+| May this station transmit, and who is responsible? | The FCC: station license and Part 97 |
+| Which channel will interfere least? | The frequency coordinator, as a recommendation |
+| May we put it on this roof or tower? | The landlord, then local authorities |
+| May the structure be that tall or near that airport? | Local rules, and aviation and FCC structure rules |
+| Is the public safe from the RF? | You, under the FCC's exposure rules |
+
+Steps overlap and loop. A landlord may want proof of coordination, while a coordinator wants a confirmed site. Expect to go round more than once.
+
+Other countries have their own regulators, license classes and coordination bodies; this subsection describes the US.
+
+<Sources items={[
+  ['47 CFR 97.205: Repeater station', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-C/section-97.205', 'who may operate a repeater, where, and who fixes interference'],
+  ['47 CFR 97.3: Definitions', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-A/section-97.3', 'defines repeater and frequency coordinator'],
+  ['47 CFR 97.5: Station license required', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-A/section-97.5', 'individual and club station license grants'],
+  ['FCC letter DA 09-2559', 'https://docs.fcc.gov/public/attachments/DA-09-2559A1.txt', 'coordination is not required to operate a repeater, and cannot assign a channel'],
+  ['ARRL: Auxiliary Station FAQ', 'https://www.arrl.org/auxiliary-station-faq', 'repeaters, control, coordination is not required but is good practice'],
+  ['ARRL: Frequency Coordinators', 'https://www.arrl.org/frequency-coordinators', 'ARRL is not a coordinator; work through your state or regional coordinator'],
+]} />
+
+<ExamLink groups="T1F T1E" />
+
+<Related to="planning-a-repeater repeater-frequency-coordination fcc-rules-for-repeaters running-a-repeater repeaters repeaters-and-controllers" />

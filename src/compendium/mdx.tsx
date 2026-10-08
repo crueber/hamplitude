@@ -49,6 +49,26 @@ export function Related({ to }: { to: string }) {
   )
 }
 
+/**
+ * The primary sources behind an article: regulators, standards bodies, official pages. Opens in a new tab.
+ * <Sources items={[['47 CFR 97.205', 'https://www.ecfr.gov/...', 'the repeater rule itself']]} />
+ */
+export function Sources({ items, title = 'Authorities and further reading' }: { items: [string, string, string?][]; title?: string }) {
+  return (
+    <section className="sources" aria-label={title}>
+      <h2>{title}</h2>
+      <ul>
+        {items.map(([label, url, note]) => (
+          <li key={url}>
+            <a href={url} target="_blank" rel="noopener noreferrer">{label}<span aria-hidden> ↗</span></a>
+            {note && <span className="src-note"> {note}</span>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
 /** Where this concept shows up in the exam lessons. <ExamLink groups="T9A G9B" /> */
 export function ExamLink({ groups }: { groups: string }) {
   const items = groups.split(/[\s,]+/).filter(Boolean).map((g) => ({ g, info: getGroup(g) })).filter((x) => x.info)
@@ -73,4 +93,4 @@ const textOf = (n: ReactNode): string =>
 export const H2 = ({ children }: { children?: ReactNode }) => <h2 id={slugify(textOf(children))}>{children}</h2>
 export const H3 = ({ children }: { children?: ReactNode }) => <h3 id={slugify(textOf(children))}>{children}</h3>
 
-export const compendiumComponents = { ...mdxComponents, Facts, Ref, Related, ExamLink, h2: H2, h3: H3 }
+export const compendiumComponents = { ...mdxComponents, Facts, Ref, Related, Sources, ExamLink, h2: H2, h3: H3 }

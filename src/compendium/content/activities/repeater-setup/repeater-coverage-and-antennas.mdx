@@ -1,0 +1,55 @@
+import { RepeaterCoverageAndAntennas_LinkBudget } from '@/visuals/compendium/RepeaterCoverageAndAntennas_LinkBudget'
+
+## Height first
+
+A repeater's coverage is set mostly by how far its antenna can see, so the first question about a site is its height, not its transmitter. The useful measure is **height above average terrain (HAAT)**: how high the antenna sits above the ground around it, not above sea level. A 100 ft tower on a ridge can beat a 300 ft tower in a valley. The FCC defines HAAT for broadcast stations by averaging terrain 3 to 16 km from the antenna along eight radials; Part 97 sets no such figure for amateurs, but the idea carries over.
+
+The simplest ceiling is the **radio horizon**, about 1.41 × √height (ft) miles for each end of the path, as in <Ref to="line-of-sight" />. A repeater at 200 ft and a handheld at 5 ft reach about 23 miles in a flat, smooth world.
+
+## Power, gain and loss
+
+**Effective radiated power (ERP)** is what the antenna system actually delivers in its strongest direction, compared with a dipole:
+
+<Formula label="ERP, in decibels">ERP (dBm) = transmitter power - duplexer loss - feed line loss + antenna gain (dBd)</Formula>
+
+For example, a 50 W transmitter (+47 dBm), 1.5 dB of duplexer loss, 2 dB of feed line loss and an antenna of 8 dBi (about 5.9 dBd) give about +49 dBm, or roughly 86 W of ERP. A long cable to a tall tower can eat gain you paid for; see <Ref to="feed-line-loss" /> and <Ref to="gain-and-directivity" />. Part 97 also asks every station to use the minimum power necessary (97.313(a)), so extra watts are not the answer anyway.
+
+| Antenna | What it does | Good for |
+|---|---|---|
+| Omnidirectional vertical (a collinear, say) | Covers all directions; gain comes from squeezing the pattern in elevation | Most community repeaters |
+| Directional (Yagi or panel) | Concentrates power one way | A valley or highway, or keeping signal away from a co-channel neighbor |
+| Downtilt | Aims the beam slightly below horizontal | A very high site, so nearby users are not overshot |
+
+Higher gain narrows the vertical beam, so at a tall site a high-gain omni can leave a hole near the base. See <Ref to="five-eighths-and-colinears" />.
+
+## The handheld sets the range
+
+Everyone can hear a repeater farther than it can hear them. A repeater sends tens of watts from a tall antenna. A handheld sends 5 W or less from a rubber antenna held near the body. The path is the same in both directions, but the signals are about 10 dB apart or more. The repeater is heard; the user is not.
+
+<RepeaterCoverageAndAntennas_LinkBudget />
+
+Raise the repeater's power and only the downlink range grows, while the usable range stays put. Add a few dB of **receive-side improvement** and the uplink catches up. A **balanced** system is one where the two directions fail at about the same distance. Note that 10 dB in this model is only about a factor of 1.8 in distance, so balance matters but is not a miracle.
+
+How a site improves its uplink, in general:
+
+- **A better receiver and low-loss cable**, since every dB lost before the first amplifier is a dB of sensitivity lost.
+- **A higher-gain or separate receive antenna** where the duplexer allows.
+- **A tower-top preamplifier** at the antenna, which amplifies before cable loss. The risks are real: strong nearby signals can overload it, the transmitter's energy must be kept out of it, it needs power up the tower, and it helps only when receiver noise, not outside noise, is the limit.
+- **Receive-only (voted) sites.** Extra receivers placed where handhelds are, linked to the repeater, with a **voter** choosing the best audio. They extend the uplink without raising the downlink.
+
+## Predicting coverage
+
+Terrain-prediction software combines elevation data with a propagation model, for example the Irregular Terrain Model from the US government's NTIA/ITS, which covers 20 MHz to 20 GHz, and draws a map or a single-path profile. Some tools are free and some commercial. Treat the output as a forecast, then check it by driving and listening; foliage, buildings and the quality of the data matter. Planning goals are in <Ref to="planning-a-repeater" />.
+
+The visual is deliberately simple (plane-earth path loss plus an allowance for clutter): use it to see the trade-offs, not to predict your own coverage.
+
+<Sources items={[
+  ['47 CFR 97.313: Transmitter power standards', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-D/section-97.313', 'use the minimum power necessary'],
+  ['47 CFR 73.313: Prediction of coverage', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-C/part-73/subpart-B/section-73.313', 'the FCC definition of antenna height above average terrain, for FM broadcast'],
+  ['NTIA/ITS: Irregular Terrain Model (Longley-Rice)', 'https://its.ntia.gov/software/legacy-radio-propagation-software', 'a terrain-based propagation model for 20 MHz to 20 GHz'],
+  ['47 CFR 97.205: Repeater station', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-C/section-97.205', 'the repeater rule'],
+]} />
+
+<ExamLink groups="E9A T3C T9A" />
+
+<Related to="line-of-sight repeaters-and-controllers feed-line-loss gain-and-directivity five-eighths-and-colinears repeater-hardware-and-duplexers vhf-repeaters" />

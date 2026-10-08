@@ -1,0 +1,45 @@
+import { RemoteBasesAndHfLinks_Chain } from '@/visuals/compendium/RemoteBasesAndHfLinks_Chain'
+
+## What it is
+
+A **remote base** is a radio with its antenna at a good site, controlled from somewhere else. In repeater circles it usually means an HF radio that people on VHF or UHF reach through a repeater or link, so they can use HF without an HF radio or antenna at home. Part 97 never uses the term. A remote base is simply a station under **remote control**, and the rules for that apply.
+
+It is not a repeater. A repeater simply retransmits whoever is on its input, and may not use the HF bands below 29.5 MHz (see <Ref to="hf-and-10-meter-repeaters" />). In a remote base each user is operating the distant station.
+
+## How it works
+
+<RemoteBasesAndHfLinks_Chain />
+
+The user's signal reaches the remote site over a repeater or a dedicated link. A **controller** accepts commands, usually tones or data, to change band, frequency or mode, passes audio each way, and runs a timer. The HF radio and its antenna do the transmitting and receiving. The user hears the HF band relayed back, with some delay.
+
+## The rules that apply
+
+- **Control operator and control point.** Every station needs a control point. When a station is remotely controlled, the control operator must be at the control point, and any station may be remotely controlled (97.109). ARRL's reading is that the licensee must authorize each user as a control operator, so a fully open remote base is not allowed, and each user may transmit only on frequencies their own license permits.
+- **The control link.** It must be sufficient for the control operator to do their duties. If it is a radio link, it must use an **auxiliary station** (97.213(a)). Auxiliary stations are limited to 2 m and shorter wavelengths, minus a few segments (97.201(b)), so the link cannot be on HF or 6 m.
+- **Fail-safe.** The station must be limited to transmitting no more than 3 minutes if the control link fails, and be protected from unauthorized transmissions, whether willful or negligent (97.213(b), (c)). This matches the exam rule you meet in <Ref to="control-operators" />.
+- **Responsibility.** The licensee is responsible for the station, and when the control operator is someone else, both are equally responsible (97.103(a)).
+
+Check the current text of these sections; the exact segments and wording can change.
+
+## Digital gateways
+
+A Winlink-style HF gateway is different: it is usually **automatically controlled**, with nobody at the control point. Part 97.221 lets such a station operate automatically with RTTY or data on 6 m and shorter bands and in a short list of HF segments (the 20 m one is 14.0950 to 14.0995 and 14.1005 to 14.112 MHz). Elsewhere it may answer only when a station under local or remote control interrogates it, and its transmissions must not exceed 500 Hz in bandwidth. The section does not apply to repeaters, auxiliary stations or beacons. See <Ref to="winlink" /> and <Ref to="packet-radio" />.
+
+## In practice
+
+- **Is the frequency in use?** You hear the HF band only through the link, so listen first, ask whether the frequency is in use, and follow the band plan; see <Ref to="band-plans" />.
+- **Identification.** The HF station must give its call sign at the end of each communication and at least every 10 minutes (97.119(a)). A timeout timer ends a stuck transmission.
+- **Security.** Control tones can be overheard on the link, so use access methods that are not trivially guessed, and limit who may use the system.
+- **Other countries differ**, so do not assume a remote base is legal abroad.
+
+<Sources items={[
+  ['47 CFR 97.109: Station control', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-B/section-97.109', 'control point, local, remote and automatic control'],
+  ['47 CFR 97.213: Telecommand of an amateur station', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-C/section-97.213', 'control link, 3 minute limit, protection from unauthorized use'],
+  ['47 CFR 97.201: Auxiliary station', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-C/section-97.201', 'bands a control link may use'],
+  ['47 CFR 97.221: Automatically controlled digital station', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-C/section-97.221', 'where automatic digital gateways may work'],
+  ['ARRL Auxiliary Station FAQ', 'https://www.arrl.org/auxiliary-station-faq', 'how remote bases fit the auxiliary and remote control rules'],
+]} />
+
+<ExamLink groups="T1E G1E E1C" />
+
+<Related to="hf-and-10-meter-repeaters control-operators remote-operation repeaters-and-controllers winlink internet-linking" />

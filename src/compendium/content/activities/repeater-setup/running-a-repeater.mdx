@@ -1,0 +1,48 @@
+import { RunningARepeater_Escalation } from '@/visuals/compendium/RunningARepeater_Escalation'
+import { RunningARepeater_Calendar } from '@/visuals/compendium/RunningARepeater_Calendar'
+
+## Who is responsible
+
+Getting on the air is the start. A repeater is an amateur station that normally runs unattended under **automatic control**, but it still has people behind it.
+
+- **The station licensee** (an individual) or the **trustee** (for a club station) is responsible for the proper operation of the station and must designate its control operator. When someone else is the control operator, both are equally responsible. The station and its records must be available for FCC inspection (47 CFR 97.103).
+- **A control operator** must be a licensed amateur, must ensure the immediate proper operation of the station whatever the type of control (97.105), and acts within the privileges of their license class (97.205(a)). A repeater on 10 m therefore needs a control operator with HF privileges; see <Ref to="control-operators" />.
+- **The control point and automatic control.** Each station needs at least one control point. A repeater may be automatically controlled, so the operator need not be at the control point, but automatic control must cease if the FCC notifies you that the station is transmitting improperly or causing harmful interference, and may not resume without approval (97.109(d); the rule's wording names a Regional Director).
+
+In practice that means you need a dependable way to **shut the repeater off**, usually a private control link, and more than one person who can use it. Controlling a station over a link (telecommand) adds conditions of its own, such as a limit of three minutes of transmission if the control link fails (97.213).
+
+## Identification, timers and policy
+
+The repeater must identify itself with its assigned call sign at the end of each communication and at least every 10 minutes during one (97.119(a)); the controller normally does this, in CW or in English phone. Time-out timers, courtesy tones and access tones are the owner's choices, not Part 97 requirements, so write them down in a short user policy.
+
+**Open or closed.** The rules let you limit a repeater to certain user stations (97.205(e)). Most are open to any licensed amateur, with a CTCSS tone to cut down on stray interference (<Ref to="squelch-and-tones" />). Closed or club-only repeaters are allowed, but say so in the directory. A user who breaks the rules is accountable for what they send. An owner who retransmits a violation inadvertently is not accountable (97.205(g)), though one who knows and lets it continue is not inadvertent any more.
+
+## When something goes wrong
+
+<RunningARepeater_Escalation />
+
+Interference between two repeaters is shared work: both owners are equally responsible for resolving it, unless the coordinator recommended one and not the other, in which case the uncoordinated owner has the primary responsibility (97.205(c)). Coordinators do not enforce anything, but they can help. The FCC is the last resort, not the first call.
+
+## Keeping it healthy
+
+<RunningARepeater_Calendar />
+
+Keep your **license address and email current** (97.23), your coordinator informed of changes in owner, contact, power or antennas, and your directory listings accurate; the ARRL notes that telling it about changes does not replace telling your coordinator. See <Ref to="repeater-directories" />. Tower and roof work: <Ref to="tower-safety" />.
+
+**Insurance and liability.** Ask whether the club or landlord requires insurance, whether the site agreement assigns liability, and who is named. This depends on the state and the arrangement; this is general information, not legal advice, so ask someone qualified.
+
+**Succession and decommissioning.** A repeater that outlives its owner's interest becomes someone else's problem. Name a successor, share codes with a second person, and when you stop, tell the coordinator and the directories so the pair can be reused.
+
+<Sources items={[
+  ['47 CFR 97.103: Station licensee responsibilities', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-B/section-97.103', 'licensee designates the control operator; both are responsible'],
+  ['47 CFR 97.109: Station control', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-B/section-97.109', 'control points and automatic control'],
+  ['47 CFR 97.119: Station identification', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-B/section-97.119', 'call sign at the end and at least every 10 minutes'],
+  ['47 CFR 97.205: Repeater station', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-C/section-97.205', 'automatic control, restricted access, interference, inadvertent violations'],
+  ['47 CFR 97.213: Telecommand of an amateur station', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-C/section-97.213', 'remote control link conditions'],
+  ['ARRL: Auxiliary Station FAQ', 'https://www.arrl.org/auxiliary-station-faq', 'repeater control, responsibility and coordination in plain language'],
+  ['ARRL: Repeater directory updates (2014 news)', 'https://www.arrl.org/news/arrl-accepting-information-for-repeater-directory-travelplus', 'telling ARRL does not replace telling your coordinator'],
+]} />
+
+<ExamLink groups="T1E T1F G1E E1C" />
+
+<Related to="repeater-roadmap planning-a-repeater fcc-rules-for-repeaters repeater-frequency-coordination repeaters-and-controllers control-operators" />

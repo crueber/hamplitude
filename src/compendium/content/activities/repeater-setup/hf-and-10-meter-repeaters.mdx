@@ -1,0 +1,52 @@
+import { HfAnd10MeterRepeaters_Segment } from '@/visuals/compendium/HfAnd10MeterRepeaters_Segment'
+import { G1E_Repeater10m } from '@/visuals/general/G1E_Repeater10m'
+
+## What the rule says
+
+Repeaters on HF are almost unheard of, and that is the rule's doing. Section 97.205(b) of Part 97 says a repeater may receive and retransmit **only on the 10 m band and shorter wavelengths, and not in a list of segments**. The list starts with **28.0 to 29.5 MHz**. So every HF band from 12 m down is closed, and on 10 m only the top 200 kHz, **29.5 to 29.7 MHz**, is open. The same list closes pieces of 6 m, 2 m, 1.25 m and 70 cm to repeaters; see <Ref to="fcc-rules-for-repeaters" />.
+
+"Receive and retransmit" matters: the rule covers the input as well as the output. A 2 m input feeding a 20 m output therefore cannot be a repeater either. Systems like that are a different thing; see <Ref to="remote-bases-and-hf-links" />.
+
+<HfAnd10MeterRepeaters_Segment />
+
+## Why HF repeaters make little sense
+
+A repeater exists to fill a **coverage hole** that the horizon creates (see <Ref to="line-of-sight" />). HF has no such hole.
+
+- **Skywave already covers continents.** A modest station can reach hundreds or thousands of miles by bouncing off the ionosphere; see <Ref to="skywave-and-skip" />. A relay on a hilltop adds nothing.
+- **The spectrum is scarce.** The whole of 10 m is 1.7 MHz wide, and 20 m is only 350 kHz. A repeater occupies two channels all day, and each FM channel is several times wider than an SSB signal.
+- **Everyone hears everyone.** A repeater's output would travel by skywave to other continents and interfere with distant users of the same pair, the opposite of how VHF pairs are reused.
+- **Noise and fading.** HF noise is high and signals fade, so a relay does not make weak signals dependable.
+
+## What 10 m repeaters look like
+
+10 m is long-distance when the ionosphere supports it and local when it does not, so FM there gets busy or quiet with the solar cycle (see <Ref to="solar-cycle-and-indices" />). The ARRL band plan puts repeater inputs at 29.52 to 29.59 MHz and outputs at 29.61 to 29.70 MHz, with 29.60 as the FM simplex channel, so input and output blocks are about 100 kHz apart; your coordinator decides the pairs. FM wider than a narrow index is allowed from 29.0 MHz up (47 CFR 97.307), which is why FM can live here.
+
+A repeater on 10 m needs a control operator with 10 m privileges, so a **General or higher**. Technicians may transmit only on 28.0 to 28.5 MHz, so they cannot use the inputs, but one may still talk through a 2 m repeater that retransmits on 10 m, because the repeater's control operator holds the privileges.
+
+<G1E_Repeater10m />
+
+10 m repeaters are far fewer than VHF ones.
+
+## What people do instead
+
+- **Nets**: scheduled gatherings on SSB share one frequency among many stations; see <Ref to="nets" />.
+- **Gateways**: automatically controlled stations that accept data over HF and pass it onward, such as <Ref to="winlink">Winlink</Ref> stations; see <Ref to="remote-bases-and-hf-links" />.
+- **Remote bases**: a radio with an antenna on a good site, controlled from elsewhere.
+- **Internet and digital linking** between VHF/UHF systems, rather than a radio relay on HF; see <Ref to="internet-linking" />.
+- **Amateur satellites**: an FM satellite acts as a repeater in orbit. Part 97 treats it as a space station (97.207), which may use segments such as 145.8 to 146.0 and 435 to 438 MHz that ground repeaters may not; see <Ref to="amateur-satellites" />.
+
+Other countries differ. Their regulators may allow different bands, power or relays, so check your own authority's rules.
+
+<Sources items={[
+  ['47 CFR 97.205: Repeater station', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-C/section-97.205', 'paragraph (b) lists where repeaters may work'],
+  ['47 CFR 97.301: Authorized frequency bands', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-D/section-97.301', 'Technician and General privileges on 10 m'],
+  ['47 CFR 97.307: Emission standards (see 97.305)', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-D/section-97.307', 'emission standards; the angle-modulation index limit applies below 29.0 MHz'],
+  ['47 CFR 97.207: Space station', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-C/section-97.207', 'a space station may automatically retransmit'],
+  ['ARRL band plan', 'https://www.arrl.org/band-plan', '10 m repeater inputs, outputs and FM simplex'],
+  ['ARRL Auxiliary Station FAQ', 'https://www.arrl.org/auxiliary-station-faq', 'repeaters prohibited on HF except the top of 10 m'],
+]} />
+
+<ExamLink groups="G1E G1A E1C" />
+
+<Related to="remote-bases-and-hf-links vhf-repeaters fcc-rules-for-repeaters license-classes amateur-satellites winlink" />

@@ -1,0 +1,55 @@
+import { UhfRepeaters_Scale } from '@/visuals/compendium/UhfRepeaters_Scale'
+import { UhfRepeaters_Slice } from '@/visuals/compendium/UhfRepeaters_Slice'
+
+## What it is
+
+A UHF repeater works on 70 cm (420 to 450 MHz in the US), 33 cm (902 to 928 MHz) or 23 cm (1240 to 1300 MHz). On 70 cm, repeaters are everywhere; 33 and 23 cm have far fewer. The rules are the same as for VHF (a Technician or higher may hold the station), but the bands are shared with other services, so there are more conditions to read before you choose a site.
+
+<Facts items={[
+  ['70 cm offset', '5 MHz, plus or minus (usual)'],
+  ['33 cm split', '25 MHz (ARRL plan)'],
+  ['23 cm split', '12 MHz between the plan\'s input and output blocks'],
+  ['Quarter-wave whip', 'about 6.6 in (70 cm)'],
+]} />
+
+## Why build on UHF
+
+- **Buildings.** UHF wavelengths of a foot or two pass through windows and gaps and reflect around inside, so a handheld indoors or in a city canyon often works better than on VHF. Over open country UHF usually reaches a little less.
+- **Small antennas.** A UHF antenna with real gain is compact, and a handheld's whip is short. The cost is cable: feed-line loss rises with frequency, so UHF sites use shorter runs of larger, low-loss cable; see <Ref to="feed-line-loss" />.
+- **Easier duplexers.** A bigger offset, as a share of the frequency, means the transmit and receive filters need not be as sharp. See <Ref to="repeater-hardware-and-duplexers" />.
+- **Room in cities.** Where 2 m is crowded, 70 cm offers more channels. In the ARRL plan, 70 cm repeater blocks are left as a local option and the usual pairing is 5 MHz, which your coordinator confirms.
+
+<UhfRepeaters_Scale />
+
+## Where repeaters can go
+
+Three layers decide, and the diagram shows them on 70 cm. The **rule** (47 CFR 97.205(b)) bars repeaters from 431 to 433 MHz and 435 to 438 MHz. The **band plan** is a voluntary guide with repeater, link and satellite segments. And **sharing** says who else is there.
+
+<UhfRepeaters_Slice />
+
+## Sharing the band
+
+Amateur radio is a secondary user of these bands. Part 97.303 says amateurs on 70 cm, 33 cm and 23 cm must not cause harmful interference to, and must accept interference from, US government radar (radiolocation). The general lesson: you do not own the band, and radar and other government users can degrade your repeater.
+
+Some limits are geographic, so read them before choosing a site:
+
+- **70 cm:** no transmitting north of **Line A** in 420 to 430 MHz, and extra limits near Buffalo, Cleveland and Detroit.
+- **33 cm:** no transmitting from part of Texas and New Mexico, and some segments are barred in parts of Colorado and Wyoming. Receivers there must also accept interference from industrial, scientific and medical equipment.
+- **23 cm:** shared with aeronautical navigation, satellite navigation and space-research services.
+
+Rules are updated from time to time, so check the current text of 97.303, and ask your coordinator.
+
+## 23 cm: links and mesh
+
+23 cm is thinly populated with repeaters. Its ARRL plan includes FM and digital repeater inputs at 1270 to 1276 MHz paired with outputs at 1282 to 1288 MHz, point-to-point links, and ATV channels. Its chief use is **links**: an auxiliary station (97.201) may use any amateur band from 2 m up except a few segments, so a repeater system can join sites on 23 cm, away from the busy channels. Wideband data and mesh networks tend to use the microwave bands, and some use 33 cm; see <Ref to="aredn-mesh" />. Outside the US, band edges and splits differ.
+
+<Sources items={[
+  ['47 CFR 97.303: Frequency sharing requirements', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-D/section-97.303', 'radar, Line A, 33 cm and 23 cm conditions'],
+  ['47 CFR 97.205: Repeater station', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-C/section-97.205', 'segments where repeaters are not allowed'],
+  ['47 CFR 97.201: Auxiliary station', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-C/section-97.201', 'links and control stations'],
+  ['ARRL band plan', 'https://www.arrl.org/band-plan', '70 cm, 33 cm and 23 cm repeater blocks and splits'],
+]} />
+
+<ExamLink groups="T2A T2B T3B" />
+
+<Related to="vhf-repeaters repeaters repeater-hardware-and-duplexers feed-line-loss repeater-frequency-coordination band-plans" />

@@ -30,6 +30,7 @@ If you think a title/summary is wrong or an article is missing, say so in your f
 * `<Facts items={[['Label', 'value'], …]} />` near the top when there are quantitative anchors (impedance, length, bandwidth, typical values).
 * Cross-link generously with `<Ref to="slug">text</Ref>` (slug alone is enough; text defaults to the article title).
 * `<ExamLink groups="T9A G9B" />` when the topic appears in the exam syllabus. Find groups with `bun scripts/find-groups.ts <keyword>`. Omit it if there is no real match.
+* **Cite your authorities** with `<Sources items={[['47 CFR 97.205', 'https://www.ecfr.gov/…', 'the repeater rule']]} />` just before `<Related>`. Required for articles about regulation or process (all of `activities/repeater-setup/`, at least 2 primary sources); good practice anywhere a regulator or standards body is the source of truth. Link the regulator's own page (eCFR, fcc.gov, arrl.org, faa.gov…), never a forum post or a blog's summary. **Open every URL you cite** (WebFetch) and confirm it says what you claim; a dead or wrong link is worse than none. Check them all with `bun scripts/check-links.ts <path>`.
 * End with `<Related to="slug-a slug-b slug-c" />`, 3-6 slugs of closely related articles. Browse `src/compendium/taxonomy.ts` for slugs.
 
 Layout components available without importing: `Facts`, `Ref`, `Related`, `ExamLink`, `Key`, `Callout` (`kind="tip|warn|note"`), `Mnemonic`, `Formula`, `Row`, `Term`. Do **not** use `Concept` (that is the lesson card).

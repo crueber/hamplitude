@@ -1,0 +1,52 @@
+import { PlanningARepeater_Worksheet } from '@/visuals/compendium/PlanningARepeater_Worksheet'
+
+## Start with the purpose
+
+A repeater is a shared resource that someone must pay for, power and look after for years, so the first question is why. Typical purposes are emergency communications, a club net, linking systems together, covering a specific hole, or acting as a node in a digital voice network. The purpose drives nearly every later choice.
+
+<PlanningARepeater_Worksheet />
+
+## Do you need a new one?
+
+Spectrum is limited: in a busy area there may be no free channel pair at all, and the frequency coordinator can recommend a different pair or a different band, and may find that nothing suitable is free. A coordinator is a volunteer body that recommends channels and cannot assign them (<Ref to="repeater-frequency-coordination" />). Before spending anything:
+
+- Ask local operators and clubs what they find lacking. A weak spot may be a handheld or antenna problem, not a missing repeater.
+- Talk to existing repeater owners. Sometimes an extra receiver or a link to their system fills the gap, and they will have site and landlord experience you can use.
+- Ask the coordinator what is typically available in your area, before you buy equipment.
+
+## Band, coverage and cost
+
+Pick the band for the goal: <Ref to="vhf-repeaters" /> for wide coverage and the most existing radios, <Ref to="uhf-repeaters" /> for buildings and smaller antennas, and <Ref to="hf-and-10-meter-repeaters" /> for the rare exception. Coverage is set by antenna height and the handheld at the far end more than by repeater power; see <Ref to="repeater-coverage-and-antennas" />.
+
+Think of the budget in **categories**, not a number:
+
+| Category | What it covers |
+|---|---|
+| Radio gear | receiver, transmitter, controller, duplexer |
+| Antenna system | antenna, feedline, mounting, lightning protection |
+| Site | rent or a donated space, access, power connection |
+| Power backup | batteries, charger, possibly a generator |
+| Ongoing | electricity, internet if linked, insurance, spares, travel to the site |
+
+The ongoing costs are the ones people forget. A repeater that costs little to start can cost steadily for years.
+
+## Who owns it, and who takes over
+
+A repeater is an amateur station, so it is licensed like any other. Under 47 CFR 97.5 the FCC grants an individual's station license or a **club station license** (a military recreation station license also exists). A club license is held by a **trustee**: a licensed amateur designated by an officer of a club that has a name, a document of organization, management, a primary purpose in amateur radio and at least four persons. See <Ref to="control-operators" /> and <Ref to="clubs-and-elmers" />.
+
+- **An individual** has the simplest start, but the repeater depends on one person's time, health and address.
+- **A club** spreads the work and the cost, and a club can designate a new trustee. It does need members who actually share the job.
+
+Either way, write down the **backup plan** before launch: how the site is powered during an outage, who holds the keys and the control-link codes, and who takes over if the owner moves or stops. See <Ref to="running-a-repeater" /> for succession.
+
+<Sources items={[
+  ['47 CFR 97.5: Station license required', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-A/section-97.5', 'individual and club station license grants, and what a club must have'],
+  ['47 CFR 97.205: Repeater station', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-C/section-97.205', 'any Technician or higher station may be a repeater'],
+  ['FCC: Amateur club stations', 'https://www.fcc.gov/wireless/bureau-divisions/mobility-division/amateur-radio-service/club-stations', 'club license, trustee and how a club applies'],
+  ['ARRL: Club Station FAQ', 'https://www.arrl.org/club-station-faq', 'trustee duties; repeater under a personal call versus a club call'],
+  ['ARRL: Frequency Coordinators', 'https://www.arrl.org/frequency-coordinators', 'coordinators are volunteers; ARRL itself does not coordinate'],
+]} />
+
+<ExamLink groups="T1F T1E" />
+
+<Related to="repeater-roadmap repeater-frequency-coordination vhf-repeaters uhf-repeaters site-permits-and-local-approvals running-a-repeater" />

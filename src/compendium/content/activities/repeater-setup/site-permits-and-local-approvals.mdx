@@ -1,0 +1,46 @@
+import { SitePermitsAndLocalApprovals_Checklist } from '@/visuals/compendium/SitePermitsAndLocalApprovals_Checklist'
+
+## What it is
+
+A repeater lives on a roof or tower that someone else usually owns, and an amateur license gives no right to put an antenna on it. Before it goes up you typically need to satisfy several separate parties: the **site owner**, **local government**, the **federal tower rules** where they apply, and the **RF-exposure rule**, which always applies. This article covers the US; other countries differ.
+
+<Callout kind="note" title="Not legal advice">Rules and landlords vary, and rules change. Treat this as a map of the questions to ask, and confirm each one with the authority concerned.</Callout>
+
+## Who you need to ask
+
+<SitePermitsAndLocalApprovals_Checklist />
+
+The usual order is the site owner first, because most other steps need their consent, then the authorities, then the build. Coordination fits alongside: coordinators want site coordinates and height, and landlords sometimes want proof of coordination. See <Ref to="repeater-roadmap" />.
+
+## The rules behind it
+
+**Local government.** State and local rules on amateur antenna structures must reasonably accommodate amateur communications and be the minimum practicable regulation for a legitimate local purpose; this is the FCC's PRB-1 ruling, noted in 47 CFR 97.15(b). It does not exempt you from permits, and it does not reach private contracts such as a lease or an HOA covenant. Whether it covers a particular repeater site depends on the facts; the ARRL offers volunteer counsel for disputes. See <Ref to="antenna-restrictions" />.
+
+**Tall structures and airports.** An FAA notice is required, under 47 CFR 17.7 and 14 CFR 77.9, for construction over 200 ft above ground, or above an imaginary surface sloping up from certain airports' runways (out to as much as 20,000 ft, about 3.8 miles). Structures of 20 ft or less are generally exempt unless they add to the height of another antenna structure. If FAA notice is required, the structure's owner must also register it with the FCC (Part 17). Since 2019, the ARRL notes, some shorter rural towers need only be recorded in an FAA database, and few amateur towers are affected. If notice is needed, the FAA's Part 77 page says to file it at least 45 days before construction starts, and explains how to file online. When in doubt about a specific site, ask the FAA.
+
+**RF exposure.** Before transmitting where people could be exposed above the FCC limits, the licensee must take certain actions: ensure compliance with the FCC's exposure rules, which typically means evaluating the station with the FCC's methods (47 CFR 97.13(c); OET Bulletin 65 and its Supplement B for amateurs). Some low-power installations may be exempt under 47 CFR 1.1307(b)(3), so check the current rule. A repeater is no exception, and rooftop antennas near people are the case to think hardest about. See <Ref to="rf-exposure" />. Where several licensees' transmitters contribute at a site, the rule makes responsibility for bringing the area into compliance shared among licensees whose transmitters contribute more than 5% of the limit, and requires licensees to share the technical information needed (47 CFR 1.1307(b)). Part 97 also asks you to protect FCC monitoring stations within about a mile (97.13(b)), may require extra steps on land of environmental importance or historic significance (97.13(a)), and, as written, requires a repeater licensee to notify the Arecibo Observatory before building within 16 km (10 miles) of it (97.205(h)). These are location checks, not filings with the FCC for approval.
+
+## At the site
+
+- **Other users.** A shared site often has many transmitters. Receivers can be desensitised, so owners typically ask tenants for filtering and cooperation; see <Ref to="overload-and-intermod" />.
+- **Power, grounding and insurance.** Owners commonly want to know the load, the grounding, and that you carry insurance. Do the electrical work to code; see <Ref to="lightning-and-grounding" />.
+- **Neighbors.** A short, honest explanation of what the antenna is and is not, before they ask, prevents most complaints.
+- **Safety.** Falls are the main hazard. Use trained climbers with fall protection, and never improvise; see <Ref to="tower-safety" />.
+
+<Sources items={[
+  ['47 CFR 97.15: Station antenna structures', 'https://www.ecfr.gov/current/title-47/part-97/section-97.15', 'tall-structure notice and the PRB-1 standard'],
+  ['47 CFR 97.13: Restrictions on station location', 'https://www.ecfr.gov/current/title-47/part-97/section-97.13', 'RF exposure and other location duties'],
+  ['47 CFR 17.7: Structures requiring notification to the FAA', 'https://www.ecfr.gov/current/title-47/part-17/section-17.7', 'height and airport criteria; the FCC registration rule is in Part 17'],
+  ['14 CFR 77.9: Construction requiring notice', 'https://www.ecfr.gov/current/title-14/part-77/section-77.9', 'the FAA\'s own notice criteria'],
+  ['FAA: Notification of proposed construction (Part 77)', 'https://www.faa.gov/airports/central/engineering/part77', 'who files, how, and the 45-day lead time'],
+  ['FCC: Antenna Structure Registration', 'https://www.fcc.gov/help/what-antenna-structure-registration-program', 'who registers a structure'],
+  ['47 CFR 1.1307: Actions with environmental effect', 'https://www.ecfr.gov/current/title-47/part-1/section-1.1307', 'shared responsibility at multi-transmitter sites'],
+  ['FCC OET Bulletin 65, Supplement B', 'https://transition.fcc.gov/Bureaus/Engineering_Technology/Documents/bulletins/oet65/oet65b.pdf', 'RF evaluation for amateur stations, including repeater sites'],
+  ['ARRL: RF Exposure', 'https://www.arrl.org/rf-exposure', 'the ARRL\'s current guidance and calculator'],
+  ['ARRL: FAA tower regulation issues', 'https://www.arrl.org/faa-tower-regulation-issues', 'effect of the 2019 rules on amateur towers'],
+  ['ARRL: PRB-1', 'https://www.arrl.org/prb-1', 'the ruling and its limits'],
+]} />
+
+<ExamLink groups="G1B T0C G0A T0B" />
+
+<Related to="repeater-roadmap antenna-restrictions towers-and-masts rf-exposure tower-safety lightning-and-grounding" />

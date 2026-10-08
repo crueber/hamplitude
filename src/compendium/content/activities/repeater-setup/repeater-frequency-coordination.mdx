@@ -1,0 +1,47 @@
+import { RepeaterFrequencyCoordination_Interference } from '@/visuals/compendium/RepeaterFrequencyCoordination_Interference'
+import { RepeaterFrequencyCoordination_Flow } from '@/visuals/compendium/RepeaterFrequencyCoordination_Flow'
+
+## What it is
+
+Repeaters need a pair of frequencies (input and output), and the same pair cannot be reused nearby without interference. A **frequency coordinator** is a body that keeps the records for a region and recommends which pair, access tone and parameters a new repeater should use, to avoid or minimise interference. Part 97 defines the term this way: an entity recognised in a local or regional area by the amateurs whose stations are eligible to be repeaters or auxiliary stations (47 CFR 97.3).
+
+Coordinators are typically volunteer bodies. They recommend; they do not assign. The ARRL says that its own publication of coordinator information implies no endorsement, because coordinators draw their authority from the voluntary participation of the amateurs in their area.
+
+This article describes the US. Other countries have their own arrangements.
+
+## What the rules do with it
+
+Coordination is not a condition of the license: the FCC has said that coordination is not required to operate a repeater, and that it does not and cannot assign or give control of a channel. Other amateurs may use a coordinated channel when the repeater is not using it. Its legal effect is narrow and appears in one place, 47 CFR 97.205(c):
+
+<RepeaterFrequencyCoordination_Interference />
+
+So skipping coordination is legal but risky: if you interfere with a coordinated repeater, the burden to fix it falls mainly on you. The ARRL goes further and advises that anyone considering a repeater should check with the local coordinator before installing it. The same rule applies to auxiliary stations (97.201(c)).
+
+## Finding your coordinator and applying
+
+The ARRL is not a frequency coordinator and does not certify coordinators; it reports whether a repeater is coordinated as the coordinating body instructs. Its page on the National Frequency Coordinators' Council says that the ARRL cannot verify whether that council still exists or operates. For VHF and UHF repeaters, the ARRL advises you to work out who the coordinator is for your state and work through them. Local repeater clubs and the owners of nearby repeaters usually know; see <Ref to="repeater-directories" />.
+
+<RepeaterFrequencyCoordination_Flow />
+
+What an application asks for varies, so use your coordinator's own form. Examples from two regional coordinators ask typically for the trustee and contact details, the band and mode, access tone or code, the site (coordinates and ground elevation), antenna height, make, gain and pattern, transmitter power and line losses (from which they work out ERP), and sometimes the tower's FCC antenna structure registration number. Both examples treat a significant change, such as moving the site, a different antenna height or more power, as a new coordination (one also counts a new tone). One gives the applicant six months to get on the air, grants final coordination only after a further period of operation, and may revoke coordination for a repeater that stays off the air.
+
+## What it does not give you
+
+- **A license.** You still need a station license; see <Ref to="fcc-rules-for-repeaters" />.
+- **A site.** Permission from the owner and the local authorities is separate; see <Ref to="site-permits-and-local-approvals" />.
+- **Ownership of the channel.** It is a recommendation based on what the coordinator knew when it was made; later changes elsewhere can still cause trouble.
+- **A guarantee of no interference.** It lowers the risk; it does not remove it. See <Ref to="running-a-repeater" />.
+
+<Sources items={[
+  ['47 CFR 97.205(c): Repeater station', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-C/section-97.205', 'who resolves interference if one repeater is coordinated'],
+  ['47 CFR 97.3: Definitions', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-A/section-97.3', 'defines frequency coordinator'],
+  ['FCC letter DA 09-2559', 'https://docs.fcc.gov/public/attachments/DA-09-2559A1.txt', 'coordination is not required and cannot assign a channel'],
+  ['ARRL: Frequency Coordinators', 'https://www.arrl.org/frequency-coordinators', 'what the ARRL does and does not do; find your state coordinator'],
+  ['ARRL: NFCC', 'https://www.arrl.org/nfcc', 'the ARRL cannot verify the national council still operates'],
+  ['Example: Western Pennsylvania Repeater Council (WPRC)', 'https://www.wprcinfo.org/coord.htm', 'one regional coordinator\'s published procedure'],
+  ['Example: WAR, Inc. (Wisconsin), application instructions, revised 2015', 'https://wi-repeaters.org/forms/coordination_form_instructions.pdf', 'one coordinator\'s application instructions'],
+]} />
+
+<ExamLink groups="T2B T1F" />
+
+<Related to="repeaters repeater-directories fcc-rules-for-repeaters repeater-roadmap planning-a-repeater site-permits-and-local-approvals" />

@@ -1,0 +1,73 @@
+import { RepeaterHardwareAndDuplexers_SiteChain } from '@/visuals/compendium/RepeaterHardwareAndDuplexers_SiteChain'
+import { RepeaterHardwareAndDuplexers_Isolation } from '@/visuals/compendium/RepeaterHardwareAndDuplexers_Isolation'
+
+## The chain
+
+A repeater site is two paths. The **RF path** carries signal from the antenna through the feed line and duplexer to a receiver and a transmitter. The **power path** keeps all of it running. The blocks are introduced in <Ref to="repeaters-and-controllers" />; here is how they fit together and what goes wrong.
+
+<RepeaterHardwareAndDuplexers_SiteChain />
+
+| Part | Its job | What typically goes wrong |
+|---|---|---|
+| Receiver | Hears a weak handheld on the input frequency | Desense from the transmitter, overload from nearby transmitters (<Ref to="overload-and-intermod" />) |
+| Transmitter | Sends on the output frequency, often tens of watts | Drift, noisy output, overheating at continuous duty |
+| Duplexer | Lets one antenna serve both | Detuning with temperature or knocks, water, loose connections |
+| Feed line | Carries RF up the tower | Water ingress, loss, damaged connectors (<Ref to="feed-line-loss" />) |
+| Power | Supply, charger, battery | Mains failure, battery ageing; see <Ref to="batteries" /> and <Ref to="shack-power-supplies" /> |
+| Protection | Arrestors and bonding | Strikes and surges; see <Ref to="lightning-and-grounding" /> |
+
+Test it with a power meter, an analyzer or VNA, and a spectrum analyzer or service monitor: <Ref to="swr-and-power-meters" />, <Ref to="antenna-analyzers-and-vnas" />, <Ref to="spectrum-analyzers" />.
+
+## The duplexer problem
+
+A 50 W transmitter is +47 dBm. The receiver beside it must hear signals around -120 dBm. That is a gap of about 170 dB (see <Ref to="decibels" />), and the two frequencies may be only 600 kHz apart. Sharing one antenna makes it worse, for two reasons.
+
+- **The carrier overloads the receiver.** A strong signal at the transmit frequency drives the receiver front end into nonlinearity.
+- **Transmitter noise lands on the receive frequency.** Every transmitter has faint wideband noise (sidebands). It is tiny next to the carrier, yet it falls in the receiver's channel and raises its noise floor, so weak signals vanish. This is **desense**, and it is usually the harder problem; see <Ref to="noise-and-snr" />.
+
+A **duplexer** fixes both with high-Q **cavity** filters. A *pass* cavity lets one frequency through; a *notch* (reject) cavity blocks one. A transmit-side notch tuned to the receive frequency rejects the transmitter's noise there; a receive-side notch tuned to the transmit frequency rejects its carrier.
+
+Three things set how many cavities a site needs:
+
+- **Frequency separation.** The closer the pair, relative to the band, the sharper the filter. One manufacturer's VHF data sheet lists two pass-reject cavities per side for spacings of 600 kHz or more, and three per side for 400 kHz or more.
+- **The band.** Lower frequency means physically larger cavities.
+- **Insertion loss.** Every cavity attenuates the wanted signal too, typically around a dB or two per direction in total. That loss cuts both transmit power and receiver sensitivity, so more cavities are not automatically better.
+
+An alternative is two antennas, one for each side, separated vertically so little energy couples between them.
+
+### Worked example (all numbers illustrative)
+
+<Formula label="Transmitter noise in the receive channel">noise (dBm) = carrier (dBm) + noise density (dBc/Hz) + 10 log₁₀(bandwidth in Hz)</Formula>
+
+- Carrier: 10 log₁₀(50 W ÷ 1 mW) = **+47 dBm**.
+- Assume the transmitter's noise 600 kHz away is -130 dBc/Hz. In a 12.5 kHz channel that adds 10 log₁₀(12 500) = 41 dB: -130 + 41 = -89 dBc, so the noise is 47 - 89 = **-42 dBm**.
+- Receiver noise floor: -174 + 41 + 5 (noise figure) = **-128 dBm**.
+- Noise that arrives 6 dB below the floor adds about 1 dB to it. So it must reach the receiver at about -134 dBm.
+- Isolation needed: -42 - (-134) = **about 92 dB**.
+
+Slide the isolation down to see desense appear.
+
+<RepeaterHardwareAndDuplexers_Isolation />
+
+## The controller
+
+The controller sits between receiver and transmitter and does the housekeeping:
+
+- **Carrier and tone detect.** It opens the transmitter only for a valid signal. If the repeater requires a CTCSS or DCS tone, the controller checks it; Part 97 permits limiting a repeater to certain users (97.205(e)). See <Ref to="squelch-and-tones" />.
+- **Identification.** Part 97 requires the call sign at the end of each communication and at least every 10 minutes during one (97.119(a)); the controller sends it by CW or voice automatically.
+- **Time-out timer, courtesy tone and tail.** The timer drops the transmitter if someone holds the key too long or a stuck signal appears. The courtesy tone signals that it is safe to talk.
+- **Link ports.** Connections to other repeaters or to the internet; see <Ref to="internet-linking" />.
+
+Control rules are in <Ref to="control-operators" /> and <Ref to="fcc-rules-for-repeaters" />. These are US rules; other countries differ.
+
+<Sources items={[
+  ['47 CFR 97.205: Repeater station', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-C/section-97.205', 'automatic control and limiting access to certain stations'],
+  ['47 CFR 97.119: Station identification', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-B/section-97.119', 'call sign at the end and at least every 10 minutes'],
+  ['47 CFR 97.109: Station control', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97/subpart-B/section-97.109', 'automatic control and when it must stop'],
+  ['Telewave TPRD-1554 and 1556 duplexer data sheet', 'https://www.telewave.com/wp-content/uploads/2016/07/TWDS-6025.pdf', 'pass-reject cavity duplexer: cavities per side versus frequency spacing, transmitter-noise rejection'],
+  ['Telewave TPRD-4546 duplexer data sheet', 'https://www.telewave.com/wp-content/uploads/2016/07/TWDS-6020.pdf', 'pass-reject versus bandpass-only at close spacing'],
+]} />
+
+<ExamLink groups="T2B E7C T7B" />
+
+<Related to="repeaters-and-controllers overload-and-intermod squelch-and-tones control-operators feed-line-loss lightning-and-grounding repeater-coverage-and-antennas" />

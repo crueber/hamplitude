@@ -8,7 +8,7 @@ The site is a single-page app, but every indexable page is **prerendered to stat
 | | |
 |---|---|
 | Real URLs | `/technician/T5D/`, `/compendium/antennas/wire/half-wave-dipole/` (not `#/…`: search engines ignore everything after `#`) |
-| Pages | 464: home, 3 licence pages, 120 lessons, the compendium home, 10 sections, 43 subsections, 286 articles |
+| Pages | 479: home, 3 license pages, 120 lessons, the compendium home, 10 sections, 44 subsections, 299 articles (plus info pages) |
 | Per-page head | unique `<title>`, meta description (articles use their opening paragraph), canonical URL, `robots`, Open Graph + Twitter cards |
 | Structured data | JSON-LD: `WebSite`, `Course`, `LearningResource` (lessons), `Article` (compendium) and `BreadcrumbList` |
 | Discovery | `sitemap.xml`, `robots.txt`, internal links from the compendium index pages, `site.webmanifest` |
