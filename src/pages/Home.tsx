@@ -1,34 +1,19 @@
-import { Suspense, lazy } from 'react'
+import { Suspense, lazy, useRef, useState, type KeyboardEvent } from 'react'
 import { Link } from 'react-router-dom'
-import { LICENSES, LICENSE_BLURB, POOLS } from '@/data'
-import { useStore } from '@/lib/store'
-import { licenseStats, pct } from '@/lib/stats'
-import { Ring } from '@/components/Ring'
 import { HeroArt } from '@/components/HeroArt'
+import { Ring } from '@/components/Ring'
 import { SectionIcon } from '@/compendium/Icons'
-import { SECTIONS, articleHref, getArticle, getSub, sectionArticleCount } from '@/compendium/taxonomy'
+import { EXAMS_DEK, FEATURE_BLURB, LEAD, LEAD_BOLD, TAGLINE, useLandingData } from './home-data'
 import '@/styles/home.css'
 
 /* The featured article's diagram is the one shared, interactive visual the site already has for it.
    Lazy so the home bundle stays light; the prerender waits for it, so the static HTML includes the diagram. */
 const IonosphereBounce = lazy(() => import('@/visuals/shared/IonosphereBounce').then((m) => ({ default: m.IonosphereBounce })))
 
-const FEATURE_PATH = 'radio/propagation/ionosphere-layers'
-const COLLECTION = { section: 'activities', sub: 'repeater-setup' }
-const COLLECTION_PICKS = [
-  'activities/repeater-setup/repeater-roadmap',
-  'activities/repeater-setup/planning-a-repeater',
-  'activities/repeater-setup/repeater-frequency-coordination',
-  'activities/repeater-setup/fcc-rules-for-repeaters',
-  'activities/repeater-setup/repeater-hardware-and-duplexers',
-]
-
-const fmtDate = (iso: string) => new Date(iso + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
-
-/** Static stand-in while the interactive diagram loads (client-side navigation only). */
+/** Static stand-in while the interactive diagram loads. */
 function DiagramFallback() {
   return (
-    <svg className="hm-ph" viewBox="0 0 640 300" role="img" aria-label="HF signal reflecting off the ionosphere">
+    <svg viewBox="0 0 640 300" style={{ display: 'block', width: '100%', height: 'auto' }} role="img" aria-label="HF signal reflecting off the ionosphere">
       <rect x="20" y="50" width="600" height="56" rx="10" fill="none" stroke="var(--d-muted)" strokeDasharray="5 5" />
       <rect x="20" y="252" width="600" height="34" rx="8" fill="var(--d-fill)" stroke="var(--d-muted)" />
       <polyline points="110,230 320,82 530,230" fill="none" stroke="var(--d-good)" strokeWidth="3" strokeLinecap="round" strokeDasharray="2 7" />
@@ -36,127 +21,160 @@ function DiagramFallback() {
   )
 }
 
-export function Home() {
-  const cards = useStore((s) => s.cards)
+function FeatureDiagram() {
+  return (
+    <Suspense fallback={<DiagramFallback />}>
+      <IonosphereBounce />
+    </Suspense>
+  )
+}
 
-  const feature = getArticle(FEATURE_PATH)
-  const collSub = getSub(COLLECTION.section, COLLECTION.sub)
-  const collPicks = COLLECTION_PICKS.flatMap((p) => { const a = getArticle(p); return a ? [{ path: p, a }] : [] })
+const TABS = [
+  { id: 'explore', label: 'Explore the compendium' },
+  { id: 'exams', label: 'Exam study guides' },
+] as const
+type TabId = (typeof TABS)[number]['id']
+
+export function Home() {
+  const { feature, featureHref, collSub, collHref, collPicks, sections, licenses } = useLandingData()
+  const [tab, setTab] = useState<TabId>('explore')
+  const tabRefs = useRef<Array<HTMLButtonElement | null>>([])
+  const panelsRef = useRef<HTMLDivElement>(null)
+
+  const select = (i: number, focus = false) => {
+    setTab(TABS[i].id)
+    if (focus) tabRefs.current[i]?.focus()
+  }
+  const onKey = (e: KeyboardEvent, i: number) => {
+    const last = TABS.length - 1
+    const next = e.key === 'ArrowRight' ? (i === last ? 0 : i + 1) : e.key === 'ArrowLeft' ? (i === 0 ? last : i - 1) : e.key === 'Home' ? 0 : e.key === 'End' ? last : -1
+    if (next < 0) return
+    e.preventDefault()
+    select(next, true)
+  }
+  const studyForExam = () => {
+    setTab('exams')
+    requestAnimationFrame(() => requestAnimationFrame(() => document.getElementById('exams')?.scrollIntoView({ behavior: 'smooth', block: 'start' })))
+  }
 
   return (
     <div className="wrap hm">
-      {/* ───── masthead ───── */}
-      <header className="hm-mast">
+      <header className="hm-hero">
         <h1 className="hm-h1">
-          <span className="hm-h1-a">Don't memorize ham radio.</span>{' '}
-          <em className="hm-h1-b">Understand it.</em>
+          <span className="hm-h1-a">{TAGLINE.a}</span>{' '}
+          <em className="hm-h1-b">{TAGLINE.b}</em>
         </h1>
-        <div className="hm-mast-body">
-          <div className="hm-mast-main">
-            <p className="hm-lead">
-              <strong>Everything an operator should understand.</strong> Hundreds of pages that break down ham radio concepts. Each concept is related with pictures and interactive widgets that help you deeply understand how they work, so you can get the most out of your practice!
-            </p>
-            <div className="hm-actions">
-              <Link className="hm-btn hm-btn-solid" to="/compendium">Open the compendium <span aria-hidden>→</span></Link>
-              <button type="button" className="hm-btn" onClick={() => document.getElementById('exams')?.scrollIntoView({ behavior: 'smooth' })}>Study for an exam</button>
-            </div>
-          </div>
-          <div className="hm-art"><HeroArt h={400} fill /></div>
+        <p className="hm-lead">
+          <strong>{LEAD_BOLD}</strong> {LEAD}
+        </p>
+        <div className="hm-actions">
+          <Link className="hm-btn hm-btn-solid" to="/compendium">Open the compendium <span aria-hidden>→</span></Link>
+          <button type="button" className="hm-btn" onClick={studyForExam}>Study for an exam</button>
         </div>
+        <div className="hm-art" aria-hidden={false}><HeroArt h={400} fill /></div>
       </header>
 
-      <nav className="hm-toc" aria-label="Compendium sections">
-        <p className="hm-toc-title">In the compendium</p>
-        <ol className="hm-toc-list">
-          {SECTIONS.map((s) => (
-            <li key={s.slug}>
-              <Link to={`/compendium/${s.slug}`}>
-                <span className="hm-toc-ico"><SectionIcon name={s.icon} size={18} /></span>
-                <span className="hm-toc-name">{s.title}</span>
-                <span className="hm-toc-n">{sectionArticleCount(s)}</span>
-              </Link>
-            </li>
-          ))}
-        </ol>
-      </nav>
-
-      {/* ───── featured article ───── */}
-      {feature && (
-        <section className="hm-feature" aria-labelledby="hm-feature-title">
-          <div className="hm-feature-copy">
-            <p className="hm-label">Featured article</p>
-            <h2 className="hm-h2" id="hm-feature-title">
-              <Link to={articleHref(FEATURE_PATH)}>{feature.title}</Link>
-            </h2>
-            <p className="hm-dek">{feature.summary}</p>
-            <p className="hm-dek-2">
-              The reason HF reaches across oceans and VHF does not. Flip the diagram to see the same signal at two frequencies: one comes back down, the other leaves for good.
-            </p>
-            <ul className="hm-meta" aria-label="About this article">
-              <li>{feature.section.title}</li>
-              <li>{feature.sub.title}</li>
-              <li>Interactive diagram</li>
-            </ul>
-            <Link className="hm-more" to={articleHref(FEATURE_PATH)}>Read “{feature.title}” <span aria-hidden>→</span></Link>
-          </div>
-          <div className="hm-feature-vis">
-            <Suspense fallback={<DiagramFallback />}>
-              <IonosphereBounce />
-            </Suspense>
-          </div>
-        </section>
-      )}
-
-      {/* ───── collection ───── */}
-      {collSub && collPicks.length > 0 && (
-        <section className="hm-coll" aria-labelledby="hm-coll-title">
-          <div className="hm-coll-head">
-            <p className="hm-label hm-label-accent">New collection · {collSub.articles.length} articles</p>
-            <h2 className="hm-h2" id="hm-coll-title">{collSub.title}</h2>
-            <p className="hm-dek">{collSub.blurb}</p>
-            <Link className="hm-btn hm-btn-solid" to={`/compendium/${COLLECTION.section}/${COLLECTION.sub}`}>See all {collSub.articles.length} articles <span aria-hidden>→</span></Link>
-          </div>
-          <ol className="hm-coll-list">
-            {collPicks.map(({ path, a }) => (
-              <li key={path}>
-                <Link to={articleHref(path)}>
-                  <strong>{a.title}</strong>
-                  <span>{a.summary}</span>
-                </Link>
-              </li>
+      <section className="hm-switch" aria-label="Explore Hamplitude">
+        <div className="hm-tabbar">
+          <div className="hm-tabs" role="tablist" aria-label="Sections">
+            {TABS.map((t, i) => (
+              <button
+                key={t.id}
+                ref={(el) => { tabRefs.current[i] = el }}
+                type="button"
+                role="tab"
+                id={`hm-tab-${t.id}`}
+                aria-selected={tab === t.id}
+                aria-controls={`hm-panel-${t.id}`}
+                tabIndex={tab === t.id ? 0 : -1}
+                className="hm-tab"
+                onClick={() => select(i)}
+                onKeyDown={(e) => onKey(e, i)}
+              >
+                {t.label}
+              </button>
             ))}
-          </ol>
-        </section>
-      )}
-
-      {/* ───── exam band ───── */}
-      <section className="hm-exams" id="exams" aria-labelledby="hm-exams-title">
-        <div className="hm-exams-head">
-          <p className="hm-label">Exam study guides</p>
-          <h2 className="hm-h2" id="hm-exams-title">Studying for an exam?</h2>
-          <p className="hm-dek">
-            The exam lessons teach the same ideas in the order the official question pools ask them, with practice questions and a full mock exam. Every compendium article points to the lessons that cover it.
-          </p>
+          </div>
         </div>
-        <div className="hm-lics">
-          {LICENSES.map((l) => {
-            const p = POOLS[l]
-            const st = licenseStats(cards, l)
-            const m = pct(st.mastered, st.total)
-            const groups = p.subelements.reduce((n, s) => n + s.groups.length, 0)
-            return (
-              <Link key={l} to={`/${l}`} className="hm-lic" data-license={l}>
-                <div className="hm-lic-top">
-                  <h3 className="hm-h3">{p.name}</h3>
-                  <Ring value={m} size={48} />
+
+        <div className="hm-panels" ref={panelsRef}>
+          {/* ───── explore ───── */}
+          <div role="tabpanel" id="hm-panel-explore" aria-labelledby="hm-tab-explore" className="hm-panel" hidden={tab !== 'explore'}>
+            <section className="hm-block" aria-labelledby="hm-index-title">
+              <p className="hm-label">Compendium</p>
+              <h2 className="hm-h2 hm-sr" id="hm-index-title">Compendium sections</h2>
+              <ol className="hm-tiles" aria-label="Compendium sections">
+                {sections.map((s) => (
+                  <li key={s.slug}>
+                    <Link to={`/compendium/${s.slug}`} className="hm-tile">
+                      <span className="hm-tile-ico"><SectionIcon name={s.icon} size={22} /></span>
+                      <span className="hm-tile-name">{s.title}</span>
+                      <span className="hm-tile-n">{s.count} articles</span>
+                    </Link>
+                  </li>
+                ))}
+              </ol>
+            </section>
+
+            {feature && (
+              <article className="hm-block hm-feature" aria-labelledby="hm-feature-title">
+                <div className="hm-feature-copy">
+                  <p className="hm-label">Featured article</p>
+                  <h2 className="hm-h2" id="hm-feature-title"><Link to={featureHref}>{feature.title}</Link></h2>
+                  <p className="hm-dek">{feature.summary}</p>
+                  <p className="hm-dek hm-dek-2">{FEATURE_BLURB}</p>
+                  <Link className="hm-more" to={featureHref}>Read “{feature.title}” <span aria-hidden>→</span></Link>
                 </div>
-                <p className="hm-lic-tag">{LICENSE_BLURB[l].tagline}. {LICENSE_BLURB[l].privileges}.</p>
-                <p className="hm-lic-facts">{groups} lessons · {p.questions.length} pool questions · {p.exam.toPass} of {p.exam.questions} to pass</p>
-                <p className="hm-lic-valid">Pool {fmtDate(p.valid.from)} – {fmtDate(p.valid.to)}</p>
-                <span className="hm-lic-cta">{st.seen ? 'Continue' : 'Start learning'} <span aria-hidden>→</span></span>
-              </Link>
-            )
-          })}
+                <div className="hm-feature-vis"><FeatureDiagram /></div>
+              </article>
+            )}
+
+            {collSub && (
+              <section className="hm-block" aria-labelledby="hm-coll-title">
+                <div className="hm-coll">
+                <div className="hm-coll-head">
+                  <p className="hm-label hm-label-accent">New collection · {collSub.articles.length} articles</p>
+                  <h2 className="hm-h2" id="hm-coll-title">{collSub.title}</h2>
+                  <p className="hm-dek">{collSub.blurb}</p>
+                  <Link className="hm-btn hm-btn-solid" to={collHref}>See all {collSub.articles.length} articles <span aria-hidden>→</span></Link>
+                </div>
+                <ol className="hm-coll-list">
+                  {collPicks.map((p) => (
+                    <li key={p.href}>
+                      <Link to={p.href}>
+                        <strong>{p.title}</strong>
+                        <span>{p.summary}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ol>
+                </div>
+              </section>
+            )}
+          </div>
+
+          {/* ───── exam study guides ───── */}
+          <div role="tabpanel" id="exams" aria-labelledby="hm-tab-exams" className="hm-panel" hidden={tab !== 'exams'}>
+            <div className="hm-exams-head">
+              <p className="hm-label">Exam study guides</p>
+              <h2 className="hm-h2">Studying for an exam?</h2>
+              <p className="hm-dek">{EXAMS_DEK}</p>
+            </div>
+            <div className="hm-lics">
+              {licenses.map((l) => (
+                <Link key={l.id} to={`/${l.id}`} className="hm-lic" style={{ ['--lic' as string]: `var(--${l.id})` }}>
+                  <div className="hm-lic-top">
+                    <h3 className="hm-h3">{l.name}</h3>
+                    <Ring value={l.mastered} size={48} />
+                  </div>
+                  <p className="hm-lic-tag">{l.tagline}. {l.privileges}.</p>
+                  <p className="hm-lic-facts">{l.lessons} lessons · {l.questions} pool questions · {l.toPass} of {l.examQuestions} to pass</p>
+                  <p className="hm-lic-valid">Pool {l.validFrom} – {l.validTo}</p>
+                  <span className="hm-lic-cta">{l.started ? 'Continue' : 'Start learning'} <span aria-hidden>→</span></span>
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </div>
