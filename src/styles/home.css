@@ -7,7 +7,7 @@
 .hm-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 /* shared type */
-.hm-label, .hm-toc-title, .hm-card-kicker {
+.hm-label, .hm-toc-title {
   font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: var(--ink-2);
 }
 .hm-label { margin-bottom: 14px; }
@@ -88,27 +88,6 @@
 .hm-coll-list strong { display: block; font-family: var(--font-display); font-size: 19px; letter-spacing: -0.01em; }
 .hm-coll-list span { display: block; margin-top: 3px; font-size: 14.5px; line-height: 1.45; color: var(--ink-2); }
 
-/* ───── topic rows ───── */
-.hm-topics { padding-top: 24px; }
-.hm-row { padding: 48px 0 8px; }
-.hm-row + .hm-row { border-top: 1px solid var(--line); margin-top: 40px; }
-.hm-row-head { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 16px; align-items: center; margin-bottom: 22px; }
-.hm-row-ico { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; color: var(--ink); background: color-mix(in srgb, var(--hm-accent) 22%, var(--surface)); border: 1.5px solid var(--hm-accent); }
-.hm-row-title p { color: var(--ink-2); font-size: 15.5px; margin-top: 4px; max-width: 42em; }
-.hm-row-all { font-weight: 700; font-size: 15px; color: var(--ink); white-space: nowrap; border-bottom: 2px solid var(--hm-accent); padding-bottom: 2px; }
-.hm-row-all:hover { color: var(--ink); border-bottom-width: 4px; padding-bottom: 0; }
-.hm-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
-.hm-cards li { display: flex; min-width: 0; }
-.hm-card {
-  position: relative; display: flex; flex-direction: column; gap: 8px; width: 100%; padding: 22px 20px 20px; color: var(--ink);
-  background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--hm-accent); border-radius: var(--r-md);
-  transition: transform 0.18s var(--ease), box-shadow 0.18s, border-color 0.18s;
-}
-.hm-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--line-strong); border-top-color: var(--hm-accent); }
-.hm-card-kicker { font-size: 11px; letter-spacing: 0.1em; color: var(--ink-2); }
-.hm-card strong { font-family: var(--font-display); font-size: 21px; line-height: 1.15; letter-spacing: -0.02em; }
-.hm-card-sum { font-size: 14.5px; line-height: 1.45; color: var(--ink-2); }
-
 /* ───── exam band ───── */
 .hm-exams { margin-top: 72px; padding: 48px 0 0; border-top: 2px solid var(--ink); }
 .hm-exams-head { max-width: 46em; }
@@ -150,10 +129,6 @@
 @media (max-width: 600px) {
   .hm-toc-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
   .hm-actions .hm-btn { flex: 1 1 100%; }
-  .hm-row-head { grid-template-columns: auto minmax(0, 1fr); }
-  .hm-row-all { grid-column: 1 / -1; justify-self: start; }
-  .hm-row { padding-top: 36px; }
-  .hm-cards { grid-template-columns: 1fr; gap: 12px; }
   .hm-feature-vis { margin: 0 -20px; padding: 8px 6px 10px; border-radius: 0; border-left: 0; border-right: 0; }
   .hm-dek { font-size: 17.5px; }
 }

@@ -6,7 +6,7 @@ import { licenseStats, pct } from '@/lib/stats'
 import { Ring } from '@/components/Ring'
 import { HeroArt } from '@/components/HeroArt'
 import { SectionIcon } from '@/compendium/Icons'
-import { SECTIONS, articleCount, articleHref, getArticle, getSection, getSub, sectionArticleCount } from '@/compendium/taxonomy'
+import { SECTIONS, articleHref, getArticle, getSub, sectionArticleCount } from '@/compendium/taxonomy'
 import '@/styles/home.css'
 
 /* The featured article's diagram is the one shared, interactive visual the site already has for it.
@@ -21,14 +21,6 @@ const COLLECTION_PICKS = [
   'activities/repeater-setup/repeater-frequency-coordination',
   'activities/repeater-setup/fcc-rules-for-repeaters',
   'activities/repeater-setup/repeater-hardware-and-duplexers',
-]
-
-/** Topic rows: a section, an accent from the theme's diagram palette, and the articles to show. */
-const ROWS: { section: string; accent: string; picks: string[] }[] = [
-  { section: 'radio', accent: 'var(--d-signal)', picks: ['radio/waves/decibels', 'radio/propagation/skywave-and-skip', 'radio/modulation/frequency-modulation', 'radio/waves/polarization'] },
-  { section: 'electronics', accent: 'var(--d-resist)', picks: ['electronics/basics/ohms-law', 'electronics/ac-theory/resonance-and-q', 'electronics/semiconductors/diodes', 'electronics/test-equipment/oscilloscopes'] },
-  { section: 'antennas', accent: 'var(--d-current)', picks: ['antennas/wire/half-wave-dipole', 'antennas/beams/yagi-uda', 'antennas/feedlines/swr-and-reflections', 'antennas/feedlines/baluns-and-ununs'] },
-  { section: 'modes', accent: 'var(--d-voltage)', picks: ['modes/digital/ft8-and-ft4', 'modes/cw/morse-alphabet', 'modes/digital/aprs', 'modes/digital-voice/dmr'] },
 ]
 
 const fmtDate = (iso: string) => new Date(iso + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
@@ -62,7 +54,7 @@ export function Home() {
         <div className="hm-mast-body">
           <div className="hm-mast-main">
             <p className="hm-lead">
-              <strong>Everything an operator should understand.</strong> {articleCount} articles that explain ham radio as ideas, not trivia. Each takes one concept, such as why SWR matters or how a signal skips around the world, and shows it in a picture before it says a word.
+              <strong>Everything an operator should understand.</strong> Hundreds of pages that break down ham radio concepts. Each concept is related with pictures and interactive widgets that help you deeply understand how they work, so you can get the most out of your practice!
             </p>
             <div className="hm-actions">
               <Link className="hm-btn hm-btn-solid" to="/compendium">Open the compendium <span aria-hidden>→</span></Link>
@@ -136,39 +128,6 @@ export function Home() {
           </ol>
         </section>
       )}
-
-      {/* ───── topic rows ───── */}
-      <div className="hm-topics">
-        <h2 className="hm-sr">Browse by topic</h2>
-        {ROWS.map((row) => {
-          const s = getSection(row.section)
-          if (!s) return null
-          const items = row.picks.flatMap((p) => { const a = getArticle(p); return a ? [a] : [] })
-          return (
-            <section key={row.section} className="hm-row" style={{ ['--hm-accent' as string]: row.accent }} aria-labelledby={`hm-row-${row.section}`}>
-              <header className="hm-row-head">
-                <span className="hm-row-ico"><SectionIcon name={s.icon} size={22} /></span>
-                <div className="hm-row-title">
-                  <h3 className="hm-h3" id={`hm-row-${row.section}`}>{s.title}</h3>
-                  <p>{s.blurb}</p>
-                </div>
-                <Link className="hm-row-all" to={`/compendium/${s.slug}`}>All {sectionArticleCount(s)} articles <span aria-hidden>→</span></Link>
-              </header>
-              <ul className="hm-cards">
-                {items.map((a) => (
-                  <li key={a.path}>
-                    <Link className="hm-card" to={articleHref(a.path)}>
-                      <span className="hm-card-kicker">{a.sub.title}</span>
-                      <strong>{a.title}</strong>
-                      <span className="hm-card-sum">{a.summary}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )
-        })}
-      </div>
 
       {/* ───── exam band ───── */}
       <section className="hm-exams" id="exams" aria-labelledby="hm-exams-title">
