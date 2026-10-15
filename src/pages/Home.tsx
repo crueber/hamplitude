@@ -55,20 +55,22 @@ export function Home() {
     <div className="wrap hm">
       {/* ───── masthead ───── */}
       <header className="hm-mast">
-        <div className="hm-mast-main">
-          <h1 className="hm-h1">
-            <span className="hm-h1-a">Don't memorize ham radio.</span>{' '}
-            <em className="hm-h1-b">Understand it.</em>
-          </h1>
-          <div className="hm-actions">
-            <Link className="hm-btn hm-btn-solid" to="/compendium">Open the compendium <span aria-hidden>→</span></Link>
-            <button type="button" className="hm-btn" onClick={() => document.getElementById('exams')?.scrollIntoView({ behavior: 'smooth' })}>Study for an exam</button>
+        <h1 className="hm-h1">
+          <span className="hm-h1-a">Don't memorize ham radio.</span>{' '}
+          <em className="hm-h1-b">Understand it.</em>
+        </h1>
+        <div className="hm-mast-body">
+          <div className="hm-mast-main">
+            <p className="hm-lead">
+              <strong>Everything an operator should understand.</strong> {articleCount} articles that explain ham radio as ideas, not trivia. Each takes one concept, such as why SWR matters or how a signal skips around the world, and shows it in a picture before it says a word.
+            </p>
+            <div className="hm-actions">
+              <Link className="hm-btn hm-btn-solid" to="/compendium">Open the compendium <span aria-hidden>→</span></Link>
+              <button type="button" className="hm-btn" onClick={() => document.getElementById('exams')?.scrollIntoView({ behavior: 'smooth' })}>Study for an exam</button>
+            </div>
           </div>
-          <p className="hm-lead">
-            <strong>Everything an operator should understand.</strong> {articleCount} articles that explain ham radio as ideas, not trivia. Each takes one concept, such as why SWR matters or how a signal skips around the world, and shows it in a picture before it says a word.
-          </p>
+          <div className="hm-art"><HeroArt h={400} fill /></div>
         </div>
-        <div className="hm-art"><HeroArt h={600} fill /></div>
       </header>
 
       <nav className="hm-toc" aria-label="Compendium sections">
