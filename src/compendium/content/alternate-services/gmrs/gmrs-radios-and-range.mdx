@@ -1,0 +1,49 @@
+import { LineOfSight_Path } from '@/visuals/compendium/LineOfSight_Path'
+
+## Only certified radios
+
+GMRS is not amateur radio, and that shows up in the equipment. Every GMRS transmitter must be **FCC-certified** for the service, and using a transmitter that is not certified voids your authority to operate it. You also need your own GMRS license first: see <Ref to="gmrs-licensing" />.
+
+<Facts items={[
+  ['Equipment rule', 'transmitter must be certified for GMRS'],
+  ['Modifying a radio', 'not allowed: it voids the certified status'],
+  ['Handheld antenna', 'FRS: fixed, no more gain than a half-wave dipole'],
+  ['UHF reach', 'mostly line of sight'],
+]} />
+
+The certification rule has a consequence that surprises hams. The rules say a GMRS transmitter will not be certified if it can also operate in services that do not require certification, "such as the Amateur Radio Service". Its frequency settings must be internal and out of the user's reach. So a radio that merely **can** be programmed onto GMRS channels, because it also covers amateur bands, is not a certified GMRS radio. The amateur service lets you build and adjust your own gear; GMRS does not.
+
+Since September 30, 2019, radios that work on both GMRS and the license-free FRS cannot be made, imported or sold. FRS handhelds are simpler still: their antenna must be a fixed part of the radio, and it may have no more gain than a half-wave dipole. The fixed-antenna rule is an FRS rule; mobile and base stations are where an outside antenna, and most of the range, comes from.
+
+## What limits range
+
+At 462 and 467 MHz a signal behaves like light: it goes in a straight line, and hills, buildings and trees get in the way. The distance two radios can reach is set mostly by antenna height, not by power. The sliders below show how the radio horizon moves.
+
+<LineOfSight_Path />
+
+The numbers are an upper limit on a smooth Earth, not a promise. See <Ref to="line-of-sight" /> for the formula.
+
+| Radio | Antenna | What it usually means |
+|---|---|---|
+| Handheld | short, near head height | shortest reach, but goes anywhere |
+| Mobile | roof or mast, a few feet up | better height and more power |
+| Base | on a mast or tower | best height, and long feed lines add loss |
+
+Power matters less than people expect. Doubling power gains only 3 dB (<Ref to="decibels" />), while a better antenna or a higher mast can do far more. Feed-line loss at UHF is real, so keep cable short or use low-loss cable: see <Ref to="feed-line-loss" />.
+
+## Going farther
+
+When two radios cannot see each other, a **repeater** on a hill or tower can hear both and retransmit, extending coverage to everything its antenna can see. See <Ref to="gmrs-repeaters" />. The channels and power limits that apply are in <Ref to="gmrs-channels-and-power" />.
+
+<Callout kind="note" title="Follow the power rules">The rules also tell every user of this service to use the minimum power needed, except for emergency messages. A little extra height usually solves a range problem better than extra watts.</Callout>
+
+<Sources items={[
+  ['47 CFR 95.1761: GMRS transmitter certification', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-E/section-95.1761', 'certification, no amateur capability, internal controls'],
+  ['47 CFR 95.335: Operation of non-certified transmitters prohibited', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-A/section-95.335', 'a non-certified transmitter voids authority to operate'],
+  ['47 CFR 95.337: Impermissibly modified equipment', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-A/section-95.337', 'no modification for added frequencies, modulation or power'],
+  ['47 CFR 95.1791: Sales of GMRS/FRS combination radios prohibited', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-E/section-95.1791', 'combination radios ended in 2019'],
+  ['47 CFR 95.367: Transmitting power', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-A/section-95.367', 'use the minimum power necessary, except for emergencies'],
+  ['47 CFR 95.587: FRS additional requirements', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-B/section-95.587', 'fixed antenna, gain limit, vertical polarization'],
+]} />
+
+<Related to="what-is-gmrs gmrs-and-ham-radio gmrs-repeaters line-of-sight feed-line-loss handheld-transceivers" />

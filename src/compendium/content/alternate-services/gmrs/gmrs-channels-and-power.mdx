@@ -1,0 +1,50 @@
+import { GmrsChannelsAndPower_Strip } from '@/visuals/compendium/GmrsChannelsAndPower_Strip'
+
+## Thirty channels in two bands
+
+<Callout kind="note" title="Not amateur radio">
+GMRS is a separate FCC service with its own individual license. A ham license does not authorize these channels; see <Ref to="gmrs-licensing" />.
+</Callout>
+
+The FCC allots GMRS **30 channels**: 16 main and 14 interstitial. They sit 12.5 kHz apart in two small bands, one near 462 MHz and one near 467 MHz, and "interstitial" means a channel that falls in the gaps between the main ones.
+
+<Facts items={[
+  ['GMRS channels', '30 (16 main, 14 interstitial)'],
+  ['462 MHz band', '462.5500 to 462.7250 MHz'],
+  ['467 MHz band', '467.5500 to 467.7250 MHz'],
+  ['Channel spacing', '12.5 kHz'],
+]} />
+
+<GmrsChannelsAndPower_Strip />
+
+## Where the 1 to 22 numbers come from
+
+Family-radio gear numbers its channels 1 to 22. Those are the **22 FRS channels**, and every one of them is also allotted to GMRS on a shared basis. They map onto the two bands like this:
+
+- **1 to 7** are the 462 MHz interstitial channels.
+- **8 to 14** are the 467 MHz interstitial channels.
+- **15 to 22** are the 462 MHz main channels.
+
+The eight 467 MHz main channels have no FRS number. They are the **repeater inputs**, covered in <Ref to="gmrs-repeaters" />. Because the 22 channels are shared, a GMRS licensee and a person using an FRS radio can talk on the same channel.
+
+## Who may transmit, and how hard
+
+| Group | Who may transmit | GMRS limit | FRS limit |
+|---|---|---|---|
+| 462 main (15 to 22) | mobile, hand-held, repeater, base, fixed | mobile, base, repeater: 50 W transmitter output; fixed: 15 W | 2 W ERP |
+| 462 interstitial (1 to 7) | mobile, hand-held, base | 5 W ERP | 2 W ERP |
+| 467 interstitial (8 to 14) | hand-held only | 0.5 W ERP | 0.5 W ERP |
+| 467 main (repeater inputs) | mobile, hand-held, control, fixed, only through a repeater | 50 W for mobiles, 15 W for fixed | not FRS channels |
+
+ERP is effective radiated power: what the antenna sends out, including its gain. Transmitter output power is measured at the radio's output, before the antenna. The main-channel paragraph of the rule gives no separate limit for hand-helds, so this article does not quote one.
+
+Bandwidth also differs. GMRS uses 20 kHz on the main channels and the 462 MHz interstitial channels, but only 12.5 kHz on the 467 MHz interstitial channels, which is the width every FRS channel uses. Use the least power that does the job; the rules require it except in an emergency.
+
+<Sources items={[
+  ['47 CFR 95.1763: GMRS channels', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-E/section-95.1763', 'the 30 channels and who may transmit on each'],
+  ['47 CFR 95.1767: GMRS transmitting power limits', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-E/section-95.1767', 'power by channel group and station type'],
+  ['47 CFR 95.563: FRS channels', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-B/section-95.563', 'the 22 FRS channels, shared with GMRS'],
+  ['47 CFR 95.567: FRS transmit power', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-B/section-95.567', 'FRS power by channel'],
+]} />
+
+<Related to="what-is-gmrs gmrs-licensing gmrs-repeaters gmrs-radios-and-range band-plans frequency-and-wavelength" />

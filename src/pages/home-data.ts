@@ -31,7 +31,7 @@ export function useLandingData() {
   const feature = getArticle(FEATURE_PATH)
   const collSub = getSub(COLLECTION.section, COLLECTION.sub)
   const collPicks = COLLECTION_PICKS.flatMap((p) => { const a = getArticle(p); return a ? [{ path: p, a }] : [] })
-  const sections = SECTIONS.map((s) => ({ ...s, count: sectionArticleCount(s) }))
+  const sections = SECTIONS.filter((s) => !s.adjacent).map((s) => ({ ...s, count: sectionArticleCount(s) }))
   const licenses = LICENSES.map((l) => {
     const p = POOLS[l]
     const st = licenseStats(cards, l)

@@ -1,0 +1,50 @@
+import { GmrsRepeaters_Pairs } from '@/visuals/compendium/GmrsRepeaters_Pairs'
+
+## What a GMRS repeater does
+
+<Callout kind="note" title="Not amateur radio">
+A GMRS repeater runs under a GMRS license, not an amateur one. Using it takes a GMRS license of your own, or coverage as a licensee's immediate family; see <Ref to="gmrs-licensing" />.
+</Callout>
+
+A repeater listens on one frequency and retransmits what it hears on another, from a good site, so that two radios too far apart to hear each other can both reach it. The idea is the one in <Ref to="repeaters" />, and the same range limits apply (see <Ref to="line-of-sight" />). On GMRS it uses the eight main channels near 462 MHz.
+
+<Facts items={[
+  ['Repeater pairs', '8, channels 15 to 22'],
+  ['Offset', '5 MHz (input above output)'],
+  ['Repeater power', 'up to 50 W transmitter output'],
+  ['Control', 'remote and automatic allowed'],
+]} />
+
+## The eight pairs
+
+The repeater's **output** is one of the 462 MHz main channels, and its **input** is the matching 467 MHz main channel, exactly 5 MHz higher. Your radio transmits on the input and listens on the output.
+
+<GmrsRepeaters_Pairs />
+
+Handhelds, mobiles and control stations may use the 467 MHz main channels **only to talk through a repeater** (or for a brief test). They are not simplex channels. The offset is the same 5 MHz that is common on 70 cm amateur repeaters, covered in <Ref to="uhf-repeaters" />.
+
+## Tones and access
+
+Radios open a repeater with an audible or subaudible tone, the kind of access tone described in <Ref to="squelch-and-tones" />. The GMRS rules allow tones to access repeater stations. The channels are shared and are not assigned to any one repeater (47 CFR 95.359), so operators must cooperate to avoid interference. If they cannot settle a problem themselves, the FCC may restrict channels, power, antenna height, area or hours.
+
+## Who may use it
+
+The licensee who owns a repeater chooses who uses it. The rules let the licensee allow **any person** to use the repeater, or limit it to specific people, and bar particular people when needed. Some repeaters are open to all, some are private to a family or a group, and the licensee decides which.
+
+Identification uses the licensee's FCC-assigned call sign. A repeater need not identify if it retransmits only stations under its own license and those stations identify properly. Otherwise it must, at the end of transmissions and at least every 15 minutes during a long one, by voice in English or by Morse tone.
+
+## Control, and what is not allowed
+
+A GMRS repeater may be run by automatic control, and the repeater, base and fixed stations may be remote controlled. Connecting a station to a telephone line is prohibited; a repeater, base or fixed station may be tied to a network only for the sole purpose of that remote control. So a GMRS repeater is not a phone patch.
+
+<Sources items={[
+  ['47 CFR 95.1763: GMRS channels', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-E/section-95.1763', 'repeater channels and the 467 MHz restriction'],
+  ['47 CFR 95.1705: Individual licenses; who may operate', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-E/section-95.1705', 'the licensee decides who may use a repeater'],
+  ['47 CFR 95.1751: GMRS station identification', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-E/section-95.1751', 'identification and the repeater exception'],
+  ['47 CFR 95.1749: GMRS network connection', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-E/section-95.1749', 'no telephone connection; remote control only'],
+  ['47 CFR 95.1777: GMRS tone transmissions', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-E/section-95.1777', 'tones to access repeaters'],
+  ['47 CFR 95.325: Interference', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-A/section-95.325', 'settling interference, and what the FCC may restrict'],
+  ['47 CFR 95.359: Sharing of channels', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-A/section-95.359', 'channels are shared, not assigned'],
+]} />
+
+<Related to="what-is-gmrs gmrs-licensing gmrs-channels-and-power repeaters uhf-repeaters squelch-and-tones" />

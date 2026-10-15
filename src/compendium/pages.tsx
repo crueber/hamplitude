@@ -7,7 +7,7 @@ import { Search } from './Search'
 import { compendiumComponents } from './mdx'
 import { hasArticle, loadArticle } from './loader'
 import {
-  FEATURED, SECTIONS, articleCount, articleHref, getArticle, getSection, getSub, neighbours, sectionArticleCount, type ArticleDef,
+  FEATURED, SECTIONS, articleHref, getArticle, getSection, getSub, neighbours, type ArticleDef, type SectionDef,
 } from './taxonomy'
 
 /** One route handles /compendium, /compendium/:section, /:section/:sub and /:section/:sub/:article. */
@@ -35,6 +35,27 @@ function Card({ path, a }: { path: string; a: ArticleDef }) {
   )
 }
 
+function SectionCard({ s }: { s: SectionDef }) {
+  return (
+    <Link to={`/compendium/${s.slug}`} className="cmp-sec-card">
+      <span className="ico"><SectionIcon name={s.icon} size={22} /></span>
+      <strong>{s.title}</strong>
+      <p>{s.blurb}</p>
+      <small>{s.subs.map((b) => b.title).slice(0, 4).join(' · ')}{s.subs.length > 4 ? ' · …' : ''}</small>
+    </Link>
+  )
+}
+
+/** Shown on every page of a section that is not amateur radio, so nobody mistakes the rules for ham rules. */
+function Apart({ note }: { note?: string }) {
+  return (
+    <aside className="cmp-apart" aria-label="Not amateur radio">
+      <strong>Not amateur radio</strong>
+      <p>{note ?? 'This is a separate service with its own rules and its own licensing, covered here because it is close enough to be worth understanding.'}</p>
+    </aside>
+  )
+}
+
 function Home() {
   return (
     <div className="cmp-page">
@@ -42,7 +63,7 @@ function Home() {
         <div className="eyebrow">Compendium</div>
         <h1>Everything an amateur radio operator should understand</h1>
         <p className="lead">
-          {articleCount} short concept articles on antennas, radios, modes, electronics, propagation and operating. Not exam prep: the understanding behind the hobby. Use the contents on the left, or search.
+          Short concept articles on antennas, radios, modes, electronics, propagation and operating. Not exam prep: the understanding behind the hobby. Use the contents on the left, or search.
         </p>
         <Search big />
       </header>
@@ -53,17 +74,11 @@ function Home() {
       </div>
 
       <h2 className="cmp-h2">Browse by topic</h2>
-      <div className="cmp-sections">
-        {SECTIONS.map((s) => (
-          <Link key={s.slug} to={`/compendium/${s.slug}`} className="cmp-sec-card">
-            <span className="ico"><SectionIcon name={s.icon} size={22} /></span>
-            <strong>{s.title}</strong>
-            <p>{s.blurb}</p>
-            <small>{s.subs.map((b) => b.title).slice(0, 4).join(' · ')}{s.subs.length > 4 ? ' · …' : ''}</small>
-            <em>{sectionArticleCount(s)} articles</em>
-          </Link>
-        ))}
-      </div>
+      <div className="cmp-sections">{SECTIONS.filter((s) => !s.adjacent).map((s) => <SectionCard key={s.slug} s={s} />)}</div>
+
+      <h2 className="cmp-h2">Beyond ham radio</h2>
+      <p className="cmp-sub-blurb">Separate from amateur radio, but close enough to be worth explaining. Each has its own rules, and some have their own licensing.</p>
+      <div className="cmp-sections">{SECTIONS.filter((s) => s.adjacent).map((s) => <SectionCard key={s.slug} s={s} />)}</div>
       <p className="cmp-cross">Studying for an exam? The <Link to="/">exam lessons</Link> teach the same ideas in the order the question pools ask them.</p>
     </div>
   )
@@ -78,10 +93,12 @@ function SectionPage({ slug }: { slug: string }) {
         <span className="ico"><SectionIcon name={s.icon} size={26} /></span>
         <div><h1>{s.title}</h1><p className="lead">{s.blurb}</p></div>
       </header>
+      {s.adjacent && <Apart />}
       {s.subs.map((b) => (
         <section key={b.slug}>
           <h2 className="cmp-h2"><Link to={`/compendium/${s.slug}/${b.slug}`}>{b.title}</Link></h2>
           <p className="cmp-sub-blurb">{b.blurb}</p>
+          {b.note && <Apart note={b.note} />}
           <div className="cmp-grid">{b.articles.map((a) => <Card key={a.slug} path={`${s.slug}/${b.slug}/${a.slug}`} a={a} />)}</div>
         </section>
       ))}
@@ -99,6 +116,7 @@ function SubPage({ section, sub }: { section: string; sub: string }) {
         <span className="ico"><SectionIcon name={s.icon} size={26} /></span>
         <div><h1>{b.title}</h1><p className="lead">{b.blurb}</p></div>
       </header>
+      {s.adjacent && <Apart note={b.note} />}
       <div className="cmp-grid">{b.articles.map((a) => <Card key={a.slug} path={`${s.slug}/${b.slug}/${a.slug}`} a={a} />)}</div>
     </div>
   )
@@ -122,6 +140,7 @@ function ArticlePage({ path }: { path: string }) {
           <Link to="/compendium">Compendium</Link> › <Link to={`/compendium/${a.section.slug}`}>{a.section.title}</Link> › <Link to={`/compendium/${a.section.slug}/${a.sub.slug}`}>{a.sub.title}</Link>
         </nav>
         <header className="article-head">
+          {a.section.adjacent && <p className="cmp-apart-tag">Not amateur radio</p>}
           <h1>{a.title}</h1>
           <p className="lead">{a.summary}</p>
         </header>

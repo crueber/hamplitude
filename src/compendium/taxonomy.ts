@@ -8,7 +8,7 @@
 
 export type IconName =
   | 'hobby' | 'radio' | 'electronics' | 'antennas' | 'stations'
-  | 'modes' | 'activities' | 'emergency' | 'safety' | 'reference'
+  | 'modes' | 'activities' | 'emergency' | 'safety' | 'reference' | 'licenses'
 
 export interface ArticleDef {
   slug: string
@@ -20,6 +20,8 @@ export interface SubDef {
   slug: string
   title: string
   blurb: string
+  /** A standing caution shown on the subsection and section pages (e.g. a separate licensing structure). */
+  note?: string
   articles: ArticleDef[]
 }
 export interface SectionDef {
@@ -27,13 +29,15 @@ export interface SectionDef {
   title: string
   blurb: string
   icon: IconName
+  /** Not amateur radio: a neighbouring service or practice, shown apart from the ham sections. */
+  adjacent?: boolean
   subs: SubDef[]
 }
 
 /** [slug, title, summary] */
 type A = [string, string, string]
-const sub = (slug: string, title: string, blurb: string, articles: A[]): SubDef => ({
-  slug, title, blurb, articles: articles.map(([s, t, d]) => ({ slug: s, title: t, summary: d })),
+const sub = (slug: string, title: string, blurb: string, articles: A[], note?: string): SubDef => ({
+  slug, title, blurb, ...(note ? { note } : {}), articles: articles.map(([s, t, d]) => ({ slug: s, title: t, summary: d })),
 })
 
 export const SECTIONS: SectionDef[] = [
@@ -482,6 +486,20 @@ export const SECTIONS: SectionDef[] = [
         ['formula-sheet', 'Formula sheet', 'The formulas an operator uses.'],
         ['glossary', 'Glossary', 'Terms from A to Z.'],
       ]),
+    ],
+  },
+  {
+    slug: 'alternate-services', title: 'Alternate radio services', icon: 'licenses', adjacent: true,
+    blurb: 'Other radio services with their own rules, and sometimes their own licensing: not amateur radio, but close enough to be worth explaining.',
+    subs: [
+      sub('gmrs', 'GMRS', 'The General Mobile Radio Service: UHF family and group radio under its own FCC license, separate from amateur radio.', [
+        ['what-is-gmrs', 'What is GMRS?', 'A UHF two-way radio service for individuals and their families: not amateur radio, with its own license and rules.'],
+        ['gmrs-licensing', 'GMRS licensing: a license of its own', 'One individual license covers your immediate family. It is separate from any amateur license.'],
+        ['gmrs-channels-and-power', 'GMRS channels and power', 'Thirty channels near 462 and 467 MHz, shared with FRS, with power limits that depend on the channel.'],
+        ['gmrs-repeaters', 'GMRS repeaters', 'Eight repeater pairs five megahertz apart, and a licensee who decides who may use them.'],
+        ['gmrs-radios-and-range', 'GMRS radios, antennas and range', 'Why only certified radios are allowed, and what limits how far a UHF signal goes.'],
+        ['gmrs-and-ham-radio', 'GMRS and amateur radio compared', 'Two services, two licenses, two rulebooks: what changes when you cross over.'],
+      ], 'GMRS is not amateur radio. It needs its own individual FCC license under Part 95, and an amateur license does not cover it.'),
     ],
   },
 ]

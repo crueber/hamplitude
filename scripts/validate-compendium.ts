@@ -64,10 +64,10 @@ for (const a of FLAT) {
   if (/^## (Authorities|References|Further reading)/m.test(mdx)) err(p, 'use <Sources items={[...]} /> instead of a hand-written sources heading')
   // articles about regulation or process must cite their authorities
   const srcBlock = mdx.match(/<Sources\b[\s\S]*?\/>/)
-  if (a.path.startsWith('activities/repeater-setup/') && !srcBlock) err(p, 'this article must end with <Sources items={[...]} /> linking the authorities it relies on')
+  if ((a.path.startsWith('activities/repeater-setup/') || a.path.startsWith('alternate-services/')) && !srcBlock) err(p, 'this article must end with <Sources items={[...]} /> linking the authorities it relies on')
   if (srcBlock) {
     const urls = [...srcBlock[0].matchAll(/'(https?:\/\/[^']+)'|"(https?:\/\/[^"]+)"/g)]
-    if (urls.length < 2 && a.path.startsWith('activities/repeater-setup/')) warn(p, `only ${urls.length} source link(s): cite at least 2 primary sources`)
+    if (urls.length < 2 && (a.path.startsWith('activities/repeater-setup/') || a.path.startsWith('alternate-services/'))) warn(p, `only ${urls.length} source link(s): cite at least 2 primary sources`)
     for (const u of mdx.matchAll(/['"](http:\/\/[^'"]+)['"]/g)) warn(p, `non-https link: ${u[1]}`)
   }
 
