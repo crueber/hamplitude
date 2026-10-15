@@ -1,6 +1,6 @@
 import { Suspense, lazy, useRef, useState, type KeyboardEvent } from 'react'
 import { Link } from 'react-router-dom'
-import { HeroArt } from '@/components/HeroArt'
+import { WaveBand } from '@/components/WaveBand'
 import { Ring } from '@/components/Ring'
 import { SectionIcon } from '@/compendium/Icons'
 import { EXAMS_DEK, FEATURE_BLURB, LEAD, LEAD_BOLD, TAGLINE, useLandingData } from './home-data'
@@ -58,7 +58,8 @@ export function Home() {
   }
 
   return (
-    <div className="wrap hm">
+    <div className="hm">
+      <div className="wrap">
       <header className="hm-hero">
         <h1 className="hm-h1">
           <span className="hm-h1-a">{TAGLINE.a}</span>{' '}
@@ -71,8 +72,13 @@ export function Home() {
           <Link className="hm-btn hm-btn-solid" to="/compendium">Open the compendium <span aria-hidden>→</span></Link>
           <button type="button" className="hm-btn" onClick={studyForExam}>Study for an exam</button>
         </div>
-        <div className="hm-art" aria-hidden={false}><HeroArt h={400} fill /></div>
       </header>
+      </div>
+
+      {/* window-wide separator, outside the centred column */}
+      <div className="hm-band"><WaveBand /></div>
+
+      <div className="wrap">
 
       <section className="hm-switch" aria-label="Explore Hamplitude">
         <div className="hm-tabbar">
@@ -177,6 +183,7 @@ export function Home() {
           </div>
         </div>
       </section>
+      </div>
     </div>
   )
 }
