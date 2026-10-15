@@ -56,7 +56,7 @@ export function seoFor(rawPath: string): Seo {
   // home
   if (parts.length === 0) {
     return {
-      title: `${SITE_NAME}: understand ham radio, don't memorize it`,
+      title: `${SITE_NAME}: don't memorize ham radio, understand it`,
       description: clip(`A free ham radio compendium of ${articleTotal} visual concept articles on antennas, radios, modes and electronics, plus exam prep for the Technician, General and Extra classes.`),
       path, type: 'website',
       jsonLd: [{
@@ -194,7 +194,7 @@ export function headHtml(s: Seo): string {
     tag('og:type', s.type, 'property'), tag('og:site_name', SITE_NAME, 'property'), tag('og:locale', 'en_US', 'property'),
     tag('og:title', s.title, 'property'), tag('og:description', s.description, 'property'), tag('og:url', url, 'property'),
     tag('og:image', OG_IMAGE, 'property'), tag('og:image:width', '1200', 'property'), tag('og:image:height', '630', 'property'),
-    tag('og:image:alt', 'Hamplitude: understand ham radio, do not memorize it', 'property'),
+    tag('og:image:alt', 'Hamplitude: do not memorize ham radio, understand it', 'property'),
     tag('twitter:card', 'summary_large_image'), tag('twitter:title', s.title), tag('twitter:description', s.description), tag('twitter:image', OG_IMAGE),
   ]
   if (seoConfig.googleSiteVerification) out.push(tag('google-site-verification', seoConfig.googleSiteVerification))

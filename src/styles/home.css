@@ -36,8 +36,10 @@
   padding: 40px 0 48px;
 }
 .hm-mast-main { align-self: center; }
-.hm-h1 { font-size: clamp(40px, 5vw, 56px); letter-spacing: -0.045em; line-height: 1; text-wrap: balance; }
-.hm-h1-a, .hm-h1-b { display: block; }
+/* Two fixed lines: the longer one is ≈11.8em wide, so font-size is 7.9% of the text column (≈6% slack) and it never wraps.
+   Column = 0.6 × (content width − 48px gap); content width = min(100vw, --maxw) − 40px padding. */
+.hm-h1 { font-size: calc(0.079 * 0.6 * (min(100vw, var(--maxw)) - 88px)); letter-spacing: -0.045em; line-height: 1.02; }
+.hm-h1-a, .hm-h1-b { display: block; white-space: nowrap; }
 .hm-h1-b { font-style: normal; color: var(--primary); }
 .hm-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 .hm-lead { margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--line-strong); font-size: clamp(17px, 2vw, 19px); line-height: 1.55; color: var(--ink-2); max-width: 34em; }
@@ -132,7 +134,7 @@
 /* tablet: headline and art stay side by side, so neither leaves a blank margin */
 @media (max-width: 900px) {
   .hm-mast { grid-template-columns: minmax(0, 1fr) clamp(230px, 34vw, 310px); gap: 28px; padding: 32px 0 36px; }
-  .hm-h1 { font-size: clamp(34px, 5.2vw, 44px); }
+  .hm-h1 { font-size: calc(0.079 * (100vw - 40px - 28px - clamp(230px, 34vw, 310px))); }
   .hm-actions .hm-btn { padding: 12px 20px; }
   .hm-toc-list { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
   .hm-toc-list a { padding: 12px 12px 10px; }
@@ -145,6 +147,7 @@
 }
 @media (max-width: 640px) {
   .hm-mast { grid-template-columns: 1fr; gap: 32px; }
+  .hm-h1 { font-size: calc(0.079 * (100vw - 40px)); }
   .hm-art { aspect-ratio: 5 / 6; min-height: 0; }
 }
 @media (max-width: 600px) {

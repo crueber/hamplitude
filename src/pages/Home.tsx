@@ -57,8 +57,8 @@ export function Home() {
       <header className="hm-mast">
         <div className="hm-mast-main">
           <h1 className="hm-h1">
-            <span className="hm-h1-a">Understand ham radio.</span>{' '}
-            <em className="hm-h1-b">Don't memorize it.</em>
+            <span className="hm-h1-a">Don't memorize ham radio.</span>{' '}
+            <em className="hm-h1-b">Understand it.</em>
           </h1>
           <div className="hm-actions">
             <Link className="hm-btn hm-btn-solid" to="/compendium">Open the compendium <span aria-hidden>→</span></Link>

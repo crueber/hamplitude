@@ -34,21 +34,21 @@ body{width:1200px;height:630px;overflow:hidden;background:radial-gradient(1100px
 .wave{position:absolute;left:0;right:0;bottom:30px;opacity:.9}
 .top{position:absolute;left:72px;top:64px;display:flex;align-items:center;gap:18px;font-size:34px;font-weight:700;letter-spacing:-.02em}
 .top b{color:#2dd4bf}
-h1{position:absolute;left:72px;top:156px;width:1080px;font-size:94px;line-height:1.04;letter-spacing:-.04em;font-weight:700}
+h1{position:absolute;left:72px;top:156px;width:1080px;font-size:86px;line-height:1.04;letter-spacing:-.04em;font-weight:700}
 h1 em{font-style:normal;color:#2dd4bf}
 .chips{position:absolute;left:72px;top:372px;display:flex;gap:14px;font-family:'JB',monospace;font-size:24px;font-weight:600}
 .chips span{padding:10px 20px;border-radius:99px;border:2px solid #2d4355;color:#b9c7d3}
 .chips .a{color:#fbbf24;border-color:#7a5a12}
 </style>
 <div class="top">${MARK(56, 13)}<span>Ham<b>plitude</b></span></div>
-<h1>Understand ham radio.<br><em>Don't memorize it.</em></h1>
+<h1>Don't memorize ham radio.<br><em>Understand it.</em></h1>
 <div class="chips"><span>Technician</span><span>General</span><span>Extra</span><span class="a">Compendium</span></div>
 <div class="wave">${wave(1200, 150)}</div>`
 
 const ICON = (px: number, radius: number) => `<!doctype html><meta charset="utf-8"><style>*{margin:0}body{width:${px}px;height:${px}px;background:transparent}</style>${MARK(px, radius)}`
 
 const out = mkdtempSync(join(tmpdir(), 'hx-brand-'))
-const browser = await chromium.launch({ executablePath: '/usr/bin/chromium', args: ['--no-sandbox', '--allow-file-access-from-files'] })
+const browser = await chromium.launch({ executablePath: process.env.CHROMIUM ?? '/usr/bin/chromium', args: ['--no-sandbox', '--allow-file-access-from-files'] })
 async function shot(html: string, w: number, h: number, file: string, transparent = false) {
   const f = join(out, file + '.html')
   writeFileSync(f, html)
