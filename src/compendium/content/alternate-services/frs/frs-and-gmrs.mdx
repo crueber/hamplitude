@@ -1,0 +1,41 @@
+import { FrsAndGmrs_SharedChannel } from '@/visuals/compendium/FrsAndGmrs_SharedChannel'
+
+## One set of channels, two services
+
+<Callout kind="note" title="FRS needs no license. GMRS does.">FRS is not amateur radio and needs no individual license (95.305). **GMRS** needs its own individual license, covered in <Ref to="gmrs-licensing" />. They are different services with different rules that happen to share spectrum.</Callout>
+
+All 22 FRS channels are also allotted to GMRS on a shared basis (95.563). So an FRS hand-held and a GMRS radio set to the same channel hear each other: FRS units may be used to communicate with GMRS stations (95.531(c)), and a GMRS station may talk to FRS units (95.1731).
+
+<FrsAndGmrs_SharedChannel />
+
+## Side by side
+
+| | FRS | GMRS |
+|---|---|---|
+| Rulebook | Part 95, Subpart B | Part 95, Subpart E |
+| Individual license | none | required |
+| Who may operate | any eligible person | licensee and immediate family |
+| Power on channels 15 to 22 | 2.0 W ERP | mobile, base and repeater up to 50 W transmitter output |
+| Power on channels 1 to 7 | 2.0 W ERP | 5 W ERP |
+| Power on channels 8 to 14 | 0.5 W ERP | hand-held only, 0.5 W ERP |
+| Antenna | fixed to the radio | not required to be fixed on mobile and base stations |
+| Repeaters | none: FRS is defined for hand-held radios | eight repeater pairs |
+| Identification | no requirement in Subpart B | call sign at the end and every 15 minutes |
+| Equipment | FCC-certified | FCC-certified |
+
+Power, antenna and repeater facts are in <Ref to="gmrs-channels-and-power" /> and <Ref to="gmrs-repeaters" />.
+
+## Which fits what
+
+This part is reasoning from the table, not a rule. FRS suits people who want a radio with no paperwork for short-distance voice at a gathering or on a trail. The fixed antenna and low power keep it simple and keep range short. GMRS fits when you want more range: a licensed household can use higher power on the main channels, an external antenna on a mobile or base station, and repeaters. A GMRS radio can still talk to everyone else's FRS radios on the shared channels, so the two mix freely in a group, as long as everyone transmitting on GMRS holds a license.
+
+<Sources items={[
+  ['47 CFR 95.563: FRS channels', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-B/section-95.563', 'all 22 FRS channels are shared with GMRS'],
+  ['47 CFR 95.531: Permissible FRS uses', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-B/section-95.531', 'FRS units may talk to GMRS stations'],
+  ['47 CFR 95.1731: Permissible GMRS uses', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-E/section-95.1731', 'GMRS stations may talk to FRS units'],
+  ['47 CFR 95.1705: Individual licenses, eligibility, who may operate', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-E/section-95.1705', 'the GMRS license and who it covers'],
+  ['47 CFR 95.1767: GMRS transmitting power limits', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-E/section-95.1767', 'GMRS power by channel group'],
+  ['47 CFR 95.567 and 95.587: FRS power and antenna', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-B/section-95.587', 'FRS power and the fixed antenna'],
+]} />
+
+<Related to="what-is-frs frs-rules-and-limits what-is-gmrs gmrs-licensing gmrs-repeaters gmrs-and-ham-radio" />

@@ -1,0 +1,38 @@
+## A role is a decision about relaying
+
+Every Meshtastic node has a **role**, and the role mostly answers one question: does this node repeat other people's packets, and how eagerly? A role also sets what the node prioritizes and whether it sleeps. A plain **client** repeats a packet only when no other node has already done so, which is the listening behavior in <Ref to="meshtastic-managed-flooding" />. Infrastructure roles repeat regardless.
+
+<Facts items={[
+  ['Default role', 'client'],
+  ['Where roles are set', 'device configuration'],
+  ['Separate setting', 'which packets a node rebroadcasts'],
+]} />
+
+## The roles
+
+| Role | What it does | Relays? | Good for |
+|---|---|---|---|
+| Client | App-connected or stand-alone messaging device | Yes, when no other node has already | Everyday personal use |
+| Client mute | Takes part but does not forward others' packets | No | Adding no routing load |
+| Client base | Personal base station: always rebroadcasts packets to or from its favorited nodes, other packets like a client | Always for favorites | A well-placed attic or roof node that helps your own weaker nodes |
+| Router | Infrastructure that always rebroadcasts once, and is shown in topology | Always, once | Strategic spots that extend coverage for everyone |
+| Router late | Infrastructure that always rebroadcasts once, but only after the others | Always, once, last | Dead spots, or a cluster where placement does not help the wider mesh |
+| Tracker | Sends position packets as priority | Only while awake | Following people or assets |
+| Sensor | Sends telemetry packets as priority | Only while awake | Remote environmental readings |
+
+Other roles exist for specific jobs, and some older ones are retired; the device configuration page keeps the current list.
+
+## Why the choice matters
+
+Each rebroadcast uses shared airtime, so more relaying is not automatically better. The documentation points infrastructure roles at well-positioned nodes, and offers a mute role for devices that should join the mesh without adding to the load. A tracker or sensor can sleep between reports when power saving is on, and the comparison table lists it as relaying only while awake.
+
+Router roles also use more power than a client, and the documentation notes that the router role enables power saving by default on one hardware family. That fits the documentation's advice to put them in strategic locations.
+
+A separate **rebroadcast mode** setting chooses which packets a node repeats, for example ignoring traffic from other meshes it does not belong to. It works alongside the role, not instead of it.
+
+<Sources items={[
+  ['Meshtastic: Device configuration', 'https://meshtastic.org/docs/configuration/radio/device/', 'the roles, the role comparison, power saving and rebroadcast mode'],
+  ['Meshtastic: Mesh broadcast algorithm', 'https://meshtastic.org/docs/overview/mesh-algo/', 'which roles rebroadcast even after hearing a neighbor'],
+]} />
+
+<Related to="meshtastic-managed-flooding meshtastic-channels-and-encryption what-is-meshtastic what-is-a-manet meshcore-node-roles lora-for-meshes" />

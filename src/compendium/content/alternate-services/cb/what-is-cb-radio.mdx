@@ -1,0 +1,53 @@
+import { WhatIsCbRadio_Channels } from '@/visuals/compendium/WhatIsCbRadio_Channels'
+
+## A shared band that needs no license
+
+<Callout kind="note" title="CB is not amateur radio, and needs no individual license">The CB Radio Service falls under Part 95 of the FCC rules, which lets eligible people operate without an individual license (47 CFR 95.305). That is a different rulebook from <Ref to="what-is-amateur-radio">amateur radio</Ref>. Only FCC-certified CB radios may be used: a ham radio, even one that can tune the CB channels, may not (95.935).</Callout>
+
+The rules define the service as "a mobile and fixed two-way voice communication service for facilitating personal, business or voluntary public service activities, including communications to provide assistance to highway travelers" (95.903). Like <Ref to="what-is-frs" /> and <Ref to="what-is-gmrs" />, it is a **Personal Radio Service**, with its rules built into the radio and into how you use it rather than into a license.
+
+<Facts items={[
+  ['Band', '26.965 to 27.405 MHz'],
+  ['Channels', '40, shared'],
+  ['License', 'none required'],
+  ['Emergency channel', '9'],
+]} />
+
+## Forty shared channels
+
+The service has 40 channels, each designated by its center frequency, from 26.965 MHz (channel 1) up to 27.405 MHz (channel 40). No one owns a channel: they are all allotted for shared use.
+
+<WhatIsCbRadio_Channels />
+
+The numbers are not quite in frequency order. Channel 23 is **27.255**, channel 24 is **27.235** and channel 25 is **27.245**, so the climb in frequency goes 22, 24, 25, 23, 26.
+
+| Channel | Center frequency |
+|---|---|
+| 8 | 27.055 MHz |
+| 9 | 27.065 MHz |
+| 10 | 27.075 MHz |
+| 23 | 27.255 MHz |
+| 24 | 27.235 MHz |
+| 25 | 27.245 MHz |
+
+## What you can say, and on which channel
+
+**Channel 9 is for emergencies and traveler assistance only.** It must not be used for anything else (95.931). On every channel, operators must give priority to emergency communications.
+
+Everything else is plain-language two-way voice with other CB stations, for personal, business or volunteer public-service talk. One-way transmissions are allowed only to call for help, warn travelers of hazardous road conditions, make a brief radio check, or page by voice.
+
+## Modes and power at a glance
+
+CB radios transmit AM voice or single sideband voice, and may also transmit FM (95.971). The power ceilings are 4 W for AM or FM and 12 W for SSB; <Ref to="cb-rules-and-limits" /> explains how those are measured and the other limits that go with them.
+
+For the amateur side of the spectrum, see <Ref to="amateur-band-chart" />. CB and amateur radio share neither rules nor equipment.
+
+<Sources items={[
+  ['47 CFR 95.903: Definitions, CBRS', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-D/section-95.903', 'what the service is for'],
+  ['47 CFR 95.963: CBRS channel frequencies', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-D/section-95.963', 'the 40 channels'],
+  ['47 CFR 95.931: Permissible CBRS uses', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-D/section-95.931', 'channel 9 and emergency priority'],
+  ['47 CFR 95.935: Unauthorized use of non-CBRS transmitters', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-D/section-95.935', 'no ham radios on CB'],
+  ['47 CFR 95.305: Authorization to operate Personal Radio Services stations', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-A/section-95.305', 'no individual license'],
+]} />
+
+<Related to="cb-rules-and-limits what-is-frs what-is-gmrs personal-radio-services-compared what-is-amateur-radio amateur-band-chart" />

@@ -1,0 +1,39 @@
+## Two LoRa meshes, two ways to route
+
+Meshtastic and MeshCore both move short messages over LoRa radios with no internet in between, and both use the same radio ideas (<Ref to="lora-for-meshes" />). They differ in **how a message finds its way** and **which devices relay it**. The table sticks to what each project's own documentation says about itself.
+
+| | Meshtastic | MeshCore |
+|---|---|---|
+| **Broadcasts and group messages** | managed flooding: a node that hears a new packet may rebroadcast it after a short random delay, but stays quiet if a neighbor already did | group channels have no defined path, so they flood; repeater administrators can limit flood traffic |
+| **Direct messages** | once a node learns which neighbor gives a working route, it addresses the message to that relay instead of letting every neighbor rebroadcast | the first message floods, a delivery report brings back the repeaters it crossed, and later messages carry that path so only matching repeaters retransmit |
+| **When a path fails** | falls back to flooding if the relay does not respond | retries on the old path, then by default resets it and floods on the last retry |
+| **Who relays** | depends on the role chosen in the device settings; a plain client rebroadcasts only when no other node has | companions never repeat; repeaters do, and room servers only if switched on |
+| **Roles** | several, chosen in settings | companion, repeater and room server, by firmware |
+| **Hop limit** | counted down in a 3-bit field in the packet header | the FAQ gives a firmware maximum of 64 hops |
+| **Privacy** | channels share a key, payloads are encrypted and headers are not; direct messages use the recipient's public key | adverts carry a signed public key; packets carry a MAC and encrypted payload |
+
+Read the details in <Ref to="meshtastic-managed-flooding" />, <Ref to="meshtastic-device-roles" /> and <Ref to="meshcore-routing" />.
+
+## What that means in practice
+
+<Callout kind="note" title="Reasoning, not either project's claim">The points below follow from the mechanisms in the table. Neither project's documentation makes them in these words.</Callout>
+
+- **Flooding is simple.** Any node that hears a packet can help, so nobody needs a route first. The cost is airtime: each extra relaying node is another transmission on a shared channel. Meshtastic's listen-first delay is how it trims that cost.
+- **A learned path saves airtime, and has a price.** After the first flood, only the repeaters on the path transmit. But the path must be discovered, and when a relay vanishes the sender pays for failed retries before it floods again.
+- **End devices that do not relay mean fewer collisions.** The MeshCore FAQ gives this as its reason for fixed roles. The flip side is that the mesh only reaches where repeaters have been placed.
+- **Both fall back to flooding**, which says flooding is the dependable last resort, even in a routed mesh.
+
+## Radio settings
+
+Both are configured with LoRa bandwidth, spreading factor and coding rate. Meshtastic bundles them into named modem presets. The MeshCore documentation describes its radio presets as community suggestions that apps fetch, and says you may choose other settings if they comply with local rules. See <Ref to="meshtastic-and-the-rules" /> for the rules side.
+
+<Sources items={[
+  ['Meshtastic: Mesh Broadcast Algorithm', 'https://meshtastic.org/docs/overview/mesh-algo/', 'managed flooding, hop limit field, retransmission'],
+  ['Meshtastic: Overview', 'https://meshtastic.org/docs/overview/', 'direct messages via a learned relay, fallback to flooding'],
+  ['Meshtastic: Device configuration', 'https://meshtastic.org/docs/configuration/radio/device/', 'roles and what each does with other nodes\' packets'],
+  ['Meshtastic: Encryption', 'https://meshtastic.org/docs/overview/encryption/', 'channel keys, public-key direct messages, clear headers'],
+  ['MeshCore FAQ', 'https://github.com/meshcore-dev/MeshCore/blob/main/docs/faq.md', 'path discovery, flooding of channels, hop limit, adverts, why clients do not repeat'],
+  ['MeshCore radio presets', 'https://github.com/meshcore-dev/MeshCore/blob/main/docs/radio_presets.md', 'presets are suggestions'],
+]} />
+
+<Related to="what-is-meshcore what-is-meshtastic meshcore-routing meshtastic-managed-flooding what-is-a-manet meshtastic-device-roles" />

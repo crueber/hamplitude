@@ -51,7 +51,7 @@ function Apart({ note }: { note?: string }) {
   return (
     <aside className="cmp-apart" aria-label="Not amateur radio">
       <strong>Not amateur radio</strong>
-      <p>{note ?? 'This is a separate service with its own rules and its own licensing, covered here because it is close enough to be worth understanding.'}</p>
+      <p>{note ?? 'This is not part of amateur radio. It follows its own rules, covered here because it is close enough to be worth understanding.'}</p>
     </aside>
   )
 }
@@ -77,7 +77,7 @@ function Home() {
       <div className="cmp-sections">{SECTIONS.filter((s) => !s.adjacent).map((s) => <SectionCard key={s.slug} s={s} />)}</div>
 
       <h2 className="cmp-h2">Beyond ham radio</h2>
-      <p className="cmp-sub-blurb">Separate from amateur radio, but close enough to be worth explaining. Each has its own rules, and some have their own licensing.</p>
+      <p className="cmp-sub-blurb">Separate from amateur radio, but close enough to be worth explaining. Each follows its own rules, and some have their own licensing.</p>
       <div className="cmp-sections">{SECTIONS.filter((s) => s.adjacent).map((s) => <SectionCard key={s.slug} s={s} />)}</div>
       <p className="cmp-cross">Studying for an exam? The <Link to="/">exam lessons</Link> teach the same ideas in the order the question pools ask them.</p>
     </div>
@@ -93,7 +93,7 @@ function SectionPage({ slug }: { slug: string }) {
         <span className="ico"><SectionIcon name={s.icon} size={26} /></span>
         <div><h1>{s.title}</h1><p className="lead">{s.blurb}</p></div>
       </header>
-      {s.adjacent && <Apart />}
+      {s.adjacent && (s.note || !s.subs.some((b) => b.note)) && <Apart note={s.note} />}
       {s.subs.map((b) => (
         <section key={b.slug}>
           <h2 className="cmp-h2"><Link to={`/compendium/${s.slug}/${b.slug}`}>{b.title}</Link></h2>
@@ -116,7 +116,7 @@ function SubPage({ section, sub }: { section: string; sub: string }) {
         <span className="ico"><SectionIcon name={s.icon} size={26} /></span>
         <div><h1>{b.title}</h1><p className="lead">{b.blurb}</p></div>
       </header>
-      {s.adjacent && <Apart note={b.note} />}
+      {s.adjacent && <Apart note={b.note ?? s.note} />}
       <div className="cmp-grid">{b.articles.map((a) => <Card key={a.slug} path={`${s.slug}/${b.slug}/${a.slug}`} a={a} />)}</div>
     </div>
   )

@@ -1,0 +1,47 @@
+import { MeshcoreRouting_Steps } from '@/visuals/compendium/MeshcoreRouting_Steps'
+
+## Flood once, then follow the path
+
+MeshCore does not flood every message. According to its FAQ, the **first** message to a destination is flood-routed, and the sender then learns a route to reuse. Routes live in the sender's contact list.
+
+1. **The first message floods.** It reaches the destination by flood routing.
+2. **A delivery report comes back.** The destination replies with a report listing every repeater the original message passed through. That report is itself flood-routed back, and it is "a basis for future direct path". The payload documentation calls this kind of message a returned path.
+3. **Later messages carry the path.** The path is embedded in the packet and repeaters check it. "If the hop and address of the repeater matches, it will retransmit the message, otherwise it will not retransmit, hence minimizing utilization."
+
+<MeshcoreRouting_Steps />
+
+<Facts items={[
+  ['First message', 'floods'],
+  ['Learned from', 'the delivery report'],
+  ['After that', 'direct, along the path'],
+  ['Internal hop limit', '64'],
+]} />
+
+## What still floods
+
+Group channels have no single destination, so the FAQ says there is no defined path for them and they have to flood. Repeater administrators can refuse flood traffic beyond a hop limit they choose, so a busy repeater need not carry every channel packet.
+
+The packet header says which kind of packet it is: **flood** routing or **direct** routing, each also available with transport codes (the packet format document describes the codes as calculated from region scope).
+
+## When a path breaks
+
+Mobile repeaters leave, and people move. The FAQ describes what happens when a known route stops working:
+
+- The client sends along the existing, now broken, path.
+- The message **fails after three retries**.
+- By default the app then **resets the path** and sends the last retry as a **flood**. This can be turned off in settings.
+- If the destination is reachable directly or through another repeater, the new path is used from then on. You can also set a path by hand.
+
+So a roaming user just sees retries, then a flood that re-establishes a path.
+
+## How far can it go?
+
+Internally the firmware allows a maximum of **64 hops**, though the FAQ notes that real environments and timing make it hard to approach. The path field holds up to 64 bytes, so longer path hashes reduce the number of hops a packet can list: see <Ref to="meshcore-adverts-and-addressing" />.
+
+<Sources items={[
+  ['MeshCore FAQ', 'https://github.com/meshcore-dev/MeshCore/blob/main/docs/faq.md', 'path discovery, channels, broken paths, hop limit'],
+  ['MeshCore packet format', 'https://github.com/meshcore-dev/MeshCore/blob/main/docs/packet_format.md', 'route types and the path field'],
+  ['MeshCore payloads', 'https://github.com/meshcore-dev/MeshCore/blob/main/docs/payloads.md', 'the returned path payload'],
+]} />
+
+<Related to="meshcore-node-roles meshcore-adverts-and-addressing meshtastic-managed-flooding meshcore-vs-meshtastic what-is-a-manet what-is-meshcore" />

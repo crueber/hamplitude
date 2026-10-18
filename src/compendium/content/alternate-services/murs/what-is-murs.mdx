@@ -1,0 +1,42 @@
+import { WhatIsMurs_Channels } from '@/visuals/compendium/WhatIsMurs_Channels'
+
+## A license-free VHF service
+
+The **Multi-Use Radio Service (MURS)** is "a two-way, short distance voice or data communication service for facilitating personal or business activities of the general public" (47 CFR 95.2703).
+
+<Callout kind="note" title="MURS is not amateur radio, and it needs no individual license">MURS falls under Part 95, the rules for the **Personal Radio Services**, not Part 97. The FCC authorizes eligible people to operate Part 95 stations without an individual license (95.305). But the radio must be **FCC-certified** (95.335), and MURS stations must not be operated as **repeaters or signal boosters** (95.2733). GMRS is different: it needs its own license, see <Ref to="gmrs-licensing" />.</Callout>
+
+<Facts items={[
+  ['Rulebook', '47 CFR Part 95, Subpart J'],
+  ['License', 'no individual license'],
+  ['Channels', 'five, near 151 and 154 MHz'],
+  ['Power', '2 W transmitter output, at most'],
+  ['Uses', 'voice, data or image; telecommand and telemetry'],
+  ['Equipment', 'FCC-certified radios only'],
+]} />
+
+## Five shared channels
+
+MURS has five VHF channels, all shared (95.2763). A radio of this type must be able to transmit on one or more of them. Three sit near 151 MHz and two near 154 MHz, and the two groups are allowed different widths of signal (95.2773).
+
+<WhatIsMurs_Channels />
+
+## What you may send
+
+The permitted uses are broad (95.2731). A MURS station may send **voice, data or image** signals, and may be used for **telecommand and telemetry**, such as switching or reading a remote device. Nothing in Subpart J limits it to hand-held radios.
+
+The rules let you replace a damaged antenna with another of the same or a compatible type (95.2719), and Subpart J contains no fixed-antenna requirement like the one FRS has (95.587(b), see <Ref to="frs-rules-and-limits" />). The limits that apply to antennas are in <Ref to="murs-rules-and-limits" />.
+
+## It is VHF
+
+At 151 and 154 MHz a signal behaves like other VHF links: mostly line of sight, with hills and buildings in the way (see <Ref to="line-of-sight" />). For how the neighboring license-free services compare, see <Ref to="personal-radio-services-compared" />.
+
+<Sources items={[
+  ['47 CFR 95.2703: Definitions, MURS', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-J/section-95.2703', 'what MURS is'],
+  ['47 CFR 95.2763: MURS channels', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-J/section-95.2763', 'the five channels'],
+  ['47 CFR 95.2773: MURS authorized bandwidths', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-J/section-95.2773', '11.25 kHz and 20.0 kHz limits'],
+  ['47 CFR 95.2731: Permissible MURS uses', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-J/section-95.2731', 'voice, data, image, telecommand and telemetry'],
+  ['47 CFR 95.305: Authorization to operate Personal Radio Services stations', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-A/section-95.305', 'no individual license'],
+]} />
+
+<Related to="murs-rules-and-limits what-is-frs frs-and-gmrs personal-radio-services-compared line-of-sight what-is-amateur-radio" />

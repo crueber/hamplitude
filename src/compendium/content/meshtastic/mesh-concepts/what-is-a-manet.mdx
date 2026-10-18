@@ -1,0 +1,48 @@
+import { WhatIsAManet_Hops } from '@/visuals/compendium/WhatIsAManet_Hops'
+
+## What a MANET is
+
+A **mobile ad hoc network** (MANET) is a network with no fixed infrastructure in charge. RFC 2501 describes it as a set of nodes, which may combine the roles of router and host, that "themselves form the network routing infrastructure in an ad hoc fashion." Nodes are free to move, so the pattern of who can hear whom changes. The RFC also lists "mobile mesh networking" and "mobile, multihop, wireless networking" as names for the same idea.
+
+In plain words: there is no tower or central router. Each radio can also relay for its neighbors, so a message can reach someone who is out of direct range by **hopping** through other nodes.
+
+<Facts items={[
+  ['Infrastructure', 'none required: nodes route for each other'],
+  ['Topology', 'multihop, and it can change quickly'],
+  ['Links', 'wireless, with far less capacity than wired'],
+  ['Power', 'some nodes run on batteries'],
+]} />
+
+<WhatIsAManet_Hops />
+
+## Why it is hard
+
+RFC 2501 lists the traits that make these networks awkward to design:
+
+- **Changing topology.** Nodes move, so routes appear and vanish, and links may work in only one direction.
+- **Low and variable capacity.** After fading, noise and interference, real throughput is often much lower than a radio's top rate, and the RFC says congestion is "the norm rather than the exception."
+- **Limited energy.** Battery nodes have to save power.
+- **Limited physical security.** Wireless links invite eavesdropping and spoofing.
+
+Sharing one radio channel adds its own problems. The Meshtastic documentation describes two of them: nodes listen before transmitting and wait a random time if the channel is busy, and every packet carries an ID so that a node can drop a copy it has already handled. A hop limit stops a packet from circulating forever.
+
+## Two ways across
+
+**Flooding.** Every node that hears a message rebroadcasts it, up to a hop limit. Nobody needs to know the layout of the network, so it keeps working as nodes move. The cost is airtime, since many nodes repeat the same message. Meshtastic uses a refined version that lets nodes hold back, covered in <Ref to="meshtastic-managed-flooding" />.
+
+**Learned routes.** The network works out a path first, then sends later messages along it so that only nodes on the path repeat them. That saves airtime, but a path can break when a node leaves. The MeshCore FAQ describes sending the first message by flood, learning the path from the reply, and falling back to flooding when a stored path fails; see <Ref to="meshcore-routing" />.
+
+## Where you meet them
+
+- **LoRa meshes** such as <Ref to="what-is-meshtastic" /> and <Ref to="what-is-meshcore" />, built on the radio described in <Ref to="lora-for-meshes" />.
+- **APRS digipeaters**, which repeat packets on a shared channel (<Ref to="aprs" />).
+- **Amateur mesh data networks** (<Ref to="aredn-mesh" />).
+
+<Sources items={[
+  ['RFC 2501: Mobile Ad hoc Networking (MANET)', 'https://www.rfc-editor.org/rfc/rfc2501', 'definition, characteristics and constraints'],
+  ['Meshtastic: Mesh Broadcast Algorithm', 'https://meshtastic.org/docs/overview/mesh-algo/', 'listen before talk, duplicate detection, hop limit'],
+  ['Meshtastic: Overview', 'https://meshtastic.org/docs/overview/', 'rebroadcast and duplicate handling'],
+  ['MeshCore FAQ', 'https://github.com/meshcore-dev/MeshCore/blob/main/docs/faq.md', 'flood first, then a learned path'],
+]} />
+
+<Related to="lora-for-meshes meshtastic-managed-flooding meshcore-routing aredn-mesh aprs spread-spectrum" />

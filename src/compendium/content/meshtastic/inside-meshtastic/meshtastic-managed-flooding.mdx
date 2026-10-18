@@ -1,0 +1,41 @@
+import { MeshtasticManagedFlooding_Topology } from '@/visuals/compendium/MeshtasticManagedFlooding_Topology'
+
+## Flooding, with manners
+
+**Flooding** is the simplest way to cross a mesh when nobody knows where anyone is: every node that hears a packet repeats it, up to a hop limit. Nothing has to be mapped first, so it copes with nodes that move, appear or disappear. The price is airtime, because every repeat uses the one shared channel (see <Ref to="what-is-a-manet" />).
+
+<Facts items={[
+  ['Default hop limit', '3'],
+  ['Largest hop limit', '7'],
+  ['Reliable broadcast', 'up to 3 sends in all'],
+  ['Reliable direct message', 'up to 5 sends in all'],
+]} />
+
+## The managed part
+
+If every neighbor repeated at once, they would collide. The Meshtastic documentation calls its approach **managed flooding**, because a node listens before it repeats:
+
+- A node that hears a packet it has **not seen before** (duplicates are discarded by packet ID) and whose hop limit is **not zero** lowers the hop limit by one and becomes a candidate to rebroadcast.
+- It waits a short random delay. The delay is weighted by the **signal-to-noise ratio** of the packet as received (see <Ref to="noise-and-snr" />): a weak, low-SNR packet means a distant sender, and distant nodes wait less, so they tend to go first and carry the message furthest.
+- If it hears a neighbor relay the same packet during that wait, it drops its own copy.
+- Nodes in a router role are the exception and relay anyway (see <Ref to="meshtastic-device-roles" />).
+
+<MeshtasticManagedFlooding_Topology />
+
+## Taking turns on the air
+
+Before sending, a node checks that the channel is free, as Wi-Fi does (the documentation calls this CSMA/CA). If it is busy, the node waits a random number of short slots, chosen from a window that **grows as the channel gets busier**, which lowers the chance of two nodes starting together.
+
+A broadcast has no reply to wait for, so the sender treats any rebroadcast it hears, from any Meshtastic node whether or not it shares the key, as an **implicit acknowledgement**. If it hears none, it sends again, up to three sends in all for a reliable broadcast.
+
+## Direct messages learn a route
+
+A direct message is first flooded. The node notes which neighbors relayed it, and when a reply comes back through one of them, that neighbor is remembered as the **next hop**. From then on only that node relays, which saves airtime. The choice is made hop by hop, and the node falls back to flooding on its last retry if it does not hear its next hop relay.
+
+<Sources items={[
+  ['Meshtastic: Mesh broadcast algorithm', 'https://meshtastic.org/docs/overview/mesh-algo/', 'managed flooding, CSMA/CA, acknowledgements, next-hop routing'],
+  ['Meshtastic: Overview', 'https://meshtastic.org/docs/overview/', 'how a packet is relayed, duplicates, hop limit, retransmission'],
+  ['Meshtastic: LoRa configuration', 'https://meshtastic.org/docs/configuration/radio/lora/', 'default and maximum hop limit'],
+]} />
+
+<Related to="meshtastic-device-roles meshtastic-channels-and-encryption what-is-a-manet what-is-meshtastic meshcore-routing lora-for-meshes" />

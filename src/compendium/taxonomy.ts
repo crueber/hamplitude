@@ -8,7 +8,7 @@
 
 export type IconName =
   | 'hobby' | 'radio' | 'electronics' | 'antennas' | 'stations'
-  | 'modes' | 'activities' | 'emergency' | 'safety' | 'reference' | 'licenses'
+  | 'modes' | 'activities' | 'emergency' | 'safety' | 'reference' | 'licenses' | 'mesh'
 
 export interface ArticleDef {
   slug: string
@@ -31,6 +31,8 @@ export interface SectionDef {
   icon: IconName
   /** Not amateur radio: a neighbouring service or practice, shown apart from the ham sections. */
   adjacent?: boolean
+  /** A standing caution shown on the section's pages when `adjacent` (subsection notes win over it). */
+  note?: string
   subs: SubDef[]
 }
 
@@ -500,6 +502,58 @@ export const SECTIONS: SectionDef[] = [
         ['gmrs-radios-and-range', 'GMRS radios, antennas and range', 'Why only certified radios are allowed, and what limits how far a UHF signal goes.'],
         ['gmrs-and-ham-radio', 'GMRS and amateur radio compared', 'Two services, two licenses, two rulebooks: what changes when you cross over.'],
       ], 'GMRS is not amateur radio. It needs its own individual FCC license under Part 95, and an amateur license does not cover it.'),
+      sub('frs', 'FRS', 'The Family Radio Service: license-free hand-held radios on shared UHF channels.', [
+        ['what-is-frs', 'What is FRS?', 'The license-free blister-pack radio service: 22 shared UHF channels for short-distance voice.'],
+        ['frs-rules-and-limits', 'FRS rules and limits', 'Low power, a fixed antenna, certified radios only: what the rules require instead of a license.'],
+        ['frs-and-gmrs', 'FRS and GMRS: shared channels, different rules', 'The same 22 channels, two services: how they talk to each other and when each fits.'],
+      ], 'FRS is not amateur radio. It needs no individual license, but its radios must be FCC-certified and have a fixed antenna, and it is a different service from GMRS.'),
+      sub('cb', 'CB radio', 'The Citizens Band: 40 shared channels near 27 MHz, with no license required.', [
+        ['what-is-cb-radio', 'What is CB radio?', 'A 40-channel shared band near 27 MHz for personal, business and highway-traveler talk, with no license.'],
+        ['cb-rules-and-limits', 'CB rules and limits', 'Four watts of AM, twelve of SSB, no amplifiers, and a five-minute cap on a conversation.'],
+      ], 'CB is not amateur radio. It needs no individual license, but it allows only FCC-certified CB radios: a ham radio may not be used on CB channels.'),
+      sub('murs', 'MURS', 'The Multi-Use Radio Service: five VHF channels, 2 watts, no license, no repeaters.', [
+        ['what-is-murs', 'What is MURS?', 'Five license-free VHF channels for short-distance voice and data, with a detachable antenna allowed.'],
+        ['murs-rules-and-limits', 'MURS rules and limits', 'Two watts, a height limit, and no repeaters: the short list of rules that replaces a license.'],
+      ], 'MURS is not amateur radio. It needs no individual license, but its radios must be FCC-certified, and repeaters and signal boosters are not allowed.'),
+      sub('compared', 'Choosing a service', 'How the personal radio services line up, side by side.', [
+        ['personal-radio-services-compared', 'Personal radio services compared', 'FRS, GMRS, CB and MURS side by side: licenses, power, antennas and what each is for.'],
+      ], 'These are the Personal Radio Services in Part 95 of the FCC rules. None of them is amateur radio, and amateur radio has its own rules.'),
+    ],
+  },
+  {
+    slug: 'meshtastic', title: 'Meshtastic', icon: 'mesh', adjacent: true,
+    blurb: 'Off-grid text and position sharing over an open-source LoRa mesh, plus the mesh-networking ideas behind it.',
+    note: 'Meshtastic is not an amateur radio service. Its radios use license-free spectrum by default, so no license is needed, but the rules for that spectrum still apply and give no protection from interference. Amateur rules apply only if someone operates on amateur frequencies.',
+    subs: [
+      sub('start', 'Getting started', 'What Meshtastic is, and the rules it operates under.', [
+        ['what-is-meshtastic', 'What is Meshtastic?', 'An open-source mesh of small LoRa radios that relay text and position messages with no internet or cell service.'],
+        ['meshtastic-and-the-rules', 'Meshtastic and the rules', 'License-free spectrum, what that does and does not mean, and what changes on amateur frequencies.'],
+      ]),
+      sub('mesh-concepts', 'Mesh and LoRa concepts', 'The networking and radio ideas that mesh systems are built from.', [
+        ['what-is-a-manet', 'Mobile ad hoc networks (MANETs)', 'Networks with no fixed infrastructure, where every node may relay for the others.'],
+        ['lora-for-meshes', 'LoRa for mesh networks', 'Chirp spread spectrum, spreading factor, bandwidth and the trade between range and speed.'],
+      ]),
+      sub('inside-meshtastic', 'Inside Meshtastic', 'How a message crosses the mesh, and how it is kept private.', [
+        ['meshtastic-managed-flooding', 'Managed flooding', 'Every node may rebroadcast, but nodes listen first and stay quiet if a neighbor already did.'],
+        ['meshtastic-channels-and-encryption', 'Channels and encryption', 'Named channels with shared keys, and what is and is not hidden from nodes that relay.'],
+        ['meshtastic-device-roles', 'Device roles', 'Which nodes relay, which stay quiet, and why that choice shapes the whole mesh.'],
+      ]),
+    ],
+  },
+  {
+    slug: 'meshcore', title: 'MeshCore', icon: 'mesh', adjacent: true,
+    blurb: 'A LoRa mesh built around fixed node roles and learned routes instead of flooding every message.',
+    note: 'MeshCore is not an amateur radio service. Its radios use license-free spectrum by default, so no license is needed, but the rules for that spectrum still apply and give no protection from interference. Amateur rules apply only if someone operates on amateur frequencies.',
+    subs: [
+      sub('start', 'Getting started', 'What MeshCore is, and how it differs from Meshtastic.', [
+        ['what-is-meshcore', 'What is MeshCore?', 'A LoRa mesh with fixed roles for companions, repeaters and room servers.'],
+        ['meshcore-vs-meshtastic', 'MeshCore and Meshtastic compared', 'Two LoRa meshes that route differently: what each does, and the trade-offs.'],
+      ]),
+      sub('inside-meshcore', 'Inside MeshCore', 'Roles, routes and how nodes find each other.', [
+        ['meshcore-node-roles', 'Node roles', 'Companions, repeaters and room servers, and why end devices do not relay.'],
+        ['meshcore-routing', 'Path routing', 'Flood once to find a path, then send along it instead of flooding every message.'],
+        ['meshcore-adverts-and-addressing', 'Adverts and addressing', 'How nodes announce themselves, and how short hashes of public keys name a path.'],
+      ]),
     ],
   },
 ]

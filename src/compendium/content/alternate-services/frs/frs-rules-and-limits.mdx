@@ -1,0 +1,47 @@
+## Rules instead of a license
+
+<Callout kind="note" title="FRS is not amateur radio, and needs no individual license">Part 95 lets eligible people operate FRS without an individual license (95.305), so the rules sit in the **equipment** and in how you use it. The radios must be FCC-certified. GMRS, which shares the channels, **does** need its own license: <Ref to="gmrs-licensing" />.</Callout>
+
+Without a license to hold, the rules do their work through limits built into the radio and a short list of things you may not do. Read this as plain-words orientation, not as the rule text.
+
+<Callout kind="warn" title="Not legal advice">This article explains the rules in plain words. You are responsible for operating legally where you live, and the rule text, linked at the end, is the authority.</Callout>
+
+## What the radio must be
+
+| Rule | What it means | Section |
+|---|---|---|
+| Power | ERP no more than 0.5 W on channels 8 to 14, and 2.0 W on 1 to 7 and 15 to 22 | 95.567 |
+| Antenna | A non-removable part of the radio, no more gain than a half-wave dipole, vertically polarized | 95.587(b) |
+| Channels only | The radio must not be capable of transmitting on anything but the 22 FRS channels | 95.587(a) |
+| No packet relay | No store-and-forward packet mode | 95.587(d) |
+| Certified | Every Personal Radio Service transmitter must be FCC-certified, or the user's authority to operate is void | 95.335 |
+| No modifying | Adding frequencies, power or different modulation is not allowed, and it voids certified status | 95.337 |
+| No combination radios | Hand-helds capable of both FRS and GMRS may not be made, imported or sold since 2019 | 95.591 |
+
+The fixed antenna is the big practical limit: you cannot swap in a taller or higher-gain one. That is why <Ref to="gmrs-radios-and-range" /> treats external antennas as a GMRS matter.
+
+## What you may not do
+
+- **One-way transmitting**, except emergency messages, traveler assistance, voice pages and brief equipment tests (95.531, 95.533).
+- **Break the law** or use the radio for illegal activity.
+- **Broadcast**: no advertisements or program material tied to radio or television broadcasting.
+- **Send messages for hire** or provide a common-carrier service.
+- **Interfere on purpose** with another station.
+- **Use obscene, profane or indecent language**, or send false communications.
+
+Those last five come from the rule for all Personal Radio Services (95.333).
+
+## Sharing the channels
+
+No channel belongs to anyone. Personal Radio Service channels are shared, and operators must cooperate in using them to avoid interference (95.359). People who cannot settle an interference problem between themselves may have the FCC set restrictions on channels, power, antenna height, area or hours (95.325).
+
+<Sources items={[
+  ['47 CFR 95.305: Authorization to operate Personal Radio Services stations', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-A/section-95.305', 'no individual license for FRS'],
+  ['47 CFR 95.567 and 95.587: FRS power and additional requirements', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-B/section-95.587', 'antenna, channels, packet mode'],
+  ['47 CFR 95.335: Operation of non-certified transmitters prohibited', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-A/section-95.335', 'certified radios only'],
+  ['47 CFR 95.337: Operation of impermissibly modified equipment prohibited', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-A/section-95.337', 'no modifying'],
+  ['47 CFR 95.333: Prohibited uses', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-A/section-95.333', 'what no Personal Radio Service may be used for'],
+  ['47 CFR 95.591: Sales of FRS combination radios prohibited', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-B/section-95.591', 'no FRS and GMRS combination hand-helds'],
+]} />
+
+<Related to="what-is-frs frs-and-gmrs gmrs-radios-and-range gmrs-licensing decibels part-97-in-plain-words" />

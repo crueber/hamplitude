@@ -1,0 +1,40 @@
+import { WhatIsMeshtastic_Hops } from '@/visuals/compendium/WhatIsMeshtastic_Hops'
+
+## A mesh of small radios
+
+Meshtastic carries **text messages and position reports** across a wireless mesh of nodes, using LoRa radio and **no internet or cellular service**. Each node is a small, low-power radio. Messages reach a distant node by being repeated from node to node, so neither end has to hear the other directly. The project's own documentation is clear that it is not LoRaWAN, Helium or The Things Network: it is a self-contained mesh. The general idea is covered in <Ref to="what-is-a-manet" />, and the radio in <Ref to="lora-for-meshes" />.
+
+<Facts items={[
+  ['Carries', 'text messages and position reports'],
+  ['Radio', 'LoRa, no internet or cellular needed'],
+  ['Message size', 'roughly 200 bytes at most'],
+  ['Channels', 'up to eight per node'],
+]} />
+
+## The pieces
+
+- **A node**: the radio. It does the relaying.
+- **A client**: usually a phone. It connects to the node over Bluetooth, Wi-Fi, Ethernet or serial and is where you read and type messages. A node can also work stand alone.
+- **A channel**: a named, encrypted group. Everyone using a channel with the same name and key shares a logical mesh. See <Ref to="meshtastic-channels-and-encryption" />.
+
+<WhatIsMeshtastic_Hops />
+
+## How a message crosses
+
+Your node broadcasts the message by radio. Each node that hears a packet it has not seen before may rebroadcast it, but waits a short, random time first and stays quiet if a neighbor already did. Every relay lowers the packet's hop limit by one, and at zero it stops. That behavior is called managed flooding: see <Ref to="meshtastic-managed-flooding" />. Which nodes relay, and which stay silent, depends on each node's role: see <Ref to="meshtastic-device-roles" />.
+
+## What it is good for
+
+LoRa trades speed for range. In the documentation's table of general-purpose presets the theoretical maximum data rates run from about 0.34 to about 22 kilobits per second, before the overhead of headers, hops and retransmissions. That is plenty for short text and a position fix, and far too little for voice or video. Typical uses are keeping a group in touch off the grid and sharing where everyone is.
+
+## Next to ham radio
+
+Meshtastic is not an amateur radio service. By default it runs on license-free spectrum, so no license is needed, but the rules still apply: see <Ref to="meshtastic-and-the-rules" />. Hams will see familiar ideas: position beacons like <Ref to="aprs" />, and mesh data networks on amateur spectrum like <Ref to="aredn-mesh" />. For the licensed hobby itself, start with <Ref to="what-is-amateur-radio" />.
+
+<Sources items={[
+  ['Meshtastic documentation: Overview', 'https://meshtastic.org/docs/overview/', 'what a node, client and channel are; how a message is relayed'],
+  ['Meshtastic documentation: Mesh broadcast algorithm', 'https://meshtastic.org/docs/overview/mesh-algo/', 'hop limit, managed flooding, packet size'],
+  ['Meshtastic documentation: Radio settings', 'https://meshtastic.org/docs/overview/radio-settings/', 'preset data rates; not LoRaWAN, Helium or TTN'],
+]} />
+
+<Related to="what-is-a-manet lora-for-meshes meshtastic-managed-flooding meshtastic-and-the-rules what-is-meshcore aredn-mesh" />

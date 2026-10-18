@@ -1,0 +1,41 @@
+## The license-free radio service
+
+The **Family Radio Service (FRS)** is "a short-distance two-way voice communication service, with limited data applications, between low power hand-held radios, for facilitating individual, family, group, recreational and business activities" (47 CFR 95.503). It is the service behind the small hand-held radios sold in pairs.
+
+<Callout kind="note" title="FRS is not amateur radio, and it needs no individual license">FRS falls under Part 95, the rules for the **Personal Radio Services**, not Part 97. The FCC authorizes eligible people to operate Part 95 stations without an individual license, except where a service's own rules require one (95.305). Its radios must still be FCC-certified. **GMRS**, which shares FRS channels, does need its own license: see <Ref to="gmrs-licensing" />.</Callout>
+
+<Facts items={[
+  ['Rulebook', '47 CFR Part 95, Subpart B'],
+  ['License', 'no individual license'],
+  ['Channels', '22, each 12.5 kHz wide'],
+  ['Power', '0.5 W or 2 W ERP, by channel'],
+  ['Equipment', 'certified, antenna fixed to the radio'],
+]} />
+
+## The 22 channels
+
+FRS has **22 channels**, and every one of them is also allotted to GMRS on a shared basis (95.563). Consumer radios number them 1 to 22. They fall into three groups:
+
+| Channels | Band | Power limit (ERP) |
+|---|---|---|
+| 1 to 7 | near 462 MHz | 2.0 W |
+| 8 to 14 | near 467 MHz | 0.5 W |
+| 15 to 22 | near 462 MHz | 2.0 W |
+
+**ERP** is effective radiated power: what the antenna sends out, including its gain (95.567). The full frequency list and a map of how the channels sit in the two bands are in <Ref to="gmrs-channels-and-power" />.
+
+## What it is for
+
+The definition points at **short-distance** use: family outings, a group on a hike or at an event, a work crew on a site. The low power limits and fixed antenna keep range short, mostly line of sight (see <Ref to="gmrs-radios-and-range" />). Voice is the main use. FRS units may also send **location information** or a **brief text message** to a specific FRS or GMRS unit, as long as each data transmission lasts no more than one second and is sent no more often than once every 30 seconds (95.531, 95.587).
+
+FRS units may be used to talk with GMRS stations, and a GMRS station may talk with FRS units (95.531(c), 95.1731). More on that in <Ref to="frs-and-gmrs" />, and the limits that stand in for a license in <Ref to="frs-rules-and-limits" />.
+
+<Sources items={[
+  ['47 CFR 95.503: FRS definition', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-B/section-95.503', 'what the service is for'],
+  ['47 CFR 95.305: Authorization to operate Personal Radio Services stations', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-A/section-95.305', 'operation without an individual license'],
+  ['47 CFR 95.563: FRS channels', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-B/section-95.563', 'the 22 channels, shared with GMRS'],
+  ['47 CFR 95.567: FRS transmit power', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-B/section-95.567', 'ERP limits by channel'],
+  ['47 CFR 95.531: Permissible FRS uses', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-B/section-95.531', 'voice, data, and talking to GMRS'],
+]} />
+
+<Related to="frs-rules-and-limits frs-and-gmrs what-is-gmrs gmrs-channels-and-power what-is-amateur-radio license-classes" />

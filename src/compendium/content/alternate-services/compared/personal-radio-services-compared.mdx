@@ -1,0 +1,50 @@
+import { PersonalRadioServicesCompared_Bands } from '@/visuals/compendium/PersonalRadioServicesCompared_Bands'
+
+## Four services, one rulebook
+
+FRS, GMRS, CB and MURS are all **Personal Radio Services** in Part 95 of the FCC rules, which has a subpart for each: Subpart B for <Ref to="what-is-frs" />, E for <Ref to="what-is-gmrs" />, D for <Ref to="what-is-cb-radio" /> and J for <Ref to="what-is-murs" />. Subpart A holds the rules they share. Only GMRS asks for an individual license (95.1705); Subpart A otherwise authorizes operation without one (95.305).
+
+<Callout kind="warn" title="Plain words, not legal advice">This page compares the rules in plain language. Read the rules themselves, linked below, and operate legally where you live.</Callout>
+
+<PersonalRadioServicesCompared_Bands />
+
+<Facts items={[
+  ['Rulebook', 'Part 95, Personal Radio Services'],
+  ['Needs an individual license', 'GMRS only'],
+  ['Amateur radio?', 'none of them'],
+]} />
+
+## Side by side
+
+| | FRS | GMRS | CB | MURS |
+|---|---|---|---|---|
+| Subpart | B | E | D | J |
+| Individual license | none | required; 18 or older for a new one; covers immediate family | none | none |
+| Frequencies | UHF, 462 and 467 MHz | the same UHF channels | 26.965 to 27.405 MHz | five VHF channels, 151.820 to 154.600 MHz |
+| Channels | 22 | 30 | 40 | 5 |
+| Power ceiling | 0.5 W or 2.0 W ERP | 50 W transmitter output on main channels for mobile, repeater and base | 4 W mean carrier (AM, FM); 12 W peak envelope (SSB) | 2 W transmitter power output |
+| Antenna | non-removable, limited gain | not required to be fixed on mobile and base stations | 60 ft above ground, or 20 ft above the building or tree, whichever is higher | 60 ft above ground or 20 ft above its structure; a damaged one may be replaced by a compatible type |
+| Repeaters | none: defined for hand-held radios | allowed: eight pairs | not covered here | not allowed, nor signal boosters |
+| Radios | certified type | certified type | certified type | certified type |
+| Defined for | short-distance voice between low power hand-helds | individuals and their families | personal, business or voluntary public service, with help for highway travelers | short-distance voice or data, personal or business |
+
+The power figures are **not comparable**: ERP is what the antenna radiates, while the others are measured at the transmitter, as mean carrier, peak envelope or plain output power. The detail is in <Ref to="gmrs-channels-and-power" />, <Ref to="frs-rules-and-limits" />, <Ref to="cb-rules-and-limits" /> and <Ref to="murs-rules-and-limits" />.
+
+## Which fits what
+
+This is reasoning from the table, not a rule. With no license and a fixed antenna, FRS suits quick, short-range chat; it shares its channels with GMRS (<Ref to="frs-and-gmrs" />). GMRS costs a license and gains higher power, outside antennas and repeaters (<Ref to="gmrs-licensing" />). CB and MURS need no license either, and each has a band of its own away from the UHF crowd: CB at 27 MHz, MURS at VHF with a few channels but no repeaters.
+
+## None of these is amateur radio
+
+Amateur radio has its own rules and its own license (<Ref to="what-is-amateur-radio" />, <Ref to="license-classes" />). An amateur license does not authorize GMRS, and a ham radio may not be used on CB channels (95.935).
+
+<Sources items={[
+  ['47 CFR Part 95, Subpart A: General rules', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-A', 'authorization by rule, certification and shared rules'],
+  ['47 CFR 95.305: Authorization to operate', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-A/section-95.305', 'operation without an individual license'],
+  ['47 CFR Part 95, Subpart B: FRS', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-B', 'FRS channels, power and antenna'],
+  ['47 CFR Part 95, Subpart D: CB', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-D', 'CB channels, power and antenna height'],
+  ['47 CFR Part 95, Subpart E: GMRS', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-E', 'the GMRS license and channels'],
+  ['47 CFR Part 95, Subpart J: MURS', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-J', 'MURS channels, power and no repeaters'],
+]} />
+
+<Related to="what-is-frs what-is-gmrs what-is-cb-radio what-is-murs frs-and-gmrs what-is-amateur-radio" />

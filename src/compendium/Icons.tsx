@@ -11,6 +11,7 @@ const P: Record<IconName, string> = {
   emergency: 'M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6zM12 8v6M9 11h6',
   safety: 'M12 3l10 18H2zM12 10v5M12 18h.01',
   reference: 'M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3zM5 17a3 3 0 0 1 3-3h11',
+  mesh: 'M6 6a2 2 0 1 0 0-.01M18 6a2 2 0 1 0 0-.01M12 18a2 2 0 1 0 0-.01M8 6h8M7 8l4 8M17 8l-4 8',
   licenses: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 16.5a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zM12 12h.01',
 }
 

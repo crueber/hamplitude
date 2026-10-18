@@ -1,0 +1,40 @@
+import { MeshcoreAdvertsAndAddressing_Packet } from '@/visuals/compendium/MeshcoreAdvertsAndAddressing_Packet'
+
+## Adverts: telling the mesh you exist
+
+An **advert** is how a MeshCore node announces itself. The FAQ says it broadcasts the node's name, position and public encryption key, **signed** to prevent spoofing. The payload documentation lists the fields: a 32-byte public key, a timestamp, a signature, and optional data holding the node's name, location and what kind of node it is (chat node, repeater, room server or sensor).
+
+There are two kinds:
+
+- **Zero hop**: heard by whoever can hear it, and that is all.
+- **Flood**: broadcast, then repeated by every repeater that hears it.
+
+Companions advertise only when the user asks. By default a repeater sends a flood advert every 12 hours, which an administrator can change.
+
+## Naming a hop
+
+Every node has a public key, but a path cannot afford to list 32 bytes per hop. The **node hash** is the first byte of the public key, and the original design uses that one byte to name each repeater in a path.
+
+One byte means only 254 usable values (00 and FF are reserved), so some repeaters share a first byte. The FAQ says this does **not** harm the mesh: packets still pass through, and flood and pathed packets still reach their destinations. It only makes traceroute and path analysis harder, because a tool cannot tell which of two same-byte repeaters was in the path. Its advice for a new repeater is to pick a key whose first byte is unused, or at least unique within about 10 miles (16 km).
+
+<MeshcoreAdvertsAndAddressing_Packet />
+
+## Longer hashes, shorter reach
+
+Paths can also be written with **2-byte or 3-byte** hashes. Each extra byte multiplies the number of possible values by 256 (simple arithmetic), so clashes become far less likely. The cost is room: the path field holds up to 64 bytes, so the FAQ gives the limits as:
+
+| Path hash | Hops a packet can travel |
+|---|---|
+| 1 byte | up to 64 |
+| 2 bytes | up to 32 |
+| 3 bytes | up to 21 |
+
+The **original sender** picks the size. The FAQ points out that repeaters running older firmware only repeat 1-byte packets and silently drop longer ones, so it recommends keeping companions at 1 byte until the vast majority of repeaters in your regional mesh have updated. A repeater can send its own adverts with 2- or 3-byte hashes without affecting which packets it forwards, which helps analysis tools tell repeaters apart.
+
+<Sources items={[
+  ['MeshCore FAQ', 'https://github.com/meshcore-dev/MeshCore/blob/main/docs/faq.md', 'adverts, first-byte collisions, multibyte path hashes'],
+  ['MeshCore packet format', 'https://github.com/meshcore-dev/MeshCore/blob/main/docs/packet_format.md', 'packet fields, path length byte, path limits'],
+  ['MeshCore payloads', 'https://github.com/meshcore-dev/MeshCore/blob/main/docs/payloads.md', 'advert fields and the node hash'],
+]} />
+
+<Related to="meshcore-routing meshcore-node-roles what-is-meshcore meshcore-vs-meshtastic what-is-a-manet lora-for-meshes" />

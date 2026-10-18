@@ -1,0 +1,41 @@
+import { WhatIsMeshcore_Chain } from '@/visuals/compendium/WhatIsMeshcore_Chain'
+
+## A LoRa mesh with fixed roles
+
+**MeshCore** is a system for text messaging over LoRa radios that needs no internet and no central server. Its README describes it as a lightweight C++ library for **multi-hop packet routing** over LoRa and other packet radios, and the FAQ describes the whole project as free and open source, with the routing and firmware released under the MIT license. Messages cross distances no single radio could cover by being relayed along the way. For the radio basics, see <Ref to="lora-for-meshes" />; for the general idea, <Ref to="what-is-a-manet" />.
+
+<Facts items={[
+  ['Radio', 'LoRa'],
+  ['Routing', 'multi-hop, through repeaters'],
+  ['Infrastructure', 'no internet or central server'],
+  ['Software license', 'MIT'],
+]} />
+
+## The roles
+
+What sets MeshCore apart is that a device's job is fixed by the firmware you flash on it. The documentation lists three:
+
+| Role | What it does | Relays other nodes' traffic? |
+|---|---|---|
+| **Companion** | connects to a client app and is where you send and read messages | no |
+| **Repeater** | forwards packets toward their destination, and can be placed high up to extend the mesh | yes, but not every packet it hears |
+| **Room server** | a simple bulletin board: stores posts so roaming users can fetch them later | only if switched on, which the FAQ does not recommend |
+
+The README says companion nodes do not repeat messages at all, to keep poor routing paths from forming. The FAQ gives a second reason: if every client repeated, the extra transmissions would collide. <Ref to="meshcore-node-roles" /> goes further into each role.
+
+<WhatIsMeshcore_Chain />
+
+## What you need
+
+According to the FAQ, you need LoRa hardware that runs the firmware, plus a client app for a companion. With one device, flash it as a companion and talk to other MeshCore users nearby. With two, and other users around, make one a companion and the other a repeater, and put the repeater high above the ground. The FAQ says MeshCore runs on 433, 868 and 915 MHz devices, and that it supports the 868 MHz range in the UK and EU and the 915 MHz range in New Zealand, Australia and the USA.
+
+The README lists what the project is for: off-grid communication, emergency response and disaster recovery, outdoor activities, tactical and security uses, and sensor networks. Those are the project's own descriptions, not claims we can check.
+
+<Callout kind="note" title="License-free spectrum, with limits">These radios work on license-free bands, so using them needs no operator license, but the rules for those bands still apply. See <Ref to="meshtastic-and-the-rules" /> for what that does and does not mean.</Callout>
+
+<Sources items={[
+  ['MeshCore README', 'https://github.com/meshcore-dev/MeshCore', 'what it is, the three firmware types, companions do not repeat, MIT license'],
+  ['MeshCore FAQ', 'https://github.com/meshcore-dev/MeshCore/blob/main/docs/faq.md', 'roles, what you need, frequencies, why clients do not repeat'],
+]} />
+
+<Related to="meshcore-node-roles meshcore-routing meshcore-vs-meshtastic lora-for-meshes what-is-a-manet meshtastic-and-the-rules" />

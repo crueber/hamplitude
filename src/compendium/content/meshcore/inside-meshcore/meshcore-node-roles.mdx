@@ -1,0 +1,48 @@
+import { MeshcoreNodeRoles_Topology } from '@/visuals/compendium/MeshcoreNodeRoles_Topology'
+
+## Three jobs, three kinds of device
+
+MeshCore gives each device **one fixed job**, set by the firmware you load on it. The project's README puts the reason plainly: companion nodes "are not repeating messages at all to prevent adverse routing paths from being used."
+
+| Role | What it does | Repeats packets? |
+|---|---|---|
+| **Companion** | The messaging end of the network. Connects to a phone app over Bluetooth, or to a computer over USB serial | No |
+| **Repeater** | Forwards MeshCore packets toward their destination | Yes, selectively |
+| **Room server** | A simple bulletin board that stores posts and hands them out later | Only if switched on, and that is not recommended |
+
+<MeshcoreNodeRoles_Topology />
+
+<Facts items={[
+  ['Companion', 'never relays'],
+  ['Repeater', 'relays, but not every packet'],
+  ['Room server', 'keeps shared posts'],
+]} />
+
+## Why end devices stay quiet
+
+The FAQ answers "Do MeshCore clients repeat?" with a flat no: it calls this "the core of MeshCore's messaging-first design", meant to stop devices flooding the airwaves and creating endless collisions. So the **only** devices that carry other people's traffic are the ones someone has deliberately set up as repeaters, usually placed high up. See <Ref to="meshtastic-device-roles" /> for how Meshtastic handles relaying.
+
+## Repeaters
+
+A repeater's job is to forward MeshCore packets to the destination device. It does **not** retransmit every packet it hears: with a learned path in the packet, only the repeater that matches the next hop passes it on (see <Ref to="meshcore-routing" />). Administrators can also tell a repeater to refuse flood traffic beyond a chosen hop limit, so each repeater's owner sets its rules.
+
+Practical points from the FAQ:
+
+- The FAQ suggests placing a repeater **high above ground** to extend the network.
+- A new repeater must have its **frequency set** for your country or region before it is useful.
+- It can be configured over USB, or managed remotely over LoRa from a phone app.
+- A location is optional.
+- Repeaters and room servers are protected by an admin password. The FAQ lists the default and shows how to change it; change it.
+
+## Room servers
+
+The FAQ compares a room server to an email server. A channel message is heard when it is sent or missed if you are out of range, but a room server **stores** the history so a roaming user can come back later and catch up. When a client logs in, it receives the previous 32 unseen messages.
+
+A room server can be told to repeat, but the FAQ says this is neither recommended nor encouraged, because it lacks the full set of repeater and remote-administration features. Its advice is to run a repeater and a room server on **separate devices**.
+
+<Sources items={[
+  ['MeshCore README', 'https://github.com/meshcore-dev/MeshCore', 'fixed roles; companions do not repeat'],
+  ['MeshCore FAQ', 'https://github.com/meshcore-dev/MeshCore/blob/main/docs/faq.md', 'firmware types, repeaters, room servers, setup'],
+]} />
+
+<Related to="what-is-meshcore meshcore-routing meshcore-adverts-and-addressing meshcore-vs-meshtastic meshtastic-device-roles what-is-a-manet" />

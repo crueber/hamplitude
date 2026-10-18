@@ -1,0 +1,46 @@
+import { MeshtasticChannelsAndEncryption_Packet } from '@/visuals/compendium/MeshtasticChannelsAndEncryption_Packet'
+
+## Channels
+
+A **channel** is a named, encrypted group. Everyone who uses a channel with the same name and key forms one logical mesh. A node can hold up to eight channels, and only nodes set up with the same name and key can read a custom channel. Channels sit on top of the radio settings, which must also match for nodes to hear each other at all (see <Ref to="lora-for-meshes" />).
+
+Channel 0, the default, has a blank name and a **well-known key** that is published. The Meshtastic documentation is blunt about it: anything sent on a channel that uses the default key can be read by anyone.
+
+<Facts items={[
+  ['Channels per node', 'up to 8'],
+  ['Channel cipher', 'AES, with a pre-shared key'],
+  ['Key sizes', '16 bytes (AES-128) or 32 bytes (AES-256)'],
+  ['Direct messages', 'keys derived from public keys'],
+]} />
+
+## What is, and is not, encrypted
+
+Only the application message is encrypted. The 16-byte routing header is sent in the clear, because relaying nodes need it, including nodes that cannot decrypt the packet.
+
+<MeshtasticChannelsAndEncryption_Packet />
+
+That is why every node in range receives and may relay your packets whether or not it holds your key. A node's rebroadcast setting decides whether it relays packets it cannot decrypt.
+
+## Which key encrypts what
+
+- **Channel messages** use the channel's pre-shared key. A 16-byte key gives AES-128 and a 32-byte key gives AES-256. Anyone who has the key can read every message on the channel.
+- **Direct messages** use a key that only the two nodes can work out, from one node's private key and the other's public key. A node learns public keys from the NodeInfo that others broadcast.
+- **Exceptions:** traceroute, NodeInfo, position and acknowledgement packets normally use the channel key, even when they are addressed to one node.
+
+## What that means for privacy
+
+<Callout kind="warn" title="A shared key is shared by everyone who has it">
+Anyone you give a channel key to can read all of its messages, and so can anyone who later gets the key. The documentation says Meshtastic does not provide forward secrecy: traffic someone recorded can be decrypted later if the key leaks.
+</Callout>
+
+Anyone listening can also read the header, which carries the sender and destination node numbers. The documentation is direct that this is not as strong as Wi-Fi WPA3, HTTPS or Signal, which add protections that do not fit in LoRa packets. It also describes optional integrity features on newer firmware, such as an authenticated mode for channels and signed broadcasts, since plain channel encryption does not detect a message that was changed in transit.
+
+On **amateur frequencies**, the documentation says encryption is not permitted, and nodes in licensed mode send unencrypted; see <Ref to="meshtastic-and-the-rules" />.
+
+<Sources items={[
+  ['Meshtastic: Overview', 'https://meshtastic.org/docs/overview/', 'channels, the default channel, the clear header and encrypted payload'],
+  ['Meshtastic: Encryption', 'https://meshtastic.org/docs/overview/encryption/', 'keys, direct messages, limits of the protection'],
+  ['Meshtastic: LoRa configuration', 'https://meshtastic.org/docs/configuration/radio/lora/', 'amateur regions and licensed mode'],
+]} />
+
+<Related to="meshtastic-managed-flooding meshtastic-device-roles meshtastic-and-the-rules what-is-meshtastic part-97-in-plain-words meshcore-adverts-and-addressing" />

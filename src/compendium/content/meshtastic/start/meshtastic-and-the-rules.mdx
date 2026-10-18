@@ -1,0 +1,36 @@
+## License-free is not rule-free
+
+Meshtastic radios operate on spectrum set aside for unlicensed devices. In the US the FCC's Part 15 describes the regulations under which such a radio "may be operated without an individual license" (47 CFR 15.1(a)). That is why you need no license to use one. It does not mean there are no rules:
+
+- The device must comply with Part 15's technical and administrative provisions (15.1(c)).
+- You have **no right to a frequency**. Operation is subject to causing no harmful interference and to **accepting interference** from authorized stations, industrial, scientific and medical equipment and other radiators (15.5(a) and (b)).
+- If the FCC tells you your device is causing harmful interference, you must stop until it is corrected (15.5(c)).
+
+<Callout kind="warn" title="Plain words, not legal advice">This page explains the rules in plain language. It is not legal advice. You are responsible for operating legally where you live, and other countries have their own rules.</Callout>
+
+## Regions and power
+
+Meshtastic asks you to set a region before a node will transmit at all. The documentation lists, for each region, a frequency range, a duty cycle and a power limit. Examples from that table: the US region covers 902 to 928 MHz with a listed limit of 30 dBm, and the European 868 MHz region is limited to a 10% duty cycle. The documentation adds that the **listed power limit is the ceiling the firmware applies, not your national limit**, and that some countries do not allocate the full range shown. Check your national band plan before transmitting.
+
+## On amateur frequencies
+
+A few regions are amateur radio allocations. The documentation says they can be selected only in licensed mode, that you must not use them without an amateur license, and that in that mode **encryption is not permitted and you must transmit your call sign**. It also says power limits will generally be lifted in the software when licensed mode is on, and that the override-frequency setting is for advanced users and licensed operators.
+
+| | License-free operation | On amateur frequencies |
+|---|---|---|
+| License | no individual license (15.1(a)) | an amateur license: <Ref to="license-classes" /> |
+| Region choice | a license-free region | amateur regions, licensed mode only |
+| Encryption | channels use shared keys | not permitted |
+| Identification | none described in the documentation | call sign must be transmitted |
+| Interference | accept it, cause none (15.5) | the amateur rules in <Ref to="part-97-in-plain-words" /> |
+
+An amateur license is a separate thing from using Meshtastic at all: you do not need one for license-free operation, and holding one does not exempt a node from the rules of the spectrum it is using. For the call sign rules see <Ref to="call-signs" />.
+
+<Sources items={[
+  ['47 CFR 15.1: Scope of this part', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-A/part-15/subpart-A/section-15.1', 'operation without an individual license; compliance with Part 15'],
+  ['47 CFR 15.5: General conditions of operation', 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-A/part-15/subpart-A/section-15.5', 'no right to a frequency; no harmful interference; accept interference; stop on notice'],
+  ['Meshtastic documentation: LoRa configuration', 'https://meshtastic.org/docs/configuration/radio/lora/', 'regions, power ceiling, amateur regions and licensed mode'],
+  ['Meshtastic documentation: Radio settings', 'https://meshtastic.org/docs/overview/radio-settings/', 'licensed mode and power limits'],
+]} />
+
+<Related to="what-is-meshtastic part-97-in-plain-words call-signs license-classes lora-for-meshes aredn-mesh" />
