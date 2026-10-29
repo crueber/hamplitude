@@ -160,7 +160,7 @@ bun run build                          # prerenders every page; the page count r
 
 ## Domain, SEO and analytics
 
-`public/CNAME` is the custom-domain switch (it holds `hamplitude.net`). `site.config.ts` derives the base path and canonical origin from it. `seo.config.json` holds site-verification codes, the IndexNow key, the analytics code and the contact address. See `SEO.md` for details. Every indexable page is prerendered with a canonical URL, Open Graph tags and JSON-LD, and `sitemap.xml` is generated from the routes and taxonomy.
+`public/CNAME` is the custom-domain switch (it holds `hamplitude.net`). `site.config.ts` derives the base path and canonical origin from it. `seo.config.json` holds site-verification codes, the IndexNow key, the GoatCounter code and the contact address. The Umami tracker tag lives in `index.html`'s `<head>`, so it ends up on every prerendered page and `404.html`; keep it there, and block `umami.packden.us` in any script that loads real pages. See `SEO.md` for details. Every indexable page is prerendered with a canonical URL, Open Graph tags and JSON-LD, and `sitemap.xml` is generated from the routes and taxonomy.
 
 ## Contributors and licence
 

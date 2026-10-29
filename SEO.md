@@ -71,3 +71,9 @@ unaffected by blockers and show how people find the site. If *you* browse with a
 
 Alternatives if you ever want to switch: Cloudflare Web Analytics (free, cookieless, needs Cloudflare DNS), Plausible or Umami
 (self-hostable). Google Analytics needs cookie-consent handling and is a poor fit for a privacy-minded site.
+
+### Umami (self-hosted)
+
+`index.html` also loads the Umami tracker from `https://umami.packden.us/script.js` (with this site's `data-website-id`). Because every
+prerendered page and `404.html` is built from `index.html`, the tag is on every page. Umami counts client-side navigation itself. Test and
+check scripts that load real pages should block `umami.packden.us` (as `scripts/hydration-check.ts` does) so they are not counted as visits.
