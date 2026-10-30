@@ -4,10 +4,8 @@ import { cycleTheme, useApplyTheme } from '@/lib/theme'
 import { streakDays } from '@/lib/srs'
 import { useStore } from '@/lib/store'
 import { LogoMark } from './Logo'
-import { Analytics } from './Analytics'
 import { ContactEmail } from './ContactEmail'
 import { Seo } from './Seo'
-import seoConfig from '../../seo.config.json'
 
 const TELEGRAM_URL = 'https://t.me/+jKyxHkUB_sYyOGQx'
 
@@ -44,7 +42,6 @@ export function Layout() {
         </div>
       </header>
       <Seo />
-      <Analytics />
       <main><Outlet /></main>
       {!focus && <Footer />}
       <ScrollRestoration />
@@ -73,7 +70,7 @@ function Footer() {
         </p>
         <p>
           <Link to="/settings">Settings &amp; progress</Link> · <Link to="/acknowledgements">Acknowledgements</Link> · Progress is saved only in this browser.
-          {seoConfig.goatcounterCode && ' Visits are counted anonymously (no cookies, no personal data).'}
+          Visits are counted anonymously (no cookies, no personal data).
         </p>
         <div className="credit">
           <strong>Brought to you by N0ZSY (Chris) and AI; Keep up the Hamplitude!</strong>

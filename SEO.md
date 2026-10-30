@@ -50,27 +50,8 @@ link-preview debugger for the social card. New sites can take days to weeks to a
 
 ## Analytics
 
-**GoatCounter** (free for non-commercial sites, open source). **No cookies and no personal data**, so no consent banner is needed,
-which matters because the site promises that progress stays in the visitor's browser.
-
-It is enabled by `goatcounterCode` in `seo.config.json` (currently `hamplitude`; dashboard at `hamplitude.goatcounter.com`).
-Empty means nothing is sent.
-
-How it counts (`src/components/Analytics.tsx`): GoatCounter's own `count.js` only requests a 1x1 image from
-`<code>.goatcounter.com/count` with the page details in the query string. The app makes that request itself, so **no third-party
-script is loaded** (many DNS and ad blockers list `gc.zgo.at`) and every client-side navigation is counted, not just the first page.
-It sends the path, page title, screen size and, on the landing page only, an outside referrer. It does **not** count:
-
-* visitors with **Do Not Track** or **Global Privacy Control** switched on
-* `localhost`, `*.local` and `file:` (development)
-* automated browsers (flagged as bots)
-
-A few blockers still list `*.goatcounter.com`, so expect some undercounting; Search Console and Bing Webmaster Tools (above) are
-unaffected by blockers and show how people find the site. If *you* browse with a DNS blocker such as Pi-hole, allowlist
-`hamplitude.goatcounter.com` to see your own visits and the dashboard.
-
-Alternatives if you ever want to switch: Cloudflare Web Analytics (free, cookieless, needs Cloudflare DNS), Plausible or Umami
-(self-hostable). Google Analytics needs cookie-consent handling and is a poor fit for a privacy-minded site.
+The site uses a self-hosted **Umami** tracker (cookieless, no personal data, so no consent banner is needed, which matters because the
+site promises that progress stays in the visitor's browser). GoatCounter was removed.
 
 ### Umami (self-hosted)
 
