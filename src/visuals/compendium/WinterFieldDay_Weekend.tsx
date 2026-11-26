@@ -36,29 +36,32 @@ export function WinterFieldDay_Weekend() {
   const sSetup = when(setup, utc, 0), sStart = when(start, utc, 0), sEnd = when(end, utc, 59)
   return (
     <>
-      <Diagram w={640} h={222}
+      <Diagram w={640} h={262}
         title={`Winter Field Day in ${z.name} time: setup may begin ${sSetup}, and the 30-hour operating period runs from ${sStart} to ${sEnd}.`}
         caption="From recent rules: on the air 1600 UTC Saturday to 2159 UTC Sunday. January is standard time.">
-        <Ln x1={X0} y1={180} x2={X1} y2={180} color={C.muted} width={1.5} />
+        <Ln x1={X0} y1={206} x2={X1} y2={206} color={C.muted} width={1.5} />
         {DAYS.map((d, i) => {
           const a = Math.max(i * 24, H0), b = (i + 1) * 24
           return (
             <g key={d}>
-              <Ln x1={x(b)} y1={171} x2={x(b)} y2={189} color={C.muted} width={1.5} />
-              <Ln x1={x(i * 24 + 12)} y1={176} x2={x(i * 24 + 12)} y2={184} color={C.muted} width={1.5} />
-              <T x={(x(a) + x(b)) / 2} y={204} anchor="middle" size={13} bold color={C.muted}>{d}</T>
+              <Ln x1={x(b)} y1={197} x2={x(b)} y2={215} color={C.muted} width={1.5} />
+              <Ln x1={x(i * 24 + 12)} y1={202} x2={x(i * 24 + 12)} y2={210} color={C.muted} width={1.5} />
+              <T x={(x(a) + x(b)) / 2} y={232} anchor="middle" size={13} bold color={C.muted}>{d}</T>
             </g>
           )
         })}
-        {/* setup may begin */}
-        <circle cx={x(setup)} cy={40} r={6.5} fill={C.resist} stroke={C.bg} strokeWidth={2.5} />
-        <T x={x(setup) + 14} y={34} size={13} bold color={C.resist}>Setup may begin, {sSetup}</T>
-        <T x={x(setup) + 14} y={53} size={12.5} color={C.muted}>12 hours of setup at most, in total</T>
+        {/* guides from each moment down to the day axis */}
+        {[setup, start, end + 59 / 60].map((h) => <Ln key={h} x1={x(h)} y1={134} x2={x(h)} y2={206} color={C.muted} width={1} dash="3 4" />)}
+        {/* setup window: opens Friday, 12 hours of it at most */}
+        <T x={x(setup)} y={34} size={13} bold color={C.resist}>Setup may begin, {sSetup}</T>
+        <T x={x(setup)} y={53} size={12.5} color={C.muted}>12 hours of setup at most, in total</T>
+        <rect x={x(setup)} y={102} width={x(start) - x(setup)} height={30} rx={8} fill={C.resist} fillOpacity={0.12} stroke={C.resist} strokeWidth={1.5} strokeDasharray="5 4" />
+        <T x={(x(setup) + x(start)) / 2} y={117} anchor="middle" size={13} bold color={C.resist}>setup</T>
         {/* operating window */}
-        <T x={x(start)} y={88} size={13} bold color={C.signal}>Starts {sStart}</T>
+        <T x={x(start)} y={90} size={13} bold color={C.signal}>Starts {sStart}</T>
         <rect x={x(start)} y={102} width={x(end + 59 / 60) - x(start)} height={30} rx={8} fill={C.signal} fillOpacity={0.22} stroke={C.signal} strokeWidth={2} />
         <T x={(x(start) + x(end + 1)) / 2} y={117} anchor="middle" size={13} bold color={C.signal}>30 hours on the air</T>
-        <T x={x(end + 59 / 60)} y={148} anchor="end" size={13} bold color={C.signal}>Ends {sEnd}</T>
+        <T x={x(end + 59 / 60) - 8} y={162} anchor="end" size={13} bold color={C.signal} stroke={C.bg} strokeWidth={4} paintOrder="stroke" strokeLinejoin="round">Ends {sEnd}</T>
       </Diagram>
       <div style={{ margin: '-6px 0 14px' }}>
         <Choice label="Time zone" value={zone} onChange={setZone} options={ZONES.map((v) => ({ value: v.id, label: v.label }))} />

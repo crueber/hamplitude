@@ -12,7 +12,7 @@ const WHERE: Record<Where, { name: string; gloss: string }> = {
 const LOCS = [
   { id: 'MN', label: 'Minnesota', gloss: 'an ARRL section' },
   { id: 'EPA', label: 'E. Pennsylvania', gloss: 'an ARRL section' },
-  { id: 'WTX', label: 'West Texas', gloss: 'an ARRL section' },
+  { id: 'QC', label: 'Quebec', gloss: 'a Canadian RAC section' },
   { id: 'MX', label: 'Mexico', gloss: 'every station in Mexico' },
   { id: 'DX', label: 'Elsewhere', gloss: 'any other country' },
 ]
@@ -28,8 +28,8 @@ export function WinterFieldDay_Exchange() {
   const chips = [
     { t: 'N0CALL', c: C.muted, x: 150, w: 104 },
     { t: String(n), c: C.signal, x: 266, w: 40 },
-    { t: w, c: C.resist, x: 310, w: 40 },
-    { t: loc, c: C.power, x: 362, w: 64 },
+    { t: w, c: C.resist, x: 306, w: 40 },
+    { t: loc, c: C.power, x: 360, w: 64 },
   ]
   const cards = [
     { c: C.signal, head: `${n} transmitter${n > 1 ? 's' : ''}`, gloss: 'on the air at the same time', from: 1 },
