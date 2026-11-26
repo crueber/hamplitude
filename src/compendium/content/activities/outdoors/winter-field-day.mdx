@@ -1,0 +1,54 @@
+import { WinterFieldDay_Weekend } from '@/visuals/compendium/WinterFieldDay_Weekend'
+import { WinterFieldDay_Exchange } from '@/visuals/compendium/WinterFieldDay_Exchange'
+
+## What it is
+
+**Winter Field Day** is an annual operating event, run by the Winter Field Day Association (WFDA) on the 4th full weekend in January, in which you set up a field station and make contacts in winter conditions. The organisers call it an operating event, not a contest: practice for emergency communications, where short days, cold and ice are the point rather than an inconvenience.
+
+<Facts items={[
+  ['When', 'January, 4th full weekend'],
+  ['On the air', '30 hours'],
+  ['Starts', '1600 UTC Saturday'],
+  ['Power', '100 W PEP at most'],
+]} />
+
+## The weekend
+
+<WinterFieldDay_Weekend />
+
+Setup may start at 1600 UTC on the Friday, but your setup time adds up to **12 hours at most**. Operating runs from 1600 UTC Saturday to 2159 UTC Sunday. January is standard time in the US, so in Central time that is 10:00 AM Saturday to 3:59 PM Sunday. Pick your zone above.
+
+Logs are due about **five weeks later** (March 1 in recent years), uploaded as a Cabrillo or ADIF file on the WFDA website, and late logs are not accepted. See <Ref to="logging-software" />.
+
+## The exchange and the score
+
+<WinterFieldDay_Exchange />
+
+You send your call sign, the number of transmitters that can be on the air at once, a letter for where you are, and your ARRL or RAC section. One station at home in Minnesota is **1H MN**.
+
+- **Points.** Phone contacts count 1 point and CW and digital contacts 2. You can work each station once per band and mode.
+- **Objectives multiply the score.** Recent ones include running on alternative power, operating more than half a mile from home, and putting up new antennas for the event. The list changes from year to year.
+- **Direct contacts only.** Contacts must be simplex, on one band and one mode. Repeater, relayed and internet-linked contacts do not count.
+- **One site.** Every operator, radio and antenna sits inside a circle about 1,000 ft (300 m) across.
+
+## How it differs from Field Day
+
+The ARRL's <Ref to="field-day" /> is the 4th full weekend in June, under its own rules. Recent winter rules leave out 12, 17, 30 and 60 m, and exclude WSJT modes such as FT8 and FT4 because, in the rules' words, they do not pass emergency traffic effectively.
+
+- **Plan for cold power.** Batteries deliver less in the cold, so keep them insulated and carry more than a summer outing needs. See <Ref to="portable-power" />.
+- **Shelter is part of the station.** A heated tent or vehicle keeps you operating. Generator exhaust contains carbon monoxide: never run one in or near an enclosed space.
+- **Antennas go up in the dark and the ice.** Rehearse with your <Ref to="portable-field-antennas" /> and <Ref to="go-kits">go kit</Ref> at home first.
+- **Know when to stop.** If the weather turns unsafe, pack up. The event will be there next January.
+
+<Callout kind="note" title="Check this year's rules">Bands, modes, objectives and even the names for the exchange parts have changed between years. Read the current rules on winterfieldday.org before you plan a station.</Callout>
+
+<ExamLink groups="G4E" />
+
+<Sources items={[
+  ['WFDA: Winter Field Day', 'https://winterfieldday.org/', 'organiser, current rules, log submission'],
+  ['WFDA: Winter Field Day 2027 rules, version 3', 'https://winterfieldday.org/downloads/2027-rules-v3.pdf', 'schedule, exchange, bands, modes, power, scoring, logs'],
+  ['WFDA blog: Winter Field Day is now held on the 4th full weekend in January', 'https://blog.winterfieldday.org/2026/02/4th-full-jan-weekend.html', 'the date rule'],
+  ['ARRL: Field Day', 'https://www.arrl.org/field-day', 'summer Field Day is the 4th full weekend in June'],
+]} />
+
+<Related to="field-day contesting portable-power portable-field-antennas go-kits logging-software" />

@@ -381,6 +381,7 @@ export const SECTIONS: SectionDef[] = [
         ['parks-on-the-air', 'Parks on the Air', 'Operating from parks and activating them.'],
         ['summits-on-the-air', 'Summits on the Air', 'Radio on mountaintops.'],
         ['field-day', 'Field Day', 'The annual emergency-readiness exercise.'],
+        ['winter-field-day', 'Winter Field Day', 'The January operating event: field practice in the cold.'],
         ['special-events', 'Special events, IOTA and lighthouses', 'Temporary stations and award programs.'],
         ['mobile-operation', 'Mobile and maritime mobile', 'Operating on the move.'],
       ]),
