@@ -10,6 +10,7 @@ import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs'
 import { join, resolve } from 'node:path'
 import { FLAT, SECTIONS, resolveArticle } from '../src/compendium/taxonomy'
 import { getGroup } from '../src/data'
+import { cardFile, cardHash } from '../src/lib/og-card'
 
 const ROOT = resolve(import.meta.dir, '..')
 const CONTENT = join(ROOT, 'src/compendium/content')
@@ -103,6 +104,13 @@ for (const f of walk(vdir).filter((f) => f.endsWith('.tsx'))) {
   const prefix = name.split('_')[0]
   if (!slugOfFile.has(prefix)) warn(name, `name should start with an article slug in PascalCase, e.g. HalfWaveDipole_Pattern.tsx`)
   if (!/title=/.test(src)) warn(name, 'no accessible title on its <Diagram>')
+}
+
+// ---- social cards: a missing or stale card only falls back to og.png, so this warns rather than fails ----
+const cards: Record<string, string> = JSON.parse(readFileSync(join(ROOT, 'src/data/og-cards.json'), 'utf8'))
+for (const a of FLAT) {
+  const h = cardHash({ title: a.title, summary: a.summary, section: a.section.title, adjacent: a.section.adjacent })
+  if (cards[a.path] !== h || !existsSync(join(ROOT, 'public', cardFile(a.path)))) warn(a.path, 'social card missing or out of date (run: bun run cards)')
 }
 
 const total = FLAT.length

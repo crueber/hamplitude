@@ -6,11 +6,15 @@ import { LICENSES, POOLS, allGroups, getGroup, isLicense } from '@/data'
 import { getGroupContent } from '@/content'
 import { FLAT, SECTIONS, getArticle, getSection, getSub } from '@/compendium/taxonomy'
 import { articleDates } from '@/compendium/dates'
+import { cardFile, cardHash } from '@/lib/og-card'
+import ogCards from '@/data/og-cards.json'
 import seoConfig from '../../seo.config.json'
 
 export const SITE_NAME = 'Hamplitude'
 export const SITE_URL: string = __SITE_URL__
 export const OG_IMAGE = `${SITE_URL}/og.png`
+const OG_ALT = 'Hamplitude: do not memorize ham radio, understand it'
+const cards: Record<string, string> = ogCards
 
 export interface Seo {
   title: string
@@ -21,6 +25,8 @@ export interface Seo {
   robots?: string
   type: 'website' | 'article'
   jsonLd: object[]
+  /** social card; the site-wide og.png when absent */
+  image?: { url: string; alt: string }
 }
 
 /** Canonical URL. GitHub Pages serves folders with a trailing slash, so canonical URLs have one too. */
@@ -114,14 +120,18 @@ export function seoFor(rawPath: string): Seo {
     const a = getArticle(`${sec}/${sub}/${art}`)
     if (!a) return none('Not found')
     const dates = articleDates(a.path)
+    const h = cardHash({ title: a.title, summary: a.summary, section: s.title, adjacent: s.adjacent })
+    // the article's own card only while it matches the current title and summary (see src/lib/og-card.ts)
+    const image = cards[a.path] === h ? { url: `${SITE_URL}/${cardFile(a.path)}?v=${h}`, alt: `${a.title}. ${a.summary.replace(/([^.?!])$/, '$1.')} Hamplitude compendium, ${s.title}.` } : undefined
     return {
       title: `${a.title} | Ham radio compendium`,
       description: clip(a.summary),
-      path, type: 'article',
+      path, type: 'article', image,
       jsonLd: [
         {
           '@context': 'https://schema.org', '@type': 'Article', headline: a.title, description: a.summary, inLanguage: 'en',
-          isAccessibleForFree: true, mainEntityOfPage: canonicalUrl(path), url: canonicalUrl(path), image: OG_IMAGE,
+          isAccessibleForFree: true, mainEntityOfPage: canonicalUrl(path), url: canonicalUrl(path),
+          image: image ? { '@type': 'ImageObject', url: image.url, width: 1200, height: 630, caption: image.alt } : OG_IMAGE,
           ...(dates && { datePublished: dates.published, dateModified: dates.modified }),
           articleSection: s.title, about: b.title, author, publisher,
         },
@@ -191,6 +201,7 @@ const tag = (name: string, content: string, attr = 'name') => `<meta ${attr}="${
 /** The SEO <head> tags as an HTML string (used by the prerenderer). */
 export function headHtml(s: Seo): string {
   const url = canonicalUrl(s.path)
+  const img = s.image ?? { url: OG_IMAGE, alt: OG_ALT }
   const out = [
     `<title data-seo>${esc(s.title)}</title>`,
     tag('description', s.description),
@@ -198,9 +209,10 @@ export function headHtml(s: Seo): string {
     s.robots ? tag('robots', s.robots) : tag('robots', 'index, follow, max-image-preview:large, max-snippet:-1'),
     tag('og:type', s.type, 'property'), tag('og:site_name', SITE_NAME, 'property'), tag('og:locale', 'en_US', 'property'),
     tag('og:title', s.title, 'property'), tag('og:description', s.description, 'property'), tag('og:url', url, 'property'),
-    tag('og:image', OG_IMAGE, 'property'), tag('og:image:width', '1200', 'property'), tag('og:image:height', '630', 'property'),
-    tag('og:image:alt', 'Hamplitude: do not memorize ham radio, understand it', 'property'),
-    tag('twitter:card', 'summary_large_image'), tag('twitter:title', s.title), tag('twitter:description', s.description), tag('twitter:image', OG_IMAGE),
+    tag('og:image', img.url, 'property'), tag('og:image:width', '1200', 'property'), tag('og:image:height', '630', 'property'),
+    tag('og:image:alt', img.alt, 'property'),
+    tag('twitter:card', 'summary_large_image'), tag('twitter:title', s.title), tag('twitter:description', s.description), tag('twitter:image', img.url),
+    tag('twitter:image:alt', img.alt),
   ]
   if (seoConfig.googleSiteVerification) out.push(tag('google-site-verification', seoConfig.googleSiteVerification))
   if (seoConfig.bingSiteVerification) out.push(tag('msvalidate.01', seoConfig.bingSiteVerification))
