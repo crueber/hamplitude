@@ -41,7 +41,8 @@ bun run build        # gen-compendium, tsc -b, vite build, SSR build, prerender 
 bun run validate     # lessons AND compendium articles against their authoring contracts
 bunx tsc -b          # types and imports (run this before every commit)
 bun run lint         # oxlint; a few existing warnings (for example in Lesson.tsx) are known
-bun run brand        # regenerate public/og.png and the icons (see Brand assets)
+bun run brand        # regenerate public/og.png, the icons and the article cards (see Brand assets)
+bun run cards        # only the per-article social cards (run after adding or renaming an article)
 bun run pools        # data-src/*.pdf -> src/data/pools/*.json (see Question pools)
 ```
 
@@ -157,6 +158,10 @@ bun run build                          # prerenders every page; the page count r
 ## Brand assets
 
 `bun run brand` regenerates `public/og.png` (the social card), the app icons and the favicon from `scripts/make-brand-assets.ts`. Run it whenever the tagline or logo changes, and open `public/og.png` to check that the headline fits.
+
+Each compendium article also has its own social card, `public/og/<section>/<sub>/<article>.jpg`. After adding an article or changing its
+title, summary or section, run `bun run cards` (incremental, a few seconds) and commit the new JPEG and `src/data/og-cards.json`. Until
+then the page falls back to `og.png` and `bun run validate` prints a warning for it.
 
 ## Domain, SEO and analytics
 

@@ -8,15 +8,19 @@ The site is a single-page app, but every indexable page is **prerendered to stat
 | | |
 |---|---|
 | Real URLs | `/technician/T5D/`, `/compendium/antennas/wire/half-wave-dipole/` (not `#/…`: search engines ignore everything after `#`) |
-| Pages | 479: home, 3 license pages, 120 lessons, the compendium home, 10 sections, 44 subsections, 299 articles (plus info pages) |
-| Per-page head | unique `<title>`, meta description (articles use their opening paragraph), canonical URL, `robots`, Open Graph + Twitter cards |
+| Pages | 519: home, acknowledgements, 3 license pages, 120 lessons, the compendium home, 13 sections, 54 subsections, 326 articles |
+| Per-page head | unique `<title>`, meta description, canonical URL, `robots`, Open Graph + Twitter cards |
+| Descriptions | hand-written where they exist: home (the canonical site description), the 3 license pages, and each lesson's `description` in its JSON (100-160 characters, ends with a full stop, `bun run validate` checks it). Articles still fall back to their opening paragraph, clipped. |
+| Dates | from git (`scripts/git-dates.ts`): sitemap `<lastmod>` is each page's source file's last commit; articles carry `datePublished` (first commit, or `published:` in frontmatter) and `dateModified` (last commit) in JSON-LD and a visible "Last updated" line. Needs full history: CI checks out with `fetch-depth: 0`, and a shallow clone leaves the dates out. |
+| Social cards | one 1200x630 card per article in `public/og/` (`bun run cards`), with a specific `og:image:alt`; every other page uses `og.png` |
+| Author | articles name Christopher Rueber as a `Person` (with his GitHub profile) |
 | Structured data | JSON-LD: `WebSite`, `Course`, `LearningResource` (lessons), `Article` (compendium) and `BreadcrumbList` |
 | Discovery | `sitemap.xml`, `robots.txt`, internal links from the compendium index pages, `site.webmanifest` |
 | Not indexed | practice, review, exam, settings, question bank (`noindex`; they're served by `404.html` as an SPA fallback) |
 | Fast notification | **IndexNow** ping after each deploy (Bing, and through it DuckDuckGo; also Yandex, Naver, Seznam) |
 
 Metadata for every URL is produced in one place, `src/lib/seo.ts`, used by both the prerenderer and client-side navigation.
-`bun run brand` regenerates the social card (`og.png`) and icons. `bun scripts/hydration-check.ts` verifies every prerendered
+`bun run brand` regenerates the social card (`og.png`), the icons and the article cards; `bun run cards` only the article cards. `bun scripts/hydration-check.ts` verifies every prerendered
 page loads and hydrates without errors (needs `bun run build` and `bunx vite preview --port 4173`).
 
 ## Going live on hamplitude.net
