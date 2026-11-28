@@ -123,6 +123,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
 .footer { margin-top: 72px; padding: 28px 0 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13.5px; }
 .footer p { max-width: 62em; }
+.footer-support { margin-top: 18px; }
 
 /* ───────── progress ring / bars ───────── */
 .ring { position: relative; width: var(--s, 56px); height: var(--s, 56px); flex: none; }

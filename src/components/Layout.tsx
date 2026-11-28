@@ -8,6 +8,7 @@ import { ContactEmail } from './ContactEmail'
 import { Seo } from './Seo'
 
 const TELEGRAM_URL = 'https://t.me/+jKyxHkUB_sYyOGQx'
+const KOFI_URL = 'https://ko-fi.com/hamplitude'
 
 export function Layout() {
   useApplyTheme()
@@ -85,6 +86,10 @@ function Footer() {
           </span>
           <a className="credit-domain" href="https://hamplitude.net" target="_blank" rel="noreferrer">hamplitude.net</a>
         </div>
+        <p className="footer-support">
+          Hamplitude is free. If it helped you, you can optionally{' '}
+          <a href={KOFI_URL} target="_blank" rel="noopener noreferrer">Support Hamplitude</a>.
+        </p>
       </div>
     </footer>
   )
