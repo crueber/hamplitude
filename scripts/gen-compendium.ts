@@ -3,10 +3,14 @@
  * Runs automatically before `dev` and `build`. The generated folder is git-ignored.
  *   search-index.json  [{ p: path, t: title, s: summary, x: plain text }]   (lazy-loaded by the search box)
  *   exam-links.json    { "T9A": ["antennas/wire/half-wave-dipole", ...] }   (powers "Go deeper" on lessons)
+ *   descriptions.json  { path: opening paragraph }   (the prerenderer's fallback meta description)
+ *   dates.json         { path: [datePublished, dateModified] }   (from git, see scripts/git-dates.ts; {} without history)
+ * datePublished can be pinned with `published: YYYY-MM-DD` in an article's frontmatter (for example after a move).
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join, resolve } from 'node:path'
 import { FLAT } from '../src/compendium/taxonomy'
+import { gitDates } from './git-dates'
 
 const ROOT = resolve(import.meta.dir, '..')
 const OUT = join(ROOT, 'src/compendium/generated')
@@ -38,6 +42,8 @@ function lead(mdx: string): string {
   return ''
 }
 
+const history = gitDates(ROOT)
+const dates: Record<string, [string, string]> = {}
 const leads: Record<string, string> = {}
 const index: { p: string; t: string; s: string; x: string }[] = []
 const examLinks: Record<string, string[]> = {}
@@ -49,6 +55,9 @@ for (const a of FLAT) {
     const mdx = readFileSync(f, 'utf8')
     text = plain(mdx).slice(0, 5000)
     leads[a.path] = lead(mdx)
+    const g = history?.get(`src/compendium/content/${a.path}.mdx`)
+    const pinned = /^---\n[\s\S]*?^published:\s*['"]?(\d{4}-\d{2}-\d{2})['"]?\s*$[\s\S]*?^---$/m.exec(mdx)?.[1]
+    if (g) dates[a.path] = [pinned ?? g.first, g.last]
     written++
     for (const m of mdx.matchAll(/<ExamLink\s+groups="([^"]+)"/g))
       for (const g of m[1].split(/[\s,]+/).filter(Boolean)) (examLinks[g] ??= []).push(a.path)
@@ -58,4 +67,5 @@ for (const a of FLAT) {
 writeFileSync(join(OUT, 'search-index.json'), JSON.stringify(index))
 writeFileSync(join(OUT, 'exam-links.json'), JSON.stringify(examLinks))
 writeFileSync(join(OUT, 'descriptions.json'), JSON.stringify(leads))
-console.log(`compendium: ${written}/${FLAT.length} articles indexed, ${Object.keys(examLinks).length} exam groups linked`)
+writeFileSync(join(OUT, 'dates.json'), JSON.stringify(dates))
+console.log(`compendium: ${written}/${FLAT.length} articles indexed, ${Object.keys(examLinks).length} exam groups linked, ${Object.keys(dates).length} dated from git`)

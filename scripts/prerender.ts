@@ -4,11 +4,12 @@
  * pages without running JavaScript, and the browser hydrates them. Also writes sitemap.xml, robots.txt,
  * site.webmanifest, 404.html (the SPA fallback for practice/exam/etc.) and the IndexNow key file.
  */
-import { mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { siteConfig } from '../site.config.ts'
 import seoConfig from '../seo.config.json'
+import { gitDates, newest } from './git-dates'
 
 const ROOT = resolve(import.meta.dir, '..')
 const site = siteConfig(ROOT)
@@ -71,10 +72,33 @@ if (failures.length) {
 write('404.html', assemble(ssr.seoFor('/404'), '', null))
 
 // ---- sitemap, robots, manifest, IndexNow key ----
-const today = new Date().toISOString().slice(0, 10)
+// <lastmod> is the last git commit of the files each page is built from (not the build date), so it only moves when
+// the page really changed. Listing pages take the newest article they list. No history (shallow clone) = no lastmod.
+const history = gitDates(ROOT)
+const tracked = history ? [...history.keys()] : []
+function sourcesOf(p: string): string[] {
+  if (p === '/') return ['src/pages/Home.tsx', 'src/pages/home-data.ts']
+  if (p === '/acknowledgements') return ['src/pages/Acknowledgements.tsx', 'src/data/contributors.json']
+  if (p.startsWith('/compendium')) {
+    const rest = p.replace(/^\/compendium\/?/, '')
+    const exact = `src/compendium/content/${rest}.mdx`
+    if (rest.split('/').length === 3) return [exact]
+    const prefix = rest ? `src/compendium/content/${rest}/` : 'src/compendium/content/'
+    return tracked.filter((f) => f.startsWith(prefix) && f.endsWith('.mdx') && existsSync(join(ROOT, f)))
+  }
+  const [lic, group] = p.split('/').filter(Boolean)
+  if (!group) return ['src/pages/License.tsx', `src/data/pools/${lic}.json`]
+  return [`src/content/${lic}/${group}.mdx`, `src/content/${lic}/${group}.json`]
+}
+let dated = 0
+const urls = paths.map((p) => {
+  const lastmod = newest(history, sourcesOf(p))
+  if (lastmod) dated++
+  return `  <url><loc>${ssr.canonicalUrl(p)}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}</url>`
+})
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${paths.map((p) => `  <url><loc>${ssr.canonicalUrl(p)}</loc><lastmod>${today}</lastmod></url>`).join('\n')}
+${urls.join('\n')}
 </urlset>
 `)
 write('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${site.url}/sitemap.xml\n`)
@@ -91,5 +115,5 @@ if (seoConfig.indexNowKey) write(`${seoConfig.indexNowKey}.txt`, seoConfig.index
 
 const mb = (n: number) => (n / 1e6).toFixed(1)
 console.log(`prerendered ${paths.length} pages in ${((Date.now() - t0) / 1000).toFixed(1)}s (${mb(total)} MB HTML; largest ${largest.path} ${(largest.bytes / 1e3).toFixed(0)} KB)`)
-console.log(`site: ${site.url}/  (base ${site.base})  ·  wrote 404.html, sitemap.xml, robots.txt, site.webmanifest`)
+console.log(`site: ${site.url}/  (base ${site.base})  ·  wrote 404.html, sitemap.xml (${dated}/${paths.length} dated from git), robots.txt, site.webmanifest`)
 void statSync

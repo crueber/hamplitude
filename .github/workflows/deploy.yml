@@ -21,7 +21,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # Full history: the sitemap's <lastmod> and the articles' published/updated dates come from git (scripts/git-dates.ts).
+      # A shallow clone would leave every date out.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: oven-sh/setup-bun@v2
         with:
