@@ -1,6 +1,7 @@
 {
   "title": "Station electrical and tower safety",
   "blurb": "Explain where fuses, GFCIs, interlocks and lightning grounds belong, and the precautions for towers, generators and solder.",
+  "description": "Station and tower safety: a 20 A breaker needs AWG 12 wire, AWG 14 is rated for 15 A, and where GFCIs, interlocks and lightning grounds belong.",
   "why": {
     "G0B01": { "why": "A fuse or breaker opens a **hot** wire. Fusing the neutral or ground could leave the circuit live or defeat the safety path.", "trap": "Neutral and ground must stay unfused.", "concept": "fusing" },
     "G0B02": { "why": "A 20 A breaker needs wire rated for 20 A: **AWG 12**. Thinner wire (a higher AWG number) overheats.", "trap": "Higher AWG numbers are thinner wire, not stronger.", "concept": "fusing" },

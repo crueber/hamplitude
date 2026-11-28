@@ -1,6 +1,7 @@
 {
   "title": "RFI, grounding and bonding",
   "blurb": "Explain how RF gets into audio equipment, what each sound means, and why ground wires and bonding matter.",
+  "description": "RFI, grounding and bonding: what SSB and CW sound like in a victim's audio, how ferrite chokes and bypass capacitors help, and ground loops.",
   "why": {
     "G4C01": { "why": "A **bypass capacitor** passes RF to ground but blocks the audio, so it removes RF from audio circuits.", "trap": "A shunt inductor does the reverse: it passes audio to ground and resists RF.", "concept": "rfi-fixes" },
     "G4C02": { "why": "Sparks from an **arc** at a poor connection are made of all frequencies, so the noise is broad.", "trap": "Baluns and rectification affect specific paths, not wide spectra.", "concept": "rfi-sound" },

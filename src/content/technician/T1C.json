@@ -1,6 +1,7 @@
 {
   "title": "Licenses, call signs and renewal",
   "blurb": "Which classes exist, how call sign groups work, when you may transmit, and how long a license lasts.",
+  "description": "License classes, call sign groups and renewal: a license lasts ten years, renewal opens 90 days early, and a two-year grace period follows expiry.",
   "why": {
     "T1C01": { "why": "The FCC issues **Technician, General and Amateur Extra**.", "trap": "Novice, Technician Plus and Advanced are no longer issued.", "concept": "classes" },
     "T1C02": { "why": "Vanity call signs are open to **any licensed amateur**.", "trap": "No class or years-licensed minimum applies.", "concept": "classes" },

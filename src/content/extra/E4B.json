@@ -1,6 +1,7 @@
 {
   "title": "Measurement accuracy, S parameters, VNAs",
   "blurb": "Explain what limits meter and counter accuracy, read S parameters, calibrate a VNA, find Q, and test SSB for intermodulation.",
+  "description": "Measurement accuracy and VNAs: a counter is only as good as its time base, S21 is forward gain and S11 input reflection, and short-open-load calibration.",
   "why": {
     "E4B01": { "why": "A counter counts cycles over a gate set by its oscillator, so **time base accuracy** limits it.", "trap": "Attenuators and dividers don't set how long it counts.", "concept": "meter-limits" },
     "E4B02": { "why": "**Full-scale volts × ohms per volt** = input impedance. A 10 V range at 20 kΩ/V is 200 kΩ.", "trap": "Ohms per volt describes loading, not power drawn or shunt size.", "concept": "meter-limits" },

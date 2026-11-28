@@ -1,6 +1,7 @@
 {
   "title": "Power supplies and schematic symbols",
   "blurb": "Explain what each stage of a power supply does, compare rectifier types, and read the symbols in figure G7-1.",
+  "description": "Power supply stages: transformer, rectifier, filter and bleeder resistor; a full-wave rectifier uses all 360 degrees, a half-wave only 180.",
   "why": {
     "G7A01": { "why": "Filter capacitors can hold a dangerous charge. The **bleeder resistor** discharges them when power is removed.", "trap": "A fuse protects against overcurrent. A bleeder is not a fuse or a ground-loop cure.", "concept": "bleeder" },
     "G7A02": { "why": "The filter smooths rectified pulses using **capacitors and inductors**.", "trap": "Diodes rectify and transformers change voltage. Neither filters.", "concept": "filter" },

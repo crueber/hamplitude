@@ -1,6 +1,7 @@
 {
   "title": "FM, SSB and signal bandwidth",
   "blurb": "How AM, FM and SSB differ, how wide each signal is, and which to choose for repeaters, weak signals and sidebands.",
+  "description": "AM, FM and SSB compared by bandwidth: CW is about 150 Hz, SSB voice about 3 kHz, FM voice 10 to 15 kHz, and fast-scan TV about 6 MHz.",
   "why": {
     "T8A01": { "why": "SSB is amplitude modulation with the carrier and one sideband removed, so it belongs to the **AM family**.", "trap": "PSK and packet are digital methods, not amplitude modulation.", "concept": "am-fm" },
     "T8A02": { "why": "VHF packet uses **FM or PM**: the signal varies frequency (or phase), not height.", "concept": "am-fm" },

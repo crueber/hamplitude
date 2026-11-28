@@ -1,6 +1,7 @@
 {
   "title": "RF exposure rules and evaluation",
   "blurb": "Explain how RF affects the body, who must evaluate exposure, and how to bring a station into compliance.",
+  "description": "RF exposure rules for the General exam: RF heats tissue, rules cover any station over 1 mW time-averaged, and how to evaluate per OET Bulletin 65.",
   "why": {
     "G0A01": { "why": "RF is non-ionizing: its effect on tissue is **heating**.", "trap": "RF doesn't cause radiation poisoning or change blood counts.", "concept": "averaging" },
     "G0A02": { "why": "Exposure depends on **duty cycle, frequency and power density**: every one of them is used.", "concept": "averaging" },

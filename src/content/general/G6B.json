@@ -1,6 +1,7 @@
 {
   "title": "ICs, connectors and ferrites",
   "blurb": "Tell analog, digital and microwave ICs apart, pick the right RF connector, and explain how ferrite chokes and toroids work.",
+  "description": "ICs, connectors and ferrites: CMOS draws less power than TTL, BNC works to about 4 GHz and Type N to 10 GHz, and how ferrite chokes stop RF.",
   "why": {
     "G6B01": { "why": "A ferrite's response at different frequencies is set by its **composition, or mix**, of materials.", "trap": "Size and shape change the amount of inductance, not which frequencies the material suits.", "concept": "toroid" },
     "G6B02": { "why": "**MMIC** = **M**onolithic **M**icrowave **I**ntegrated **C**ircuit: a microwave stage built on one chip.", "concept": "ic-types" },

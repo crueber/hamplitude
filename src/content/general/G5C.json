@@ -1,6 +1,7 @@
 {
   "title": "Transformers, series and parallel",
   "blurb": "Find voltage and impedance through a transformer, and total R, L and C in series and parallel.",
+  "description": "Transformers and combining parts: turns ratio sets voltage, impedance ratio is the turns ratio squared, and how R, L and C add in series and parallel.",
   "why": {
     "G5C01": { "why": "The primary's changing magnetic field cuts the secondary and induces a voltage: **mutual inductance**.", "trap": "Capacitive coupling would need an electric field between the windings, not shared magnetic flux.", "concept": "turns" },
     "G5C02": { "why": "A transformer works both ways. A 4:1 step-down has 4 primary turns per secondary turn, so fed backwards the ratio reverses and the voltage is **multiplied by 4**.", "trap": "Extra resistance is not needed. Only the turns ratio sets the voltage.", "concept": "turns" },

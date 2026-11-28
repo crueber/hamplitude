@@ -1,6 +1,7 @@
 {
   "title": "EME, scatter and wave basics",
   "blurb": "Explain EME, meteor and auroral scatter, microwave ducts, and how electromagnetic waves are built.",
+  "description": "EME and scatter: Moon contacts span up to about 12,000 miles with least path loss at perigee, meteor trails reflect 28 to 148 MHz, and microwave ducts.",
   "why": {
     "E3A01": { "why": "Both stations only need the Moon in view, which puts them up to about **12,000 miles** apart.", "trap": "Perigee changes loss, not how far apart you can be.", "concept": "eme" },
     "E3A02": { "why": "Libration, the Moon's rocking, keeps changing the echo path, giving a **fluttery, irregular fade**.", "concept": "eme" },

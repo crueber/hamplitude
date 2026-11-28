@@ -1,6 +1,7 @@
 {
   "title": "Phone operating: SSB and sidebands",
   "blurb": "Explain why SSB is the HF voice mode, pick LSB or USB by band, break into contacts, and set mic gain.",
+  "description": "Why SSB is the HF voice mode: lower sideband on 160, 75 and 40 m, upper sideband from 14 MHz up, plus breaking into contacts and setting mic gain.",
   "why": {
     "G2A01": { "why": "At **14 MHz and up** the habit is **upper sideband**.", "trap": "Lower sideband is the habit on the low bands.", "concept": "sidebands" },
     "G2A02": { "why": "On **160, 75 and 40 m** the habit is **lower sideband**.", "trap": "Upper sideband is the habit from 14 MHz up.", "concept": "sidebands" },

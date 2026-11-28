@@ -1,6 +1,7 @@
 {
   "title": "VEs, CSCEs and expired licenses",
   "blurb": "Who can be a Volunteer Examiner, how a CSCE and the AG suffix work, expired-license credit, and remote operation.",
+  "description": "Volunteer Examiners and CSCEs: three VEs for a Technician exam, a CSCE is good for 365 days, use the AG suffix until your upgrade posts.",
   "why": {
     "G1D01": { "why": "Anyone who can show they once held a **General, Advanced or Extra** license that was not revoked gets partial element credit.", "trap": "No 5 to 15 year window, and foreign licenses do not count.", "concept": "expired" },
     "G1D02": { "why": "A General-class VE may administer **Technician** exams only.", "trap": "General and Extra exams need higher-class VEs.", "concept": "ve" },

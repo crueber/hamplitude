@@ -1,6 +1,7 @@
 {
   "title": "Resistors, capacitors, switches, batteries",
   "blurb": "Say what resistors, capacitors and inductors do, read switch types like SPDT, and know which batteries recharge.",
+  "description": "What resistors, potentiometers, capacitors and inductors do, how to read SPDT and SPST switches, and which batteries recharge: carbon-zinc does not.",
   "why": {
     "T6A01": { "why": "A **resistor** is the part that opposes current. Its job is to resist.", "trap": "An inductor opposes *changes* in current, not current itself.", "concept": "resistor" },
     "T6A02": { "why": "A **potentiometer** is an adjustable resistor, so turning it changes volume.", "trap": "A fixed resistor can't be adjusted.", "concept": "resistor" },

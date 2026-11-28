@@ -1,6 +1,7 @@
 {
   "title": "Fading, polarization and absorption",
   "blurb": "Explain why signals fade, why antennas must match polarization, and what absorbs or reflects them.",
+  "description": "Why signals fade: multipath, crossed polarization, leaves and rain at UHF and microwaves, and why ionospheric signals work with either polarization.",
   "why": {
     "T3A01": { "why": "Direct and reflected waves arrive out of step. A few feet of movement flips them between **cancelling** and **reinforcing**.", "concept": "multipath" },
     "T3A02": { "why": "Leaves and branches **absorb** short UHF and microwave waves, so weak signals get weaker.", "trap": "Foliage never amplifies a signal.", "concept": "absorption" },

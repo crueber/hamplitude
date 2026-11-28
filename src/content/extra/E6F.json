@@ -1,6 +1,7 @@
 {
   "title": "Optoelectronic devices",
   "blurb": "Explain photoconductors, photovoltaic cells, optoisolators, solid-state relays and optical shaft encoders.",
+  "description": "Optoelectronics: photoconductors lose resistance in light, the optoisolator is an LED and a phototransistor in one package, and optical shaft encoders.",
   "why": {
     "E6F01": { "why": "Photons carry the light's energy and **electrons absorb it**, freeing them to make current.", "trap": "Photons deliver the energy; they are not what absorbs it.", "concept": "photovoltaic" },
     "E6F02": { "why": "Light frees carriers in photoconductive material, so its **resistance decreases**.", "trap": "Reflectivity is not what changes; resistance is.", "concept": "photoconductive" },

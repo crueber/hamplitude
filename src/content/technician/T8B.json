@@ -1,6 +1,7 @@
 {
   "title": "Amateur satellites",
   "blurb": "Why a satellite's frequency shifts as it passes, how tracking works, and how to use uplinks, downlinks and beacons.",
+  "description": "Working amateur satellites: Doppler shift, tracking with Keplerian elements, U/V uplinks and downlinks, and why a low Earth orbit takes about 100 minutes.",
   "why": {
     "T8B01": { "why": "Beacon telemetry reports the satellite's **health and status**: things like battery and temperature.", "trap": "Beacons don't report your signal strength or give precise time.", "concept": "beacon" },
     "T8B02": { "why": "A transponder is shared. Too much power makes your signal dominate and **blocks access for other users**.", "concept": "links" },

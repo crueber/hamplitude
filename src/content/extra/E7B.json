@@ -1,6 +1,7 @@
 {
   "title": "Amplifier classes and circuits",
   "blurb": "Explain amplifier classes, why switching amplifiers are efficient, and read the bias parts in a common-emitter circuit.",
+  "description": "Amplifier classes: Class AB conducts between 180 and 360 degrees, Class D switches for efficiency, and the bias parts of a common-emitter stage.",
   "why": {
     "E7B01": { "why": "Class AB conducts **more than 180° but less than 360°**. In push-pull, each device conducts a bit more than half the cycle.", "trap": "Exactly 180° is Class B; the full cycle is Class A; less than 180° is Class C.", "concept": "classes" },
     "E7B02": { "why": "Class D **switches** its device fully on and off, which keeps heat low and efficiency high.", "trap": "Class D is not about linearity or distortion-free biasing; that is Class A.", "concept": "switching" },

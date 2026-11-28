@@ -1,6 +1,7 @@
 {
   "title": "Propagation beyond the horizon",
   "blurb": "Explain how signals get past the horizon: refraction, the ionosphere, ducting, sporadic E, meteors and aurora.",
+  "description": "How VHF and UHF signals get past the horizon: tropospheric ducting to about 300 miles, sporadic E, meteor scatter on 6 m, and aurora.",
   "why": {
     "T3C01": { "why": "UHF is usually **not propagated by the ionosphere**, so with only line of sight it rarely goes beyond the radio horizon.", "trap": "Nothing forbids range, and UHF isn't absorbed by the D region.", "concept": "hf-vs-vhf" },
     "T3C02": { "why": "The ionosphere reflects HF, so **long-distance ionospheric paths are far more common on HF**.", "trap": "HF antennas are larger, not smaller.", "concept": "hf-vs-vhf" },

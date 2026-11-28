@@ -1,6 +1,7 @@
 {
   "title": "Volunteer Monitors and HF operating",
   "blurb": "Explain the Volunteer Monitor Program, aim long-path beams, call CQ on HF, and know logs, contest ID and QRP.",
+  "description": "The Volunteer Monitor Program, aiming a beam on the long path 180 degrees from the short path, calling CQ on HF, logs, contest ID and QRP.",
   "why": {
     "G2D01": { "why": "Volunteer Monitors are amateurs **formally enlisted to monitor the airwaves for rules violations**.", "trap": "Exams, coordination and civil defense are other volunteer jobs.", "concept": "vm" },
     "G2D02": { "why": "The program aims to **encourage self-regulation and compliance** with the rules.", "concept": "vm" },

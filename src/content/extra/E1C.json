@@ -1,6 +1,7 @@
 {
   "title": "Remote control, signal limits and foreign operation",
   "blurb": "Know the control-link, spurious and modulation limits, the 630 m and 2200 m notification, and the CEPT and IARP arrangements.",
+  "description": "Remote control and signal limits: a station whose control link fails may transmit for 3 minutes, spurs below 30 MHz at -43 dB, and CEPT and IARP.",
   "why": {
     "E1C01": { "why": "Data on 60 m is limited to **2.8 kHz** bandwidth, which fits inside a channel.", "concept": "purity" },
     "E1C02": { "why": "To foreign amateurs, keep to matters **incidental to amateur radio and personal remarks**. English is not required.", "trap": "Third-party limits and English-only are not what the rule says.", "concept": "abroad" },

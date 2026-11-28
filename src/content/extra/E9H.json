@@ -1,6 +1,7 @@
 {
   "title": "Receiving antennas and direction finding",
   "blurb": "Explain why Beverage antennas are terminated, why low-band receiving favors directivity over loss, and how loops and sense antennas find bearings.",
+  "description": "Receiving antennas: why a Beverage is at least a wavelength long and terminated, receiving directivity factor, and why a small loop's bearing is ambiguous.",
   "why": {
     "E9H01": { "why": "A Beverage works on a traveling wave along the wire, so it should be **at least one wavelength long**. It runs low over ground.", "concept": "beverage" },
     "E9H02": { "why": "Low-band atmospheric noise is so high that **directivity matters more than loss**: loss cuts signal and noise together.", "concept": "lowband" },

@@ -44,6 +44,10 @@ for (const lic of LICENSES as LicenseId[]) {
       else if (content.title.length > 60) warn(g, `title is ${content.title.length} chars (aim <= 50)`)
       if (typeof content.blurb !== 'string' || !content.blurb) err(g, 'blurb missing')
       else if (words(content.blurb) > 28) warn(g, `blurb is ${words(content.blurb)} words (aim <= 22)`)
+      // the page's meta description: hand-written, about 120-155 characters, ending cleanly (see SEO.md)
+      if (content.description === undefined) warn(g, 'no description (hand-write ~120-155 characters for search results)')
+      else if (typeof content.description !== 'string' || content.description.length < 100 || content.description.length > 160) err(g, `description must be 100-160 characters (is ${String(content.description).length})`)
+      else if (/(…|\.\.\.)$/.test(content.description) || !/[.!?]$/.test(content.description)) err(g, 'description must end with a full stop, not an ellipsis')
       const why = content.why ?? {}
       for (const qid of group.questions) {
         const w = why[qid]

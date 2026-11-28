@@ -1,6 +1,7 @@
 {
   "title": "The Smith chart",
   "blurb": "Read a Smith chart: resistance circles, reactance arcs, the matched center, SWR circles and wavelength scales, and use it to place a stub.",
+  "description": "The Smith chart: constant-resistance circles and reactance arcs, the matched center, SWR circles, wavelength scales, and placing a matching stub.",
   "why": {
     "E9G01": { "why": "The chart tracks how impedance changes **along a transmission line**. It says nothing about radiation, patterns or propagation.", "concept": "line" },
     "E9G02": { "why": "A point is fixed by where a **resistance circle** meets a **reactance arc**.", "trap": "Voltage and current aren't plotted. The chart is a map of impedance.", "concept": "chart" },

@@ -1,6 +1,7 @@
 {
   "title": "Phased arrays, wire antennas and ground",
   "blurb": "Predict array patterns from spacing and phase, recognize common wire antennas, and see how ground height, slope and seawater change takeoff angle.",
+  "description": "Phased arrays and wire antennas: quarter-wave spacing fed 90 degrees apart gives a cardioid, off-center-fed dipoles, and how ground changes takeoff angle.",
   "why": {
     "E9C01": { "why": "Half-wave spacing delays the signal 180° along the axis, and the 180° feed cancels that delay. The signals add **along the axis** and cancel broadside.", "trap": "Broadside is where equal path lengths make in-phase feeds add, not out-of-phase ones.", "concept": "phased" },
     "E9C02": { "why": "A quarter-wave spacing (90° of path) plus a 90° phase shift adds in one direction and cancels in the opposite one: a **cardioid**.", "concept": "phased" },

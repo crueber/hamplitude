@@ -1,6 +1,7 @@
 {
   "title": "Antenna patterns and modeling",
   "blurb": "Read azimuth and elevation plots for beamwidth, front-to-back and peak angle, and explain far field and Method of Moments modeling.",
+  "description": "Reading antenna patterns: beamwidth at the -3 dB points, front-to-back and front-to-side ratios, elevation plots and Method of Moments modeling.",
   "why": {
     "E9B01": { "why": "The main lobe crosses the −3 dB ring at about 25° each side of the peak. 25° + 25° = **50°** beamwidth.", "trap": "25° is only half the beamwidth: count both sides.", "concept": "read-polar" },
     "E9B02": { "why": "Peak is 0 dB at 0°. At 180° the plot is near the −18 ring, so front-to-back = 0 − (−18) = **18 dB**.", "concept": "read-polar" },

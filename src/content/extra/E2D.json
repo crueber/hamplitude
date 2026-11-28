@@ -1,6 +1,7 @@
 {
   "title": "VHF/UHF digital, APRS, EME and meteor scatter",
   "blurb": "Choose the right weak-signal mode for meteors or the Moon, and read APRS frames and digipeater paths.",
+  "description": "VHF and UHF weak-signal digital: MSK144 for meteor scatter, Q65 for EME, APRS over AX.25 packets, and what a WIDE3-1 digipeater path means.",
   "why": {
     "E2D01": { "why": "**MSK144** is the WSJT-X mode designed for meteor scatter's short bursts.", "trap": "WSPR is a propagation beacon, APRS is tracking.", "concept": "path-modes" },
     "E2D02": { "why": "A VHF contest exchange in FT8 or FT4 uses your **grid square** where a normal QSO sends the signal report.", "concept": "weak-modes" },

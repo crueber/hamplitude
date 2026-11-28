@@ -1,6 +1,7 @@
 {
   "title": "Tower and antenna safety",
   "blurb": "How to climb, raise and ground a tower safely, and how far to keep from power lines.",
+  "description": "Tower and antenna safety: never climb alone, keep any falling antenna at least 10 feet from power lines, and ground each tower leg with an 8-foot rod.",
   "why": {
     "T0B01": { "why": "Keep lightning ground connections **short and direct**. A long or looping path adds impedance and slows the surge reaching ground.", "trap": "Drip loops and right-angle bends work against a fast surge.", "concept": "tower-ground" },
     "T0B02": { "why": "Climbing requires training, a harness, and tie-off at all times: **all of them**.", "concept": "climbing" },

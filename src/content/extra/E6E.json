@@ -1,6 +1,7 @@
 {
   "title": "Semiconductors and packages for RF",
   "blurb": "Explain why GaAs and GaN suit UHF and microwaves, what MMICs are, and why surface mount beats leaded packages at RF.",
+  "description": "RF semiconductors and packages: GaAs and GaN for UHF and microwaves, MMICs built for 50 ohm input and output, and why surface mount suits RF.",
   "why": {
     "E6E01": { "why": "GaAs has **higher electron mobility**, so devices respond faster at UHF and above.", "trap": "Higher noise figures and lower transconductance would be drawbacks.", "concept": "mobility" },
     "E6E02": { "why": "A **DIP** has pins that pass through holes in the board. PLCC, BGA and SOT mount on the surface.", "trap": "BGA, PLCC and SOT are all surface-mount.", "concept": "packages" },

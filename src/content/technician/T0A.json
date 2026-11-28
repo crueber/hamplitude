@@ -1,6 +1,7 @@
 {
   "title": "Power, fuse, battery and lightning safety",
   "blurb": "Spot the shock, fire and battery hazards in a station, and know where fuses, arresters and grounds belong.",
+  "description": "Station electrical safety for the Technician exam: fuses go in series with the hot wire, and a 20 A fuse on 5 A wiring can start a fire.",
   "why": {
     "T0A01": { "why": "Shorting a battery's terminals sends enormous current through the short: **burns, fire or explosion**.", "trap": "12 V across your hands is too low to shock you, and RF can't make electrolyte emit gas.", "concept": "battery" },
     "T0A02": { "why": "Body current heats tissue, disrupts cells and causes involuntary muscle contractions: **all three**.", "concept": "shock" },

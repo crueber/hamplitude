@@ -1,6 +1,7 @@
 {
   "title": "Digital modes, ARQ and FEC",
   "blurb": "Choose the right digital mode, read a waterfall, and explain codes, ARQ and forward error correction.",
+  "description": "HF digital modes and error control: WSPR for propagation, PSK31's Varicode, reading a waterfall, and how ARQ resends while FEC fixes errors.",
   "why": {
     "G8C02": { "why": "**WSPR** is a low-power beacon mode used to see where HF propagation is open.", "trap": "PSK31 and MFSK16 carry messages. SSB-SC is a voice mode.", "concept": "modes" },
     "G8C03": { "why": "The packet **header** holds the routing and handling information, such as where it comes from and goes to.", "concept": "errors" },

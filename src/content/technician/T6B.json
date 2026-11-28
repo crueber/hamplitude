@@ -1,6 +1,7 @@
 {
   "title": "Diodes, transistors and gain",
   "blurb": "Explain how diodes pass current one way, how transistors switch and amplify, and what gain means.",
+  "description": "Diodes pass current one way, about 0.7 V dropped for silicon and 0.3 V for Schottky; transistors switch and amplify, and gain is output over input.",
   "why": {
     "T6B01": { "why": "Every conducting diode drops some voltage, and the amount depends on the type: typically about 0.3 V for Schottky, 0.7 V for silicon.", "trap": "A forward drop is normal. It does not mean the diode is broken.", "concept": "led" },
     "T6B02": { "why": "A **diode** is a one-way valve: current flows anode to cathode but not back.", "trap": "A resistor and a fuse pass current both ways.", "concept": "diode" },

@@ -1,6 +1,7 @@
 {
   "title": "Spread spectrum, keying defects and digital codes",
   "blurb": "How spread spectrum resists interference, why key clicks and overmodulation happen, and how Baudot, ASCII and parity differ.",
+  "description": "Spread spectrum by direct sequence and frequency hopping, why short rise and fall times cause key clicks, and how Baudot, ASCII and parity differ.",
   "why": {
     "E8D01": { "why": "The receiver correlates with the spreading pattern, so signals **not using that algorithm are suppressed**.", "trap": "Resistance comes from the spreading pattern, not from high power or feedback.", "concept": "spread" },
     "E8D02": { "why": "**Direct sequence** uses a high-speed bit stream to shift the carrier's phase.", "trap": "Hopping changes frequency, not phase.", "concept": "spread" },

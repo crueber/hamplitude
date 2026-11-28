@@ -1,6 +1,7 @@
 {
   "title": "Bands, modes and power limits",
   "blurb": "Where Technicians may use voice, CW and digital modes, how to find a band from a frequency, and the power limits.",
+  "description": "Technician bands and power: 10 m voice from 28.300 to 28.500 MHz, 200 W PEP on the HF segments, and 1500 W PEP above 30 MHz.",
   "why": {
     "T1B01": { "why": "Technician voice on 10 m is **28.300 to 28.500 MHz**. Lower is CW and digital only.", "trap": "28.500 and up is beyond Technician privileges.", "concept": "ten" },
     "T1B02": { "why": "**Any** Technician or higher may contact the ISS on VHF. No NASA approval is needed.", "concept": "bands" },

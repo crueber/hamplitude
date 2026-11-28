@@ -1,6 +1,7 @@
 {
   "title": "Power supplies and regulators",
   "blurb": "Explain how linear and switching regulators hold voltage steady, read Figure E7-2, and calculate battery time and regulator heat.",
+  "description": "Power supplies: a linear regulator varies a pass transistor and a switchmode one varies duty cycle, Zener references, and series versus shunt regulators.",
   "why": {
     "E7D01": { "why": "A linear regulator **varies the conduction of a control element** (pass transistor) to hold the output voltage constant.", "trap": "Duty-cycle control is a switching regulator; linear ones always keep the pass transistor.", "concept": "linear" },
     "E7D02": { "why": "A switchmode regulator turns the input on and off and **varies the duty cycle of the pulses going into a filter**.", "trap": "Varying a pass element's conductivity is linear regulation.", "concept": "switchmode" },

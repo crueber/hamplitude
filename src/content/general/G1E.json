@@ -1,6 +1,7 @@
 {
   "title": "Third party, repeaters and ITU regions",
   "blurb": "Third-party limits, 10 m repeaters, interference duties, ITU regions, and automatic digital stations.",
+  "description": "Third-party traffic, 10 m repeaters and ITU regions: the Americas are Region 2, spread spectrum is capped at 10 W PEP, and who may control what.",
   "why": {
     "G1E01": { "why": "A third party whose license was **revoked and not reinstated** is disqualified. Citizenship and language do not matter.", "concept": "third-party" },
     "G1E02": { "why": "The 10 m repeater transmits on HF, so its control operator needs **General or higher**.", "trap": "The Technician's input on 2 m is not the issue; the 10 m output is.", "concept": "repeater" },

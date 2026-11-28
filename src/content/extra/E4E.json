@@ -1,6 +1,7 @@
 {
   "title": "Noise, interference and grounding",
   "blurb": "Identify noise sources by their signature, choose blankers, notch filters and chokes, and place surge protectors on a single point ground.",
+  "description": "Noise and interference: identify noise by its signature, why an automatic notch filter also removes CW, ferrite chokes on alternator leads, and blankers.",
   "why": {
     "E4E01": { "why": "An ANF removes steady tones, and a **CW signal is a steady tone** too, so it removes the **CW signal as well**.", "trap": "Ringing and overload aren't the ANF's CW problem.", "concept": "dsp" },
     "E4E02": { "why": "DSP noise reduction can reduce **white noise, ignition noise and power line noise**: all of them.", "concept": "dsp" },

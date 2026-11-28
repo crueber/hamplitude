@@ -1,6 +1,7 @@
 {
   "title": "Resonance and Q",
   "blurb": "Find a circuit's resonant frequency, say what series and parallel circuits do there, and use Q to get bandwidth.",
+  "description": "Resonance and Q: f₀ = 1 ÷ (2π√LC), a series circuit is at minimum impedance and a parallel one at maximum, and bandwidth equals f₀ ÷ Q.",
   "why": {
     "E5A01": { "why": "At resonance XL and XC are equal and cancel, so only R limits current. Each reactance's voltage is **Q** times the source voltage, which can be far larger.", "trap": "Low Q gives little voltage gain. Capacitance or resistance alone do not multiply voltage.", "concept": "q" },
     "E5A02": { "why": "f₀ = 1 ÷ (2π√(LC)) = 1 ÷ (2π × 4.472×10⁻⁸) = **3.56 MHz**. R plays no part.", "trap": "22.36 is 1 ÷ √(LC), which is in rad/s. Divide by 2π for hertz.", "concept": "f0" },

@@ -1,6 +1,7 @@
 {
   "title": "Rectangular, polar and phasors",
   "blurb": "Plot impedances in rectangular form, convert to polar, and read phasor diagrams and the E5-1 figure.",
+  "description": "Rectangular and polar impedance: 50 - j25 is 50 ohms with 25 ohms of capacitive reactance, a pure inductor sits at +90 degrees, and phasor diagrams.",
   "why": {
     "E5C01": { "why": "Capacitive reactance is negative j and there is no resistance: **0 − j100**.", "trap": "+j is inductive; the real part (first number) is resistance.", "concept": "rect" },
     "E5C02": { "why": "Polar form gives a **magnitude and a phase angle**, e.g. 50 Ω ∠30°.", "trap": "R and X, or real and imaginary parts, describe rectangular form.", "concept": "polar" },

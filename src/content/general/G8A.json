@@ -1,6 +1,7 @@
 {
   "title": "Modulation, overmodulation and link budgets",
   "blurb": "Tell AM, FM, PM, SSB and digital modulation apart, see what overmodulation does, and work out a link budget and margin.",
+  "description": "AM, FM, PM, SSB and digital modulation compared, why overmodulation widens a signal, FT8 as 8-tone FSK, and how to work out a link budget.",
   "why": {
     "G8A01": { "why": "Direct binary FSK feeds the digital signal **straight to the oscillator**, changing its frequency, with no audio tone in between.", "trap": "Keying an FM rig with a tone is audio FSK, not direct.", "concept": "digital-mod" },
     "G8A02": { "why": "Changing the carrier's phase angle to carry information is **phase modulation**.", "concept": "mod-types" },

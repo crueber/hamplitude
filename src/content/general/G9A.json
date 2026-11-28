@@ -1,6 +1,7 @@
 {
   "title": "Feed line impedance, loss and SWR",
   "blurb": "Work out SWR from load and line impedance, and explain how line loss and tuners change what you measure.",
+  "description": "Feed line impedance, loss and SWR: window line is about 450 ohms, SWR is the larger impedance over the smaller, so 200 ohms on 50 ohm line is 4:1.",
   "why": {
     "G9A01": { "why": "Z₀ comes from conductor **spacing and radius**. Length and frequency don't change it.", "trap": "Length changes loss, not impedance.", "concept": "z0" },
     "G9A02": { "why": "Reflected power makes extra trips along the line, so a **high SWR increases loss** in a lossy line.", "trap": "Loss and SWR are linked, not independent.", "concept": "line-swr" },

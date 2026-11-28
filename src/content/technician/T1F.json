@@ -1,6 +1,7 @@
 {
   "title": "ID, repeaters and third-party rules",
   "blurb": "When to give your call sign, who's responsible for a repeater's output, and the rules for talking on behalf of others.",
+  "description": "Station ID and third-party rules: give your call sign every 10 minutes and at the end, in English on phone; a club license needs four members.",
   "why": {
     "T1F01": { "why": "Your station and records must be open to an FCC representative **at any time on request**.", "trap": "No waiting period, written notice or warrant is required.", "concept": "inspection" },
     "T1F02": { "why": "A tactical call isn't a call sign. You still give your own call **every 10 minutes and at the end**.", "concept": "id" },

@@ -1,6 +1,7 @@
 {
   "title": "Offsets, calling and band plans",
   "blurb": "Know the common repeater offsets, the simplex calling frequency, and how to call and answer other stations.",
+  "description": "Repeater offsets and calling: 600 kHz on 2 m, 5 MHz on 70 cm, 146.520 MHz for 2 m FM simplex, and how to call CQ and answer a call.",
   "why": {
     "T2A01": { "why": "On 2 meters, a repeater's input sits **600 kHz** above or below its output.", "trap": "5 MHz is the 70 cm offset.", "concept": "offset" },
     "T2A02": { "why": "**146.520 MHz** is the 2 m national FM simplex calling frequency.", "trap": "446.000 MHz is the 70 cm equivalent, not 2 m.", "concept": "simplex" },

@@ -1,6 +1,7 @@
 {
   "title": "Digital logic and flip-flops",
   "blurb": "Read truth tables for logic gates, and explain how flip-flops and counters divide a frequency.",
+  "description": "Digital logic: truth tables, flip-flops as bistable memory, why each flip-flop divides by 2 so four of them divide by 16, and astable versus monostable.",
   "why": {
     "E7A01": { "why": "**Bistable** means two stable states. A flip-flop holds either one until triggered. Gates have no memory.", "trap": "AND and OR gates only follow their current inputs; they hold nothing.", "concept": "flipflop" },
     "E7A02": { "why": "A decade counter counts to 10 and wraps: **1 output pulse per 10 input pulses**. Display decoding is a separate job.", "trap": "Decoding a number for a seven-segment display is a decoder, not a counter.", "concept": "decade" },

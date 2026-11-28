@@ -1,6 +1,7 @@
 {
   "title": "Batteries, diodes, transistors and tubes",
   "blurb": "Explain what limits real components: battery resistance, diode thresholds, parasitic L and C, transistor regions and tube grids.",
+  "description": "Real components: don't drain a 12 V lead-acid below about 10.5 V, silicon diodes conduct at about 0.7 V and germanium at 0.3 V, plus tube grids.",
   "why": {
     "G6A01": { "why": "Draining a 12 V lead-acid battery below about **10.5 V** shortens its life.", "trap": "Nominal 12 V is the starting point, not the floor. Lower values over-discharge it.", "concept": "battery" },
     "G6A02": { "why": "Less internal resistance means less voltage lost inside, so the battery can supply a **high discharge current**.", "trap": "Internal resistance doesn't set the battery's voltage.", "concept": "battery" },

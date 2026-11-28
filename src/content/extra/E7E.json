@@ -1,6 +1,7 @@
 {
   "title": "Modulators, mixers and detectors",
   "blurb": "Explain how FM, SSB and mixing signals are produced and detected, and why pre-emphasis and de-emphasis are used.",
+  "description": "Modulators and detectors: reactance modulation for FM and PM, a discriminator to detect FM, a balanced modulator for SSB, and pre-emphasis and de-emphasis.",
   "why": {
     "E7E01": { "why": "Frequency is changed at the oscillator, so use **reactance modulation of a local oscillator**.", "trap": "Balanced modulation cancels a carrier (DSB and SSB). It doesn't vary frequency.", "concept": "reactance" },
     "E7E02": { "why": "Varying a **capacitance** (reactance) in the oscillator makes its frequency or phase follow the audio: **PM or FM**.", "trap": "Varying a resistance or inductance isn't how a reactance modulator works, and AM isn't its product.", "concept": "reactance" },

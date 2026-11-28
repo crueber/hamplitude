@@ -1,6 +1,7 @@
 {
   "title": "Fourier, RMS, PEP and converters",
   "blurb": "How a square wave is built from sine waves, what RMS and PEP measure, and how analog-to-digital conversion works.",
+  "description": "Fourier analysis builds a square wave from a sine plus odd harmonics; true-RMS meters, unprocessed SSB peaks about 2.5 times average power, and ADCs.",
   "why": {
     "E8A01": { "why": "**Fourier analysis** decomposes a signal into sine waves. A square wave comes out as a sine plus odd harmonics.", "trap": "The other analyses are general maths, not the sine-wave breakdown of a waveform.", "concept": "fourier" },
     "E8A02": { "why": "**Successive approximation** is a real ADC method: it homes in on the input value one bit at a time.", "concept": "converters" },

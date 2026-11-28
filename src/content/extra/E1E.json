@@ -1,6 +1,7 @@
 {
   "title": "The Volunteer Examiner program",
   "blurb": "Explain what VECs and VEs do, how an exam session is run, and what happens to the paperwork afterward.",
+  "description": "The Volunteer Examiner program: what VECs and VEs do, why three VEs certify a pass, who VEs may not examine, and where the paperwork goes.",
   "why": {
     "E1E01": { "why": "VEs and VECs may be reimbursed for expenses of **preparing, processing, administering and coordinating** an exam, not for teaching or training materials.", "concept": "structure" },
     "E1E02": { "why": "The **VECs** maintain the question pools for all US exams.", "concept": "structure" },

@@ -1,6 +1,7 @@
 {
   "title": "Interference and distortion",
   "blurb": "Explain what causes overload, interference, distorted audio and low power, and the first fix to try for each.",
+  "description": "Overload, RFI and distorted audio: why high SWR folds back a radio's power, where a band-reject filter goes, and how a ferrite choke helps.",
   "why": {
     "T7B01": { "why": "Louder or closer to the mic means a wider frequency swing. Talking **farther away** brings deviation back down.", "trap": "Talking louder makes it worse. Power level and cooling have nothing to do with deviation.", "concept": "distortion" },
     "T7B02": { "why": "A broadcast receiver's front end **can't reject strong signals outside its band**, so your signal gets in anyway.", "trap": "The ham transmitter's audio settings don't affect what a neighbor's receiver does with your carrier.", "concept": "overload" },

@@ -1,6 +1,7 @@
 {
   "title": "Operational amplifiers",
   "blurb": "Read the inverting op-amp in figure E7-3, calculate its gain and output, and explain what real op-amps do differently from ideal ones.",
+  "description": "Operational amplifiers: very high input and very low output impedance, inverting gain as RF ÷ R1 (470 over 10 is -47), offset voltage and gain-bandwidth.",
   "why": {
     "E7G01": { "why": "The output stage is built to drive a load: output impedance is **very low**.", "trap": "Very high is the input side, where the op-amp must not load the source.", "concept": "opamp-what" },
     "E7G02": { "why": "A capacitor's reactance falls with frequency, so across RF it cuts the feedback resistance and the gain at high frequencies: **low-pass**.", "trap": "High-pass needs the capacitor in series with the input.", "concept": "opamp-filter" },

@@ -1,6 +1,7 @@
 {
   "title": "Antennas, beacons and permitted signals",
   "blurb": "Antenna height and PRB-1 limits, beacon rules, what you may transmit or relay, and who sets good practice.",
+  "description": "Antenna and beacon rules: structures up to 200 ft need no FAA notice unless near a public airport, PRB-1, and the 100 W PEP limit for beacons.",
   "why": {
     "G1B01": { "why": "Structures up to **200 ft** (not near a public use airport) need no FAA notice or FCC registration.", "trap": "50 and 100 ft are far too low; 250 ft is over the line.", "concept": "antennas" },
     "G1B02": { "why": "Only **one beacon per band per location** is required by rule. No beacon coordinator, and no posting requirement.", "trap": "The coordination and publication options are made up.", "concept": "beacons" },

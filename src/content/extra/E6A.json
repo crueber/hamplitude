@@ -1,6 +1,7 @@
 {
   "title": "Semiconductors, BJTs and FETs",
   "blurb": "Explain doping and the PN junction, bipolar beta, and how FETs differ, and read the six FET symbols.",
+  "description": "Semiconductors: donor impurities make N-type and acceptors P-type, reverse bias widens the depletion region, beta is current gain, and FET symbols.",
   "why": {
     "E6A01": { "why": "GaAs electrons move fast, so it suits **microwave** circuits.", "trap": "Rectifiers and low-frequency work are silicon's territory.", "concept": "gaas" },
     "E6A02": { "why": "**Donor** impurities add free electrons, making N-type (negative carriers).", "trap": "P-type has an excess of holes, not electrons.", "concept": "doping" },

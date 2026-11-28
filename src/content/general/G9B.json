@@ -1,6 +1,7 @@
 {
   "title": "Dipoles, verticals and wire antennas",
   "blurb": "Size a dipole or monopole from frequency, and explain how pattern and feed impedance change with height, feed position and radials.",
+  "description": "Dipoles, verticals and wire antennas: a half-wave dipole is about 468 ÷ MHz feet, so 33 ft at 14.25 MHz, and how height changes feed impedance.",
   "why": {
     "G9B01": { "why": "With no feed line to contain RF, **station equipment may carry significant RF current**.", "trap": "A random wire has no required length, polarization or band preference.", "concept": "random-wire" },
     "G9B02": { "why": "**Sloping the radials downward** raises the low feed impedance of a flat ground plane toward 50 Ω.", "trap": "Sloping them up or coiling them doesn't help.", "concept": "vertical" },

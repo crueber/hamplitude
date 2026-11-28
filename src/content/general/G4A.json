@@ -1,6 +1,7 @@
 {
   "title": "Station controls and receive tools",
   "blurb": "Choose the right receiver control for each interference problem and explain what ALC, tuner, TUNE and LOAD do.",
+  "description": "Receiver and transmitter controls: when to use a notch filter, noise blanker, attenuator or split VFOs, and what ALC, TUNE and LOAD do.",
   "why": {
     "G4A01": { "why": "A notch filter cuts a **narrow slot** in the passband, removing a steady carrier while leaving the voice around it.", "trap": "Splatter from adjacent signals and impulse noise need different tools (filters, blanker).", "concept": "rx-tools" },
     "G4A02": { "why": "Switching to the opposite sideband moves the passband to the other side of the signal, so a **nearby interferer may fall outside** it.", "trap": "It doesn't remove impulse noise or add capacity.", "concept": "rx-tools" },

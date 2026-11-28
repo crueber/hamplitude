@@ -1,6 +1,7 @@
 {
   "title": "Television: fast-scan and SSTV",
   "blurb": "Explain NTSC interlace, vestigial sideband, digital TV coding rates and how SSTV encodes brightness, color and line starts.",
+  "description": "Amateur television: an NTSC frame is 525 lines, interlace and vestigial sideband, a 3/4 coding rate is 25% FEC, and how SSTV tones encode brightness.",
   "why": {
     "E2B01": { "why": "Rate 3/4 means **3 of every 4 bits are data** and the other 1 in 4 (**25%**) is forward error correction.", "trap": "It is not compression and not a guard interval.", "concept": "digital-tv" },
     "E2B02": { "why": "An NTSC frame is **525 lines**. The 30 and 60 numbers are frames and fields per second.", "trap": "1080 is an HD format, not NTSC.", "concept": "interlace" },

@@ -1,6 +1,7 @@
 {
   "title": "Oscilloscopes, analyzers and counters",
   "blurb": "Explain what scopes, spectrum analyzers, antenna analyzers and prescalers show, and how aliasing and probes affect readings.",
+  "description": "Oscilloscopes, spectrum analyzers and counters: what each displays, why the sampling rate limits a digital scope, aliasing, and compensating a probe.",
   "why": {
     "E4A01": { "why": "The scope only has its **samples**: the converter's **sampling rate** sets the highest frequency it can show accurately.", "trap": "Q of the circuit and reference frequency don't limit the display.", "concept": "scope-sampling" },
     "E4A02": { "why": "A spectrum analyzer plots **amplitude** (vertical) against **frequency** (horizontal).", "trap": "Amplitude against time is an oscilloscope. SWR is an antenna analyzer's job.", "concept": "spectrum" },

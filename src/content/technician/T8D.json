@@ -1,6 +1,7 @@
 {
   "title": "Digital modes, packet and APRS",
   "blurb": "What CW, PSK, packet, APRS, FT8 and DMR are, and how checksums and ARQ keep data correct.",
+  "description": "Digital modes for the Technician exam: FT8 for weak signals, APRS for positions, DMR's two voice slots on a 12.5 kHz channel, and ARQ retries.",
   "why": {
     "T8D01": { "why": "Packet radio, IEEE 802.11 Wi-Fi and FT8 all send data digitally, so **all of them** are digital modes.", "concept": "modes" },
     "T8D02": { "why": "FT8 is a digital mode built to work at **low signal-to-noise**, so it gets through when voice can't.", "trap": "It isn't voice, TV or a repeater feature.", "concept": "modes" },

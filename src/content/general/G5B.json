@@ -1,6 +1,7 @@
 {
   "title": "Decibels, power and RMS",
   "blurb": "Use dB ratios, add parallel currents, calculate power, and convert between RMS, peak and peak-to-peak to find PEP.",
+  "description": "Decibels, power and RMS: doubling power is about 3 dB, RMS is 0.707 times peak, and PEP equals average power for an unmodulated carrier.",
   "why": {
     "G5B01": { "why": "Doubling power is **about 3 dB** (halving is −3 dB).", "trap": "6 dB is two doublings, ×4 in power. 9 dB is ×8.", "concept": "decibels" },
     "G5B02": { "why": "Each branch has the same voltage and draws its own current, so total current is the **sum of the branch currents**.", "trap": "Adding branches lowers total resistance, so total current rises.", "concept": "parallel-current" },

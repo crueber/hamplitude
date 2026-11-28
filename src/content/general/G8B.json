@@ -1,6 +1,7 @@
 {
   "title": "Mixers, deviation and intermodulation",
   "blurb": "Explain what a mixer outputs, work out FM bandwidth and deviation, and know why odd-order intermodulation products land closest.",
+  "description": "Mixers output the sum and difference frequencies; FM bandwidth is 2 × (deviation + audio), so 5 kHz and 3 kHz give 16 kHz. Plus odd-order IMD.",
   "why": {
     "G8B01": { "why": "Tuning the **local oscillator** changes which input frequency lands on the fixed IF.", "trap": "The BFO is for SSB/CW detection and the image is a problem, not a control.", "concept": "mixer" },
     "G8B02": { "why": "A signal one IF on the far side of the LO also mixes to the IF: the **image**, twice the IF from the wanted signal.", "concept": "mixer" },

@@ -1,6 +1,7 @@
 {
   "title": "Control operators and control points",
   "blurb": "Who must control a station, whose license sets the privileges, and the difference between local, remote and automatic control.",
+  "description": "Control operators and control points: privileges follow the license of whoever is at the mic, and a repeater runs under automatic control.",
   "why": {
     "T1E01": { "why": "Every transmission needs a control operator. Even a repeater has one designated, so the answer is **never**.", "trap": "Automatic control doesn't mean no control operator.", "concept": "control-operator" },
     "T1E02": { "why": "For satellite work, **any amateur allowed on the uplink frequency** can be the control operator. No special rating or membership.", "concept": "privileges" },

@@ -3,7 +3,7 @@
  * requires editing shared code. Per group (e.g. T5A):
  *
  *   src/content/<license>/T5A.mdx    lesson body (lazy-loaded)
- *   src/content/<license>/T5A.json   { title, blurb, why: { "<QID>": Why } }  (eager)
+ *   src/content/<license>/T5A.json   { title, blurb, description, why: { "<QID>": Why } }  (eager)
  */
 import type { ComponentType } from 'react'
 
@@ -21,6 +21,8 @@ export interface GroupContent {
   title: string
   /** One sentence: what you'll be able to explain after this lesson */
   blurb: string
+  /** Hand-written meta description for search results: ~120-155 characters, ends cleanly, with a concrete fact. */
+  description?: string
   why: Record<string, Why>
 }
 

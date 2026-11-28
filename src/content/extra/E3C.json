@@ -1,6 +1,7 @@
 {
   "title": "Space weather and propagation prediction",
   "blurb": "Explain the radio horizon, how flares and CMEs disturb HF, and what Bz, K and A indices, VOACAP and reporting networks tell you.",
+  "description": "Space weather and prediction: flare classes A to X each 10 times stronger, storms rated G1 to G5, Bz and the K and A indices, and VOACAP forecasts.",
   "why": {
     "E3C01": { "why": "Flares send X-rays that arrive at light speed, causing **short-term radio blackouts**.", "trap": "CMEs arrive later and drive storms, not the immediate blackout.", "concept": "flare-cme" },
     "E3C02": { "why": "A rising A or K index means **increasing disturbance** of the geomagnetic field.", "concept": "storm-indices" },

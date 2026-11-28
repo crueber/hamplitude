@@ -1,6 +1,7 @@
 {
   "title": "Speech processors, S meters, band edges",
   "blurb": "Explain what a speech processor changes, how S-meter steps relate to power, and where your SSB signal sits near a band edge.",
+  "description": "Speech processors and S meters: compression raises average power, one S unit is about 6 dB or 4 times the power, and SSB clearance at band edges.",
   "why": {
     "G4D01": { "why": "Compression raises the average voice level, so the signal sounds **louder** without raising the peak limit.", "trap": "It doesn't add bass, limit bandwidth or prevent distortion.", "concept": "processor" },
     "G4D02": { "why": "The peak is capped by the transmitter, but compressing raises the quieter parts, so **average power rises**.", "trap": "Processing doesn't lift the peak. Too much makes intermodulation worse.", "concept": "processor" },

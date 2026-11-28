@@ -1,6 +1,7 @@
 {
   "title": "Radios, mixers and modulation",
   "blurb": "Explain what a transceiver, mixer, oscillator, VFO and transverter do, and the difference between sensitivity and selectivity.",
+  "description": "What a transceiver, mixer, oscillator, VFO and transverter do, how modulation puts speech on a carrier, and sensitivity versus selectivity.",
   "why": {
     "T7A01": { "why": "**Sensitivity** is how weak a signal the receiver can still detect.", "trap": "Selectivity is about separating signals, not detecting faint ones. RF gain is just a control.", "concept": "sens-sel" },
     "T7A02": { "why": "**Trans**mitter + re**ceiver** = **transceiver**: both in one box.", "trap": "Matching to 50 ohms is a tuner's job; converting bands is a transverter's.", "concept": "transceiver" },

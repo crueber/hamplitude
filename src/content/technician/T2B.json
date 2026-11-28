@@ -1,6 +1,7 @@
 {
   "title": "Repeater operation, tones and Q signals",
   "blurb": "Use reverse, CTCSS, DTMF and DMR settings, solve common access problems, and read the common Q signals.",
+  "description": "Repeater access and Q signals: why a wrong offset, CTCSS tone or DCS code blocks you, how DMR talkgroups and color codes work, and QRM and QSY.",
   "why": {
     "T2B01": { "why": "**Reverse** swaps receive and transmit so you can **listen on the repeater's input**.", "trap": "It doesn't change power or listen to the output, which is normal.", "concept": "reverse" },
     "T2B02": { "why": "**CTCSS** is a sub-audible tone sent with voice to open a receiver's squelch.", "trap": "DTMF is audible touch-tone, and tone burst is a short audible tone.", "concept": "tones" },

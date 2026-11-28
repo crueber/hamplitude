@@ -1,6 +1,7 @@
 {
   "title": "Feed lines, SWR and connectors",
   "blurb": "Why coax loses more at higher frequencies, what SWR and a tuner really do, and which connector fits where.",
+  "description": "Feed lines and connectors: amateur coax is 50 ohms, its loss rises with frequency, RG-213 beats RG-58, and above 400 MHz you use a Type N.",
   "why": {
     "T9B01": { "why": "Outdoor connectors need weather protection. **Tape all of them**: PL-259, BNC and Type N.", "concept": "connectors" },
     "T9B02": { "why": "Amateur coax is almost always **50 ohms**.", "trap": "600 ohms is open-wire line, not coax.", "concept": "coax" },

@@ -1,6 +1,7 @@
 {
   "title": "RF exposure, grounding and tower safety",
   "blurb": "Explain what limits protect the public, who is responsible, why microwave beams matter, and how to tie off and ground safely.",
+  "description": "RF exposure and tower safety for the Extra exam: limits are tightest at 30 to 300 MHz, the 5 percent rule for shared sites, and 100% tie-off.",
   "why": {
     "E0A01": { "why": "A ground rod gives lightning's charge a path into the earth: **lightning charge dissipation**.", "trap": "Static on power lines, RF between equipment and the breaker panel are not its primary job.", "concept": "ground-rod" },
     "E0A02": { "why": "Neighbors are the general public, so you meet the **uncontrolled** limits. The term is maximum permissible **exposure**.", "trap": "Controlled limits apply to aware, trained people. \"Emission\" is the wrong word.", "concept": "uncontrolled" },

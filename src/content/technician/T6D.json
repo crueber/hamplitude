@@ -1,6 +1,7 @@
 {
   "title": "Component functions and resonance",
   "blurb": "Say what rectifiers, relays, regulators, transformers, meters and ICs do, and what makes a circuit resonant.",
+  "description": "What rectifiers, relays, regulators, transformers, meters and ICs do in a circuit, and why an inductor plus a capacitor makes a resonant circuit.",
   "why": {
     "T6D01": { "why": "A **rectifier** (diodes) passes current in one direction only, turning AC into varying DC.", "trap": "A transformer changes AC voltage but leaves it AC.", "concept": "power-supply" },
     "T6D02": { "why": "A **relay** uses a coil's magnetic pull to work a switch: an electrically-controlled switch.", "trap": "Amplifiers and pass transistors are not switches moved by a coil.", "concept": "relay" },

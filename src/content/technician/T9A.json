@@ -1,6 +1,7 @@
 {
   "title": "Antennas: gain, length and patterns",
   "blurb": "How polarization, length, loading and gain decide where an antenna sends your signal.",
+  "description": "How polarization, length, loading and gain decide where an antenna sends your signal; a 2 m quarter-wave whip is roughly 19 inches long.",
   "why": {
     "T9A01": { "why": "A beam antenna **concentrates** its signal in one direction, so it is strong that way and weak elsewhere.", "trap": "\"Beam\" is about the signal, not the metal it is made of.", "concept": "gain" },
     "T9A02": { "why": "Loading adds **inductance** (coils) so a physically short element behaves like a longer one.", "trap": "A resistor wastes power as heat and does not lengthen anything.", "concept": "short" },

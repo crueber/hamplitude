@@ -1,6 +1,7 @@
 {
   "title": "Direction finding, contests and linking",
   "blurb": "How to hunt a transmitter, run a contest exchange, read a grid locator, and link repeaters over the internet.",
+  "description": "Direction finding, contests and linking: a hidden-transmitter hunt needs a directional antenna, plus grid locators like FN31, IRLP and EchoLink.",
   "why": {
     "T8C01": { "why": "**Radio direction finding** locates where a signal comes from, including noise sources and jamming.", "trap": "Radar-style techniques and echolocation aren't how ham signals are found.", "concept": "rdf" },
     "T8C02": { "why": "A hidden transmitter hunt needs a **directional antenna** to find the direction of the signal. SWR and power meters can't.", "concept": "rdf" },

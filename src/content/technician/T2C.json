@@ -1,6 +1,7 @@
 {
   "title": "Emergencies, nets and message handling",
   "blurb": "Know which rules apply in emergencies, how ARES and RACES differ, how nets run, and how formal messages are structured.",
+  "description": "Emergency and net operation: FCC rules always apply, how ARES and RACES differ, what net control does, and how a radiogram's check counts words.",
   "why": {
     "T2C01": { "why": "**FCC rules always apply**, whether you're in ARES, RACES or following a FEMA plan.", "concept": "rules-always" },
     "T2C02": { "why": "The NCS **calls the net to order and directs stations** checking in. It doesn't set the schedule or check licenses.", "concept": "nets" },

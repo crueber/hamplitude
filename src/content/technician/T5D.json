@@ -1,6 +1,7 @@
 {
   "title": "Ohm's law and circuits",
   "blurb": "Find any of voltage, current or resistance from the other two, and know what series and parallel circuits share.",
+  "description": "Ohm's law three ways: I = E ÷ R, E = I × R and R = E ÷ I, with worked exam examples, plus what series and parallel circuits share.",
   "why": {
     "T5D01": { "why": "Current is voltage divided by resistance: **I = E ÷ R**. More resistance, less current.", "trap": "Squared terms (E², I²) belong to power formulas, not Ohm's law.", "concept": "ohm" },
     "T5D02": { "why": "Voltage is current times resistance: **E = I × R**.", "trap": "Dividing gives current or resistance, never voltage.", "concept": "ohm" },

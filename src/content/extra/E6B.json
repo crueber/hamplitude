@@ -1,6 +1,7 @@
 {
   "title": "Diodes and their uses",
   "blurb": "Choose the right diode (Zener, Schottky, PIN, varactor, LED) for a job and recognize each symbol.",
+  "description": "Choosing a diode: a Zener holds a reference voltage, a Schottky drops less voltage, a varactor's capacitance follows its bias, and PIN diodes switch RF.",
   "why": {
     "E6B01": { "why": "In reverse breakdown a Zener holds a **constant voltage** while its current changes: a reference.", "trap": "Constant current and negative resistance belong to other devices.", "concept": "forward-drop" },
     "E6B02": { "why": "A Schottky's **lower forward drop** wastes less power as heat in a rectifier.", "trap": "The advantage is low forward drop, not breakdown voltage or carrier retention.", "concept": "schottky" },

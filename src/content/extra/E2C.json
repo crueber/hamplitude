@@ -1,6 +1,7 @@
 {
   "title": "Contesting, DX, logs and remote operation",
   "blurb": "Explain split DX operating, where contests happen, what ADIF, Cabrillo and LoTW do, remote-operation identification, latency and mesh networks.",
+  "description": "Contesting, DX and logs: why split operation helps, ADIF for log exchange, Cabrillo for contest logs, LoTW, and identifying a remote station.",
   "why": {
     "E2C01": { "why": "With the remote transmitter in the US you ID normally: **no additional indicator** is required.", "trap": "State, district and section suffixes are not required here.", "concept": "remote" },
     "E2C02": { "why": "**ADIF** is the standard file format for exchanging amateur log data between programs.", "trap": "Cabrillo is for contest submissions, not general log exchange.", "concept": "logs" },

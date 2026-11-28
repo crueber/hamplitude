@@ -1,6 +1,7 @@
 {
   "title": "Mobile, portable and solar stations",
   "blurb": "Explain what mobile antenna parts do, how to power and quiet a mobile radio, and how solar panels charge a battery safely.",
+  "description": "Mobile, portable and solar stations: capacitance hats and short HF antennas, fused heavy wire to the battery, and why a solar panel needs a diode.",
   "why": {
     "G4E01": { "why": "A capacitance hat **electrically lengthens** a physically short antenna, helping it resonate on a lower frequency.", "trap": "It doesn't reduce radiation resistance or lower the radiation angle.", "concept": "short-antenna" },
     "G4E02": { "why": "A rounded ball spreads the field at the tip, so **RF voltage discharge** from a sharp end is reduced.", "trap": "It limits RF discharge. It isn't a crash guard and doesn't narrow bandwidth.", "concept": "short-antenna" },

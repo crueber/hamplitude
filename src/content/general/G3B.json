@@ -1,6 +1,7 @@
 {
   "title": "MUF, LUF and propagation paths",
   "blurb": "Explain the usable frequency window between LUF and MUF, how far one hop reaches, and short versus long path.",
+  "description": "The usable window between LUF and MUF: one F2 hop reaches about 2,500 miles and an E hop about 1,200, plus short path versus long path.",
   "why": {
     "G3B01": { "why": "Short and long path signals both arrive, and the long one is later, so you hear a **slightly delayed echo**.", "trap": "Nothing makes it fade on a fixed 10-second cycle or add 3 dB.", "concept": "paths" },
     "G3B02": { "why": "The MUF depends on sunlight (time, season), solar radiation, disturbances and the **specific path**: all of them.", "concept": "muf-factors" },

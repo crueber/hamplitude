@@ -1,6 +1,7 @@
 {
   "title": "Power limits and 60 m rules",
   "blurb": "The 1500 W and 200 W power limits and how they are measured, 60 m bandwidth and records, and new digital protocols.",
+  "description": "General power limits: 1500 W PEP on most bands but 200 W PEP on 30 m, 60 m signals no wider than 2.8 kHz, and documenting new digital protocols.",
   "why": {
     "G1C01": { "why": "10.140 MHz is on **30 m**, where the limit is **200 W PEP** output.", "trap": "1500 W applies to most other bands, not 30 m.", "concept": "power" },
     "G1C02": { "why": "12 m has the standard **1500 W PEP** limit.", "trap": "200 W is the 30 m exception.", "concept": "power" },

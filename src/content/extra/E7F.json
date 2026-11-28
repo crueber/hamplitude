@@ -1,6 +1,7 @@
 {
   "title": "Software defined radio and DSP",
   "blurb": "Explain how an SDR samples and processes signals: Nyquist, aliasing, bit depth, FIR filters, SSB generation and the FFT.",
+  "description": "How an SDR works: direct sampling, Nyquist (2 kHz audio needs at least 4 kS/s), bit depth, FIR and adaptive filters, Hilbert-transform SSB and the FFT.",
   "why": {
     "E7F01": { "why": "**Direct sampling** digitizes the incoming RF with an ADC **without mixing** it with a local oscillator first.", "trap": "I and Q generation and switching mixers are other receiver styles.", "concept": "sdr-chain" },
     "E7F02": { "why": "An **adaptive filter** learns the noise and removes it from received SSB audio.", "trap": "A crystal-lattice filter is analog. A Hilbert filter is used to generate SSB.", "concept": "dsp-jobs" },

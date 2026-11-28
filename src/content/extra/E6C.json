@@ -1,6 +1,7 @@
 {
   "title": "Digital ICs and logic gates",
   "blurb": "Explain comparators, gate symbols, logic families, tri-state outputs, pull resistors and how FPGAs are designed.",
+  "description": "Digital ICs: comparators with hysteresis, tri-state outputs of 0, 1 and high impedance, why CMOS draws the least power, and pull-up resistors.",
   "why": {
     "E6C01": { "why": "Hysteresis uses separate rising and falling thresholds, so **noise can't make the output chatter**.", "trap": "It adds stability, not sensitivity.", "concept": "comparator" },
     "E6C02": { "why": "A comparator's whole job: when the input crosses the threshold, the **output changes state**.", "trap": "The output is a logic level, not a copy of the reference.", "concept": "comparator" },

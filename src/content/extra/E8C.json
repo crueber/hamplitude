@@ -1,6 +1,7 @@
 {
   "title": "Digital modes, bandwidth and constellations",
   "blurb": "How QAM and constellation diagrams work, how symbol rate relates to data rate, and how bandwidth and error correction behave.",
+  "description": "Digital modulation: QAM and constellation diagrams, symbol rate versus data rate, and bandwidth rules such as CW at about 4 × WPM, so 13 WPM is 52 Hz.",
   "why": {
     "E8C01": { "why": "QAM modulates the **amplitude of two same-frequency carriers 90° apart**, giving many phase and amplitude states.", "trap": "It is not a compression or analog TV technique.", "concept": "constellation" },
     "E8C02": { "why": "A symbol is one state of the waveform. Symbol rate is **how fast the waveform changes** to convey information.", "trap": "Characters per second is a data rate, not a symbol rate.", "concept": "symbol-rate" },

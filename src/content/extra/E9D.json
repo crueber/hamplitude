@@ -1,6 +1,7 @@
 {
   "title": "Yagis, dishes and short antennas",
   "blurb": "Explain dish gain, how Yagi elements shape a beam, and why loading a short antenna lowers bandwidth and efficiency.",
+  "description": "Yagis, dishes and short antennas: doubling the frequency adds 6 dB of dish gain, why a center loading coil helps a whip, and why loading cuts bandwidth.",
   "why": {
     "E9D01": { "why": "Doubling frequency halves wavelength, so the dish doubles in wavelengths. Gain goes as that squared: ×4 = 10 log 4 = **6 dB**.", "trap": "3 dB is a doubling of power; here the gain quadruples.", "concept": "dish" },
     "E9D02": { "why": "Two Yagis on **one axis, perpendicular**, driven elements at the same boom point and fed **90° out of phase** give a rotating field: circular polarization.", "trap": "Stacking parallel Yagis only makes a more directional linear antenna.", "concept": "circular" },

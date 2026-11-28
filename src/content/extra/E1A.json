@@ -1,6 +1,7 @@
 {
   "title": "Band edges, ships and low-band power",
   "blurb": "Check that a sideband signal stays inside the band, and know the rules for 60 m, 630 m, 2200 m, vessels and forwarding.",
+  "description": "Keeping a sideband signal inside the band: USB at 14.348 MHz spills past 14.350, plus the 1 W EIRP limit on 2200 m and 5 W EIRP on 630 m.",
   "why": {
     "E1A01": { "why": "USB spreads **above** the carrier: 14.348 + 0.003 = 14.351 MHz, so the top 1 kHz is past the 14.350 edge.", "trap": "The carrier itself is inside the band; it is the sideband that spills over.", "concept": "sideband" },
     "E1A02": { "why": "LSB spreads **below** the carrier, so the carrier must be at least one signal width (**3 kHz**) above the lower edge.", "trap": "At the exact edge, the whole sideband lands outside the band.", "concept": "sideband" },

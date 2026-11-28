@@ -1,6 +1,7 @@
 {
   "title": "RF effects in components",
   "blurb": "Explain skin effect, parasitic reactance, electrical length, and the difference between real and reactive power.",
+  "description": "RF effects in components: skin effect raises resistance with frequency, short leads cut inductive reactance at VHF and up, and real versus reactive power.",
   "why": {
     "E5D01": { "why": "At RF the current flows near the surface, so less conductor carries it and **resistance increases with frequency**.", "trap": "Electron mobility and temperature coefficients are unrelated to skin effect.", "concept": "skin" },
     "E5D02": { "why": "Leads act as small inductors: their reactance (2πfL) grows with frequency. Short leads **minimise inductive reactance** at VHF and up.", "concept": "parasitics" },

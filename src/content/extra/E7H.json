@@ -1,6 +1,7 @@
 {
   "title": "Oscillators, PLLs and synthesizers",
   "blurb": "Explain how oscillators, phase-locked loops and DDS synthesizers generate frequencies, and how to keep an oscillator stable.",
+  "description": "Oscillators and synthesizers: Colpitts, Hartley and Pierce circuits, how a phase-locked loop and a DDS make frequencies, and microphonics.",
   "why": {
     "E7H01": { "why": "The three common oscillator circuits are **Colpitts, Hartley and Pierce**.", "trap": "Taft, Fenner and Beane are made up. Negative feedback doesn't oscillate.", "concept": "osc-types" },
     "E7H02": { "why": "A **microphonic** is oscillator frequency change caused by **mechanical vibration**.", "trap": "It isn't an audio chip or RF pickup on the microphone cable.", "concept": "stability" },

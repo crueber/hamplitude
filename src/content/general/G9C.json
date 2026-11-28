@@ -1,6 +1,7 @@
 {
   "title": "Yagi beams, gain and matching",
   "blurb": "Explain Yagi element roles, what raises gain and bandwidth, the dBi and dBd scales, and how hairpin and gamma matches work.",
+  "description": "Yagi beams: the reflector is longer and directors shorter than the driven element, a dipole is 2.15 dBi, and how hairpin and gamma matches work.",
   "why": {
     "G9C01": { "why": "**Larger-diameter elements** widen the SWR bandwidth. Thin elements make the match sharper and narrower.", "trap": "Closer spacing and loading coils don't widen it.", "concept": "tuning" },
     "G9C02": { "why": "The driven element is about **½ wavelength**, like a dipole.", "concept": "yagi" },

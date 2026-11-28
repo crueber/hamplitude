@@ -1,6 +1,7 @@
 {
   "title": "Multimeters and soldering",
   "blurb": "Choose and connect a voltmeter, ammeter or ohmmeter correctly, and tell good solder and joints from bad.",
+  "description": "Multimeters and soldering: a voltmeter goes in parallel and an ammeter in series, use rosin-core solder, and a cold joint looks rough and dull.",
   "why": {
     "T7D01": { "why": "Electric potential is voltage, and a **voltmeter** measures it.", "trap": "A potentiometer is a variable resistor, not a meter.", "concept": "meters" },
     "T7D02": { "why": "Voltage is measured *between* two points, so a voltmeter connects **in parallel** across the component.", "trap": "In series is how current is measured.", "concept": "meters" },

@@ -1,6 +1,7 @@
 {
   "title": "Special HF paths and ionospheric waves",
   "blurb": "Explain transequatorial, long-path, chordal-hop, sporadic-E and ground-wave propagation, and what ordinary and extraordinary waves are.",
+  "description": "Special HF paths: TEP usually spans 2,000 to 3,000 miles, plus long path, chordal hop, sporadic E near the solstices, and ground wave.",
   "why": {
     "E3B01": { "why": "TEP crosses the **geomagnetic equator** on a path perpendicular to it, usually 2,000 – 3,000 miles.", "trap": "Paths along the equator or at antipodes are not TEP.", "concept": "tep" },
     "E3B02": { "why": "TEP reaches about **5,000 miles** at most.", "concept": "tep" },

@@ -1,6 +1,7 @@
 {
   "title": "Radio operating controls",
   "blurb": "Set squelch, filters, RIT, mic gain and digital-radio settings so you can hear and be heard clearly.",
+  "description": "Radio controls: squelch, RIT, mic gain, filter bandwidth and code plugs; an SSB voice signal is about 2.4 kHz wide, so a 2400 Hz filter fits it.",
   "why": {
     "T4B01": { "why": "Past the transmitter's limit the audio peaks are flattened, giving **distorted transmitted audio**.", "trap": "Gain affects audio quality, not frequency stability or SWR.", "concept": "mic-gain" },
     "T4B02": { "why": "You enter a frequency with the **keypad or the VFO knob**.", "trap": "CTCSS and DTMF are tones, not frequency entry.", "concept": "tuning" },

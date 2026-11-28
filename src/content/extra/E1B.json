@@ -1,6 +1,7 @@
 {
   "title": "Station restrictions and special operations",
   "blurb": "Define spurious emissions and know who your station must protect, what PRB-1 requires, and how RACES works.",
+  "description": "Station restrictions: what spurious emissions are, protecting FCC monitoring facilities within 1 mile, the National Radio Quiet Zone, PRB-1 and RACES.",
   "why": {
     "E1B01": { "why": "Spurious emissions are energy **outside the necessary bandwidth** that you can reduce or remove without harming the message.", "trap": "A specific dB figure or an ID problem is not the definition.", "concept": "spurious" },
     "E1B02": { "why": "Digital voice and slow-scan TV on HF stay within about **3 kHz**, roughly one voice channel. The larger choices are too wide.", "concept": "spurious" },

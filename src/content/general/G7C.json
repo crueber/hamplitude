@@ -1,6 +1,7 @@
 {
   "title": "Transceiver design, filters and SDR",
   "blurb": "Explain how SSB is made and received, what filter terms mean, and how DDS and software-defined radios work.",
+  "description": "How SSB is made and received with a balanced modulator and product detector, filter terms like insertion loss, and how DDS and SDR work.",
   "why": {
     "G7C01": { "why": "A balanced modulator gives both sidebands. A **filter** removes one, leaving a single sideband.", "trap": "The IF and RF amplifiers only amplify. They do not select a sideband.", "concept": "ssb-chain" },
     "G7C02": { "why": "A balanced modulator mixes audio with a carrier, cancels the carrier, and outputs **double-sideband** RF.", "trap": "It makes no FM, and it does not extract audio.", "concept": "ssb-chain" },

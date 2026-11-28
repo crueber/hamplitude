@@ -1,6 +1,7 @@
 {
   "title": "Inductors, cores and crystals",
   "blurb": "Explain piezoelectricity and the crystal's equivalent circuit, how core permeability, laminations and saturation affect inductors and transformers.",
+  "description": "Crystals and cores: the piezoelectric effect, a crystal's series RLC equivalent circuit, why laminations cut eddy currents, and core saturation.",
   "why": {
     "E6D01": { "why": "Piezoelectric materials **generate a voltage when stressed** and **flex when a voltage is applied**.", "trap": "It is a mechanical-electrical effect, not about light or EM waves.", "concept": "piezo" },
     "E6D02": { "why": "A crystal behaves as a **series RLC** (its mechanical resonance) with a **shunt capacitance** for the electrodes and strays.", "trap": "Pure parallel RLC models miss the series resonance.", "concept": "piezo" },

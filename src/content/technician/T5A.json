@@ -1,6 +1,7 @@
 {
   "title": "Current, voltage and AC/DC",
   "blurb": "Name the unit for each electrical quantity, tell conductors from insulators, and explain what makes AC different from DC.",
+  "description": "Electrical units and AC versus DC: current in amperes, power in watts, frequency in hertz, and which materials conduct and which insulate.",
   "why": {
     "T5A01": { "why": "Current is the flow of charge, measured in **amperes**.", "trap": "Volts measure the push, ohms the opposition, watts the power.", "concept": "quantities" },
     "T5A02": { "why": "Power is measured in **watts**.", "trap": "Watt-hours are energy (power over time), not power itself.", "concept": "quantities" },

@@ -1,6 +1,7 @@
 {
   "title": "Time constants and phase angle",
   "blurb": "Work out RC time constants, the phase angle of series RLC circuits, and convert impedance to admittance.",
+  "description": "RC time constants and phase angle: a capacitor charges to 63.2% in one time constant, ELI the ICE man, and converting impedance to admittance.",
   "why": {
     "E5B01": { "why": "In one **time constant** (τ = R × C) a capacitor reaches 63.2% of the applied voltage, or falls to 36.8% when discharging.", "concept": "tau" },
     "E5B02": { "why": "Susceptance is the imaginary part of admittance and uses the letter **B**.", "trap": "Y is admittance, G is conductance, X is reactance.", "concept": "admittance" },

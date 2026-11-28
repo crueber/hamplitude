@@ -1,6 +1,7 @@
 {
   "title": "Sunspots, flares and propagation indices",
   "blurb": "Explain how solar activity changes HF conditions, how fast flares and particles arrive, and what SFI, K and A measure.",
+  "description": "How solar activity shapes HF: a flare's effect arrives in about 8 minutes, a CME in 15 hours to days, and what SFI and the K and A indices measure.",
   "why": {
     "G3A01": { "why": "More sunspots mean more ionizing radiation, a denser F region and a higher MUF: **better odds on higher frequencies**.", "trap": "Zero sunspots weakens the high bands. It doesn't shut every band.", "concept": "sunspots" },
     "G3A02": { "why": "Flare X-rays raise D-region absorption on the sunlit side, which hurts **lower frequencies more** than higher ones.", "concept": "arrival" },

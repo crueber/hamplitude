@@ -1,6 +1,7 @@
 {
   "title": "Station setup and grounding",
   "blurb": "Wire a station correctly: meters, power, computer audio links, RF bonding, keyers and hotspots.",
+  "description": "Station setup: a 50 W FM radio draws about 12 A at 13.8 V, so use short heavy wire; a 100 Ah battery runs 10 hours at 10 A. Plus sound-card digital links.",
   "why": {
     "T4A01": { "why": "Mobile radios run on **13.8 V**, and a 50 W FM radio draws about **12 A** on transmit, so the supply must deliver that.", "trap": "24 V is wrong for a mobile radio, and 4 A is too little current.", "concept": "power" },
     "T4A02": { "why": "A meter only reads correctly within the **frequency and power range** it was built for.", "concept": "meters" },

@@ -1,6 +1,7 @@
 {
   "title": "Metric prefixes and decibels",
   "blurb": "Convert between milli, kilo, mega and other prefixes by moving the decimal, and tell dB from the power ratio.",
+  "description": "Metric prefixes and decibels by moving the decimal: 3.525 MHz is 3525 kHz, doubling power is +3 dB, and ten times the power is +10 dB.",
   "why": {
     "T5B01": { "why": "Milli is a thousandth, so there are 1000 mA in an ampere: 1.5 × 1000 = **1500 mA**.", "trap": "Dividing makes a tiny number. A smaller unit needs a bigger number.", "concept": "convert" },
     "T5B02": { "why": "Kilo is 1000: 1,500,000 ÷ 1000 = **1500 kHz**.", "trap": "1500 MHz would be a thousand times too large. Count the steps.", "concept": "convert" },

@@ -1,6 +1,7 @@
 {
   "title": "Filters and matching networks",
   "blurb": "Tell low-pass from high-pass networks, name filter types by their response, and pick the right filter for a job.",
+  "description": "Filters and matching networks: low-pass versus high-pass Pi networks, Chebyshev trades ripple for a sharper cutoff, and elliptical filters add notches.",
   "why": {
     "E7C01": { "why": "A low-pass Pi has a **shunt capacitor at input and output with a series inductor between**: the inductor blocks highs, the capacitors shunt them.", "trap": "Two series inductors with a shunt capacitor is a T network, not Pi.", "concept": "networks" },
     "E7C02": { "why": "Series capacitors block low frequencies and a shunt inductor shorts them to ground: **high-pass**.", "trap": "Series L with shunt C would be low-pass; this is the opposite arrangement.", "concept": "networks" },

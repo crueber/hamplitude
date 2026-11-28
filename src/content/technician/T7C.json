@@ -1,6 +1,7 @@
 {
   "title": "SWR, feed lines and dummy loads",
   "blurb": "Explain what SWR and a dummy load are for, how to measure them, and what makes feed lines lose power or fail.",
+  "description": "SWR and dummy loads: 1:1 means no reflected power, a dummy load is a 50 ohm resistor that turns power into heat, and moisture is what ruins coax.",
   "why": {
     "T7C01": { "why": "A dummy load absorbs your power as heat, so **tests don't transmit over the air**.", "trap": "It doesn't improve antennas or receivers. It just stands in for the antenna.", "concept": "dummy-load" },
     "T7C02": { "why": "An **antenna analyzer** sweeps frequencies and shows where the antenna is resonant.", "trap": "A frequency counter reads a signal's frequency; it can't tell you if an antenna is resonant.", "concept": "swr" },

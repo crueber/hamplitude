@@ -1,6 +1,7 @@
 {
   "title": "Specialized HF and VHF antennas",
   "blurb": "Choose antennas for NVIS, multiband, receive-only and loop uses, and explain traps, stacking, log-periodics and end-fed feeds.",
+  "description": "Specialized antennas: a horizontal dipole 1/10 to 1/4 wavelength high for NVIS, traps for multiband use, log-periodics, Beverages and small loops.",
   "why": {
     "G9D01": { "why": "NVIS needs energy sent nearly straight up: a **horizontal dipole 1/10 to 1/4 λ high** does that. At ½ λ it has a null overhead.", "trap": "A vertical radiates little straight up.", "concept": "nvis" },
     "G9D02": { "why": "At the end of a half wave the voltage is highest and current lowest, so impedance is **very high**.", "trap": "The low impedance (about 73 Ω) is at the center, not the end.", "concept": "wire" },

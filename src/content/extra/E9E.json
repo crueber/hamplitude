@@ -1,6 +1,7 @@
 {
   "title": "Matching systems and phasing lines",
   "blurb": "Tell gamma, hairpin and stub matches apart, size a quarter-wave section, and see what Wilkinson dividers and phasing lines do.",
+  "description": "Matching systems: gamma, hairpin and stub matches, and sizing a quarter-wave transformer, as √(100 × 50) = 70.7 ohms, plus Wilkinson dividers.",
   "why": {
     "E9E01": { "why": "A beta or hairpin match feeds a **split element insulated from the boom**. A gamma match works with the element bolted to the boom.", "concept": "systems" },
     "E9E02": { "why": "Gamma: shield to the **center of the element**, center conductor tapped a fraction of a wavelength to one side.", "concept": "systems" },

@@ -1,6 +1,7 @@
 {
   "title": "Test equipment and measurements",
   "blurb": "Choose the right meter or scope for each station measurement and explain how a two-tone test and antenna analyzer work.",
+  "description": "Test equipment for the General exam: when a scope beats a meter, how a two-tone test checks linearity, and what an antenna analyzer measures.",
   "why": {
     "G4B01": { "why": "An oscilloscope draws a trace using a **vertical** amplifier for amplitude and a **horizontal** one for the time sweep.", "trap": "Meters and signal generators have no deflection channels.", "concept": "scope" },
     "G4B02": { "why": "A DVM gives one number. A scope shows how voltage **changes over time**, so it can display **complex waveforms**.", "trap": "A DVM is the more precise of the two.", "concept": "scope" },

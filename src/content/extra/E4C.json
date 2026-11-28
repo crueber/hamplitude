@@ -1,6 +1,7 @@
 {
   "title": "Receiver noise, selectivity and overload",
   "blurb": "Calculate noise floor from bandwidth, and explain image rejection, roofing filters, attenuators, overload and phase noise.",
+  "description": "Receiver noise and selectivity: thermal noise is -174 dBm in 1 Hz, a 1000 Hz filter is 13 dB noisier than 50 Hz, plus image rejection and phase noise.",
   "why": {
     "E4C01": { "why": "Clock **phase noise** combines with strong nearby signals and generates **interference** on the signal you want.", "trap": "Phase noise isn't about calibration or the intercept point.", "concept": "phase-noise" },
     "E4C02": { "why": "A **front-end filter or preselector** acts before the mixer, removing strong out-of-band signals.", "trap": "An IF filter acts after the mixer, too late for front-end overload. A notch removes only one frequency.", "concept": "image" },

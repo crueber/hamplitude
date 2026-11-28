@@ -13,6 +13,8 @@ import seoConfig from '../../seo.config.json'
 export const SITE_NAME = 'Hamplitude'
 export const SITE_URL: string = __SITE_URL__
 export const OG_IMAGE = `${SITE_URL}/og.png`
+/** The site's one canonical description (home meta description and WebSite JSON-LD); reuse it verbatim elsewhere. */
+export const SITE_DESCRIPTION = 'Understand amateur radio instead of memorizing it: concept-first lessons built from the official FCC question pools, and a free compendium of concept articles.'
 const OG_ALT = 'Hamplitude: do not memorize ham radio, understand it'
 const cards: Record<string, string> = ogCards
 
@@ -66,11 +68,11 @@ export function seoFor(rawPath: string): Seo {
   if (parts.length === 0) {
     return {
       title: `${SITE_NAME}: don't memorize ham radio, understand it`,
-      description: clip(`A free ham radio compendium of ${articleTotal} visual concept articles on antennas, radios, modes and electronics, plus exam prep for the Technician, General and Extra classes.`),
+      description: SITE_DESCRIPTION,
       path, type: 'website',
       jsonLd: [{
         '@context': 'https://schema.org', '@type': 'WebSite', name: SITE_NAME, url: `${SITE_URL}/`, inLanguage: 'en',
-        description: 'Understand amateur radio instead of memorizing it: concept-first lessons built from the official FCC question pools, and a free compendium of concept articles.',
+        description: SITE_DESCRIPTION,
         publisher,
       }],
     }
@@ -149,7 +151,8 @@ export function seoFor(rawPath: string): Seo {
     const n = allGroups(lic).length
     return {
       title: `${pool.name} class study guide: ${n} visual lessons | ${SITE_NAME}`,
-      description: clip(`Study for the ${pool.name} class amateur radio exam (${pool.valid.from.slice(0, 4)}-${pool.valid.to.slice(0, 4)} question pool). ${n} visual lessons covering all ${pool.questions.length} official questions, with practice and a full practice exam.`),
+      // hand-written, with the numbers read from the pool so they stay true when the pool changes
+      description: `${pool.name} class exam prep: ${n} visual lessons covering all ${pool.questions.length} questions in the ${pool.valid.from.slice(0, 4)}-${pool.valid.to.slice(0, 4)} pool. The exam asks ${pool.exam.questions}; you need ${pool.exam.toPass} to pass.`,
       path, type: 'website',
       jsonLd: [{
         '@context': 'https://schema.org', '@type': 'Course', name: `${pool.name} class amateur radio exam preparation`, inLanguage: 'en',
@@ -169,7 +172,7 @@ export function seoFor(rawPath: string): Seo {
   const n = info.group.questions.length
   return {
     title: `${title} (${pool.name} ${group}) | ${SITE_NAME}`,
-    description: clip(`${blurb} Covers ${n} ${pool.name} class exam questions (${group}).`),
+    description: c?.description ?? clip(`${blurb} Covers ${n} ${pool.name} class exam questions (${group}).`),
     path, type: 'article',
     jsonLd: [
       {

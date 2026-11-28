@@ -1,6 +1,7 @@
 {
   "title": "Digital modes: RTTY, FT8 and Winlink",
   "blurb": "Choose the right sideband and frequency for digital modes, run FT8 properly, and connect through Winlink gateways.",
+  "description": "HF digital modes: RTTY on LSB with a 170 Hz shift, FT8 near 14.074 MHz with your clock within about 1 second, and Winlink gateways.",
   "why": {
     "G2E01": { "why": "RTTY by **AFSK** on an SSB transmitter is normally sent on **LSB**.", "trap": "USB is the sideband for FT8-family modes.", "concept": "afsk" },
     "G2E02": { "why": "**VARA** is a digital protocol used with **Winlink**.", "trap": "It isn't EME, direction finding or DX spotting.", "concept": "winlink" },

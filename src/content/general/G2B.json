@@ -1,6 +1,7 @@
 {
   "title": "Operating courtesy, band plans and RACES",
   "blurb": "Share frequencies politely, space signals correctly, follow band plans, respond to distress, and know the RACES rules.",
+  "description": "Operating courtesy: nobody owns a frequency, leave 150 to 500 Hz between CW signals and 2 to 3 kHz for SSB, and RACES drills max 1 hour a week.",
   "why": {
     "G2B01": { "why": "Outside emergencies, **no station has priority** on any frequency. Nets, QSOs and contests all share.", "trap": "Being first, or running a net, gives no right to the frequency.", "concept": "no-priority" },
     "G2B02": { "why": "A distress call outranks your contact. **Acknowledge** that station and **find out what help is needed**.", "trap": "Going silent or cutting power doesn't help anyone in distress.", "concept": "distress" },

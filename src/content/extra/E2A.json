@@ -1,6 +1,7 @@
 {
   "title": "Amateur satellites and orbits",
   "blurb": "Explain ascending passes, orbit types, inverting transponders, mode letters, circular polarization and store-and-forward.",
+  "description": "Amateur satellites: ascending passes, Keplerian elements, mode letters like U/V, why inverting transponders flip sidebands, and store-and-forward.",
   "why": {
     "E2A01": { "why": "Ascending means the satellite is heading **south to north** along its ground track; descending is north to south.", "trap": "East and west are not part of the definition.", "concept": "orbit" },
     "E2A02": { "why": "Inverting means the band is mirrored: positions and sidebands flip, and uplink and downlink Doppler push opposite ways. **All are true.**", "concept": "transponder" },

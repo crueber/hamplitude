@@ -1,6 +1,7 @@
 {
   "title": "Ionospheric layers, scatter and NVIS",
   "blurb": "Explain which layer does what, why the D region blocks low bands by day, and how scatter and NVIS fill the skip zone.",
+  "description": "Ionospheric layers D, E, F1 and F2, why the D region absorbs 160 to 40 m by day, and how scatter and NVIS reach into the skip zone.",
   "why": {
     "G3C01": { "why": "The layers stack D, E, F1, F2 going up. **D is the lowest**, closest to the surface.", "concept": "layers" },
     "G3C02": { "why": "The critical frequency at a given angle is the **highest frequency still refracted back** to Earth. Higher goes through.", "trap": "That is not a signal-to-noise figure, and it is not the lowest frequency.", "concept": "critical" },

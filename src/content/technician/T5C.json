@@ -1,6 +1,7 @@
 {
   "title": "Capacitance, inductance and power",
   "blurb": "Say what capacitors and inductors store, write kHz and MHz correctly, define impedance, and calculate DC power.",
+  "description": "Capacitors store energy in an electric field and inductors in a magnetic one; impedance is in ohms, and DC power is P = E × I: 13.8 V at 10 A is 138 W.",
   "why": {
     "T5C01": { "why": "A capacitor holds energy in the **electric field** between its plates. That ability is capacitance.", "trap": "Inductance is the magnetic-field one.", "concept": "storage" },
     "T5C02": { "why": "Capacitance is measured in **farads**.", "trap": "Henry is inductance, ohm is opposition, volt is voltage.", "concept": "storage" },

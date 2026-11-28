@@ -1,6 +1,7 @@
 {
   "title": "Reactance, impedance and resonance",
   "blurb": "Explain how coils and capacitors oppose AC, what impedance is, and why XL equals XC at resonance.",
+  "description": "Reactance and impedance: XL rises with frequency and XC falls, both are measured in ohms, and at resonance XL equals XC and they cancel.",
   "why": {
     "G5A01": { "why": "At resonance XL = XC and they cancel, so a series LC circuit has very **low** impedance.", "trap": "A parallel LC circuit is the reverse; the series one is low. Neither uses a mean of L and C.", "concept": "resonance" },
     "G5A02": { "why": "Reactance is opposition to **alternating** current from capacitance or inductance. Resistance opposes any current.", "trap": "Opposition from resistance is just resistance. Nothing here reinforces current.", "concept": "reactance" },

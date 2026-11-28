@@ -1,6 +1,7 @@
 {
   "title": "CW procedures, prosigns and Q signals",
   "blurb": "Use full break-in, read the common Q signals and prosigns, and answer a CQ at the right speed and frequency.",
+  "description": "CW procedures for the General exam: full break-in (QSK), zero beat, prosigns like KN and AR, and Q signals such as QRS, QRL, QRN and QRV.",
   "why": {
     "G2C01": { "why": "**Full break-in (QSK)** lets you receive **between code characters and elements**, so you can hear interruptions.", "trap": "BK is a prosign. Full break-in is about the receiver gaps, not the key type.", "concept": "qsk" },
     "G2C02": { "why": "**QRS?** asks you to **send slower**. S for slow.", "trap": "QRQ is the opposite, send faster.", "concept": "q-signals" },

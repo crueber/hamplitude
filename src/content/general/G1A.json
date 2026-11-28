@@ -1,6 +1,7 @@
 {
   "title": "HF privileges and band slices",
   "blurb": "Which HF bands and slices a General may use, which modes are barred, and what secondary status means.",
+  "description": "General HF privileges: Extra-only slices on 80, 40, 20 and 15 m, no phone or images on 30 m, and CW across all of 10 m from 28.000 to 29.700 MHz.",
   "why": {
     "G1A01": { "why": "Extra-only slices exist on **80, 40, 20 and 15 m**. The other HF and MF bands are open to General across the band.", "trap": "160, 60, 30, 17, 12 and 10 m have no Extra-only slice.", "concept": "bands" },
     "G1A02": { "why": "Phone is prohibited on **30 m**, which is limited to non-voice modes.", "trap": "160, 17 and 12 m allow phone.", "concept": "modes" },

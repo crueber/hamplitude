@@ -1,6 +1,7 @@
 {
   "title": "Reading schematic symbols",
   "blurb": "Recognize every symbol in the exam figures and explain what a schematic does and does not show.",
+  "description": "Read every schematic symbol on the Technician exam, from resistor and transistor to transformer and antenna, and what a schematic leaves out.",
   "why": {
     "T6C01": { "why": "A **schematic** is a circuit diagram built from standard component symbols.", "trap": "A flow chart shows steps, not electrical connections.", "concept": "schematic" },
     "T6C02": { "why": "A zigzag line is a **resistor**: current has to squeeze through the bends.", "trap": "A transistor has three leads and a bar, not a zigzag.", "concept": "basic-symbols" },

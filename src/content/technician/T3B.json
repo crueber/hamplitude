@@ -1,6 +1,7 @@
 {
   "title": "Radio waves: fields, speed and wavelength",
   "blurb": "A radio wave is a pair of fields moving at light speed, and its wavelength is just 300 ÷ frequency.",
+  "description": "Radio waves as electric and magnetic fields moving at light speed, and the one formula to know: wavelength in meters equals 300 ÷ frequency in MHz.",
   "why": {
     "T3B01": { "why": "A radio wave is an electric field and a magnetic field locked together at **right angles**.", "concept": "fields" },
     "T3B02": { "why": "Polarization is the direction of the **electric** field. Electric field vertical means vertical polarization.", "trap": "The magnetic field is also there, but it is not what defines polarization.", "concept": "fields" },

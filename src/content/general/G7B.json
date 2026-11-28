@@ -1,6 +1,7 @@
 {
   "title": "Amplifiers, oscillators and digital logic",
   "blurb": "Explain amplifier classes and efficiency, how oscillators and neutralizing work, and what basic logic circuits do.",
+  "description": "Amplifier classes and efficiency: Class A conducts for all 360 degrees and Class C the least, plus oscillators, neutralizing and basic logic gates.",
   "why": {
     "G7B01": { "why": "Internal capacitance leaks output back to the input and can make a stage oscillate. Neutralizing cancels that feedback and **eliminates self-oscillation**.", "trap": "Modulation limiting and keying are unrelated to feedback inside a stage.", "concept": "neutralizing" },
     "G7B02": { "why": "The less of the cycle the device conducts, the less power it wastes. Class C conducts least, so it has the **highest efficiency**.", "trap": "Class A is the most linear, not the most efficient.", "concept": "amp-classes" },

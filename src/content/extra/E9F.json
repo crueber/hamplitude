@@ -1,6 +1,7 @@
 {
   "title": "Transmission line lengths and stubs",
   "blurb": "Explain velocity factor, what shorted and open lines look like at 1/8, 1/4 and 1/2 wavelength, and why open wire beats coax on loss.",
+  "description": "Transmission lines: velocity factor, what shorted and open lines look like at 1/8, 1/4 and 1/2 wavelength, microstrip, and open wire's low loss.",
   "why": {
     "E9F01": { "why": "Velocity factor = speed in the line ÷ speed of light in a vacuum. A ratio below 1, about 1 for air.", "trap": "Impedance ratios describe SWR and reflection, not speed.", "concept": "vf" },
     "E9F02": { "why": "The **insulating dielectric** sets how much the wave slows. Air is about 1; plastic is lower.", "trap": "Impedance and length don't change velocity factor.", "concept": "vf" },

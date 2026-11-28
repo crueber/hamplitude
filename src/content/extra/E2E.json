@@ -1,6 +1,7 @@
 {
   "title": "HF digital modes",
   "blurb": "Explain FSK, WSJT-X clock timing, FT8/FT4/FST4/Q65, mode traits, bandwidth versus speed and ALE.",
+  "description": "HF digital modes for the Extra exam: an FT8 cycle is a fixed 15 seconds and about 50 Hz wide, FT4 runs 7.5 s cycles, and ALE radios scan for calls.",
   "why": {
     "E2E01": { "why": "Data emissions below 30 MHz use **FSK**: shifting the carrier between set frequencies.", "concept": "fsk" },
     "E2E02": { "why": "WSJT-X stations agree on period boundaries by **synchronizing their computer clocks**. No sync pulse is sent.", "trap": "There's no sync field or sync pulse in the signal.", "concept": "wsjt-timing" },

@@ -1,6 +1,7 @@
 {
   "title": "Dynamic range, intermodulation, link budget",
   "blurb": "Explain dynamic range and intermodulation, find third-order products, read intercept points, and work a dB link budget.",
+  "description": "Dynamic range and intermodulation: blocking dynamic range runs up to 1 dB of compression, how to find third-order products, and dB link budgets.",
   "why": {
     "E4D01": { "why": "Blocking dynamic range = the dB span from the **noise floor** up to the level causing **1 dB of gain compression**.", "trap": "The IMD-products definition is a different measure; intercept point isn't the end of the window.", "concept": "dynamic-range" },
     "E4D02": { "why": "A receiver that can't handle strong signals shows **cross modulation and desensitization** from strong adjacent signals.", "trap": "Oscillator drift and LO injection are not dynamic-range problems.", "concept": "dynamic-range" },

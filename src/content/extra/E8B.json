@@ -1,6 +1,7 @@
 {
   "title": "FM index, deviation ratio and multiplexing",
   "blurb": "How to calculate modulation index and deviation ratio, and what OFDM and frequency or time multiplexing do.",
+  "description": "FM modulation index is deviation ÷ modulating frequency, so 3000 Hz at 1000 Hz is 3; deviation ratio uses the highest audio, plus OFDM and multiplexing.",
   "why": {
     "E8B01": { "why": "Index = **frequency deviation ÷ modulating frequency**: how many modulating-tone widths the carrier swings.", "trap": "Amplitude and bandwidth are not in the definition.", "concept": "mod-index" },
     "E8B02": { "why": "The index depends on the swing and the modulating signal, not the carrier. It is **independent of the RF carrier frequency**.", "concept": "mod-index" },

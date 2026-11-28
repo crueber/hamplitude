@@ -1,6 +1,7 @@
 {
   "title": "Prohibited transmissions and payment",
   "blurb": "What you may not transmit, the narrow exceptions, and why testing needs an ID but model-craft control doesn't.",
+  "description": "What you may not transmit: no broadcasting, music or obscuring a message, with narrow exceptions, and why test transmissions must still identify.",
   "why": {
     "T1D01": { "why": "Communication is barred with countries whose administrations have **told the ITU** they object.", "trap": "The ARRL and IARU can't ban a country.", "concept": "nos" },
     "T1D02": { "why": "One-way **broadcasting** is prohibited. Announcements, code practice and telemetry/telecommand are allowed.", "concept": "broadcast" },
