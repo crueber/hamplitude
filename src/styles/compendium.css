@@ -108,6 +108,7 @@
 .article-head { padding: 10px 0 4px; }
 .article-head h1 { font-size: clamp(30px, 4.6vw, 42px); letter-spacing: -0.03em; }
 .article-head .lead { font-size: 19px; color: var(--ink-2); margin: 10px 0 0; }
+.article-updated { margin: 10px 0 0; font-size: 13px; color: var(--muted); }
 .article-body { margin-top: 22px; font-size: 17px; }
 .article-body > p, .article-body li { font-size: 17px; }
 .article-body ul, .article-body ol { padding-left: 1.3em; margin: 0 0 1em; }

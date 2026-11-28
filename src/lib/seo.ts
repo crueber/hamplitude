@@ -5,6 +5,7 @@
 import { LICENSES, POOLS, allGroups, getGroup, isLicense } from '@/data'
 import { getGroupContent } from '@/content'
 import { FLAT, SECTIONS, getArticle, getSection, getSub } from '@/compendium/taxonomy'
+import { articleDates } from '@/compendium/dates'
 import seoConfig from '../../seo.config.json'
 
 export const SITE_NAME = 'Hamplitude'
@@ -44,6 +45,8 @@ function breadcrumb(items: [string, string][]): object {
 }
 
 const publisher = { '@type': 'Organization', name: SITE_NAME, url: `${SITE_URL}/` }
+/** The articles' named author (the site has no About page, so his GitHub profile identifies him). */
+const author = { '@type': 'Person', name: 'Christopher Rueber', url: 'https://github.com/crueber', sameAs: ['https://github.com/crueber'] }
 const titleCase = (s: string) => s.toLowerCase().replace(/(^|\s|-|\/)([a-z])/g, (_, a, b) => a + b.toUpperCase()).replace(/\bAnd\b/g, 'and')
 
 export const articleTotal = FLAT.length
@@ -110,6 +113,7 @@ export function seoFor(rawPath: string): Seo {
     }
     const a = getArticle(`${sec}/${sub}/${art}`)
     if (!a) return none('Not found')
+    const dates = articleDates(a.path)
     return {
       title: `${a.title} | Ham radio compendium`,
       description: clip(a.summary),
@@ -118,7 +122,8 @@ export function seoFor(rawPath: string): Seo {
         {
           '@context': 'https://schema.org', '@type': 'Article', headline: a.title, description: a.summary, inLanguage: 'en',
           isAccessibleForFree: true, mainEntityOfPage: canonicalUrl(path), url: canonicalUrl(path), image: OG_IMAGE,
-          articleSection: s.title, about: b.title, author: publisher, publisher,
+          ...(dates && { datePublished: dates.published, dateModified: dates.modified }),
+          articleSection: s.title, about: b.title, author, publisher,
         },
         breadcrumb([['Home', '/'], ['Compendium', '/compendium'], [s.title, `/compendium/${s.slug}`], [b.title, `/compendium/${s.slug}/${b.slug}`], [a.title, path]]),
       ],

@@ -6,6 +6,7 @@ import { CompendiumLayout } from './Layout'
 import { Search } from './Search'
 import { compendiumComponents } from './mdx'
 import { hasArticle, loadArticle } from './loader'
+import { articleDates, formatDate } from './dates'
 import {
   FEATURED, SECTIONS, articleHref, getArticle, getSection, getSub, neighbours, type ArticleDef, type SectionDef,
 } from './taxonomy'
@@ -132,6 +133,7 @@ function ArticlePage({ path }: { path: string }) {
   const a = getArticle(path)!
   const Body = useMemo(() => (hasArticle(path) ? articleComponent(path) : null), [path])
   const { prev, next } = neighbours(path)
+  const dates = articleDates(path)
 
   return (
     <div className="cmp-page with-toc">
@@ -143,6 +145,7 @@ function ArticlePage({ path }: { path: string }) {
           {a.section.adjacent && <p className="cmp-apart-tag">Not amateur radio</p>}
           <h1>{a.title}</h1>
           <p className="lead">{a.summary}</p>
+          {dates && <p className="article-updated">Last updated <time dateTime={dates.modified}>{formatDate(dates.modified)}</time></p>}
         </header>
         <div className="article-body" id="article-body">
           {Body ? (
